@@ -1,0 +1,27 @@
+<h1>Sign in</h1>
+
+<%= form_for @changeset, @action, [as: :user], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, Pow.Ecto.Schema.user_id_field(@changeset) %>
+  <%= text_input f, Pow.Ecto.Schema.user_id_field(@changeset) %>
+  <%= error_tag f, Pow.Ecto.Schema.user_id_field(@changeset) %>
+
+  <%= label f, :password %>
+  <%= password_input f, :password %>
+  <%= error_tag f, :password %>
+
+  <%= label f, :persistent_session, "Remember me" %>
+  <%= checkbox f, :persistent_session %>
+
+  <div>
+    <%= submit "Sign in" %>
+  </div>
+<% end %>
+
+
+<span><%= link "Register", to: Routes.pow_registration_path(@conn, :new) %></span>

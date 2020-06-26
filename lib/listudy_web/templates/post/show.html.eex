@@ -1,0 +1,13 @@
+<h1><%= @post.title %></h1>
+
+<%= raw Earmark.as_html!(@post.body)%>
+
+<span><%= link "Back", to: Routes.post_path(@conn, :index, @conn.assigns.locale) %></span>
+
+<hr>
+<div id="share"></div>
+<hr>
+<%= render ListudyWeb.CommentView, "show_comments.html", type: "post", id: Integer.to_string(@post.id), action: Routes.comment_path(@conn, :new_comment), conn: @conn %>
+<%= render ListudyWeb.CommentView, "comment_form.html", type: "post", id: Integer.to_string(@post.id), action: Routes.comment_path(@conn, :new_comment), conn: @conn %>
+
+

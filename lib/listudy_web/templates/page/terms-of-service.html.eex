@@ -1,0 +1,74 @@
+<h1><%= gettext "Terms of Service" %></h1>
+<p><%= dgettext "terms", "Translated terms of service shall only serve as an informal source of information. Please read the english version for the official version applicable to the site." %> <%= link (dgettext "terms", "English version of the Terms of Service"), to: Routes.page_path(@conn, :show, "en", "terms-of-service") %></p>
+
+<p><%= dgettext "terms", "Last edited:" %> 2020-06-24</p>
+
+<p><%= dgettext "terms", "This page explains our terms of use. When you use Listudy, you’re agreeing to all the rules on this page. Some of them need to be expressed in specific legal language but we’ve done our best to offer you clear and simple explanations of what everything means." %></p>
+
+<p><%= dgettext "terms", "By using this website (the “Site”) and services (together with the Site, the “Services”) offered by Listudy.org (together with our subsidiaries, affiliates, representatives, and directors – collectively “Listudy”, “we”, or “us”) you’re agreeing to these legally binding rules (the “Terms”). You’re also agreeing to our Privacy Policy and Cookie Policy, and agreeing to follow any other rules on the Site." %></p>
+
+<p><%= dgettext "terms", "We may change these terms from time to time. If we do, we’ll let you know about any significant or material changes, by notifying you on the Site. New versions of the terms will never apply retroactively – we’ll tell you the exact date they go into effect. If you continue using Listudy after a change, that means you accept the new terms." %></p>
+
+<h2><%= dgettext "terms", "Creating an Account" %></h2>
+
+<p><%= dgettext "terms", "To sign up for a Listudy account, you need to be 16 or over. You’re responsible for your account and all the activity on it." %></p>
+
+<p><%= dgettext "terms", "You can browse Listudy and use some of our Services without registering an account. But to use all of Listudy’ functions, you’ll need to register. This is done by choosing a username, setting a password, and securing it with an email address. If you don’t submit accurate information, you might not be able to access your account. You can choose any email (even fictitious ones). Just make sure to remember the email, because it is used to log in." %></p>
+
+<p><%= dgettext "terms", "Don’t impersonate anyone else or choose names that are offensive or that violate anyone’s rights. If you don’t follow these rules, we reserve the right to close your account without warning." %></p>
+
+<p><%= dgettext "terms", "When these terms discuss “Users” or a “User”, we’ll be referring to both registered and unregistered users, unless it relates to features, information or data an unregistered User does not or cannot have access to." %></p>
+
+<h2><%= dgettext "terms", "User Rights" %></h2>
+
+<p><%= dgettext "terms", "Both registered and unregistered users have rights to protect their property, privacy, and identity unless they have consented or agree to making their identity public. Most information on this topic can be found in our Privacy Policy." %></p>
+
+<p><%= dgettext "terms", "Listudy believes that users should have their public information, identity, and data protected as strongly as possible. We use European Union data protection law as our baseline, and in many respects go further than what the law requires. We’ve also chosen to extend these rights to all users, not just those under a European Union jurisdiction." %></p>
+
+<p><%= dgettext "terms", "By agreeing to these Terms, registered Users can have access to all of Listudy’ features and are free to use them for their own personal, educational, charitable, or developmental purposes. Listudy itself is also free/libre open-source software licensed under the GNU AGPL. This doesn’t prevent Listudy from having the ultimate decision in what kind of use of the Services is appropriate." %></p>
+
+<p><%= dgettext "terms", "Users are responsible for the content they post. Some examples of content would include information, data, text, and pgn files. We won’t be responsible for the content you post." %></p>
+
+<p><%= dgettext "terms", "In all circumstances, we may retain certain information as required by law or necessary for our legitimate operating purposes. All of the provisions within this agreement survive the termination of an account." %></p>
+
+<h2><%= dgettext "terms", "Closing and Terminating your Account" %></h2>
+<p><%= dgettext "terms", "You can close your account at any time." %></p>
+<p><%= dgettext "terms", "You can terminate your account at any time by contacting the Listudy administrators. This will permanently erase your account and all content and data. Although we may retain certain information as required by law or as necessary for our legitimate operating purposes. " %></p>
+
+<h2><%= dgettext "terms", "Our rights" %></h2>
+<p><%= dgettext "terms", "To operate, we need to be able to maintain control over what happens on our website. To summarise, we reserve the right to make decisions to protect the health and integrity of our systems. We’ll only use these powers when we absolutely must." %></p>
+
+<p><%= dgettext "terms", "We can make changes to the Listudy Site and Services without letting you know in advance, or being liable for any loss, damage, or harm that arises as a result." %></p>
+
+<p><%= dgettext "terms", "We have the ultimate say in who can use our Site and Services. We can cancel accounts, or decline to let Users use our Services." %></p>
+
+<p><%= dgettext "terms", "We are not responsible for any loss, damage, or harm that may arise from any occasional downtime." %></p>
+
+<p><%= dgettext "terms", "We reserve the right to contact the relevant authorities if a User is breaking the law, and share relevant data with the authorities, if harm or damage occurs either against our Users or against the operation of our infrastructure." %></p>
+
+<p><%= dgettext "terms", "This list is non-exhaustive, and we reserve the right to add, edit, or remove entries from it at any time." %></p>
+
+<h2><%= dgettext "terms", "Privacy" %></h2>
+
+<p><%= dgettext "terms", "Our privacy policy describes how we handle the information you provide to us when you use our services. You understand that through your use of the services you consent to the collection and use, as set out in the privacy policy, of this information. Listudy currently follows European Data Protection, and applies these rights to users of all nationalities, not just European users." %></p>
+
+<h2><%= dgettext "terms", "Copyright" %></h2>
+
+<p><%= dgettext "terms", "Listudy is licensed under the GNU AGPL license." %></p>
+
+<p><%= dgettext "terms", "Listudy respects the intellectual property rights of others and expects Users of the Services to do the same. Listudy reserves the right to remove content alleged to be infringing without prior notice at our sole discretion and without liability to you. We will respond to notices of alleged copyright infringement, that comply with applicable law and are properly provided to us, as described in our copyright policy." %></p>
+
+<p><%= dgettext "terms", "If you believe your content has been copied in a way that constitutes copyright infringement please alert us by contacting us at copyright@listudy.org." %></p>
+
+<p><%= dgettext "terms", "You retain your rights to any content you submit, post or create through the services including chess games. By submitting, posting or displaying content on or through our services, you grant us a global, non-exclusive, royalty-free license, with the right to sublicense, to use, copy, reproduce, process, adapt, modify, publish, transmit, display and distribute such content in any and all media or distribution channels. Such additional uses may be made without compensation paid to you with respect to the content you make available through the services. This does not remove your rights from other 3rd party sites, such as Twitch or YouTube." %></p>
+
+<h2><%= dgettext "terms", "Stuff we’re not responsible for" %></h2>
+
+<p><%= dgettext "terms", "Services made available are on an as is and as available basis. We’re not responsible for whether this stuff actually works, though if it does that’s an added bonus to all of us." %></p>
+
+<p><%= dgettext "terms", "Listudy makes no warranty or representation and disclaims all responsibility and liability for the completeness, availability, timeliness, accuracy and security of the content and services." %></p>
+
+<p><%= dgettext "terms", "We disclaim all responsibility for any harm or loss of any data to your computer system, the deletion of or failure to store or transmit communications or content maintained by the services or whether the services will meet your requirements or be available on an uninterrupted, secure or error-free basis. Listudy cannot be held responsible for any loss, financial or otherwise, from third party sources, including misrepresentations, negligence or fraud." %></p>
+
+<p><%= dgettext "terms", "No advice, information or written correspondence whether oral or written procured from Listudy entities or through Listudy services will create any warranty or representation not expressly made herein." %></p>
+

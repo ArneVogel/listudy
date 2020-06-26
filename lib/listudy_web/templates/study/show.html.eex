@@ -1,0 +1,75 @@
+<h1><%= @study.title %></h1>
+
+<div class="with_sidebar">
+  <div id="game_container" class="sidebar_main">
+    <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
+  </div>
+  <div class="sidebar">
+    <div class="success">
+      <p id="success" class="hidden"></p>
+    </div>
+    <div class="info">
+      <p id="info" class="hidden"></p>
+    </div>
+    <div class="error">
+      <p id="error" class="hidden"></p>
+    </div>
+    <p id="comments"></p>
+    
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="one-half column">
+    <b><%= gettext "Description"%></b>
+    <p><%= @study.description %></p>
+    <%= if @study.is_owner do %>
+      <p><%= link (gettext "Edit"), to: Routes.study_path(@conn, :edit, @locale, @study) %></p>
+    <% end %>
+
+    <p><%= gettext "Created by:"%> <%= link @study.user.username, to: Routes.user_profile_path(@conn, :show, @locale, @study.user.username) %></p>
+  </div>
+  <div class="one-half column">
+    <div>
+      <label for="chapter_select"><%= gettext "Chapter Selection"%></label>
+      <select id="chapter_select"></select>
+    </div>
+
+    <%= if !@study.favorites do %>
+      <%= render ListudyWeb.StudyView, "study_favorite.html", text: (gettext "Favorite this study"), study_id: Integer.to_string(@study.id), action: Routes.study_path(@conn, :favorite_study), conn: @conn%>
+    <% else %>
+      <%= render ListudyWeb.StudyView, "study_favorite.html", text: (gettext "Unfavorite this study"), study_id: Integer.to_string(@study.id), action: Routes.study_path(@conn, :unfavorite_study), conn: @conn%>
+    <% end %>
+  </div>
+</div>
+
+<hr>
+<div id="share"></div>
+<hr>
+<%= render ListudyWeb.CommentView, "show_comments.html", type: "study", id: Integer.to_string(@study.id), action: Routes.comment_path(@conn, :new_comment), conn: @conn %>
+<%= render ListudyWeb.CommentView, "comment_form.html", type: "study", id: Integer.to_string(@study.id), action: Routes.comment_path(@conn, :new_comment), conn: @conn %>
+
+
+
+<link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
+<script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/study.js") %>"></script>
+<script>
+  var pgn = `<%= javascript_escape @study.pgn %>`.replace(/&quot;/g, '"');
+  var color = "<%= @study.color %>";
+  var study_id = "<%= @study.id %>";
+  <%= if Pow.Plug.current_user(@conn) do %>
+  var logged_in = true;
+  <% else %>
+  var logged_in = false;
+  <% end %>
+  var info_intro = "<%= gettext "Starting training."%>";
+
+  var error_wrong_move = "<%= gettext "This move is not in the study, try again."%>";
+  var error_no_play = "<%= gettext "This study does not contain enough moves."%>";
+
+  var success_right_move = "<%= gettext "Right move!"%>";
+  var success_end_of_line = "<%= gettext "You reached the end of this line."%>";
+
+  var translation_chapter = "<%= gettext "Chapter"%>";
+</script>

@@ -1,0 +1,10 @@
+<h1><%= gettext "Imprint" %></h1>
+<p><%= gettext "The provider of this website is Arne Vogel." %></p>
+<p>Arne Vogel</p>
+<p>Germany</p>
+<p>Stettiner Str. 8</p>
+<p>27442 Gnarrenburg</p>
+
+<%= link (gettext "Privacy"), to: Routes.page_path(@conn, :show, @conn.assigns.locale, "privacy") %> <br>
+<%= link (gettext "Terms of Service"), to: Routes.page_path(@conn, :show, @conn.assigns.locale, "terms-of-service") %> 
+

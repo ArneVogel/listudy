@@ -1,0 +1,28 @@
+<%= form_for @changeset, @action, [multipart: true], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :title, gettext "Title" %>
+  <%= text_input f, :title %>
+  <%= error_tag f, :title %>
+
+  <%= label f, :description, gettext "Description" %>
+  <%= textarea f, :description, minlength: 20, maxlength: 1000, placeholder: (gettext "In this study I work on my 1.e4 openings...")%>
+  <%= error_tag f, :description %>
+
+  <%= label f, :pgn, gettext "Select a PGN to upload" %>
+  <%= file_input f, :pgn %>
+
+  <%= label f, :color, gettext "For which side is this study" %>
+  <%= select(f, :color, ["White": "white", "Black": "black"]) %>
+
+  <%= label f, :private, gettext "Keep this study private" %>
+  <%= checkbox f, :private %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>

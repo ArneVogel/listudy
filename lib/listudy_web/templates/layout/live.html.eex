@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="<%= @locale %>">
+  <head>
+    <%= render "_head.html", assigns: assigns, conn: @conn%>
+    <%= csrf_meta_tag() %>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/live_view.js") %>"></script>
+  </head>
+  <body>
+    <%= render "_header.html", assigns: assigns, conn: @conn%>
+    <main role="main" class="container">
+        <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+        <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+        <%= @inner_content %>
+    </main>
+    <%= render "_footer.html", assigns: assigns, conn: @conn%>
+  </body>
+</html>

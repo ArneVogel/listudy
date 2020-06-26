@@ -1,0 +1,32 @@
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title><%= ListudyWeb.PageTitle.page_title(@assigns) %></title>
+    
+    <meta name="description" content="<%= ListudyWeb.PageDescription.page_description(@assigns) %>" />
+
+    <%= raw ListudyWeb.Seo.canonical_link(@conn) %>
+    <%= raw ListudyWeb.Seo.hreflang(@conn) %>
+
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <script>
+      <%# This is here to stop the default white theme to flash on load
+      <%# In the defered app.js script it would only switch after the page is loaded %>
+      let theme = localStorage.getItem("data-theme") || "light";
+      localStorage.setItem("data-theme", theme);
+      document.documentElement.setAttribute('data-theme', theme);
+      <%# Translations used by javascript %>
+      let translation_share_on = "<%= gettext "Share on" %>";
+    </script>
+
+    <%# Favicon start, generated with https://realfavicongenerator.net/%>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <%# Favicon end %>
+

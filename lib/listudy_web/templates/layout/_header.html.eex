@@ -1,0 +1,61 @@
+    <header>
+      <section class="container">
+        <nav role="navigation">
+          <div>
+            <div class="logo">
+              <a href="/<%= @assigns.locale %>"><span class="logo_name">listudy</span><span class="logo_domain">.org</span></a>
+            </div>
+            <div class="dropdowns_container">
+              <div class="dropdown">
+                <button class="dropbtn"><%= gettext "Study"%></button>
+                <div class="dropdown-content">
+                  <%= if Pow.Plug.current_user(@conn) do %>
+                  <%= link (gettext "Your Studies"), to: Routes.study_path(@conn, :index, @assigns.locale) %>
+                  <% end %>
+                  <%= link (gettext "Search for Studies"), to: Routes.search_path(@conn, ListudyWeb.StudySearchLive, @assigns.locale) %>
+                  <%= link (gettext "Create a new Study"), to: Routes.study_path(@conn, :new, @assigns.locale) %>
+                </div>
+              </div> 
+            </div>
+
+          </div>
+          <div class="nav_right">
+          <%= if !Pow.Plug.current_user(@conn) do %>
+            <div class="nav_element">
+              <%= link (gettext "Register"), to: Routes.pow_registration_path(@conn, :new) %>
+            </div>
+            <div class="nav_element">
+              <%= link (gettext "Sign in"), to: Routes.pow_session_path(@conn, :new) %>
+            </div>
+          <% end %>
+
+            <div class="dropdowns_container">
+              <div class="dropdown">
+                <button class="dropbtn"><%= gettext "Settings"%></button>
+                <div class="dropdown-content">
+                  <a href="#" id="toggle_dark_mode"><%= gettext "Toggle Darkmode"%></a>
+                  <hr class="no_margin">
+                <%= if Pow.Plug.current_user(@conn) do %>
+                  <%= link (gettext "User Settings"), to: Routes.pow_registration_path(@conn, :edit) %>
+                  <%= link (gettext "Profile"), to: Routes.user_profile_path(@conn, :show, @assigns.locale, @assigns.current_user.username) %>
+                  <%= link (gettext "Sign out"), to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "hover_warn"%>
+                <% end %>
+
+                <div class="dropdowns_container">
+                  <div class="nested-dropdown">
+                    <button class="dropbtn nested-dropbtn"><%= gettext "Language"%></button>
+                    <div class="nested-dropdown-content">
+                      <%= raw ListudyWeb.Seo.lang_alternatives(@conn) %>
+                    </div>
+                  </div> 
+                </div>
+
+                </div>
+              </div> 
+            </div>
+
+          </div>
+        </nav>
+      </section>
+    </header>
+

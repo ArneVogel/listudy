@@ -1,0 +1,21 @@
+<h1><%= gettext "Blog"%></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for post <- @posts do %>
+    <tr>
+      <td><%= post.title %></td>
+      <td>
+        <span><%= link "Show", to: Routes.post_path(@conn, :show, @conn.assigns.locale, post) %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+

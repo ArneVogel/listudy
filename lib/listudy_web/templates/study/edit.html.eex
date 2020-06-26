@@ -1,0 +1,5 @@
+<h1>Edit Study</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.study_path(@conn, :update, @locale, @study)) %>
+
+<span><%= link "Back", to: Routes.study_path(@conn, :index, @locale) %></span>

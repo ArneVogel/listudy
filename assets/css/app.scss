@@ -1,0 +1,116 @@
+/* This file is for your main application css. */
+
+@import "./colors.css";
+@import "./navigation.css";
+@import "./skeleton.css";
+
+/* Alerts and form errors */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+.alert p {
+  margin-bottom: 0;
+}
+.alert:empty {
+  display: none;
+}
+
+.success {
+    color: var(--success-color);
+    background-color: var(--success-bg);
+}
+
+.info {
+    color: var(--info-color);
+    background-color: var(--info-bg);
+}
+
+.error {
+    color: var(--error-color);
+    background-color: var(--error-bg);
+}
+
+#success, #info, #error {
+    margin: 10px 0px;
+    padding:12px;
+}
+
+.hidden {
+    display: none;
+}
+
+.box_shadow_hover:hover {
+    box-shadow: 2px 8px 8px 2px var(--drop-shadow-color);
+}
+
+#comments{
+    white-space: pre-line;
+}
+
+#share {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.big_search {
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    display: table;
+}
+
+textarea:invalid {
+  border: 2px dashed red;
+}
+
+/* Basic CSS */
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.hover_warn:hover {
+    background-color: var(--warn-color) !important;
+}
+
+/* Sidebar */
+.with_sidebar {
+    display: flex;
+}
+@media only screen and (max-width: 600px) {
+    .with_sidebar {
+        display: block;
+    }
+    .sidebar {
+        margin-left: 0px !important;
+    }
+}
+
+
+.sidebar_main {
+    flex: 2;
+}
+.sidebar {
+    flex: 1;
+    margin-left: 2em;
+}
+

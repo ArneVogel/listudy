@@ -1,0 +1,45 @@
+<h1>Register</h1>
+
+<div class="row">
+  <div class="one-third column">
+  <%= form_for @changeset, @action, [as: :user], fn f -> %>
+    <%= if @changeset.action do %>
+      <div class="alert alert-danger">
+        <p>Oops, something went wrong! Please check the errors below.</p>
+      </div>
+    <% end %>
+
+    <%= label f, :username %>
+    <%= text_input f, :username %>
+    <%= error_tag f, :username %>
+
+    <%= label f, Pow.Ecto.Schema.user_id_field(@changeset) %>
+    <%= text_input f, Pow.Ecto.Schema.user_id_field(@changeset) %>
+    <%= error_tag f, Pow.Ecto.Schema.user_id_field(@changeset) %>
+
+    <%= label f, :password %>
+    <%= password_input f, :password %>
+    <%= error_tag f, :password %>
+
+    <%= label f, :password_confirmation %>
+    <%= password_input f, :password_confirmation %>
+    <%= error_tag f, :password_confirmation %>
+
+    <div>
+      <%= submit "Register" %>
+    </div>
+  <% end %>
+  </div>
+  <div class="two-thirds column">
+    <p><%= gettext "Register to get access to all features." %></p>
+    <p><b><%= gettext "Username" %></b>: <%= gettext "You are welcome to use a pseudonym." %></p>
+    <p><b><%= gettext "Email" %></b>: <%= gettext "The email is used to log in. It doesn't have to be real, as long as you remember it." %></p>
+    <p><b><%= gettext "Password" %></b>: <%= gettext "Please choose a secure password. The password must be at least eight characters long." %></p>
+    <p><%= gettext "Before creating your account, please read the Privacy Policy and Terms of Service. By creating the account, you agree to those terms." %></p>
+    <%= link (gettext "Privacy Policy"), to: Routes.page_path(@conn, :show, @conn.assigns.locale, "privacy") %> 
+    <%= link (gettext "Terms of Service"), to: Routes.page_path(@conn, :show, @conn.assigns.locale, "terms-of-service") %> <br>
+
+  </div>
+</div>
+
+<span><%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %></span>
