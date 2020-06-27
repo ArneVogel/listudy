@@ -70,6 +70,7 @@
     pgn = pgn.replace(/\}/g, ' } ');
     pgn = pgn.replace(/0-0-0/g, 'O-O-O');
     pgn = pgn.replace(/0-0/g, 'O-O');
+    pgn = pgn.replace(/[^\x00-\x7F]/g, "");
     while (pgn.indexOf("  ") != -1) {
       pgn = pgn.replace(/  /g, ' ');
     }
