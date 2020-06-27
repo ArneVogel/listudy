@@ -11,11 +11,15 @@ defmodule ListudyWeb.Seo do
     path = get_path(conn)
     non_language_path = path_without_lang(path)
 
-    
-    Enum.reduce @languages, "", fn lang, acc ->
-      url = clean("#{@domain}/#{lang}/#{non_language_path}")
-      acc <> "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{url}\" \\>" <> "\n"
-    end
+    case starts_with_language(path) do
+      true ->
+        Enum.reduce @languages, "", fn lang, acc ->
+          url = clean("#{@domain}/#{lang}/#{non_language_path}")
+          acc <> "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{url}\" \\>" <> "\n"
+        end
+      _ ->
+        ""
+      end
   end
 
   # For letting users pick their language
@@ -23,11 +27,18 @@ defmodule ListudyWeb.Seo do
     path = get_path(conn)
     non_language_path = path_without_lang(path)
 
-    Enum.reduce @languages, "", fn lang, acc ->
-      url = clean("/#{lang}/#{non_language_path}")
-      acc <> "<a href=\"#{url}\">#{String.upcase(lang)}</a>" <> "\n"
+    case starts_with_language(path) do
+      true ->
+        Enum.reduce @languages, "", fn lang, acc ->
+          url = clean("/#{lang}/#{non_language_path}")
+          acc <> "<a href=\"#{url}\">#{String.upcase(lang)}</a>" <> "\n"
+        end
+      _ ->
+        Enum.reduce @languages, "", fn lang, acc ->
+          url = clean("/#{lang}")
+          acc <> "<a href=\"#{url}\">#{String.upcase(lang)}</a>" <> "\n"
+        end
     end
-
   end
 
 
@@ -40,6 +51,13 @@ defmodule ListudyWeb.Seo do
 
   defp path_without_lang(path) do
     String.slice(path, 4, 100)
+  end
+
+  defp starts_with_language(path) do
+    lang = String.slice(path, 1, 2)
+    IO.puts(lang)
+    IO.puts(lang in @languages)
+    lang in @languages
   end
   
   defp clean(url) do
