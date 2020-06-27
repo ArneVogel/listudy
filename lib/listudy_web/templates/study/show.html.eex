@@ -55,7 +55,22 @@
 <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
 <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/study.js") %>"></script>
 <script>
-  var pgn = `<%= javascript_escape @study.pgn %>`.replace(/&quot;/g, '"');
+  /*
+   * "Cleans" pgn files, 
+   * remove non standard characters
+   * replace some (but not all) of the html escapting
+  */
+  function clean_pgn(pgn) {
+    pgn = pgn.replace(/½/g, '1/2');
+    pgn = pgn.replace(/&gt;/g, '>');
+    pgn = pgn.replace(/&quot;/g, '"');
+    pgn = pgn.replace(/\)/g, ') ');
+    pgn = pgn.replace(/\(/g, '( ');
+    pgn = pgn.replace(/0-0-0/g, 'O-O-O');
+    pgn = pgn.replace(/0-0/g, 'O-O');
+    return pgn;
+  }
+  var pgn = clean_pgn(`<%= javascript_escape @study.pgn %>`);
   var color = "<%= @study.color %>";
   var study_id = "<%= @study.id %>";
   <%= if Pow.Plug.current_user(@conn) do %>
