@@ -1,0 +1,16 @@
+<h1><%= gettext "Copyright" %></h1>
+<p><%= dgettext "copyright", "Translated copyright policies shall only serve as an informal source of information. Please read the english version for the official version applicable to the site." %> <%= link (dgettext "copyright", "English version of the Copyright Policy"), to: Routes.page_path(@conn, :show, "en", "copyright") %></p>
+
+<p><%= dgettext "copyright", "Last edited:" %> 2020-06-27</p>
+
+<h2><%= dgettext "copyright", "Introduction" %></h2>
+<p><%= dgettext "copyright", "Listudy respects and recognizes the copyright of third parties. You are only allowed to publish public content on Listudy, for which you have all necessary rights." %></p>
+
+<h2><%= dgettext "copyright", "PGN files" %></h2>
+<p><%= dgettext "copyright", "You are only allowed to make public studies using PGN files, for which you have all necessary rights to. Do not copy PGN files from other websites for which you do not have the rights. This applies especially, but is not limited to, paid PGN files." %></p>
+
+<h2><%= dgettext "copyright", "Copyright holders" %></h2>
+<p><%= dgettext "copyright", "If you believe that someone has uploaded or posted content of yours on Listudy.org without your permission, please contact us at: copyright@listudy.org" %></p>
+
+<h2><%= dgettext "copyright", "Other" %></h2>
+<p><%= dgettext "copyright", "Listudy can change this policy at its discretion." %></p>

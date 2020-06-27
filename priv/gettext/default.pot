@@ -130,12 +130,12 @@ msgid "Log in to comment"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:169
+#: lib/listudy_web/controllers/study_controller.ex:167
 msgid "No PGN file uploaded"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:163
+#: lib/listudy_web/controllers/study_controller.ex:161
 msgid "Please log in"
 msgstr ""
 
@@ -244,7 +244,7 @@ msgid "Blog"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:74
+#: lib/listudy_web/templates/study/show.html.eex:95
 msgid "Chapter"
 msgstr ""
 
@@ -264,12 +264,12 @@ msgid "Contribute"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:200
+#: lib/listudy_web/controllers/study_controller.ex:190
 msgid "Could not favorite this study"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:213
+#: lib/listudy_web/controllers/study_controller.ex:203
 msgid "Could not unfavorite this study"
 msgstr ""
 
@@ -314,7 +314,7 @@ msgid "Free & Open Source"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_footer.html.eex:7
+#: lib/listudy_web/templates/layout/_footer.html.eex:8
 #: lib/listudy_web/templates/page/imprint.html.eex:1
 msgid "Imprint"
 msgstr ""
@@ -330,7 +330,7 @@ msgid "Latest blog posts"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:176
+#: lib/listudy_web/controllers/study_controller.ex:174
 msgid "PGN is too big, only 50kb allowed"
 msgstr ""
 
@@ -387,7 +387,7 @@ msgid "Register to get access to all features."
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:71
+#: lib/listudy_web/templates/study/show.html.eex:92
 msgid "Right move!"
 msgstr ""
 
@@ -397,7 +397,7 @@ msgid "Run the server yourself as you wish, for any purpose"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:66
+#: lib/listudy_web/templates/study/show.html.eex:87
 msgid "Starting training."
 msgstr ""
 
@@ -407,7 +407,7 @@ msgid "Study Openings"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:199
+#: lib/listudy_web/controllers/study_controller.ex:189
 msgid "Study favorited"
 msgstr ""
 
@@ -417,7 +417,7 @@ msgid "Study how the software works, and change it so it does your computing as 
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:212
+#: lib/listudy_web/controllers/study_controller.ex:202
 msgid "Study unfavorited"
 msgstr ""
 
@@ -444,7 +444,7 @@ msgid "The support can look different. Report bugs if you find any, fix bugs if 
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:68
+#: lib/listudy_web/templates/study/show.html.eex:89
 msgid "This move is not in the study, try again."
 msgstr ""
 
@@ -460,7 +460,7 @@ msgid "This post does not exist"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:69
+#: lib/listudy_web/templates/study/show.html.eex:90
 msgid "This study does not contain enough moves."
 msgstr ""
 
@@ -505,7 +505,7 @@ msgid "You can help make Listudy better."
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:72
+#: lib/listudy_web/templates/study/show.html.eex:93
 msgid "You reached the end of this line."
 msgstr ""
 
@@ -527,4 +527,20 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/layout/_head.html.eex:20
 msgid "Share on"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/layout/_footer.html.eex:7
+#: lib/listudy_web/templates/page/copyright.html.eex:1
+msgid "Copyright"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/new.html.eex:9
+msgid "For more information read the Copyright Policy"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/new.html.eex:8
+msgid "Please remember to only upload PGNs for which you have the rights to publish them. This is especially true, but not limited, for PGN files that you have acquired from paid platforms."
 msgstr ""

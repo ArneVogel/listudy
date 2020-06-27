@@ -1,0 +1,67 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: de\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:12
+msgid "Copyright holders"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:2
+msgid "English version of the Copyright Policy"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:13
+msgid "If you believe that someone has uploaded or posted content of yours on Listudy.org without your permission, please contact us at: copyright@listudy.org"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:6
+msgid "Introduction"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:4
+msgid "Last edited:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:16
+msgid "Listudy can change this policy at its discretion."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:7
+msgid "Listudy respects and recognizes the copyright of third parties. You are only allowed to publish public content on Listudy, for which you have all necessary rights."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:15
+msgid "Other"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:9
+msgid "PGN files"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:2
+msgid "Translated copyright policies shall only serve as an informal source of information. Please read the english version for the official version applicable to the site."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:10
+msgid "You are only allowed to make public studies using PGN files, for which you have all necessary rights to. Do not copy PGN files from other websites for which you do not have the rights. This applies especially, but is not limited to, paid PGN files."
+msgstr ""

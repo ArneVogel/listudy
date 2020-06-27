@@ -131,12 +131,12 @@ msgid "Log in to comment"
 msgstr "Melden Sie sich an um ein Kommentar zu schreiben"
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:169
+#: lib/listudy_web/controllers/study_controller.ex:167
 msgid "No PGN file uploaded"
 msgstr "Keine PGN ausgewählt"
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:163
+#: lib/listudy_web/controllers/study_controller.ex:161
 msgid "Please log in"
 msgstr "Bitte melden Sie sich an"
 
@@ -245,7 +245,7 @@ msgid "Blog"
 msgstr "Blog"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:74
+#: lib/listudy_web/templates/study/show.html.eex:95
 msgid "Chapter"
 msgstr "Kapitel"
 
@@ -265,12 +265,12 @@ msgid "Contribute"
 msgstr "Beisteuern"
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:200
+#: lib/listudy_web/controllers/study_controller.ex:190
 msgid "Could not favorite this study"
 msgstr "Konnte diese Studie nicht favorisieren"
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:213
+#: lib/listudy_web/controllers/study_controller.ex:203
 msgid "Could not unfavorite this study"
 msgstr "Konnte diese Studie nicht unfavorisieren"
 
@@ -315,7 +315,7 @@ msgid "Free & Open Source"
 msgstr "Frei & Open Source"
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_footer.html.eex:7
+#: lib/listudy_web/templates/layout/_footer.html.eex:8
 #: lib/listudy_web/templates/page/imprint.html.eex:1
 msgid "Imprint"
 msgstr "Impressum"
@@ -331,7 +331,7 @@ msgid "Latest blog posts"
 msgstr "Neueste Blog-Einträge"
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:176
+#: lib/listudy_web/controllers/study_controller.ex:174
 msgid "PGN is too big, only 50kb allowed"
 msgstr "PGN ist zu groß, nur 50kb sind erlaubt"
 
@@ -388,7 +388,7 @@ msgid "Register to get access to all features."
 msgstr "Registrieren Sie sich, um Zugang zu allen Funktionen zu erhalten."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:71
+#: lib/listudy_web/templates/study/show.html.eex:92
 msgid "Right move!"
 msgstr "Richtiger Zug!"
 
@@ -398,7 +398,7 @@ msgid "Run the server yourself as you wish, for any purpose"
 msgstr "Sie können den Server selbst nach Belieben und für jeden Zweck betreiben"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:66
+#: lib/listudy_web/templates/study/show.html.eex:87
 msgid "Starting training."
 msgstr "Start des Trainings."
 
@@ -408,7 +408,7 @@ msgid "Study Openings"
 msgstr "Studiere Eröffnungen"
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:199
+#: lib/listudy_web/controllers/study_controller.ex:189
 msgid "Study favorited"
 msgstr "Studie favorisiert"
 
@@ -418,7 +418,7 @@ msgid "Study how the software works, and change it so it does your computing as 
 msgstr "Studieren Sie, wie die Software funktioniert, und ändern Sie sie so, dass sie Ihre Aufgaben so erfüllt, wie Sie es wünschen."
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:212
+#: lib/listudy_web/controllers/study_controller.ex:202
 msgid "Study unfavorited"
 msgstr "Studie unfavorisiert"
 
@@ -444,7 +444,7 @@ msgid "The support can look different. Report bugs if you find any, fix bugs if 
 msgstr "Die Unterstützung kann unterschiedlich aussehen. Melde Fehler, wenn du welche findest, fixen Fehler, wenn du kannst, hilf bei der Übersetzung von Listudy in andere Sprachen."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:68
+#: lib/listudy_web/templates/study/show.html.eex:89
 msgid "This move is not in the study, try again."
 msgstr "Dieser Zug ist nicht in der Studie, versuchen Sie es noch einmal."
 
@@ -460,7 +460,7 @@ msgid "This post does not exist"
 msgstr "Dieser Beitrag existiert nicht"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:69
+#: lib/listudy_web/templates/study/show.html.eex:90
 msgid "This study does not contain enough moves."
 msgstr "Diese Studie enthält nicht genügend Züge."
 
@@ -505,7 +505,7 @@ msgid "You can help make Listudy better."
 msgstr "Sie können helfen, Listudy besser zu machen."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:72
+#: lib/listudy_web/templates/study/show.html.eex:93
 msgid "You reached the end of this line."
 msgstr "Du hast das Ende dieser Linie erreicht."
 
@@ -528,3 +528,19 @@ msgstr "neueste Eröffnungen"
 #: lib/listudy_web/templates/layout/_head.html.eex:20
 msgid "Share on"
 msgstr "Teile auf"
+
+#, elixir-format
+#: lib/listudy_web/templates/layout/_footer.html.eex:7
+#: lib/listudy_web/templates/page/copyright.html.eex:1
+msgid "Copyright"
+msgstr "Urheberrecht"
+
+#, elixir-format
+#: lib/listudy_web/templates/study/new.html.eex:9
+msgid "For more information read the Copyright Policy"
+msgstr "Für weitere Informationen lesen Sie die Urheberrechtsrichtlinie"
+
+#, elixir-format
+#: lib/listudy_web/templates/study/new.html.eex:8
+msgid "Please remember to only upload PGNs for which you have the rights to publish them. This is especially true, but not limited, for PGN files that you have acquired from paid platforms."
+msgstr "Bitte denk daran, nur PGNs hochzuladen, für die du die Rechte zur Veröffentlichung hast. Dies gilt insbesondere, aber nicht nur, für PGN-Dateien, die du von kostenpflichtigen Plattformen erhalten hast."

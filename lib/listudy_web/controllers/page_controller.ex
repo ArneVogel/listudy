@@ -22,7 +22,7 @@ defmodule ListudyWeb.PageController do
   end
 
   def show(conn, %{"page" => page}) do
-    case Enum.member?(["privacy", "terms-of-service", "imprint"], page) do
+    case Enum.member?(["privacy", "terms-of-service", "imprint", "copyright"], page) do
       true ->
         render(conn, page <> ".html")
       false ->
