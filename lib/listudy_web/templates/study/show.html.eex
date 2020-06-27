@@ -64,10 +64,15 @@
     pgn = pgn.replace(/½/g, '1/2');
     pgn = pgn.replace(/&gt;/g, '>');
     pgn = pgn.replace(/&quot;/g, '"');
-    pgn = pgn.replace(/\)/g, ') ');
-    pgn = pgn.replace(/\(/g, '( ');
+    pgn = pgn.replace(/\)/g, ' ) ');
+    pgn = pgn.replace(/\(/g, ' ( ');
+    pgn = pgn.replace(/\{/g, ' { ');
+    pgn = pgn.replace(/\}/g, ' } ');
     pgn = pgn.replace(/0-0-0/g, 'O-O-O');
     pgn = pgn.replace(/0-0/g, 'O-O');
+    while (pgn.indexOf("  ") != -1) {
+      pgn = pgn.replace(/  /g, ' ');
+    }
     return pgn;
   }
   var pgn = clean_pgn(`<%= javascript_escape @study.pgn %>`);
