@@ -18,6 +18,8 @@
         <li><%= link post.title, to: Routes.post_path(@conn, :show, @conn.assigns.locale, post) %></li>
     <% end %>
     </ul>
+
+    <span><%= link (gettext "All blog posts"), to: Routes.post_path(@conn, :index, @conn.assigns.locale) %></span>
   </div>
   </div>
 
