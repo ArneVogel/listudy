@@ -49,6 +49,7 @@ function ground_undo_last_move() {
     }
     let lm = ground.state.lastMove;
     ground.move(lm[1], lm[0]);
+    ground.set({"fen": chess.fen()});
 }
 
 export { ground_init_state, resize_ground, setup_ground, ground_set_moves, ground_undo_last_move };

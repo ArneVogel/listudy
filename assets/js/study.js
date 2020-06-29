@@ -64,7 +64,10 @@ async function handle_move(orig, dest) {
         // wrong move at the current position
         update_value(curr_move, 0); //retrain all the possible replies 
         combo_count = 0; //reset the combo
-        ground_undo_last_move();
+        // it is important that chess is set to the right position before
+        // calling ground_undo_last_move(); since it used chess.fen() to 
+        // reset the position to the previous position
+        ground_undo_last_move(); 
         set_text(error, error_wrong_move);
     }
     store_trees(); 
