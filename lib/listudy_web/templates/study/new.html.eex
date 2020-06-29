@@ -1,4 +1,4 @@
-<h1><%= gettext "New Study"%></h1>
+<h1><%= gettext "Create a new Study"%></h1>
 
 <div class="row">
   <div class="two-thirds column">
