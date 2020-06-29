@@ -94,13 +94,13 @@ function display_comments(access) {
     let comment = "";
     let to_hint = tree_children_filter_sort(access, {filter: need_hint});
     for (let m of to_hint) {
-        if (m.comments != undefined && m.comments[0] != undefined) {
+        if (m.comments != undefined && m.comments[0] != undefined && m.comments[0].text != undefined) {
             comment += m.comments[0].text + "\n";
         }
     }
 
     // give comment on the current move if there are move to give hint to
-    if (to_hint.length > 0 && cm.comments != undefined && cm.comments[0] != undefined) {
+    if (to_hint.length > 0 && cm.comments != undefined && cm.comments[0] != undefined && cm.comments[0].text != undefined) {
         comment += cm.comments[0].text;
     }
 
