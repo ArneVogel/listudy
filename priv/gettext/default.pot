@@ -110,7 +110,7 @@ msgid "Error"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/study/form.html.eex:19
+#: lib/listudy_web/templates/study/form.html.eex:31
 msgid "For which side is this study"
 msgstr ""
 
@@ -120,7 +120,7 @@ msgid "In this study I work on my 1.e4 openings..."
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/study/form.html.eex:22
+#: lib/listudy_web/templates/study/form.html.eex:34
 msgid "Keep this study private"
 msgstr ""
 
@@ -130,12 +130,12 @@ msgid "Log in to comment"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:167
+#: lib/listudy_web/controllers/study_controller.ex:175
 msgid "No PGN file uploaded"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:161
+#: lib/listudy_web/controllers/study_controller.ex:162
 msgid "Please log in"
 msgstr ""
 
@@ -145,7 +145,7 @@ msgid "Save"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/study/form.html.eex:16
+#: lib/listudy_web/templates/study/form.html.eex:19
 msgid "Select a PGN to upload"
 msgstr ""
 
@@ -165,11 +165,6 @@ msgid "Comments"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/views/helpers/page_title.ex:12
-msgid "Homepage"
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/views/helpers/page_description.ex:10
 msgid "Improve your chess game on Listudy"
 msgstr ""
@@ -182,7 +177,6 @@ msgstr ""
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:5
-#: lib/listudy_web/templates/study/new.html.eex:1
 msgid "New Study"
 msgstr ""
 
@@ -239,6 +233,7 @@ msgid "Better train openings, endgames and tactics with the help of systematic r
 msgstr ""
 
 #, elixir-format
+#: lib/listudy_web/templates/layout/_footer.html.eex:12
 #: lib/listudy_web/templates/post/index.html.eex:1
 msgid "Blog"
 msgstr ""
@@ -259,22 +254,23 @@ msgid "Comment deleted successfully."
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:26
+#: lib/listudy_web/templates/page/index.html.eex:28
 msgid "Contribute"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:190
+#: lib/listudy_web/controllers/study_controller.ex:216
 msgid "Could not favorite this study"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:203
+#: lib/listudy_web/controllers/study_controller.ex:229
 msgid "Could not unfavorite this study"
 msgstr ""
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:16
+#: lib/listudy_web/templates/study/new.html.eex:1
 msgid "Create a new Study"
 msgstr ""
 
@@ -284,7 +280,7 @@ msgid "Created by:"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:38
+#: lib/listudy_web/templates/page/index.html.eex:40
 msgid "Distribute copies of your modified versions"
 msgstr ""
 
@@ -309,7 +305,7 @@ msgid "Favorite this study"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:32
+#: lib/listudy_web/templates/page/index.html.eex:34
 msgid "Free & Open Source"
 msgstr ""
 
@@ -330,7 +326,7 @@ msgid "Latest blog posts"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:174
+#: lib/listudy_web/controllers/study_controller.ex:182
 msgid "PGN is too big, only 50kb allowed"
 msgstr ""
 
@@ -377,7 +373,7 @@ msgid "Public studies by %{name}"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:37
+#: lib/listudy_web/templates/page/index.html.eex:39
 msgid "Redistribute the software"
 msgstr ""
 
@@ -392,7 +388,7 @@ msgid "Right move!"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:35
+#: lib/listudy_web/templates/page/index.html.eex:37
 msgid "Run the server yourself as you wish, for any purpose"
 msgstr ""
 
@@ -407,17 +403,17 @@ msgid "Study Openings"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:189
+#: lib/listudy_web/controllers/study_controller.ex:215
 msgid "Study favorited"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:36
+#: lib/listudy_web/templates/page/index.html.eex:38
 msgid "Study how the software works, and change it so it does your computing as you wish"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:202
+#: lib/listudy_web/controllers/study_controller.ex:228
 msgid "Study unfavorited"
 msgstr ""
 
@@ -439,7 +435,7 @@ msgid "The provider of this website is Arne Vogel."
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:28
+#: lib/listudy_web/templates/page/index.html.eex:30
 msgid "The support can look different. Report bugs if you find any, fix bugs if you can, help translate Listudy into other languages."
 msgstr ""
 
@@ -480,7 +476,7 @@ msgid "Username"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:29
+#: lib/listudy_web/templates/page/index.html.eex:31
 msgid "Visit github to find out more about how you can help:"
 msgstr ""
 
@@ -495,12 +491,12 @@ msgid "You are welcome to use a pseudonym."
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:40
+#: lib/listudy_web/templates/page/index.html.eex:42
 msgid "You can find the source code running Listudy on github:"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:27
+#: lib/listudy_web/templates/page/index.html.eex:29
 msgid "You can help make Listudy better."
 msgstr ""
 
@@ -515,7 +511,7 @@ msgid "You're not allowed to do that."
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:33
+#: lib/listudy_web/templates/page/index.html.eex:35
 msgid "Your freedoms are important. That's why you have the rights to:"
 msgstr ""
 
@@ -543,4 +539,34 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/study/new.html.eex:8
 msgid "Please remember to only upload PGNs for which you have the rights to publish them. This is especially true, but not limited, for PGN files that you have acquired from paid platforms."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/index.html.eex:22
+msgid "All blog posts"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/study_controller.ex:199
+msgid "Could not download the study from lichess, please check the link"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/form.html.eex:16
+msgid "Either upload a PGN file or provide a link to a public Lichess study:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:12
+msgid "Improve you chess game with spaced repetition"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/form.html.eex:24
+msgid "Lichess Study"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/study_controller.ex:202
+msgid "The provided link is not a Lichess study"
 msgstr ""
