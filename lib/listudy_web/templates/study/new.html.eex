@@ -1,10 +1,10 @@
 <h1><%= gettext "New Study"%></h1>
 
 <div class="row">
-  <div class="one-half column">
+  <div class="two-thirds column">
     <%= render "form.html", Map.put(assigns, :action, Routes.study_path(@conn, :create, @locale)) %>
   </div>
-  <div class="one-half column">
+  <div class="one-third column">
     <p><%= gettext "Please remember to only upload PGNs for which you have the rights to publish them. This is especially true, but not limited, for PGN files that you have acquired from paid platforms."%></p>
 <%= link (gettext "For more information read the Copyright Policy"), to: Routes.page_path(@conn, :show, "en", "copyright") %>
   </div>

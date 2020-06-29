@@ -77,6 +77,10 @@
     display: table;
 }
 
+.big_input {
+    width: 100%;
+}
+
 textarea:invalid {
   border: 2px dashed red;
 }

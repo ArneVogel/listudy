@@ -49,7 +49,8 @@ defmodule Listudy.MixProject do
       {:phoenix_live_view, "~> 0.12"},
       {:floki, ">= 0.0.0", only: :test},
       {:navigation_history, "~> 0.3"},
-      {:earmark, ">= 1.4.5"}
+      {:earmark, ">= 1.4.5"},
+      {:httpoison, "~> 1.6"}
     ]
   end
 

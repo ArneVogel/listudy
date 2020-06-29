@@ -6,15 +6,27 @@
   <% end %>
 
   <%= label f, :title, gettext "Title" %>
-  <%= text_input f, :title %>
+  <%= text_input f, :title, class: "big_input" %>
   <%= error_tag f, :title %>
 
   <%= label f, :description, gettext "Description" %>
   <%= textarea f, :description, minlength: 20, maxlength: 1000, placeholder: (gettext "In this study I work on my 1.e4 openings...")%>
   <%= error_tag f, :description %>
 
-  <%= label f, :pgn, gettext "Select a PGN to upload" %>
-  <%= file_input f, :pgn %>
+  <p><%= gettext "Either upload a PGN file or provide a link to a public Lichess study:"%></p>
+  <div class="row">
+    <div class="one-half column">
+      <%= label f, :pgn, gettext "Select a PGN to upload" %>
+      <%= file_input f, :pgn %>
+    </div>
+
+    <div class="one-half column">
+      <%= label f, :lichess_study, gettext "Lichess Study" %>
+      <%= text_input f, :lichess_study, placeholder: "https://lichess.org/study/ZWHbJIPd", class: "big_input" %>
+      <%= error_tag f, :lichess_study %>
+    </div>
+  </div>
+
 
   <%= label f, :color, gettext "For which side is this study" %>
   <%= select(f, :color, ["White": "white", "Black": "black"]) %>

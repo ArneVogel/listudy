@@ -49,7 +49,7 @@ defmodule ListudyWeb.StudyController do
       
       # keep the uploaded file
       file = id <> ".pgn"
-      File.cp(pgn.path, get_path(file))
+      save_pgn(pgn, file)
 
       case Studies.create_study(study_params) do
         {:ok, study} ->
@@ -113,7 +113,8 @@ defmodule ListudyWeb.StudyController do
       case Studies.update_study(study, study_params) do
         {:ok, study} ->
           case check_pgn(study_params) do
-            {:ok, pgn} -> File.cp(pgn.path, get_path(file))
+            {:ok, pgn} -> 
+              save_pgn(pgn, get_path(file))
             _ -> false
           end
           conn
@@ -162,19 +163,44 @@ defmodule ListudyWeb.StudyController do
     end
   end
 
+  # Checks if the study_params have a valid pgn
+  # Either a pgn was uploaded ->
+  #   check the size 
+  # Or a lichess study was provided ->
+  #   download the pgn from lichess and create a file
+  # Returns the file path on success
   defp check_pgn(study_params) do
-    if study_params["pgn"] == nil do
-      {:error, gettext "No PGN file uploaded"}
-    else
-      file = study_params["pgn"].path
-      case File.stat file do
-        {:ok, %{size: size}} -> if size < 50000 do
-            {:ok, study_params["pgn"]}
-          else
-            {:error, gettext "PGN is too big, only 50kb allowed"}
+    cond do
+      study_params["pgn"] == nil and study_params["lichess_study"] == nil ->
+        {:error, gettext "No PGN file uploaded"}
+      study_params["pgn"] != nil ->
+        file = study_params["pgn"].path
+        case File.stat file do
+          {:ok, %{size: size}} -> if size < 50000 do
+              {:ok, file}
+            else
+              {:error, gettext "PGN is too big, only 50kb allowed"}
+            end
+          {:error, _} -> "Error"
           end
-        {:error, _} -> "Error"
-        end
+      study_params["lichess_study"] != nil ->
+        case String.starts_with?(study_params["lichess_study"], "https://lichess.org/study/") do
+          true ->
+            url = study_params["lichess_study"] <> ".pgn"
+            case HTTPoison.get(url) do
+              {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+                dir = "/tmp/listudy/"
+                File.mkdir(dir)
+                id = dir <> Listudy.Slug.random_alnum <> ".pgn"
+                {:ok, file} = File.open(id, [:write])
+                IO.binwrite(file, body)
+                {:ok, id}
+              _ ->
+              {:error, gettext "Could not download the study from lichess, please check the link"}
+            end
+          _ ->
+            {:error, gettext "The provided link is not a Lichess study"}
+          end
     end
   end
 
@@ -206,6 +232,13 @@ defmodule ListudyWeb.StudyController do
     conn
     |> put_flash(:info, message)
     |> redirect(to: NavigationHistory.last_path(conn))
+  end
+
+  # pgn is the path to the pgn file
+  # target_file is the name the file should be saved as
+  defp save_pgn(pgn, file_name) do
+    File.cp(pgn, get_path(file_name))
+    File.rm(pgn)
   end
 
 end
