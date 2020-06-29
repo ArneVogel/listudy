@@ -9,6 +9,7 @@
     </div>
 
     <div class="one-third column">
+      <%= link (gettext "Blog"), to: Routes.post_path(@conn, :index, @conn.assigns.locale) %>
       <p>Open Source & Free Software: <a href="https://github.com/ArneVogel/listudy" rel="nofollow">github</a></p>
     </div>
 
