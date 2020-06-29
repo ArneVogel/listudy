@@ -55,8 +55,6 @@ defmodule ListudyWeb.Seo do
 
   defp starts_with_language(path) do
     lang = String.slice(path, 1, 2)
-    IO.puts(lang)
-    IO.puts(lang in @languages)
     lang in @languages
   end
   
