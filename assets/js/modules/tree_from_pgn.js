@@ -58,6 +58,9 @@ function generate_move_trees(parsedPGN) {
     console.log("parsedPGN:", parsedPGN);
     let trees = []
     for (let game of parsedPGN) {
+        if (game.moves.length == 0) {
+            continue;
+        }
         let tree = new Tree(0);
         tree.root = generateNodes(game.moves);
         tree.headers = {};
