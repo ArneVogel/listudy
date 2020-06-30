@@ -36,7 +36,7 @@ defmodule ListudyWeb.Router do
 
     get "/blog", PostController, :index_all
     get "/blog/:id/edit", PostController, :edit
-    get "/blog/:id/new", PostController, :new
+    get "/blog/new", PostController, :new
     post "/blog", PostController, :create
     put "/blog/:id", PostController, :update
     delete "/blog/:id", PostController, :delete

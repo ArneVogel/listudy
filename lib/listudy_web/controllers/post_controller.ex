@@ -26,7 +26,7 @@ defmodule ListudyWeb.PostController do
       {:ok, post} ->
         conn
         |> put_flash(:info, "Post created successfully.")
-        |> redirect(to: Routes.post_path(conn, :show, post, conn.assigns.locale))
+        |> redirect(to: Routes.post_path(conn, :show, conn.assigns.locale, post))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -59,7 +59,7 @@ defmodule ListudyWeb.PostController do
       {:ok, post} ->
         conn
         |> put_flash(:info, "Post updated successfully.")
-        |> redirect(to: Routes.post_path(conn, :show, post.slug, conn.assigns.locale))
+        |> redirect(to: Routes.post_path(conn, :edit, post.slug))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", post: post, changeset: changeset)
@@ -72,6 +72,6 @@ defmodule ListudyWeb.PostController do
 
     conn
     |> put_flash(:info, "Post deleted successfully.")
-    |> redirect(to: Routes.post_path(conn, :index_all, conn.assigns.locale))
+    |> redirect(to: Routes.post_path(conn, :index_all))
   end
 end

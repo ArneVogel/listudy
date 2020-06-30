@@ -29,4 +29,4 @@
   </tbody>
 </table>
 
-<span><%= link "New Post", to: Routes.post_path(@conn, :new, @conn.assigns.locale) %></span>
+<span><%= link "New Post", to: Routes.post_path(@conn, :new) %></span>
