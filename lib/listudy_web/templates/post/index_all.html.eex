@@ -5,7 +5,7 @@
     <tr>
       <th>Title</th>
       <th>Slug</th>
-      <th>Body</th>
+      <th>Word Count</th>
       <th>Published</th>
 
       <th></th>
@@ -16,7 +16,7 @@
     <tr>
       <td><%= post.title %></td>
       <td><%= post.slug %></td>
-      <td><%= post.body %></td>
+      <td><%= length(String.split(post.body, " ")) %></td>
       <td><%= post.published %></td>
 
       <td>

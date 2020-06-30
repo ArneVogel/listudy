@@ -80,6 +80,10 @@
 .big_input {
     width: 100%;
 }
+.deep_input {
+    height: 30em;
+}
+
 
 textarea:invalid {
   border: 2px dashed red;
