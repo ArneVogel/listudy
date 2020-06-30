@@ -3,7 +3,9 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
+      <th><%= gettext "Title"%></th>
+      <th><%= gettext "Created at"%></th>
+      <th><%= gettext "Last updated"%></th>
       <th></th>
     </tr>
   </thead>
@@ -11,6 +13,8 @@
 <%= for post <- @posts do %>
     <tr>
       <td><%= post.title %></td>
+      <td><%= date(post.inserted_at) %></td>
+      <td><%= date(post.updated_at) %></td>
       <td>
         <span><%= link "Show", to: Routes.post_path(@conn, :show, @conn.assigns.locale, post) %></span>
       </td>
