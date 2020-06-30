@@ -1,4 +1,11 @@
 <h1><%= @post.title %></h1>
+<p>
+<%= gettext "Created at"%>: <%= date(@post.inserted_at) %>
+<%= if date(@post.inserted_at) != date(@post.updated_at) do %>
+; <%= gettext "Last updated"%>: <%= date(@post.inserted_at) %>
+<%= end %>
+</p>
+
 
 <%= raw Earmark.as_html!(@post.body)%>
 
