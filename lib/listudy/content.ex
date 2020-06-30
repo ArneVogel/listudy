@@ -21,11 +21,6 @@ defmodule Listudy.Content do
     Repo.all(Post)
   end
 
-  def list_published_posts do
-    query = from(Post, where: [published: true])
-    Repo.all(query) 
-  end
-
   def list_published_posts(n) do
     query = from c in Post, 
       where: c.published == true,

@@ -5,7 +5,7 @@ defmodule ListudyWeb.PostController do
   alias Listudy.Content.Post
 
   def index(conn, _params) do
-    posts = Content.list_published_posts()
+    posts = Content.list_published_posts(100)
     render(conn, "index.html", posts: posts)
   end
 
