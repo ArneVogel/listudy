@@ -2,7 +2,7 @@
 <p>
 <%= gettext "Created at"%>: <%= date(@post.inserted_at) %>
 <%= if date(@post.inserted_at) != date(@post.updated_at) do %>
-; <%= gettext "Last updated"%>: <%= date(@post.inserted_at) %>
+; <%= gettext "Last updated"%>: <%= date(@post.updated_at) %>
 <%= end %>
 </p>
 
