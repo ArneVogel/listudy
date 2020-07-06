@@ -218,7 +218,7 @@ function setup_chapter_select() {
     for (let i = 0; i < trees.length; ++i) {
         let option = document.createElement("option");
         option.value = i;
-        let name = translation_chapter + " " + (i+1);
+        let name = trees[i].headers.Event || translation_chapter + " " + (i+1);
         option.innerText = name;
         if (i == selected) {
             option.selected = true;
