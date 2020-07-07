@@ -1,6 +1,7 @@
 import {Node, Tree} from './tree.js';
 
 function createNode(move) {
+    move.move = move.move.replace(/[^a-zA-Z0-9-]/g, "");
     let node = new Node(move.move);
     node.comments = move.comments;
     node.updated = Date.now();
