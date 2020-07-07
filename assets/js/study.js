@@ -166,7 +166,7 @@ function setup_trees() {
 
     let last_hash = localStorage.getItem(hash_key);
     let curr_hash = string_hash(pgn + color);
-    curr_hash += 1; // increase when trees have to be redone; for example when bugs in free_from_pgn are fixed
+    curr_hash += 2; // increase when trees have to be redone; for example when bugs in free_from_pgn are fixed
     let trees = {};
 
     if (last_hash == undefined || curr_hash != last_hash) {
