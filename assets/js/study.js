@@ -2,7 +2,7 @@ require("regenerator-runtime/runtime"); // required for sleep (https://github.co
 
 const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
-import { setup_chess, from_to_to_san, san_to_from_to } from './modules/chess_utils.js';
+import { turn_color, setup_chess, from_to_to_san, san_to_from_to } from './modules/chess_utils.js';
 import { string_hash } from './modules/hash.js';
 import { tree_move_index, tree_children, tree_possible_moves, has_children, 
          need_hint, update_value, date_sort, tree_get_node, tree_children_filter_sort } from './modules/tree_utils.js';
@@ -142,9 +142,14 @@ function play_move(san) {
 
 function start_training() {
     window.curr_move = [chapter];
-    setup_chess();
-    ground_init_state();
-    if (color == "black") {
+    // this fen is the normal chess starting position
+    let fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+    if ("headers" in trees[chapter]) {
+        fen = trees[chapter].headers.FEN || fen;
+    } 
+    setup_chess(fen);
+    ground_init_state(fen);
+    if (color != turn_color(chess)) {
         play_move(ai_move(curr_move));
     }
     setup_move();

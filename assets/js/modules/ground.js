@@ -6,12 +6,12 @@ import { ground_legal_moves } from './chess_utils';
  * ground that contains the chessground
  */
 
-function ground_init_state() {
+function ground_init_state(fen) {
     const config = {};
     config["orientation"] = color;
     config["movable"] = { free: false, showDests: true };
     // fen for the initial position
-    config["fen"] = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+    config["fen"] = fen;
     config["lastMove"] = undefined;
     config["drawable"] = {brushes: {hint: {key: "v", color: "#0034FF", opacity: 1, lineWidth: 10 }}}
     ground.set(config);

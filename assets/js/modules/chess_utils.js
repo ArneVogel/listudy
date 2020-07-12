@@ -1,7 +1,7 @@
 const Chess = require('chess.js')
 
-function setup_chess() {
-    const chess = new Chess()
+function setup_chess(fen) {
+    const chess = new Chess(fen)
     window.chess = chess;
 }
 
@@ -52,6 +52,21 @@ function san_to_from_to(chess, san) {
     chess.undo();
     return {from: move.from, to: move.to};
 }
+
+/*
+ * Convert the color string to the one used in the db
+ */
+function turn_color(chess) {
+    let color = chess.turn();
+    if (color == "b") {
+        return "black";
+    } else if (color == "w") {
+        return "white"
+    }
+    // This should not happen!
+    console.log("Chess.js;turn_color; Color is neither b nor w.")
+    return "white";
+}
  
  
-export { san_to_from_to, from_to_to_san, setup_chess, ground_legal_moves };
+export { turn_color, san_to_from_to, from_to_to_san, setup_chess, ground_legal_moves };
