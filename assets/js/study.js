@@ -17,6 +17,7 @@ const mode_free = "free_mode";
 const success = "success";
 const error = "error";
 const info = "info";
+const suggestion_id = "suggestion";
 const comments = "comments";
 
 let combo_count = 0;
@@ -29,6 +30,7 @@ function clear_all_text() {
     set_text(error, "");
     set_text(info, "");
     set_text(success, "");
+    set_text(suggestion_id, "");
 }
 
 function combo_text() {
@@ -43,6 +45,8 @@ async function handle_move(orig, dest) {
     await sleep(300); // instant play by the ai feels weird
 
     clear_all_text();
+
+    total_moves += 1;
 
     let san = from_to_to_san(chess, orig, dest);
     
@@ -111,6 +115,7 @@ function display_comments(access) {
 
 function setup_move() {
     give_hints(curr_move);
+    show_suggestions();
     display_comments(curr_move);
     ground_set_moves(); // the legal moves of the position
 }
@@ -240,6 +245,28 @@ function setup_chapter_select() {
     };
 }
 
+/*
+ * Show suggestions based on the move number 
+ */
+function show_suggestions() {
+    let suggestions = [
+        {move: 15, show: true, text: suggestion_share, once: true, key: "share"},
+        {move: 30, show: logged_in, text: suggestion_favorite, once: true, key: "favorite"},
+        {move: 30, show: !logged_in, text: suggestion_account, once: false, key: "account"},
+        {move: 50, show: logged_in, text: suggestion_comment, once: true, key: "comment"},
+        {move: 100, show: true, text: suggestion_100moves, once: false, key: "100moves"},
+        {move: 250, show: true, text: suggestion_250moves, once: false, key: "250moves"}
+    ]
+
+    for (let suggestion of suggestions) {
+        let lsKey = study_id + "_suggestions_" + suggestion.key;
+        let alreadySuggested = localStorage.getItem(lsKey) || false;
+        if (total_moves == suggestion.move && suggestion.show && !(suggestion.once && alreadySuggested)) {
+            set_text(suggestion_id, suggestion.text);
+            localStorage.setItem(lsKey, true);
+        }
+    }
+}
 
 function main() {
     setup_ground();
@@ -247,6 +274,8 @@ function main() {
     setup_trees();
     setup_chapter_select();
     setup_move_handler();
+
+    window.total_moves = 0;
 
     resize_ground();
 
