@@ -54,10 +54,9 @@ defmodule Listudy.Studies do
   def get_studies_by_favorite!(user) do
     query = from s in Study,
       join: f in StudyFavorite,
-      on: f.user_id == s.id,
-      where: s.id == ^user,
+      on: f.study_id == s.id,
+      where: f.user_id == ^user,
       select: s
-      #select: %{ :description => s.description, :title => s.title, :slug => s.slug, :color => s.color, :private => s.private, :user_id => s.user_id }
     Repo.all(query)
   end
 
