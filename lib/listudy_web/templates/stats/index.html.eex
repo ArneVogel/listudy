@@ -4,13 +4,13 @@
   <div class="one-half column">
     <h1><%= gettext "Uploaded Studies" %></h1>
     <%= for [month,count]<- @studies do %>
-      <span><%= month(month) %> : <%= count %></span>
+      <p><%= month(month) %> : <%= count %></p>
     <% end %>
   </div>
   <div class="one-half column">
     <h1><%= gettext "User Registrations" %></h1>
     <%= for [month,count]<- @users do %>
-      <span><%= month(month) %> : <%= count %></span>
+      <p><%= month(month) %> : <%= count %></p>
     <% end %>
   </div>
 </div>
