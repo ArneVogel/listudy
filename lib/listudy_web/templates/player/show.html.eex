@@ -1,0 +1,28 @@
+<h1>Show Player</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @player.name %>
+  </li>
+
+  <li>
+    <strong>Slug:</strong>
+    <%= @player.slug %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @player.description %>
+  </li>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @player.title %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.player_path(@conn, :edit, @player) %></span>
+<span><%= link "Back", to: Routes.player_path(@conn, :index) %></span>

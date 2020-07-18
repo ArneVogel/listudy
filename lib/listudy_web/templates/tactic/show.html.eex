@@ -1,0 +1,43 @@
+<h1>Show Tactic</h1>
+
+<ul>
+
+  <li>
+    <strong>Fen:</strong>
+    <%= @tactic.fen %>
+  </li>
+
+  <li>
+    <strong>Moves:</strong>
+    <%= @tactic.moves %>
+  </li>
+
+  <li>
+    <strong>Color:</strong>
+    <%= @tactic.color %>
+  </li>
+
+  <li>
+    <strong>Link:</strong>
+    <%= @tactic.link %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @tactic.description %>
+  </li>
+
+  <li>
+    <strong>Rating:</strong>
+    <%= @tactic.rating %>
+  </li>
+
+  <li>
+    <strong>Played:</strong>
+    <%= @tactic.played %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.tactic_path(@conn, :edit, @tactic) %></span>
+<span><%= link "Back", to: Routes.tactic_path(@conn, :index) %></span>

@@ -41,6 +41,12 @@ defmodule ListudyWeb.Router do
     put "/blog/:id", PostController, :update
     delete "/blog/:id", PostController, :delete
     get "/", PageController, :index
+
+    resources "/motifs", MotifController
+    resources "/openings", OpeningController
+    resources "/players", PlayerController
+    resources "/events", EventController
+    resources "/tactics", TacticController
   end
 
   scope "/:locale", ListudyWeb do

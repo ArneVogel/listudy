@@ -1,0 +1,34 @@
+<h1>Listing Openings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Slug</th>
+      <th>Description</th>
+      <th>Eco</th>
+      <th>Moves</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for opening <- @openings do %>
+    <tr>
+      <td><%= opening.name %></td>
+      <td><%= opening.slug %></td>
+      <td><%= opening.description %></td>
+      <td><%= opening.eco %></td>
+      <td><%= opening.moves %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.opening_path(@conn, :show, opening) %></span>
+        <span><%= link "Edit", to: Routes.opening_path(@conn, :edit, opening) %></span>
+        <span><%= link "Delete", to: Routes.opening_path(@conn, :delete, opening), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Opening", to: Routes.opening_path(@conn, :new) %></span>

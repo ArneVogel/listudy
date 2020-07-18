@@ -1,0 +1,5 @@
+<h1>New Motif</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.motif_path(@conn, :create)) %>
+
+<span><%= link "Back", to: Routes.motif_path(@conn, :index) %></span>

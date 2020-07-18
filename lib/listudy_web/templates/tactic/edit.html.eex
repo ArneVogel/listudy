@@ -1,0 +1,5 @@
+<h1>Edit Tactic</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.tactic_path(@conn, :update, @tactic)) %>
+
+<span><%= link "Back", to: Routes.tactic_path(@conn, :index) %></span>

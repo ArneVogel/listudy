@@ -1,0 +1,38 @@
+<h1>Listing Tactics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fen</th>
+      <th>Moves</th>
+      <th>Color</th>
+      <th>Link</th>
+      <th>Description</th>
+      <th>Rating</th>
+      <th>Played</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for tactic <- @tactics do %>
+    <tr>
+      <td><%= tactic.fen %></td>
+      <td><%= tactic.moves %></td>
+      <td><%= tactic.color %></td>
+      <td><%= tactic.link %></td>
+      <td><%= tactic.description %></td>
+      <td><%= tactic.rating %></td>
+      <td><%= tactic.played %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.tactic_path(@conn, :show, tactic) %></span>
+        <span><%= link "Edit", to: Routes.tactic_path(@conn, :edit, tactic) %></span>
+        <span><%= link "Delete", to: Routes.tactic_path(@conn, :delete, tactic), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Tactic", to: Routes.tactic_path(@conn, :new) %></span>
