@@ -50,6 +50,7 @@ defmodule ListudyWeb.Router do
     resources "/studies", StudyController
     get "/blog", PostController, :index
     get "/blog/:id", PostController, :show
+    get "/stats", StatsController, :index
     get "/profile/:username", UserProfileController, :show
     get "/:page", PageController, :show
     get "/", PageController, :index

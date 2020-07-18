@@ -1,0 +1,16 @@
+<h1><%= gettext "Statistics" %></h1>
+<p><%= gettext "If you're like me, you can't get enough of stats. Here you can find statistics about Listudy:"%></p>
+<div class="row">
+  <div class="one-half column">
+    <h1><%= gettext "Uploaded Studies" %></h1>
+    <%= for [month,count]<- @studies do %>
+      <span><%= month(month) %> : <%= count %></span>
+    <% end %>
+  </div>
+  <div class="one-half column">
+    <h1><%= gettext "User Registrations" %></h1>
+    <%= for [month,count]<- @users do %>
+      <span><%= month(month) %> : <%= count %></span>
+    <% end %>
+  </div>
+</div>

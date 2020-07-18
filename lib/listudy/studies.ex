@@ -5,6 +5,7 @@ defmodule Listudy.Studies do
 
   import Ecto.Query, warn: false
   alias Listudy.Repo
+  alias Listudy.Helpers
 
   alias Listudy.Studies.Study
   alias Listudy.Users.User
@@ -136,4 +137,11 @@ defmodule Listudy.Studies do
   def change_study(%Study{} = study, attrs \\ %{}) do
     Study.changeset(study, attrs)
   end
+
+  def study_aggregate() do
+      Study
+      |> Helpers.count_by_month(:inserted_at)
+      |> Repo.all
+  end
+
 end
