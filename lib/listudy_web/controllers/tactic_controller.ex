@@ -2,6 +2,7 @@ defmodule ListudyWeb.TacticController do
   use ListudyWeb, :controller
 
   alias Listudy.Motifs
+  alias Listudy.Events
   alias Listudy.Openings
   alias Listudy.Tactics
   alias Listudy.Tactics.Tactic
@@ -15,7 +16,8 @@ defmodule ListudyWeb.TacticController do
     changeset = Tactics.change_tactic(%Tactic{})
     motifs = Motifs.list_motifs()
     openings = Openings.list_openings()
-    render(conn, "new.html", changeset: changeset, motifs: motifs, openings: openings)
+    events = Events.list_events()
+    render(conn, "new.html", changeset: changeset, motifs: motifs, openings: openings, events: events)
   end
 
   def create(conn, %{"tactic" => tactic_params}) do
@@ -34,15 +36,17 @@ defmodule ListudyWeb.TacticController do
     tactic = Tactics.get_tactic!(id)
     motifs = Motifs.list_motifs()
     openings = Openings.list_openings()
-    render(conn, "show.html", tactic: tactic, motifs: motifs, openings: openings)
+    events = Events.list_events()
+    render(conn, "show.html", tactic: tactic, motifs: motifs, openings: openings, events: events)
   end
 
   def edit(conn, %{"id" => id}) do
     tactic = Tactics.get_tactic!(id)
     motifs = Motifs.list_motifs()
     openings = Openings.list_openings()
+    events = Events.list_events()
     changeset = Tactics.change_tactic(tactic)
-    render(conn, "edit.html", tactic: tactic, changeset: changeset, motifs: motifs, openings: openings)
+    render(conn, "edit.html", tactic: tactic, changeset: changeset, motifs: motifs, openings: openings, events: events)
   end
 
   def update(conn, %{"id" => id, "tactic" => tactic_params}) do

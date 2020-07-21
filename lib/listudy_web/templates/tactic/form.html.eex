@@ -51,6 +51,15 @@
   <% end %>
   </select>
 
+  <label for="tactic[event]">Event</label>
+  <select name="tactic[event]" id="event">
+  <%= for event <- @events do %>
+    <option value="<%= event.id%>">
+      <%= event.name %>
+    </option>
+  <% end %>
+  </select>
+
 
   <div>
     <%= submit "Save" %>
