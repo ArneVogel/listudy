@@ -33,6 +33,16 @@
   <%= number_input f, :played %>
   <%= error_tag f, :played %>
 
+  <br>
+
+  <select name="tactic[motif]" id="motif">
+  <%= for motif <- @motifs do %>
+    <option value="<%= motif.id%>">
+      <%= motif.name %>
+    </option>
+  <% end %>
+  </select>
+
   <div>
     <%= submit "Save" %>
   </div>

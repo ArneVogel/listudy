@@ -37,6 +37,11 @@
     <%= @tactic.played %>
   </li>
 
+  <li>
+    <strong>Motif:</strong>
+    <%= @tactic.motif %>
+  </li>
+
 </ul>
 
 <span><%= link "Edit", to: Routes.tactic_path(@conn, :edit, @tactic) %></span>
