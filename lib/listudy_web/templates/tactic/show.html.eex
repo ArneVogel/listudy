@@ -41,6 +41,11 @@
     <strong>Motif:</strong>
     <%= @tactic.motif %>
   </li>
+  <li>
+    <strong>Opening:</strong>
+    <%= @tactic.opening %>
+  </li>
+
 
 </ul>
 

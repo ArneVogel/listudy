@@ -33,8 +33,7 @@
   <%= number_input f, :played %>
   <%= error_tag f, :played %>
 
-  <br>
-
+  <label for="tactic[motif]">Motif</label>
   <select name="tactic[motif]" id="motif">
   <%= for motif <- @motifs do %>
     <option value="<%= motif.id%>">
@@ -42,6 +41,16 @@
     </option>
   <% end %>
   </select>
+
+  <label for="tactic[opening]">Opening</label>
+  <select name="tactic[opening]" id="opening">
+  <%= for opening <- @openings do %>
+    <option value="<%= opening.id%>">
+      <%= opening.name %>
+    </option>
+  <% end %>
+  </select>
+
 
   <div>
     <%= submit "Save" %>
