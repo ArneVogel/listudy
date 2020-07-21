@@ -60,6 +60,23 @@
   <% end %>
   </select>
 
+  <label for="tactic[white]">White</label>
+  <select name="tactic[white]" id="event">
+  <%= for white <- @players do %>
+    <option value="<%= white.id%>">
+      <%= white.name %>
+    </option>
+  <% end %>
+  </select>
+
+  <label for="tactic[black]">Black</label>
+  <select name="tactic[black]" id="event">
+  <%= for black <- @players do %>
+    <option value="<%= black.id%>">
+      <%= black.name %>
+    </option>
+  <% end %>
+  </select>
 
   <div>
     <%= submit "Save" %>

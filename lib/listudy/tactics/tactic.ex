@@ -22,7 +22,7 @@ defmodule Listudy.Tactics.Tactic do
   @doc false
   def changeset(tactic, attrs) do
     tactic
-    |> cast(attrs, [:fen, :moves, :color, :link, :description, :rating, :played, :motif, :opening, :event])
-    |> validate_required([:fen, :moves, :color, :link, :description, :rating, :played, :motif, :opening, :event])
+    |> cast(attrs, [:fen, :moves, :color, :link, :description, :rating, :played, :motif, :opening, :event, :white, :black])
+    |> validate_required([:fen, :moves, :color, :link, :description, :rating, :played, :motif, :opening, :event, :white, :black])
   end
 end

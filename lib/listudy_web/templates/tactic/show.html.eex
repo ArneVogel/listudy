@@ -52,6 +52,15 @@
     <%= @tactic.event %>
   </li>
 
+  <li>
+    <strong>White:</strong>
+    <%= @tactic.white %>
+  </li>
+
+  <li>
+    <strong>Black:</strong>
+    <%= @tactic.black %>
+  </li>
 </ul>
 
 <span><%= link "Edit", to: Routes.tactic_path(@conn, :edit, @tactic) %></span>
