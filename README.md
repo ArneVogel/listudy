@@ -15,6 +15,8 @@ Listudy is developed in Elixir using the phoenix framework. It uses postgresql a
 To start the server:
 
   * Setup the project with `mix setup`
+  * Install npm dependencies with `npm install --prefix assets`
+  * Make study pgn directory with `mkdir priv/static/study_pgn`
   * Start Phoenix endpoint with `mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
