@@ -77,7 +77,7 @@ defmodule ListudyWeb.StudyController do
       {:error, _} -> -1
     end
 
-    if (study != nil or !study.private or study.user_id == user_id) do
+    if (study != nil and (!study.private or study.user_id == user_id)) do
       study = Map.put(study, :is_owner, study.user_id == user_id)
       # todo maybe reduce the number of extra querys
       study = Map.put(study, :favorites, StudyFavorites.user_favorites_study(user_id, study.id) )
@@ -89,8 +89,8 @@ defmodule ListudyWeb.StudyController do
       render(conn, "show.html", study: study)
     else
       conn
-      |> put_flash(:info, "This study is private.")
-      |> redirect(to: Routes.study_path(conn, :index, conn.private.plug_session["locale"]))
+      |> put_flash(:error, "This study is private.")
+      |> redirect(to: Routes.search_path(conn, ListudyWeb.StudySearchLive, conn.private.plug_session["locale"]))
     end
   end
 
