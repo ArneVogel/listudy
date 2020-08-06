@@ -10,6 +10,10 @@ defmodule ListudyWeb.PageDescription do
   defp get(_), do: gettext("Improve your chess game on Listudy")
 
   defp trim(s) do
-    String.slice(s, 0, 150)
+    if String.length(s) < 160 do
+      s
+    else
+      String.slice(s, 0, 160) <> "..."
+    end
   end
 end
