@@ -7,6 +7,8 @@ defmodule Listudy.Users.User do
     field :username, :string, null: false
     field :role, :string, null: false, default: "user"
     pow_user_fields()
+    field :last_visited, :utc_datetime
+
 
     timestamps()
   end

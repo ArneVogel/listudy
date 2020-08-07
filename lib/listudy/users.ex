@@ -14,8 +14,14 @@ defmodule Listudy.Users do
   def get_user!(id), do: Repo.get!(User, id)
 
   def user_aggregate() do
-      User
+    User
       |> Helpers.count_by_month(:inserted_at)
       |> Repo.all
+  end
+
+  def visited_now(id) do
+    get_user!(id)
+      |> Ecto.Changeset.change(%{last_visited: DateTime.truncate(DateTime.utc_now, :second)})
+      |> Repo.update()
   end
 end
