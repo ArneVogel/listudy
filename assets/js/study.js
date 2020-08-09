@@ -181,9 +181,17 @@ function setup_trees() {
 
     if (last_hash == undefined || curr_hash != last_hash) {
         const pgnParser = require('pgn-parser'); // slows down page load, so only require if actually needed
-        trees = generate_move_trees(pgnParser.parse(pgn));
-        localStorage.setItem(hash_key, curr_hash);
-        localStorage.setItem(tree_key, JSON.stringify(trees));
+        try {
+            trees = generate_move_trees(pgnParser.parse(pgn));
+            localStorage.setItem(hash_key, curr_hash);
+            localStorage.setItem(tree_key, JSON.stringify(trees));
+        } catch(caught_error) {
+            console.log(caught_error);
+            let error_text = caught_error.name + " at line: " + caught_error.location.start.line + 
+                             ", character: " + caught_error.location.start.column + "; Unexpected: \"" + 
+                             caught_error.found + "\"";
+            set_text(error, error_text)
+        }
     } else {
         trees = JSON.parse(localStorage.getItem(tree_key));
     }
