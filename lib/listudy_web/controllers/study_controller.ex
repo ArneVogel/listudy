@@ -103,8 +103,15 @@ defmodule ListudyWeb.StudyController do
 
   def edit(conn, %{"id" => id}) do
     study = Studies.get_study_by_slug!(id)
-    changeset = Studies.change_study(study)
-    render(conn, "edit.html", study: study, changeset: changeset)
+    {_, user} = get_user(conn)
+    if allowed(study,user) do
+      changeset = Studies.change_study(study)
+      render(conn, "edit.html", study: study, changeset: changeset)
+    else
+      conn
+      |> put_flash(:error, "This study is private.")
+      |> redirect(to: Routes.search_path(conn, ListudyWeb.StudySearchLive, conn.private.plug_session["locale"]))
+    end
   end
 
   def update(conn, %{"id" => id, "study" => study_params}) do
