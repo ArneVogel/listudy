@@ -42,7 +42,18 @@ defmodule Listudy.Studies do
   def get_study!(id), do: Repo.get!(Study, id)
 
   def get_study_by_slug!(slug), do: Repo.get_by(Study, slug: slug)
-  
+
+  @doc """
+  Gets a study by the slug id.
+  E.g. get study abcdef-this-is-an-awesome-study by abcdef
+  """
+  def get_study_by_slug_start(id) do
+    slug = id <> "%"
+    query = from s in Study,
+      where: like(s.slug, ^slug)   
+    Repo.one(query)
+  end
+
   def get_study_by_user!(user) do
     query = from(Study, where: [user_id: ^user])
     Repo.all(query) 

@@ -88,9 +88,15 @@ defmodule ListudyWeb.StudyController do
       study = Map.put(study, :pgn, pgn)
       render(conn, "show.html", study: study)
     else
-      conn
-      |> put_flash(:error, "This study is private.")
-      |> redirect(to: Routes.search_path(conn, ListudyWeb.StudySearchLive, conn.private.plug_session["locale"]))
+      redir_study = Studies.get_study_by_slug_start(id_from_slug(id))
+      if redir_study != nil and !redir_study.private do
+        conn
+        |> redirect(to: Routes.study_path(conn, :show, conn.private.plug_session["locale"], redir_study))
+      else 
+        conn
+        |> put_flash(:error, "This study is private.")
+        |> redirect(to: Routes.search_path(conn, ListudyWeb.StudySearchLive, conn.private.plug_session["locale"]))
+      end
     end
   end
 
@@ -150,6 +156,10 @@ defmodule ListudyWeb.StudyController do
 
   defp create_slug(id, title_slug) do
     id <> "-" <> title_slug
+  end
+
+  defp id_from_slug(slug) do
+    hd(String.split(slug, "-"))
   end
 
   defp allowed(study, user) do
