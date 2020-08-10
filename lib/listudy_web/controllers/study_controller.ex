@@ -13,7 +13,7 @@ defmodule ListudyWeb.StudyController do
 
   def index(conn, _params) do
     user = case get_user(conn) do
-      {:ok, user} -> user
+      {:ok, user} -> user.id
       {:error, _} -> -1
     end
 
@@ -35,9 +35,10 @@ defmodule ListudyWeb.StudyController do
   end
 
   def create(conn, %{"study" => study_params}) do
-    with {:ok, creator} <- get_user(conn),
+    with {:ok, user} <- get_user(conn),
          {:ok, pgn} <- check_pgn(study_params)
     do
+      creator = user.id
       # create a slug from the title
       id = Listudy.Slug.random_alnum
       title_slug = Listudy.Slug.slugify(study_params["title"])
@@ -73,7 +74,7 @@ defmodule ListudyWeb.StudyController do
     study = Studies.get_study_by_slug!(id)
     
     user_id = case get_user(conn) do
-      {:ok, user} -> user
+      {:ok, user} -> user.id
       {:error, _} -> -1
     end
 
@@ -163,12 +164,12 @@ defmodule ListudyWeb.StudyController do
   end
 
   defp allowed(study, user) do
-    study.user_id == user
+    study.user_id == user.id || user.role == "admin"
   end
 
   defp get_user(conn) do
     case Pow.Plug.current_user(conn) != nil do
-      true -> {:ok, Pow.Plug.current_user(conn).id}
+      true -> {:ok, Pow.Plug.current_user(conn)}
       _ -> {:error, gettext "Please log in"}
     end
   end
