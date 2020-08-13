@@ -12,5 +12,5 @@
     </div>
   <% end %>
 <% else %>
-  <p><%= gettext "Log in to comment"%></p>
+  <p><%= gettext "Log in to comment" %></p>
 <% end %>

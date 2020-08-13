@@ -8,13 +8,13 @@
 
 <p><%= dgettext "privacy", "This privacy policy will detail:" %></p>
 <ol>
-  <li><%= dgettext "privacy", "What information Listudy collects"%></li>
-  <li><%= dgettext "privacy", "Why this information is collected and how it's used"%></li>
-  <li><%= dgettext "privacy", "How cookies are used"%></li>
-  <li><%= dgettext "privacy", "Managing you information"%></li>
-  <li><%= dgettext "privacy", "Storage of the collected information"%></li>
-  <li><%= dgettext "privacy", "Colsing your account"%></li>
-  <li><%= dgettext "privacy", "Other"%></li>
+  <li><%= dgettext "privacy", "What information Listudy collects" %></li>
+  <li><%= dgettext "privacy", "Why this information is collected and how it's used" %></li>
+  <li><%= dgettext "privacy", "How cookies are used" %></li>
+  <li><%= dgettext "privacy", "Managing you information" %></li>
+  <li><%= dgettext "privacy", "Storage of the collected information" %></li>
+  <li><%= dgettext "privacy", "Colsing your account" %></li>
+  <li><%= dgettext "privacy", "Other" %></li>
 </ol>
 
 <h2><%= dgettext "privacy", "What information Listudy collects" %></h2>

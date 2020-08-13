@@ -1,10 +1,10 @@
 <% comments = ListudyWeb.CommentController.get_comments(@type, @id) %>
 <div>
-  <h2><%= gettext "Comments"%></h2>
+  <h2><%= gettext "Comments" %></h2>
   <%= for item <- comments do %>
     <div>
       <p><%= item["comment"] %></p>
-      <p><%= gettext "by"%>: <%= link item["username"], to: Routes.user_profile_path(@conn, :show, @conn.assigns.locale, item["username"]) %>
+      <p><%= gettext "by" %>: <%= link item["username"], to: Routes.user_profile_path(@conn, :show, @conn.assigns.locale, item["username"]) %>
 
       <%= if @conn.assigns.current_user && item["username"] == @conn.assigns.current_user.username do %>
         <%= link (gettext "Delete"), to: Routes.comment_path(@conn, :delete_comment, @type, item["id"]), method: :delete, data: [confirm: gettext "Are you sure?"]  %>

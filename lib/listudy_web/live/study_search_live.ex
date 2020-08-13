@@ -8,7 +8,7 @@ defmodule ListudyWeb.StudySearchLive do
     ~L"""
     <h1><%= gettext "Search for studies" %></h1>
     <form phx-change="suggest" phx-submit="search">
-      <input class="big_search" type="text" name="q" value="<%= @query %>" list="matches" placeholder="<%= gettext "Search"%>..." autocomplete="off"/>
+      <input class="big_search" type="text" name="q" value="<%= @query %>" list="matches" placeholder="<%= gettext "Search" %>..." autocomplete="off"/>
       <br>
       <%= for match <- @matches do %>
         <a href="/<%=@locale%>/studies/<%=match.slug%>"><%= match.title %></a> 

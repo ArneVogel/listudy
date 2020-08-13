@@ -1,11 +1,11 @@
-<h1><%= gettext "Blog"%></h1>
+<h1><%= gettext "Blog" %></h1>
 
 <table>
   <thead>
     <tr>
-      <th><%= gettext "Title"%></th>
-      <th><%= gettext "Created at"%></th>
-      <th><%= gettext "Last updated"%></th>
+      <th><%= gettext "Title" %></th>
+      <th><%= gettext "Created at" %></th>
+      <th><%= gettext "Last updated" %></th>
       <th></th>
     </tr>
   </thead>
