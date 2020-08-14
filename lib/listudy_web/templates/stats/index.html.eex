@@ -1,5 +1,5 @@
 <h1><%= gettext "Statistics" %></h1>
-<p><%= gettext "If you're like me, you can't get enough of stats. Here you can find statistics about Listudy:"%></p>
+<p><%= gettext "If you're like me, you can't get enough of stats. Here you can find statistics about Listudy:" %></p>
 <div class="row">
   <div class="one-half column">
     <h1><%= gettext "Uploaded Studies" %></h1>

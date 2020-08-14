@@ -26,17 +26,17 @@
 
 <div class="row">
   <div class="one-half column">
-    <b><%= gettext "Description"%></b>
+    <b><%= gettext "Description" %></b>
     <p><%= @study.description %></p>
     <%= if @study.is_owner do %>
       <p><%= link (gettext "Edit"), to: Routes.study_path(@conn, :edit, @locale, @study) %></p>
     <% end %>
 
-    <p><%= gettext "Created by:"%> <%= link @study.user.username, to: Routes.user_profile_path(@conn, :show, @locale, @study.user.username) %></p>
+    <p><%= gettext "Created by:" %> <%= link @study.user.username, to: Routes.user_profile_path(@conn, :show, @locale, @study.user.username) %></p>
   </div>
   <div class="one-half column">
     <div>
-      <label for="chapter_select"><%= gettext "Chapter Selection"%></label>
+      <label for="chapter_select"><%= gettext "Chapter Selection" %></label>
       <select id="chapter_select"></select>
     </div>
 
@@ -88,20 +88,20 @@
   <% else %>
   var logged_in = false;
   <% end %>
-  var info_intro = "<%= gettext "Starting training."%>";
+  var info_intro = "<%= gettext "Starting training." %>";
 
-  var error_wrong_move = "<%= gettext "This move is not in the study, try again."%>";
-  var error_no_play = "<%= gettext "This study does not contain enough moves."%>";
+  var error_wrong_move = "<%= gettext "This move is not in the study, try again." %>";
+  var error_no_play = "<%= gettext "This study does not contain enough moves." %>";
 
-  var success_right_move = "<%= gettext "Right move!"%>";
-  var success_end_of_line = "<%= gettext "You reached the end of this line."%>";
+  var success_right_move = "<%= gettext "Right move!" %>";
+  var success_end_of_line = "<%= gettext "You reached the end of this line." %>";
 
-  var translation_chapter = "<%= gettext "Chapter"%>";
+  var translation_chapter = "<%= gettext "Chapter" %>";
 
-  var suggestion_favorite = "<%= gettext "If you like this study make sure to favorite it to have it listed under Your Studies"%>";
-  var suggestion_share = "<%= gettext "Do you like this study? Share it with your friends."%>";
-  var suggestion_account = "<%= gettext "Create an account to get all the features of Listudy and upload your own studies."%>";
-  var suggestion_comment = "<%= gettext "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below."%>";
-  var suggestion_100moves = "<%= gettext "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect."%>";
-  var suggestion_250moves = "<%= gettext "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop."%>";
+  var suggestion_favorite = "<%= gettext "If you like this study make sure to favorite it to have it listed under Your Studies" %>";
+  var suggestion_share = "<%= gettext "Do you like this study? Share it with your friends." %>";
+  var suggestion_account = "<%= gettext "Create an account to get all the features of Listudy and upload your own studies." %>";
+  var suggestion_comment = "<%= gettext "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below." %>";
+  var suggestion_100moves = "<%= gettext "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect." %>";
+  var suggestion_250moves = "<%= gettext "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop." %>";
 </script>

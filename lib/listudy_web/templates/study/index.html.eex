@@ -1,17 +1,17 @@
-<h1><%= gettext "Your Studies"%></h1>
+<h1><%= gettext "Your Studies" %></h1>
 
 <a href="<%= Routes.study_path(@conn, :new, @locale) %>">
   <button>
-    <%= gettext "New Study"%>
+    <%= gettext "New Study" %>
   </button>
 </a>
 
-<%= if length(@studies) != 0 do%>
+<%= if length(@studies) != 0 do %>
 <table>
   <thead>
     <tr>
-      <th><%= gettext "Name"%></th>
-      <th><%= gettext "Description"%></th>
+      <th><%= gettext "Name" %></th>
+      <th><%= gettext "Description" %></th>
 
       <th></th>
     </tr>
@@ -33,13 +33,13 @@
 </table>
 <% end %>
 
-<%= if length(@favorites) != 0 do%>
+<%= if length(@favorites) != 0 do %>
 <h2><%= gettext "Favored Studies" %></h2>
 <table>
   <thead>
     <tr>
-      <th><%= gettext "Name"%></th>
-      <th><%= gettext "Description"%></th>
+      <th><%= gettext "Name" %></th>
+      <th><%= gettext "Description" %></th>
 
       <th></th>
     </tr>

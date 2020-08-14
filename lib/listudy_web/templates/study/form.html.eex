@@ -13,7 +13,7 @@
   <%= textarea f, :description, class: "big_input", minlength: 20, maxlength: 1000, placeholder: (gettext "In this study I work on my 1.e4 openings...")%>
   <%= error_tag f, :description %>
 
-  <p><%= gettext "Either upload a PGN file or provide a link to a public Lichess study:"%></p>
+  <p><%= gettext "Either upload a PGN file or provide a link to a public Lichess study:" %></p>
   <div class="row">
     <div class="one-half column">
       <%= label f, :pgn, gettext "Select a PGN to upload" %>

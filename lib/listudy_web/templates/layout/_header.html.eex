@@ -7,7 +7,7 @@
             </div>
             <div class="dropdowns_container">
               <div class="dropdown">
-                <button class="dropbtn"><%= gettext "Study"%></button>
+                <button class="dropbtn"><%= gettext "Study" %></button>
                 <div class="dropdown-content">
                   <%= if Pow.Plug.current_user(@conn) do %>
                   <%= link (gettext "Your Studies"), to: Routes.study_path(@conn, :index, @assigns.locale) %>
@@ -31,19 +31,19 @@
 
             <div class="dropdowns_container">
               <div class="dropdown">
-                <button class="dropbtn"><%= gettext "Settings"%></button>
+                <button class="dropbtn"><%= gettext "Settings" %></button>
                 <div class="dropdown-content">
-                  <a href="#" id="toggle_dark_mode"><%= gettext "Toggle Darkmode"%></a>
+                  <a href="#" id="toggle_dark_mode"><%= gettext "Toggle Darkmode" %></a>
                   <hr class="no_margin">
                 <%= if Pow.Plug.current_user(@conn) do %>
                   <%= link (gettext "User Settings"), to: Routes.pow_registration_path(@conn, :edit) %>
                   <%= link (gettext "Profile"), to: Routes.user_profile_path(@conn, :show, @assigns.locale, @assigns.current_user.username) %>
-                  <%= link (gettext "Sign out"), to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "hover_warn"%>
+                  <%= link (gettext "Sign out"), to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "hover_warn" %>
                 <% end %>
 
                 <div class="dropdowns_container">
                   <div class="nested-dropdown">
-                    <button class="dropbtn nested-dropbtn"><%= gettext "Language"%></button>
+                    <button class="dropbtn nested-dropbtn"><%= gettext "Language" %></button>
                     <div class="nested-dropdown-content">
                       <%= raw ListudyWeb.Seo.lang_alternatives(@conn) %>
                     </div>

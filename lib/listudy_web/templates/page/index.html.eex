@@ -9,7 +9,7 @@
     <h2><%= gettext "Study Openings" %></h2>
     <p><%= gettext "Use Listudy to better memorize openings. " %></p>
     <p><%= gettext "Play against your opening repertoire and learn them playfully and with scientifically effective methods." %></p>
-    <p><%= gettext "Explore the"%> <%= link (gettext "latest openings"), to: Routes.search_path(@conn, ListudyWeb.StudySearchLive, @locale) %>.</p>
+    <p><%= gettext "Explore the" %> <%= link (gettext "latest openings"), to: Routes.search_path(@conn, ListudyWeb.StudySearchLive, @locale) %>.</p>
   </div>
   <div class="one-half column">
     <h2><%= gettext "Latest blog posts" %></h2>
