@@ -58,9 +58,15 @@ defmodule Listudy.Studies do
     query = from(Study, where: [user_id: ^user])
     Repo.all(query) 
   end
+
   def get_public_studies_by_user!(user) do
     query = from(Study, where: [user_id: ^user, private: false])
     Repo.all(query) 
+  end
+
+  def get_all_public_studies() do
+    query = from(Study, where: [private: false])
+    Repo.all(query)
   end
 
   def get_studies_by_favorite!(user) do

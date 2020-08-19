@@ -48,6 +48,7 @@ defmodule ListudyWeb.Router do
   scope "/:locale", ListudyWeb do
     pipe_through :browser
 
+    get "/sitemap.xml", SitemapController, :index
     live "/studies/search", StudySearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :search
     resources "/studies", StudyController
     get "/blog", PostController, :index
@@ -56,6 +57,7 @@ defmodule ListudyWeb.Router do
     get "/profile/:username", UserProfileController, :show
     get "/:page", PageController, :show
     get "/", PageController, :index
+
   end
 
   scope "/", ListudyWeb do
