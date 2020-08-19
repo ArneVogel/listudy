@@ -29,6 +29,12 @@ defmodule Listudy.Content do
     Repo.all(query) 
   end
 
+  def public_posts do
+    query = from p in Post,
+      where: p.published == true
+    Repo.all(query)
+  end
+
   @doc """
   Gets a single post.
 
