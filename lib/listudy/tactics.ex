@@ -36,6 +36,7 @@ defmodule Listudy.Tactics do
 
   """
   def get_tactic!(id), do: Repo.get!(Tactic, id)
+  def get_tactic(id), do: Repo.get(Tactic, id)
 
   @doc """
   Creates a tactic.
