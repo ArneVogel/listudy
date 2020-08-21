@@ -10,7 +10,7 @@ import { generate_move_trees } from './modules/tree_from_pgn.js';
 import { sleep } from './modules/sleep.js';
 import { unescape_string } from './modules/security_related.js';
 import { ground_init_state, resize_ground, setup_ground, ground_set_moves, 
-         ground_undo_last_move } from './modules/ground.js';
+         ground_undo_last_move, setup_move_handler } from './modules/ground.js';
 
 const mode_free = "free_mode";
 
@@ -21,10 +21,6 @@ const suggestion_id = "suggestion";
 const comments = "comments";
 
 let combo_count = 0;
-
-function setup_move_handler() {
-    ground.set({movable: {events: {after: handle_move}}});
-}
 
 function clear_all_text() {
     set_text(error, "");
@@ -273,7 +269,7 @@ function main() {
     setup_chess();
     setup_trees();
     setup_chapter_select();
-    setup_move_handler();
+    setup_move_handler(handle_move);
 
     window.total_moves = 0;
 

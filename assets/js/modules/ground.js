@@ -17,11 +17,16 @@ function ground_init_state(fen) {
     ground.set(config);
 }
 
+function setup_move_handler(f) {
+    ground.set({movable: {events: {after: f}}});
+}
+
+
 // setsup the basic ground
-function setup_ground() {
+function setup_ground(fen) {
     const config = {};
     window.ground = Chessground(document.getElementById("chessground"), config);
-    ground_init_state();
+    ground_init_state(fen);
 }
 
 // call on window resizing
@@ -52,4 +57,4 @@ function ground_undo_last_move() {
     ground.set({"fen": chess.fen()});
 }
 
-export { ground_init_state, resize_ground, setup_ground, ground_set_moves, ground_undo_last_move };
+export { ground_init_state, resize_ground, setup_ground, ground_set_moves, ground_undo_last_move, setup_move_handler };

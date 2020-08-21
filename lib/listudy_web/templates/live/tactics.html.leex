@@ -1,6 +1,31 @@
 <h1><%= gettext "Tactic"%> <%= @tactic.id %></h1>
 
+<div class="with_sidebar">
+  <div id="game_container" class="sidebar_main">
+    <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
+  </div>
+  <div class="sidebar">
+    <div class="success">
+      <p id="success" class="infoBox hidden"></p>
+    </div>
+    <div class="info">
+      <p id="info" class="infoBox hidden"></p>
+    </div>
+    <div class="error">
+      <p id="error" class="infoBox hidden"></p>
+    </div>
+    <div class="info">
+      <p id="suggestion" class="infoBox hidden"></p>
+    </div>
 
+    <p id="comments"></p>
+    
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="<%= Routes.static_path(@socket, "/css/chessground.css") %>"/>
+<script defer type="text/javascript" src="<%= Routes.static_path(@socket, "/js/tactics.js") %>"></script>
 <script>
 let fen = "<%= @tactic.fen %>";
 let color = "<%= @tactic.color %>";
