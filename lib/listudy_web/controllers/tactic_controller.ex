@@ -55,6 +55,10 @@ defmodule ListudyWeb.TacticController do
 
   def update(conn, %{"id" => id, "tactic" => tactic_params}) do
     tactic = Tactics.get_tactic!(id)
+    motifs = Motifs.list_motifs()
+    openings = Openings.list_openings()
+    events = Events.list_events()
+    players = Players.list_players()
 
     case Tactics.update_tactic(tactic, tactic_params) do
       {:ok, tactic} ->
@@ -63,7 +67,7 @@ defmodule ListudyWeb.TacticController do
         |> redirect(to: Routes.tactic_path(conn, :show, tactic))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", tactic: tactic, changeset: changeset)
+        render(conn, "edit.html", tactic: tactic, changeset: changeset, motifs: motifs, openings: openings, events: events, players: players)
     end
   end
 

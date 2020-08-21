@@ -8,8 +8,8 @@ defmodule Listudy.Tactics.Tactic do
     field :fen, :string
     field :link, :string
     field :moves, :string
-    field :played, :integer
-    field :rating, :integer
+    field :played, :integer, default: 0
+    field :rating, :integer, default: 1500
     field :white, :id
     field :black, :id
     field :event, :id
@@ -23,6 +23,7 @@ defmodule Listudy.Tactics.Tactic do
   def changeset(tactic, attrs) do
     tactic
     |> cast(attrs, [:fen, :moves, :color, :link, :description, :rating, :played, :motif, :opening, :event, :white, :black])
-    |> validate_required([:fen, :moves, :color, :link, :description, :rating, :played, :motif, :opening, :event, :white, :black])
+    |> validate_required([:fen, :moves, :color, :rating, :played, :motif, :opening, :event, :white, :black])
+    |> Ecto.Changeset.validate_inclusion(:color, ~w(black, white))
   end
 end
