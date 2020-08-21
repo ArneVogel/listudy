@@ -13,6 +13,11 @@
   <%= text_input f, :moves %>
   <%= error_tag f, :moves %>
 
+  <%= label f, :last_move %>
+  <%= text_input f, :last_move %>
+  <%= error_tag f, :last_move %>
+
+
   <%= label f, :color %>
   <%= text_input f, :color %>
   <%= error_tag f, :color %>

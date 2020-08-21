@@ -13,6 +13,12 @@
   </li>
 
   <li>
+    <strong>Last Move:</strong>
+    <%= @tactic.last_move %>
+  </li>
+
+
+  <li>
     <strong>Color:</strong>
     <%= @tactic.color %>
   </li>
