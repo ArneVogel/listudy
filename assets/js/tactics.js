@@ -8,8 +8,8 @@ import { turn_color, setup_chess, from_to_to_san, san_to_from_to } from './modul
 import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 import { sleep } from './modules/sleep.js';
 
-function show_next_button() {
-    document.getElementById("next").classList.remove("hidden");
+function show_div(id) {
+    document.getElementById(id).classList.remove("hidden");
 }
 
 async function handle_move(orig, dest, extraInfo) {
@@ -21,6 +21,7 @@ async function handle_move(orig, dest, extraInfo) {
         chess.move(played);
         if (to_play.length >= 2) {
             // theres another move the player has to get correct
+            await sleep(100); // instant play by the ai feels weird
             let ai_move = to_play.shift();
             let m = chess.move(ai_move);
             ground_set_moves();
@@ -28,7 +29,7 @@ async function handle_move(orig, dest, extraInfo) {
         } else {
             // player got the puzzle correct
             set_text(success_div, gettext_success);
-            show_next_button();
+            show_div("next");
         }
     } else {
         // player failed the puzzle
@@ -37,6 +38,8 @@ async function handle_move(orig, dest, extraInfo) {
         ground_undo_last_move(); 
         ground_set_moves();
         set_text(error_div, gettext_wrong_move);
+        show_div("next");
+        show_div("solution");
     }
 }
 
