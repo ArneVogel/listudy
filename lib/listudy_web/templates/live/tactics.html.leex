@@ -17,13 +17,19 @@
       <p id="suggestion" class="infoBox hidden"></p>
     </div>
 
-    <p id="comments"></p>
+    <button id="next" class="hidden" phx-click="next">Next</button>
     
   </div>
 </div>
 
 <link rel="stylesheet" href="<%= Routes.static_path(@socket, "/css/chessground.css") %>"/>
 <script defer type="text/javascript" src="<%= Routes.static_path(@socket, "/js/tactics.js") %>"></script>
+<form class="hidden">
+  <input type="text" id="fen" value="<%= @tactic.fen %>">
+  <input type="text" id="color" value="<%= @tactic.color %>">
+  <input type="text" id="moves" value="<%= @tactic.moves %>">
+  <input type="text" id="last_move" value="<%= @tactic.last_move %>">
+</form>
 <script>
 let fen = "<%= @tactic.fen %>";
 let color = "<%= @tactic.color %>";

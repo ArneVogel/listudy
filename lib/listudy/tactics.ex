@@ -38,6 +38,22 @@ defmodule Listudy.Tactics do
   def get_tactic!(id), do: Repo.get!(Tactic, id)
   def get_tactic(id), do: Repo.get(Tactic, id)
 
+  def get_random_tactic() do
+    get_random_tactic(-1)
+  end
+
+  # get a random tactic, excluding the id
+  def get_random_tactic(id) do
+    query =
+      from t in Tactic,
+      where: t.id != ^id,
+      order_by: fragment("RANDOM()"),
+      limit: 1
+
+    Repo.all(query) |> List.first
+  end
+
+
   @doc """
   Creates a tactic.
 

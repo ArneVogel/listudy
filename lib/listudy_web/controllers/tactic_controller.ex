@@ -71,6 +71,10 @@ defmodule ListudyWeb.TacticController do
     end
   end
 
+  def join("app:" <> token, _payload, socket) do
+    {:ok, assign(socket, :channel, "app:#{token}")}
+  end
+
   def delete(conn, %{"id" => id}) do
     tactic = Tactics.get_tactic!(id)
     {:ok, _tactic} = Tactics.delete_tactic(tactic)

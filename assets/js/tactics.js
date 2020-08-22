@@ -8,6 +8,10 @@ import { turn_color, setup_chess, from_to_to_san, san_to_from_to } from './modul
 import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 import { sleep } from './modules/sleep.js';
 
+function show_next_button() {
+    document.getElementById("next").classList.remove("hidden");
+}
+
 async function handle_move(orig, dest, extraInfo) {
     let played = from_to_to_san(chess, orig, dest);
     let target = to_play.shift();
@@ -24,6 +28,7 @@ async function handle_move(orig, dest, extraInfo) {
         } else {
             // player got the puzzle correct
             set_text(success_div, gettext_success);
+            show_next_button();
         }
     } else {
         // player failed the puzzle
@@ -39,7 +44,21 @@ function setup_last_move() {
     ground.state.lastMove = last_move.split(" ");
 }
 
+/*
+ * Dirty hack? Load the required values from a hidden form field.
+ * The values of the hidden form field is changed by the push_redirect
+ * First this was done inside of a script but the script would not get
+ * re-evaluated by the browser resulting in old values being used.
+ */
+function load_data() {
+    fen = document.getElementById("fen").value;
+    color = document.getElementById("color").value;
+    moves = document.getElementById("moves").value;
+    last_move = document.getElementById("last_move").value;
+}
+
 function main() {
+    load_data();
     window.to_play = moves.split(" ");
     setup_ground(fen);    
     setup_last_move(); 
@@ -49,6 +68,6 @@ function main() {
     setup_move_handler(handle_move);
 }
 
-document.addEventListener("phx:update", resize_ground);
+document.addEventListener("phx:update", main);
 window.onresize = resize_ground;
 main();
