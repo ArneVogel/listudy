@@ -25,6 +25,6 @@ defmodule Listudy.Tactics.Tactic do
     tactic
     |> cast(attrs, [:fen, :moves, :last_move, :color, :link, :description, :rating, :played, :motif, :opening, :event, :white, :black])
     |> validate_required([:fen, :moves, :last_move, :color, :rating, :played, :motif, :opening, :event, :white, :black])
-    |> Ecto.Changeset.validate_inclusion(:color, ~w(black, white))
+    |> Ecto.Changeset.validate_inclusion(:color, ["black", "white"])
   end
 end
