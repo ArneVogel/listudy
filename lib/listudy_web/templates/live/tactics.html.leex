@@ -17,7 +17,7 @@
       <p id="suggestion" class="infoBox hidden"></p>
     </div>
 
-    <button id="next" class="hidden" phx-click="next"><%= gettext "Continue"%></button>
+    <button id="next" class="hidden continue_button" phx-click="next"><%= gettext "Continue"%></button>
     <details class="hidden" id="solution">
         <summary>Solution</summary>
         <%= @tactic.moves %>
