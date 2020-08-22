@@ -13,6 +13,12 @@ defmodule ListudyWeb.TacticController do
     render(conn, "index.html", tactics: tactics)
   end
 
+  def random(conn, _params) do
+    tactic = Tactics.get_random_tactic() 
+    conn
+    |> redirect(to: Routes.tactics_path(conn, ListudyWeb.TacticsLive, conn.private.plug_session["locale"], tactic))
+  end
+
   def new(conn, _params) do
     changeset = Tactics.change_tactic(%Tactic{})
     motifs = Motifs.list_motifs()
