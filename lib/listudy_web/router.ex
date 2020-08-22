@@ -53,7 +53,7 @@ defmodule ListudyWeb.Router do
     pipe_through :browser
 
     live "/studies/search", StudySearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :search
-    get "/tactics/random", TacticController, :random
+    get "/tactics", TacticController, :random
     live "/tactics/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :tactics
     resources "/studies", StudyController
     get "/blog", PostController, :index

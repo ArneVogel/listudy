@@ -17,6 +17,16 @@
                 </div>
               </div> 
             </div>
+            <div class="dropdowns_container">
+              <div class="dropdown">
+                <button class="dropbtn"><%= gettext "Tactics"%></button>
+                <div class="dropdown-content">
+                  <%= link (gettext "Tactics"), to: Routes.tactic_path(@conn, :random, @assigns.locale) %>
+                </div>
+              </div> 
+            </div>
+
+
 
           </div>
           <div class="nav_right">

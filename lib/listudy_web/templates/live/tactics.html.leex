@@ -17,13 +17,11 @@
       <p id="suggestion" class="infoBox hidden"></p>
     </div>
 
-    <button id="next" class="hidden" phx-click="next">Next Tactic</button>
-    <br>
+    <button id="next" class="hidden" phx-click="next"><%= gettext "Continue"%></button>
     <details class="hidden" id="solution">
         <summary>Solution</summary>
         <%= @tactic.moves %>
     </details>
-    
   </div>
 </div>
 
