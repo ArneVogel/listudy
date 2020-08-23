@@ -63,7 +63,16 @@ function load_data() {
 function main() {
     load_data();
     window.to_play = moves.split(" ");
-    setup_ground(fen);    
+    if (fen != old_fen) {
+        // This is done to prevent flickering on the initial load of the
+        // tactic. Without this setup_ground is called again after the
+        // liveview has connected with the server since its changing the 
+        // parent containing div of the chessground. With this check we
+        // notice that the fen hasnt changed so we can continue using 
+        // this ground
+        setup_ground(fen);    
+        old_fen = fen;
+    }
     setup_last_move(); 
     setup_chess(fen);
     ground_set_moves();
@@ -73,4 +82,5 @@ function main() {
 
 document.addEventListener("phx:update", main);
 window.onresize = resize_ground;
+window.old_fen = "abc";
 main();
