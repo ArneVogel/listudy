@@ -17,6 +17,7 @@ defmodule ListudyWeb.TacticsLive do
 
   def handle_event("next", _value, socket) do
     tactic = Tactics.get_random_tactic(socket.assigns.tactic.id)
+    Tactics.increase_played(socket.assigns.tactic.id)
     {:noreply, push_redirect(socket, to: Routes.tactics_path(socket, ListudyWeb.TacticsLive, socket.assigns.locale, tactic), replace: true)}
   end
 

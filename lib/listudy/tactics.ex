@@ -53,6 +53,10 @@ defmodule Listudy.Tactics do
     Repo.all(query) |> List.first
   end
 
+  def increase_played(id) do
+    from(t in Tactic, update: [inc: [played: 1]], where: t.id == ^id)
+    |> Repo.update_all([])
+  end
 
   @doc """
   Creates a tactic.
