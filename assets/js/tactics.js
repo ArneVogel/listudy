@@ -46,7 +46,7 @@ async function handle_move(orig, dest, extraInfo) {
 function setup_last_move() {
     let orig = last_move.substring(0,2);
     let dest = last_move.substring(2,4);
-    ground.state.lastMove = [orig, dest]
+    ground.state.lastMove = [orig, dest];
 }
 
 /*
