@@ -7,6 +7,11 @@ defmodule ListudyWeb.Seo do
     '<link rel="canonical" href="#{url}" />'
   end
 
+  def canonical_link(_conn, canonical) do
+    '<link rel="canonical" href="https://listudy.org#{canonical}" />'
+  end
+
+
   def hreflang(conn) do
     path = get_path(conn)
     non_language_path = path_without_lang(path)

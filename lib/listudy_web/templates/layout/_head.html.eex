@@ -5,7 +5,12 @@
     
     <meta name="description" content="<%= ListudyWeb.PageDescription.page_description(@assigns) %>" />
 
+    <%= if Map.has_key?(@assigns, :canonical) do %>
+    <%= raw ListudyWeb.Seo.canonical_link(@conn, @assigns.canonical) %>
+    <% else %>
     <%= raw ListudyWeb.Seo.canonical_link(@conn) %>
+    <% end %>
+
     <%= raw ListudyWeb.Seo.hreflang(@conn) %>
 
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>

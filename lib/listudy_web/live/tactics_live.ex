@@ -12,7 +12,8 @@ defmodule ListudyWeb.TacticsLive do
   def mount(%{"locale" => locale, "id" => id}, session, socket) do
     Gettext.put_locale(ListudyWeb.Gettext, locale)
     tactic = Tactics.get_tactic!(id)
-    {:ok, assign(socket, locale: locale, tactic: tactic)}
+    canonical = Routes.tactics_path(socket, ListudyWeb.TacticsLive, "en", tactic)
+    {:ok, assign(socket, locale: locale, tactic: tactic, canonical: canonical)}
   end
 
   def handle_event("next", _value, socket) do
