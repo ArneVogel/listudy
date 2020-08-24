@@ -37,6 +37,8 @@ defmodule Listudy.Motifs do
   """
   def get_motif!(id), do: Repo.get!(Motif, id)
 
+  def get_by_slug!(slug), do: Repo.get_by(Motif, slug: slug)
+
   @doc """
   Creates a motif.
 

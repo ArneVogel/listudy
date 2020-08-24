@@ -49,7 +49,33 @@ defmodule Listudy.Tactics do
       where: t.id != ^id,
       order_by: fragment("RANDOM()"),
       limit: 1
+    Repo.all(query) |> List.first
+  end
 
+  def get_random_event_tactic(id, event) do
+    query =
+      from t in Tactic,
+      where: t.id != ^id and t.event == ^event,
+      order_by: fragment("RANDOM()"),
+      limit: 1
+    Repo.all(query) |> List.first
+  end
+
+  def get_random_opening_tactic(id, opening) do
+    query =
+      from t in Tactic,
+      where: t.id != ^id and t.opening == ^opening,
+      order_by: fragment("RANDOM()"),
+      limit: 1
+    Repo.all(query) |> List.first
+  end
+
+  def get_random_motif_tactic(id, motif) do
+    query =
+      from t in Tactic,
+      where: t.id != ^id and t.motif == ^motif,
+      order_by: fragment("RANDOM()"),
+      limit: 1
     Repo.all(query) |> List.first
   end
 
