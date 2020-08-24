@@ -37,6 +37,8 @@ defmodule Listudy.Players do
   """
   def get_player!(id), do: Repo.get!(Player, id)
 
+  def get_by_slug!(slug), do: Repo.get_by(Player, slug: slug)
+
   @doc """
   Creates a player.
 

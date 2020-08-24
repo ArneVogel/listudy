@@ -32,6 +32,9 @@
     <%= if assigns[:event] do %>
       <p><%= gettext("Currently playing tactics from the event:") <> " " <> @event.name %></p>
     <% end %>
+    <%= if assigns[:player] do %>
+      <p><%= gettext("Currently playing tactics by:") <> " " <> @player.name %></p>
+    <% end %>
 
   </div>
 </div>

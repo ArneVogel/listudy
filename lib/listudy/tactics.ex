@@ -70,6 +70,16 @@ defmodule Listudy.Tactics do
     Repo.all(query) |> List.first
   end
 
+  def get_random_player_tactic(id, player) do
+    query =
+      from t in Tactic,
+      where: t.id != ^id and (t.white == ^player or t.black == ^player),
+      order_by: fragment("RANDOM()"),
+      limit: 1
+    Repo.all(query) |> List.first
+  end
+
+
   def get_random_motif_tactic(id, motif) do
     query =
       from t in Tactic,

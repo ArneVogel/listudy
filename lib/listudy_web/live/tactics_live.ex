@@ -4,6 +4,7 @@ defmodule ListudyWeb.TacticsLive do
   alias Listudy.Tactics
   alias Listudy.Openings
   alias Listudy.Events
+  alias Listudy.Players
   alias Listudy.Motifs
   import ListudyWeb.Gettext
   alias ListudyWeb.Router.Helpers, as: Routes
@@ -42,6 +43,11 @@ defmodule ListudyWeb.TacticsLive do
     assign(socket, :event, event)
   end
 
+  defp add_extra(%{"player" => slug}, socket) do
+    player = Players.get_by_slug!(slug)
+    assign(socket, :player, player)
+  end
+
   defp add_extra(_params, socket) do
     socket
   end
@@ -58,6 +64,10 @@ defmodule ListudyWeb.TacticsLive do
     Tactics.get_random_event_tactic(socket.assigns.tactic.id, event.id)
   end
 
+  defp get_next_tactic(%{:assigns => %{:player => player}} = socket) do
+    Tactics.get_random_player_tactic(socket.assigns.tactic.id, player.id)
+  end
+
   defp get_next_tactic(socket) do
     Tactics.get_random_tactic(socket.assigns.tactic.id)
   end
@@ -72,6 +82,10 @@ defmodule ListudyWeb.TacticsLive do
 
   defp get_next_url(%{:assigns => %{:event => event}} = socket, tactic) do
     Routes.event_tactics_path(socket, ListudyWeb.TacticsLive, socket.assigns.locale, event.slug, tactic)
+  end
+
+  defp get_next_url(%{:assigns => %{:player => player}} = socket, tactic) do
+    Routes.player_tactics_path(socket, ListudyWeb.TacticsLive, socket.assigns.locale, player.slug, tactic)
   end
 
   defp get_next_url(socket, tactic) do

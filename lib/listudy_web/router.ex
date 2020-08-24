@@ -58,6 +58,7 @@ defmodule ListudyWeb.Router do
     live "/tactics/opening/:opening/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :opening_tactics
     live "/tactics/motif/:motif/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :motif_tactics
     live "/tactics/event/:event/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :event_tactics
+    live "/tactics/player/:player/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :player_tactics
     resources "/studies", StudyController
     get "/blog", PostController, :index
     get "/blog/:id", PostController, :show
