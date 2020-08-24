@@ -55,6 +55,9 @@ defmodule ListudyWeb.Router do
     live "/studies/search", StudySearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :search
     get "/tactics", TacticController, :random
     get "/tactics/opening/:opening", TacticController, :random
+    get "/tactics/event/:event", TacticController, :random
+    get "/tactics/player/:player", TacticController, :random
+    get "/tactics/motif/:motif", TacticController, :random
     live "/tactics/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :tactics
     live "/tactics/opening/:opening/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :opening_tactics
     live "/tactics/motif/:motif/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :motif_tactics

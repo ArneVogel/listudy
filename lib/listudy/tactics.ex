@@ -46,6 +46,21 @@ defmodule Listudy.Tactics do
     get_random_tactic(-1)
   end
 
+  def get_random_tactic("event", slug) do
+    event = Listudy.Events.get_by_slug!(slug)
+    get_random_event_tactic(-1, event.id)
+  end
+
+  def get_random_tactic("player", slug) do
+    player = Listudy.Players.get_by_slug!(slug)
+    get_random_player_tactic(-1, player.id)
+  end
+
+  def get_random_tactic("motif", slug) do
+    motif = Listudy.Motifs.get_by_slug!(slug)
+    get_random_motif_tactic(-1, motif.id)
+  end
+
   def get_random_tactic("opening", slug) do
     opening = Listudy.Openings.get_by_slug!(slug)
     get_random_opening_tactic(-1, opening.id)

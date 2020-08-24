@@ -95,12 +95,36 @@ defmodule ListudyWeb.TacticController do
     Tactics.get_random_tactic("opening", slug) 
   end
 
+  defp get_tactic(%{"event" => slug}) do
+    Tactics.get_random_tactic("event", slug) 
+  end
+
+  defp get_tactic(%{"motif" => slug}) do
+    Tactics.get_random_tactic("motif", slug) 
+  end
+
+  defp get_tactic(%{"player" => slug}) do
+    Tactics.get_random_tactic("player", slug) 
+  end
+
   defp get_tactic(_params) do
     Tactics.get_random_tactic() 
   end
 
   defp get_url(conn, %{"opening" => slug}, tactic) do
     Routes.opening_tactics_path(conn, ListudyWeb.TacticsLive, conn.private.plug_session["locale"], slug, tactic)
+  end
+
+  defp get_url(conn, %{"event" => slug}, tactic) do
+    Routes.event_tactics_path(conn, ListudyWeb.TacticsLive, conn.private.plug_session["locale"], slug, tactic)
+  end
+
+  defp get_url(conn, %{"motif" => slug}, tactic) do
+    Routes.motif_tactics_path(conn, ListudyWeb.TacticsLive, conn.private.plug_session["locale"], slug, tactic)
+  end
+
+  defp get_url(conn, %{"player" => slug}, tactic) do
+    Routes.player_tactics_path(conn, ListudyWeb.TacticsLive, conn.private.plug_session["locale"], slug, tactic)
   end
 
   defp get_url(conn, _params, tactic) do
