@@ -20,7 +20,7 @@ defmodule ListudyWeb.Seo do
       true ->
         Enum.reduce @languages, "", fn lang, acc ->
           url = clean("#{@domain}/#{lang}/#{non_language_path}")
-          acc <> "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{url}\" \\>" <> "\n"
+          acc <> "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{url}\" />" <> "\n"
         end
       _ ->
         ""
