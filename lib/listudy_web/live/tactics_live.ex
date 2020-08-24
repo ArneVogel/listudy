@@ -34,7 +34,7 @@ defmodule ListudyWeb.TacticsLive do
   end
 
   defp add_extra(%{"opening" => slug}, socket) do
-    opening = Openings.get_opening_by_slug!(slug)
+    opening = Openings.get_by_slug!(slug)
     assign(socket, :opening, opening)
   end
 

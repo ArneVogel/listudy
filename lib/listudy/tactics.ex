@@ -5,6 +5,10 @@ defmodule Listudy.Tactics do
 
   import Ecto.Query, warn: false
   alias Listudy.Repo
+  alias Listudy.Openings
+  alias Listudy.Events
+  alias Listudy.Motifs
+  alias Listudy.Players
 
   alias Listudy.Tactics.Tactic
 
@@ -40,6 +44,11 @@ defmodule Listudy.Tactics do
 
   def get_random_tactic() do
     get_random_tactic(-1)
+  end
+
+  def get_random_tactic("opening", slug) do
+    opening = Listudy.Openings.get_by_slug!(slug)
+    get_random_opening_tactic(-1, opening.id)
   end
 
   # get a random tactic, excluding the id

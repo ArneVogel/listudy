@@ -13,12 +13,6 @@ defmodule ListudyWeb.TacticController do
     render(conn, "index.html", tactics: tactics)
   end
 
-  def random(conn, _params) do
-    tactic = Tactics.get_random_tactic() 
-    conn
-    |> redirect(to: Routes.tactics_path(conn, ListudyWeb.TacticsLive, conn.private.plug_session["locale"], tactic))
-  end
-
   def new(conn, _params) do
     changeset = Tactics.change_tactic(%Tactic{})
     motifs = Motifs.list_motifs()
@@ -88,5 +82,28 @@ defmodule ListudyWeb.TacticController do
     conn
     |> put_flash(:info, "Tactic deleted successfully.")
     |> redirect(to: Routes.tactic_path(conn, :index))
+  end
+
+  def random(conn, params) do
+    tactic = get_tactic(params)
+    url = get_url(conn, params, tactic)
+    conn
+    |> redirect(to: url)
+  end
+
+  defp get_tactic(%{"opening" => slug}) do
+    Tactics.get_random_tactic("opening", slug) 
+  end
+
+  defp get_tactic(_params) do
+    Tactics.get_random_tactic() 
+  end
+
+  defp get_url(conn, %{"opening" => slug}, tactic) do
+    Routes.opening_tactics_path(conn, ListudyWeb.TacticsLive, conn.private.plug_session["locale"], slug, tactic)
+  end
+
+  defp get_url(conn, _params, tactic) do
+    Routes.tactics_path(conn, ListudyWeb.TacticsLive, conn.private.plug_session["locale"], tactic)
   end
 end

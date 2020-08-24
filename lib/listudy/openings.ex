@@ -37,7 +37,7 @@ defmodule Listudy.Openings do
   """
   def get_opening!(id), do: Repo.get!(Opening, id)
 
-  def get_opening_by_slug!(slug), do: Repo.get_by(Opening, slug: slug)
+  def get_by_slug!(slug), do: Repo.get_by(Opening, slug: slug)
 
   @doc """
   Creates a opening.
