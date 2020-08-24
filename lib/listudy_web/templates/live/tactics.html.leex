@@ -22,6 +22,11 @@
         <summary>Solution</summary>
         <%= @tactic.moves %>
     </details>
+
+    <%= if assigns[:opening] do %>
+      <p><%= gettext("Currently training in the opening:") <> " " <> @opening.name %></p>
+    <% end %>
+
   </div>
 </div>
 
