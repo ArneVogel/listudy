@@ -66,6 +66,13 @@ defmodule Listudy.Tactics do
     get_random_opening_tactic(-1, opening.id)
   end
 
+  def opening_count(id) do
+    query =
+      from t in Tactic,
+      where: t.opening == ^id
+    Repo.aggregate(query, :count, :id)
+  end
+
   # get a random tactic, excluding the id
   def get_random_tactic(id) do
     query =

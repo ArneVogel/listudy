@@ -1,2 +1,13 @@
 <h1><%= @opening.name %></h1>
+
 <%= raw Earmark.as_html!(@opening.description)%>
+
+<h2 id="tactics"><%= gettext "%{name} Traps and Tactics", name: @opening.name %></h2>
+<p>
+<%= gettext "Get better in the %{name} opening by practicing tactics taken from the early game.", name: @opening.name %>
+
+<%= gettext "Recognize traps and mistakes of your opponents and exploit them." %>
+
+<%= gettext "Train tactics from %{amount} different games.", amount: @tactics_amount %>
+</p>
+<%= link (gettext "%{name} Tactics", name: @opening.name) , to: Routes.random_opening_tactic_path(@conn, :random, @locale, @opening.slug) %>

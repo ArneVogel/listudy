@@ -1,6 +1,7 @@
 defmodule ListudyWeb.OpeningController do
   use ListudyWeb, :controller
 
+  alias Listudy.Tactics
   alias Listudy.Openings
   alias Listudy.Openings.Opening
 
@@ -34,7 +35,8 @@ defmodule ListudyWeb.OpeningController do
   # For public usage
   def show(conn, %{"opening" => id}) do
     opening = Openings.get_by_slug!(id)
-    render(conn, "public.html", opening: opening)
+    tactics_amount = Tactics.opening_count(opening.id)
+    render(conn, "public.html", opening: opening, tactics_amount: tactics_amount)
   end
 
 
