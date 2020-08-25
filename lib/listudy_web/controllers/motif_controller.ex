@@ -1,6 +1,7 @@
 defmodule ListudyWeb.MotifController do
   use ListudyWeb, :controller
 
+  alias Listudy.Tactics
   alias Listudy.Motifs
   alias Listudy.Motifs.Motif
 
@@ -34,7 +35,8 @@ defmodule ListudyWeb.MotifController do
   # For public usage
   def show(conn, %{"motif" => id}) do
     motif = Motifs.get_by_slug!(id)
-    render(conn, "public.html", motif: motif)
+    tactics_amount = Tactics.motif_count(motif.id)
+    render(conn, "public.html", motif: motif, tactics_amount: tactics_amount)
   end
 
 

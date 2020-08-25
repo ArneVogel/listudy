@@ -1,6 +1,7 @@
 defmodule ListudyWeb.EventController do
   use ListudyWeb, :controller
 
+  alias Listudy.Tactics
   alias Listudy.Events
   alias Listudy.Events.Event
 
@@ -35,7 +36,8 @@ defmodule ListudyWeb.EventController do
   # For public usage
   def show(conn, %{"event" => id}) do
     event = Events.get_by_slug!(id)
-    render(conn, "public.html", event: event)
+    tactics_amount = Tactics.event_count(event.id)
+    render(conn, "public.html", event: event, tactics_amount: tactics_amount)
   end
 
 

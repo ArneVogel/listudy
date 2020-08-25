@@ -1,2 +1,12 @@
 <h1><%= @event.name %></h1>
 <%= raw Earmark.as_html!(@event.description)%>
+
+<%= if @tactics_amount >= 2 do %>
+  <h2 id="tactics"><%= gettext "Traps and Tactics from %{name}", name: @event.name %></h2>
+  <p>
+  <%= gettext "Solve tactics from games played at %{name}.", name: @event.name %>
+
+  <%= gettext "Train tactics from %{amount} different games.", amount: @tactics_amount %>
+  </p>
+  <%= link (gettext "%{name} Tactics", name: @event.name) , to: Routes.random_event_tactic_path(@conn, :random, @locale, @event.slug) %>
+<% end %>

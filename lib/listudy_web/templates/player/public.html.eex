@@ -1,2 +1,12 @@
 <h1><%= @player.name %></h1>
 <%= raw Earmark.as_html!(@player.description)%>
+
+<%= if @tactics_amount >= 2 do %>
+  <h2 id="tactics"><%= gettext "Tactics by %{name}", name: @player.name %></h2>
+  <p>
+  <%= gettext "Are you better than %{name}?", name: @player.name %>
+
+  <%= gettext "Play real tactics from %{amount} different games played by %{name}.", amount: @tactics_amount, name: @player.name %>
+  </p>
+  <%= link (gettext "%{name} Tactics", name: @player.name) , to: Routes.random_player_tactic_path(@conn, :random, @locale, @player.slug) %>
+<% end %>

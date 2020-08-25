@@ -1,6 +1,7 @@
 defmodule ListudyWeb.PlayerController do
   use ListudyWeb, :controller
 
+  alias Listudy.Tactics
   alias Listudy.Players
   alias Listudy.Players.Player
 
@@ -34,7 +35,8 @@ defmodule ListudyWeb.PlayerController do
   # For public usage
   def show(conn, %{"player" => id}) do
     player = Players.get_by_slug!(id)
-    render(conn, "public.html", player: player)
+    tactics_amount = Tactics.player_count(player.id)
+    render(conn, "public.html", player: player, tactics_amount: tactics_amount)
   end
 
   def edit(conn, %{"id" => id}) do

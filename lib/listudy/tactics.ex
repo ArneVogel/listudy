@@ -66,6 +66,28 @@ defmodule Listudy.Tactics do
     get_random_opening_tactic(-1, opening.id)
   end
 
+  def motif_count(id) do
+    query =
+      from t in Tactic,
+      where: t.motif == ^id
+    Repo.aggregate(query, :count, :id)
+  end
+
+  def player_count(id) do
+    query =
+      from t in Tactic,
+      where: t.white == ^id or t.black == ^id
+    Repo.aggregate(query, :count, :id)
+  end
+
+
+  def event_count(id) do
+    query =
+      from t in Tactic,
+      where: t.event == ^id
+    Repo.aggregate(query, :count, :id)
+  end
+
   def opening_count(id) do
     query =
       from t in Tactic,

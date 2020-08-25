@@ -1,2 +1,12 @@
 <h1><%= @motif.name %></h1>
 <%= raw Earmark.as_html!(@motif.description)%>
+
+<%= if @tactics_amount >= 2 do %>
+  <h2 id="tactics"><%= gettext "%{name} Tactics", name: @motif.name %></h2>
+  <p>
+  <%= gettext "Get better at %{name} by solving tactics.", name: @motif.name %>
+
+  <%= gettext "Train real tactics from %{amount} different games.", amount: @tactics_amount %>
+  </p>
+  <%= link (gettext "%{name} Tactics", name: @motif.name) , to: Routes.random_motif_tactic_path(@conn, :random, @locale, @motif.slug) %>
+<% end %>
