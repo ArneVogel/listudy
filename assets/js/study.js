@@ -10,28 +10,14 @@ import { generate_move_trees } from './modules/tree_from_pgn.js';
 import { sleep } from './modules/sleep.js';
 import { unescape_string } from './modules/security_related.js';
 import { ground_init_state, resize_ground, setup_ground, ground_set_moves, 
-         ground_undo_last_move } from './modules/ground.js';
+         ground_undo_last_move, setup_move_handler } from './modules/ground.js';
+import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 
 const mode_free = "free_mode";
 
-const success = "success";
-const error = "error";
-const info = "info";
-const suggestion_id = "suggestion";
-const comments = "comments";
+const comments_div = "comments";
 
 let combo_count = 0;
-
-function setup_move_handler() {
-    ground.set({movable: {events: {after: handle_move}}});
-}
-
-function clear_all_text() {
-    set_text(error, "");
-    set_text(info, "");
-    set_text(success, "");
-    set_text(suggestion_id, "");
-}
 
 function combo_text() {
     return "" + combo_count + "x ";
@@ -56,10 +42,10 @@ async function handle_move(orig, dest) {
         update_value(curr_move, 1, san); 
         play_move(san);
         combo_count += 1;
-        set_text(success, right_move_text());
+        set_text(success_div, right_move_text());
         let reply = ai_move(curr_move);
         if (reply == undefined) {
-            set_text(success, right_move_text() + "\n" + success_end_of_line);
+            set_text(success_div, right_move_text() + "\n" + success_end_of_line);
             start_training();
         } else {
             play_move(reply);
@@ -72,7 +58,7 @@ async function handle_move(orig, dest) {
         // calling ground_undo_last_move(); since it used chess.fen() to 
         // reset the position to the previous position
         ground_undo_last_move(); 
-        set_text(error, error_wrong_move);
+        set_text(error_div, error_wrong_move);
     }
     store_trees(); 
     setup_move();
@@ -110,7 +96,7 @@ function display_comments(access) {
 
     // set_text is save to use with untrusted strings
     // => we can use unescape_string
-    set_text(comments, unescape_string(comment));
+    set_text(comments_div, unescape_string(comment));
 }
 
 function setup_move() {
@@ -226,33 +212,6 @@ function setup_trees() {
     window.trees = trees;
 }
 
-function set_text(id, text) {
-    let div = document.getElementById(id);
-    if (text.length > 0) {
-        div.classList.remove("hidden");
-        switch (id) {
-            case success:
-                text = "✓ " + text;
-                break;
-            case info:
-                text = "🛈 " + text;
-                break;
-            case error:
-                text = "✕ " + text;
-                break;
-            default:
-                break;
-        }
-    } else {
-        div.classList.add("hidden");
-    }
-
-    // This function can (and will be) be called with untrusted 
-    // text from the pgn, therefore use textContent 
-    // to keep this function save from XSS attacks
-    // https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html#rule-6-populate-the-dom-using-safe-javascript-functions-or-properties
-    div.textContent = text; 
-}
 
 // generate the chapter selection below the game board
 // the chapter value is the id for the tree to use
@@ -298,7 +257,7 @@ function show_suggestions() {
         let lsKey = study_id + "_suggestions_" + suggestion.key;
         let alreadySuggested = localStorage.getItem(lsKey) || false;
         if (total_moves == suggestion.move && suggestion.show && !(suggestion.once && alreadySuggested)) {
-            set_text(suggestion_id, suggestion.text);
+            set_text(suggestion_div, suggestion.text);
             localStorage.setItem(lsKey, true);
         }
     }
@@ -309,13 +268,13 @@ function main() {
     setup_chess();
     setup_trees();
     setup_chapter_select();
-    setup_move_handler();
+    setup_move_handler(handle_move);
 
     window.total_moves = 0;
 
     resize_ground();
 
-    set_text(info, info_intro);
+    set_text(info_div, info_intro);
 
     start_training();
 }

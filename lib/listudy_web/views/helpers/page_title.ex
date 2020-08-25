@@ -1,5 +1,5 @@
 defmodule ListudyWeb.PageTitle do
-  alias ListudyWeb.{ PageView, StudySearchLive }
+  alias ListudyWeb.{ PageView, StudySearchLive, TacticsLive }
   import ListudyWeb.Gettext
 
   @suffix "Listudy"
@@ -13,5 +13,6 @@ defmodule ListudyWeb.PageTitle do
   defp get(%{ view_module: Elixir.ListudyWeb.StudyView, view_template: "show.html", "study": study}), do: study.title
   defp get(%{ view_module: Elixir.ListudyWeb.PostView, view_template: "show.html", "post": post}), do: post.title
   defp get(%{ live_module: StudySearchLive}), do: gettext("Search Studies")
+  defp get(%{ live_module: TacticsLive, "tactic": tactic }), do: gettext("Tactics") 
   defp get(_), do: nil
 end

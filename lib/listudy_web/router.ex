@@ -43,6 +43,12 @@ defmodule ListudyWeb.Router do
     put "/blog/:id", PostController, :update
     delete "/blog/:id", PostController, :delete
     get "/", PageController, :index
+
+    resources "/motifs", MotifController
+    resources "/openings", OpeningController
+    resources "/players", PlayerController
+    resources "/events", EventController
+    resources "/tactics", TacticController
   end
 
   scope "/:locale", ListudyWeb do
@@ -50,6 +56,28 @@ defmodule ListudyWeb.Router do
 
     get "/sitemap.xml", SitemapController, :index
     live "/studies/search", StudySearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :search
+    live "/events", EventSearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :event_search
+    live "/openings", OpeningSearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :opening_search
+    live "/players", PlayerSearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :player_search
+    live "/motif", MotifSearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :motif_search
+
+    get "/events/:event", EventController, :show
+    get "/players/:player", PlayerController, :show
+    get "/openings/:opening", OpeningController, :show
+    get "/motif/:motif", MotifController, :show
+
+    get "/tactics", TacticController, :random
+    get "/tactics/opening/:opening", TacticController, :random, as: :random_opening_tactic
+    get "/tactics/event/:event", TacticController, :random, as: :random_event_tactic
+    get "/tactics/player/:player", TacticController, :random, as: :random_player_tactic
+    get "/tactics/motif/:motif", TacticController, :random, as: :random_motif_tactic
+
+    live "/tactics/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :tactics
+    live "/tactics/opening/:opening/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :opening_tactics
+    live "/tactics/motif/:motif/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :motif_tactics
+    live "/tactics/event/:event/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :event_tactics
+    live "/tactics/player/:player/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :player_tactics
+
     resources "/studies", StudyController
     get "/blog", PostController, :index
     get "/blog/:id", PostController, :show

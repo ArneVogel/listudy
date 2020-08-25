@@ -7,6 +7,18 @@ defmodule ListudyWeb.Seo do
     '<link rel="canonical" href="#{url}" />'
   end
 
+  def canonical_link(_conn, canonical) do
+    '<link rel="canonical" href="https://listudy.org#{canonical}" />'
+  end
+
+  def noindex(%{:assigns => %{:noindex => true}}) do
+    '<meta name="robots" content="noindex">'
+  end
+
+  def noindex(_conn) do
+    ''
+  end
+
   def hreflang(conn) do
     path = get_path(conn)
     non_language_path = path_without_lang(path)
@@ -15,7 +27,7 @@ defmodule ListudyWeb.Seo do
       true ->
         Enum.reduce @languages, "", fn lang, acc ->
           url = clean("#{@domain}/#{lang}/#{non_language_path}")
-          acc <> "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{url}\" \\>" <> "\n"
+          acc <> "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{url}\" />" <> "\n"
         end
       _ ->
         ""

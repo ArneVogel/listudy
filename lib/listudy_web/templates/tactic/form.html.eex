@@ -1,0 +1,89 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :fen %>
+  <%= text_input f, :fen %>
+  <%= error_tag f, :fen %>
+
+  <%= label f, :moves %>
+  <%= text_input f, :moves %>
+  <%= error_tag f, :moves %>
+
+  <%= label f, :last_move %>
+  <%= text_input f, :last_move %>
+  <%= error_tag f, :last_move %>
+
+
+  <%= label f, :color %>
+  <%= text_input f, :color %>
+  <%= error_tag f, :color %>
+
+  <%= label f, :link %>
+  <%= text_input f, :link %>
+  <%= error_tag f, :link %>
+
+  <%= label f, :description %>
+  <%= text_input f, :description %>
+  <%= error_tag f, :description %>
+
+  <%= label f, :rating %>
+  <%= number_input f, :rating %>
+  <%= error_tag f, :rating %>
+
+  <%= label f, :played %>
+  <%= number_input f, :played %>
+  <%= error_tag f, :played %>
+
+  <label for="tactic[motif]">Motif</label>
+  <select name="tactic[motif]" id="motif">
+  <%= for motif <- @motifs do %>
+    <option value="<%= motif.id%>">
+      <%= motif.name %>
+    </option>
+  <% end %>
+  </select>
+
+  <label for="tactic[opening]">Opening</label>
+  <select name="tactic[opening]" id="opening">
+  <%= for opening <- @openings do %>
+    <option value="<%= opening.id%>">
+      <%= opening.name %>
+    </option>
+  <% end %>
+  </select>
+
+  <label for="tactic[event]">Event</label>
+  <select name="tactic[event]" id="event">
+  <%= for event <- @events do %>
+    <option value="<%= event.id%>">
+      <%= event.name %>
+    </option>
+  <% end %>
+  </select>
+
+  <label for="tactic[white]">White</label>
+  <select name="tactic[white]" id="event">
+  <%= for white <- @players do %>
+    <option value="<%= white.id%>">
+      <%= white.name %>
+    </option>
+  <% end %>
+  </select>
+
+  <label for="tactic[black]">Black</label>
+  <select name="tactic[black]" id="event">
+  <%= for black <- @players do %>
+    <option value="<%= black.id%>">
+      <%= black.name %>
+    </option>
+  <% end %>
+  </select>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>

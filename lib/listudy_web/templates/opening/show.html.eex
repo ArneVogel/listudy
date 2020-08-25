@@ -1,0 +1,33 @@
+<h1>Show Opening</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @opening.name %>
+  </li>
+
+  <li>
+    <strong>Slug:</strong>
+    <%= @opening.slug %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @opening.description %>
+  </li>
+
+  <li>
+    <strong>Eco:</strong>
+    <%= @opening.eco %>
+  </li>
+
+  <li>
+    <strong>Moves:</strong>
+    <%= @opening.moves %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.opening_path(@conn, :edit, @opening) %></span>
+<span><%= link "Back", to: Routes.opening_path(@conn, :index) %></span>

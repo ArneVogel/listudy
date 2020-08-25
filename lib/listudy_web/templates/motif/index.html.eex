@@ -1,0 +1,30 @@
+<h1>Listing Motifs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Slug</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for motif <- @motifs do %>
+    <tr>
+      <td><%= motif.name %></td>
+      <td><%= motif.slug %></td>
+      <td><%= motif.description %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.motif_path(@conn, :show, motif) %></span>
+        <span><%= link "Edit", to: Routes.motif_path(@conn, :edit, motif) %></span>
+        <span><%= link "Delete", to: Routes.motif_path(@conn, :delete, motif), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Motif", to: Routes.motif_path(@conn, :new) %></span>

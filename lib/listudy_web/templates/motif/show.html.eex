@@ -1,0 +1,23 @@
+<h1>Show Motif</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @motif.name %>
+  </li>
+
+  <li>
+    <strong>Slug:</strong>
+    <%= @motif.slug %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @motif.description %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.motif_path(@conn, :edit, @motif) %></span>
+<span><%= link "Back", to: Routes.motif_path(@conn, :index) %></span>

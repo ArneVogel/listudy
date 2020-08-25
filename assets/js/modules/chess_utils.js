@@ -39,7 +39,7 @@ function ground_legal_moves(c) {
  * iff the move is legal in the chess position 
  */
 function from_to_to_san(chess, from, to) {
-    let move = chess.move({from:from, to:to});
+    let move = chess.move({from:from, to:to, promotion: 'q'});
     chess.undo();
     return move.san;
 }
