@@ -16,7 +16,7 @@ defmodule ListudyWeb.UserProfileController do
 
       _ ->
         studies = Studies.get_public_studies_by_user!(user.id)
-        render(conn, "show.html", studies: studies, user: user)
+        render(conn, "show.html", studies: studies, user: user, noindex: true)
     end
   end
 end
