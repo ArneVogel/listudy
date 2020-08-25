@@ -18,6 +18,9 @@ config :listudy, ListudyWeb.Endpoint,
   pubsub_server: Listudy.PubSub,
   live_view: [signing_salt: "K29dK2Yj"]
 
+config :listudy, :seo,
+  post_min_words: 300 # threshold a post needs to have to not get noindexed
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

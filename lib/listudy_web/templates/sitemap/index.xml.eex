@@ -10,10 +10,12 @@
    </url>
   <% end %>
   <%= for post <- @posts do %>
+   <%= if length(String.split(post.body, " ")) >= Application.get_env(:listudy, :seo)[:post_min_words] do %>
    <url>
      <loc><%= base_url() <> Routes.post_path(@conn, :show, @locale, post) %></loc>
      <lastmod><%= format_date(post.updated_at) %></lastmod>
    </url>
+   <% end %>
   <% end %>
 
 </urlset>

@@ -42,7 +42,8 @@ defmodule ListudyWeb.PostController do
           |> put_flash(:info, (gettext "This post does not exist"))
           |> redirect(to: Routes.post_path(conn, :index, conn.assigns.locale))
       _ ->
-        render(conn, "show.html", post: post)
+        noindex = length(String.split(post.body, " ")) <= Application.get_env(:listudy, :seo)[:post_min_words]
+        render(conn, "show.html", post: post, noindex: noindex)
       end
   end
 
