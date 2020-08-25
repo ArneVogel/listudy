@@ -26,10 +26,18 @@ defmodule ListudyWeb.EventController do
     end
   end
 
+  # For admin usage
   def show(conn, %{"id" => id}) do
     event = Events.get_event!(id)
     render(conn, "show.html", event: event)
   end
+
+  # For public usage
+  def show(conn, %{"event" => id}) do
+    event = Events.get_by_slug!(id)
+    render(conn, "public.html", event: event)
+  end
+
 
   def edit(conn, %{"id" => id}) do
     event = Events.get_event!(id)

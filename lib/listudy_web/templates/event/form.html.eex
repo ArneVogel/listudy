@@ -13,9 +13,10 @@
   <%= text_input f, :slug %>
   <%= error_tag f, :slug %>
 
-  <%= label f, :description %>
-  <%= text_input f, :description %>
+  <%= label f, :description, gettext "Description" %>
+  <%= textarea f, :description, class: "big_input", minlength: 20, maxlength: 1000, placeholder: (gettext "In this study I work on my 1.e4 openings...")%>
   <%= error_tag f, :description %>
+
 
   <div>
     <%= submit "Save" %>

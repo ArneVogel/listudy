@@ -1,0 +1,2 @@
+<h1><%= @event.name %></h1>
+<%= raw Earmark.as_html!(@event.description)%>
