@@ -32,15 +32,13 @@
   </div>
 
   <div class="one-half column">
-    <h2><%= gettext "Free & Open Source" %></h2>
-    <p><%= gettext "Your freedoms are important. That's why you have the rights to:" %></p>
-    <ol>
-      <li><%= gettext "Run the server yourself as you wish, for any purpose" %></li>
-      <li><%= gettext "Study how the software works, and change it so it does your computing as you wish" %></li>
-      <li><%= gettext "Redistribute the software" %></li>
-      <li><%= gettext "Distribute copies of your modified versions" %></li>
-    </ol>
-    <p><%= gettext "You can find the source code running Listudy on github:" %> <a rel="nofollow" href="https://github.com/ArneVogel/listudy">https://github.com/ArneVogel/listudy</a></p>
+    <h2><%= gettext "Explore" %></h2>
+    <ul>
+      <li><%= link (gettext "Openings"), to: Routes.opening_search_path(@conn, ListudyWeb.OpeningSearchLive, @conn.assigns.locale) %></li>
+      <li><%= link (gettext "Motifs"), to: Routes.motif_search_path(@conn, ListudyWeb.MotifSearchLive, @conn.assigns.locale) %></li>
+      <li><%= link (gettext "Players"), to: Routes.player_search_path(@conn, ListudyWeb.PlayerSearchLive, @conn.assigns.locale) %></li>
+      <li><%= link (gettext "Events"), to: Routes.event_search_path(@conn, ListudyWeb.EventSearchLive, @conn.assigns.locale) %></li>
+    </ul>
   </div>
 
 </div>
@@ -52,6 +50,19 @@
     <p><%= gettext "The support can look different. Report bugs if you find any, fix bugs if you can, help translate Listudy into other languages." %></p>
     <p><%= gettext "Visit github to find out more about how you can help:" %> <a rel="nofollow" href="https://github.com/ArneVogel/listudy">https://github.com/ArneVogel/listudy</a></p>
   </div>
+
+  <div class="one-half column">
+    <h2><%= gettext "Free & Open Source" %></h2>
+    <p><%= gettext "Your freedoms are important. That's why you have the rights to:" %></p>
+    <ol>
+      <li><%= gettext "Run the server yourself as you wish, for any purpose" %></li>
+      <li><%= gettext "Study how the software works, and change it so it does your computing as you wish" %></li>
+      <li><%= gettext "Redistribute the software" %></li>
+      <li><%= gettext "Distribute copies of your modified versions" %></li>
+    </ol>
+    <p><%= gettext "You can find the source code running Listudy on github:" %> <a rel="nofollow" href="https://github.com/ArneVogel/listudy">https://github.com/ArneVogel/listudy</a></p>
+  </div>
+
 </div>
 
 
