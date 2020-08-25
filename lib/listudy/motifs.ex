@@ -39,6 +39,15 @@ defmodule Listudy.Motifs do
 
   def get_by_slug!(slug), do: Repo.get_by(Motif, slug: slug)
 
+  def search_by_title(word) do
+    word = "%" <> word <> "%"
+    query = from c in Motif, 
+      where: like(fragment("lower(?)",c.name), fragment("lower(?)",^word)),
+      limit: 20,
+      order_by: [desc: c.updated_at]
+    Repo.all(query)
+  end
+
   @doc """
   Creates a motif.
 

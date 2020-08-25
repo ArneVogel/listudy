@@ -31,6 +31,13 @@ defmodule ListudyWeb.OpeningController do
     render(conn, "show.html", opening: opening)
   end
 
+  # For public usage
+  def show(conn, %{"opening" => id}) do
+    opening = Openings.get_by_slug!(id)
+    render(conn, "public.html", opening: opening)
+  end
+
+
   def edit(conn, %{"id" => id}) do
     opening = Openings.get_opening!(id)
     changeset = Openings.change_opening(opening)

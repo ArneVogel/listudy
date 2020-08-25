@@ -31,6 +31,12 @@ defmodule ListudyWeb.PlayerController do
     render(conn, "show.html", player: player)
   end
 
+  # For public usage
+  def show(conn, %{"player" => id}) do
+    player = Players.get_by_slug!(id)
+    render(conn, "public.html", player: player)
+  end
+
   def edit(conn, %{"id" => id}) do
     player = Players.get_player!(id)
     changeset = Players.change_player(player)

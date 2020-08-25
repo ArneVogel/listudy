@@ -31,6 +31,13 @@ defmodule ListudyWeb.MotifController do
     render(conn, "show.html", motif: motif)
   end
 
+  # For public usage
+  def show(conn, %{"motif" => id}) do
+    motif = Motifs.get_by_slug!(id)
+    render(conn, "public.html", motif: motif)
+  end
+
+
   def edit(conn, %{"id" => id}) do
     motif = Motifs.get_motif!(id)
     changeset = Motifs.change_motif(motif)
