@@ -17,6 +17,7 @@ defmodule ListudyWeb.TacticsLive do
     Gettext.put_locale(ListudyWeb.Gettext, locale)
     tactic = Tactics.get_tactic!(id)
     socket = add_extra(params, socket)
+    socket = assign(socket, :noindex, true)
     canonical = Routes.tactics_path(socket, ListudyWeb.TacticsLive, "en", tactic)
     {:ok, assign(socket, locale: locale, tactic: tactic, canonical: canonical)}
   end

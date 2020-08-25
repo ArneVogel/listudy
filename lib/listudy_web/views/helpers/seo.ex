@@ -11,6 +11,13 @@ defmodule ListudyWeb.Seo do
     '<link rel="canonical" href="https://listudy.org#{canonical}" />'
   end
 
+  def noindex(%{:assigns => %{:noindex => true}}) do
+    '<meta name="robots" content="noindex">'
+  end
+
+  def noindex(_conn) do
+    ''
+  end
 
   def hreflang(conn) do
     path = get_path(conn)
