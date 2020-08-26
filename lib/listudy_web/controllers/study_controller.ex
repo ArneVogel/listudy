@@ -72,6 +72,8 @@ defmodule ListudyWeb.StudyController do
 
   def show(conn, %{"id" => id}) do
     study = Studies.get_study_by_slug!(id)
+    # if the study has less than the min favorites => noindex it
+    noindex = StudyFavorites.count_favorites(study.id) < Application.get_env(:listudy, :seo)[:study_min_favorites]
     
     user_id = case get_user(conn) do
       {:ok, user} -> user.id
@@ -87,7 +89,7 @@ defmodule ListudyWeb.StudyController do
       file = unique_id <> ".pgn"
       {_, pgn} = File.read(get_path(file))
       study = Map.put(study, :pgn, pgn)
-      render(conn, "show.html", study: study)
+      render(conn, "show.html", study: study, noindex: noindex)
     else
       redir_study = Studies.get_study_by_slug_start(id_from_slug(id))
       if redir_study != nil and !redir_study.private do

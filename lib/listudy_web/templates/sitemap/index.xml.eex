@@ -4,10 +4,12 @@
      <loc><%= base_url() <> Routes.page_path(@conn, :index, @locale) %></loc>
    </url>
   <%= for study <- @studies do %>
+   <%= if study.favorites >= Application.get_env(:listudy, :seo)[:study_min_favorites] do %>
    <url>
-     <loc><%= base_url() <> Routes.study_path(@conn, :show, @locale, study) %></loc>
+     <loc><%= base_url() <> Routes.study_path(@conn, :show, @locale, study.slug) %></loc>
      <lastmod><%= format_date(study.updated_at) %></lastmod>
    </url>
+   <% end %>
   <% end %>
   <%= for post <- @posts do %>
    <%= if length(String.split(post.body, " ")) >= Application.get_env(:listudy, :seo)[:post_min_words] do %>

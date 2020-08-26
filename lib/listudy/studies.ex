@@ -65,7 +65,12 @@ defmodule Listudy.Studies do
   end
 
   def get_all_public_studies() do
-    query = from(Study, where: [private: false])
+    query = from(s in Study, [
+      join: f in StudyFavorite, on: s.id == f.study_id,
+      where: s.private == false,
+      group_by: s.id,
+      select: %{:id => s.id, :slug => s.slug, :favorites => count(f.id), :updated_at => s.updated_at}
+    ])
     Repo.all(query)
   end
 
