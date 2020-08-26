@@ -14,7 +14,7 @@
   <%= error_tag f, :slug %>
 
   <%= label f, :description, gettext "Description" %>
-  <%= textarea f, :description, class: "big_input", minlength: 20, maxlength: 1000, placeholder: (gettext "In this study I work on my 1.e4 openings...")%>
+  <%= textarea f, :description, class: "deep_input big_input" %>
   <%= error_tag f, :description %>
 
 
