@@ -57,4 +57,71 @@ function ground_undo_last_move() {
     ground.set({"fen": chess.fen()});
 }
 
-export { ground_init_state, resize_ground, setup_ground, ground_set_moves, ground_undo_last_move, setup_move_handler };
+/*
+ * Returns the square the captured pawn is located
+ * based on the chess.js moves object
+ */
+function en_passant_square(move) {
+    let square = move.to.split("");
+    if (move.color == "w") {
+        square[1] = Number(square[1]) - 1;
+    } else {
+        square[1] = Number(square[1]) + 1;
+    }
+    return square.join("");
+}
+
+/*
+ * Remove any piece from a square in san notation
+ * e.g. empty_square("e4") removes the piece on e4
+ */
+function empty_square(square) {
+    let m = new Object();
+    m[square] = null;
+    ground.setPieces(m);
+}
+
+/*
+ * Expands the strings chess.js uses for pieces and colors
+ * to the strings chessground uses
+ */
+function expand_chess_js_types(s) {
+    switch(s) {
+        case "b":
+            return "black";
+        case "w":
+            return "white";
+        case "p":
+            return "pawn";
+        case "r":
+            return "rook";
+        case "b":
+            return "bishop";
+        case "n":
+            return "knight";
+        case "q":
+            return "queen";
+        case "k":
+            return "king";
+    }
+}
+
+// move based on a chess.js move
+function ground_move(m) {
+    if (m.flags == "e") { // handle en passant
+        let captured = en_passant_square(m)
+        empty_square(captured);
+    }
+    if (m.flags.indexOf("p") !== -1) { // handle promotion
+        let promoted_piece = expand_chess_js_types(m.promotion);
+        let color = expand_chess_js_types(m.color);
+        let square = m.to;
+        let map = new Map();
+        map[square] = {role: promoted_piece, color: color};
+        ground.setPieces(map);
+    }
+
+    ground.move(m.from, m.to);
+}
+
+export { ground_init_state, resize_ground, setup_ground, ground_set_moves, ground_undo_last_move, setup_move_handler, ground_move };

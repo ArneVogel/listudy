@@ -3,7 +3,7 @@ require("regenerator-runtime/runtime"); // required for sleep (https://github.co
 const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
 import { ground_init_state, resize_ground, setup_ground, ground_set_moves, 
-         ground_undo_last_move, setup_move_handler } from './modules/ground.js';
+         ground_undo_last_move, setup_move_handler, ground_move } from './modules/ground.js';
 import { turn_color, setup_chess, from_to_to_san, san_to_from_to } from './modules/chess_utils.js';
 import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 import { sleep } from './modules/sleep.js';
@@ -18,14 +18,16 @@ async function handle_move(orig, dest, extraInfo) {
     clear_all_text();
 
     if (played == target) {
-        chess.move(played);
+        let m = chess.move(played);
+        console.log(m)
+        ground_move(m);
         if (to_play.length >= 2) {
             // theres another move the player has to get correct
             await sleep(100); // instant play by the ai feels weird
             let ai_move = to_play.shift();
             let m = chess.move(ai_move);
             ground_set_moves();
-            ground.move(m.from, m.to);
+            ground_move(m);
         } else {
             // player got the puzzle correct
             set_text(success_div, gettext_success);

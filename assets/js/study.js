@@ -10,7 +10,7 @@ import { generate_move_trees } from './modules/tree_from_pgn.js';
 import { sleep } from './modules/sleep.js';
 import { unescape_string } from './modules/security_related.js';
 import { ground_init_state, resize_ground, setup_ground, ground_set_moves, 
-         ground_undo_last_move, setup_move_handler } from './modules/ground.js';
+         ground_undo_last_move, setup_move_handler, ground_move } from './modules/ground.js';
 import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 
 const mode_free = "free_mode";
@@ -122,40 +122,12 @@ function ai_move(access) {
 }
 
 /*
- * Returns the square the captured pawn is located
- * based on the chess.js moves object
- */
-function en_passant_square(move) {
-    let square = move.to.split("");
-    if (move.color == "w") {
-        square[1] = Number(square[1]) - 1;
-    } else {
-        square[1] = Number(square[1]) + 1;
-    }
-    return square.join("");
-}
-
-/*
- * Remove any piece from a square in san notation
- * e.g. empty_square("e4") removes the piece on e4
- */
-function empty_square(square) {
-    let m = new Object();
-    m[square] = null;
-    ground.setPieces(m);
-}
-
-/*
  * Plays a move in san notation
  * Update chess, ground, access
  */
 function play_move(san) {
     let m = chess.move(san);
-    if (m.flags == "e") { // en passant
-        let captured = en_passant_square(m)
-        empty_square(captured);
-    }
-    ground.move(m.from, m.to);
+    ground_move(m);
     curr_move.push(tree_move_index(curr_move, san));
 }
 
