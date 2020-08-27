@@ -4,6 +4,8 @@
 
 <%= if @tactics_amount >= 2 do %>
   <h2 id="tactics"><%= gettext "%{name} Traps and Tactics", name: @opening.name %></h2>
+  <% next_url = Routes.random_opening_tactic_path(@conn, :random, @locale, @opening.slug) %>
+  <%= render ListudyWeb.TacticView, "tactic.html", conn: @conn, tactic: @tactic, next: next_url %>
   <p>
   <%= gettext "Get better in the %{name} opening by practicing tactics taken from the early game.", name: @opening.name %>
 
@@ -11,5 +13,5 @@
 
   <%= gettext "Train tactics from %{amount} different games.", amount: @tactics_amount %>
   </p>
-  <%= link (gettext "%{name} Tactics", name: @opening.name) , to: Routes.random_opening_tactic_path(@conn, :random, @locale, @opening.slug) %>
+  <%= link (gettext "%{name} Tactics", name: @opening.name) , to: next_url %>
 <% end %>

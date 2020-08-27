@@ -36,7 +36,8 @@ defmodule ListudyWeb.PlayerController do
   def show(conn, %{"player" => id}) do
     player = Players.get_by_slug!(id)
     tactics_amount = Tactics.player_count(player.id)
-    render(conn, "public.html", player: player, tactics_amount: tactics_amount)
+    tactic = Tactics.get_random_tactic("player", player.slug)
+    render(conn, "public.html", player: player, tactics_amount: tactics_amount, tactic: tactic)
   end
 
   def edit(conn, %{"id" => id}) do

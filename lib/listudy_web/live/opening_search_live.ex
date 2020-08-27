@@ -13,7 +13,6 @@ defmodule ListudyWeb.OpeningSearchLive do
       <br>
       <%= for match <- @matches do %>
         <a href="<%= Routes.opening_path(@socket, :show, @locale, match.slug) %>"><%= match.name %></a>
-        <a href="<%= Routes.random_opening_tactic_path(@socket, :random, @locale, match.slug) %>">[Tactics]</a>
         <br>
       <% end %>
     </form>

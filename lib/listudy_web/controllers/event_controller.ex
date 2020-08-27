@@ -37,7 +37,8 @@ defmodule ListudyWeb.EventController do
   def show(conn, %{"event" => id}) do
     event = Events.get_by_slug!(id)
     tactics_amount = Tactics.event_count(event.id)
-    render(conn, "public.html", event: event, tactics_amount: tactics_amount)
+    tactic = Tactics.get_random_tactic("event", event.slug)
+    render(conn, "public.html", event: event, tactics_amount: tactics_amount, tactic: tactic)
   end
 
 

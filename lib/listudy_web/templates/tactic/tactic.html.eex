@@ -3,7 +3,7 @@
     <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
   </div>
   <div class="sidebar">
-    <h2><%= gettext "Tactic"%> <%= @tactic.id %></h2>
+    <b><%= gettext "Tactic"%> #<%= @tactic.id %></b>
     <div class="success">
       <p id="success" class="infoBox hidden"></p>
     </div>
