@@ -14,5 +14,9 @@ defmodule ListudyWeb.PageTitle do
   defp get(%{ view_module: Elixir.ListudyWeb.PostView, view_template: "show.html", "post": post}), do: post.title
   defp get(%{ live_module: StudySearchLive}), do: gettext("Search Studies")
   defp get(%{ live_module: TacticsLive, "tactic": tactic }), do: gettext("Tactics") 
+  defp get(%{ view_module: Elixir.ListudyWeb.MotifView, view_template: "public.html", "motif": motif}), do: motif.name
+  defp get(%{ view_module: Elixir.ListudyWeb.EventView, view_template: "public.html", "event": event}), do: event.name
+  defp get(%{ view_module: Elixir.ListudyWeb.PlayerView, view_template: "public.html", "player": player}), do: player.name
+  defp get(%{ view_module: Elixir.ListudyWeb.OpeningView, view_template: "public.html", "opening": opening}), do: opening.name
   defp get(_), do: nil
 end
