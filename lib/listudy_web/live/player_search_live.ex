@@ -22,6 +22,7 @@ defmodule ListudyWeb.PlayerSearchLive do
   def mount(%{"locale" => locale}, session, socket) do
     result = Players.search_by_title("")
     Gettext.put_locale(ListudyWeb.Gettext, locale)
+    socket = assign(socket, noindex: true)
     {:ok, assign(socket, query: nil, matches: result, locale: locale)}
   end
 
