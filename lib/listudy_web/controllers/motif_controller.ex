@@ -36,7 +36,8 @@ defmodule ListudyWeb.MotifController do
   def show(conn, %{"motif" => id}) do
     motif = Motifs.get_by_slug!(id)
     tactics_amount = Tactics.motif_count(motif.id)
-    render(conn, "public.html", motif: motif, tactics_amount: tactics_amount)
+    tactic = Tactics.get_random_tactic("motif", motif.slug)
+    render(conn, "public.html", motif: motif, tactics_amount: tactics_amount, tactic: tactic)
   end
 
 

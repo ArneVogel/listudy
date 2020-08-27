@@ -1,4 +1,7 @@
 <h1><%= @motif.name %></h1>
+<% next_url = Routes.random_motif_tactic_path(@conn, :random, @locale, @motif.slug)%>
+<%= render ListudyWeb.TacticView, "tactic.html", conn: @conn, tactic: @tactic, next: next_url %>
+
 <%= raw Earmark.as_html!(@motif.description)%>
 
 <%= if @tactics_amount >= 2 do %>
@@ -8,5 +11,5 @@
 
   <%= gettext "Train real tactics from %{amount} different games.", amount: @tactics_amount %>
   </p>
-  <%= link (gettext "%{name} Tactics", name: @motif.name) , to: Routes.random_motif_tactic_path(@conn, :random, @locale, @motif.slug) %>
+  <%= link (gettext "%{name} Tactics", name: @motif.name) , to: next_url %>
 <% end %>
