@@ -1,0 +1,33 @@
+<h1>Show Blind tactic</h1>
+
+<ul>
+
+  <li>
+    <strong>Pgn:</strong>
+    <%= @blind_tactic.pgn %>
+  </li>
+
+  <li>
+    <strong>Ply:</strong>
+    <%= @blind_tactic.ply %>
+  </li>
+
+  <li>
+    <strong>Color:</strong>
+    <%= @blind_tactic.color %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @blind_tactic.description %>
+  </li>
+
+  <li>
+    <strong>Played:</strong>
+    <%= @blind_tactic.played %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.blind_tactic_path(@conn, :edit, @blind_tactic) %></span>
+<span><%= link "Back", to: Routes.blind_tactic_path(@conn, :index) %></span>

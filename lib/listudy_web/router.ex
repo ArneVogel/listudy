@@ -49,6 +49,8 @@ defmodule ListudyWeb.Router do
     resources "/players", PlayerController
     resources "/events", EventController
     resources "/tactics", TacticController
+
+    resources "/blind_tactics", BlindTacticController
   end
 
   scope "/:locale", ListudyWeb do

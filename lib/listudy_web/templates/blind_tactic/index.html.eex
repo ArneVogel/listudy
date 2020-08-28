@@ -1,0 +1,34 @@
+<h1>Listing Blind tactics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pgn</th>
+      <th>Ply</th>
+      <th>Color</th>
+      <th>Description</th>
+      <th>Played</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for blind_tactic <- @blind_tactics do %>
+    <tr>
+      <td><%= blind_tactic.pgn %></td>
+      <td><%= blind_tactic.ply %></td>
+      <td><%= blind_tactic.color %></td>
+      <td><%= blind_tactic.description %></td>
+      <td><%= blind_tactic.played %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.blind_tactic_path(@conn, :show, blind_tactic) %></span>
+        <span><%= link "Edit", to: Routes.blind_tactic_path(@conn, :edit, blind_tactic) %></span>
+        <span><%= link "Delete", to: Routes.blind_tactic_path(@conn, :delete, blind_tactic), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Blind tactic", to: Routes.blind_tactic_path(@conn, :new) %></span>
