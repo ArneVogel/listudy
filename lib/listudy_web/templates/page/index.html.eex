@@ -32,13 +32,10 @@
   </div>
 
   <div class="one-half column">
-    <h2><%= gettext "Explore" %></h2>
-    <ul>
-      <li><%= link (gettext "Openings"), to: Routes.opening_search_path(@conn, ListudyWeb.OpeningSearchLive, @conn.assigns.locale) %></li>
-      <li><%= link (gettext "Motifs"), to: Routes.motif_search_path(@conn, ListudyWeb.MotifSearchLive, @conn.assigns.locale) %></li>
-      <li><%= link (gettext "Players"), to: Routes.player_search_path(@conn, ListudyWeb.PlayerSearchLive, @conn.assigns.locale) %></li>
-      <li><%= link (gettext "Events"), to: Routes.event_search_path(@conn, ListudyWeb.EventSearchLive, @conn.assigns.locale) %></li>
-    </ul>
+    <h2><%= gettext "Visualization" %></h2>
+    <p><%= gettext "Improve your visualization skills with blind tactics." %>
+    <p><%= gettext "Solve tactics while only seeing the board from 2 moves ago." %>
+    <p><%= gettext "Train your visualization skills: "%> <%= link (gettext "blind tactics"), to: Routes.blind_tactic_path(@conn, :random, @locale) %></p>
   </div>
 
 </div>
@@ -62,9 +59,20 @@
     </ol>
     <p><%= gettext "You can find the source code running Listudy on github:" %> <a rel="nofollow" href="https://github.com/ArneVogel/listudy">https://github.com/ArneVogel/listudy</a></p>
   </div>
-
 </div>
 
+<div class="row">
+  <div class="one-half column">
+    <h2><%= gettext "Explore" %></h2>
+    <ul>
+      <li><%= link (gettext "Openings"), to: Routes.opening_search_path(@conn, ListudyWeb.OpeningSearchLive, @conn.assigns.locale) %></li>
+      <li><%= link (gettext "Motifs"), to: Routes.motif_search_path(@conn, ListudyWeb.MotifSearchLive, @conn.assigns.locale) %></li>
+      <li><%= link (gettext "Players"), to: Routes.player_search_path(@conn, ListudyWeb.PlayerSearchLive, @conn.assigns.locale) %></li>
+      <li><%= link (gettext "Events"), to: Routes.event_search_path(@conn, ListudyWeb.EventSearchLive, @conn.assigns.locale) %></li>
+    </ul>
+  </div>
+
+</div>
 
 <hr>
 <div id="share"></div>
