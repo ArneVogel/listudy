@@ -37,6 +37,20 @@ defmodule Listudy.BlindTactics do
   """
   def get_blind_tactic!(id), do: Repo.get!(BlindTactic, id)
 
+  def get_random_tactic() do
+    get_random_tactic(-1)
+  end
+
+  # get a random tactic, excluding the id
+  def get_random_tactic(id) do
+    query =
+      from t in BlindTactic,
+      where: t.id != ^id,
+      order_by: fragment("RANDOM()"),
+      limit: 1
+    Repo.one(query)
+  end
+
   @doc """
   Creates a blind_tactic.
 

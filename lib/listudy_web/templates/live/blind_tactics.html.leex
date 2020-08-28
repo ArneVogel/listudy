@@ -1,0 +1,41 @@
+<div class="with_sidebar">
+  <div id="game_container" class="sidebar_main">
+    <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
+  </div>
+  <div class="sidebar">
+    <h1><%= gettext "Tactic"%> <%= @tactic.id %></h1>
+    <div class="success">
+      <p id="success" class="infoBox hidden"></p>
+    </div>
+    <div class="info">
+      <p id="info" class="infoBox hidden"></p>
+    </div>
+    <div class="error">
+      <p id="error" class="infoBox hidden"></p>
+    </div>
+    <div class="info">
+      <p id="suggestion" class="infoBox hidden"></p>
+    </div>
+
+    <button id="next" class="hidden continue_button" phx-click="next"><%= gettext "Continue"%></button>
+
+    <div>
+      <p><%= @tactic.description %></p>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="<%= Routes.static_path(@socket, "/css/chessground.css") %>"/>
+<script defer type="text/javascript" src="<%= Routes.static_path(@socket, "/js/blind_tactics.js") %>"></script>
+<form class="hidden">
+  <input type="text" id="pgn" value="<%= @tactic.pgn %>">
+  <input type="text" id="color" value="<%= @tactic.color %>">
+  <input type="text" id="ply" value="<%= @tactic.ply %>">
+</form>
+<script>
+let pgn = "<%= @tactic.pgn %>";
+let color = "<%= @tactic.color %>";
+let ply = "<%= @tactic.ply %>";
+let gettext_success = "<%= gettext "Tactic solved"%>";
+let gettext_wrong_move = "<%= gettext "Wrong Move"%>";
+</script>
