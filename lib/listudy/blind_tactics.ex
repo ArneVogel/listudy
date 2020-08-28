@@ -37,6 +37,11 @@ defmodule Listudy.BlindTactics do
   """
   def get_blind_tactic!(id), do: Repo.get!(BlindTactic, id)
 
+  def increase_played(id) do
+    from(t in BlindTactic, update: [inc: [played: 1]], where: t.id == ^id)
+    |> Repo.update_all([])
+  end
+
   def get_random_tactic() do
     get_random_tactic(-1)
   end

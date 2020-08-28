@@ -28,6 +28,6 @@ defmodule ListudyWeb.BlindTacticsLive do
   end
 
   defp get_next_url(socket, tactic) do
-    Routes.blind_tactics_live_path(socket, ListudyWeb.BlindTacticsLive, socket.assigns.locale, tactic)
+    Routes.blind_tactics_path(socket, ListudyWeb.BlindTacticsLive, socket.assigns.locale, tactic)
   end
 end

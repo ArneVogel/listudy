@@ -3,7 +3,7 @@
     <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
   </div>
   <div class="sidebar">
-    <h1><%= gettext "Tactic"%> <%= @tactic.id %></h1>
+    <h2><%= gettext "Blind Tactic"%> <%= @tactic.id %></h2>
     <div class="success">
       <p id="success" class="infoBox hidden"></p>
     </div>
@@ -17,11 +17,31 @@
       <p id="suggestion" class="infoBox hidden"></p>
     </div>
 
-    <button id="next" class="hidden continue_button" phx-click="next"><%= gettext "Continue"%></button>
+    <div>
+      <p><%= gettext "In this position the following moves were played:" %> <b id="moves"></b></p>
+      <p><%= if @tactic.color == "white" do %><%= gettext "White" %><% else %><%= gettext "Black" %><% end %>
+        <%= gettext "to play and win." %>
+      </p>
+    </div>
+
+    <button id="next" class="hidden continue_button" phx-click="next"><%= gettext "Continue" %></button>
 
     <div>
+      <hr>
       <p><%= @tactic.description %></p>
     </div>
+    <label for="ply_select"><%= gettext "How many plies should be hidden?" %></label>
+
+    <select name="ply_select" id="ply_select">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4" selected>4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
   </div>
 </div>
 
@@ -36,6 +56,8 @@
 let pgn = "<%= @tactic.pgn %>";
 let color = "<%= @tactic.color %>";
 let ply = "<%= @tactic.ply %>";
-let gettext_success = "<%= gettext "Tactic solved"%>";
-let gettext_wrong_move = "<%= gettext "Wrong Move"%>";
+let i18n_success = "<%= gettext "Tactic solved!"%>";
+let i18n_wrong_move = "<%= gettext "Wrong Move"%>";
+
+let i18n_right_move = "<%= gettext "Correct move, there are still more moves."%>";
 </script>
