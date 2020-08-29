@@ -88,6 +88,7 @@ defmodule ListudyWeb.Router do
     get "/blog/:id", PostController, :show
     get "/stats", StatsController, :index
     get "/profile/:username", UserProfileController, :show
+    get "/features/:page", PageController, :features
     get "/:page", PageController, :show
     get "/", PageController, :index
 

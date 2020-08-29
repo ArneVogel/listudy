@@ -4,6 +4,8 @@ defmodule ListudyWeb.PageController do
   alias Listudy.Content.Post
 
   @languages ["en", "de"]
+  @pages ["privacy", "terms-of-service", "imprint", "copyright"]
+  @features ["blind-tactics"]
 
   def index(conn, %{"locale" => locale}) do
     case locale in @languages do
@@ -22,16 +24,24 @@ defmodule ListudyWeb.PageController do
   end
 
   def show(conn, %{"page" => page}) do
-    case Enum.member?(["privacy", "terms-of-service", "imprint", "copyright"], page) do
+    renderer(conn, @pages, page)
+  end
+
+  def features(conn, %{"page" => page}) do
+    renderer(conn, @features, page)
+  end
+
+  defp renderer(conn, pages, page) do
+    case Enum.member?(pages, page) do
       true ->
         render(conn, page <> ".html")
       false ->
         conn
         |> put_flash(:info, (gettext "This page does not exist"))
         |> redirect(to: Routes.page_path(conn, :index, conn.assigns.locale))
-
     end
   end
+
 
   defp get_locale(conn) do
     case get_session(conn, :locale) do

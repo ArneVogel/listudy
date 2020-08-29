@@ -124,8 +124,24 @@ body {
 
 .continue_button {
     background-color: var(--primary-color);
+    color: var(--primary-font-offset);
     width: 100%;
     height: initial;
     padding: 0.5em 30px;
     font-size: 16px;
+}
+
+.features-header {
+    text-align: center;
+    margin: 4em;
+}
+
+.highlight-button {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--primary-font-offset);
+}
+
+img {
+    max-width: 100%;
 }
