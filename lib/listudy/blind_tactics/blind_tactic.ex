@@ -6,7 +6,7 @@ defmodule Listudy.BlindTactics.BlindTactic do
     field :color, :string
     field :description, :string
     field :pgn, :string
-    field :played, :integer
+    field :played, :integer, default: 0
     field :ply, :integer
 
     timestamps()
@@ -16,6 +16,6 @@ defmodule Listudy.BlindTactics.BlindTactic do
   def changeset(blind_tactic, attrs) do
     blind_tactic
     |> cast(attrs, [:pgn, :ply, :color, :description, :played])
-    |> validate_required([:pgn, :ply, :color, :description, :played])
+    |> validate_required([:pgn, :ply, :color, :played])
   end
 end
