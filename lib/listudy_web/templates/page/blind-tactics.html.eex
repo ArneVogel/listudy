@@ -1,0 +1,57 @@
+
+<div class="features-header">
+  <h1><%= gettext "Blind Tactics" %></h1>
+  <b><%= gettext "Improve your chess visualization skills" %></b>
+</div>
+
+
+<p><%= dgettext "blind-tactics", "Use blind tactics to improve your chess visualisation skills. Solve tactics while seeing the board state of several moves from the past. You are given the representation of the board and the moves that have been made since then, and then you then have to solve the tactical problem by imagining the board and the moves played in your head." %></p>
+
+<a href="<%= Routes.blind_tactic_path(@conn, :random, @locale) %>">
+  <button class="highlight-button">Play Now!</button>
+</a>
+
+<h2 id="help"><%= gettext "How it works" %></h2>
+<p><%= dgettext "blind-tactics", "Using the blind tactics takes getting used to. Here I try to explain it as simple and as clear as possible." %></p>
+
+<div class="row">
+  <div class="one-half column">
+    <h3><%= dgettext "blind-tactics", "Frozen Board" %></h3>
+    <p><%= dgettext "blind-tactics", "The board is frozen and does not show the current state of the game. This means you do not see the latest state of the board. The pieces are not animated during the tactics. You have to keep the positions of the pieces in your head!" %></p>
+    <p><%= dgettext "blind-tactics", "If you click on the position where a piece is positioned you will be shown the possible legal moves. If you then click again on the correct square, the move will be executed and the exercise will continue." %></p>
+  </div>
+
+  <div class="one-half column">
+    <img alt="<%= dgettext "blind-tactics", "different board state" %>" src="<%= Routes.static_path(@conn, "/images/features/board-state.png") %>"></img>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="one-half column">
+    <img alt="<%= dgettext "blind-tactics", "move list" %>" src="<%= Routes.static_path(@conn, "/images/features/move-list.png") %>"></img>
+  </div>
+  <div class="one-half column">
+    <h3><%= dgettext "blind-tactics", "The move list" %></h3>
+    <p><%= dgettext "blind-tactics", "Next to the board you will see the list of moves that have been played since the board was frozen. This list shows the current state of the game and the moves the opponent played." %></p>
+    <p><%= dgettext "blind-tactics", "The moves the opponent plays during tactics are added to this list!" %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="one-half column">
+    <h3><%= dgettext "blind-tactics", "Tactics" %></h3>
+    <p><%= dgettext "blind-tactics", "Your task is to solve the exercise like with normal tactics. There is only one continuation that is correct." %></p>
+    <p><%= dgettext "blind-tactics", "As soon as you have solved the tactic, the final position is displayed. Did you have the same position in your head?" %></p>
+  </div>
+
+  <div class="one-half column">
+    <img alt="<%= dgettext "blind-tactics", "solved tactic" %>" src="<%= Routes.static_path(@conn, "/images/features/solved.png") %>"></img>
+  </div>
+</div>
+
+<a href="<%= Routes.blind_tactic_path(@conn, :random, @locale) %>">
+  <button class="highlight-button">Play Now!</button>
+</a>
+
+

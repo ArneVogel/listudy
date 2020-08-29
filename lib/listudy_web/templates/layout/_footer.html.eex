@@ -6,15 +6,18 @@
       <%= link (gettext "Terms of Service"), to: Routes.page_path(@conn, :show, @conn.assigns.locale, "terms-of-service") %> <br>
       <%= link (gettext "Copyright"), to: Routes.page_path(@conn, :show, @conn.assigns.locale, "copyright") %> <br>
       <%= link (gettext "Imprint"), to: Routes.page_path(@conn, :show, @conn.assigns.locale, "imprint") %> <br>
+      <%= link (gettext "Blog"), to: Routes.post_path(@conn, :index, @conn.assigns.locale) %>
     </div>
 
     <div class="one-third column">
-      <%= link (gettext "Blog"), to: Routes.post_path(@conn, :index, @conn.assigns.locale) %>
-      <p>Open Source & Free Software: <a href="https://github.com/ArneVogel/listudy" rel="nofollow">github</a></p>
+      <b><%= gettext "Features" %></b><br>
+      <%= link (gettext "Blind Tactics"), to: Routes.page_path(@conn, :features, @conn.assigns.locale, "blind-tactics") %> <br>
     </div>
 
     <div class="one-third column">
       <p>Contact me at: arne@listudy.org</p> 
+      <p>Open Source & Free Software: <a href="https://github.com/ArneVogel/listudy" rel="nofollow">GitHub</a></p>
     </div>
   </div>
+
 </div>

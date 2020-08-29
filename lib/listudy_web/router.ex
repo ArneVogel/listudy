@@ -49,6 +49,8 @@ defmodule ListudyWeb.Router do
     resources "/players", PlayerController
     resources "/events", EventController
     resources "/tactics", TacticController
+
+    resources "/blind_tactics", BlindTacticController
   end
 
   scope "/:locale", ListudyWeb do
@@ -72,6 +74,9 @@ defmodule ListudyWeb.Router do
     get "/tactics/player/:player", TacticController, :random, as: :random_player_tactic
     get "/tactics/motif/:motif", TacticController, :random, as: :random_motif_tactic
 
+    get "/blind-tactics", BlindTacticController, :random
+    live "/blind-tactics/:id", BlindTacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :blind_tactics
+
     live "/tactics/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :tactics
     live "/tactics/opening/:opening/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :opening_tactics
     live "/tactics/motif/:motif/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :motif_tactics
@@ -83,6 +88,7 @@ defmodule ListudyWeb.Router do
     get "/blog/:id", PostController, :show
     get "/stats", StatsController, :index
     get "/profile/:username", UserProfileController, :show
+    get "/features/:page", PageController, :features
     get "/:page", PageController, :show
     get "/", PageController, :index
 

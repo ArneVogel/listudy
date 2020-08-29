@@ -21,6 +21,10 @@ function setup_move_handler(f) {
     ground.set({movable: {events: {after: f}}});
 }
 
+function setup_click_handler(f) {
+    ground.set({events: {select: f}});
+}
+
 
 // setsup the basic ground
 function setup_ground(fen) {
@@ -44,6 +48,14 @@ function resize_ground() {
 // sets the legal moves that can be played in the current chess instance
 function ground_set_moves() {
     let moves = ground_legal_moves(chess);
+    ground.set({movable: {dests: moves}});
+}
+
+/*
+ * Same as ground_set_moves but takes an instance of chess instead of the global one
+ */
+function ground_set_moves_from_instance(c) {
+    let moves = ground_legal_moves(c);
     ground.set({movable: {dests: moves}});
 }
 
@@ -124,4 +136,4 @@ function ground_move(m) {
     ground.move(m.from, m.to);
 }
 
-export { ground_init_state, resize_ground, setup_ground, ground_set_moves, ground_undo_last_move, setup_move_handler, ground_move };
+export { ground_init_state, resize_ground, setup_ground, ground_set_moves, ground_set_moves_from_instance, ground_undo_last_move, setup_move_handler, setup_click_handler, ground_move };

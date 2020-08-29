@@ -1,5 +1,6 @@
 :root {
     --primary-color: #0034FF;
+    --primary-font-offset: white;
     --secondary-color: #536390;
     --font-color: #424242;
     --font-highlight-color: #7d7d7d;
@@ -19,6 +20,7 @@
 
 [data-theme="dark"] {
     --primary-color: #0034FF;
+    --primary-font-offset: white;
     --secondary-color: #818cab;
     --font-color: #e1e1ff;
     --font-highlight-color: #fdfdff;
