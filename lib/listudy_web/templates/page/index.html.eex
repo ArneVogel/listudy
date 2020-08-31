@@ -72,6 +72,11 @@
     </ul>
   </div>
 
+  <div class="one-half column">
+    <h2><%= gettext "Daily Puzzle" %></h2>
+    <% next_url = Routes.tactic_path(@conn, :random, @locale) %>
+    <%= render ListudyWeb.TacticView, "tactic.html", conn: @conn, tactic: @tactic, next: next_url %>
+  </div>
 </div>
 
 <hr>

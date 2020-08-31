@@ -14,8 +14,7 @@ defmodule ListudyWeb.TacticController do
   end
 
   def daily(conn, _params) do
-    id = daily_id()
-    tactic = Tactics.get_tactic!(id)
+    tactic = daily_tactic()
     render(conn, "daily.html", tactic: tactic)
   end
 
@@ -135,6 +134,11 @@ defmodule ListudyWeb.TacticController do
 
   defp get_url(conn, _params, tactic) do
     Routes.tactics_path(conn, ListudyWeb.TacticsLive, conn.private.plug_session["locale"], tactic)
+  end
+
+  def daily_tactic() do
+    id = daily_id()
+    Tactics.get_tactic!(id)
   end
 
   defp daily_id() do

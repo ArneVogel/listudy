@@ -11,7 +11,8 @@ defmodule ListudyWeb.PageController do
     case locale in @languages do
       true ->
         posts = Content.list_published_posts(5)
-        render(conn, "index.html", posts: posts)
+        tactic = ListudyWeb.TacticController.daily_tactic()
+        render(conn, "index.html", posts: posts, tactic: tactic)
       _ ->
         conn
         |> put_flash(:info, (gettext "This page does not exist"))
