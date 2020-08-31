@@ -8,7 +8,7 @@
 <p><%= dgettext "blind-tactics", "Use blind tactics to improve your chess visualisation skills. Solve tactics while seeing the board state of several moves from the past. You are given the representation of the board and the moves that have been made since then, and then you then have to solve the tactical problem by imagining the board and the moves played in your head." %></p>
 
 <a href="<%= Routes.blind_tactic_path(@conn, :random, @locale) %>">
-  <button class="highlight-button">Play Now!</button>
+  <button class="highlight-button"><%= gettext "Play Now!" %></button>
 </a>
 
 <h2 id="help"><%= gettext "How it works" %></h2>

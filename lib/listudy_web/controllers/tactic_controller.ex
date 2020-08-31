@@ -13,6 +13,12 @@ defmodule ListudyWeb.TacticController do
     render(conn, "index.html", tactics: tactics)
   end
 
+  def daily(conn, _params) do
+    id = daily_id()
+    tactic = Tactics.get_tactic!(id)
+    render(conn, "daily.html", tactic: tactic)
+  end
+
   def new(conn, _params) do
     changeset = Tactics.change_tactic(%Tactic{})
     motifs = Motifs.list_motifs()
@@ -129,5 +135,11 @@ defmodule ListudyWeb.TacticController do
 
   defp get_url(conn, _params, tactic) do
     Routes.tactics_path(conn, ListudyWeb.TacticsLive, conn.private.plug_session["locale"], tactic)
+  end
+
+  defp daily_id() do
+    total = Tactics.tactics_count()
+    {{year, month, day}, _} = :calendar.universal_time
+    rem((year*1001+month*12345+day*54321), total) + 1
   end
 end

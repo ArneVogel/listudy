@@ -25,6 +25,10 @@ defmodule Listudy.Tactics do
     Repo.all(Tactic)
   end
 
+  def tactics_count do
+    Repo.aggregate(Tactic, :count, :id)
+  end
+
   @doc """
   Gets a single tactic.
 

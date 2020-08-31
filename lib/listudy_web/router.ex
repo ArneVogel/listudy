@@ -69,6 +69,7 @@ defmodule ListudyWeb.Router do
     get "/motif/:motif", MotifController, :show
 
     get "/tactics", TacticController, :random
+    get "/tactics/daily-puzzle", TacticController, :daily
     get "/tactics/opening/:opening", TacticController, :random, as: :random_opening_tactic
     get "/tactics/event/:event", TacticController, :random, as: :random_event_tactic
     get "/tactics/player/:player", TacticController, :random, as: :random_player_tactic
