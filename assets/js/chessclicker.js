@@ -158,7 +158,7 @@ window.teachers = [
 ];
 
 function defaultConfig() {
-    return {rating: 5, teachers: Array.apply(null, Array(teachers.length)).map(function() { return 0 }) };
+    return {rating: 5, spend: 0, total: 0, teachers: Array.apply(null, Array(teachers.length)).map(function() { return 0 }) };
 }
 
 function teacher_benefits() {
@@ -192,6 +192,7 @@ function buy(i) {
     if (chessclicker.rating >= cost) {
         chessclicker.rating -= cost;
         chessclicker.teachers[i] += 1;
+        chessclicker.spend += cost;
 
         cost = teacher_cost(teachers[i].base_cost, chessclicker.teachers[i]); // new cost
         
@@ -235,7 +236,9 @@ function rps() {
 }
 
 function tick() {
-    chessclicker.rating += rps();
+    let t = rps();
+    chessclicker.rating += t;
+    chessclicker.total += t;
 
     update_teachers();
     display_rating();
