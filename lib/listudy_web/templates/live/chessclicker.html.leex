@@ -1,0 +1,88 @@
+<style>
+.teacher {
+  border: solid 1px var(--font-color);
+}
+.disabled {
+  border: solid 1px var(--bg-highlight-color);
+}
+.owned_count {
+  float: right;
+  font-size: 2em;
+}
+
+.overflow {
+  max-height: 70vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.fade {
+    -webkit-animation: fadeinout 2s linear forwards;
+    animation: fadeinout 2s linear forwards;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+</style>
+
+<div class="features-header">
+  <h2><%= gettext "Rating Points" %>: <span id="rating">0</span></h2>
+  <p>
+    <%= gettext "Rating points per second" %>: <span id="rps"></span>; 
+    <%= gettext "Rating points per solved tactic" %>: <span id="per_solve"></span>
+  </p>
+</div>
+<div class="row">
+  <div class="one-half column">
+    <div id="game_container" class="sidebar_main">
+      <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
+    </div>
+
+    <div class="fade hidden success" id="success"></div>
+    <div class="fade hidden error" id="error"></div>
+  </div>
+
+  <div class="one-half column">
+    <b><%= gettext "Get help by" %>:</b>
+    <div class="overflow">
+      <% names = ["Paul Morphy", "Wilhelm Steinitz", "Emanuel Lasker", "José Raúl Capablanca", "Alexander Alekhine", "Max Euwe", "Mikhail Botvinnik", "Vasily Smyslov", "Mikhail Tal", "Tigran Petrosian", "Boris Spassky", "Robert J. Fischer", "Anatoly Karpov", "Garry Kasparov", "Vladimir Kramnik", "Viswanathan Anand", "Magnus Carlsen"] %>
+      <%= for {name, i} <- Enum.with_index(names) do %>
+        <div class="teacher disabled hidden" onclick="buy(<%= i %>)" id="<%= i %>">
+          <b><%= name %></b><span id="<%= i %>_owned" class="owned_count">0</span><br>
+          <%= gettext "Cost" %>: <span id="<%= i %>_cost">10</span> <%= gettext "rating points" %><br>
+          <%= gettext "Rating points per second" %>: <span id="<%= i %>_rps"></span><br>
+          <%= gettext "Rating points per tactic solved" %>: <span id="<%= i %>_solve"></span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+<button id="next" class="hidden continue_button" phx-click="next"><%= gettext "Continue"%></button>
+<link rel="stylesheet" href="<%= Routes.static_path(@socket, "/css/chessground.css") %>"/>
+<script defer type="text/javascript" src="<%= Routes.static_path(@socket, "/js/chessclicker.js") %>"></script>
+<form class="hidden">
+  <input type="text" id="fen" value="<%= @tactic.fen %>">
+  <input type="text" id="color" value="<%= @tactic.color %>">
+  <input type="text" id="moves" value="<%= @tactic.moves %>">
+  <input type="text" id="last_move" value="<%= @tactic.last_move %>">
+</form>
+<script>
+let fen = "<%= @tactic.fen %>";
+let color = "<%= @tactic.color %>";
+let moves = "<%= @tactic.moves %>";
+let last_move = "<%= @tactic.last_move %>";
+</script>

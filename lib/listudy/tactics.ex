@@ -109,6 +109,16 @@ defmodule Listudy.Tactics do
     Repo.all(query) |> List.first
   end
 
+  def get_random_easy_tactic() do
+    query =
+      from t in Tactic,
+      where: t.rating < 1300,
+      order_by: fragment("RANDOM()"),
+      limit: 1
+    Repo.one(query)
+  end
+
+
   def get_random_event_tactic(id, event) do
     query =
       from t in Tactic,
