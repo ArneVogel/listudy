@@ -139,22 +139,22 @@ function main() {
 
 window.teachers = [
     {base_cost: 10, rps: 0.1, inc_solve: 3},
-    {base_cost: 100, rps: 1, inc_solve: 30},
-    {base_cost: 1100, rps: 8, inc_solve: 240},
-    {base_cost: 12000, rps: 47, inc_solve: 1400},
-    {base_cost: 130000, rps: 260, inc_solve: 7000},
-    {base_cost: 1400000, rps: 1400, inc_solve: 31500},
-    {base_cost: 20000000, rps: 7800, inc_solve: 120000},
-    {base_cost: 330000000, rps: 42000, inc_solve: 420000},
-    {base_cost: 5600000000, rps: 260000, inc_solve: 1680000},
-    {base_cost: 75000000000, rps: 1000000, inc_solve: 6300000},
-    {base_cost: 100000000000, rps: 4500000, inc_solve: 12000000},
-    {base_cost: 1960000000000, rps: 13500000, inc_solve: 32000000},
-    {base_cost: 27440000000000, rps: 47000000, inc_solve: 140000000},
-    {base_cost: 360000000000000, rps: 110000000, inc_solve: 420000000},
-    {base_cost: 9000000000000000, rps: 335000000, inc_solve: 150000000},
-    {base_cost: 200000000000000000, rps: 970000000, inc_solve: 490000000},
-    {base_cost: 1400000000000000000, rps: 1230000000, inc_solve: 1500000000}
+    {base_cost: 100, rps: 1, inc_solve: 40},
+    {base_cost: 1100, rps: 8, inc_solve: 340},
+    {base_cost: 12000, rps: 47, inc_solve: 2400},
+    {base_cost: 130000, rps: 260, inc_solve: 14000},
+    {base_cost: 1400000, rps: 1400, inc_solve: 61500},
+    {base_cost: 20000000, rps: 7800, inc_solve: 420000},
+    {base_cost: 330000000, rps: 42000, inc_solve: 1020000},
+    {base_cost: 5600000000, rps: 260000, inc_solve: 7680000},
+    {base_cost: 75000000000, rps: 1000000, inc_solve: 60300000},
+    {base_cost: 100000000000, rps: 4500000, inc_solve: 1200000000},
+    {base_cost: 1960000000000, rps: 13500000, inc_solve: 3200000000},
+    {base_cost: 27440000000000, rps: 47000000, inc_solve: 14000000000},
+    {base_cost: 360000000000000, rps: 110000000, inc_solve: 42000000000},
+    {base_cost: 9000000000000000, rps: 335000000, inc_solve: 15000000000},
+    {base_cost: 200000000000000000, rps: 970000000, inc_solve: 49000000000},
+    {base_cost: 1400000000000000000, rps: 1230000000, inc_solve: 150000000000}
 ];
 
 function defaultConfig() {
