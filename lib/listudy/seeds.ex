@@ -16,6 +16,15 @@ defmodule Listudy.Seeds do
         "$pbkdf2-sha512$100000$j7PasHrv6LMbGdCqpYVrTA==$A3+0bz2XFCmQx7OMssNE1nmp+KRUKusLy3ZDV09yut6QCfZwXewEmyXY9RRJH2Z09LVH84uiRRGk/ioaeBKoSQ=="
     }
 
+    regular = %User{
+      username: "Regular",
+      role: "user",
+      email: "regular@listudy.org",
+      # temppass
+      password_hash:
+        "$pbkdf2-sha512$100000$j7PasHrv6LMbGdCqpYVrTA==$A3+0bz2XFCmQx7OMssNE1nmp+KRUKusLy3ZDV09yut6QCfZwXewEmyXY9RRJH2Z09LVH84uiRRGk/ioaeBKoSQ=="
+    }
+
     motif = %Motif{
       name: "Uncategorized",
       description: "Uncategorized",
@@ -57,6 +66,7 @@ defmodule Listudy.Seeds do
     }
 
     Listudy.Repo.insert!(user)
+    Listudy.Repo.insert!(regular)
     Listudy.Repo.insert!(event)
     Listudy.Repo.insert!(motif)
     Listudy.Repo.insert!(player)

@@ -7,9 +7,15 @@ defmodule ListudyWeb.PageControllerTest do
       id: 1
     }
 
-    authed_conn = Pow.Plug.assign_current_user(conn, user, [])
+    regular_user = %Listudy.Users.User{
+      username: "Regular",
+      id: 2
+    }
 
-    {:ok, conn: conn, authed_conn: authed_conn}
+    admin_conn = Pow.Plug.assign_current_user(conn, user, [])
+    regular_user_conn = Pow.Plug.assign_current_user(conn, regular_user, [])
+
+    {:ok, conn: conn, admin_conn: admin_conn, regular_user_conn: regular_user_conn}
   end
 
   test "GET /", %{conn: conn} do
@@ -22,7 +28,12 @@ defmodule ListudyWeb.PageControllerTest do
     assert html_response(conn, 200) =~ "Listudy"
   end
 
-  test "logged in GET /en", %{authed_conn: conn} do
+  test "admin GET /en", %{admin_conn: conn} do
+    conn = get(conn, "/en")
+    assert html_response(conn, 200) =~ "registration/edit"
+  end
+
+  test "regular user GET /en", %{regular_user_conn: conn} do
     conn = get(conn, "/en")
     assert html_response(conn, 200) =~ "registration/edit"
   end
