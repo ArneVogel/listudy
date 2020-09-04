@@ -6,7 +6,7 @@ defmodule ListudyWeb.ChessClickerLive do
   alias ListudyWeb.Router.Helpers, as: Routes
 
   def render(assigns) do
-    Phoenix.View.render(ListudyWeb.LiveView ,"chessclicker.html", assigns)
+    Phoenix.View.render(ListudyWeb.LiveView, "chessclicker.html", assigns)
   end
 
   def mount(%{"locale" => locale} = params, session, socket) do

@@ -35,9 +35,11 @@ defmodule ListudyWeb.StudySearchLive do
 
   defp shorten_description(description) do
     limit = 200
+
     case String.length(description) do
       n when n < limit ->
         description
+
       _ ->
         String.slice(description, 0, limit) <> "..."
     end

@@ -6,4 +6,3 @@ end
 
 ExUnit.start()
 Ecto.Adapters.SQL.Sandbox.mode(Listudy.Repo, :manual)
-

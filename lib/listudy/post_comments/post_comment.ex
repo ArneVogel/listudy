@@ -1,7 +1,7 @@
 defmodule Listudy.PostComments.PostComment do
   use Ecto.Schema
   import Ecto.Changeset
-  
+
   @primary_key {:id, :binary_id, autogenerate: true}
   schema "post_comments" do
     field :text, :string

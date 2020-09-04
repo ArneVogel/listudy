@@ -25,13 +25,14 @@ defmodule ListudyWeb.Seo do
 
     case starts_with_language(path) do
       true ->
-        Enum.reduce @languages, "", fn lang, acc ->
+        Enum.reduce(@languages, "", fn lang, acc ->
           url = clean("#{@domain}/#{lang}/#{non_language_path}")
           acc <> "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{url}\" />" <> "\n"
-        end
+        end)
+
       _ ->
         ""
-      end
+    end
   end
 
   # For letting users pick their language
@@ -41,18 +42,18 @@ defmodule ListudyWeb.Seo do
 
     case starts_with_language(path) do
       true ->
-        Enum.reduce @languages, "", fn lang, acc ->
+        Enum.reduce(@languages, "", fn lang, acc ->
           url = clean("/#{lang}/#{non_language_path}")
           acc <> "<a href=\"#{url}\">#{String.upcase(lang)}</a>" <> "\n"
-        end
+        end)
+
       _ ->
-        Enum.reduce @languages, "", fn lang, acc ->
+        Enum.reduce(@languages, "", fn lang, acc ->
           url = clean("/#{lang}")
           acc <> "<a href=\"#{url}\">#{String.upcase(lang)}</a>" <> "\n"
-        end
+        end)
     end
   end
-
 
   defp get_path(conn) do
     # we only want the characters matching the regex in the path
@@ -69,9 +70,9 @@ defmodule ListudyWeb.Seo do
     lang = String.slice(path, 1, 2)
     lang in @languages
   end
-  
+
   defp clean(url) do
-    url 
+    url
     |> String.replace_suffix("/", "")
   end
 end

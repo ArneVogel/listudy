@@ -49,49 +49,70 @@ defmodule Listudy.Studies do
   """
   def get_study_by_slug_start(id) do
     slug = id <> "%"
-    query = from s in Study,
-      where: like(s.slug, ^slug)   
+
+    query =
+      from s in Study,
+        where: like(s.slug, ^slug)
+
     Repo.one(query)
   end
 
   def get_study_by_user!(user) do
     query = from(Study, where: [user_id: ^user])
-    Repo.all(query) 
+    Repo.all(query)
   end
 
   def get_public_studies_by_user!(user) do
     query = from(Study, where: [user_id: ^user, private: false])
-    Repo.all(query) 
+    Repo.all(query)
   end
 
   def get_all_public_studies() do
-    query = from(s in Study, [
-      join: f in StudyFavorite, on: s.id == f.study_id,
-      where: s.private == false,
-      group_by: s.id,
-      select: %{:id => s.id, :slug => s.slug, :favorites => count(f.id), :updated_at => s.updated_at}
-    ])
+    query =
+      from(s in Study,
+        join: f in StudyFavorite,
+        on: s.id == f.study_id,
+        where: s.private == false,
+        group_by: s.id,
+        select: %{
+          :id => s.id,
+          :slug => s.slug,
+          :favorites => count(f.id),
+          :updated_at => s.updated_at
+        }
+      )
+
     Repo.all(query)
   end
 
   def get_studies_by_favorite!(user) do
-    query = from s in Study,
-      join: f in StudyFavorite,
-      on: f.study_id == s.id,
-      where: f.user_id == ^user,
-      select: s
+    query =
+      from s in Study,
+        join: f in StudyFavorite,
+        on: f.study_id == s.id,
+        where: f.user_id == ^user,
+        select: s
+
     Repo.all(query)
   end
 
   def search_by_title(word) do
     word = "%" <> word <> "%"
-    query = from c in Study, 
-      join: u in User,
-      on: u.id == c.user_id,
-      where: like(fragment("lower(?)",c.title), fragment("lower(?)",^word)) and not c.private,
-      select: %{:title => c.title, :slug => c.slug, :username => u.username, :description => c.description},
-      limit: 20,
-      order_by: [desc: c.updated_at]
+
+    query =
+      from c in Study,
+        join: u in User,
+        on: u.id == c.user_id,
+        where: like(fragment("lower(?)", c.title), fragment("lower(?)", ^word)) and not c.private,
+        select: %{
+          :title => c.title,
+          :slug => c.slug,
+          :username => u.username,
+          :description => c.description
+        },
+        limit: 20,
+        order_by: [desc: c.updated_at]
+
     Repo.all(query)
   end
 
@@ -161,9 +182,8 @@ defmodule Listudy.Studies do
   end
 
   def study_aggregate() do
-      Study
-      |> Helpers.count_by_month(:inserted_at)
-      |> Repo.all
+    Study
+    |> Helpers.count_by_month(:inserted_at)
+    |> Repo.all()
   end
-
 end

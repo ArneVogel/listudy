@@ -19,9 +19,10 @@ config :listudy, ListudyWeb.Endpoint,
   live_view: [signing_salt: "K29dK2Yj"]
 
 config :listudy, :seo,
-  post_min_words: 300, # threshold a post needs to have to not get noindexed
-  study_min_favorites: 3 # how many favorites a study needs to not get noindexed
-
+  # threshold a post needs to have to not get noindexed
+  post_min_words: 300,
+  # how many favorites a study needs to not get noindexed
+  study_min_favorites: 3
 
 # Configures Elixir's Logger
 config :logger, :console,

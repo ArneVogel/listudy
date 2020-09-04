@@ -40,7 +40,6 @@ defmodule ListudyWeb.OpeningController do
     render(conn, "public.html", opening: opening, tactics_amount: tactics_amount, tactic: tactic)
   end
 
-
   def edit(conn, %{"id" => id}) do
     opening = Openings.get_opening!(id)
     changeset = Openings.change_opening(opening)

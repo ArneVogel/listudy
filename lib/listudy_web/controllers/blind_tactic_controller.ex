@@ -62,7 +62,15 @@ defmodule ListudyWeb.BlindTacticController do
 
   def random(conn, _params) do
     tactic = Listudy.BlindTactics.get_random_tactic()
-    url = Routes.blind_tactics_path(conn, ListudyWeb.BlindTacticsLive, conn.private.plug_session["locale"], tactic)
+
+    url =
+      Routes.blind_tactics_path(
+        conn,
+        ListudyWeb.BlindTacticsLive,
+        conn.private.plug_session["locale"],
+        tactic
+      )
+
     conn
     |> redirect(to: url)
   end

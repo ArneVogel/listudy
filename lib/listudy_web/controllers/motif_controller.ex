@@ -40,7 +40,6 @@ defmodule ListudyWeb.MotifController do
     render(conn, "public.html", motif: motif, tactics_amount: tactics_amount, tactic: tactic)
   end
 
-
   def edit(conn, %{"id" => id}) do
     motif = Motifs.get_motif!(id)
     changeset = Motifs.change_motif(motif)

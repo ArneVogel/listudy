@@ -7,5 +7,3 @@ defmodule ListudyWeb.StatsView do
     year <> "-" <> month
   end
 end
-
-

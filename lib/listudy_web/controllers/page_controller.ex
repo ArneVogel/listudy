@@ -13,15 +13,16 @@ defmodule ListudyWeb.PageController do
         posts = Content.list_published_posts(5)
         tactic = ListudyWeb.TacticController.daily_tactic()
         render(conn, "index.html", posts: posts, tactic: tactic)
+
       _ ->
         conn
-        |> put_flash(:info, (gettext "This page does not exist"))
+        |> put_flash(:info, gettext("This page does not exist"))
         |> redirect(to: Routes.page_path(conn, :index, conn.assigns.locale))
-      end
+    end
   end
 
   def domain(conn, _params) do
-    redirect(conn, to: "/" <> conn.assigns.locale ) 
+    redirect(conn, to: "/" <> conn.assigns.locale)
   end
 
   def show(conn, %{"page" => page}) do
@@ -36,13 +37,13 @@ defmodule ListudyWeb.PageController do
     case Enum.member?(pages, page) do
       true ->
         render(conn, page <> ".html")
+
       false ->
         conn
-        |> put_flash(:info, (gettext "This page does not exist"))
+        |> put_flash(:info, gettext("This page does not exist"))
         |> redirect(to: Routes.page_path(conn, :index, conn.assigns.locale))
     end
   end
-
 
   defp get_locale(conn) do
     case get_session(conn, :locale) do
@@ -50,5 +51,4 @@ defmodule ListudyWeb.PageController do
       result -> result
     end
   end
-
 end

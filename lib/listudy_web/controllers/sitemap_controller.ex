@@ -1,8 +1,8 @@
 defmodule ListudyWeb.SitemapController do
-  use ListudyWeb, :controller  
+  use ListudyWeb, :controller
 
   alias Listudy.Studies
-  alias Listudy.Content 
+  alias Listudy.Content
 
   def index(conn, _params) do
     studies = Studies.get_all_public_studies()

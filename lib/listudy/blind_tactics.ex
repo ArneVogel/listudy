@@ -50,9 +50,10 @@ defmodule Listudy.BlindTactics do
   def get_random_tactic(id) do
     query =
       from t in BlindTactic,
-      where: t.id != ^id,
-      order_by: fragment("RANDOM()"),
-      limit: 1
+        where: t.id != ^id,
+        order_by: fragment("RANDOM()"),
+        limit: 1
+
     Repo.one(query)
   end
 

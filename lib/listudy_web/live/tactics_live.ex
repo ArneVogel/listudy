@@ -10,7 +10,7 @@ defmodule ListudyWeb.TacticsLive do
   alias ListudyWeb.Router.Helpers, as: Routes
 
   def render(assigns) do
-    Phoenix.View.render(ListudyWeb.LiveView ,"tactics.html", assigns)
+    Phoenix.View.render(ListudyWeb.LiveView, "tactics.html", assigns)
   end
 
   def mount(%{"locale" => locale, "id" => id} = params, session, socket) do
@@ -74,19 +74,43 @@ defmodule ListudyWeb.TacticsLive do
   end
 
   defp get_next_url(%{:assigns => %{:opening => opening}} = socket, tactic) do
-    Routes.opening_tactics_path(socket, ListudyWeb.TacticsLive, socket.assigns.locale, opening.slug, tactic)
+    Routes.opening_tactics_path(
+      socket,
+      ListudyWeb.TacticsLive,
+      socket.assigns.locale,
+      opening.slug,
+      tactic
+    )
   end
 
   defp get_next_url(%{:assigns => %{:motif => motif}} = socket, tactic) do
-    Routes.motif_tactics_path(socket, ListudyWeb.TacticsLive, socket.assigns.locale, motif.slug, tactic)
+    Routes.motif_tactics_path(
+      socket,
+      ListudyWeb.TacticsLive,
+      socket.assigns.locale,
+      motif.slug,
+      tactic
+    )
   end
 
   defp get_next_url(%{:assigns => %{:event => event}} = socket, tactic) do
-    Routes.event_tactics_path(socket, ListudyWeb.TacticsLive, socket.assigns.locale, event.slug, tactic)
+    Routes.event_tactics_path(
+      socket,
+      ListudyWeb.TacticsLive,
+      socket.assigns.locale,
+      event.slug,
+      tactic
+    )
   end
 
   defp get_next_url(%{:assigns => %{:player => player}} = socket, tactic) do
-    Routes.player_tactics_path(socket, ListudyWeb.TacticsLive, socket.assigns.locale, player.slug, tactic)
+    Routes.player_tactics_path(
+      socket,
+      ListudyWeb.TacticsLive,
+      socket.assigns.locale,
+      player.slug,
+      tactic
+    )
   end
 
   defp get_next_url(socket, tactic) do

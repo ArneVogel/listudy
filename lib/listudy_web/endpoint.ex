@@ -1,7 +1,6 @@
 defmodule ListudyWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :listudy
 
-
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
@@ -15,8 +14,7 @@ defmodule ListudyWeb.Endpoint do
     websocket: true,
     longpoll: false
 
-  socket "/live", Phoenix.LiveView.Socket,
-    websocket: [connect_info: [session: @session_options]]
+  socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -26,7 +24,8 @@ defmodule ListudyWeb.Endpoint do
     at: "/",
     from: :listudy,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt 
+    only:
+      ~w(css fonts images js favicon.ico robots.txt 
       android-chrome-192x192.png android-chrome-512x512.png apple-touch-icon.png browserconfig.xml favicon-16x16.png favicon-32x32.png favicon.ico mstile-144x144.png mstile-150x150.png mstile-310x150.png mstile-310x310.png mstile-70x70.png safari-pinned-tab.svg site.webmanifest)
 
   # Code reloading can be explicitly enabled under the
@@ -54,6 +53,9 @@ defmodule ListudyWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
   plug Pow.Plug.Session, otp_app: :listudy
-  plug PowPersistentSession.Plug.Cookie, persistent_session_cookie_max_age: Integer.floor_div(:timer.hours(24) * 365, 1000) 
+
+  plug PowPersistentSession.Plug.Cookie,
+    persistent_session_cookie_max_age: Integer.floor_div(:timer.hours(24) * 365, 1000)
+
   plug ListudyWeb.Router
 end

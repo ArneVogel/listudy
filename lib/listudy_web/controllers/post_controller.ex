@@ -15,7 +15,6 @@ defmodule ListudyWeb.PostController do
     render(conn, "index_all.html", posts: posts)
   end
 
-
   def new(conn, _params) do
     changeset = Content.change_post(%Post{})
     render(conn, "new.html", changeset: changeset)
@@ -39,12 +38,16 @@ defmodule ListudyWeb.PostController do
     case post do
       nil ->
         conn
-          |> put_flash(:info, (gettext "This post does not exist"))
-          |> redirect(to: Routes.post_path(conn, :index, conn.assigns.locale))
+        |> put_flash(:info, gettext("This post does not exist"))
+        |> redirect(to: Routes.post_path(conn, :index, conn.assigns.locale))
+
       _ ->
-        noindex = length(String.split(post.body, " ")) <= Application.get_env(:listudy, :seo)[:post_min_words]
+        noindex =
+          length(String.split(post.body, " ")) <=
+            Application.get_env(:listudy, :seo)[:post_min_words]
+
         render(conn, "show.html", post: post, noindex: noindex)
-      end
+    end
   end
 
   def edit(conn, %{"id" => id}) do

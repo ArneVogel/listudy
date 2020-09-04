@@ -41,7 +41,6 @@ defmodule ListudyWeb.EventController do
     render(conn, "public.html", event: event, tactics_amount: tactics_amount, tactic: tactic)
   end
 
-
   def edit(conn, %{"id" => id}) do
     event = Events.get_event!(id)
     changeset = Events.change_event(event)

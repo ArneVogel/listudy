@@ -11,28 +11,35 @@ defmodule Listudy.Seeds do
       username: "Arne",
       role: "admin",
       email: "arne@listudy.org",
-      password_hash: "$pbkdf2-sha512$100000$j7PasHrv6LMbGdCqpYVrTA==$A3+0bz2XFCmQx7OMssNE1nmp+KRUKusLy3ZDV09yut6QCfZwXewEmyXY9RRJH2Z09LVH84uiRRGk/ioaeBKoSQ==" # temppass
+      # temppass
+      password_hash:
+        "$pbkdf2-sha512$100000$j7PasHrv6LMbGdCqpYVrTA==$A3+0bz2XFCmQx7OMssNE1nmp+KRUKusLy3ZDV09yut6QCfZwXewEmyXY9RRJH2Z09LVH84uiRRGk/ioaeBKoSQ=="
     }
+
     motif = %Motif{
       name: "Uncategorized",
       description: "Uncategorized",
       slug: "uncategorized"
     }
+
     event = %Event{
       name: "Uncategorized",
       description: "Uncategorized",
       slug: "uncategorized"
     }
+
     player = %Player{
       name: "Uncategorized",
       description: "Uncategorized",
       slug: "uncategorized"
     }
+
     opening = %Opening{
       name: "Uncategorized",
       description: "Uncategorized",
       slug: "uncategorized"
     }
+
     tactic = %Tactic{
       color: "black",
       description: "",

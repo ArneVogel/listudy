@@ -23,8 +23,34 @@ defmodule Listudy.Tactics.Tactic do
   @doc false
   def changeset(tactic, attrs) do
     tactic
-    |> cast(attrs, [:fen, :moves, :last_move, :color, :link, :description, :rating, :played, :motif, :opening, :event, :white, :black])
-    |> validate_required([:fen, :moves, :last_move, :color, :rating, :played, :motif, :opening, :event, :white, :black])
+    |> cast(attrs, [
+      :fen,
+      :moves,
+      :last_move,
+      :color,
+      :link,
+      :description,
+      :rating,
+      :played,
+      :motif,
+      :opening,
+      :event,
+      :white,
+      :black
+    ])
+    |> validate_required([
+      :fen,
+      :moves,
+      :last_move,
+      :color,
+      :rating,
+      :played,
+      :motif,
+      :opening,
+      :event,
+      :white,
+      :black
+    ])
     |> Ecto.Changeset.validate_inclusion(:color, ["black", "white"])
   end
 end

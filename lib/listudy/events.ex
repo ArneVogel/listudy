@@ -41,14 +41,15 @@ defmodule Listudy.Events do
 
   def search_by_title(word) do
     word = "%" <> word <> "%"
-    query = from c in Event, 
-      where: like(fragment("lower(?)",c.name), fragment("lower(?)",^word)),
-      limit: 20,
-      order_by: [desc: c.updated_at]
+
+    query =
+      from c in Event,
+        where: like(fragment("lower(?)", c.name), fragment("lower(?)", ^word)),
+        limit: 20,
+        order_by: [desc: c.updated_at]
+
     Repo.all(query)
   end
-
-
 
   @doc """
   Creates a event.

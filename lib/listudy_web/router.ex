@@ -59,7 +59,11 @@ defmodule ListudyWeb.Router do
     get "/sitemap.xml", SitemapController, :index
     live "/studies/search", StudySearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :search
     live "/events", EventSearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :event_search
-    live "/openings", OpeningSearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :opening_search
+
+    live "/openings", OpeningSearchLive,
+      layout: {ListudyWeb.LayoutView, :live},
+      as: :opening_search
+
     live "/players", PlayerSearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :player_search
     live "/motif", MotifSearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :motif_search
 
@@ -76,15 +80,32 @@ defmodule ListudyWeb.Router do
     get "/tactics/motif/:motif", TacticController, :random, as: :random_motif_tactic
 
     get "/blind-tactics", BlindTacticController, :random
-    live "/blind-tactics/:id", BlindTacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :blind_tactics
 
-    live "/games/chessclicker", ChessClickerLive, layout: {ListudyWeb.LayoutView, :live}, as: :chesslicker_tactics
+    live "/blind-tactics/:id", BlindTacticsLive,
+      layout: {ListudyWeb.LayoutView, :live},
+      as: :blind_tactics
+
+    live "/games/chessclicker", ChessClickerLive,
+      layout: {ListudyWeb.LayoutView, :live},
+      as: :chesslicker_tactics
 
     live "/tactics/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :tactics
-    live "/tactics/opening/:opening/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :opening_tactics
-    live "/tactics/motif/:motif/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :motif_tactics
-    live "/tactics/event/:event/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :event_tactics
-    live "/tactics/player/:player/:id", TacticsLive, layout: {ListudyWeb.LayoutView, :live}, as: :player_tactics
+
+    live "/tactics/opening/:opening/:id", TacticsLive,
+      layout: {ListudyWeb.LayoutView, :live},
+      as: :opening_tactics
+
+    live "/tactics/motif/:motif/:id", TacticsLive,
+      layout: {ListudyWeb.LayoutView, :live},
+      as: :motif_tactics
+
+    live "/tactics/event/:event/:id", TacticsLive,
+      layout: {ListudyWeb.LayoutView, :live},
+      as: :event_tactics
+
+    live "/tactics/player/:player/:id", TacticsLive,
+      layout: {ListudyWeb.LayoutView, :live},
+      as: :player_tactics
 
     resources "/studies", StudyController
     get "/blog", PostController, :index
@@ -94,7 +115,6 @@ defmodule ListudyWeb.Router do
     get "/features/:page", PageController, :features
     get "/:page", PageController, :show
     get "/", PageController, :index
-
   end
 
   scope "/", ListudyWeb do
@@ -106,13 +126,11 @@ defmodule ListudyWeb.Router do
     post "/study_unfavorite", StudyController, :unfavorite_study
   end
 
-
   scope "/", ListudyWeb do
     pipe_through :browser
 
     get "/", PageController, :domain
   end
-
 
   # Other scopes may use custom stacks.
   # scope "/api", ListudyWeb do

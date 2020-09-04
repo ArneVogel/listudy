@@ -6,7 +6,7 @@ defmodule ListudyWeb.BlindTacticsLive do
   alias ListudyWeb.Router.Helpers, as: Routes
 
   def render(assigns) do
-    Phoenix.View.render(ListudyWeb.LiveView ,"blind_tactics.html", assigns)
+    Phoenix.View.render(ListudyWeb.LiveView, "blind_tactics.html", assigns)
   end
 
   def mount(%{"locale" => locale, "id" => id} = params, session, socket) do

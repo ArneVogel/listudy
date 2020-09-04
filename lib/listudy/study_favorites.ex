@@ -20,24 +20,26 @@ defmodule Listudy.StudyFavorites do
   end
 
   def user_favorites_study(user_id, study_id) do
-    query = from f in StudyFavorite,
-      where: f.study_id == ^study_id and f.user_id == ^user_id,
-      select: f.id
+    query =
+      from f in StudyFavorite,
+        where: f.study_id == ^study_id and f.user_id == ^user_id,
+        select: f.id
+
     result = Repo.all(query)
     length(result) != 0
   end
 
   def count_favorites(study_id) do
-    query = from f in StudyFavorite,
-      where: f.study_id == ^study_id,
-      select: f.id
+    query =
+      from f in StudyFavorite,
+        where: f.study_id == ^study_id,
+        select: f.id
+
     Repo.aggregate(query, :count, :id)
   end
 
-
   defp get_favorite(study, user) do
     query = from(StudyFavorite, where: [user_id: ^user, study_id: ^study])
-    Repo.all(query) 
+    Repo.all(query)
   end
-
 end

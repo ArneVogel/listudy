@@ -18,51 +18,55 @@ defmodule ListudyWeb.CommentController do
 
     if !allowed_to_comment(comment, user) do
       conn
-      |> put_flash(:info, (gettext "You're not allowed to do that."))
+      |> put_flash(:info, gettext("You're not allowed to do that."))
       |> redirect(to: NavigationHistory.last_path(conn))
-    else 
+    else
       {:ok, _} = Comments.delete_comment(type, comment)
+
       conn
-      |> put_flash(:info, (gettext "Comment deleted successfully."))
+      |> put_flash(:info, gettext("Comment deleted successfully."))
       |> redirect(to: NavigationHistory.last_path(conn))
     end
-
   end
 
   def get_comments(type, id) do
     Comments.get_comments_by_id(type, id)
   end
 
-  defp save_comment(conn, %{ "id" => id, "comment" => text, "type" => type}) do
+  defp save_comment(conn, %{"id" => id, "comment" => text, "type" => type}) do
     user_id = Pow.Plug.current_user(conn).id
 
     case Comments.create_comment(type, %{user_id: user_id, id: id, text: text}) do
-      {:ok, _} -> {:ok, gettext "Comment created"}
-      {:error, %Ecto.Changeset{} = changeset} -> {:error, gettext "Comment could not get created"}
-    end
+      {:ok, _} ->
+        {:ok, gettext("Comment created")}
 
+      {:error, %Ecto.Changeset{} = changeset} ->
+        {:error, gettext("Comment could not get created")}
+    end
   end
 
-  defp save_comment(_,_) do
-    {:error, gettext "Error"}
+  defp save_comment(_, _) do
+    {:error, gettext("Error")}
   end
 
   defp allowed_to_comment(comment, user) do
     comment.user_id == user
   end
 
-  defp save_comment(conn, %{ "id" => id, "comment" => text, "type" => type}) do
+  defp save_comment(conn, %{"id" => id, "comment" => text, "type" => type}) do
     user_id = Pow.Plug.current_user(conn).id
 
     case Comments.create_comment(type, %{user_id: user_id, id: id, text: text}) do
-      {:ok, _} -> {:ok, gettext "Comment created"}
-      {:error, %Ecto.Changeset{} = changeset} -> {:error, gettext "Comment could not get created"}
-    end
+      {:ok, _} ->
+        {:ok, gettext("Comment created")}
 
+      {:error, %Ecto.Changeset{} = changeset} ->
+        {:error, gettext("Comment could not get created")}
+    end
   end
 
-  defp save_comment(_,_) do
-    {:error, gettext "Error"}
+  defp save_comment(_, _) do
+    {:error, gettext("Error")}
   end
 
   defp allowed_to_comment(comment, user) do

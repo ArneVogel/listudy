@@ -1,7 +1,7 @@
 defmodule Listudy.StudyComments.StudyComment do
   use Ecto.Schema
   import Ecto.Changeset
-  
+
   @primary_key {:id, :binary_id, autogenerate: true}
   schema "study_comments" do
     field :text, :string

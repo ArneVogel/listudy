@@ -11,6 +11,5 @@ defmodule Listudy.Repo.Migrations.CreateBlindTactics do
 
       timestamps()
     end
-
   end
 end

@@ -22,16 +22,20 @@ defmodule Listudy.Content do
   end
 
   def list_published_posts(n) do
-    query = from c in Post, 
-      where: c.published == true,
-      limit: ^n,
-      order_by: [desc: c.updated_at]
-    Repo.all(query) 
+    query =
+      from c in Post,
+        where: c.published == true,
+        limit: ^n,
+        order_by: [desc: c.updated_at]
+
+    Repo.all(query)
   end
 
   def public_posts do
-    query = from p in Post,
-      where: p.published == true
+    query =
+      from p in Post,
+        where: p.published == true
+
     Repo.all(query)
   end
 

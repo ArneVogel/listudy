@@ -73,29 +73,32 @@ defmodule Listudy.Tactics do
   def motif_count(id) do
     query =
       from t in Tactic,
-      where: t.motif == ^id
+        where: t.motif == ^id
+
     Repo.aggregate(query, :count, :id)
   end
 
   def player_count(id) do
     query =
       from t in Tactic,
-      where: t.white == ^id or t.black == ^id
+        where: t.white == ^id or t.black == ^id
+
     Repo.aggregate(query, :count, :id)
   end
-
 
   def event_count(id) do
     query =
       from t in Tactic,
-      where: t.event == ^id
+        where: t.event == ^id
+
     Repo.aggregate(query, :count, :id)
   end
 
   def opening_count(id) do
     query =
       from t in Tactic,
-      where: t.opening == ^id
+        where: t.opening == ^id
+
     Repo.aggregate(query, :count, :id)
   end
 
@@ -103,57 +106,61 @@ defmodule Listudy.Tactics do
   def get_random_tactic(id) do
     query =
       from t in Tactic,
-      where: t.id != ^id,
-      order_by: fragment("RANDOM()"),
-      limit: 1
-    Repo.all(query) |> List.first
+        where: t.id != ^id,
+        order_by: fragment("RANDOM()"),
+        limit: 1
+
+    Repo.all(query) |> List.first()
   end
 
   def get_random_easy_tactic() do
     query =
       from t in Tactic,
-      where: t.rating < 1300,
-      order_by: fragment("RANDOM()"),
-      limit: 1
+        where: t.rating < 1300,
+        order_by: fragment("RANDOM()"),
+        limit: 1
+
     Repo.one(query)
   end
-
 
   def get_random_event_tactic(id, event) do
     query =
       from t in Tactic,
-      where: t.id != ^id and t.event == ^event,
-      order_by: fragment("RANDOM()"),
-      limit: 1
-    Repo.all(query) |> List.first
+        where: t.id != ^id and t.event == ^event,
+        order_by: fragment("RANDOM()"),
+        limit: 1
+
+    Repo.all(query) |> List.first()
   end
 
   def get_random_opening_tactic(id, opening) do
     query =
       from t in Tactic,
-      where: t.id != ^id and t.opening == ^opening,
-      order_by: fragment("RANDOM()"),
-      limit: 1
-    Repo.all(query) |> List.first
+        where: t.id != ^id and t.opening == ^opening,
+        order_by: fragment("RANDOM()"),
+        limit: 1
+
+    Repo.all(query) |> List.first()
   end
 
   def get_random_player_tactic(id, player) do
     query =
       from t in Tactic,
-      where: t.id != ^id and (t.white == ^player or t.black == ^player),
-      order_by: fragment("RANDOM()"),
-      limit: 1
-    Repo.all(query) |> List.first
-  end
+        where: t.id != ^id and (t.white == ^player or t.black == ^player),
+        order_by: fragment("RANDOM()"),
+        limit: 1
 
+    Repo.all(query) |> List.first()
+  end
 
   def get_random_motif_tactic(id, motif) do
     query =
       from t in Tactic,
-      where: t.id != ^id and t.motif == ^motif,
-      order_by: fragment("RANDOM()"),
-      limit: 1
-    Repo.all(query) |> List.first
+        where: t.id != ^id and t.motif == ^motif,
+        order_by: fragment("RANDOM()"),
+        limit: 1
+
+    Repo.all(query) |> List.first()
   end
 
   def increase_played(id) do
