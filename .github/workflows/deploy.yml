@@ -1,0 +1,68 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  Test:
+    name: Test
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:11
+        ports: ["5432:5432"]
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: listudy_test
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cache mix modules
+        uses: actions/cache@v1
+        env:
+          cache-name: cache-mix-modules
+        with:
+          path: deps # mix cache files are stored in `deps` in the root of the project folder
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Setup elixir
+        uses: actions/setup-elixir@v1.2.0
+        with:
+          elixir-version: 1.9.4 # Define the elixir version [required]
+          otp-version: 22.2 # Define the OTP version [required]
+      - name: Install Dependencies
+        run: |
+          mix local.rebar --force
+          mix local.hex --force
+          mix deps.get
+      - name: Run Tests
+        env:
+          MIX_ENV: test
+        run: mix test
+  Deploy:
+    name: Deploy
+    needs: Test
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        script: |
+          cd /opt/listudy
+          git pull
+          ./build.sh
+          ./shutdown.sh
+          ./migrate.sh
+          ./start.sh
