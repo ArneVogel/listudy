@@ -2,13 +2,9 @@ defmodule ListudyWeb.StudyController do
   use ListudyWeb, :controller
 
   alias Listudy.Users
-  alias Listudy.Users.User
   alias Listudy.Studies
   alias Listudy.Studies.Study
   alias Listudy.StudyFavorites
-  alias Listudy.StudyFavorites.StudyFavorite
-  alias Listudy.Comments
-  alias Listudy.Comments.StudyComment
 
   def index(conn, _params) do
     user =
@@ -262,7 +258,7 @@ defmodule ListudyWeb.StudyController do
     end
   end
 
-  defp check_pgn(study_params) do
+  defp check_pgn(_study_params) do
     {:error, gettext("No PGN provided")}
   end
 
@@ -278,7 +274,7 @@ defmodule ListudyWeb.StudyController do
         {:ok, _} ->
           {:ok, gettext("Study favorited")}
 
-        {:error, %Ecto.Changeset{} = changeset} ->
+        {:error, %Ecto.Changeset{} = _changeset} ->
           {:error, gettext("Could not favorite this study")}
       end
 
@@ -295,7 +291,7 @@ defmodule ListudyWeb.StudyController do
         {:ok, _} ->
           {:ok, gettext("Study unfavorited")}
 
-        {:error, %Ecto.Changeset{} = changeset} ->
+        {:error, %Ecto.Changeset{} = _changeset} ->
           {:error, gettext("Could not unfavorite this study")}
       end
 

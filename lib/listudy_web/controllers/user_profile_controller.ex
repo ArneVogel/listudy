@@ -2,9 +2,7 @@ defmodule ListudyWeb.UserProfileController do
   use ListudyWeb, :controller
 
   alias Listudy.Studies
-  alias Listudy.Studies.Study
   alias Listudy.Users
-  alias Listudy.Users.User
 
   def show(conn, %{"username" => username}) do
     user = Users.get_user_by_name!(username)

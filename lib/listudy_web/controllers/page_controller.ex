@@ -1,7 +1,6 @@
 defmodule ListudyWeb.PageController do
   use ListudyWeb, :controller
   alias Listudy.Content
-  alias Listudy.Content.Post
 
   @languages ["en", "de"]
   @pages ["privacy", "terms-of-service", "imprint", "copyright"]
@@ -42,13 +41,6 @@ defmodule ListudyWeb.PageController do
         conn
         |> put_flash(:info, gettext("This page does not exist"))
         |> redirect(to: Routes.page_path(conn, :index, conn.assigns.locale))
-    end
-  end
-
-  defp get_locale(conn) do
-    case get_session(conn, :locale) do
-      nil -> "en"
-      result -> result
     end
   end
 end

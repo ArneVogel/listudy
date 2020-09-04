@@ -51,7 +51,6 @@ defmodule Listudy.Seeds do
       rating: 1500,
       white: 1,
       black: 1,
-      opening: 1,
       event: 1,
       opening: 1,
       motif: 1

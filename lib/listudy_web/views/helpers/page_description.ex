@@ -1,5 +1,5 @@
 defmodule ListudyWeb.PageDescription do
-  alias ListudyWeb.{PageView, StudySearchLive}
+  alias ListudyWeb.StudySearchLive
   import ListudyWeb.Gettext
 
   def page_description(assigns), do: assigns |> get

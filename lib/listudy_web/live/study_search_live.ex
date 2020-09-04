@@ -22,7 +22,7 @@ defmodule ListudyWeb.StudySearchLive do
     """
   end
 
-  def mount(%{"locale" => locale}, session, socket) do
+  def mount(%{"locale" => locale}, _session, socket) do
     result = Studies.search_by_title("")
     Gettext.put_locale(ListudyWeb.Gettext, locale)
     {:ok, assign(socket, query: nil, matches: result, locale: locale)}

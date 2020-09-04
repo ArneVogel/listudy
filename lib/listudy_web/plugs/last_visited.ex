@@ -1,6 +1,4 @@
 defmodule ListudyWeb.Plugs.LastVisited do
-  import Plug.Conn
-
   def init(default), do: default
 
   def call(%Plug.Conn{assigns: %{current_user: %{id: id}}} = conn, _default) do

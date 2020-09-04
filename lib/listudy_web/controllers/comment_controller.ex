@@ -2,7 +2,6 @@ defmodule ListudyWeb.CommentController do
   use ListudyWeb, :controller
 
   alias Listudy.Comments
-  alias Listudy.Comments.StudyComment
 
   def new_comment(conn, params) do
     {_, message} = save_comment(conn, params)
@@ -40,27 +39,7 @@ defmodule ListudyWeb.CommentController do
       {:ok, _} ->
         {:ok, gettext("Comment created")}
 
-      {:error, %Ecto.Changeset{} = changeset} ->
-        {:error, gettext("Comment could not get created")}
-    end
-  end
-
-  defp save_comment(_, _) do
-    {:error, gettext("Error")}
-  end
-
-  defp allowed_to_comment(comment, user) do
-    comment.user_id == user
-  end
-
-  defp save_comment(conn, %{"id" => id, "comment" => text, "type" => type}) do
-    user_id = Pow.Plug.current_user(conn).id
-
-    case Comments.create_comment(type, %{user_id: user_id, id: id, text: text}) do
-      {:ok, _} ->
-        {:ok, gettext("Comment created")}
-
-      {:error, %Ecto.Changeset{} = changeset} ->
+      {:error, %Ecto.Changeset{} = _changeset} ->
         {:error, gettext("Comment could not get created")}
     end
   end

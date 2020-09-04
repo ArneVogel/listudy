@@ -5,10 +5,6 @@ defmodule Listudy.Tactics do
 
   import Ecto.Query, warn: false
   alias Listudy.Repo
-  alias Listudy.Openings
-  alias Listudy.Events
-  alias Listudy.Motifs
-  alias Listudy.Players
 
   alias Listudy.Tactics.Tactic
 

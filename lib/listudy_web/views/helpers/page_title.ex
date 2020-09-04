@@ -24,7 +24,7 @@ defmodule ListudyWeb.PageTitle do
     do: post.title
 
   defp get(%{live_module: StudySearchLive}), do: gettext("Search Studies")
-  defp get(%{live_module: TacticsLive, tactic: tactic}), do: gettext("Tactics")
+  defp get(%{live_module: TacticsLive}), do: gettext("Tactics")
 
   defp get(%{view_module: Elixir.ListudyWeb.MotifView, view_template: "public.html", motif: motif}),
        do: motif.name

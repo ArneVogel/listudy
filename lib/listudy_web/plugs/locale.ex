@@ -11,7 +11,7 @@ defmodule ListudyWeb.Plugs.Locale do
     assign(conn, :locale, loc)
   end
 
-  def call(conn, default) do
+  def call(conn, _default) do
     {_, loc} = get_locale(conn)
     Gettext.put_locale(loc)
 
