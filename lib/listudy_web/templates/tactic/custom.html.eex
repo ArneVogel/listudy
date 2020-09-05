@@ -85,7 +85,8 @@ function create_tactic() {
   location.reload();
 }
 </script>
-
+<hr>
+<div id="share"></div>
 <hr>
 <h2><%= gettext "Make your own Tactic"%></h2>
 
