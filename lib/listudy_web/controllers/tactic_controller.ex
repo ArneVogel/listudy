@@ -18,6 +18,10 @@ defmodule ListudyWeb.TacticController do
     render(conn, "daily.html", tactic: tactic)
   end
 
+  def custom(conn, _params) do
+    render(conn, "custom.html")
+  end
+
   def new(conn, _params) do
     changeset = Tactics.change_tactic(%Tactic{})
     motifs = Motifs.list_motifs()

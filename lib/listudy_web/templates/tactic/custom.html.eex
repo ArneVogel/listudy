@@ -1,0 +1,91 @@
+<div class="with_sidebar">
+  <div id="game_container" class="sidebar_main">
+    <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
+  </div>
+  <div class="sidebar">
+    <h1><%= gettext "Custom Tactic"%></h1>
+    <p><span id="color_span"></span> <%= gettext "to move and win!" %></p>
+    <div class="success">
+      <p id="success" class="infoBox hidden"></p>
+    </div>
+    <div class="info">
+      <p id="info" class="infoBox hidden"></p>
+    </div>
+    <div class="error">
+      <p id="error" class="infoBox hidden"></p>
+    </div>
+    <div class="info">
+      <p id="suggestion" class="infoBox hidden"></p>
+    </div>
+
+    <a href="<%= Routes.tactic_path(@conn, :random, @locale) %>">
+      <button id="next" class="hidden continue_button"><%= gettext "More Tactics" %></button>
+    </a>
+    <details class="hidden" id="solution">
+        <summary>Solution</summary>
+        <span id="solution_moves"></span>
+    </details>
+  </div>
+</div>
+
+<link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
+<script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/tactics.js") %>"></script>
+<form class="hidden">
+  <input type="text" id="fen" value="">
+  <input type="text" id="color" value="">
+  <input type="text" id="moves" value="">
+  <input type="text" id="last_move" value="">
+</form>
+<script>
+<%# CAREFUL! the hash is user supplies and its values can only be used in %>
+<%# save javascript functions! %>
+function clean_input(i) {
+  // this function is used to remove non wanted characters from the decoded hash
+  // probably also remove xss vulnerabilities if input was used in unsafe functions, but
+  // this does NOT replace the need to not use the input in unsafe function calls
+  return i.replace(/[^a-zA-Z0-9-_#+! /]/g, '');
+}
+let t = atob(document.location.hash.slice(1)).split(";"); // atob => base64 decode the hash
+let fen = clean_input(t[0]);
+let color = clean_input(t[0]).split(" ")[1];
+if (color == "b") {
+  color = "black";
+} else {
+  color = "white";
+}
+let moves = clean_input(t[1]);
+let last_move = clean_input(t[2]) || "";
+document.getElementById("fen").value = fen;
+document.getElementById("color").value = color;
+document.getElementById("moves").value = moves;
+document.getElementById("solution_moves").innerText = moves;
+document.getElementById("color_span").innerText = color.charAt(0).toUpperCase() + color.slice(1);
+document.getElementById("last_move").value = last_move;
+let gettext_success = "<%= gettext "Tactic solved"%>";
+let gettext_wrong_move = "<%= gettext "Wrong Move"%>";
+
+function create_tactic() {
+  let f = document.getElementById("fen_input").value;
+  let m = document.getElementById("moves_input").value;
+  let l = document.getElementById("last_move_input").value || "";
+  let h = f + ";" + m + ";" + l
+  console.log(f,m,l,h);
+  h = btoa(h);
+  window.location.hash = h;
+  location.reload();
+}
+</script>
+<hr>
+<h2><%= gettext "Make your own Tactic"%></h2>
+
+<label for="fen"><%= gettext "FEN" %>:</label>
+<input type="text" id="fen_input" name="fen" required placeholder="r3k3/pppb4/6N1/3Pp3/N3n2b/8/PP1P2PP/R1B2K1R b q - 0 17">
+
+<label for="moves"><%= gettext "Moves" %>:</label>
+<input type="text" id="moves_input" name="moves" required placeholder="Bb5+ d3 Bxd3+ Kg1 Bf2#">
+
+<label for="last_move"><%= gettext "Last Move" %>:</label>
+<input type="text" id="last_move_input" name="last_move" required placeholder="h8g6">
+
+<br>
+<button onclick="create_tactic()"><%= gettext "Create" %></button>

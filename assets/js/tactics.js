@@ -19,7 +19,6 @@ async function handle_move(orig, dest, extraInfo) {
 
     if (played == target) {
         let m = chess.move(played);
-        console.log(m)
         ground_move(m);
         if (to_play.length >= 2) {
             // theres another move the player has to get correct
@@ -46,6 +45,10 @@ async function handle_move(orig, dest, extraInfo) {
 }
 
 function setup_last_move() {
+    if (last_move.length < 4) {
+        // this can happen in custom tactics where no last_move is provided
+        return;    
+    }
     let orig = last_move.substring(0,2);
     let dest = last_move.substring(2,4);
     ground.state.lastMove = [orig, dest];
