@@ -13,7 +13,8 @@
       <b><%= gettext "Features" %></b><br>
       <%= link (gettext "Blind Tactics"), to: Routes.page_path(@conn, :features, @conn.assigns.locale, "blind-tactics") %> <br>
       <%= link (gettext "Daily Puzzle"), to: Routes.tactic_path(@conn, :daily, @conn.assigns.locale) %> <br>
-      <%= link (gettext "ChessClicker"), to: Routes.chesslicker_tactics_path(@conn, ListudyWeb.ChessClickerLive, @assigns.locale) %>
+      <%= link (gettext "ChessClicker"), to: Routes.chesslicker_tactics_path(@conn, ListudyWeb.ChessClickerLive, @assigns.locale) %> <br>
+      <%= link (gettext "Make your own Tactic"), to: Routes.tactic_path(@conn, :custom, @assigns.locale) %>
     </div>
 
     <div class="one-third column">

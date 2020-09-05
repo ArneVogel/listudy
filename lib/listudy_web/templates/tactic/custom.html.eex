@@ -4,7 +4,7 @@
   </div>
   <div class="sidebar">
     <h1><%= gettext "Custom Tactic"%></h1>
-    <p><span id="color_span"></span> <%= gettext "to move and win!" %></p>
+    <p id="to_win"><span id="color_span"></span> <%= gettext "to move and win!" %></p>
     <div class="success">
       <p id="success" class="infoBox hidden"></p>
     </div>
@@ -40,12 +40,17 @@
 <%# CAREFUL! the hash is user supplies and its values can only be used in %>
 <%# save javascript functions! %>
 function clean_input(i) {
+  if (i == undefined) {
+    return "";
+  }
   // this function is used to remove non wanted characters from the decoded hash
   // probably also remove xss vulnerabilities if input was used in unsafe functions, but
   // this does NOT replace the need to not use the input in unsafe function calls
   return i.replace(/[^a-zA-Z0-9-_#+! /]/g, '');
 }
-let t = atob(document.location.hash.slice(1)).split(";"); // atob => base64 decode the hash
+
+// atob => base64 decode the hash
+let t = atob(document.location.hash.slice(1)).split(";"); 
 let fen = clean_input(t[0]);
 let color = clean_input(t[0]).split(" ")[1];
 if (color == "b") {
@@ -55,6 +60,7 @@ if (color == "b") {
 }
 let moves = clean_input(t[1]);
 let last_move = clean_input(t[2]) || "";
+// tactics.js loads the data from the form so we have to populate it
 document.getElementById("fen").value = fen;
 document.getElementById("color").value = color;
 document.getElementById("moves").value = moves;
@@ -63,6 +69,10 @@ document.getElementById("color_span").innerText = color.charAt(0).toUpperCase() 
 document.getElementById("last_move").value = last_move;
 let gettext_success = "<%= gettext "Tactic solved"%>";
 let gettext_wrong_move = "<%= gettext "Wrong Move"%>";
+// if no fen was provided there is no tactic to solve
+if (fen == "") {
+  document.getElementById("to_win").classList.add("hidden");
+}
 
 function create_tactic() {
   let f = document.getElementById("fen_input").value;
@@ -75,6 +85,7 @@ function create_tactic() {
   location.reload();
 }
 </script>
+
 <hr>
 <h2><%= gettext "Make your own Tactic"%></h2>
 
