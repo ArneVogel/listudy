@@ -15,7 +15,7 @@
     <h2><%= gettext "Train Tactics" %></h2>
     <p><%= gettext "Train tactics with thousands of tactical sequences from real games." %></p>
     <p><%= gettext "Get better at identifying and exploiting tactics." %></p>
-    <p><%= gettext "Train your tactical abilities: "%> <%= link (gettext "tactics"), to: Routes.tactic_path(@conn, :random, @locale) %></p>
+    <p><%= gettext "Train your tactical abilities: "%> <%= link (gettext "Tactics"), to: Routes.tactic_path(@conn, :random, @locale) %></p>
   </div>
 
 </div>
@@ -35,7 +35,7 @@
     <h2><%= gettext "Visualization" %></h2>
     <p><%= gettext "Improve your visualization skills with blind tactics." %>
     <p><%= gettext "Solve tactics while only seeing the board from 2 moves ago." %>
-    <p><%= gettext "Train your visualization skills: "%> <%= link (gettext "blind tactics"), to: Routes.blind_tactic_path(@conn, :random, @locale) %></p>
+    <p><%= gettext "Train your visualization skills: "%> <%= link (gettext "Blind Tactics"), to: Routes.blind_tactic_path(@conn, :random, @locale) %></p>
   </div>
 
 </div>
@@ -78,6 +78,3 @@
     <%= render ListudyWeb.TacticView, "tactic.html", conn: @conn, tactic: @tactic, next: next_url %>
   </div>
 </div>
-
-<hr>
-<div id="share"></div>
