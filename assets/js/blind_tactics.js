@@ -146,8 +146,14 @@ function main() {
 
     window.highlighted_squares = [];
 
-    resize_ground();
     setup_click_handler(handle_click);
+
+    // fixes a bug of pieces getting stuck in the left corner of the board after
+    // clicking on continue
+    // https://www.reddit.com/r/chess/comments/in00we/introducing_blind_tactics/g44lpcz
+    resize_ground();
+    window.setTimeout(ground.redrawAll, 10);
+    window.setTimeout(ground.redrawAll, 100);
 }
 
 document.addEventListener("phx:update", main);
