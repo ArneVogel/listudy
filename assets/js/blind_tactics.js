@@ -88,7 +88,9 @@ function handle_click(square) {
 function load_data() {
     pgn = document.getElementById("pgn").value;
     color = document.getElementById("color").value;
-    ply = document.getElementById("ply").value;
+    // we cant hide more moves than there were. If chess.history().length is smaller
+    // then the position starts with the starting position
+    ply = Math.min(document.getElementById("ply").value, chess.history().length);
 }
 
 function ply_change() {
@@ -127,11 +129,12 @@ function setup_move_text() {
 }
 
 function main() {
-    load_data();
-    setup_ply();
     const chess = new Chess();
     window.chess = chess;
     chess.load_pgn(pgn);
+
+    load_data();
+    setup_ply();
 
 
     if (pgn != old_pgn) {

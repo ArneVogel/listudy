@@ -32,16 +32,8 @@
     </div>
     <label for="ply_select"><%= gettext "How many plies should be hidden? (Updates next Tactic)" %></label>
 
-    <select name="ply_select" id="ply_select">
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4" selected>4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-    </select>
+    <input type="number" value=4 min=0 id="ply_select">
+
     <p><a href="<%= Routes.page_path(@socket, :features, @locale, "blind-tactics") %>#help">[Help] How blind tactics work.</a></p>
   </div>
 </div>
