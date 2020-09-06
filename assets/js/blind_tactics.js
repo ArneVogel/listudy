@@ -23,6 +23,7 @@ function get_current_chess() {
 
 function highlight_moves(square) {
     highlighted_squares = legal_moves.get(square);
+    window.clicked_piece = square;
 
     if (highlighted_squares == undefined) {
         highlighted_squares = [];
@@ -41,6 +42,10 @@ function target() {
     return chess.history({verbose: true})[current_move].to;
 }
 
+function piece_pos() {
+    return chess.history({verbose: true})[current_move].from;
+}
+
 function hide_all_div() {
     for (let d of ["success", "info", "error"]) {
         document.getElementById(d).classList.add("hidden");
@@ -56,7 +61,7 @@ function set_div_text(id, text) {
 
 function handle_click(square) {
     ground.selectSquare(null);
-    if (square == target()) {
+    if (square == target() && clicked_piece == piece_pos()) {
         // has to be manually reset because highlight_moves is not called in this branch
         highlighted_squares = []; 
         current_move += 2;
