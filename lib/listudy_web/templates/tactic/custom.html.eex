@@ -86,8 +86,6 @@ function create_tactic() {
 }
 </script>
 <hr>
-<div id="share"></div>
-<hr>
 <h2><%= gettext "Make your own Tactic"%></h2>
 
 <label for="fen"><%= gettext "FEN" %>:</label>
