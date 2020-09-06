@@ -48,13 +48,13 @@ function hide_all_div() {
 }
 
 function set_div_text(id, text) {
+    hide_all_div();
     document.getElementById(id).classList.remove("hidden");
     document.getElementById(id).innerText = text;
 }
 
 
 function handle_click(square) {
-    hide_all_div();
     ground.selectSquare(null);
     if (square == target()) {
         // has to be manually reset because highlight_moves is not called in this branch
