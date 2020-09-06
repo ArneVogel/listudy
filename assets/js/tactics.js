@@ -19,14 +19,14 @@ async function handle_move(orig, dest, extraInfo) {
 
     if (played == target) {
         let m = chess.move(played);
-        ground_move(m);
+        ground_move(m, chess);
         if (to_play.length >= 2) {
             // theres another move the player has to get correct
             await sleep(100); // instant play by the ai feels weird
             let ai_move = to_play.shift();
             let m = chess.move(ai_move);
             ground_set_moves();
-            ground_move(m);
+            ground_move(m, chess);
         } else {
             // player got the puzzle correct
             set_text(success_div, gettext_success);

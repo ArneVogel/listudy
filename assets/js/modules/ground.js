@@ -12,6 +12,7 @@ function ground_init_state(fen) {
     config["movable"] = { free: false, showDests: true };
     // fen for the initial position
     config["fen"] = fen;
+    config["highlight"] = { check: true };
     config["lastMove"] = undefined;
     config["drawable"] = {brushes: {hint: {key: "v", color: "#0034FF", opacity: 1, lineWidth: 10 }}}
     ground.set(config);
@@ -118,8 +119,24 @@ function expand_chess_js_types(s) {
     }
 }
 
+/*
+ * Convert chess.js turn string to chessground turn string
+ */
+function cjs_turn(color) {
+    if (color == "w") {
+        return "white";
+    } else {
+        return "black";
+    }
+}
+
 // move based on a chess.js move
-function ground_move(m) {
+function ground_move(m, c = undefined) {
+    let in_check = false;
+    if (c != undefined) {
+        in_check = c.in_check();
+        ground.set({turnColor: cjs_turn(c.turn())})
+    }
     if (m.flags == "e") { // handle en passant
         let captured = en_passant_square(m)
         empty_square(captured);
@@ -133,6 +150,7 @@ function ground_move(m) {
         ground.setPieces(map);
     }
 
+    ground.set({check: in_check})
     ground.move(m.from, m.to);
 }
 
