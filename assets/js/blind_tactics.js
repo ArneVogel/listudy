@@ -69,6 +69,7 @@ function handle_click(square) {
             set_div_text("success", i18n_success)
             document.getElementById("next").classList.remove("hidden");
             setup_ground(chess.fen());    
+            ground.set({check: true});
         } else {
             set_div_text("info", i18n_right_move)
         }
