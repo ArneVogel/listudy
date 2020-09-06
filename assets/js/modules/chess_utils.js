@@ -22,12 +22,14 @@ function legal_moves_from_to(c) {
 // the legal moves in the format that chessground can use
 function ground_legal_moves(c) {
     let ft = legal_moves_from_to(c);
-    let moves = {};
+    let moves = new Map();
     for (let m of ft) {
-        if (moves[m.from] == undefined) {
-            moves[m.from] = [m.to];
+        if (!moves.has(m.from)) {
+            moves.set(m.from, [m.to]);
         } else {
-            moves[m.from].push(m.to);
+            let t = moves.get(m.from);
+            t.push(m.to);
+            moves.set(m.from, t);
         }
     }
     return moves;

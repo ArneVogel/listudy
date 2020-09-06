@@ -22,7 +22,7 @@ function get_current_chess() {
 }
 
 function highlight_moves(square) {
-    highlighted_squares = legal_moves[square];
+    highlighted_squares = legal_moves.get(square);
 
     if (highlighted_squares == undefined) {
         highlighted_squares = [];
