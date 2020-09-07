@@ -13,7 +13,7 @@ This project used gettext for translations. Gettext uses PO files for translatio
 ## Development
 Listudy is developed in Elixir using the phoenix framework. It uses postgresql as database. 
 To start the server:
-  * You need to [install Elixir](https://elixir-lang.org/install.html), [install npm](https://www.npmjs.com/get-npm), and [PostgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads). The DB user and password for Postgres should be 'postgres' (no quotes).
+  * You need to [install Elixir](https://elixir-lang.org/install.html), [install npm](https://www.npmjs.com/get-npm), and [PostgreSQL](https://www.postgresql.org/download). The DB user and password for Postgres should be 'postgres' (no quotes).
   * Setup the project with `mix setup`
   * Install npm dependencies with `npm install --prefix assets`. For Windows, you need to run `cd assets` then `npm install` then `cd ..`.
   * Make study pgn directory with `mkdir priv/static/study_pgn`
