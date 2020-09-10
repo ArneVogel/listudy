@@ -1,5 +1,9 @@
 <h1><%= @opening.name %></h1>
 
+<img src="<%= Routes.static_path(@conn, "/images/opening/" <> @opening.slug <> ".svg") %>" 
+     width="350px" height="350px" class="opening_svg"
+     title="<%= gettext "%{opening} after the moves %{moves}", opening: @opening.name, moves: @opening.moves %>"
+     alt="<%= gettext "Chessboard showing the %{opening} with the moves %{moves} played", opening: @opening.name, moves: @opening.moves %>"/>
 <%= raw Earmark.as_html!(@opening.description)%>
 
 <%= if @tactics_amount >= 2 do %>

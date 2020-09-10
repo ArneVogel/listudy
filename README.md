@@ -12,11 +12,15 @@ This project used gettext for translations. Gettext uses PO files for translatio
 
 ## Development
 Listudy is developed in Elixir using the phoenix framework. It uses postgresql as database. 
+
+To generate opening svg images Python3.8 is used together with [python-chess](https://github.com/niklasf/python-chess). This should be optional.
+
 To start the server:
   * You need to [install Elixir](https://elixir-lang.org/install.html), [install npm](https://www.npmjs.com/get-npm), and [PostgreSQL](https://www.postgresql.org/download). The DB user and password for Postgres should be 'postgres' (no quotes).
   * Setup the project with `mix setup`
   * Install npm dependencies with `npm install --prefix assets`. For Windows, you need to run `cd assets` then `npm install` then `cd ..`.
   * Make study pgn directory with `mkdir priv/static/study_pgn`
+  * Opening svg directory with `mkdir priv/static/images/opening`
   * Start Phoenix endpoint with `mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
