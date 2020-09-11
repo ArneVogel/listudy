@@ -19,6 +19,7 @@ defmodule ListudyWeb.OpeningController do
     case Openings.create_opening(opening_params) do
       {:ok, opening} ->
         generate_svg(opening)
+
         conn
         |> put_flash(:info, "Opening created successfully.")
         |> redirect(to: Routes.opening_path(conn, :show, opening))
@@ -53,6 +54,7 @@ defmodule ListudyWeb.OpeningController do
     case Openings.update_opening(opening, opening_params) do
       {:ok, opening} ->
         generate_svg(opening)
+
         conn
         |> put_flash(:info, "Opening updated successfully.")
         |> redirect(to: Routes.opening_path(conn, :show, opening))
@@ -78,7 +80,7 @@ defmodule ListudyWeb.OpeningController do
   defp name(slug) do
     "priv/static/images/opening/" <> slug <> ".svg"
   end
-  
+
   defp generate_svg(output, moves) do
     System.cmd("python3", ["scripts/svg_generator.py", output, moves])
   end
