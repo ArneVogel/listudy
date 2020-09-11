@@ -40,13 +40,20 @@ defmodule ListudyWeb.OpeningController do
     studies = Listudy.Studies.get_opening_studies(opening.id)
     tactics_amount = Tactics.opening_count(opening.id)
     tactic = Tactics.get_random_tactic("opening", opening.slug)
+    noindex = !index_opening(opening)
 
     render(conn, "public.html",
       opening: opening,
       tactics_amount: tactics_amount,
       tactic: tactic,
-      studies: studies
+      studies: studies,
+      noindex: noindex
     )
+  end
+
+  def index_opening(opening) do
+    length(String.split(opening.description, " ")) >=
+      Application.get_env(:listudy, :seo)[:opening_min_words]
   end
 
   def edit(conn, %{"id" => id}) do

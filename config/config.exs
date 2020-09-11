@@ -21,6 +21,8 @@ config :listudy, ListudyWeb.Endpoint,
 config :listudy, :seo,
   # threshold a post needs to have to not get noindexed
   post_min_words: 300,
+  # threshold a opening needs to have to not get noindexed
+  opening_min_words: 10,
   # how many favorites a study needs to not get noindexed
   study_min_favorites: 3
 
