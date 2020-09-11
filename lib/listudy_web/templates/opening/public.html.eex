@@ -6,6 +6,20 @@
      alt="<%= gettext "Chessboard showing the %{opening} with the moves %{moves} played", opening: @opening.name, moves: @opening.moves %>"/>
 <%= raw Earmark.as_html!(@opening.description)%>
 
+<%= if length(@studies) != 0 do %>
+<div>
+  <h2><%= gettext "Studies about the %{opening}", opening: @opening.name %></h2>
+  <p><%= gettext "Learn the %{opening} using public studies.", opening: @opening.name %></p>
+  <ul>
+  <%= for study <- @studies do %>
+    <li>
+      <%= link study.title, to: Routes.study_path(@conn, :show, @locale, study.slug) %>
+    </li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
+
 <%= if @tactics_amount >= 2 do %>
   <h2 id="tactics"><%= gettext "%{name} Traps and Tactics", name: @opening.name %></h2>
   <% next_url = Routes.random_opening_tactic_path(@conn, :random, @locale, @opening.slug) %>

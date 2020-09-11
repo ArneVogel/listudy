@@ -37,9 +37,16 @@ defmodule ListudyWeb.OpeningController do
   # For public usage
   def show(conn, %{"opening" => id}) do
     opening = Openings.get_by_slug!(id)
+    studies = Listudy.Studies.get_opening_studies(opening.id)
     tactics_amount = Tactics.opening_count(opening.id)
     tactic = Tactics.get_random_tactic("opening", opening.slug)
-    render(conn, "public.html", opening: opening, tactics_amount: tactics_amount, tactic: tactic)
+
+    render(conn, "public.html",
+      opening: opening,
+      tactics_amount: tactics_amount,
+      tactic: tactic,
+      studies: studies
+    )
   end
 
   def edit(conn, %{"id" => id}) do
