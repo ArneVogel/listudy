@@ -19,5 +19,10 @@
    </url>
    <% end %>
   <% end %>
-
+  <%= for opening <- @openings do %>
+   <url>
+     <loc><%= base_url() <> Routes.opening_path(@conn, :show, @locale, opening.slug) %></loc>
+     <lastmod><%= format_date(opening.updated_at) %></lastmod>
+   </url>
+  <% end %>
 </urlset>
