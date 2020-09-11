@@ -8,6 +8,8 @@ defmodule Listudy.Openings.Opening do
     field :moves, :string
     field :name, :string
     field :slug, :string
+    field :fen, :string
+    field :uci_moves, :string
 
     timestamps()
   end
