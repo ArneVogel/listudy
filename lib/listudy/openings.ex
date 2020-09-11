@@ -21,6 +21,15 @@ defmodule Listudy.Openings do
     Repo.all(Opening)
   end
 
+  def list_openings_study_form do
+    query =
+      from o in Opening,
+        order_by: [asc: o.name],
+        select: %{name: o.name, id: o.id}
+
+    Repo.all(query)
+  end
+
   @doc """
   Gets a single opening.
 

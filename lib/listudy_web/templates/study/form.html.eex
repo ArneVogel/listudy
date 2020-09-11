@@ -1,5 +1,5 @@
-<%= form_for @changeset, @action, [multipart: true], fn f -> %>
-  <%= if @changeset.action do %>
+<%= form_for @assigns.changeset, @action, [multipart: true], fn f -> %>
+  <%= if @assigns.changeset.action do %>
     <div class="alert alert-danger">
       <p>Oops, something went wrong! Please check the errors below.</p>
     </div>
@@ -33,6 +33,9 @@
 
   <%= label f, :private, gettext "Keep this study private" %>
   <%= checkbox f, :private %>
+
+  <%= label f, :opening_id, gettext "Opening" %>
+  <%= select(f, :opening_id, Enum.map(@assigns.openings, fn %{name: name, id: id} -> [key: name, value: id] end), selected: selected_opening(@assigns)) %>
 
   <div>
     <%= submit "Save" %>

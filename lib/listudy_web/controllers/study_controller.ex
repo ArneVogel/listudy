@@ -21,8 +21,9 @@ defmodule ListudyWeb.StudyController do
   def new(conn, _params) do
     case get_user(conn) do
       {:ok, _} ->
+        openings = Listudy.Openings.list_openings_study_form()
         changeset = Studies.change_study(%Study{})
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", changeset: changeset, openings: openings)
 
       {:error, error} ->
         conn
@@ -120,8 +121,9 @@ defmodule ListudyWeb.StudyController do
     {_, user} = get_user(conn)
 
     if allowed(study, user) do
+      openings = Listudy.Openings.list_openings_study_form()
       changeset = Studies.change_study(study)
-      render(conn, "edit.html", study: study, changeset: changeset)
+      render(conn, "edit.html", study: study, changeset: changeset, openings: openings)
     else
       conn
       |> put_flash(:error, "This study is private.")
