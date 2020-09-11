@@ -47,6 +47,9 @@
     <% end %>
   </div>
 </div>
+<div>
+  <b><%= gettext "Opening"%></b>: <%= link @opening.name, to: Routes.opening_path(@conn, :show, @locale, @opening.slug) %>
+</div>
 
 <hr>
 <div id="share"></div>
