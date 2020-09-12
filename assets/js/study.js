@@ -176,7 +176,7 @@ function setup_trees() {
             let error_text = caught_error.name + " at line: " + caught_error.location.start.line + 
                              ", character: " + caught_error.location.start.column + "; Unexpected: \"" + 
                              caught_error.found + "\"";
-            set_text(error, error_text)
+            set_text(error_div, error_text);
         }
     } else {
         trees = JSON.parse(localStorage.getItem(tree_key));
