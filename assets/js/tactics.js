@@ -4,7 +4,7 @@ const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
 import { resize_ground, setup_ground, ground_set_moves, 
          ground_undo_last_move, setup_move_handler, ground_move } from './modules/ground.js';
-import { setup_chess, from_to_to_san } from './modules/chess_utils.js';
+import { setup_chess, uci_to_san } from './modules/chess_utils.js';
 import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 import { sleep } from './modules/sleep.js';
 
@@ -13,7 +13,7 @@ function show_div(id) {
 }
 
 async function handle_move(orig, dest, extraInfo) {
-    let played = from_to_to_san(chess, orig, dest);
+    let played = uci_to_san(chess, orig, dest);
     let target = to_play.shift();
     clear_all_text();
 

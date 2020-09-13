@@ -2,7 +2,7 @@ const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
 import { ground_init_state, resize_ground, setup_ground, ground_set_moves, 
          ground_undo_last_move, setup_move_handler, ground_move } from './modules/ground.js';
-import { turn_color, setup_chess, from_to_to_san, san_to_from_to } from './modules/chess_utils.js';
+import { turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
 
 function nFormatter(num, digits) {
   var si = [
@@ -73,7 +73,7 @@ function next_puzzle() {
 }
 
 function handle_move(orig, dest, extraInfo) {
-    let played = from_to_to_san(chess, orig, dest);
+    let played = uci_to_san(chess, orig, dest);
     let target = to_play.shift();
 
     if (played == target) {

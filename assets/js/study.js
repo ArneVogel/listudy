@@ -2,7 +2,7 @@ require("regenerator-runtime/runtime"); // required for sleep (https://github.co
 
 const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
-import { turn_color, setup_chess, from_to_to_san, san_to_from_to } from './modules/chess_utils.js';
+import { turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
 import { string_hash } from './modules/hash.js';
 import { tree_move_index, tree_children, tree_possible_moves, has_children, 
          need_hint, update_value, date_sort, tree_get_node, tree_children_filter_sort } from './modules/tree_utils.js';
@@ -34,7 +34,7 @@ async function handle_move(orig, dest) {
 
     total_moves += 1;
 
-    let san = from_to_to_san(chess, orig, dest);
+    let san = uci_to_san(chess, orig, dest);
     
     let possible_moves = tree_possible_moves(curr_move);
     if(possible_moves.indexOf(san) != -1) {
@@ -69,7 +69,7 @@ function give_hints(access) {
     let to_hint = tree_possible_moves(access, {filter: need_hint});
     let shapes = [];
     for (let m of to_hint) {
-        let ft = san_to_from_to(chess, m);
+        let ft = san_to_uci(chess, m);
         shapes.push({orig: ft.from, dest: ft.to, brush: "hint"});
     }
     ground.setShapes(shapes);

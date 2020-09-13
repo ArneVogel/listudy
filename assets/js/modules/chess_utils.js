@@ -9,7 +9,7 @@ function legal_moves_san(c) {
     return c.moves()
 }
 
-function legal_moves_from_to(c) {
+function legal_moves_uci(c) {
     let moves = [];
     for (let m of c.moves()) {
         let move_result = c.move(m);
@@ -21,7 +21,7 @@ function legal_moves_from_to(c) {
 
 // the legal moves in the format that chessground can use
 function ground_legal_moves(c) {
-    let ft = legal_moves_from_to(c);
+    let ft = legal_moves_uci(c);
     let moves = new Map();
     for (let m of ft) {
         if (!moves.has(m.from)) {
@@ -40,16 +40,16 @@ function ground_legal_moves(c) {
  * to SAN notation (Nc3) 
  * iff the move is legal in the chess position 
  */
-function from_to_to_san(chess, from, to) {
+function uci_to_san(chess, from, to) {
     let move = chess.move({from:from, to:to, promotion: 'q'});
     chess.undo();
     return move.san;
 }
 
 /*
- * Reverse of from_to_to_san
+ * Reverse of uci_to_san
  */
-function san_to_from_to(chess, san) {
+function san_to_uci(chess, san) {
     let move = chess.move(san);
     chess.undo();
     return {from: move.from, to: move.to};
@@ -71,4 +71,4 @@ function turn_color(chess) {
 }
  
  
-export { turn_color, san_to_from_to, from_to_to_san, setup_chess, ground_legal_moves };
+export { turn_color, san_to_uci, uci_to_san, setup_chess, ground_legal_moves };

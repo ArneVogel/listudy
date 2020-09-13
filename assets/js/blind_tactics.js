@@ -4,7 +4,7 @@ const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
 import { resize_ground, setup_ground, ground_set_moves_from_instance, 
          ground_undo_last_move, setup_click_handler, ground_move } from './modules/ground.js';
-import { ground_legal_moves, turn_color, setup_chess, from_to_to_san, san_to_from_to } from './modules/chess_utils.js';
+import { ground_legal_moves, turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
 import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 import { sleep } from './modules/sleep.js';
 
