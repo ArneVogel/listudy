@@ -24,6 +24,7 @@ defmodule Listudy.Users.User do
     |> unique_constraint(:unique_user, name: :unique_user)
     |> Ecto.Changeset.validate_inclusion(:role, ~w(user))
     |> validate_alphanumeric(:username)
+    |> validate_length(:username, min: 3, max: 20)
   end
 
   defp validate_alphanumeric(changeset, field, _options \\ []) do
