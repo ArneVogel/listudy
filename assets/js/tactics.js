@@ -2,9 +2,9 @@ require("regenerator-runtime/runtime"); // required for sleep (https://github.co
 
 const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
-import { ground_init_state, resize_ground, setup_ground, ground_set_moves, 
+import { resize_ground, setup_ground, ground_set_moves, 
          ground_undo_last_move, setup_move_handler, ground_move } from './modules/ground.js';
-import { turn_color, setup_chess, from_to_to_san, san_to_from_to } from './modules/chess_utils.js';
+import { setup_chess, from_to_to_san } from './modules/chess_utils.js';
 import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 import { sleep } from './modules/sleep.js';
 
