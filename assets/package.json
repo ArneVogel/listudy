@@ -5,7 +5,7 @@
   "scripts": {
     "deploy": "webpack --mode production",
     "watch": "webpack --mode development --watch",
-    "test": "npx codeceptjs run --steps -c test/codecept.conf.js"
+    "test": "npx codeceptjs run-workers 5 -c test/codecept.conf.js"
   },
   "dependencies": {
     "chess.js": "^0.10.3",
