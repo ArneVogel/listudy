@@ -8,6 +8,9 @@ jobs:
   Test:
     name: Test
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [13.x]
     services:
       db:
         image: postgres:11
@@ -15,7 +18,7 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: listudy_test
+          POSTGRES_DB: listudy_dev
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -34,6 +37,12 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: "Install npm"
+        run: npm install --prefix assets
       - name: Setup elixir
         uses: actions/setup-elixir@v1.2.0
         with:
@@ -45,9 +54,18 @@ jobs:
           mix local.hex --force
           mix deps.get
       - name: Run Tests
-        env:
-          MIX_ENV: test
-        run: mix test
+        run: |
+          mix compile
+          mix ecto.create
+          mix ecto.migrate
+          mix ecto.reset
+          mix test
+          mkdir -p priv/static/study_pgn
+          npm run deploy --prefix ./assets
+          mix phx.digest
+          mix phx.server &
+          sleep 10
+          npm test --prefix ./assets
   Deploy:
     name: Deploy
     needs: Test
