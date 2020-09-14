@@ -14,10 +14,8 @@ Scenario("create study from lichess study", (I) => {
     I.see("Starting training");
     I.click("Edit");
     I.see("Edit Study");
-    I.click("Back");
-    I.see("Your Studies");
     I.click("Delete");
-    I.see("Your Studies");
+    I.see("Study deleted successfully.");
 });
 
 Scenario("create study from file upload", (I) => {
@@ -34,10 +32,8 @@ Scenario("create study from file upload", (I) => {
     I.see("Starting training");
     I.click("Edit");
     I.see("Edit Study");
-    I.click("Back");
-    I.see("Your Studies");
     I.click("Delete");
-    I.see("Your Studies");
+    I.see("Study deleted successfully.");
 });
 
 Scenario("study with error", (I) => {
@@ -54,8 +50,6 @@ Scenario("study with error", (I) => {
     I.see("SyntaxError");
     I.click("Edit");
     I.see("Edit Study");
-    I.click("Back");
-    I.see("Your Studies");
     I.click("Delete");
-    I.see("Your Studies");
+    I.see("Study deleted successfully.");
 });
