@@ -2,7 +2,7 @@
       <section class="container">
         <nav role="navigation">
           <div>
-            <div class="logo">
+            <div class="logo show">
               <a href="/<%= @assigns.locale %>"><span class="logo_name">listudy</span><span class="logo_domain">.org</span></a>
             </div>
             <div class="dropdowns_container">
@@ -28,8 +28,6 @@
               </div> 
             </div>
 
-
-
           </div>
           <div class="nav_right">
           <%= if !Pow.Plug.current_user(@conn) do %>
@@ -52,21 +50,23 @@
                   <%= link (gettext "Profile"), to: Routes.user_profile_path(@conn, :show, @assigns.locale, @assigns.current_user.username) %>
                   <%= link (gettext "Sign out"), to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "hover_warn" %>
                 <% end %>
-
-                <div class="dropdowns_container">
-                  <div class="nested-dropdown">
-                    <button class="dropbtn nested-dropbtn"><%= gettext "Language" %></button>
-                    <div class="nested-dropdown-content">
-                      <%= raw ListudyWeb.Seo.lang_alternatives(@conn) %>
-                    </div>
-                  </div> 
-                </div>
-
+                  <div class="dropdowns_container">
+                    <div class="nested-dropdown">
+                      <button class="dropbtn nested-dropbtn"><%= gettext "Language" %></button>
+                      <div class="nested-dropdown-content">
+                        <%= raw ListudyWeb.Seo.lang_alternatives(@conn) %>
+                      </div>
+                    </div> 
+                  </div>
                 </div>
               </div> 
             </div>
-
           </div>
+          <div class="hamburger_container" onclick="toggle_hamburger(this)">
+            <div class="burger1"></div>
+            <div class="burger2"></div>
+            <div class="burger3"></div>
+          </div> 
         </nav>
       </section>
     </header>

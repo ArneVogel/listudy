@@ -24,6 +24,18 @@
       document.documentElement.setAttribute('data-theme', theme);
       <%# Translations used by javascript %>
       let translation_share_on = "<%= gettext "Share on" %>";
+      <%# Mobile Navigation Trigger %>
+      function toggle_hamburger(x) {
+        function toggle(divs) {
+          for (let i = 0; i < divs.length; ++i) {
+            divs[i].classList.toggle("show");
+          }
+        }
+        x.classList.toggle("hamburger_toggle");
+        toggle(document.getElementsByClassName("dropdowns_container"));
+        toggle(document.getElementsByClassName("nav_element"));
+        toggle(document.getElementsByClassName("logo"));
+      } 
     </script>
 
     <%# Favicon start, generated with https://realfavicongenerator.net/%>

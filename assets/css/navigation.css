@@ -1,11 +1,19 @@
 nav {
-    display:flex;
+    display: flex;
+    max-width: 100%;
 }
 
-@media only screen and (max-width: 500px) {
-    nav {
-        display: block;
-    }
+.hamburger_container {
+    display: none;
+}
+
+@media (max-width: 600px) {                  
+   .dropdowns_container, .nav_element, .logo {
+        display: none;
+   }
+   .hamburger_container {
+        display: inline-block;
+   }
 }
 
 nav > div {
@@ -144,3 +152,37 @@ nav {
 .nested-dropdown:hover .nested-dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: var(--bg-highlight-color);} 
+
+
+/*
+ * Hamburger Menu Start
+ */
+.hamburger_container {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.burger1, .burger2, .burger3 {
+  width: 35px;
+  height: 5px;
+  background-color: var(--font-highlight-color);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.hamburger_toggle .burger1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+.hamburger_toggle .burger2 {
+  opacity: 0;
+}
+
+.hamburger_toggle .burger3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+  transform: rotate(45deg) translate(-8px, -8px) ;
+}
+/*
+ * Hamburger Menu End
+ */
