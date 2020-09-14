@@ -2,6 +2,7 @@ defmodule Listudy.Seeds do
   def call do
     alias Listudy.Users.User
     alias Listudy.Tactics.Tactic
+    alias Listudy.BlindTactics.BlindTactic
     alias Listudy.Motifs.Motif
     alias Listudy.Openings.Opening
     alias Listudy.Events.Event
@@ -65,6 +66,14 @@ defmodule Listudy.Seeds do
       motif: 1
     }
 
+    blind_tactic = %BlindTactic{
+      color: "white",
+      description: "",
+      pgn: "1. e4 Nf6 2. e5 Nd5 3. Nf3 d6 4. Bc4 Nb6 5. Bxf7+ Kxf7 6. Ng5+ Kg8 7. e6 h6 8. Qf3 Qe8 9. Qf7+ Qxf7 10. exf7# ",
+      played: 0,
+      ply: 16
+    }
+
     Listudy.Repo.insert!(user)
     Listudy.Repo.insert!(regular)
     Listudy.Repo.insert!(event)
@@ -72,5 +81,6 @@ defmodule Listudy.Seeds do
     Listudy.Repo.insert!(player)
     Listudy.Repo.insert!(opening)
     Listudy.Repo.insert!(tactic)
+    Listudy.Repo.insert!(blind_tactic)
   end
 end
