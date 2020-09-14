@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "deploy": "webpack --mode production",
-    "watch": "webpack --mode development --watch"
+    "watch": "webpack --mode development --watch",
+    "test": "npx codeceptjs run-workers 5 -c test/codecept.conf.js"
   },
   "dependencies": {
     "chess.js": "^0.10.3",
@@ -18,11 +19,13 @@
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "babel-loader": "^8.0.0",
+    "codeceptjs": "^2.6.10",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.4.2",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "puppeteer": "^5.3.0",
     "sass-loader": "^8.0.2",
     "terser-webpack-plugin": "^2.3.2",
     "webpack": "4.41.5",
