@@ -2,4 +2,8 @@
 
 <%= render "form.html", assigns: assigns, action: Routes.study_path(@conn, :update, @locale, @study) %>
 
-<span><%= link "Back", to: Routes.study_path(@conn, :index, @locale) %></span>
+<p><%= link (gettext "Back to your Studies"), to: Routes.study_path(@conn, :index, @locale) %></p>
+
+<h2><%= gettext "Delete Study" %></h2>
+<p><%= gettext "This can not be undone!" %></p>
+<%= link (gettext "Delete"), to: Routes.study_path(@conn, :delete, @locale, @study), method: :delete, data: [confirm: gettext "Are you sure?"] %>
