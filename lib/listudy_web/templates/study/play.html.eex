@@ -9,19 +9,6 @@
   </div>
 </div>
 <script src="/stockfish/stockfish.js"></script>
-<script>
-console.log("hi");
-Stockfish().then(sf => {
-  console.log("after then");
 
-  sf.addMessageListener(line => {
-    console.log("line");
-    console.log(line);
-  });
-
-  console.log("postMessage");
-  sf.postMessage('uci');
-});
-</script>
 <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
 <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/play_stockfish.js") %>"></script>

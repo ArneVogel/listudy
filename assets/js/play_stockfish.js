@@ -2,7 +2,6 @@ require("regenerator-runtime/runtime"); // required for sleep (https://github.co
 
 const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
-const Stockfish = require('stockfish.wasm');
 
 import { turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
 import { string_hash } from './modules/hash.js';
@@ -16,23 +15,32 @@ import { ground_init_state, resize_ground, setup_ground, ground_set_moves,
 import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 
 async function handle_move(orig, dest) {
-    get_ai_move();
-    setup_move();
+    move(orig, dest);
+    ai_move();
+
 }
 
-function setup_move() {
+function move(orig,dest) {
+    let san = uci_to_san(chess, orig, dest);
+    let m = chess.move(san);
     ground_set_moves();
+    ground_move(m,chess);
 }
 
-function get_ai_move() {
-    console.log("get_ai_move")
+function ai_move() {
     Stockfish().then(sf => {
-        console.log("then")
         sf.addMessageListener(line => {
-            console.log(line);
+            if(line.startsWith("bestmove")) {
+                let orig = line.substring(9,11);
+                let dest = line.substring(11,13);
+                move(orig, dest);
+            }
         });
-        console.log("postMessge uci")
+
         sf.postMessage('uci');
+        sf.postMessage('ucinewgame');
+        sf.postMessage(`position fen ${chess.fen()}`);
+        sf.postMessage('go depth 15');
     });
 }
 
@@ -44,7 +52,7 @@ function main() {
     setup_ground(fen);
     resize_ground();
     setup_move_handler(handle_move);
-    setup_move();
+    ground_set_moves();
 }
 
 window.onresize = resize_ground;
