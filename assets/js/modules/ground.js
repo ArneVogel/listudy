@@ -149,9 +149,8 @@ function ground_move(m, c = undefined) {
         map[square] = {role: promoted_piece, color: color};
         ground.setPieces(map);
     }
-
-    ground.set({check: in_check})
     ground.move(m.from, m.to);
+    ground.set({check: in_check})
 }
 
 export { ground_init_state, resize_ground, setup_ground, ground_set_moves, ground_set_moves_from_instance, ground_undo_last_move, setup_move_handler, setup_click_handler, ground_move };

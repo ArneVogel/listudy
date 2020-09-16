@@ -99,7 +99,15 @@ function display_comments(access) {
     set_text(comments_div, unescape_string(comment));
 }
 
+function change_play_stockfish() {
+    let fen = chess.fen();
+    let link = document.getElementById("play_stockfish");
+    let base = link.href.split("#")[0];
+    link.href = `${base}#${fen}`;
+}
+
 function setup_move() {
+    change_play_stockfish();
     give_hints(curr_move);
     show_suggestions();
     display_comments(curr_move);
