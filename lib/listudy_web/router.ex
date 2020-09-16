@@ -17,6 +17,10 @@ defmodule ListudyWeb.Router do
     plug ListudyWeb.EnsureRolePlug, :admin
   end
 
+  pipeline :stockfish do
+    plug ListudyWeb.Plugs.Stockfish
+  end
+
   pipeline :logged_in do
     plug Pow.Plug.RequireAuthenticated,
       error_handler: Pow.Phoenix.PlugErrorHandler
@@ -51,6 +55,11 @@ defmodule ListudyWeb.Router do
     resources "/tactics", TacticController
 
     resources "/blind_tactics", BlindTacticController
+  end
+
+  scope "/:locale", ListudyWeb do
+    pipe_through [:browser, :stockfish]
+    get "/studies/play", StudyController, :play
   end
 
   scope "/:locale", ListudyWeb do
