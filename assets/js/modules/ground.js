@@ -132,10 +132,11 @@ function cjs_turn(color) {
 
 // move based on a chess.js move
 function ground_move(m, c = undefined) {
-    let in_check = false;
+    ground.move(m.from, m.to);
     if (c != undefined) {
-        in_check = c.in_check();
+        let in_check = c.in_check();
         ground.set({turnColor: cjs_turn(c.turn())})
+        ground.set({check: in_check})
     }
     if (m.flags == "e") { // handle en passant
         let captured = en_passant_square(m)
@@ -146,11 +147,9 @@ function ground_move(m, c = undefined) {
         let color = expand_chess_js_types(m.color);
         let square = m.to;
         let map = new Map();
-        map[square] = {role: promoted_piece, color: color};
+        map.set(square, {role: promoted_piece, color: color});
         ground.setPieces(map);
     }
-    ground.move(m.from, m.to);
-    ground.set({check: in_check})
 }
 
 export { ground_init_state, resize_ground, setup_ground, ground_set_moves, ground_set_moves_from_instance, ground_undo_last_move, setup_move_handler, setup_click_handler, ground_move };
