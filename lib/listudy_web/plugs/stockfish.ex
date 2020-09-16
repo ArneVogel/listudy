@@ -5,6 +5,6 @@ defmodule ListudyWeb.Plugs.Stockfish do
 
   def call(conn, _default) do
     conn = put_resp_header conn, "cross-origin-embedder-policy", "require-corp"
-    conn = put_resp_header conn, "cross-origin-opener-policy", "same-origin"
+    put_resp_header conn, "cross-origin-opener-policy", "same-origin"
   end
 end

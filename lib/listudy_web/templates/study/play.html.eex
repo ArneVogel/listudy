@@ -8,7 +8,7 @@
 
   </div>
 </div>
-<script src="/js/stockfish.js"></script>
+<script src="/stockfish/stockfish.js"></script>
 <script>
 console.log("hi");
 Stockfish().then(sf => {
