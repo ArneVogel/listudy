@@ -28,20 +28,10 @@ function move(orig,dest) {
 }
 
 function ai_move() {
-    Stockfish().then(sf => {
-        sf.addMessageListener(line => {
-            if(line.startsWith("bestmove")) {
-                let orig = line.substring(9,11);
-                let dest = line.substring(11,13);
-                move(orig, dest);
-            }
-        });
-
-        sf.postMessage('uci');
-        sf.postMessage('ucinewgame');
-        sf.postMessage(`position fen ${chess.fen()}`);
-        sf.postMessage('go depth 15');
-    });
+    sf.postMessage('uci');
+    sf.postMessage('ucinewgame');
+    sf.postMessage(`position fen ${chess.fen()}`);
+    sf.postMessage('go movetime 1000');
 }
 
 function main() {
@@ -53,6 +43,17 @@ function main() {
     resize_ground();
     setup_move_handler(handle_move);
     ground_set_moves();
+
+    Stockfish().then(sf => {
+        window.sf = sf;
+        sf.addMessageListener(line => {
+            if(line.startsWith("bestmove")) {
+                let orig = line.substring(9,11);
+                let dest = line.substring(11,13);
+                move(orig, dest);
+            }
+        });
+    });
 }
 
 window.onresize = resize_ground;
