@@ -84,6 +84,10 @@ function create_tactic() {
   window.location.hash = h;
   location.reload();
 }
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('create_button')
+          .addEventListener('click', create_tactic);
+});
 </script>
 <hr>
 <h2><%= gettext "Make your own Tactic"%></h2>
@@ -98,4 +102,4 @@ function create_tactic() {
 <input type="text" id="last_move_input" name="last_move" required placeholder="h8g6">
 
 <br>
-<button onclick="create_tactic()"><%= gettext "Create" %></button>
+<button id="create_button"><%= gettext "Create" %></button>
