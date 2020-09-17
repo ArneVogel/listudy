@@ -22,7 +22,6 @@ defmodule ListudyWeb.StudyController do
     render(conn, "play.html")
   end
 
-
   def new(conn, _params) do
     case get_user(conn) do
       {:ok, _} ->

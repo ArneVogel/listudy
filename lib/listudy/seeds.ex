@@ -69,7 +69,8 @@ defmodule Listudy.Seeds do
     blind_tactic = %BlindTactic{
       color: "white",
       description: "",
-      pgn: "1. e4 Nf6 2. e5 Nd5 3. Nf3 d6 4. Bc4 Nb6 5. Bxf7+ Kxf7 6. Ng5+ Kg8 7. e6 h6 8. Qf3 Qe8 9. Qf7+ Qxf7 10. exf7# ",
+      pgn:
+        "1. e4 Nf6 2. e5 Nd5 3. Nf3 d6 4. Bc4 Nb6 5. Bxf7+ Kxf7 6. Ng5+ Kg8 7. e6 h6 8. Qf3 Qe8 9. Qf7+ Qxf7 10. exf7# ",
       played: 0,
       ply: 16
     }

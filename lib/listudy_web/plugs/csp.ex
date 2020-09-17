@@ -6,7 +6,7 @@ defmodule ListudyWeb.Plugs.CSP do
   def call(conn, _opts) do
     nonce = nonce()
     conn = put_session(conn, :csp_nonce, nonce)
-    put_resp_header conn, "content-security-policy", csp(conn)
+    put_resp_header(conn, "content-security-policy", csp(conn))
   end
 
   def put_nonce(%{private: %{plug_session: %{"csp_nonce" => nonce}}}) do
@@ -25,8 +25,10 @@ defmodule ListudyWeb.Plugs.CSP do
     "default-src 'self'; \
     base-uri 'self'; \
     object-src 'none'; \
-    connect-src 'self' #{ws_url conn} #{ws_url conn, "wss"}; \
-    script-src 'self' 'unsafe-inline' 'unsafe-eval' 'nonce-#{conn.private.plug_session["csp_nonce"]}'; \
+    connect-src 'self' #{ws_url(conn)} #{ws_url(conn, "wss")}; \
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' 'nonce-#{
+      conn.private.plug_session["csp_nonce"]
+    }'; \
     img-src 'self' data:; \
     style-src 'self' 'unsafe-inline'"
   end
@@ -46,5 +48,4 @@ defmodule ListudyWeb.Plugs.CSP do
     |> Kernel.+(min)
     |> Integer.to_string(36)
   end
-
 end
