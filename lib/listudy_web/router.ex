@@ -9,6 +9,7 @@ defmodule ListudyWeb.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug ListudyWeb.Plugs.Locale, "en"
+    plug ListudyWeb.Plugs.CSP
     plug ListudyWeb.Plugs.LastVisited
     plug NavigationHistory.Tracker
   end

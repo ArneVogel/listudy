@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
-    <script>
+    <script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
       <%# This is here to stop the default white theme to flash on load
       <%# In the defered app.js script it would only switch after the page is loaded %>
       let theme = localStorage.getItem("data-theme") || "light";

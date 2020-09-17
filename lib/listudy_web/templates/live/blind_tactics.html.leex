@@ -45,7 +45,7 @@
   <input type="text" id="color" value="<%= @tactic.color %>">
   <input type="text" id="ply" value="<%= @tactic.ply %>">
 </form>
-<script>
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@socket) %>>
 let pgn = "<%= @tactic.pgn %>";
 let color = "<%= @tactic.color %>";
 let ply = "<%= @tactic.ply %>";

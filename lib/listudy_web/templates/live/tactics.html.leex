@@ -47,7 +47,7 @@
   <input type="text" id="moves" value="<%= @tactic.moves %>">
   <input type="text" id="last_move" value="<%= @tactic.last_move %>">
 </form>
-<script>
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@socket) %>>
 let fen = "<%= @tactic.fen %>";
 let color = "<%= @tactic.color %>";
 let moves = "<%= @tactic.moves %>";
