@@ -58,7 +58,7 @@
     <div class="overflow">
       <% names = ["Paul Morphy", "Wilhelm Steinitz", "Emanuel Lasker", "José Raúl Capablanca", "Alexander Alekhine", "Max Euwe", "Mikhail Botvinnik", "Vasily Smyslov", "Mikhail Tal", "Tigran Petrosian", "Boris Spassky", "Robert J. Fischer", "Anatoly Karpov", "Garry Kasparov", "Vladimir Kramnik", "Viswanathan Anand", "Magnus Carlsen"] %>
       <%= for {name, i} <- Enum.with_index(names) do %>
-        <div class="teacher disabled hidden" onclick="buy(<%= i %>)" id="<%= i %>">
+        <div class="teacher disabled hidden" id="<%= i %>">
           <b><%= name %></b><span id="<%= i %>_owned" class="owned_count">0</span><br>
           <%= gettext "Cost" %>: <span id="<%= i %>_cost">10</span> <%= gettext "rating points" %><br>
           <%= gettext "Rating points per second" %>: <span id="<%= i %>_rps"></span><br>
@@ -85,4 +85,10 @@ let fen = "<%= @tactic.fen %>";
 let color = "<%= @tactic.color %>";
 let moves = "<%= @tactic.moves %>";
 let last_move = "<%= @tactic.last_move %>";
+
+document.addEventListener('DOMContentLoaded', function () {
+<%= for {_, i} <- Enum.with_index(names) do %>
+ document.getElementById("<%= i %>").addEventListener("click", function abc() {buy(<%= i %>)});
+<% end %>
+});
 </script>
