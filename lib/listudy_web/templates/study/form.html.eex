@@ -50,7 +50,7 @@ button {
 }
 </style>
 
-<script type="text/javascript">
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@assigns.conn) %>>
 $(document).ready(function() {
     $('#study_opening_id').select2();
 });
