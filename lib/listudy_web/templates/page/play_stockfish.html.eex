@@ -17,3 +17,17 @@
 
 <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
 <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/play_stockfish.js") %>"></script>
+
+<p>
+  <b><%= dgettext "play_stockfish", "Play against Stockfish:" %></b>
+  <%= dgettext "play_stockfish", "learn with the best chess engine." %>
+</p>
+<p><%= dgettext "play_stockfish", "Stockfish is one of the best chess engines avaliable. And with the help of WebAssembly the engine can now also be executed online in the browser. This means that the engine is running in your own browser." %></p>
+<p>
+  <%= dgettext "play_stockfish", "Thanks to the developers of stockfish!" %>
+  <a href="https://stockfishchess.org/"><%= dgettext "play_stockfish", "Official Stockfish Website" %></a>
+</p>
+<p>
+  <%= dgettext "play_stockfish", "Thanks to Niklas Fiekas for the WebAssembly port of Stockfish!" %>
+  <a href="https://github.com/niklasf/stockfish.wasm"><%= dgettext "play_stockfish", "stockfish.wasm" %></a>
+</p>
