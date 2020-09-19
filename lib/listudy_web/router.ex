@@ -60,7 +60,7 @@ defmodule ListudyWeb.Router do
 
   scope "/:locale", ListudyWeb do
     pipe_through [:browser, :stockfish]
-    get "/studies/play", StudyController, :play
+    get "/play-stockfish", PageController, :play_stockfish
   end
 
   scope "/:locale", ListudyWeb do

@@ -18,10 +18,6 @@ defmodule ListudyWeb.StudyController do
     render(conn, "index.html", studies: studies, favorites: favorites)
   end
 
-  def play(conn, _params) do
-    render(conn, "play.html")
-  end
-
   def new(conn, _params) do
     case get_user(conn) do
       {:ok, _} ->

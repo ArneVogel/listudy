@@ -35,7 +35,7 @@
     <p><%= gettext "Created by:" %> <%= link @study.user.username, to: Routes.user_profile_path(@conn, :show, @locale, @study.user.username) %></p>
   </div>
   <div class="one-half column">
-    <a id="play_stockfish" href="<%= Routes.study_path(@conn, :play, @locale) %>#rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1">
+    <a id="play_stockfish" href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1">
       <button>
         <%= gettext "Play against Stockfish" %>
       </button>

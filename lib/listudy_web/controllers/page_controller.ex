@@ -32,6 +32,10 @@ defmodule ListudyWeb.PageController do
     renderer(conn, @features, page)
   end
 
+  def play_stockfish(conn, _params) do
+    render(conn, "play_stockfish.html")
+  end
+
   defp renderer(conn, pages, page) do
     case Enum.member?(pages, page) do
       true ->
