@@ -35,10 +35,27 @@ function ai_move() {
 }
 
 function main() {
-    let regex = /%20/g
-    let fen = document.location.hash.split("#")[1].replace(regex, " ");
+    let hash = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1;p";
+    if (document.location.hash != "") {
+        let regex = /%20/g
+        hash = document.location.hash.split("#")[1].replace(regex, " ");
+    }
+    let hash_splits = hash.split(";")
+    let fen = hash_splits[0];
+    if (!fen.endsWith("0 1")) {
+        // Add 0 1 to fens like 
+        // rnbqk2r/ppp1ppbp/3p1np1/8/3P4/3BPN2/PPP2PPP/RNBQK2R w KQkq -
+        // Otherwise chess.js wont parse the fen correctly
+        fen = `${fen} 0 1`;
+    }
+    let first_move = hash_splits[1] || "p";
+
     setup_chess(fen);
     window.color = turn_color(chess);
+    if (first_move == "sf") {
+        // switch the board rotation for the player to be bottom
+        color = color == "white" ? "black" : "white";
+    }
     setup_ground(fen);
     resize_ground();
     setup_move_handler(handle_move);
@@ -53,6 +70,10 @@ function main() {
                 move(orig, dest);
             }
         });
+
+        if (first_move == "sf") {
+            ai_move();
+        }
     });
 }
 
