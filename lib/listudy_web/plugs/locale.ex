@@ -22,8 +22,6 @@ defmodule ListudyWeb.Plugs.Locale do
   defp default_locale(), do: "en"
 
   defp get_locale(conn) do
-    IO.inspect(conn.private.plug_session["locale"])
-
     if conn.private.plug_session["locale"] do
       {:ok, conn.private.plug_session["locale"]}
     else
