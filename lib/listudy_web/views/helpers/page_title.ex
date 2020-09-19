@@ -15,6 +15,9 @@ defmodule ListudyWeb.PageTitle do
   defp get(%{view_module: PageView, view_template: "blind-tactics.html"}),
     do: gettext("Blind Tactics")
 
+  defp get(%{view_module: PageView, view_template: "play_stockfish.html"}),
+    do: gettext("Play against Stockfish Online")
+
   defp get(%{view_module: PageView}), do: gettext("Improve you chess game with spaced repetition")
 
   defp get(%{view_module: Elixir.ListudyWeb.StudyView, view_template: "show.html", study: study}),

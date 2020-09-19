@@ -8,6 +8,10 @@ defmodule ListudyWeb.PageDescription do
     gettext("Solve the Daily Chess Puzzle! Updated every day from our list of best puzzles.")
   end
 
+  defp get(%{view_module: Elixir.ListudyWeb.PageView, view_template: "play_stockfish.html"}),
+    do: gettext("Play against Stockfish Online - Unlimited and for Free")
+
+
   defp get(%{view_module: Elixir.ListudyWeb.StudyView, view_template: "show.html", study: study}),
     do: trim(study.description)
 
