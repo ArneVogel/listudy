@@ -1,14 +1,29 @@
 <h1><%= @opening.name %></h1>
+<% show_studies = length(@studies) != 0 %>
+<% show_tactics = @tactics_amount >= 2 %>
+
 
 <img src="<%= Routes.static_path(@conn, "/images/opening/" <> @opening.slug <> ".svg") %>" 
      width="350px" height="350px" class="opening_svg"
      title="<%= gettext "%{opening} after the moves %{moves}", opening: @opening.name, moves: @opening.moves %>"
      alt="<%= gettext "Chessboard showing the %{opening} with the moves %{moves} played", opening: @opening.name, moves: @opening.moves %>"/>
+
+<div class="page_actions">
+  <b><%= gettext "Contents" %></b><br>
+  <%= if show_studies do %>
+  <a href="#studies"><%= gettext "Learn the Opening" %></a><br>
+  <% end %>
+  <%= if show_tactics do %>
+  <a href="#tactics"><%= gettext "Solve Traps and Tactics" %></a><br>
+  <% end %>
+  <a href="#stockfish"><%= gettext "Play against Stockfish" %></a>
+</div>
+
 <%= raw Earmark.as_html!(@opening.description)%>
 
-<%= if length(@studies) != 0 do %>
+<%= if show_studies do %>
 <div>
-  <h2><%= gettext "Studies about the %{opening}", opening: @opening.name %></h2>
+  <h2 id="studies"><%= gettext "Studies about the %{opening}", opening: @opening.name %></h2>
   <p><%= gettext "Learn the %{opening} using public studies.", opening: @opening.name %></p>
   <ul>
   <%= for study <- @studies do %>
@@ -20,7 +35,7 @@
 </div>
 <% end %>
 
-<%= if @tactics_amount >= 2 do %>
+<%= if show_tactics do %>
   <h2 id="tactics"><%= gettext "%{name} Traps and Tactics", name: @opening.name %></h2>
   <% next_url = Routes.random_opening_tactic_path(@conn, :random, @locale, @opening.slug) %>
   <%= render ListudyWeb.TacticView, "tactic.html", conn: @conn, tactic: @tactic, next: next_url %>
@@ -33,3 +48,20 @@
   </p>
   <%= link (gettext "%{name} Tactics", name: @opening.name) , to: next_url %>
 <% end %>
+
+<h2 id="stockfish"><%= gettext "Play against Stockfish" %></h2>
+
+<div class="page_actions">
+  <a href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#<%= @opening.fen %>;sf">
+    <%= gettext "Play the %{name}", name: @opening.name %>
+  </a>
+  <br>
+  <a href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#<%= @opening.fen %>">
+    <%= gettext "Play against the %{name}", name: @opening.name %>
+  </a>
+</div>
+
+<p><%= gettext "Do you want to try out the %{name}? Train this opening against Stockfish.", name: @opening.name %></p>
+<p><%= gettext "Play against Stockfish either as white or black and explore the opening." %></p>
+
+

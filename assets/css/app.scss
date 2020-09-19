@@ -122,6 +122,12 @@ body {
     margin-left: 2em;
 }
 
+.page_actions {
+    background-color: var(--bg-highlight-color);
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
 .continue_button {
     background-color: var(--primary-color);
     color: var(--primary-font-offset);

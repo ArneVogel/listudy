@@ -17,8 +17,8 @@ defmodule Listudy.Openings.Opening do
   @doc false
   def changeset(opening, attrs) do
     opening
-    |> cast(attrs, [:name, :slug, :description, :eco, :moves])
-    |> validate_required([:name, :slug, :description, :eco, :moves])
+    |> cast(attrs, [:name, :slug, :description, :eco, :moves, :fen, :uci_moves])
+    |> validate_required([:name, :slug, :description, :eco, :moves, :fen, :uci_moves])
     |> unique_constraint(:name)
     |> unique_constraint(:slug)
   end
