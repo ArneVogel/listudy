@@ -27,11 +27,26 @@ function move(orig,dest) {
     ground_move(m,chess);
 }
 
+function animate_progress_bar(movetime, reason="") {
+    document.getElementById("progress_reason").innerText = reason;
+    let bar = document.getElementById("progress");
+    bar.style.transitionDuration = `${movetime/1000}s`;
+    bar.style.width = "100%";
+    window.setTimeout(function() {
+        let bar = document.getElementById("progress");
+        bar.style.transitionDuration = "";
+        bar.style.width = "0%";
+        document.getElementById("progress_reason").innerText = "";
+    }, movetime);
+}
+
 function ai_move() {
+    let movetime = 1000
+    animate_progress_bar(movetime, "Calculating Move...");
     sf.postMessage('uci');
     sf.postMessage('ucinewgame');
     sf.postMessage(`position fen ${chess.fen()}`);
-    sf.postMessage('go movetime 1000');
+    sf.postMessage(`go movetime ${movetime}`);
 }
 
 function main() {
@@ -61,6 +76,7 @@ function main() {
     setup_move_handler(handle_move);
     ground_set_moves();
 
+    animate_progress_bar(2000, "Loading Stockfish...")
     Stockfish().then(sf => {
         window.sf = sf;
         sf.addMessageListener(line => {

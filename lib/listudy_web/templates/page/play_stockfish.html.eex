@@ -5,7 +5,12 @@
     <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
   </div>
   <div class="sidebar">
-
+    <div id="progress_container">
+      <div class="progress-bar">
+          <span id="progress" class="progress-bar-fill"></span>
+      </div>
+      <span id="progress_reason"></span>
+    </div>
   </div>
 </div>
 <script src="/stockfish/stockfish.js"></script>
