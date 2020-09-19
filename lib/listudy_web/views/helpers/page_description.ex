@@ -11,7 +11,6 @@ defmodule ListudyWeb.PageDescription do
   defp get(%{view_module: Elixir.ListudyWeb.PageView, view_template: "play_stockfish.html"}),
     do: gettext("Play against Stockfish Online - Unlimited and for Free")
 
-
   defp get(%{view_module: Elixir.ListudyWeb.StudyView, view_template: "show.html", study: study}),
     do: trim(study.description)
 
