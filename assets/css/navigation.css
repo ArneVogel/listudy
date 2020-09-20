@@ -53,10 +53,6 @@ nav > div > div {
     color: var(--font-highlight-color);
 }
 
-.dropdown_trigger {
-    border: 1px var(--bg-color) solid;
-}
-
 .nav_element {
     padding: 0.5em;
 }
@@ -64,7 +60,6 @@ nav > div > div {
 .dropdown_trigger:hover {
     color: var(--font-highlight-color);
     background-color: var(--bg-highlight-color);
-    border: 1px var(--font-color) solid;
 }
 
 nav {
@@ -117,7 +112,12 @@ nav {
   padding: 0 1em;
   margin: 0;
   border-radius: 0;
-  border: 1px var(--bg-color) solid;
+  border-left: 2px var(--bg-color) solid;
+}
+
+.nav_right .dropbtn {
+    border-left: none;
+    border-right: 2px var(--bg-color) solid;
 }
 
 .nested-dropbtn {
@@ -151,10 +151,29 @@ nav {
 
 .dropdown-content a:hover {background-color: var(--primary-color);}
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+    display: block;
+    border-left: 2px var(--primary-color) solid;
+}
+.nav_right .dropdown:hover .dropdown-content {
+    display: block;
+    border-left: none;
+    border-right: 2px var(--primary-color) solid;
+}
+
 .nested-dropdown:hover .nested-dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: var(--bg-highlight-color);} 
+.dropdown:hover .dropbtn {
+    background-color: var(--bg-highlight-color);
+    border-left: 2px var(--primary-color) solid;
+} 
+
+.nav_right .dropdown:hover .dropbtn {
+    background-color: var(--bg-highlight-color);
+    border-left: none;
+    border-right: 2px var(--primary-color) solid;
+} 
+
 
 
 /*
