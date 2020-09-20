@@ -5,6 +5,7 @@
             <div class="logo show">
               <a href="/<%= @assigns.locale %>"><span class="logo_name">listudy</span><span class="logo_domain">.org</span></a>
             </div>
+            
             <div class="dropdowns_container">
               <div class="dropdown">
                 <button class="dropbtn"><%= gettext "Study" %></button>
@@ -17,6 +18,7 @@
                 </div>
               </div> 
             </div>
+
             <div class="dropdowns_container">
               <div class="dropdown">
                 <button class="dropbtn"><%= gettext "Tactics"%></button>
@@ -28,7 +30,14 @@
               </div> 
             </div>
 
+            <div id="hamburger" class="hamburger_container">
+              <div class="burger1"></div>
+              <div class="burger2"></div>
+              <div class="burger3"></div>
+            </div> 
+
           </div>
+
           <div class="nav_right">
           <%= if !Pow.Plug.current_user(@conn) do %>
             <div class="nav_element">
@@ -62,11 +71,6 @@
               </div> 
             </div>
           </div>
-          <div id="hamburger" class="hamburger_container">
-            <div class="burger1"></div>
-            <div class="burger2"></div>
-            <div class="burger3"></div>
-          </div> 
         </nav>
       </section>
     </header>
