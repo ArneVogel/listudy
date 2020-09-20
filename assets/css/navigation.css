@@ -126,10 +126,6 @@ nav {
     border-right: 2px var(--bg-color) solid;
 }
 
-.nested-dropbtn {
-    width:100%;
-}
-
 .dropbtn:hover {
   color: var(--font-highlight-color);
 }
@@ -139,7 +135,7 @@ nav {
   display: inline-block;
 }
 
-.dropdown-content, .nested-dropdown-content {
+.dropdown-content {
   display: none;
   position: absolute;
   background-color: var(--bg-highlight-color);
@@ -148,7 +144,7 @@ nav {
   z-index: 3;
 }
 
-.dropdown-content a, .nested-dropdown-content a {
+.dropdown-content a {
   color: var(--font-color);
   padding: 12px 16px;
   text-decoration: none;
@@ -169,8 +165,6 @@ nav {
     border-left: none;
     border-right: 2px var(--primary-color) solid;
 }
-
-.nested-dropdown:hover .nested-dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {
     background-color: var(--bg-highlight-color);

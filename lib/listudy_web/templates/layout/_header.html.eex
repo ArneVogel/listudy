@@ -47,7 +47,14 @@
               <%= link (gettext "Sign in"), to: Routes.pow_session_path(@conn, :new) %>
             </div>
           <% end %>
-
+            <div class="dropdowns_container">
+              <div class="dropdown">
+                <button class="dropbtn"><%= gettext "Language" %></button>
+                <div class="dropdown-content">
+                  <%= raw ListudyWeb.Seo.lang_alternatives(@conn) %>
+                </div>
+              </div> 
+            </div>
             <div class="dropdowns_container">
               <div class="dropdown">
                 <button class="dropbtn"><%= gettext "Settings" %></button>
@@ -59,14 +66,6 @@
                   <%= link (gettext "Profile"), to: Routes.user_profile_path(@conn, :show, @assigns.locale, @assigns.current_user.username) %>
                   <%= link (gettext "Sign out"), to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "hover_warn" %>
                 <% end %>
-                  <div class="dropdowns_container">
-                    <div class="nested-dropdown">
-                      <button class="dropbtn nested-dropbtn"><%= gettext "Language" %></button>
-                      <div class="nested-dropdown-content">
-                        <%= raw ListudyWeb.Seo.lang_alternatives(@conn) %>
-                      </div>
-                    </div> 
-                  </div>
                 </div>
               </div> 
             </div>
