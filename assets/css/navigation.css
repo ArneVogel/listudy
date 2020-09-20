@@ -7,6 +7,10 @@ nav {
     display: none;
 }
 
+.dropdown-content a:hover {
+    color: var(--font-color);
+}
+
 @media (max-width: 600px) {                  
    .dropdowns_container, .nav_element, .logo {
         display: none;
