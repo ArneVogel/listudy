@@ -9,6 +9,7 @@ nav {
 
 .dropdown-content a:hover {
     color: var(--font-color);
+    color: var(--primary-font-offset);
 }
 
 @media (max-width: 600px) {                  
@@ -95,6 +96,7 @@ nav {
 
 .settings-content a:hover {
     background-color: var(--primary-color);
+    color: var(--primary-font-offset);
 }
 
 .show {display:block;}
@@ -153,7 +155,10 @@ nav {
   display: block;
 }
 
-.dropdown-content a:hover {background-color: var(--primary-color);}
+.dropdown-content a:hover {
+    background-color: var(--primary-color);
+    color: var(--primary-font-offset);
+}
 
 .dropdown:hover .dropdown-content {
     display: block;
