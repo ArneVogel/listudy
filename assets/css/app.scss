@@ -138,12 +138,6 @@ body {
     position: relative;
 }
 
-.page_actions {
-    background-color: var(--bg-highlight-color);
-    margin-bottom: 1em;
-    padding: 1em;
-}
-
 .continue_button {
     background-color: var(--primary-color);
     color: var(--primary-font-offset);
@@ -178,5 +172,6 @@ img {
 .highlight {
     background: var(--bg-highlight-color);
     padding: 1em;
+    margin-bottom: 1em;
     border-radius: var(--small-border-radius);
 }

@@ -8,7 +8,7 @@
      title="<%= gettext "%{opening} after the moves %{moves}", opening: @opening.name, moves: @opening.moves %>"
      alt="<%= gettext "Chessboard showing the %{opening} with the moves %{moves} played", opening: @opening.name, moves: @opening.moves %>"/>
 
-<div class="page_actions">
+<div class="highlight">
   <b><%= gettext "Contents" %></b><br>
   <%= if show_studies do %>
   <a href="#studies"><%= gettext "Learn the Opening" %></a><br>
@@ -51,7 +51,7 @@
 
 <h2 id="stockfish"><%= gettext "Play against Stockfish" %></h2>
 
-<div class="page_actions">
+<div class="highlight">
   <a href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#<%= @opening.fen %>;sf">
     <%= gettext "Play the %{name}", name: @opening.name %>
   </a>
