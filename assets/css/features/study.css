@@ -15,3 +15,11 @@
 .study_options {
     margin-bottom: 2rem;
 }
+
+.select2 {
+    margin-bottom: 2.5rem !important;
+}
+
+.study_below_highlight {
+    margin-top: 1.5rem;
+}
