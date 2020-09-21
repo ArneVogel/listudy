@@ -160,11 +160,14 @@ nav {
 .dropdown:hover .dropdown-content {
     display: block;
     border-left: 2px var(--primary-color) solid;
+    border-bottom-left-radius: var(--small-border-radius);
 }
 .nav_right .dropdown:hover .dropdown-content {
     display: block;
     border-left: none;
     border-right: 2px var(--primary-color) solid;
+    border-bottom-right-radius: var(--small-border-radius);
+    border-bottom-left-radius: 0px;
 }
 
 .dropdown:hover .dropbtn {
