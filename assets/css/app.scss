@@ -178,5 +178,5 @@ img {
 .highlight {
     background: var(--bg-highlight-color);
     padding: 1em;
-    border-radius: 4px;
+    border-radius: var(--small-border-radius);
 }
