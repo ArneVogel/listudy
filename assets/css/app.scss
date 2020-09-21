@@ -113,9 +113,20 @@ body {
     }
     .sidebar {
         margin-left: 0px !important;
+        
+    }
+    .study_options {
+        position: relative !important;
+    }
+    .chapter_selection {
+        max-width: 100% !important;
     }
 }
-
+.study_options {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 
 .sidebar_main {
     flex: 2;
@@ -123,6 +134,7 @@ body {
 .sidebar {
     flex: 1;
     margin-left: 2em;
+    position: relative;
 }
 
 .page_actions {

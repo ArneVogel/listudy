@@ -3,3 +3,15 @@
     border-radius: 4px;
     padding: 0.5em;
 }
+
+.chapter_selection {
+    max-width: 230px;
+}
+
+.study_favorite_form {
+    margin-bottom: 0;
+}
+
+.study_options {
+    margin-bottom: 2rem;
+}
