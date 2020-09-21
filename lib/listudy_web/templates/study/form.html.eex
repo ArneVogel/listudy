@@ -13,17 +13,19 @@
   <%= textarea f, :description, class: "big_input", minlength: 20, maxlength: 1000, placeholder: (gettext "In this study I work on my 1.e4 openings...")%>
   <%= error_tag f, :description %>
 
-  <p><%= gettext "Either upload a PGN file or provide a link to a public Lichess study:" %></p>
-  <div class="row">
-    <div class="one-half column">
-      <%= label f, :pgn, gettext "Select a PGN to upload" %>
-      <%= file_input f, :pgn %>
-    </div>
+  <div class="pgn_choice">
+    <p><%= gettext "Either upload a PGN file or provide a link to a public Lichess study:" %></p>
+    <div class="row">
+      <div class="one-half column">
+        <%= label f, :pgn, gettext "Select a PGN to upload" %>
+        <%= file_input f, :pgn %>
+      </div>
 
-    <div class="one-half column">
-      <%= label f, :lichess_study, gettext "Lichess Study" %>
-      <%= text_input f, :lichess_study, placeholder: "https://lichess.org/study/ZWHbJIPd", class: "big_input" %>
-      <%= error_tag f, :lichess_study %>
+      <div class="one-half column">
+        <%= label f, :lichess_study, gettext "Lichess Study" %>
+        <%= text_input f, :lichess_study, placeholder: "https://lichess.org/study/ZWHbJIPd", class: "big_input" %>
+        <%= error_tag f, :lichess_study %>
+      </div>
     </div>
   </div>
 

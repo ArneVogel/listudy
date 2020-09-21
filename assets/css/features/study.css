@@ -1,0 +1,5 @@
+.pgn_choice {
+    background-color: var(--bg-highlight-color);
+    border-radius: 4px;
+    padding: 0.5em;
+}
