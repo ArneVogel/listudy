@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="<%= Routes.static_path(@assigns.conn, "/css/select2.min.css") %>"/>
 
   <%= label f, :opening_id, gettext "Opening" %>
-  <%= select(f, :opening_id, Enum.map(@assigns.openings, fn %{name: name, id: id} -> [key: name, value: id] end), selected: selected_opening(@assigns), class: "study_opening_id") %>
+  <%= select(f, :opening_id, Enum.map(@assigns.openings, fn %{name: name, id: id} -> [key: name, value: id] end), selected: selected_opening(@assigns), class: "study_opening_id big_input") %>
 
 <style>
 .select2-container {
@@ -56,7 +56,7 @@ $(document).ready(function() {
 });
 </script>
 
-  <div>
-    <%= submit "Save" %>
-  </div>
+<div>
+  <%= submit "Save", class: "primary" %>
+</div>
 <% end %>
