@@ -29,6 +29,7 @@
 
   <div>
     <%= submit "Update", class: "primary" %>
+    <button class="go-back tertiary"><%= gettext "Back" %></button>
   </div>
 <% end %>
 

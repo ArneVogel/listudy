@@ -24,11 +24,19 @@
       document.documentElement.setAttribute('data-theme', theme);
       <%# Translations used by javascript %>
       let translation_share_on = "<%= gettext "Share on" %>";
-      <%# Mobile Navigation Trigger %>
       document.addEventListener('DOMContentLoaded', function () {
+        <%# Mobile Navigation %>
         document.getElementById('hamburger')
                 .addEventListener('click', toggle_hamburger );
+        <%# Go-Back Buttons %>
+        let back_buttons = document.getElementsByClassName("go-back");
+        for (let b of back_buttons) {
+          b.addEventListener('click', () => {
+            history.back();
+          });
+        }
       });
+      <%# Mobile Navigation Trigger %>
       function toggle_hamburger() {
         function toggle(divs) {
           for (let i = 0; i < divs.length; ++i) {
