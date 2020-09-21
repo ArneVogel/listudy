@@ -1,61 +1,27 @@
 <h1><%= gettext "Your Studies" %></h1>
 
 <a href="<%= Routes.study_path(@conn, :new, @locale) %>">
-  <button>
+  <button class="primary">
     <%= gettext "New Study" %>
   </button>
 </a>
 
 <%= if length(@studies) != 0 do %>
-<table>
-  <thead>
-    <tr>
-      <th><%= gettext "Name" %></th>
-      <th><%= gettext "Description" %></th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for study <- @studies do %>
-    <tr>
-      <td><%= study.title%></td>
-      <td><%= study.description %></td>
-
-      <td>
-        <span><%= link (gettext "Show"), to: Routes.study_path(@conn, :show, @locale, study) %></span>
-        <span><%= link (gettext "Edit"), to: Routes.study_path(@conn, :edit, @locale, study) %></span>
-        <span><%= link (gettext "Delete"), to: Routes.study_path(@conn, :delete, @locale, study), method: :delete, data: [confirm: gettext "Are you sure?"] %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+  <%= for study <- @studies do %>
+    <h3><%= study.title%></h3>
+    <p><%= study.description %></p>
+    <a href="<%= Routes.study_path(@conn, :show, @locale, study) %>"><button class="secondary"><%= gettext "Show" %></button></a>
+    <a href="<%= Routes.study_path(@conn, :edit, @locale, study) %>"><button class="tertiary"><%= gettext "Edit" %></button></a>
+  <% end %>
 <% end %>
 
 <%= if length(@favorites) != 0 do %>
 <h2><%= gettext "Favored Studies" %></h2>
-<table>
-  <thead>
-    <tr>
-      <th><%= gettext "Name" %></th>
-      <th><%= gettext "Description" %></th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for study <- @favorites do %>
-    <tr>
-      <td><%= study.title%></td>
-      <td><%= study.description %></td>
-      <td>
-        <span><%= link (gettext "Show"), to: Routes.study_path(@conn, :show, @locale, study) %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+  <%= for study <- @favorites do %>
+    <h3><%= study.title%></h3>
+    <p><%= study.description %></p>
+    <a href="<%= Routes.study_path(@conn, :show, @locale, study) %>"><button class="secondary"><%= gettext "Show" %></button></a>
+  <% end %>
 <% end %>
 
 
