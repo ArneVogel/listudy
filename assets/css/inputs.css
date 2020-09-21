@@ -1,0 +1,12 @@
+button.primary {
+    background: var(--primary-color);
+    color: var(--primary-font-offset);
+}
+
+button.secondary {
+}
+
+button.tertiary {
+    border: none;
+    text-decoration: underline;
+}
