@@ -42,18 +42,19 @@
 </div>
 
 
-<div>
+<div class="highlight">
   <b><%= gettext "Description" %></b>
   <p><%= @study.description %></p>
+
   <%= if @study.is_owner do %>
     <p><%= link (gettext "Edit"), to: Routes.study_path(@conn, :edit, @locale, @study) %></p>
   <% end %>
 
-  <p><%= gettext "Created by:" %> <%= link @study.user.username, to: Routes.user_profile_path(@conn, :show, @locale, @study.user.username) %></p>
-  </div>
-  <div>
-    <b><%= gettext "Opening"%></b>: <%= link @opening.name, to: Routes.opening_path(@conn, :show, @locale, @opening.slug) %>
-  </div>
+  <b><%= gettext "Creator" %></b>
+  <p><%= link @study.user.username, to: Routes.user_profile_path(@conn, :show, @locale, @study.user.username) %></p>
+
+  <b><%= gettext "Opening"%></b>
+  <p><%= link @opening.name, to: Routes.opening_path(@conn, :show, @locale, @opening.slug) %></p>
 </div>
 
 <hr>
