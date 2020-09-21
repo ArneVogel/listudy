@@ -19,7 +19,7 @@
   <%= checkbox f, :persistent_session %>
 
   <div>
-    <%= submit "Sign in" %>
+    <%= submit "Sign in", class: "primary" %>
   </div>
 <% end %>
 
