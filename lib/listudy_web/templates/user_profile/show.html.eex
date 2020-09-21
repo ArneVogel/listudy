@@ -4,29 +4,13 @@
 
 <%= if length(@studies) != 0 do %>
 <h2><%= gettext "Public studies by %{name}", name: @user.username %></h2>
-<table>
-  <thead>
-    <tr>
-      <th><%= gettext "Name" %></th>
-      <th><%= gettext "Description" %></th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for study <- @studies do %>
-    <tr>
-      <td><%= study.title%></td>
-      <td><%= study.description %></td>
-
-      <td>
-        <span><%= link (gettext "Show"), to: Routes.study_path(@conn, :show, @locale, study) %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+  <%= for study <- @studies do %>
+        <h3><%= study.title%></h3>
+        <p><%= study.description %></p>
+        <a href="<%= Routes.study_path(@conn, :show, @locale, study) %>"><button class="secondary"><%= gettext "Show" %></button></a>
+      </tr>
+  <% end %>
 <% else %>
-<p><%= gettext "%{name} does not have any public studies.", name: @user.username %></p>
+  <p><%= gettext "%{name} does not have any public studies.", name: @user.username %></p>
 <% end %>
 
