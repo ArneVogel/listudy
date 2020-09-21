@@ -9,5 +9,3 @@
 <%= link (gettext "For more information read the Copyright Policy"), to: Routes.page_path(@conn, :show, "en", "copyright") %>
   </div>
 </div>
-
-<span><%= link "Back", to: Routes.study_path(@conn, :index, @locale) %></span>
