@@ -55,12 +55,12 @@ nav > div > div {
 
 .logo_name {
     font-size: 2em;
-    color: var(--font-color);
+    color: var(--font-highlight-color);
 }
 
 .logo_domain {
     font-size: 1.5em;
-    color: var(--font-highlight-color);
+    color: var(--font-color);
 }
 
 .nav_element {
