@@ -3,6 +3,10 @@ nav {
     max-width: 100%;
 }
 
+header {
+    border-bottom: 1px solid var(--bg-highlight-color);
+}
+
 .hamburger_container {
     display: none;
 }
