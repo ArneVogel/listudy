@@ -1,2 +1,3 @@
-source ./scripts/env.sh
+#!/bin/sh
+. ./scripts/prod/env.sh
 mix compile
