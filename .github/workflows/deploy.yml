@@ -80,7 +80,4 @@ jobs:
         script: |
           cd /opt/listudy
           git pull
-          ./build.sh
-          ./shutdown.sh
-          ./migrate.sh
-          ./start.sh
+          ./scripts/prod/ci.sh
