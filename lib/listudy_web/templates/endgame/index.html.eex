@@ -1,0 +1,5 @@
+<h1>Endgames</h1>
+
+<%= for {slug, type} <- @endgame do %>
+  <a href="<%= Routes.endgame_path(@conn, :chapter, @locale, slug) %>"><%= type.name %></a>
+<% end %>

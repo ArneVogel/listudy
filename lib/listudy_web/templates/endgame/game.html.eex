@@ -1,0 +1,8 @@
+<h1>Game</h1>
+<%= @game %>
+
+<%= if @next == "back" do %>
+  <a href="<%= Routes.endgame_path(@conn, :chapter, @locale, @chapter) %>"><button><%= gettext("Next") %></button></a>
+<% else %>
+  <a href="<%= Routes.endgame_path(@conn, :game, @locale, @chapter, @subchapter, @next) %>"><button><%= gettext("Next") %></button></a>
+<% end %>

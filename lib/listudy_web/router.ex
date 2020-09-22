@@ -93,6 +93,10 @@ defmodule ListudyWeb.Router do
     get "/tactics/player/:player", TacticController, :random, as: :random_player_tactic
     get "/tactics/motif/:motif", TacticController, :random, as: :random_motif_tactic
 
+    get "/endgames", EndgameController, :index
+    get "/endgames/:chapter", EndgameController, :chapter
+    get "/endgames/:chapter/:subchapter/:game", EndgameController, :game
+
     get "/blind-tactics", BlindTacticController, :random
 
     live "/blind-tactics/:id", BlindTacticsLive,

@@ -17,6 +17,12 @@ header {
     color: var(--primary-font-offset);
 }
 
+.dropdowns_single:hover {
+    background-color: var(--primary-color) !important;
+    color: var(--primary-font-offset) !important;
+    border-bottom-left-radius: var(--small-border-radius);
+}
+
 @media (max-width: 600px) {                  
    .dropdowns_container, .nav_element, .logo {
         display: none;

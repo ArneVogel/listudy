@@ -1,0 +1,12 @@
+<h1><%= @chapter.name %></h1>
+<p><%= @chapter.description %></p>
+
+
+<%= for {slug, type} <- @chapter.endgames do %>
+  <h2><%= type.name %></h2>
+  <%= for {_, index} <- Enum.with_index(type.games) do %>
+    <p><%= link index, to: Routes.endgame_path(@conn, :game, @locale, @slug, slug, index) %></p>
+  <% end %>
+<% end %>
+
+<p><%= @chapter.body %></p>
