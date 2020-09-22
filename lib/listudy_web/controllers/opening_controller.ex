@@ -96,6 +96,6 @@ defmodule ListudyWeb.OpeningController do
   end
 
   defp generate_svg(output, moves) do
-    System.cmd("python3", ["scripts/svg_generator.py", output, moves])
+    System.cmd("python3", ["scripts/action/svg_generator.py", output, moves])
   end
 end
