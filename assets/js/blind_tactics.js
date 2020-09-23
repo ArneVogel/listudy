@@ -66,20 +66,20 @@ function handle_click(square) {
         highlighted_squares = []; 
         current_move += 2;
         if (current_move >= chess.history().length) {
-            set_div_text("success", i18n_success)
+            set_div_text("success", i18n.success)
             document.getElementById("next").classList.remove("hidden");
             setup_ground(chess.fen());    
             let t = chess.turn() == "w" ? "white" : "black";
             // "check: true" would sometimes result in the wrong king being shown in check
             ground.set({check: t});
         } else {
-            set_div_text("info", i18n_right_move)
+            set_div_text("info", i18n.right_move)
         }
         current_chess = get_current_chess();
         legal_moves = ground_legal_moves(current_chess);
     } else {
         if (highlighted_squares.indexOf(square) != -1) {
-            set_div_text("error", i18n_wrong_move)
+            set_div_text("error", i18n.wrong_move)
         }
         highlight_moves(square);
     }
