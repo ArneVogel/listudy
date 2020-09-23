@@ -24,7 +24,7 @@ function combo_text() {
 }
 
 function right_move_text() {
-    return combo_text() + success_right_move;
+    return combo_text() + i18n.success_right_move;
 }
 
 async function handle_move(orig, dest) {
@@ -45,7 +45,7 @@ async function handle_move(orig, dest) {
         set_text(success_div, right_move_text());
         let reply = ai_move(curr_move);
         if (reply == undefined) {
-            set_text(success_div, right_move_text() + "\n" + success_end_of_line);
+            set_text(success_div, right_move_text() + "\n" + i18n.success_end_of_line);
             start_training();
         } else {
             play_move(reply);
@@ -58,7 +58,7 @@ async function handle_move(orig, dest) {
         // calling ground_undo_last_move(); since it used chess.fen() to 
         // reset the position to the previous position
         ground_undo_last_move(); 
-        set_text(error_div, error_wrong_move);
+        set_text(error_div, i18n.error_wrong_move);
     }
     store_trees(); 
     setup_move();
@@ -204,7 +204,7 @@ function setup_chapter_select() {
     for (let i = 0; i < trees.length; ++i) {
         let option = document.createElement("option");
         option.value = i;
-        let name = trees[i].headers.Event || translation_chapter + " " + (i+1);
+        let name = trees[i].headers.Event || i18n.translation_chapter + " " + (i+1);
         option.innerText = name;
         if (i == selected) {
             option.selected = true;
@@ -225,12 +225,12 @@ function setup_chapter_select() {
  */
 function show_suggestions() {
     let suggestions = [
-        {move: 15, show: true, text: suggestion_share, once: true, key: "share"},
-        {move: 30, show: logged_in, text: suggestion_favorite, once: true, key: "favorite"},
-        {move: 30, show: !logged_in, text: suggestion_account, once: false, key: "account"},
-        {move: 50, show: logged_in, text: suggestion_comment, once: true, key: "comment"},
-        {move: 100, show: true, text: suggestion_100moves, once: false, key: "100moves"},
-        {move: 250, show: true, text: suggestion_250moves, once: false, key: "250moves"}
+        {move: 15, show: true, text: i18n.suggestion_share, once: true, key: "share"},
+        {move: 30, show: logged_in, text: i18n.suggestion_favorite, once: true, key: "favorite"},
+        {move: 30, show: !logged_in, text: i18n.suggestion_account, once: false, key: "account"},
+        {move: 50, show: logged_in, text: i18n.suggestion_comment, once: true, key: "comment"},
+        {move: 100, show: true, text: i18n.suggestion_100moves, once: false, key: "100moves"},
+        {move: 250, show: true, text: i18n.suggestion_250moves, once: false, key: "250moves"}
     ]
 
     for (let suggestion of suggestions) {
@@ -254,7 +254,7 @@ function main() {
 
     resize_ground();
 
-    set_text(info_div, info_intro);
+    set_text(info_div, i18n.info_intro);
 
     start_training();
 }
