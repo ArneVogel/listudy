@@ -1,12 +1,22 @@
 <h1><%= gettext "Your Studies" %></h1>
 
+<% has_studies = length(@studies) != 0 %>
+
+<%= if has_studies do %>
 <a href="<%= Routes.study_path(@conn, :new, @locale) %>">
   <button class="primary">
     <%= gettext "New Study" %>
   </button>
 </a>
+<% else %>
+<div>
+  <p><%= gettext("Create a new study and start learning.") %></p>
+  <a href="<%= Routes.study_path(@conn, :new, @locale) %>"><button class="primary"><%= gettext "Create a Study" %></button></a>
+  <a href="<%= Routes.search_path(@conn, ListudyWeb.StudySearchLive, @locale) %>"><button class="secondary"><%= gettext "Search for Studies" %></button></a>
+</div>
+<% end %>
 
-<%= if length(@studies) != 0 do %>
+<%= if has_studies do %>
   <%= for study <- @studies do %>
     <h3><%= study.title%></h3>
     <p><%= study.description %></p>
@@ -16,6 +26,7 @@
 <% end %>
 
 <%= if length(@favorites) != 0 do %>
+  <hr>
 <h2><%= gettext "Favored Studies" %></h2>
   <%= for study <- @favorites do %>
     <h3><%= study.title%></h3>
