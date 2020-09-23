@@ -14,6 +14,13 @@
     <%= raw ListudyWeb.Seo.hreflang(@conn) %>
     <%= raw ListudyWeb.Seo.noindex(@conn) %>
 
+    <script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
+      <%# Translations used by javascript %>
+      let i18n = {
+        "share_on": "<%= gettext("Share on") %>",
+      };
+    </script>
+
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
     <script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
@@ -22,8 +29,6 @@
       let theme = localStorage.getItem("data-theme") || "light";
       localStorage.setItem("data-theme", theme);
       document.documentElement.setAttribute('data-theme', theme);
-      <%# Translations used by javascript %>
-      let translation_share_on = "<%= gettext "Share on" %>";
       document.addEventListener('DOMContentLoaded', function () {
         <%# Mobile Navigation %>
         document.getElementById('hamburger')

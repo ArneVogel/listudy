@@ -35,7 +35,7 @@ function social_links() {
 
     for (let i = 0; i < sites.length; ++i) {
         let button = document.createElement("button");
-        button.textContent = translation_share_on + " " + sites[i];
+        button.textContent = i18n.share_on + " " + sites[i];
 
         let link = document.createElement("a");
         link.href = urls[i];
