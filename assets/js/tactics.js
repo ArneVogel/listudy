@@ -29,7 +29,7 @@ async function handle_move(orig, dest, extraInfo) {
             ground_move(m, chess);
         } else {
             // player got the puzzle correct
-            set_text(success_div, gettext_success);
+            set_text(success_div, i18n.success);
             show_div("next");
         }
     } else {
@@ -38,7 +38,7 @@ async function handle_move(orig, dest, extraInfo) {
         to_play.unshift(target);
         ground_undo_last_move(); 
         ground_set_moves();
-        set_text(error_div, gettext_wrong_move);
+        set_text(error_div, i18n.wrong_move);
         show_div("next");
         show_div("solution");
     }
