@@ -1,5 +1,12 @@
-<h1>Endgames</h1>
+<h1><%= gettext("Endgames") %></h1>
+<p><%= gettext("No idea what to do in the endgame? Learn endgames by playing against stockfish.") %></p>
 
 <%= for {slug, type} <- @endgame do %>
-  <a href="<%= Routes.endgame_path(@conn, :chapter, @locale, slug) %>"><%= type.name %></a>
+  <div class="highlight">
+    <h2><%= type.name %></h2>
+    <p><%= type.description %></p>
+    <a href="<%= Routes.endgame_path(@conn, :chapter, @locale, slug) %>"><%= gettext("Learn") %></a>
+  </div>
 <% end %>
+
+
