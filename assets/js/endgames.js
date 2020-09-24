@@ -32,6 +32,7 @@ function finish_success() {
 
 function finish_error() {
     show_div("error");
+    show_div("reset");
     document.getElementById("todo").classList.add("hidden");
 }
 
@@ -105,17 +106,24 @@ function main() {
     setup_target();
 
     animate_progress_bar(2000, "Loading Stockfish...")
-    Stockfish().then(sf => {
-        window.sf = sf;
-        sf.addMessageListener(line => {
-            if(line.startsWith("bestmove")) {
-                let orig = line.substring(9,11);
-                let dest = line.substring(11,13);
-                move(orig, dest);
-            }
+    if (typeof sf == "undefined") {
+        Stockfish().then(sf => {
+            window.sf = sf;
+            sf.addMessageListener(line => {
+                if(line.startsWith("bestmove")) {
+                    let orig = line.substring(9,11);
+                    let dest = line.substring(11,13);
+                    move(orig, dest);
+                }
+            });
         });
-    });
+    }
+    document.getElementById("reset").addEventListener("click", main);
+    document.getElementById("error").classList.add("hidden");
+    document.getElementById("reset").classList.add("hidden");
+    document.getElementById("todo").classList.remove("hidden");
 }
 
+window.main = main;
 window.onresize = resize_ground;
 main();

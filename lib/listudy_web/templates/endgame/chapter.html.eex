@@ -10,7 +10,7 @@
   <h2 class="endgame_fix"><%= type.name %></h2>
   <%= for {_, index} <- Enum.with_index(type.games) do %>
     <% id = "#{@slug}_#{slug}_#{index}" %>
-    <a class="endgame_chapter_link" href="<%= Routes.endgame_path(@conn, :game, @locale, @slug, slug, index) %>">
+    <a class="endgame_chapter_link" href="<%= Routes.endgame_path(@conn, :game, @locale, @slug, slug, index+1) %>">
       <span id="<%= id %>" class="endgame_chapter_span"><%= index+1 %></span>
     </a>
   <% end %>

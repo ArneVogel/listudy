@@ -1,7 +1,7 @@
 <ul class="breadcrumb">
   <li><a href="<%= Routes.endgame_path(@conn, :index, @locale) %>"><%= gettext("Endgames") %></a></li>
   <li><a href="<%= Routes.endgame_path(@conn, :chapter, @locale, @chapter_slug) %>"><%= @chapter.name %></a></li>
-  <li><%= "#{@subchapter.name} #{@index+1}" %></li>
+  <li><%= "#{@subchapter.name} #{@index}" %></li>
 </ul> 
 
 
@@ -26,6 +26,7 @@
       <br>
     </div>
 
+    <button id="reset" class="hidden"><%= gettext("Reset") %></button>
 
     <%= if @next == "back" do %>
       <a href="<%= Routes.endgame_path(@conn, :chapter, @locale, @chapter_slug) %>"><button id="next" class="hidden continue_button"><%= gettext("Next") %></button></a>
