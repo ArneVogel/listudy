@@ -3,10 +3,22 @@
 
 
 <%= for {slug, type} <- @chapter.endgames do %>
-  <h2><%= type.name %></h2>
+  <h2 class="endgame_fix"><%= type.name %></h2>
   <%= for {_, index} <- Enum.with_index(type.games) do %>
-    <p><%= link index, to: Routes.endgame_path(@conn, :game, @locale, @slug, slug, index) %></p>
+    <% id = "#{@slug}_#{slug}_#{index}" %>
+    <a class="endgame_chapter_link" href="<%= Routes.endgame_path(@conn, :game, @locale, @slug, slug, index) %>">
+      <span id="<%= id %>" class="endgame_chapter_span"><%= index+1 %></span>
+    </a>
   <% end %>
 <% end %>
 
-<p><%= @chapter.body %></p>
+<p class="endgame_fix"><%= @chapter.body %></p>
+
+
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
+    let ls_key = "solved_endgames";
+    let solves = JSON.parse(localStorage.getItem(ls_key)) || [];
+    for (let i of solves) {
+      document.getElementById(i).classList.add("endgame_solved");
+    }
+</script>
