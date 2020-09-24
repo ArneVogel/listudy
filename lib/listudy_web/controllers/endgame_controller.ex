@@ -48,7 +48,8 @@ defmodule ListudyWeb.EndgameController do
       chapter_slug: chapter_slug,
       subchapter: subchapter,
       subchapter_slug: subchapter_slug,
-      index: game_id
+      index: game_id,
+      noindex: true
     )
   end
 
