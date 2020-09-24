@@ -1,7 +1,7 @@
 <ul class="breadcrumb">
   <li><a href="<%= Routes.endgame_path(@conn, :index, @locale) %>"><%= gettext("Endgames") %></a></li>
   <li><a href="<%= Routes.endgame_path(@conn, :chapter, @locale, @chapter_slug) %>"><%= @chapter.name %></a></li>
-  <li><%= "#{@subchapter.name} #{@index}" %></li>
+  <li><%= "#{@subchapter.name} #{@index+1}" %></li>
 </ul> 
 
 

@@ -1,6 +1,10 @@
+<ul class="breadcrumb">
+  <li><a href="<%= Routes.endgame_path(@conn, :index, @locale) %>"><%= gettext("Endgames") %></a></li>
+  <li><%= @chapter.name %></li>
+</ul> 
+
 <h1><%= @chapter.name %></h1>
 <p><%= @chapter.description %></p>
-
 
 <%= for {slug, type} <- @chapter.endgames do %>
   <h2 class="endgame_fix"><%= type.name %></h2>
