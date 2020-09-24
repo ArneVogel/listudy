@@ -32,12 +32,14 @@ defmodule ListudyWeb.EndgameController do
     render(conn, "chapter.html", chapter: endgames()[chapter], slug: chapter)
   end
 
-  def game(conn, %{"chapter" => chapter, "subchapter" => subchapter, "game" => game}) do
+  def game(conn, %{"chapter" => chapter_slug, "subchapter" => subchapter_slug, "game" => game}) do
     {index, _} = Integer.parse(game)
-    game_list = endgames()[chapter][:endgames][subchapter][:games]
+    chapter = endgames()[chapter_slug]
+    subchapter = chapter[:endgames][subchapter_slug]
+    game_list = subchapter[:games]
     game = Enum.at(game_list, index)
     next = next(game_list, index)
-    render(conn, "game.html", game: game, next: next, chapter: chapter, subchapter: subchapter, index: index)
+    render(conn, "game.html", game: game, next: next, chapter: chapter, chapter_slug: chapter_slug, subchapter: subchapter, subchapter_slug: subchapter_slug, index: index)
   end
 
   defp next(game_list, index) when length(game_list) == index + 1 do

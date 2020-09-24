@@ -22,6 +22,8 @@ function finish_success() {
     show_div("success");
     show_div("next");
 
+    document.getElementById("todo").classList.add("hidden");
+
     let ls_key = "solved_endgames";
     let solves = JSON.parse(localStorage.getItem(ls_key)) || [];
     solves.push(id);
@@ -30,6 +32,7 @@ function finish_success() {
 
 function finish_error() {
     show_div("error");
+    document.getElementById("todo").classList.add("hidden");
 }
 
 async function handle_move(orig, dest) {
