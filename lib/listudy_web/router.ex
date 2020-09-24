@@ -64,6 +64,7 @@ defmodule ListudyWeb.Router do
   scope "/:locale", ListudyWeb do
     pipe_through [:browser, :stockfish]
     get "/play-stockfish", PageController, :play_stockfish
+    get "/endgames/:chapter/:subchapter/:game", EndgameController, :game
   end
 
   scope "/:locale", ListudyWeb do
@@ -95,7 +96,6 @@ defmodule ListudyWeb.Router do
 
     get "/endgames", EndgameController, :index
     get "/endgames/:chapter", EndgameController, :chapter
-    get "/endgames/:chapter/:subchapter/:game", EndgameController, :game
 
     get "/blind-tactics", BlindTacticController, :random
 

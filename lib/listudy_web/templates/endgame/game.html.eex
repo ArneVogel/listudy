@@ -1,8 +1,42 @@
-<h1>Game</h1>
-<%= @game %>
+<div class="with_sidebar">
+  <div id="game_container" class="sidebar_main">
+    <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
+  </div>
+  <div class="sidebar">
+    <div class="success">
+      <p id="success" class="infoBox hidden"><%= gettext("Success!")%></p>
+    </div>
+    <div class="error">
+      <p id="error" class="infoBox hidden"><%= gettext("Try again") %></p>
+    </div>
+    <p><%= gettext("White to play and") %> <span id="target"></span></p>
 
-<%= if @next == "back" do %>
-  <a href="<%= Routes.endgame_path(@conn, :chapter, @locale, @chapter) %>"><button><%= gettext("Next") %></button></a>
-<% else %>
-  <a href="<%= Routes.endgame_path(@conn, :game, @locale, @chapter, @subchapter, @next) %>"><button><%= gettext("Next") %></button></a>
-<% end %>
+    <div id="progress_container">
+      <div class="progress-bar">
+          <span id="progress" class="progress-bar-fill"></span>
+      </div>
+      <span id="progress_reason"></span>
+      <br>
+    </div>
+
+
+    <%= if @next == "back" do %>
+      <a href="<%= Routes.endgame_path(@conn, :chapter, @locale, @chapter) %>"><button id="next" class="hidden continue_button"><%= gettext("Next") %></button></a>
+    <% else %>
+      <a href="<%= Routes.endgame_path(@conn, :game, @locale, @chapter, @subchapter, @next) %>"><button id="next" class="hidden continue_button"><%= gettext("Next") %></button></a>
+
+    <% end %>
+
+  </div>
+</div>
+<script src="/stockfish/stockfish.js"></script>
+
+<% [fen,result] = @game %>
+
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
+  let fen = "<%= fen %>";
+  let target_result = "<%= result %>";
+  let id = "<%= @chapter %>_<%= @subchapter %>_<%= @index %>";
+</script>
+<link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
+<script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/endgames.js") %>"></script>
