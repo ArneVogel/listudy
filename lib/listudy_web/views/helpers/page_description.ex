@@ -52,6 +52,9 @@ defmodule ListudyWeb.PageDescription do
     )
   end
 
+  defp get(%{view_module: Elixir.ListudyWeb.EndgameView, view_template: "chapter.html", chapter: chapter}),
+       do: chapter.description
+
   defp get(_), do: gettext("Improve your chess game on Listudy")
 
   defp trim(s) do
