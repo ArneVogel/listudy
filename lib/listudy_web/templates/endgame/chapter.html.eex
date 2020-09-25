@@ -9,7 +9,7 @@
 <%= for {slug, type} <- @chapter.endgames do %>
   <h2 class="endgame_fix"><%= type.name %></h2>
   <%= for {_, index} <- Enum.with_index(type.games) do %>
-    <% id = "#{@slug}_#{slug}_#{index}" %>
+    <% id = "#{@slug}_#{slug}_#{index+1}" %>
     <a class="endgame_chapter_link" href="<%= Routes.endgame_path(@conn, :game, @locale, @slug, slug, index+1) %>">
       <span id="<%= id %>" class="endgame_chapter_span"><%= index+1 %></span>
     </a>
@@ -23,6 +23,10 @@
     let ls_key = "solved_endgames";
     let solves = JSON.parse(localStorage.getItem(ls_key)) || [];
     for (let i of solves) {
-      document.getElementById(i).classList.add("endgame_solved");
+      let d = document.getElementById(i);
+      // the id might not be on this chapter page so we have to check
+      if (d != null) {
+        d.classList.add("endgame_solved");
+      }
     }
 </script>
