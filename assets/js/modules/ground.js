@@ -1,5 +1,6 @@
 const Chessground = require('chessground').Chessground;
 import { ground_legal_moves } from './chess_utils';
+import { sounds } from './sounds.js';
 
 /*
  * All the functions assume there is a global variable
@@ -26,21 +27,11 @@ function setup_click_handler(f) {
     ground.set({events: {select: f}});
 }
 
-function load_sounds() {
-    window.sound_move = new Audio('/sounds/standard/Move.mp3');
-    sound_move.preload = 'auto';
-    sound_move.load();
-    window.sound_capture = new Audio('/sounds/standard/Capture.mp3');
-    sound_capture.preload = 'auto';
-    sound_capture.load();
-}
-
 // setsup the basic ground
 function setup_ground(fen) {
     const config = {};
     window.ground = Chessground(document.getElementById("chessground"), config);
     ground_init_state(fen);
-    load_sounds();
 }
 
 // call on window resizing
@@ -142,13 +133,11 @@ function cjs_turn(color) {
 function play_sound(move) {
     let flags = move.flags;
     // clone the sound so it can be repeated in quick succession
-    let sound = null;
     if (flags.indexOf("c") !== -1 || flags.indexOf("e") !== -1) {
-        sound = sound_capture.cloneNode();
+        sounds.play("capture");
     } else {
-        sound = sound_move.cloneNode();
+        sounds.play("move");
     }
-    sound.play();
 }
 
 // move based on a chess.js move
