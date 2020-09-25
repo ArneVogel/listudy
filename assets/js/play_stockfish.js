@@ -4,7 +4,7 @@ const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
 
 import { turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
-import { string_hash } from './modules/hash.js';
+import { load_stockfish } from './modules/stockfish.js';
 import { tree_move_index, tree_children, tree_possible_moves, has_children, 
          need_hint, update_value, date_sort, tree_get_node, tree_children_filter_sort } from './modules/tree_utils.js';
 import { generate_move_trees } from './modules/tree_from_pgn.js';
@@ -51,6 +51,14 @@ function ai_move() {
     sf.postMessage(`go movetime ${movetime}`);
 }
 
+function stockfish_listener(line) {
+    if(line.startsWith("bestmove")) {
+        let orig = line.substring(9,11);
+        let dest = line.substring(11,13);
+        move(orig, dest);
+    }
+}
+
 function main() {
     let hash = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1;p";
     if (document.location.hash != "") {
@@ -78,17 +86,9 @@ function main() {
     setup_move_handler(handle_move);
     ground_set_moves();
 
-    animate_progress_bar(2000, "Loading Stockfish...")
-    Stockfish().then(sf => {
-        window.sf = sf;
-        sf.addMessageListener(line => {
-            if(line.startsWith("bestmove")) {
-                let orig = line.substring(9,11);
-                let dest = line.substring(11,13);
-                move(orig, dest);
-            }
-        });
+    animate_progress_bar(2000, "Loading Stockfish...");
 
+    load_stockfish(stockfish_listener, function() {
         if (first_move == "sf") {
             ai_move();
         }

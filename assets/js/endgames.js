@@ -4,7 +4,7 @@ const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
 
 import { turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
-import { string_hash } from './modules/hash.js';
+import { load_stockfish } from './modules/stockfish.js';
 import { tree_move_index, tree_children, tree_possible_moves, has_children, 
          need_hint, update_value, date_sort, tree_get_node, tree_children_filter_sort } from './modules/tree_utils.js';
 import { generate_move_trees } from './modules/tree_from_pgn.js';
@@ -95,6 +95,21 @@ function setup_target() {
     }
 }
 
+function stockfish_listener(line) {
+    if(line.startsWith("bestmove")) {
+        let orig = line.substring(9,11);
+        let dest = line.substring(11,13);
+        move(orig, dest);
+        if (chess.in_checkmate()) {
+            finish_error();
+        } else if (target_result == "d" && chess.in_draw()) {
+            finish_success();
+        } else if (chess.in_draw()){
+            finish_error();
+        }
+    }
+}
+
 function main() {
     setup_chess(fen);
     window.color = turn_color(chess);
@@ -106,25 +121,7 @@ function main() {
     setup_target();
 
     animate_progress_bar(2000, "Loading Stockfish...")
-    if (typeof sf == "undefined") {
-        Stockfish().then(sf => {
-            window.sf = sf;
-            sf.addMessageListener(line => {
-                if(line.startsWith("bestmove")) {
-                    let orig = line.substring(9,11);
-                    let dest = line.substring(11,13);
-                    move(orig, dest);
-                    if (chess.in_checkmate()) {
-                        finish_error();
-                    } else if (target_result == "d" && chess.in_draw()) {
-                        finish_success();
-                    } else if (chess.in_draw()){
-                        finish_error();
-                    }
-                }
-            });
-        });
-    }
+    load_stockfish(stockfish_listener);
     document.getElementById("reset").addEventListener("click", main);
     document.getElementById("error").classList.add("hidden");
     document.getElementById("reset").classList.add("hidden");
