@@ -36,6 +36,27 @@ defmodule ListudyWeb.PageTitle do
        do: event.name
 
   defp get(%{
+         view_module: Elixir.ListudyWeb.EndgameView,
+         view_template: "chapter.html",
+         chapter: chapter
+       }),
+       do: chapter.name
+
+  defp get(%{
+         view_module: Elixir.ListudyWeb.EndgameView,
+         view_template: "index.html"
+       }),
+       do: gettext("Endgames")
+
+  defp get(%{
+         view_module: Elixir.ListudyWeb.EndgameView,
+         view_template: "game.html",
+         subchapter: subchapter,
+         index: index
+       }),
+       do: "#{subchapter.name} #{index}"
+
+  defp get(%{
          view_module: Elixir.ListudyWeb.PlayerView,
          view_template: "public.html",
          player: player

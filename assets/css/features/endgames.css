@@ -1,0 +1,18 @@
+.endgame_chapter_span {
+    color: var(--font-color);
+    padding: 20px 40px;
+    background: var(--bg-highlight-color);
+    display: inline-block;
+    margin-top: 10px;
+}
+.endgame_chapter_link {
+    text-decoration: none;
+}
+
+.endgame_fix {
+    margin-top: 10px;
+}
+
+.endgame_solved {
+    border-top: 3px var(--success-color) solid;
+}

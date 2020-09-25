@@ -22,6 +22,7 @@ module.exports = (env, options) => {
       'chessclicker': glob.sync('./vendor/**/*.js').concat(['./js/chessclicker.js']),
       'blind_tactics': glob.sync('./vendor/**/*.js').concat(['./js/blind_tactics.js']),
       'play_stockfish': glob.sync('./vendor/**/*.js').concat(['./js/play_stockfish.js']),
+      'endgames': glob.sync('./vendor/**/*.js').concat(['./js/endgames.js']),
       'study': glob.sync('./vendor/**/*.js').concat(['./js/study.js'])
     },
     output: {
