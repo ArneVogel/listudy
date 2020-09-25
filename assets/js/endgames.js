@@ -114,6 +114,13 @@ function main() {
                     let orig = line.substring(9,11);
                     let dest = line.substring(11,13);
                     move(orig, dest);
+                    if (chess.in_checkmate()) {
+                        finish_error();
+                    } else if (target_result == "d" && chess.in_draw()) {
+                        finish_success();
+                    } else if (chess.in_draw()){
+                        finish_error();
+                    }
                 }
             });
         });
