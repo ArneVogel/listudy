@@ -15,6 +15,10 @@ import "../css/app.scss"
 //
 import "phoenix_html"
 
+
+import "./components/modal.js"
+import "./components/sound_settings.js"
+
 document.getElementById("toggle_dark_mode").onclick = function() {
     let theme = localStorage.getItem("data-theme") == "light" ? "dark" : "light";
     localStorage.setItem("data-theme", theme);

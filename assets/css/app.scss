@@ -9,6 +9,7 @@
 @import "./features/study.css";
 @import "./features/endgames.css";
 @import "./components/breadcrumbs.css";
+@import "./components/modal.css";
 
 /* Alerts and form errors */
 .alert {
@@ -132,6 +133,7 @@ body {
 }
 
 .sidebar_main {
+    z-index: 0;
     flex: 2;
 }
 .sidebar {
