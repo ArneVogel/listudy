@@ -1,10 +1,18 @@
 class Sounds {
     constructor() {
-        let sources = {move: "/sounds/standard/Move.mp3", 
-                      capture: "/sounds/standard/Capture.mp3"};
+        let ground_sources = {move: "/sounds/standard/Move.mp3", 
+                              capture: "/sounds/standard/Capture.mp3"};
+        let other_sources = {success: "/sounds/other/success.mp3",
+                             error: "/sounds/other/error.mp3"}
         this.sounds = new Map();
-        for (let key in sources) {
-            let a = new Audio(sources[key]);
+        for (let key in ground_sources) {
+            let a = new Audio(ground_sources[key]);
+            a.preload = "auto";
+            a.load();
+            this.sounds.set(key, a);
+        }
+        for (let key in other_sources) {
+            let a = new Audio(other_sources[key]);
             a.preload = "auto";
             a.load();
             this.sounds.set(key, a);
