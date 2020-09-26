@@ -68,6 +68,7 @@
                 <button class="dropbtn"><%= gettext "Settings" %></button>
                 <div class="dropdown-content">
                   <a href="#" id="toggle_dark_mode"><%= gettext "Toggle Darkmode" %></a>
+                  <a href="#" class="modal_open" id="sound_settings"><%= gettext "Sound Settings" %></a>
                   <hr class="no_margin">
                 <%= if Pow.Plug.current_user(@conn) do %>
                   <%= link (gettext "User Settings"), to: Routes.pow_registration_path(@conn, :edit) %>
@@ -82,3 +83,20 @@
       </section>
     </header>
 
+<div id="sound_settings_modal" class="modal">
+  <div class="modal-content">
+    <span class="modal_close">&times;</span>
+    <h3><%= gettext("Sound Settings")%></h3>
+    <label for="sound_enable"><%= gettext("Play Sound") %></label>
+    <input type="checkbox" checked name="sound_enable" id="sound_enable">
+
+    <label for="sound_volume"><%= gettext("Volume") %></label>
+    <input id="sound_volume" name="sound_volume" type="range" min="0" max="1" step="0.1" value="1">
+    <hr>
+    <h3><%= gettext("Test Sounds")%></h3>
+    <button id="sound_move" class="secondary"><%= gettext("Move") %></button>
+    <button id="sound_capture" class="secondary"><%= gettext("Capture") %></button>
+    <button id="sound_success" class="secondary"><%= gettext("Success") %></button>
+    <button id="sound_error" class="secondary"><%= gettext("Error") %></button>
+  </div>
+</div>

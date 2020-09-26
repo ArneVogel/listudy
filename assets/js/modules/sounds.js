@@ -20,10 +20,12 @@ class Sounds {
     }
 
     play(sound) {
+        if (sound_enabled == false) {return;}
         let s = this.sounds.get(sound);
         if (s == undefined) {return;}
         // copy the sound to allow for rapid replaying of the same sound
         s = s.cloneNode(); 
+        s.volume = Number(sound_volume);
         s.play();
     }
 }
