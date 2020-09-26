@@ -5,7 +5,7 @@
   <div class="highlight">
     <h2><%= type.name %></h2>
     <p><%= type.description %></p>
-    <a href="<%= Routes.endgame_path(@conn, :chapter, @locale, slug) %>"><%= gettext("Learn") %></a>
+    <a href="<%= Routes.endgame_path(@conn, :chapter, @locale, slug) %>"><button class="secondary"><%= gettext("Learn") %></button></a>
   </div>
 <% end %>
 

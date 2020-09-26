@@ -28,7 +28,6 @@ function right_move_text() {
 }
 
 async function handle_move(orig, dest) {
-    await sleep(300); // instant play by the ai feels weird
 
     clear_all_text();
 
@@ -44,6 +43,7 @@ async function handle_move(orig, dest) {
         combo_count += 1;
         set_text(success_div, right_move_text());
         let reply = ai_move(curr_move);
+        await sleep(300); // instant play by the ai feels weird
         if (reply == undefined) {
             set_text(success_div, right_move_text() + "\n" + i18n.success_end_of_line);
             start_training();
