@@ -17,6 +17,7 @@
     border: 1px solid var(--font-color);
     width: 75%;
     border-radius: var(--small-border-radius);
+    box-shadow: var(--xl-shadow);
 }
 
 .modal_close {
