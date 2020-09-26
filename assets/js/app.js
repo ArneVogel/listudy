@@ -18,6 +18,7 @@ import "phoenix_html"
 
 import "./components/modal.js"
 import "./components/sound_settings.js"
+import "./components/achievements.js"
 
 document.getElementById("toggle_dark_mode").onclick = function() {
     let theme = localStorage.getItem("data-theme") == "light" ? "dark" : "light";

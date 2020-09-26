@@ -70,6 +70,7 @@
                   <a href="#" id="toggle_dark_mode"><%= gettext "Toggle Darkmode" %></a>
                   <a href="#" class="modal_open" id="sound_settings"><%= gettext "Sound Settings" %></a>
                   <hr class="no_margin">
+                  <a href="<%= Routes.page_path(@conn, :show, @assigns.locale, "achievements") %>"><%= gettext "Achievements" %></a>
                 <%= if Pow.Plug.current_user(@conn) do %>
                   <%= link (gettext "User Settings"), to: Routes.pow_registration_path(@conn, :edit) %>
                   <%= link (gettext "Profile"), to: Routes.user_profile_path(@conn, :show, @assigns.locale, @assigns.current_user.username) %>
