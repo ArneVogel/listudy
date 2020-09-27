@@ -63,7 +63,7 @@ defmodule ListudyWeb.Endpoint do
   plug Pow.Plug.Session, otp_app: :listudy
 
   plug PowPersistentSession.Plug.Cookie,
-    persistent_session_cookie_max_age: Integer.floor_div(:timer.hours(24) * 365, 1000)
+    persistent_session_ttl: Integer.floor_div(:timer.hours(24) * 365, 1000)
 
   plug ListudyWeb.Router
 end
