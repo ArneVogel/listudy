@@ -278,6 +278,20 @@ class NewsReader extends Achievement {
     }
 }
 
+class NightOwl extends Achievement {
+    constructor() {
+        super("Night Owl", "Shouldn't you be asleep yet?", "nightowl", false);
+    }
+
+    test() {
+        let date = new Date();
+        let hour = date.getHours();
+        if (hour >= 0 && hour <= 5) {
+            this.unlock();
+        }
+    }
+}
+
 
 class Empty extends Achievement {
     constructor() {
@@ -295,7 +309,7 @@ function main() {
     let achievements = [Newcomer, TacticsSolver, TacticsSolver2, TacticsSolver3, 
                         Student, Student2, Student3, Student4, 
                         Endgames, Endgames2, Endgames3,
-                        BlindTactics, NewsReader, Konami];
+                        BlindTactics, NewsReader, Konami, NightOwl];
 
     let ac = document.getElementById("achievement_container");
     for (let a of achievements) {
