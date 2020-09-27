@@ -27,6 +27,18 @@ function right_move_text() {
     return combo_text() + i18n.success_right_move;
 }
 
+function achievement_end_of_line() {
+    let t = localStorage.getItem("achievements_lines_learned") || 0;
+    localStorage.setItem("achievements_lines_learned", Number(t) + 1);
+    if (typeof achievement_student_test != "undefined") {
+        document.dispatchEvent(achievement_student_test);
+    }
+    if (typeof achievement_student2_test != "undefined") {
+        document.dispatchEvent(achievement_student2_test);
+    }
+
+}
+
 async function handle_move(orig, dest) {
 
     clear_all_text();
@@ -45,6 +57,7 @@ async function handle_move(orig, dest) {
         let reply = ai_move(curr_move);
         await sleep(300); // instant play by the ai feels weird
         if (reply == undefined) {
+            achievement_end_of_line();
             set_text(success_div, right_move_text() + "\n" + i18n.success_end_of_line);
             start_training();
         } else {

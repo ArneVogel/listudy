@@ -1,0 +1,4 @@
+<h1><%= gettext("Achievements") %></h1>
+<p><%= gettext("Can you get all achievements?") %></p>
+
+<div id="achievement_container"></div>

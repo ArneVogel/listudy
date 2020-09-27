@@ -29,6 +29,8 @@ async function handle_move(orig, dest, extraInfo) {
             ground_move(m, chess);
         } else {
             // player got the puzzle correct
+            let solves = localStorage.getItem("achievements_tactics_solved") || 0;
+            localStorage.setItem("achievements_tactics_solved", Number(solves) + 1);
             set_text(success_div, i18n.success);
             show_div("next");
         }

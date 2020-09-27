@@ -1,0 +1,14 @@
+.achievement_list_elem {
+    background: var(--bg-highlight-color);
+    padding: 10px;
+    border-radius: var(--small-border-radius);
+    margin-bottom: 20px;
+}
+
+.achievement_unsolved {
+    opacity: 0.5;
+}
+
+.achievement_solved {
+    border: 1px solid var(--font-color);
+}

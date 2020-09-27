@@ -1,0 +1,30 @@
+.popup {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background: var(--bg-highlight-color);
+    margin: 20px;
+    padding: 20px;
+    vertical-align: top;
+    display: inline-block;
+    max-width: 70vw;
+    width: 30em;
+    border: 1px solid var(--font-color);
+    border-radius: var(--small-border-radius);
+    box-shadow: var(--m-shadow);
+}
+
+.popup > span {
+    background-color: var(--bg-highlight-color);
+    margin-left: 10px;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.popup > span:hover,
+.popup > span:hover {
+    color: var(--font-highlight-color);
+    text-decoration: none;
+    cursor: pointer;
+} 
