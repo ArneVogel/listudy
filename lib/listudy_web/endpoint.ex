@@ -6,8 +6,9 @@ defmodule ListudyWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_listudy_key",
-    signing_salt: "/aWs928X"
+    key: "listudy_session",
+    signing_salt: "/aWs928X",
+    extra: "SameSite=Lax"
   ]
 
   socket "/socket", ListudyWeb.UserSocket,
