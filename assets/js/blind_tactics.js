@@ -66,6 +66,9 @@ function handle_click(square) {
         highlighted_squares = []; 
         current_move += 2;
         if (current_move >= chess.history().length) {
+            let total = localStorage.getItem("achievements_blind_tactics_solved");
+            localStorage.setItem("achievements_blind_tactics_solved", Number(total) + 1);
+
             set_div_text("success", i18n.success)
             document.getElementById("next").classList.remove("hidden");
             setup_ground(chess.fen());    

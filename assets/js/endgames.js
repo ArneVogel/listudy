@@ -22,6 +22,9 @@ function finish_success() {
     show_div("success");
     show_div("next");
 
+    let t = localStorage.getItem("achievements_endgames_solved");
+    localStorage.setItem("achievements_endgames_solved", Number(t) + 1);
+
     document.getElementById("todo").classList.add("hidden");
 
     let ls_key = "solved_endgames";
