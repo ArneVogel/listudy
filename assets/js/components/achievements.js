@@ -1,8 +1,9 @@
 class Achievement {
-    constructor(name, description, key) {
+    constructor(name, description, key, hide) {
         this.name = name;
         this.description = description;
         this.key = key;
+        this.hide = hide;
         this.solved = !!localStorage.getItem("achievement_" + key);
 
         if (!this.solved) {
@@ -52,6 +53,9 @@ class Achievement {
 
     div() {
         let container = document.createElement("div");
+        if (this.hide && !this.solved) {
+            return container;
+        }
         container.classList.add("achievement_list_elem");
         if (!this.solved) {
             container.classList.add("achievement_unsolved");
@@ -72,7 +76,7 @@ class Achievement {
 
 class Konami extends Achievement {
     constructor() {
-        super("Konami", "You know what to do.", "konami");
+        super("Konami", "You know what to do.", "konami", false);
         this.cursor = 0;
     }
 
@@ -87,22 +91,71 @@ class Konami extends Achievement {
 
 class Newcomer extends Achievement {
     constructor() {
-        super("Newcomer", "Welcome back.", "newcomer");
+        super("Newcomer", "Visit multiple pages.", "newcomer", false);
     }
 
     test() {
         let visits = localStorage.getItem("achievements_total_visits");
-        if (visits >= 3) {
+        if (Number(visits) >= 3) {
             this.unlock();
         }
     }
 }
 
-window.addEventListener("load", function(event) {
+class TacticsSolver extends Achievement {
+    constructor() {
+        super("Tactics Solver", "Solve a tactic", "tacticsolver", false);
+    }
+
+    test() {
+        let t = localStorage.getItem("achievements_tactics_solved");
+        if (Number(t) >= 1) {
+            this.unlock();
+        }
+    }
+}
+
+class TacticsSolver2 extends Achievement {
+    constructor() {
+        super("Advanced Tactics Solver", "Solve 10 tactics", "tacticsolver2", true);
+    }
+
+    test() {
+        let t = localStorage.getItem("achievements_tactics_solved");
+        if (Number(t) >= 10) {
+            this.unlock();
+        }
+    }
+}
+
+class NewsReader extends Achievement {
+    constructor() {
+        super("News Reader", "Read a blog post.", "newsreader", false);
+    }
+
+    test() {
+        if (window.location.pathname.indexOf("/blog") != -1) {
+            this.unlock();
+        }
+    }
+}
+
+
+class Empty extends Achievement {
+    constructor() {
+        super("name", "description", "key", false);
+    }
+
+    test() {
+    }
+}
+
+function main() {
     let tv = localStorage.getItem("achievements_total_visits") || 0;
     localStorage.setItem("achievements_total_visits", Number(tv) + 1);
 
-    let achievements = [Newcomer, Konami];
+    let achievements = [Newcomer, TacticsSolver, TacticsSolver2, NewsReader, Konami];
+
     let ac = document.getElementById("achievement_container");
     for (let a of achievements) {
         let instance = new a();
@@ -110,4 +163,7 @@ window.addEventListener("load", function(event) {
             ac.appendChild(instance.div());
         }
     }
-});
+}
+
+window.addEventListener("load", main);
+document.addEventListener("phx:update", main);
