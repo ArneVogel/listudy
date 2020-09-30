@@ -88,19 +88,43 @@ function create_tactic() {
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('create_button')
           .addEventListener('click', create_tactic);
+  let iframe_path = "<%= Routes.iframe_path(@conn, :custom_tactic, @locale) %>";
+  let iframe_url = `${document.location.origin}${iframe_path}${document.location.hash}`;
+  let iframe_code = `<iframe width="400" height="480" frameborder="0" src="${iframe_url}"></iframe>`;
+  document.getElementById("iframe_code").value = iframe_code;
 });
+
 </script>
 <hr>
-<h2 id="own"><%= gettext "Make your own Tactic" %></h2>
+<div class="row">
+  <div class="one-half column">
+    <h2 id="own"><%= gettext "Make your own Tactic" %></h2>
 
-<label for="fen"><%= gettext "FEN" %>:</label>
-<input type="text" id="fen_input" name="fen" required placeholder="r3k3/pppb4/6N1/3Pp3/N3n2b/8/PP1P2PP/R1B2K1R b q - 0 17">
+    <label for="fen"><%= gettext "FEN" %>:</label>
+    <input type="text" id="fen_input" name="fen" required placeholder="r3k3/pppb4/6N1/3Pp3/N3n2b/8/PP1P2PP/R1B2K1R b q - 0 17">
 
-<label for="moves"><%= gettext "Moves" %>:</label>
-<input type="text" id="moves_input" name="moves" required placeholder="Bb5+ d3 Bxd3+ Kg1 Bf2#">
+    <label for="moves"><%= gettext "Moves" %>:</label>
+    <input type="text" id="moves_input" name="moves" required placeholder="Bb5+ d3 Bxd3+ Kg1 Bf2#">
 
-<label for="last_move"><%= gettext "Last Move" %>:</label>
-<input type="text" id="last_move_input" name="last_move" required placeholder="h8g6">
+    <label for="last_move"><%= gettext "Last Move" %>:</label>
+    <input type="text" id="last_move_input" name="last_move" required placeholder="h8g6">
 
-<br>
-<button id="create_button"><%= gettext "Create" %></button>
+    <br>
+    <button id="create_button"><%= gettext "Create" %></button>
+  </div>
+  <div class="one-half column">
+    <h2><%= gettext "Embed this Tactic" %></h2>
+    <p><%= gettext "Use this tactic on your website. Creates an iframe that you can use on you website to share this tactic." %></p>
+    <p><%= link (gettext "Learn more"), to: Routes.webmaster_path(@conn, :show, @locale, "custom-tactics") %></p>
+    <button class="secondary modal_open" id="embed"><%= gettext "Embed" %></button>
+  </div>
+</div>
+
+<div id="embed_modal" class="modal">
+  <div class="modal-content">
+    <span class="modal_close">&times;</span>
+    <h3><%= gettext("Embed")%></h3>
+    <label for="iframe_code"><%= gettext("iframe code") %></label>
+    <input type="text" name="iframe_code" id="iframe_code" class="big_input">
+  </div>
+</div>
