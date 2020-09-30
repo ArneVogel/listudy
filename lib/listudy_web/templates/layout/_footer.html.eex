@@ -6,7 +6,8 @@
       <%= link (gettext "Terms of Service"), to: Routes.page_path(@conn, :show, @conn.assigns.locale, "terms-of-service") %> <br>
       <%= link (gettext "Copyright"), to: Routes.page_path(@conn, :show, @conn.assigns.locale, "copyright") %> <br>
       <%= link (gettext "Imprint"), to: Routes.page_path(@conn, :show, @conn.assigns.locale, "imprint") %> <br>
-      <%= link (gettext "Blog"), to: Routes.post_path(@conn, :index, @conn.assigns.locale) %>
+      <%= link (gettext "Blog"), to: Routes.post_path(@conn, :index, @conn.assigns.locale) %> <br>
+      <%= link (gettext "Webmaster"), to: Routes.webmaster_path(@conn, :index, @conn.assigns.locale) %>
     </div>
 
     <div class="one-third column">

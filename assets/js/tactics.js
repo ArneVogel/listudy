@@ -9,13 +9,32 @@ import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_
 import { sleep } from './modules/sleep.js';
 
 function show_div(id) {
-    document.getElementById(id).classList.remove("hidden");
+    let div = document.getElementById(id);
+    if (div == null) {
+        return;
+    }
+    div.classList.remove("hidden");
+}
+
+function my_set_text(div, text) {
+    if (document.getElementById(div) != null) {
+        // if the div exists use it
+        set_text(div, text);
+        return;
+    }
+
+    // otherwise try to reuse the to_win div if it exists
+    let to_win = document.getElementById("to_win");
+    if (to_win != null) {
+        to_win.innerText = text;
+    }
 }
 
 async function handle_move(orig, dest, extraInfo) {
     let played = uci_to_san(chess, orig, dest);
     let target = to_play.shift();
     clear_all_text();
+    my_set_text("to_win", " ");
 
     if (played == target) {
         let m = chess.move(played);
@@ -31,7 +50,7 @@ async function handle_move(orig, dest, extraInfo) {
             // player got the puzzle correct
             let solves = localStorage.getItem("achievements_tactics_solved") || 0;
             localStorage.setItem("achievements_tactics_solved", Number(solves) + 1);
-            set_text(success_div, i18n.success);
+            my_set_text(success_div, i18n.success);
             show_div("next");
         }
     } else {
@@ -40,7 +59,7 @@ async function handle_move(orig, dest, extraInfo) {
         to_play.unshift(target);
         ground_undo_last_move(); 
         ground_set_moves();
-        set_text(error_div, i18n.wrong_move);
+        my_set_text(error_div, i18n.wrong_move);
         show_div("next");
         show_div("solution");
     }

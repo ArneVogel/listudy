@@ -12,6 +12,9 @@ function clear_all_text() {
 
 function set_text(id, text) {
     let div = document.getElementById(id);
+    if (div == null) {
+        return;
+    }
     if (text.length > 0) {
         div.classList.remove("hidden");
         switch (id) {

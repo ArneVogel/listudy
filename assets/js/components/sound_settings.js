@@ -16,25 +16,32 @@ let enable_input = document.getElementById("sound_enable");
 let volume_input = document.getElementById("sound_volume");
 
 // set the inputs to the actual values
-enable_input.checked = sound_enabled;
-volume_input.value = sound_volume;
+if (enable_input != null) {
+    enable_input.checked = sound_enabled;
 
-// on change set the localStorage values and update values
-enable_input.addEventListener('change', (event) => {
-    sound_enabled = enable_input.checked;
-    localStorage.setItem(sound_enabled_key, sound_enabled);
-});
+    // on change set the localStorage values and update values
+    enable_input.addEventListener('change', (event) => {
+        sound_enabled = enable_input.checked;
+        localStorage.setItem(sound_enabled_key, sound_enabled);
+    });
+}
+if (volume_input != null) {
+    volume_input.value = sound_volume;
 
-volume_input.addEventListener('change', (event) => {
-    sound_volume = volume_input.value;
-    localStorage.setItem(sound_volume_key, sound_volume);
-});
+    volume_input.addEventListener('change', (event) => {
+        sound_volume = volume_input.value;
+        localStorage.setItem(sound_volume_key, sound_volume);
+    });
+}
 
 let test_buttons = [["sound_move", "move"], ["sound_capture", "capture"], 
                     ["sound_success", "success"], ["sound_error", "error"]];
 for (let b of test_buttons) {
-    document.getElementById(b[0]).addEventListener("click", () => {
-        sounds.play(b[1]);
-    })
+    let el = document.getElementById(b[0]);
+    if (el != null) {
+        el.addEventListener("click", () => {
+            sounds.play(b[1]);
+        })
+    }
 }
 

@@ -20,10 +20,13 @@ import "./components/modal.js"
 import "./components/sound_settings.js"
 import "./components/achievements.js"
 
-document.getElementById("toggle_dark_mode").onclick = function() {
-    let theme = localStorage.getItem("data-theme") == "light" ? "dark" : "light";
-    localStorage.setItem("data-theme", theme);
-    document.documentElement.setAttribute('data-theme', theme);
+let toggle = document.getElementById("toggle_dark_mode");
+if (toggle != null) {
+    toggle.onclick = function() {
+        let theme = localStorage.getItem("data-theme") == "light" ? "dark" : "light";
+        localStorage.setItem("data-theme", theme);
+        document.documentElement.setAttribute('data-theme', theme);
+    }
 }
 
 /*

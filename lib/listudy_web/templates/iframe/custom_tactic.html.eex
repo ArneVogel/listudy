@@ -2,29 +2,8 @@
   <div id="game_container" class="sidebar_main">
     <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
   </div>
-  <div class="sidebar">
-    <p id="to_win"><span id="color_span"></span> <%= gettext "to move and win!" %></p>
-    <div class="success">
-      <p id="success" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="info" class="infoBox hidden"></p>
-    </div>
-    <div class="error">
-      <p id="error" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="suggestion" class="infoBox hidden"></p>
-    </div>
 
-    <a target="_blank" href="<%= Routes.tactic_path(@conn, :random, @locale) %>">
-      <button id="next" class="hidden continue_button"><%= gettext "More Tactics" %></button>
-    </a>
-    <details class="hidden" id="solution">
-        <summary>Solution</summary>
-        <span id="solution_moves"></span>
-    </details>
-  </div>
+  <p id="to_win"><span id="color_span"></span> <%= gettext "to move and win!" %></p>
 </div>
 
 <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
@@ -63,13 +42,8 @@ let last_move = clean_input(t[2]) || "";
 document.getElementById("fen").value = fen;
 document.getElementById("color").value = color;
 document.getElementById("moves").value = moves;
-document.getElementById("solution_moves").innerText = moves;
 document.getElementById("color_span").innerText = color.charAt(0).toUpperCase() + color.slice(1);
 document.getElementById("last_move").value = last_move;
 i18n.success = "<%= gettext "Tactic solved"%>";
 i18n.wrong_move = "<%= gettext "Wrong Move"%>";
-// if no fen was provided there is no tactic to solve
-if (fen == "") {
-  document.getElementById("to_win").classList.add("hidden");
-}
 </script>

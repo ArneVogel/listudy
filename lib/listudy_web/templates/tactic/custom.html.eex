@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 <hr>
-<h2><%= gettext "Make your own Tactic"%></h2>
+<h2 id="own"><%= gettext "Make your own Tactic" %></h2>
 
 <label for="fen"><%= gettext "FEN" %>:</label>
 <input type="text" id="fen_input" name="fen" required placeholder="r3k3/pppb4/6N1/3Pp3/N3n2b/8/PP1P2PP/R1B2K1R b q - 0 17">

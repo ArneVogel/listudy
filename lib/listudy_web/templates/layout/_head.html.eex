@@ -31,8 +31,8 @@
       document.documentElement.setAttribute('data-theme', theme);
       document.addEventListener('DOMContentLoaded', function () {
         <%# Mobile Navigation %>
-        document.getElementById('hamburger')
-                .addEventListener('click', toggle_hamburger );
+        let hamburger = document.getElementById('hamburger');
+        if (hamburger != null) {hamburger.addEventListener('click', toggle_hamburger );}
         <%# Go-Back Buttons %>
         let back_buttons = document.getElementsByClassName("go-back");
         for (let b of back_buttons) {
