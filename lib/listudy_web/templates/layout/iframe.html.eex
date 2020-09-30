@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="<%= @locale %>">
+  <head>
+    <%= render "_head.html", assigns: assigns, conn: @conn%>
+  </head>
+  <body>
+    <main role="main" class="container">
+      <%= @inner_content %>
+    </main>
+  </body>
+</html>

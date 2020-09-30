@@ -15,6 +15,11 @@ defmodule ListudyWeb.Router do
     plug NavigationHistory.Tracker
   end
 
+  pipeline :iframe do
+    plug :put_layout, {ListudyWeb.LayoutView, :iframe}
+    plug ListudyWeb.Plugs.AllowIframe
+  end
+
   pipeline :admin do
     plug ListudyWeb.EnsureRolePlug, :admin
   end
@@ -66,6 +71,12 @@ defmodule ListudyWeb.Router do
     get "/play-stockfish", PageController, :play_stockfish
     get "/endgames/:chapter/:subchapter/:game", EndgameController, :game
   end
+
+  scope "/:locale/iframe", ListudyWeb do
+    pipe_through [:browser, :iframe]
+    get "/custom-tactic", IframeController, :custom_tactic
+  end
+
 
   scope "/:locale", ListudyWeb do
     pipe_through :browser

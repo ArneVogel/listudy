@@ -3,7 +3,6 @@
     <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
   </div>
   <div class="sidebar">
-    <h1><%= gettext "Custom Tactic"%></h1>
     <p id="to_win"><span id="color_span"></span> <%= gettext "to move and win!" %></p>
     <div class="success">
       <p id="success" class="infoBox hidden"></p>
@@ -18,7 +17,7 @@
       <p id="suggestion" class="infoBox hidden"></p>
     </div>
 
-    <a href="<%= Routes.tactic_path(@conn, :random, @locale) %>">
+    <a target="_blank" href="<%= Routes.tactic_path(@conn, :random, @locale) %>">
       <button id="next" class="hidden continue_button"><%= gettext "More Tactics" %></button>
     </a>
     <details class="hidden" id="solution">
@@ -74,33 +73,3 @@ if (fen == "") {
   document.getElementById("to_win").classList.add("hidden");
 }
 </script>
-<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
-function create_tactic() {
-  let f = document.getElementById("fen_input").value;
-  let m = document.getElementById("moves_input").value;
-  let l = document.getElementById("last_move_input").value || "";
-  let h = f + ";" + m + ";" + l
-  console.log(f,m,l,h);
-  h = btoa(h);
-  window.location.hash = h;
-  location.reload();
-}
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('create_button')
-          .addEventListener('click', create_tactic);
-});
-</script>
-<hr>
-<h2><%= gettext "Make your own Tactic"%></h2>
-
-<label for="fen"><%= gettext "FEN" %>:</label>
-<input type="text" id="fen_input" name="fen" required placeholder="r3k3/pppb4/6N1/3Pp3/N3n2b/8/PP1P2PP/R1B2K1R b q - 0 17">
-
-<label for="moves"><%= gettext "Moves" %>:</label>
-<input type="text" id="moves_input" name="moves" required placeholder="Bb5+ d3 Bxd3+ Kg1 Bf2#">
-
-<label for="last_move"><%= gettext "Last Move" %>:</label>
-<input type="text" id="last_move_input" name="last_move" required placeholder="h8g6">
-
-<br>
-<button id="create_button"><%= gettext "Create" %></button>
