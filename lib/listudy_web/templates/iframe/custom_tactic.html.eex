@@ -3,7 +3,10 @@
     <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
   </div>
 
-  <p id="to_win"><span id="color_span"></span> <%= gettext "to move and win!" %></p>
+  <p>
+  <span id="to_win"><span id="color_span"></span> <%= gettext "to move and win!" %></span>
+  <span class="float_right">Powered by: <a target="_blank" rel="noopener" href="https://listudy.org<%= Routes.page_path(@conn, :index, @locale) %>">listudy.org</a></span>
+  </p>
 </div>
 
 <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>

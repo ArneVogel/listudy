@@ -8,7 +8,7 @@
   </div>
   <div class="one-half column">
     <b>Example</b><br>
-    <iframe width="300" height="380" frameborder="0" src="<%= Routes.iframe_path(@conn, :custom_tactic, @locale) %>#cjNrMy9wcHBiNC82TjEvM1BwMy9OM24yYi84L1BQMVAyUFAvUjFCMksxUiBiIHEgLSAwIDE3O0JiNSsgZDMgQnhkMysgS2cxIEJmMiM7aDhnNg=="></iframe>
+    <iframe width="400" height="480" frameborder="0" src="<%= Routes.iframe_path(@conn, :custom_tactic, @locale) %>#cjNrMy9wcHBiNC82TjEvM1BwMy9OM24yYi84L1BQMVAyUFAvUjFCMksxUiBiIHEgLSAwIDE3O0JiNSsgZDMgQnhkMysgS2cxIEJmMiM7aDhnNg=="></iframe>
   </div>
 </div>
 
