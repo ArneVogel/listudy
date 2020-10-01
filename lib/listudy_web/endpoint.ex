@@ -25,6 +25,7 @@ defmodule ListudyWeb.Endpoint do
     at: "/",
     from: :listudy,
     gzip: false,
+    cache_control_for_etags: "public, max-age=31536000",
     only:
       ~w(css fonts images js sounds favicon.ico robots.txt 
         android-chrome-192x192.png android-chrome-512x512.png apple-touch-icon.png browserconfig.xml favicon-16x16.png favicon-32x32.png favicon.ico mstile-144x144.png mstile-150x150.png mstile-310x150.png mstile-310x310.png mstile-70x70.png safari-pinned-tab.svg site.webmanifest)
@@ -33,6 +34,7 @@ defmodule ListudyWeb.Endpoint do
     at: "/",
     from: :listudy,
     gzip: false,
+    cache_control_for_etags: "public, max-age=31536000",
     only: ~w(stockfish),
     headers: %{"cross-origin-embedder-policy" => "require-corp"},
     content_types: %{"stockfish.wasm" => "application/wasm"}
