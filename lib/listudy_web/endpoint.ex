@@ -8,7 +8,7 @@ defmodule ListudyWeb.Endpoint do
     store: :cookie,
     key: "listudy_session",
     signing_salt: "/aWs928X",
-    extra: "SameSite=Lax;Secure"
+    extra: "SameSite=Lax"
   ]
 
   socket "/socket", ListudyWeb.UserSocket,
