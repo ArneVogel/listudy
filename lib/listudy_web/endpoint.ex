@@ -8,7 +8,7 @@ defmodule ListudyWeb.Endpoint do
     store: :cookie,
     key: "listudy_session",
     signing_salt: "/aWs928X",
-    extra: "SameSite=Lax"
+    extra: "SameSite=Lax;Secure"
   ]
 
   socket "/socket", ListudyWeb.UserSocket,
@@ -64,7 +64,7 @@ defmodule ListudyWeb.Endpoint do
   plug Pow.Plug.Session, otp_app: :listudy
 
   plug PowPersistentSession.Plug.Cookie,
-    persistent_session_ttl: Integer.floor_div(:timer.hours(24) * 365, 1000)
+    persistent_session_ttl: (:timer.hours(24) * 365)
 
   plug ListudyWeb.Router
 end
