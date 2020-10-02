@@ -18,7 +18,7 @@
       <p id="suggestion" class="infoBox hidden"></p>
     </div>
 
-    <p id="comments"></p>
+    <p id="comments" class="study_comments"></p>
 
     <div class="study_options">
       <div class="chapter_selection">

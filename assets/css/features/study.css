@@ -23,3 +23,8 @@
 .study_below_highlight {
     margin-top: 1.5rem;
 }
+
+.study_comments {
+    overflow-y: auto;
+    max-height: 15em;
+}
