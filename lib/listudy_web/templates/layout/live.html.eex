@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<%= @locale %>">
+<html class="blue cburnett" lang="<%= @locale %>">
   <head>
     <%= render "_head.html", assigns: assigns, conn: @conn%>
     <%= csrf_meta_tag() %>
