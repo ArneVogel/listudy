@@ -247,7 +247,6 @@ function tick() {
 function save() {
     localStorage.setItem("chessclicker", JSON.stringify(chessclicker));
 }
-window.save = save; //TODO remove
 
 document.addEventListener("phx:update", main);
 window.onresize = resize_ground;
