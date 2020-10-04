@@ -321,4 +321,7 @@ function main() {
 }
 
 window.addEventListener("load", main);
-document.addEventListener("phx:update", main);
+//TODO FIX, this causes initial loads on liveview pages to count as two page visits
+//it is required however to give the achievement of solving tactics while still playing tactics
+//and not when a new page is loaded after solving tactics
+document.addEventListener("phx:update", main); 
