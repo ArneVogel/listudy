@@ -24,35 +24,18 @@
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
     <script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
-      <%# This is here to stop the default white theme to flash on load
+      <%# This is here to stop the default white theme to flash on load %>
       <%# In the defered app.js script it would only switch after the page is loaded %>
       let theme = localStorage.getItem("data-theme") || "light";
       localStorage.setItem("data-theme", theme);
       document.documentElement.setAttribute('data-theme', theme);
-      document.addEventListener('DOMContentLoaded', function () {
-        <%# Mobile Navigation %>
-        let hamburger = document.getElementById('hamburger');
-        if (hamburger != null) {hamburger.addEventListener('click', toggle_hamburger );}
-        <%# Go-Back Buttons %>
-        let back_buttons = document.getElementsByClassName("go-back");
-        for (let b of back_buttons) {
-          b.addEventListener('click', () => {
-            history.back();
-          });
-        }
-      });
-      <%# Mobile Navigation Trigger %>
-      function toggle_hamburger() {
-        function toggle(divs) {
-          for (let i = 0; i < divs.length; ++i) {
-            divs[i].classList.toggle("show");
-          }
-        }
-        document.getElementById("hamburger").classList.toggle("hamburger_toggle");
-        toggle(document.getElementsByClassName("dropdowns_container"));
-        toggle(document.getElementsByClassName("nav_element"));
-        toggle(document.getElementsByClassName("logo"));
-      } 
+      
+      let chessboard_background = localStorage.getItem("chessground_background") || "blue";
+      localStorage.setItem("chessground_background", chessboard_background);
+      if (chessboard_background != "blue") {
+        document.documentElement.classList.remove("blue");
+        document.documentElement.classList.add(chessboard_background);
+      }
     </script>
 
     <%# Favicon start, generated with https://realfavicongenerator.net/%>

@@ -19,6 +19,8 @@ import "phoenix_html"
 import "./components/modal.js"
 import "./components/sound_settings.js"
 import "./components/achievements.js"
+import "./components/hamburger.js"
+import "./components/chessboard_settings.js"
 
 let toggle = document.getElementById("toggle_dark_mode");
 if (toggle != null) {
