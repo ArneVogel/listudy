@@ -36,6 +36,13 @@
         document.documentElement.classList.remove("blue");
         document.documentElement.classList.add(chessboard_background);
       }
+      let chessboard_piece = localStorage.getItem("chessground_piece") || "cburnett";
+      localStorage.setItem("chessground_piece", chessboard_piece);
+      if (chessboard_piece != "cburnett") {
+        document.documentElement.classList.remove("cburnett");
+        document.documentElement.classList.add(chessboard_piece);
+      }
+
     </script>
 
     <%# Favicon start, generated with https://realfavicongenerator.net/%>

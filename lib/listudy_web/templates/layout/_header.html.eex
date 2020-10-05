@@ -91,7 +91,6 @@
     <h3><%= gettext("Board Settings")%></h3>
     <div class="row">
       <div class="one-half column">
-        <h4><%= gettext("Background") %></h4>
         <label for="chessboard_background"><%= gettext("Select a color:") %></label>
         <select name="chessboard_background" id="chessboard_background">
           <option value="blue">Blue</option>
@@ -99,9 +98,27 @@
           <option value="green">Green</option>
           <option value="ic">IC</option>
         </select>
+        <label for="chessboard_pieces"><%= gettext("Select a piece set:") %></label>
+        <select name="chessboard_pieces" id="chessboard_pieces">
+          <option value="cburnett">cburnett</option>
+          <option value="merida">merida</option>
+          <option value="chessnut">chessnut</option>
+          <option value="pirouetti">pirouetti</option>
+          <option value="pixel">pixel</option>
+          <option value="shapes">shapes</option>
+          <option value="letter">letter</option>
+        </select>
       </div>
       <div class="one-half column">
         <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable"></div>
+        <div class="settings_piece_container">
+          <piece class="white pawn chessground_piece"></piece>
+          <piece class="white knight chessground_piece"></piece>
+          <piece class="white bishop chessground_piece"></piece>
+          <piece class="white rook chessground_piece"></piece>
+          <piece class="white queen chessground_piece"></piece>
+          <piece class="white king chessground_piece"></piece>
+        </div>
       </div>
     </div>
   </div>

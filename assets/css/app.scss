@@ -189,3 +189,13 @@ iframe {
 .float_right {
     float: right;
 }
+
+.chessground_piece {
+    width: 45px;
+    height: 45px;
+    background-size: 45px;
+    display: block;
+}
+.settings_piece_container {
+    display: flex;
+}
