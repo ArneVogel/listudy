@@ -77,7 +77,6 @@ defmodule ListudyWeb.Router do
     get "/custom-tactic", IframeController, :custom_tactic
   end
 
-
   scope "/:locale", ListudyWeb do
     pipe_through :browser
 

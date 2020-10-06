@@ -66,7 +66,7 @@ defmodule ListudyWeb.Endpoint do
   plug Pow.Plug.Session, otp_app: :listudy
 
   plug PowPersistentSession.Plug.Cookie,
-    persistent_session_ttl: (:timer.hours(24) * 365)
+    persistent_session_ttl: :timer.hours(24) * 365
 
   plug ListudyWeb.Router
 end
