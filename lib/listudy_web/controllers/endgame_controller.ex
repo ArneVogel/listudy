@@ -2,7 +2,7 @@ defmodule ListudyWeb.EndgameController do
   use ListudyWeb, :controller
 
   defp endgames do
-    [basic: basic(), "chess-fundamentals": fundamentals()]
+    [basic: basic(), "king-and-pawn": king_and_pawn(), "chess-fundamentals": fundamentals()]
   end
 
   def index(conn, _params) do
@@ -175,6 +175,37 @@ defmodule ListudyWeb.EndgameController do
             ["1k6/1r6/2K5/Q7/8/8/8/8 w - - 0 1", "w"],
             ["8/k7/2K5/4Q3/8/8/8/1r6 w - - 0 1", "w"],
             ["8/5rk1/8/5Q1K/8/8/8/8 w - - 0 1", "w"]
+          ]
+        }
+      ]
+    }
+  end
+
+  defp king_and_pawn() do
+    %{
+      name: gettext("King and Pawn Endgames"),
+      description: gettext("Win games with only Pawns on the board"),
+      body: gettext("This chapter has endgames about the King and Pawn endgame."),
+      endgames: [
+        "endings-of-games": %{
+          name: gettext("Endings of Games"),
+          games: [
+            ["8/3k4/1p1P4/1P1K4/8/8/8/8 w - - 0 1", "w"],
+            ["3k4/3p4/8/3P4/3P4/3K4/8/8 w - - 0 1", "w"],
+            ["8/6kp/8/7P/7K/8/6P1/8 w - - 0 1", "w"],
+            ["4k3/5p2/3K4/4PP2/8/8/8/8 w - - 0 1", "w"],
+            ["8/8/3pkp2/8/8/3PK3/5P2/8 w - - 0 1", "w"],
+            ["8/2k5/2Pp3p/1P6/8/5K2/8/8 w - - 0 1", "w"],
+            ["8/kp6/8/1p6/1P6/5K2/P7/8 w - - 0 1", "w"],
+            ["8/2p5/7P/8/2Pk4/3p4/5K2/8 w - - 0 1", "w"],
+            ["8/8/8/2p5/2Pp4/3K2Pk/7P/8 w - - 0 1", "w"],
+            ["8/3p4/3k4/3p4/3P4/2PKP3/8/8 w - - 0 1", "w"],
+            ["8/1p1k4/8/2PK3p/2P5/7P/8/8 w - - 0 1", "w"],
+            ["8/8/6k1/8/4p2P/5pP1/5K1P/8 w - - 0 1", "w"],
+            ["8/5p2/7p/2pk3P/1p1p2P1/8/3K4/8 w - - 0 1", "w"],
+            ["8/3p4/3p4/5p2/2kP1P2/8/4P3/2K5 w - - 0 1", "w"],
+            ["8/pp6/8/1PP1k3/6p1/4P1K1/8/8 w - - 0 1", "w"],
+            ["k7/2p1pp2/2P3p1/4P1P1/5P2/p7/Kp3P2/8 w - - 0 1", "w"]
           ]
         }
       ]
