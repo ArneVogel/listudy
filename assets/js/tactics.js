@@ -1,7 +1,5 @@
 require("regenerator-runtime/runtime"); // required for sleep (https://github.com/babel/babel/issues/9849#issuecomment-487040428)
 
-const Chessground = require('chessground').Chessground;
-const Chess = require('chess.js')
 import { resize_ground, setup_ground, ground_set_moves, 
          ground_undo_last_move, setup_move_handler, ground_move } from './modules/ground.js';
 import { setup_chess, uci_to_san } from './modules/chess_utils.js';
