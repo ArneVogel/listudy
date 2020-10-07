@@ -9,6 +9,12 @@ defmodule ListudyWeb.EndgameController do
       "knights-bishops-and-pawns": knights_bishops_and_pawns(),
       "two-minor-pieces-against-one": two_minor_pieces_against_one(),
       "rook-against-pawns": rook_against_pawns(),
+      "rook-against-minor-pieces": rook_against_minor_pieces(),
+      "minor-pieces-against-rook": minor_pieces_against_rook(),
+      "queen-against-pawns": queen_against_pawns(),
+      "queens-and-pawns": queens_and_pawns(),
+      "queen-against-rook": queen_against_rook(),
+      "queen-against-minor-pieces": queen_against_minor_pieces(),
       "chess-fundamentals": fundamentals()
     ]
   end
@@ -223,8 +229,8 @@ defmodule ListudyWeb.EndgameController do
 
   defp kings_bishops_and_pawns() do
     %{
-      name: gettext("King, Bishops and Pawns"),
-      description: gettext("Endgames with only Kings, Bishops and Pawns on the board."),
+      name: gettext("Bishops and Pawns"),
+      description: gettext("Endgames with only Bishops and Pawns on the board."),
       body: gettext("This chapter has endgames about Pawn and Bishop endings."),
       endgames: [
         "endings-of-games": %{
@@ -315,6 +321,149 @@ defmodule ListudyWeb.EndgameController do
             ["2R5/7k/5K2/8/p7/8/1p6/8 w - - 0 1", "d"],
             ["8/1k6/7R/1Kp5/1p6/8/p7/8 w - - 0 1", "d"],
             ["8/8/Kp2r3/8/PP6/8/6k1/8 w - - 0 1", "d"]
+          ]
+        }
+      ]
+    }
+  end
+
+  defp rook_against_minor_pieces() do
+    %{
+      name: gettext("Rook against minor Pieces"),
+      description: gettext("Rook against minor pieces endgames."),
+      body: gettext("Rook and pawn against bishop or knight, with and without pawns."),
+      endgames: [
+        "endings-of-games": %{
+          name: gettext("Endings of Games"),
+          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          games: [
+            ["7k/4R3/5K2/8/8/8/7P/1b6 w - - 0 1", "w"],
+            ["5k2/6R1/5K2/8/8/5b2/8/8 w - - 0 1", "w"],
+            ["7K/5k2/7P/3b4/8/8/1R6/8 w - - 0 1", "w"],
+            ["8/8/8/8/8/4K1b1/3Rp3/4k3 w - - 0 1", "w"],
+            ["5k2/7n/8/5K2/8/8/8/6R1 w - - 0 1", "w"]
+          ]
+        }
+      ]
+    }
+  end
+
+  defp minor_pieces_against_rook() do
+    %{
+      name: gettext("Minor pirces against Rook"),
+      description: gettext("Minor pieces against Rook endgames."),
+      body: gettext("Bishops and/or knights against rook, with and without pawns."),
+      endgames: [
+        "endings-of-games": %{
+          name: gettext("Endings of Games"),
+          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          games: [
+            ["6k1/8/r2BK2P/6N1/8/8/8/8 w - - 0 1", "w"],
+            ["7k/r7/5NKB/8/8/8/7P/8 w - - 0 1", "w"],
+            ["7k/8/r4NKP/8/7B/8/8/8 w - - 0 1", "w"],
+            ["7k/8/7P/r1BK2N1/8/8/8/8 w - - 0 1", "w"],
+            ["6k1/1r6/7P/5B1K/3B4/8/8/8 w - - 0 1", "w"]
+          ]
+        }
+      ]
+    }
+  end
+
+  defp queen_against_pawns() do
+    %{
+      name: gettext("Queen against Pawns"),
+      description: gettext("Queen against pawn endgames."),
+      body: gettext("Queen against pawn endgames."),
+      endgames: [
+        "endings-of-games": %{
+          name: gettext("Endings of Games"),
+          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          games: [
+            ["8/7Q/6p1/5k2/8/8/8/K7 w - - 0 1", "w"],
+            ["1K3Q2/8/8/8/8/8/1p3p2/k7 w - - 0 1", "w"],
+            ["3K1Q2/8/8/8/8/8/3p3p/3k4 w - - 0 1", "w"],
+            ["7Q/8/8/8/8/3k4/p6p/3K4 w - - 0 1", "d"],
+            ["8/8/8/8/8/4k3/3pp2Q/1K6 w - - 0 1", "w"],
+            ["8/8/8/1Q6/7p/7p/p6K/k7 w - - 0 1", "w"],
+            ["8/8/8/8/8/1Q3pp1/p5p1/k5K1 w - - 0 1", "w"],
+            ["8/8/8/8/2p5/Qp6/pK4p1/6k1 w - - 0 1", "w"]
+          ]
+        }
+      ]
+    }
+  end
+
+  defp queens_and_pawns() do
+    %{
+      name: gettext("Queens and Pawns"),
+      description: gettext("Queens and pawn endgames."),
+      body: gettext("Train endgames with queens and pawns on the board."),
+      endgames: [
+        "endings-of-games": %{
+          name: gettext("Endings of Games"),
+          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          games: [
+            ["8/3KP1q1/8/8/8/4Q3/k7/8 w - - 0 1", "w"],
+            ["1k6/3q4/3P4/3K4/5Q2/8/8/8 w - - 0 1", "w"],
+            ["K7/1P6/5Q2/1k6/8/8/8/7q w - - 0 1", "w"],
+            ["3Q4/8/8/8/8/3K4/1P6/q2k4 w - - 0 1", "w"],
+            ["1q6/1P3Q2/4K3/8/1k6/8/8/8 w - - 0 1", "w"],
+            ["4K3/5P2/6q1/8/8/5Q2/k7/8 w - - 0 1", "w"],
+            ["6K1/5PQ1/4q3/8/1k6/8/8/8 w - - 0 1", "w"],
+            ["7q/4K1k1/7p/6P1/8/8/8/7Q w - - 0 1", "w"],
+            ["6k1/5q2/3Pp2K/8/8/8/8/7Q w - - 0 1", "w"],
+            ["k7/8/2K5/pp3q2/8/8/8/2Q5 w - - 0 1", "w"],
+            ["5qk1/7p/8/6K1/8/7P/6P1/Q7 w - - 0 1", "w"]
+          ]
+        }
+      ]
+    }
+  end
+
+  defp queen_against_rook() do
+    %{
+      name: gettext("Queen against Rook"),
+      description: gettext("Queen against Rook"),
+      body: gettext("Train queen and rook endgames."),
+      endgames: [
+        "endings-of-games": %{
+          name: gettext("Endings of Games"),
+          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          games: [
+            ["7k/6r1/5K2/8/8/8/8/4Q3 w - - 0 1", "w"],
+            ["K2k4/8/1q6/8/8/8/8/R7 w - - 0 1", "d"],
+            ["4k3/8/4r3/2Q5/4p3/4K3/8/8 w - - 0 1", "w"],
+            ["k7/pr6/8/2KQ4/8/8/8/8 w - - 0 1", "w"],
+            ["8/3k4/3p4/4r3/3K1Q2/8/8/8 w - - 0 1", "w"],
+            ["8/4r3/5k2/5p2/4pQ2/4K3/8/8 w - - 0 1", "w"],
+            ["K7/3p1Q2/kp6/p7/1r6/8/8/8 w - - 0 1", "w"],
+            ["8/8/8/5k2/5p1p/2Q1pr2/8/6K1 w - - 0 1", "w"]
+          ]
+        }
+      ]
+    }
+  end
+
+  defp queen_against_minor_pieces() do
+    %{
+      name: gettext("Queen against Minor Pieces"),
+      description: gettext("Queen against minor pieces."),
+      body: gettext("Train queen and minor piece endgames."),
+      endgames: [
+        "endings-of-games": %{
+          name: gettext("Endings of Games"),
+          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          games: [
+            ["8/5Q2/8/8/8/6kp/p5p1/1b4K1 w - - 0 1", "w"],
+            ["K7/8/2n3k1/n7/8/Q7/8/8 w - - 0 1", "d"],
+            ["4k3/3r1b2/2Q2K2/8/8/8/8/8 w - - 0 1", "w"],
+            ["k1b5/7r/1PK5/1Q6/8/8/8/8 w - - 0 1", "w"],
+            ["8/8/4Q3/8/8/4K1k1/8/6nr w - - 0 1", "w"],
+            ["1q5k/5Rp1/6KP/4N3/8/8/8/8 w - - 0 1", "d"],
+            ["1k2r3/4r1Q1/1KP5/8/8/8/8/8 w - - 0 1", "w"],
+            ["4q3/8/8/8/3N1N2/3K2R1/7k/8 w - - 0 1", "w"],
+            ["8/2k5/1q6/8/3R4/5B2/4RK2/8 w - - 0 1", "w"],
+            ["8/3B4/8/3q4/2N1kp2/2P2p1N/2K2P2/8 w - - 0 1", "w"]
           ]
         }
       ]
