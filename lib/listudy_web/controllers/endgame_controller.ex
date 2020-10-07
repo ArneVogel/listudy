@@ -189,6 +189,7 @@ defmodule ListudyWeb.EndgameController do
       endgames: [
         "endings-of-games": %{
           name: gettext("Endings of Games"),
+          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
           games: [
             ["8/3k4/1p1P4/1P1K4/8/8/8/8 w - - 0 1", "w"],
             ["3k4/3p4/8/3P4/3P4/3K4/8/8 w - - 0 1", "w"],

@@ -8,6 +8,10 @@
 
 <%= for {slug, type} <- @chapter.endgames do %>
   <h2 class="endgame_fix"><%= type.name %></h2>
+
+  <%= if Map.has_key?(type, :description) do %>
+  <p><%= type.description %></p>
+  <%end %>
   <%= for {_, index} <- Enum.with_index(type.games) do %>
     <% id = "#{@slug}_#{slug}_#{index+1}" %>
     <a class="endgame_chapter_link" href="<%= Routes.endgame_path(@conn, :game, @locale, @slug, slug, index+1) %>">
@@ -16,6 +20,7 @@
   <% end %>
 <% end %>
 
+<hr>
 <p class="endgame_fix"><%= @chapter.body %></p>
 
 
