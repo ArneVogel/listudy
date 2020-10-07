@@ -6,6 +6,7 @@ defmodule ListudyWeb.EndgameController do
       basic: basic(),
       "king-and-pawn": king_and_pawn(),
       "kings-bishops-and-pawns": kings_bishops_and_pawns(),
+      "knights-bishops-and-pawns": knights_bishops_and_pawns(),
       "chess-fundamentals": fundamentals()
     ]
   end
@@ -243,6 +244,29 @@ defmodule ListudyWeb.EndgameController do
             ["1BK5/1P6/k7/8/3b4/8/8/8 w - - 0 1", "w"],
             ["8/1B2B3/8/8/5K1p/7k/8/8 w - - 0 1", "w"],
             ["4k3/2B5/5K2/8/2B5/8/5p2/6b1 w - - 0 1", "w"]
+          ]
+        }
+      ]
+    }
+  end
+
+  defp knights_bishops_and_pawns() do
+    %{
+      name: gettext("Knights, Bishops and Pawns"),
+      description: gettext("Endgames with Knights, Bishops and Pawns."),
+      body: gettext("This chapter has endgames about Knight and Bishop endings."),
+      endgames: [
+        "endings-of-games": %{
+          name: gettext("Endings of Games"),
+          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          games: [
+            ["k7/2K5/8/nPN5/8/8/8/8 w - - 0 1", "w"],
+            ["8/2k2b2/4p1p1/2K1P1P1/2N5/8/8/8 w - - 0 1", "w"],
+            ["8/5k2/3K1Ppp/5pP1/B2n4/8/8/8 w - - 0 1", "w"],
+            ["6bk/3p4/3Np2K/4Pp2/5P2/8/8/8 w - - 0 1", "w"],
+            ["8/8/8/8/3p4/1K1N4/8/1k4N1 w - - 0 1", "w"],
+            ["8/8/8/8/8/6K1/3N1p2/5N1k w - - 0 1", "w"],
+            ["8/8/8/8/4p3/4N1K1/5p2/5N1k w - - 0 1", "w"]
           ]
         }
       ]
