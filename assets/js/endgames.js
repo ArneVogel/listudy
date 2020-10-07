@@ -19,6 +19,7 @@ function show_div(id) {
 }
 
 function finish_success() {
+    document.getElementById("reset").classList.add("hidden");
     show_div("success");
     show_div("next");
 
@@ -35,7 +36,6 @@ function finish_success() {
 
 function finish_error() {
     show_div("error");
-    show_div("reset");
     document.getElementById("todo").classList.add("hidden");
 }
 
@@ -127,7 +127,6 @@ function main() {
     load_stockfish(stockfish_listener);
     document.getElementById("reset").addEventListener("click", main);
     document.getElementById("error").classList.add("hidden");
-    document.getElementById("reset").classList.add("hidden");
     document.getElementById("todo").classList.remove("hidden");
 }
 

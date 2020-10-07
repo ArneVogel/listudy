@@ -26,7 +26,7 @@
       <br>
     </div>
 
-    <button id="reset" class="hidden"><%= gettext("Reset") %></button>
+    <button id="reset"><%= gettext("Reset") %></button>
 
     <%= if @next == "back" do %>
       <a href="<%= Routes.endgame_path(@conn, :chapter, @locale, @chapter_slug) %>"><button id="next" class="hidden continue_button"><%= gettext("Next") %></button></a>
