@@ -7,6 +7,8 @@ defmodule ListudyWeb.EndgameController do
       "king-and-pawn": king_and_pawn(),
       "kings-bishops-and-pawns": kings_bishops_and_pawns(),
       "knights-bishops-and-pawns": knights_bishops_and_pawns(),
+      "two-minor-pieces-against-one": two_minor_pieces_against_one(),
+      "rook-against-pawns": rook_against_pawns(),
       "chess-fundamentals": fundamentals()
     ]
   end
@@ -267,6 +269,52 @@ defmodule ListudyWeb.EndgameController do
             ["8/8/8/8/3p4/1K1N4/8/1k4N1 w - - 0 1", "w"],
             ["8/8/8/8/8/6K1/3N1p2/5N1k w - - 0 1", "w"],
             ["8/8/8/8/4p3/4N1K1/5p2/5N1k w - - 0 1", "w"]
+          ]
+        }
+      ]
+    }
+  end
+
+  defp two_minor_pieces_against_one() do
+    %{
+      name: gettext("Two Minor Pieces against one Minor Piece"),
+      description: gettext("Two minor pieces gainst one minor piece, with and without pawns."),
+      body: gettext("Two against one."),
+      endgames: [
+        "endings-of-games": %{
+          name: gettext("Endings of Games"),
+          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          games: [
+            ["8/5k2/5n2/5K2/8/5B2/8/4B3 w - - 0 1", "w"],
+            ["7k/4b3/6K1/7N/8/8/8/2B5 w - - 0 1", "w"],
+            ["8/8/8/8/3B4/2N5/1pK5/k1b5 w - - 0 1", "w"],
+            ["1B6/8/1N6/8/8/kp6/p7/n2K4 w - - 0 1", "w"],
+            ["8/8/8/6N1/4p1B1/6p1/7p/4K1kn w - - 0 1", "w"],
+            ["4b2k/4Np2/5P1K/8/8/8/3B4/8 w - - 0 1", "w"],
+            ["4B3/8/6N1/8/5p2/6pk/7p/4K2n w - - 0 1", "d"],
+            ["8/kn2K3/8/p1p5/P1P4n/8/1PB5/8 w - - 0 1", "w"]
+          ]
+        }
+      ]
+    }
+  end
+
+  defp rook_against_pawns() do
+    %{
+      name: gettext("Rook against Pawns"),
+      description: gettext("Rook against Pawn endgames."),
+      body: gettext("Train rook against pawn endgames."),
+      endgames: [
+        "endings-of-games": %{
+          name: gettext("Endings of Games"),
+          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          games: [
+            ["8/8/8/8/k1K5/2p5/1p5R/8 w - - 0 1", "w"],
+            ["8/8/5K2/7k/8/p7/1p6/1R6 w - - 0 1", "d"],
+            ["8/5R2/8/8/8/2kp4/3p1K2/8 w - - 0 1", "d"],
+            ["2R5/7k/5K2/8/p7/8/1p6/8 w - - 0 1", "d"],
+            ["8/1k6/7R/1Kp5/1p6/8/p7/8 w - - 0 1", "d"],
+            ["8/8/Kp2r3/8/PP6/8/6k1/8 w - - 0 1", "d"]
           ]
         }
       ]
