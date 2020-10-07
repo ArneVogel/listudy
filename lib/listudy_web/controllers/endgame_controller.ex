@@ -14,8 +14,7 @@ defmodule ListudyWeb.EndgameController do
       "queen-against-pawns": queen_against_pawns(),
       "queens-and-pawns": queens_and_pawns(),
       "queen-against-rook": queen_against_rook(),
-      "queen-against-minor-pieces": queen_against_minor_pieces(),
-      "chess-fundamentals": fundamentals()
+      "queen-against-minor-pieces": queen_against_minor_pieces()
     ]
   end
 
@@ -122,23 +121,35 @@ defmodule ListudyWeb.EndgameController do
     }
   end
 
-  defp fundamentals() do
+  defp king_and_pawn() do
     %{
-      name: gettext("Capablancas Chess Fundamentals"),
-      description:
-        gettext("Play the endgames from Capablancas renowned book \"Chess Fundamentals\"."),
+      name: gettext("King and Pawn Endgames"),
+      description: gettext("Win games with only Pawns on the board"),
       body:
         gettext(
-          "In these chapters are the endgames from Capablancas chess book \"Chess Fundamentals\". Learn the most important endgame fundamentals such as the opposition, creating a passed pawn and checkmating ideas."
+          "This chapter has endgames about the King and Pawn endgame. Many of the examples are taken from Capablancas \"Chess Fundamentals\"."
         ),
       endgames: [
-        "simples-mates": %{
-          name: gettext("Simple Mates"),
+        "endings-of-games": %{
+          name: gettext("Endings of Games"),
+          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
           games: [
-            ["7k/8/8/8/8/8/8/R6K w - - 0 1", "w"],
-            ["8/8/8/4k3/8/8/8/4K2R w - - 0 1", "w"],
-            ["7k/8/8/8/8/8/8/2B1KB2 w - - 0 1", "w"],
-            ["8/8/8/4k3/8/8/8/4K2Q w - - 0 1", "w"]
+            ["8/3k4/1p1P4/1P1K4/8/8/8/8 w - - 0 1", "w"],
+            ["3k4/3p4/8/3P4/3P4/3K4/8/8 w - - 0 1", "w"],
+            ["8/6kp/8/7P/7K/8/6P1/8 w - - 0 1", "w"],
+            ["4k3/5p2/3K4/4PP2/8/8/8/8 w - - 0 1", "w"],
+            ["8/8/3pkp2/8/8/3PK3/5P2/8 w - - 0 1", "w"],
+            ["8/2k5/2Pp3p/1P6/8/5K2/8/8 w - - 0 1", "w"],
+            ["8/kp6/8/1p6/1P6/5K2/P7/8 w - - 0 1", "w"],
+            ["8/2p5/7P/8/2Pk4/3p4/5K2/8 w - - 0 1", "w"],
+            ["8/8/8/2p5/2Pp4/3K2Pk/7P/8 w - - 0 1", "w"],
+            ["8/3p4/3k4/3p4/3P4/2PKP3/8/8 w - - 0 1", "w"],
+            ["8/1p1k4/8/2PK3p/2P5/7P/8/8 w - - 0 1", "w"],
+            ["8/8/6k1/8/4p2P/5pP1/5K1P/8 w - - 0 1", "w"],
+            ["8/5p2/7p/2pk3P/1p1p2P1/8/3K4/8 w - - 0 1", "w"],
+            ["8/3p4/3p4/5p2/2kP1P2/8/4P3/2K5 w - - 0 1", "w"],
+            ["8/pp6/8/1PP1k3/6p1/4P1K1/8/8 w - - 0 1", "w"],
+            ["k7/2p1pp2/2P3p1/4P1P1/5P2/p7/Kp3P2/8 w - - 0 1", "w"]
           ]
         },
         "pawn-promotion": %{
@@ -172,55 +183,6 @@ defmodule ListudyWeb.EndgameController do
             ["8/8/4k3/1p5p/1P2K2P/8/8/8 w - - 0 1", "d"],
             ["4k3/8/8/1p5p/1P5P/8/8/4K3 w - - 0 1", "w"],
             ["8/8/8/4p1p1/8/5P2/6K1/3k4 w - - 0 1", "d"]
-          ]
-        },
-        "values-of-knight-and-bishop": %{
-          name: gettext("The Relative Value of Knight and Bishop"),
-          games: [
-            ["k7/8/1K1NN3/8/8/8/8/8 w - - 0 1", "d"],
-            ["k7/8/1K1N4/7p/7N/8/8/8 w - - 0 1", "w"],
-            ["8/7p/8/2b3k1/8/8/8/7K w - - 0 1", "d"],
-            ["8/8/5Np1/8/8/7p/5K2/7k w - - 0 1", "w"]
-          ]
-        },
-        "queen-against-rook": %{
-          name: gettext("Queen against Rook"),
-          games: [
-            ["1k6/1r6/2K5/Q7/8/8/8/8 w - - 0 1", "w"],
-            ["8/k7/2K5/4Q3/8/8/8/1r6 w - - 0 1", "w"],
-            ["8/5rk1/8/5Q1K/8/8/8/8 w - - 0 1", "w"]
-          ]
-        }
-      ]
-    }
-  end
-
-  defp king_and_pawn() do
-    %{
-      name: gettext("King and Pawn Endgames"),
-      description: gettext("Win games with only Pawns on the board"),
-      body: gettext("This chapter has endgames about the King and Pawn endgame."),
-      endgames: [
-        "endings-of-games": %{
-          name: gettext("Endings of Games"),
-          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
-          games: [
-            ["8/3k4/1p1P4/1P1K4/8/8/8/8 w - - 0 1", "w"],
-            ["3k4/3p4/8/3P4/3P4/3K4/8/8 w - - 0 1", "w"],
-            ["8/6kp/8/7P/7K/8/6P1/8 w - - 0 1", "w"],
-            ["4k3/5p2/3K4/4PP2/8/8/8/8 w - - 0 1", "w"],
-            ["8/8/3pkp2/8/8/3PK3/5P2/8 w - - 0 1", "w"],
-            ["8/2k5/2Pp3p/1P6/8/5K2/8/8 w - - 0 1", "w"],
-            ["8/kp6/8/1p6/1P6/5K2/P7/8 w - - 0 1", "w"],
-            ["8/2p5/7P/8/2Pk4/3p4/5K2/8 w - - 0 1", "w"],
-            ["8/8/8/2p5/2Pp4/3K2Pk/7P/8 w - - 0 1", "w"],
-            ["8/3p4/3k4/3p4/3P4/2PKP3/8/8 w - - 0 1", "w"],
-            ["8/1p1k4/8/2PK3p/2P5/7P/8/8 w - - 0 1", "w"],
-            ["8/8/6k1/8/4p2P/5pP1/5K1P/8 w - - 0 1", "w"],
-            ["8/5p2/7p/2pk3P/1p1p2P1/8/3K4/8 w - - 0 1", "w"],
-            ["8/3p4/3p4/5p2/2kP1P2/8/4P3/2K5 w - - 0 1", "w"],
-            ["8/pp6/8/1PP1k3/6p1/4P1K1/8/8 w - - 0 1", "w"],
-            ["k7/2p1pp2/2P3p1/4P1P1/5P2/p7/Kp3P2/8 w - - 0 1", "w"]
           ]
         }
       ]
@@ -438,6 +400,15 @@ defmodule ListudyWeb.EndgameController do
             ["8/4r3/5k2/5p2/4pQ2/4K3/8/8 w - - 0 1", "w"],
             ["K7/3p1Q2/kp6/p7/1r6/8/8/8 w - - 0 1", "w"],
             ["8/8/8/5k2/5p1p/2Q1pr2/8/6K1 w - - 0 1", "w"]
+          ]
+        },
+        "queen-against-rook": %{
+          name: gettext("Queen against Rook"),
+          description: gettext("From the Capablancas \"Chess Fundamentals\"."),
+          games: [
+            ["1k6/1r6/2K5/Q7/8/8/8/8 w - - 0 1", "w"],
+            ["8/k7/2K5/4Q3/8/8/8/1r6 w - - 0 1", "w"],
+            ["8/5rk1/8/5Q1K/8/8/8/8 w - - 0 1", "w"]
           ]
         }
       ]
