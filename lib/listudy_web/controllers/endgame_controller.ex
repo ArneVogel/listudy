@@ -2,7 +2,12 @@ defmodule ListudyWeb.EndgameController do
   use ListudyWeb, :controller
 
   defp endgames do
-    [basic: basic(), "king-and-pawn": king_and_pawn(), "chess-fundamentals": fundamentals()]
+    [
+      basic: basic(),
+      "king-and-pawn": king_and_pawn(),
+      "kings-bishops-and-pawns": kings_bishops_and_pawns(),
+      "chess-fundamentals": fundamentals()
+    ]
   end
 
   def index(conn, _params) do
@@ -207,6 +212,37 @@ defmodule ListudyWeb.EndgameController do
             ["8/3p4/3p4/5p2/2kP1P2/8/4P3/2K5 w - - 0 1", "w"],
             ["8/pp6/8/1PP1k3/6p1/4P1K1/8/8 w - - 0 1", "w"],
             ["k7/2p1pp2/2P3p1/4P1P1/5P2/p7/Kp3P2/8 w - - 0 1", "w"]
+          ]
+        }
+      ]
+    }
+  end
+
+  defp kings_bishops_and_pawns() do
+    %{
+      name: gettext("King, Bishops and Pawns"),
+      description: gettext("Endgames with only Kings, Bishops and Pawns on the board."),
+      body: gettext("This chapter has endgames about Pawn and Bishop endings."),
+      endgames: [
+        "endings-of-games": %{
+          name: gettext("Endings of Games"),
+          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          games: [
+            ["8/8/2b5/2P5/1k1K1P2/8/8/8 w - - 0 1", "w"],
+            ["1k1b4/1P1P4/K1P5/8/8/8/8/8 w - - 0 1", "w"],
+            ["3B4/4P3/8/8/8/3K4/p7/1k6 w - - 0 1", "w"],
+            ["8/8/8/5KB1/p7/P4k2/8/8 w - - 0 1", "w"],
+            ["8/8/1k6/1p1K4/1p3B2/8/P7/8 w - - 0 1", "w"],
+            ["8/8/P7/2pK4/2P2p2/7p/5kBp/8 w - - 0 1", "w"],
+            ["8/4pK1k/8/3PPP2/8/b7/8/8 w - - 0 1", "w"],
+            ["6bk/6p1/4p1PP/4P2K/8/8/8/8 w - - 0 1", "w"],
+            ["8/8/2pB4/pp6/P7/P7/4K3/7k w - - 0 1", "w"],
+            ["8/4p3/3Bpp2/8/3kPP2/8/8/4K3 w - - 0 1", "w"],
+            ["7K/5k1P/P7/1P1b1pP1/8/8/8/8 w - - 0 1", "w"],
+            ["1k1K4/1p6/pP2B3/P4p2/6p1/8/8/8 w - - 0 1", "w"],
+            ["1BK5/1P6/k7/8/3b4/8/8/8 w - - 0 1", "w"],
+            ["8/1B2B3/8/8/5K1p/7k/8/8 w - - 0 1", "w"],
+            ["4k3/2B5/5K2/8/2B5/8/5p2/6b1 w - - 0 1", "w"]
           ]
         }
       ]
