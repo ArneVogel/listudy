@@ -47,6 +47,9 @@ document.getElementById("color").value = color;
 document.getElementById("moves").value = moves;
 document.getElementById("color_span").innerText = color.charAt(0).toUpperCase() + color.slice(1);
 document.getElementById("last_move").value = last_move;
-i18n.success = "<%= gettext "Tactic solved"%>";
+i18n.success = "<%= gettext "Tactic solved!"%>";
 i18n.wrong_move = "<%= gettext "Wrong Move"%>";
+i18n.best_move = "<%= gettext "Best Move!" %>";
+i18n.keep_going = "<%= gettext "Keep going..." %>";
+
 </script>

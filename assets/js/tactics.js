@@ -40,6 +40,7 @@ async function handle_move(orig, dest, extraInfo) {
         if (to_play.length >= 2) {
             // theres another move the player has to get correct
             await sleep(100); // instant play by the ai feels weird
+            my_set_text(info_div, i18n.best_move + " " + i18n.keep_going);
             let ai_move = to_play.shift();
             let m = chess.move(ai_move);
             ground_set_moves();
