@@ -402,8 +402,27 @@ defmodule ListudyWeb.EndgameController do
             ["8/8/8/5k2/5p1p/2Q1pr2/8/6K1 w - - 0 1", "w"]
           ]
         },
-        "queen-against-rook": %{
-          name: gettext("Queen against Rook"),
+        euclid: %{
+          name: gettext("King and Queen against King and Rook"),
+          description:
+            gettext(
+              "From the book \"Analysis of the  Chess Ending King and Queen against King and Rook\"."
+            ),
+          games: [
+            ["3k4/3r4/8/2K1Q3/8/8/8/8 w - - 0 1", "w"],
+            ["8/3k4/8/6r1/3KQ3/8/8/8 w - - 0 1", "w"],
+            ["2k5/r7/3K4/1Q6/8/8/8/8 w - - 0 1", "w"],
+            ["8/3Q4/kr6/2K5/8/8/8/8 w - - 0 1", "w"],
+            ["2k5/5Q2/3K4/8/8/8/8/2r5 w - - 0 1", "w"],
+            ["3k4/2r5/4K3/1Q6/8/8/8/8 w - - 0 1", "w"],
+            ["1k6/1r6/2K5/Q7/8/8/8/8 w - - 0 1", "w"],
+            ["2k5/2r5/3K4/1Q6/8/8/8/8 w - - 0 1", "w"],
+            ["2k5/6r1/3K4/1Q6/8/8/8/8 w - - 0 1", "w"],
+            ["8/1k6/8/1K6/8/8/2Q5/4r3 w - - 0 1", "w"]
+          ]
+        },
+        "chess-fundamentals": %{
+          name: gettext("Chess Fundamentals"),
           description: gettext("From the Capablancas \"Chess Fundamentals\"."),
           games: [
             ["1k6/1r6/2K5/Q7/8/8/8/8 w - - 0 1", "w"],
