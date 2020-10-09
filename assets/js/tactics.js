@@ -36,7 +36,7 @@ async function handle_move(orig, dest, extraInfo) {
             // player got the puzzle correct
             let solves = localStorage.getItem("achievements_tactics_solved") || 0;
             localStorage.setItem("achievements_tactics_solved", Number(solves) + 1);
-            set_text(success_div, i18n.success);
+            set_text(success_div, " ", {bold: i18n.success});
             show_div("next");
         }
     } else {
@@ -45,7 +45,7 @@ async function handle_move(orig, dest, extraInfo) {
         to_play.unshift(target);
         ground_undo_last_move(); 
         ground_set_moves();
-        set_text(error_div, i18n.wrong_move);
+        set_text(error_div, i18n.keep_trying, {bold: i18n.wrong_move});
         show_div("next");
         show_div("solution");
     }

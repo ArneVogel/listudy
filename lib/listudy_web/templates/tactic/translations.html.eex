@@ -1,5 +1,6 @@
 i18n.success = "<%= gettext "Tactic solved!" %>";
-i18n.wrong_move = "<%= gettext "Wrong Move" %>";
+i18n.wrong_move = "<%= gettext "Wrong Move." %>";
+i18n.keep_trying = "<%= gettext "Keep trying!" %>";
 i18n.best_move = "<%= gettext "Best Move!" %>";
 i18n.keep_going = "<%= gettext "Keep going..." %>";
 i18n.your_turn = "<%= gettext "Your turn." %>";
