@@ -66,12 +66,5 @@ let last_move = clean_input(t[2]) || "";
 document.getElementById("fen").value = fen;
 document.getElementById("color").value = color;
 document.getElementById("moves").value = moves;
-i18n.success = "<%= gettext "Tactic solved!" %>";
-i18n.wrong_move = "<%= gettext "Wrong Move" %>";
-i18n.best_move = "<%= gettext "Best Move!" %>";
-i18n.keep_going = "<%= gettext "Keep going..." %>";
-i18n.your_turn = "<%= gettext "Your turn." %>";
-i18n.find_the_best_white = "<%= gettext "Find the best move for white." %>";
-i18n.find_the_best_black = "<%= gettext "Find the best move for black." %>";
-
+<%= render ListudyWeb.TacticView, "translations.html" %>
 </script>

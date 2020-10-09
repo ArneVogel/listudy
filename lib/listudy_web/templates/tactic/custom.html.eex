@@ -4,7 +4,6 @@
   </div>
   <div class="sidebar">
     <h1><%= gettext "Custom Tactic"%></h1>
-    <p id="to_win"><span id="color_span"></span> <%= gettext "to move and win!" %></p>
 
     <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
     
@@ -55,10 +54,8 @@ document.getElementById("fen").value = fen;
 document.getElementById("color").value = color;
 document.getElementById("moves").value = moves;
 document.getElementById("solution_moves").innerText = moves;
-document.getElementById("color_span").innerText = color.charAt(0).toUpperCase() + color.slice(1);
-document.getElementById("last_move").value = last_move;
-i18n.success = "<%= gettext "Tactic solved"%>";
-i18n.wrong_move = "<%= gettext "Wrong Move"%>";
+
+<%= render ListudyWeb.TacticView, "translations.html" %>
 // if no fen was provided there is no tactic to solve
 if (fen == "") {
   document.getElementById("to_win").classList.add("hidden");
