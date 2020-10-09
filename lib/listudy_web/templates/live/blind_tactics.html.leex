@@ -4,19 +4,9 @@
   </div>
   <div class="sidebar">
     <h2><%= gettext "Blind Tactic"%> <%= @tactic.id %></h2>
-    <div class="success">
-      <p id="success" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="info" class="infoBox hidden"></p>
-    </div>
-    <div class="error">
-      <p id="error" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="suggestion" class="infoBox hidden"></p>
-    </div>
 
+    <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
+    
     <div>
       <p><%= gettext "In this position the following moves were played:" %> <b id="moves"></b></p>
       <p><%= if @tactic.color == "white" do %><%= gettext "White" %><% else %><%= gettext "Black" %><% end %>

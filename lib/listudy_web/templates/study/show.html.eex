@@ -5,19 +5,8 @@
     <%= render ListudyWeb.ComponentView, "chessground.html" %>
   </div>
   <div class="sidebar">
-    <div class="success">
-      <p id="success" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="info" class="infoBox hidden"></p>
-    </div>
-    <div class="error">
-      <p id="error" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="suggestion" class="infoBox hidden"></p>
-    </div>
-
+    <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
+    
     <p id="comments" class="study_comments"></p>
 
     <div class="study_options">

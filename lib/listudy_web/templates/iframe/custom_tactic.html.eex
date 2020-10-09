@@ -3,10 +3,31 @@
     <%= render ListudyWeb.ComponentView, "chessground.html" %>
   </div>
 
-  <p>
-  <span id="to_win"><span id="color_span"></span> <%= gettext "to move and win!" %></span>
-  <span class="float_right">Powered by: <a target="_blank" rel="noopener" href="https://listudy.org<%= Routes.page_path(@conn, :index, @locale) %>">listudy.org</a></span>
-  </p>
+<div class="">
+  <span id="success" class="hidden">
+    <span id="success_symbol"></span>
+    <b id="success_bold"></b>
+    <span id="success_text"></span>
+  </span>
+</div>
+<div class="">
+  <span id="info" class="hidden">
+    <span id="info_symbol"></span>
+    <b id="info_bold"></b>
+    <span id="info_text"></span>
+  </span>
+</div>
+<div class="">
+  <span id="error" class="hidden">
+    <span id="error_symbol"></span>
+    <b id="error_bold"></b>
+    <span id="error_text"></span>
+  </span>
+</div>
+
+<span class="float_right">Powered by: <a target="_blank" rel="noopener" href="https://listudy.org<%= Routes.page_path(@conn, :index, @locale) %>">listudy.org</a></span>
+<p></p>
+
 </div>
 
 <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
@@ -45,11 +66,12 @@ let last_move = clean_input(t[2]) || "";
 document.getElementById("fen").value = fen;
 document.getElementById("color").value = color;
 document.getElementById("moves").value = moves;
-document.getElementById("color_span").innerText = color.charAt(0).toUpperCase() + color.slice(1);
-document.getElementById("last_move").value = last_move;
-i18n.success = "<%= gettext "Tactic solved!"%>";
-i18n.wrong_move = "<%= gettext "Wrong Move"%>";
+i18n.success = "<%= gettext "Tactic solved!" %>";
+i18n.wrong_move = "<%= gettext "Wrong Move" %>";
 i18n.best_move = "<%= gettext "Best Move!" %>";
 i18n.keep_going = "<%= gettext "Keep going..." %>";
+i18n.your_turn = "<%= gettext "Your turn." %>";
+i18n.find_the_best_white = "<%= gettext "Find the best move for white." %>";
+i18n.find_the_best_black = "<%= gettext "Find the best move for black." %>";
 
 </script>

@@ -20,7 +20,7 @@ function show_div(id) {
 
 function finish_success() {
     document.getElementById("reset").classList.add("hidden");
-    show_div("success");
+    set_text(success_div, i18n.success);
     show_div("next");
 
     let t = localStorage.getItem("achievements_endgames_solved");
@@ -35,7 +35,7 @@ function finish_success() {
 }
 
 function finish_error() {
-    show_div("error");
+    set_text(error_div, i18n.error);
     document.getElementById("todo").classList.add("hidden");
 }
 

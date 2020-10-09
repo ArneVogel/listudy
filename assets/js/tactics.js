@@ -14,25 +14,12 @@ function show_div(id) {
     div.classList.remove("hidden");
 }
 
-function my_set_text(div, text) {
-    if (document.getElementById(div) != null) {
-        // if the div exists use it
-        set_text(div, text);
-        return;
-    }
-
-    // otherwise try to reuse the to_win div if it exists
-    let to_win = document.getElementById("to_win");
-    if (to_win != null) {
-        to_win.innerText = text;
-    }
-}
-
 async function handle_move(orig, dest, extraInfo) {
     let played = uci_to_san(chess, orig, dest);
     let target = to_play.shift();
     clear_all_text();
-    my_set_text("to_win", " ");
+    set_text("to_win", " "); // remove the iframe text
+    set_text("bold_span", " ");
 
     if (played == target) {
         let m = chess.move(played);
@@ -40,7 +27,7 @@ async function handle_move(orig, dest, extraInfo) {
         if (to_play.length >= 2) {
             // theres another move the player has to get correct
             await sleep(100); // instant play by the ai feels weird
-            my_set_text(info_div, i18n.best_move + " " + i18n.keep_going);
+            set_text(info_div, i18n.keep_going, {symbol:"★", bold: i18n.best_move} );
             let ai_move = to_play.shift();
             let m = chess.move(ai_move);
             ground_set_moves();
@@ -49,7 +36,7 @@ async function handle_move(orig, dest, extraInfo) {
             // player got the puzzle correct
             let solves = localStorage.getItem("achievements_tactics_solved") || 0;
             localStorage.setItem("achievements_tactics_solved", Number(solves) + 1);
-            my_set_text(success_div, i18n.success);
+            set_text(success_div, i18n.success);
             show_div("next");
         }
     } else {
@@ -58,7 +45,7 @@ async function handle_move(orig, dest, extraInfo) {
         to_play.unshift(target);
         ground_undo_last_move(); 
         ground_set_moves();
-        my_set_text(error_div, i18n.wrong_move);
+        set_text(error_div, i18n.wrong_move);
         show_div("next");
         show_div("solution");
     }
@@ -87,8 +74,14 @@ function load_data() {
     last_move = document.getElementById("last_move").value;
 }
 
+function show_which_side() {
+    let turn = color == "white" ? i18n.find_the_best_white : i18n.find_the_best_black;
+    set_text(info_div, turn, {bold: i18n.your_turn, symbol: "♔"});
+}
+
 function main() {
     load_data();
+    show_which_side();
     window.to_play = moves.split(" ");
     if (fen != old_fen) {
         // This is done to prevent flickering on the initial load of the

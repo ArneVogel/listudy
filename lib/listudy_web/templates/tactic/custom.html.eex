@@ -5,19 +5,9 @@
   <div class="sidebar">
     <h1><%= gettext "Custom Tactic"%></h1>
     <p id="to_win"><span id="color_span"></span> <%= gettext "to move and win!" %></p>
-    <div class="success">
-      <p id="success" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="info" class="infoBox hidden"></p>
-    </div>
-    <div class="error">
-      <p id="error" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="suggestion" class="infoBox hidden"></p>
-    </div>
 
+    <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
+    
     <a href="<%= Routes.tactic_path(@conn, :random, @locale) %>">
       <button id="next" class="hidden continue_button"><%= gettext "More Tactics" %></button>
     </a>

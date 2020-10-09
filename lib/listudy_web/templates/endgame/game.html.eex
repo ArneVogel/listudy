@@ -10,12 +10,8 @@
     <%= render ListudyWeb.ComponentView, "chessground.html" %>
   </div>
   <div class="sidebar">
-    <div class="success">
-      <p id="success" class="infoBox hidden"><%= gettext("Success!")%></p>
-    </div>
-    <div class="error">
-      <p id="error" class="infoBox hidden"><%= gettext("Try again") %></p>
-    </div>
+    <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
+
     <p id="todo"><%= gettext("White to play and") %> <span id="target"></span></p>
 
     <div id="progress_container">
@@ -45,6 +41,8 @@
   let fen = "<%= fen %>";
   let target_result = "<%= result %>";
   let id = "<%= @chapter_slug %>_<%= @subchapter_slug %>_<%= @index %>";
+  i18n.success = "<%= gettext("Success!") %>";
+  i18n.error = "<%= gettext("Try again!") %>";
 </script>
 <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
 <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/endgames.js") %>"></script>

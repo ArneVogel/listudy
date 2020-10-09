@@ -4,18 +4,7 @@
   </div>
   <div class="sidebar">
     <h1><%= gettext "Tactic"%> <%= @tactic.id %></h1>
-    <div class="success">
-      <p id="success" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="info" class="infoBox hidden"></p>
-    </div>
-    <div class="error">
-      <p id="error" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="suggestion" class="infoBox hidden"></p>
-    </div>
+    <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
 
     <button id="next" class="hidden continue_button" phx-click="next"><%= gettext "Continue"%></button>
     <details class="hidden" id="solution">
@@ -56,4 +45,7 @@ i18n.success = "<%= gettext "Tactic solved!" %>";
 i18n.wrong_move = "<%= gettext "Wrong Move" %>";
 i18n.best_move = "<%= gettext "Best Move!" %>";
 i18n.keep_going = "<%= gettext "Keep going..." %>";
+i18n.your_turn = "<%= gettext "Your turn." %>";
+i18n.find_the_best_white = "<%= gettext "Find the best move for white." %>";
+i18n.find_the_best_black = "<%= gettext "Find the best move for black." %>";
 </script>

@@ -46,16 +46,9 @@ function piece_pos() {
     return chess.history({verbose: true})[current_move].from;
 }
 
-function hide_all_div() {
-    for (let d of ["success", "info", "error"]) {
-        document.getElementById(d).classList.add("hidden");
-    }
-}
-
 function set_div_text(id, text) {
-    hide_all_div();
-    document.getElementById(id).classList.remove("hidden");
-    document.getElementById(id).innerText = text;
+    clear_all_text();
+    set_text(id, text);
 }
 
 
@@ -69,20 +62,20 @@ function handle_click(square) {
             let total = localStorage.getItem("achievements_blind_tactics_solved");
             localStorage.setItem("achievements_blind_tactics_solved", Number(total) + 1);
 
-            set_div_text("success", i18n.success)
+            set_div_text(success_div, i18n.success)
             document.getElementById("next").classList.remove("hidden");
             setup_ground(chess.fen());    
             let t = chess.turn() == "w" ? "white" : "black";
             // "check: true" would sometimes result in the wrong king being shown in check
             ground.set({check: t});
         } else {
-            set_div_text("info", i18n.right_move)
+            set_div_text(info_div, i18n.right_move)
         }
         current_chess = get_current_chess();
         legal_moves = ground_legal_moves(current_chess);
     } else {
         if (highlighted_squares.indexOf(square) != -1) {
-            set_div_text("error", i18n.wrong_move)
+            set_div_text(error_div, i18n.wrong_move)
         }
         highlight_moves(square);
     }
