@@ -10,3 +10,7 @@ button.tertiary {
     border: none;
     text-decoration: underline;
 }
+
+button.tertiary:hover {
+    text-decoration: none;
+}
