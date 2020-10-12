@@ -4,6 +4,7 @@ const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
 import { turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
 import { string_hash } from './modules/hash.js';
+import { clear_local_storage } from './modules/localstorage.js';
 import { tree_move_index, tree_children, tree_possible_moves, has_children, 
          need_hint, update_value, date_sort, tree_get_node, tree_children_filter_sort } from './modules/tree_utils.js';
 import { generate_move_trees } from './modules/tree_from_pgn.js';
@@ -190,6 +191,7 @@ function setup_trees() {
         const pgnParser = require('pgn-parser'); // slows down page load, so only require if actually needed
         try {
             trees = generate_move_trees(pgnParser.parse(pgn));
+            clear_local_storage();
             localStorage.setItem(hash_key, curr_hash);
             localStorage.setItem(tree_key, JSON.stringify(trees));
         } catch(caught_error) {
