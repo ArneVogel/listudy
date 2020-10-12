@@ -90,9 +90,9 @@ function en_passant_square(move) {
  * e.g. empty_square("e4") removes the piece on e4
  */
 function empty_square(square) {
-    let m = new Object();
-    m[square] = null;
-    ground.setPieces(m);
+    let map = new Map();
+    map.set(square, null);
+    ground.setPieces(map);
 }
 
 /*

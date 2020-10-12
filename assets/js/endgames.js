@@ -59,8 +59,8 @@ async function handle_move(orig, dest) {
 function move(orig,dest) {
     let san = uci_to_san(chess, orig, dest);
     let m = chess.move(san);
+    ground_move(m, chess);
     ground_set_moves();
-    ground_move(m,chess);
 }
 
 function animate_progress_bar(movetime, reason="") {
