@@ -6,7 +6,7 @@
   <% end %>
 
   <%= label f, :title, gettext "Title" %>
-  <%= text_input f, :title, class: "big_input", minlength: 3, maxlength: 60, placeholder: (gettext "Caro-Kann Defense") %>
+  <%= text_input f, :title, class: "big_input", minlength: 3, maxlength: 60, placeholder: (gettext "Caro-Kann Defense"), required: true %>
   <%= error_tag f, :title %>
 
   <%= label f, :description, gettext "Description" %>
