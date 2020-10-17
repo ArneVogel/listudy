@@ -258,6 +258,29 @@ function show_suggestions() {
     }
 }
 
+/*
+ * Returns the min or max value of a tree
+ * tree is a pgn sub tree
+ * minmax is either Math.max or Math.min
+ */
+function tree_value(tree, minmax) {
+    let curr_value = tree.value;
+    let child_values = tree.children.map(x => tree_value(x, minmax));
+    let minmax_children = minmax(...child_values);
+    return minmax(curr_value, minmax_children);
+}
+
+function setup_intro() {
+    set_text(info_div, i18n.info_intro);
+
+    let roots = trees.map(x => x.root[0]);
+    let max = Math.max(...roots.map(x => tree_value(x, Math.max)));
+
+    if (max == 0) {
+        set_text(suggestion_div, i18n.info_arrows);
+    }
+}
+
 function main() {
     setup_ground();
     setup_chess();
@@ -269,7 +292,7 @@ function main() {
 
     resize_ground();
 
-    set_text(info_div, i18n.info_intro);
+    setup_intro();
 
     start_training();
 }

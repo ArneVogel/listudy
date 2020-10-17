@@ -88,6 +88,7 @@
   <% end %>
 
   i18n.info_intro = "<%= gettext "Starting training." %>";
+  i18n.info_arrows = "<%= gettext "At first the arrows will show you which moves are in this study. Once you have played these moves twice, the arrows are no longer shown." %>";
   i18n.error_wrong_move = "<%= gettext "This move is not in the study, try again." %>";
   i18n.success_right_move = "<%= gettext "Right move!" %>";
   i18n.success_end_of_line = "<%= gettext "You reached the end of this line." %>";
