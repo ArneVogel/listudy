@@ -156,7 +156,8 @@ defmodule ListudyWeb.EndgameController do
           name: gettext("Pawn Promotion"),
           games: [
             ["8/8/5k2/8/5K2/8/4P3/8 w - - 0 1", "p"],
-            ["8/3kp3/8/4K3/8/8/8/8 w - - 0 1", "d"]
+            ["8/3kp3/8/4K3/8/8/8/8 w - - 0 1", "d"],
+            ["8/7p/5K2/8/6P1/8/6kP/8 w - - 0 1", "p"]
           ]
         },
         "pawn-endings": %{
