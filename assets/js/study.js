@@ -5,8 +5,8 @@ const Chess = require('chess.js')
 import { turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
 import { string_hash } from './modules/hash.js';
 import { clear_local_storage } from './modules/localstorage.js';
-import { tree_move_index, tree_children, tree_possible_moves, has_children, 
-         need_hint, update_value, date_sort, tree_get_node, tree_children_filter_sort } from './modules/tree_utils.js';
+import { tree_move_index, tree_children, tree_possible_moves, has_children, tree_value,
+         need_hint, update_value, value_sort, tree_get_node, tree_children_filter_sort } from './modules/tree_utils.js';
 import { generate_move_trees } from './modules/tree_from_pgn.js';
 import { sleep } from './modules/sleep.js';
 import { unescape_string } from './modules/security_related.js';
@@ -134,11 +134,11 @@ function setup_move() {
  * played the latest
  */
 function ai_move(access) {
-    let m = tree_possible_moves(access, {filter: has_children, sort: date_sort})[0];
+    let m = tree_possible_moves(access, {filter: has_children, sort: value_sort})[0];
     // change the last updated value of the node so if other moves exists they will be
     // picked next time instead
     if (m !== undefined) {
-        update_value(access, 0, m); 
+        update_value(access, 1, m); 
     }
     return m;
 }
@@ -256,18 +256,6 @@ function show_suggestions() {
             localStorage.setItem(lsKey, true);
         }
     }
-}
-
-/*
- * Returns the min or max value of a tree
- * tree is a pgn sub tree
- * minmax is either Math.max or Math.min
- */
-function tree_value(tree, minmax) {
-    let curr_value = tree.value;
-    let child_values = tree.children.map(x => tree_value(x, minmax));
-    let minmax_children = minmax(...child_values);
-    return minmax(curr_value, minmax_children);
 }
 
 function setup_intro() {

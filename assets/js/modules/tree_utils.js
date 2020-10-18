@@ -122,6 +122,22 @@ function has_children(node) {
 }
 
 /*
+ * Checks if there is a child with childs
+ */
+function has_grandchildren(node) {
+    if (node.children.length == 0) {
+        return false;
+    }
+    for (let c of node.children) {
+        if (c.children.length != 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+/*
  * Moves that have a lower than the threshold for training
  */
 function need_hint(node) {
@@ -142,4 +158,40 @@ function date_sort(a,b) {
     return 0;
 }
 
-export { tree_children, tree_children_filter_sort, tree_possible_moves, tree_move_index, has_children, need_hint, update_value, date_sort, tree_get_node };
+/*
+ * Sorts nodes by tree value
+ */
+function value_sort(a,b) {
+    /*
+     * We have to filter by has_grandchildren because otherwise leafes
+     * with moves by the ai without children which are never updates
+     * will always result in a return of 0 for the subtree containing it.
+     */
+    let av = tree_value(a, Math.min, {filter:has_grandchildren});
+    let bv = tree_value(b, Math.min, {filter:has_grandchildren});
+    if (av < bv) {
+        return -1;
+    } else if (av > bv) {
+        return 1;
+    }
+    return date_sort(a,b);
+}
+
+
+
+/*
+ * Returns the min or max value of a tree
+ * tree is a pgn sub tree
+ * minmax is either Math.max or Math.min
+ */
+function tree_value(tree, minmax, {filter=function(){return true;}}={
+    filter:function(){return true;}
+    }) {
+    let curr_value = tree.value;
+    let child_values = tree.children.filter(filter).map(x => tree_value(x, minmax, {filter:filter}));
+    let minmax_children = minmax(...child_values);
+    return minmax(curr_value, minmax_children);
+}
+
+
+export { tree_children, tree_children_filter_sort, tree_possible_moves, tree_move_index, has_children, need_hint, update_value, date_sort, value_sort, tree_get_node, tree_value };
