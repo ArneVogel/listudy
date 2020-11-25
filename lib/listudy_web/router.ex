@@ -1,7 +1,6 @@
 defmodule ListudyWeb.Router do
   use ListudyWeb, :router
   use Pow.Phoenix.Router
-  import Phoenix.LiveDashboard.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -62,8 +61,6 @@ defmodule ListudyWeb.Router do
     resources "/tactics", TacticController
 
     resources "/blind_tactics", BlindTacticController
-
-    live_dashboard "/dashboard", metrics: ListudyWeb.Telemetry
   end
 
   scope "/:locale", ListudyWeb do

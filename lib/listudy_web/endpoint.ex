@@ -48,10 +48,6 @@ defmodule ListudyWeb.Endpoint do
     plug Phoenix.Ecto.CheckRepoStatus, otp_app: :listudy
   end
 
-  plug Phoenix.LiveDashboard.RequestLogger,
-    param_key: "request_logger",
-    cookie_key: "request_logger"
-
   plug Plug.RequestId
   plug Plug.Telemetry, event_prefix: [:phoenix, :endpoint]
 
