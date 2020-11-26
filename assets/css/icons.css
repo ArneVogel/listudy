@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'listudy';
+    src: url('/css/fonts/listudy/listudy.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon:before {
+    content: attr(data-icon);
+    font-family: 'listudy';
+}
+
+a.icon:before {
+    margin-right: 0.4em;
+}
+
+.icon {
+    text-decoration: none;
+}
+
+a {
+    cursor: pointer;
+}

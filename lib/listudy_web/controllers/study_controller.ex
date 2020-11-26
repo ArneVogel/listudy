@@ -269,11 +269,12 @@ defmodule ListudyWeb.StudyController do
     "priv/static/study_pgn/" <> file
   end
 
-  def favorite_study(conn, %{"study_id" => study_id}) do
+  def favorite_study(conn, %{"slug" => slug}) do
     user_id = Pow.Plug.current_user(conn).id
+    study = Studies.get_study_by_slug!(slug)
 
     {_, message} =
-      case StudyFavorites.favorite_study(%{study_id: study_id, user_id: user_id}) do
+      case StudyFavorites.favorite_study(%{study_id: study.id, user_id: user_id}) do
         {:ok, _} ->
           {:ok, gettext("Study favorited")}
 
@@ -286,11 +287,12 @@ defmodule ListudyWeb.StudyController do
     |> redirect(to: NavigationHistory.last_path(conn))
   end
 
-  def unfavorite_study(conn, %{"study_id" => study_id}) do
+  def unfavorite_study(conn, %{"slug" => slug}) do
     user_id = Pow.Plug.current_user(conn).id
+    study = Studies.get_study_by_slug!(slug)
 
     {_, message} =
-      case StudyFavorites.unfavorite_study(user_id, study_id) do
+      case StudyFavorites.unfavorite_study(user_id, study.id) do
         {:ok, _} ->
           {:ok, gettext("Study unfavorited")}
 

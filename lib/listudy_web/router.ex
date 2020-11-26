@@ -149,8 +149,8 @@ defmodule ListudyWeb.Router do
 
     post "/comment", CommentController, :new_comment
     delete "/comment/:type/:id", CommentController, :delete_comment
-    post "/study_favorite", StudyController, :favorite_study
-    post "/study_unfavorite", StudyController, :unfavorite_study
+    post "/study_favorite/:slug", StudyController, :favorite_study
+    post "/study_unfavorite/:slug", StudyController, :unfavorite_study
   end
 
   scope "/", ListudyWeb do

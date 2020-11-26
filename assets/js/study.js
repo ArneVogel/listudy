@@ -19,6 +19,7 @@ const mode_free = "free_mode";
 const comments_div = "comments";
 
 let combo_count = 0;
+let show_arrows = true;
 
 function combo_text() {
     return "" + combo_count + "x ";
@@ -86,7 +87,9 @@ function give_hints(access) {
         let ft = san_to_uci(chess, m);
         shapes.push({orig: ft.from, dest: ft.to, brush: "hint"});
     }
-    ground.setShapes(shapes);
+    if (show_arrows) {
+        ground.setShapes(shapes);
+    }
     ground.redrawAll(); //TODO figure out how to remove this
 }
 
@@ -269,6 +272,28 @@ function setup_intro() {
     }
 }
 
+function toggle_arrows() {
+    let link = document.getElementById("arrows_toggle");
+    let curr = link.attributes["data-icon"].textContent;
+    let next = curr == "%" ? "$" : "%";
+    link.setAttribute("data-icon", next);
+    if (next == "$") {
+        // currently hidden
+        link.textContent = i18n.arrows_show;
+        show_arrows = false;
+        ground.setShapes([]);
+    } else {
+        link.textContent = i18n.arrows_hide;
+        show_arrows = true;
+        give_hints(curr_move);
+    }
+}
+
+function setup_hide_arrows() {
+    let link = document.getElementById("arrows_toggle");
+    link.onclick = toggle_arrows;
+}
+
 function main() {
     setup_ground();
     setup_chess();
@@ -283,6 +308,7 @@ function main() {
     setup_intro();
 
     start_training();
+    setup_hide_arrows();
 }
 
 window.onresize = resize_ground;

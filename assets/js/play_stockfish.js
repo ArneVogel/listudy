@@ -67,7 +67,7 @@ function main() {
     }
     let hash_splits = hash.split(";")
     let fen = hash_splits[0];
-    if (!fen.endsWith("0 1")) {
+    if (fen.endsWith("-")) {
         // Add 0 1 to fens like 
         // rnbqk2r/ppp1ppbp/3p1np1/8/3P4/3BPN2/PPP2PPP/RNBQK2R w KQkq -
         // Otherwise chess.js wont parse the fen correctly

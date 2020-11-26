@@ -3,7 +3,7 @@ defmodule ListudyWeb.PageController do
   alias Listudy.Content
 
   @languages ["en", "de"]
-  @pages ["privacy", "terms-of-service", "imprint", "copyright", "achievements"]
+  @pages ["privacy", "terms-of-service", "imprint", "copyright", "achievements", "icons"]
   @features ["blind-tactics"]
 
   def index(conn, %{"locale" => locale}) do

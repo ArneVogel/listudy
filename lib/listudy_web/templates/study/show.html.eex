@@ -15,17 +15,17 @@
         <select id="chapter_select"></select>
       </div>
 
-      <a id="play_stockfish" href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1">
-        <button>
-          <%= gettext "Play against Stockfish" %>
-        </button>
-      </a>
+      <div>
+        <a class="icon" data-icon="!" id="play_stockfish" href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1" title="<%= gettext "Play against Stockfish" %>">Stockfish</a>
+      
+        <%= if !@study.favorites do %>
+          <%= link gettext("Favorite"), to: Routes.study_path(@conn, :favorite_study, @study.slug), method: :post, class: "icon", "data-icon": "#" %>
+        <% else %>
+          <%= link gettext("Unfavorite"), to: Routes.study_path(@conn, :unfavorite_study, @study.slug), method: :post, class: "icon", "data-icon": '"' %>
+        <% end %>
 
-      <%= if !@study.favorites do %>
-        <%= render ListudyWeb.StudyView, "study_favorite.html", text: (gettext "Favorite this study"), study_id: Integer.to_string(@study.id), action: Routes.study_path(@conn, :favorite_study), conn: @conn%>
-      <% else %>
-        <%= render ListudyWeb.StudyView, "study_favorite.html", text: (gettext "Unfavorite this study"), study_id: Integer.to_string(@study.id), action: Routes.study_path(@conn, :unfavorite_study), conn: @conn%>
-      <% end %>
+        <nobr><a class="icon" data-icon="%" id="arrows_toggle">Hide Arrows</a></nobr>
+      </div>
     </div>
   </div>
 </div>
@@ -99,4 +99,6 @@
   i18n.suggestion_comment = "<%= gettext "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below." %>";
   i18n.suggestion_100moves = "<%= gettext "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect." %>";
   i18n.suggestion_250moves = "<%= raw gettext "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop." %>";
+  i18n.arrows_hide = "<%= gettext "Hide Arrows" %>";
+  i18n.arrows_show = "<%= gettext "Show Arrows" %>";
 </script>
