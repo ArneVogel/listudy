@@ -24,7 +24,8 @@
           <%= link gettext("Unfavorite"), to: Routes.study_path(@conn, :unfavorite_study, @study.slug), method: :post, class: "icon", "data-icon": '"' %>
         <% end %>
 
-        <nobr><a class="icon" data-icon="%" id="arrows_toggle">Hide Arrows</a></nobr>
+        <nobr><a class="icon" data-icon="%" id="arrows_toggle"><%= gettext("Hide Arrows") %></a></nobr>
+        <nobr><a class="icon" data-icon="%" id="line_review" title="<%= gettext("At the end of lines the board is only reset after 3 seconds giving you time to review the final position.") %>"><%= gettext("Slow board reset") %></a></nobr>
       </div>
     </div>
   </div>
@@ -101,4 +102,6 @@
   i18n.suggestion_250moves = "<%= raw gettext "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop." %>";
   i18n.arrows_hide = "<%= gettext "Hide Arrows" %>";
   i18n.arrows_show = "<%= gettext "Show Arrows" %>";
+  i18n.review_slow = "<%= gettext "Slow board reset" %>";
+  i18n.review_fast = "<%= gettext "Fast board reset" %>";
 </script>

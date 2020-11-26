@@ -20,6 +20,7 @@ const comments_div = "comments";
 
 let combo_count = 0;
 let show_arrows = true;
+let board_review = false;
 
 function combo_text() {
     return "" + combo_count + "x ";
@@ -61,6 +62,10 @@ async function handle_move(orig, dest) {
         if (reply == undefined) {
             achievement_end_of_line();
             set_text(success_div, right_move_text() + "\n" + i18n.success_end_of_line);
+            if (board_review) {
+                // user wants to do the slow board reset
+                await sleep(3000);
+            }
             start_training();
         } else {
             play_move(reply);
@@ -289,9 +294,24 @@ function toggle_arrows() {
     }
 }
 
-function setup_hide_arrows() {
-    let link = document.getElementById("arrows_toggle");
-    link.onclick = toggle_arrows;
+function toggle_review() {
+    let link = document.getElementById("line_review");
+    let curr = link.attributes["data-icon"].textContent;
+    let next = curr == "%" ? "$" : "%";
+    link.setAttribute("data-icon", next);
+    if (next == "$") {
+        link.textContent = i18n.review_fast;
+        board_review = true;
+    } else {
+        link.textContent = i18n.review_slow;
+        board_review = false;
+    }
+
+}
+
+function setup_configs() {
+    document.getElementById("arrows_toggle").onclick = toggle_arrows;
+    document.getElementById("line_review").onclick = toggle_review;
 }
 
 function main() {
@@ -308,7 +328,7 @@ function main() {
     setup_intro();
 
     start_training();
-    setup_hide_arrows();
+    setup_configs();
 }
 
 window.onresize = resize_ground;
