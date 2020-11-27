@@ -17,6 +17,7 @@ defmodule ListudyWeb.BookController do
   end
 
   def create(conn, %{"book" => book_params}) do
+    safe_cover(book_params)
     case Books.create_book(book_params) do
       {:ok, book} ->
         conn
@@ -43,6 +44,7 @@ defmodule ListudyWeb.BookController do
   def update(conn, %{"id" => id, "book" => book_params}) do
     book = Books.get_book!(id)
 
+    safe_cover(book_params)
     case Books.update_book(book, book_params) do
       {:ok, book} ->
         conn
@@ -62,4 +64,27 @@ defmodule ListudyWeb.BookController do
     |> put_flash(:info, "Book deleted successfully.")
     |> redirect(to: Routes.book_path(conn, :index))
   end
+
+  defp get_path(file) do
+    path = "priv/static/book_cover/"
+    File.mkdir(path)
+    path <> file
+  end
+
+  defp safe_cover(%{"cover" => cover, "slug" => slug}) do
+    file = cover.path
+    name = file_name(slug)
+    IO.puts(file)
+    IO.puts(slug)
+    IO.puts(name)
+    IO.puts(get_path(name))
+    File.cp(file, get_path(name))
+    File.rm(file)
+  end
+
+
+  defp file_name(slug) do
+    slug <> ".jpg"
+  end
+
 end
