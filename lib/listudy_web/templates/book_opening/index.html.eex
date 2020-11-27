@@ -1,0 +1,27 @@
+<h1>Listing Book opening</h1>
+
+<table>
+  <thead>
+    <tr>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for book_opening <- @book_opening do %>
+    <tr>
+
+      <td>
+      Book: <%= book_opening.book %>
+      Opening: <%= book_opening.opening %>
+
+        <span><%= link "Show", to: Routes.book_opening_path(@conn, :show, book_opening) %></span>
+        <span><%= link "Edit", to: Routes.book_opening_path(@conn, :edit, book_opening) %></span>
+        <span><%= link "Delete", to: Routes.book_opening_path(@conn, :delete, book_opening), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Book opening", to: Routes.book_opening_path(@conn, :new) %></span>

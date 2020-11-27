@@ -60,6 +60,12 @@ defmodule ListudyWeb.Router do
     resources "/events", EventController
     resources "/tactics", TacticController
 
+    resources "/book_opening", BookOpeningController
+    resources "/book_tag", BookTagController
+    resources "/books", BookController
+    resources "/tags", TagController
+    resources "/authors", AuthorController
+
     resources "/blind_tactics", BlindTacticController
   end
 

@@ -1,0 +1,25 @@
+<h1>Listing Book tag</h1>
+
+<table>
+  <thead>
+    <tr>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for book_tag <- @book_tag do %>
+    <tr>
+      <td>
+      Book: <%= book_tag.book %>
+      Tag: <%= book_tag.tag %>
+        <span><%= link "Show", to: Routes.book_tag_path(@conn, :show, book_tag) %></span>
+        <span><%= link "Edit", to: Routes.book_tag_path(@conn, :edit, book_tag) %></span>
+        <span><%= link "Delete", to: Routes.book_tag_path(@conn, :delete, book_tag), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Book tag", to: Routes.book_tag_path(@conn, :new) %></span>

@@ -1,0 +1,15 @@
+<h1>Show Book tag</h1>
+
+<ul>
+  <li>
+    <strong>Book:</strong>
+    <%= @book_tag.book %>
+  </li>
+  <li>
+    <strong>Tag:</strong>
+    <%= @book_tag.tag %>
+  </li>
+</ul>
+
+<span><%= link "Edit", to: Routes.book_tag_path(@conn, :edit, @book_tag) %></span>
+<span><%= link "Back", to: Routes.book_tag_path(@conn, :index) %></span>
