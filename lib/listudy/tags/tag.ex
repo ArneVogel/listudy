@@ -8,6 +8,8 @@ defmodule Listudy.Tags.Tag do
     field :summary, :string
     field :title, :string
 
+    has_many :book_tags, Listudy.BookTags.BookTag
+
     timestamps()
   end
 

@@ -2,8 +2,12 @@
 
 <p><%= @tag.summary %></p>
 
-<%= for book <- @books do %>
-  <%= book.title %>
+<%= for book_tag <- @tag.book_tags do %>
+  <% book = book_tag.book %>
+  <div>
+    <%= book.title %>
+    <%= book.author.name %>
+  </div>
 <% end %>
 
 <%= raw Earmark.as_html!(@tag.description) %>

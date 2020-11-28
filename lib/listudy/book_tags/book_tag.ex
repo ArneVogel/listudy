@@ -3,8 +3,8 @@ defmodule Listudy.BookTags.BookTag do
   import Ecto.Changeset
 
   schema "book_tag" do
-    field :book_id, :id
-    field :tag_id, :id
+    belongs_to(:book, Listudy.Books.Book)
+    belongs_to(:tag, Listudy.Tags.Tag)
 
     timestamps()
   end
