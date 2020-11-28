@@ -7,6 +7,7 @@ defmodule Listudy.Books do
   alias Listudy.Repo
 
   alias Listudy.Books.Book
+  alias Listudy.BookTags.BookTag
 
   @doc """
   Returns the list of books.
@@ -38,6 +39,17 @@ defmodule Listudy.Books do
   def get_book!(id), do: Repo.get!(Book, id)
 
   def get_book_by_slug!(slug), do: Repo.get_by(Book, slug: slug)
+
+  def get_books_by_tag(tag_id) do
+    query =
+      from b in Book,
+        join: t in BookTag,
+        on: b.id == t.book,
+        where: t.id == ^tag_id,
+        select: b
+
+    Repo.all(query)
+  end
 
   @doc """
   Creates a book.

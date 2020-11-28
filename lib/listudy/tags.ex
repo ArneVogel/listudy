@@ -33,8 +33,6 @@ defmodule Listudy.Tags do
     Repo.all(query)
   end
 
-
-
   @doc """
   Gets a single tag.
 
@@ -50,6 +48,8 @@ defmodule Listudy.Tags do
 
   """
   def get_tag!(id), do: Repo.get!(Tag, id)
+
+  def get_by_slug!(slug), do: Repo.get_by(Tag, slug: slug)
 
   @doc """
   Creates a tag.

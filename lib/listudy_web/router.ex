@@ -138,6 +138,7 @@ defmodule ListudyWeb.Router do
       layout: {ListudyWeb.LayoutView, :live},
       as: :player_tactics
 
+    get "/book/tag/:slug", TagController, :show
     get "/book/:slug", BookController, :show
 
     resources "/studies", StudyController

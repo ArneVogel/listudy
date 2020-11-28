@@ -2,6 +2,7 @@ defmodule ListudyWeb.TagController do
   use ListudyWeb, :controller
 
   alias Listudy.Tags
+  alias Listudy.Books
   alias Listudy.Tags.Tag
 
   def index(conn, _params) do
@@ -30,6 +31,13 @@ defmodule ListudyWeb.TagController do
     tag = Tags.get_tag!(id)
     render(conn, "show.html", tag: tag)
   end
+
+  def show(conn, %{"slug" => slug}) do
+    tag = Tags.get_by_slug!(slug)
+    books = Books.get_books_by_tag(tag.id)
+    render(conn, "public.html", tag: tag, books: books)
+  end
+
 
   def edit(conn, %{"id" => id}) do
     tag = Tags.get_tag!(id)

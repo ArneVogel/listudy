@@ -1,0 +1,10 @@
+<h1><%= @tag.title %></h1>
+
+<p><%= @tag.summary %></p>
+
+<%= for book <- @books do %>
+  <%= book.title %>
+<% end %>
+
+<%= raw Earmark.as_html!(@tag.description) %>
+
