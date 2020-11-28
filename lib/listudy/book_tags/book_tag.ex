@@ -3,8 +3,8 @@ defmodule Listudy.BookTags.BookTag do
   import Ecto.Changeset
 
   schema "book_tag" do
-    field :book, :id
-    field :tag, :id
+    field :book_id, :id
+    field :tag_id, :id
 
     timestamps()
   end
@@ -12,7 +12,7 @@ defmodule Listudy.BookTags.BookTag do
   @doc false
   def changeset(book_tag, attrs) do
     book_tag
-    |> cast(attrs, [:book, :tag])
-    |> validate_required([:book, :tag])
+    |> cast(attrs, [:book_id, :tag_id])
+    |> validate_required([:book_id, :tag_id])
   end
 end

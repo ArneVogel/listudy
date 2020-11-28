@@ -3,13 +3,13 @@ defmodule Listudy.Repo.Migrations.CreateBookTag do
 
   def change do
     create table(:book_tag) do
-      add :book, references(:books, on_delete: :nothing)
-      add :tag, references(:tags, on_delete: :nothing)
+      add :book_id, references(:books, on_delete: :nothing)
+      add :tag_id, references(:tags, on_delete: :nothing)
 
       timestamps()
     end
 
-    create index(:book_tag, [:book])
-    create index(:book_tag, [:tag])
+    create index(:book_tag, [:book_id])
+    create index(:book_tag, [:tag_id])
   end
 end

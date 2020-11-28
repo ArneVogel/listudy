@@ -1,6 +1,6 @@
 <div class="row">
   <div class="two-thirds column">
-    <b><%= @author.name %></b>
+    <b><%= @book.author.name %></b>
     <h1><%= @book.title %></h1>
     <p><%= @book.summary %></p>
     <%= if length(@tags) > 0 do %>

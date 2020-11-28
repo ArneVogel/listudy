@@ -5,8 +5,8 @@
     </div>
   <% end %>
 
-  <label for="book_tag[book]">Book</label>
-  <select name="book_tag[book]" id="book">
+  <label for="book_tag[book_id]">Book</label>
+  <select name="book_tag[book_id]" id="book">
   <%= for book <- @books do %>
     <option value="<%= book.id%>">
       <%= book.title %>
@@ -14,8 +14,8 @@
   <% end %>
   </select>
 
-  <label for="book_tag[tag]">Tag</label>
-  <select name="book_tag[tag]" id="tag">
+  <label for="book_tag[tag_id]">Tag</label>
+  <select name="book_tag[tag_id]" id="tag">
   <%= for tag <- @tags do %>
     <option value="<%= tag.id%>">
       <%= tag.title %>

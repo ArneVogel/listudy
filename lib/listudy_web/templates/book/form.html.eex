@@ -13,8 +13,8 @@
   <%= text_input f, :slug %>
   <%= error_tag f, :slug %>
 
-  <label for="book[author]">Motif</label>
-  <select name="book[author]" id="author">
+  <label for="book[author_id]">Author</label>
+  <select name="book[author_id]" id="author">
   <%= for author <- @authors do %>
     <option value="<%= author.id%>">
       <%= author.name %>

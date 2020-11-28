@@ -12,8 +12,8 @@
     <tr>
 
       <td>
-      Book: <%= book_opening.book %>
-      Opening: <%= book_opening.opening %>
+      Book: <%= book_opening.book_id %>
+      Opening: <%= book_opening.opening_id %>
 
         <span><%= link "Show", to: Routes.book_opening_path(@conn, :show, book_opening) %></span>
         <span><%= link "Edit", to: Routes.book_opening_path(@conn, :edit, book_opening) %></span>

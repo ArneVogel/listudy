@@ -26,8 +26,8 @@ defmodule Listudy.Tags do
     query =
       from t in Tag,
         join: b in BookTag,
-        on: t.id == b.tag,
-        where: b.book == ^id,
+        on: t.id == b.tag_id,
+        where: b.book_id == ^id,
         select: t
 
     Repo.all(query)

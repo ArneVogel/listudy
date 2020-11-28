@@ -26,8 +26,8 @@ defmodule Listudy.BookOpenings do
     query =
       from b in BookOpening,
         join: o in Opening,
-        on: b.opening == o.id,
-        where: b.book == ^book_id,
+        on: b.opening_id == o.id,
+        where: b.book_id == ^book_id,
         select: o
 
     Repo.all(query)

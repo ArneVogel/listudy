@@ -4,8 +4,8 @@
       <p>Oops, something went wrong! Please check the errors below.</p>
     </div>
   <% end %>
-  <label for="book_opening[book]">Book</label>
-  <select name="book_opening[book]" id="book">
+  <label for="book_opening[book_id]">Book</label>
+  <select name="book_opening[book_id]" id="book">
   <%= for book <- @books do %>
     <option value="<%= book.id%>">
       <%= book.title %>
@@ -13,8 +13,8 @@
   <% end %>
   </select>
 
-  <label for="book_opening[opening]">Opening</label>
-  <select name="book_opening[opening]" id="opening">
+  <label for="book_opening[opening_id]">Opening</label>
+  <select name="book_opening[opening_id]" id="opening">
   <%= for opening <- @openings do %>
     <option value="<%= opening.id%>">
       <%= opening.name %>

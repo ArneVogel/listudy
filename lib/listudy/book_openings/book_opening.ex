@@ -3,8 +3,8 @@ defmodule Listudy.BookOpenings.BookOpening do
   import Ecto.Changeset
 
   schema "book_opening" do
-    field :book, :id
-    field :opening, :id
+    field :book_id, :id
+    field :opening_id, :id
 
     timestamps()
   end
@@ -12,7 +12,7 @@ defmodule Listudy.BookOpenings.BookOpening do
   @doc false
   def changeset(book_opening, attrs) do
     book_opening
-    |> cast(attrs, [:book, :opening])
-    |> validate_required([:book, :opening])
+    |> cast(attrs, [:book_id, :opening_id])
+    |> validate_required([:book_id, :opening_id])
   end
 end

@@ -38,13 +38,13 @@ defmodule Listudy.Books do
   """
   def get_book!(id), do: Repo.get!(Book, id)
 
-  def get_book_by_slug!(slug), do: Repo.get_by(Book, slug: slug)
+  def get_book_by_slug!(slug), do: Repo.get_by(Book, slug: slug) |> Repo.preload(:author)
 
   def get_books_by_tag(tag_id) do
     query =
       from b in Book,
         join: t in BookTag,
-        on: b.id == t.book,
+        on: b.id == t.book_id,
         where: t.id == ^tag_id,
         select: b
 

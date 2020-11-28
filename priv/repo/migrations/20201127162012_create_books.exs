@@ -10,11 +10,11 @@ defmodule Listudy.Repo.Migrations.CreateBooks do
       add :amazon_id, :string
       add :summary, :text
       add :text, :text
-      add :author, references(:authors, on_delete: :nothing)
+      add :author_id, references(:authors, on_delete: :nothing)
 
       timestamps()
     end
 
-    create index(:books, [:author])
+    create index(:books, [:author_id])
   end
 end

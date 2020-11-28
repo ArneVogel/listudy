@@ -39,11 +39,10 @@ defmodule ListudyWeb.BookController do
 
   def show(conn, %{"slug" => slug}) do
     book = Books.get_book_by_slug!(slug)
-    author = Authors.get_author!(book.author)
     tags = Tags.get_by_book(book.id)
     recommendations = ExpertRecommendations.get_by_book(book.id)
     openings = BookOpenings.get_by_book(book.id)
-    render(conn, "public.html", book: book, openings: openings, author: author, tags: tags, recommendations: recommendations, noindex: true)
+    render(conn, "public.html", book: book, openings: openings, tags: tags, recommendations: recommendations, noindex: true)
   end
 
   def edit(conn, %{"id" => id}) do

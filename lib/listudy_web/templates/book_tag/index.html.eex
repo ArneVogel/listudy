@@ -11,8 +11,8 @@
 <%= for book_tag <- @book_tag do %>
     <tr>
       <td>
-      Book: <%= book_tag.book %>
-      Tag: <%= book_tag.tag %>
+      Book: <%= book_tag.book_id %>
+      Tag: <%= book_tag.tag_id %>
         <span><%= link "Show", to: Routes.book_tag_path(@conn, :show, book_tag) %></span>
         <span><%= link "Edit", to: Routes.book_tag_path(@conn, :edit, book_tag) %></span>
         <span><%= link "Delete", to: Routes.book_tag_path(@conn, :delete, book_tag), method: :delete, data: [confirm: "Are you sure?"] %></span>

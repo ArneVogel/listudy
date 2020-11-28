@@ -39,7 +39,7 @@
 
   <li>
     <strong>Author:</strong>
-    <%= @book.author %>
+    <%= @book.author_id %>
   </li>
 
 

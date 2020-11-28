@@ -1,5 +1,6 @@
 defmodule Listudy.Books.Book do
   use Ecto.Schema
+  alias Listudy.Authors.Author
   import Ecto.Changeset
 
   schema "books" do
@@ -10,7 +11,7 @@ defmodule Listudy.Books.Book do
     field :text, :string
     field :title, :string
     field :year, :integer
-    field :author, :id
+    belongs_to(:author, Author)
 
     timestamps()
   end
@@ -18,7 +19,7 @@ defmodule Listudy.Books.Book do
   @doc false
   def changeset(book, attrs) do
     book
-    |> cast(attrs, [:title, :slug, :year, :isbn, :amazon_id, :summary, :text, :author])
-    |> validate_required([:title, :slug, :year, :isbn, :amazon_id, :summary, :text, :author])
+    |> cast(attrs, [:title, :slug, :year, :isbn, :amazon_id, :summary, :text, :author_id])
+    |> validate_required([:title, :slug, :year, :isbn, :amazon_id, :summary, :text, :author_id])
   end
 end

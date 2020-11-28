@@ -3,11 +3,11 @@
 <ul>
   <li>
     <strong>Book:</strong>
-    <%= @book_opening.book %>
+    <%= @book_opening.book_id %>
   </li>
   <li>
     <strong>Opening:</strong>
-    <%= @book_opening.opening %>
+    <%= @book_opening.opening_id %>
   </li>
 </ul>
 
