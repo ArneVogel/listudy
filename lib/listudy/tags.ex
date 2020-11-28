@@ -27,7 +27,7 @@ defmodule Listudy.Tags do
       from t in Tag,
         join: b in BookTag,
         on: t.id == b.tag,
-        where: t.id == ^id,
+        where: b.book == ^id,
         select: t
 
     Repo.all(query)

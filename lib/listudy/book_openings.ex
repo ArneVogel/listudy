@@ -7,6 +7,7 @@ defmodule Listudy.BookOpenings do
   alias Listudy.Repo
 
   alias Listudy.BookOpenings.BookOpening
+  alias Listudy.Openings.Opening
 
   @doc """
   Returns the list of book_opening.
@@ -20,6 +21,19 @@ defmodule Listudy.BookOpenings do
   def list_book_opening do
     Repo.all(BookOpening)
   end
+
+  def get_by_book(book_id) do
+    query =
+      from b in BookOpening,
+        join: o in Opening,
+        on: b.opening == o.id,
+        where: b.book == ^book_id,
+        select: o
+
+    Repo.all(query)
+  end
+
+
 
   @doc """
   Gets a single book_opening.

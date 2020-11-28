@@ -4,7 +4,9 @@ defmodule ListudyWeb.BookController do
   alias Listudy.Books
   alias Listudy.Tags
   alias Listudy.Authors
+  alias Listudy.ExpertRecommendations
   alias Listudy.Books.Book
+  alias Listudy.BookOpenings
 
   def index(conn, _params) do
     books = Books.list_books()
@@ -39,7 +41,9 @@ defmodule ListudyWeb.BookController do
     book = Books.get_book_by_slug!(slug)
     author = Authors.get_author!(book.author)
     tags = Tags.get_by_book(book.id)
-    render(conn, "public.html", book: book, author: author, tags: tags, noindex: true)
+    recommendations = ExpertRecommendations.get_by_book(book.id)
+    openings = BookOpenings.get_by_book(book.id)
+    render(conn, "public.html", book: book, openings: openings, author: author, tags: tags, recommendations: recommendations, noindex: true)
   end
 
   def edit(conn, %{"id" => id}) do

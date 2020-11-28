@@ -1,4 +1,15 @@
 .book-container {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+/* 
+ * START 3D BOOK CSS
+ * Generated with:
+ * https://github.com/scastiel/3d-book-image-css-generator
+ * license: MIT
+ */
+.book-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,3 +99,6 @@
   border-radius: 0 2px 2px 0;
   box-shadow: -10px 0 50px 10px #666;
 }
+/*
+ * END 3D BOOK CSS
+ */

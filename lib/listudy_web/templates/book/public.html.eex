@@ -4,11 +4,23 @@
     <h1><%= @book.title %></h1>
     <p><%= @book.summary %></p>
     <%= if length(@tags) > 0 do %>
-    <b>Tags</b>
+    <div>
+      <b><%= gettext("Tags") %>:</b>
+      <%= for tag <- @tags do %>
+        <%= link tag.title, to: Routes.tag_path(@conn, :show, @locale, tag.slug) %>
+      <% end %>
+    </div>
     <% end %>
-    <%= for tag <- @tags do %>
-      <%= tag.title %>
+    <%= if length(@tags) > 0 do %>
+    <div>
+      <b><%= gettext("Opening") %>:</b>
+      <%= for opening <- @openings do %>
+        <%= link opening.name, to: Routes.opening_path(@conn, :show, @locale, opening.slug) %>
+      <% end %>
+    </div>
     <% end %>
+
+
 
   </div>
   <div class="one-third column">
@@ -22,5 +34,19 @@
     </a>
   </div>
 </div>
+<%= if length(@recommendations) > 0 do %>
+  <div>
+  <h2><%= gettext("Recommendations") %></h2>
+  <%= for {recommendation, player}<- @recommendations do %>
+    <figure>
+        <blockquote>
+          <p><%= recommendation.text %></p>
+        </blockquote>
+        <figcaption>—<%= player.name %>, <i><%= recommendation.source %></i></figcaption>
+    </figure>
+
+  <% end %>
+  </div>
+<% end %>
 
 <%= raw Earmark.as_html!(@book.text)%>

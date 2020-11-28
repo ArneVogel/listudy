@@ -65,6 +65,7 @@ defmodule ListudyWeb.Router do
     resources "/books", BookController
     resources "/tags", TagController
     resources "/authors", AuthorController
+    resources "/expert_recommendation", ExpertRecommendationController
 
     resources "/blind_tactics", BlindTacticController
   end
@@ -138,8 +139,8 @@ defmodule ListudyWeb.Router do
       layout: {ListudyWeb.LayoutView, :live},
       as: :player_tactics
 
-    get "/book/tag/:slug", TagController, :show
-    get "/book/:slug", BookController, :show
+    get "/books/list/:slug", TagController, :show
+    get "/books/:slug", BookController, :show
 
     resources "/studies", StudyController
     get "/blog", PostController, :index

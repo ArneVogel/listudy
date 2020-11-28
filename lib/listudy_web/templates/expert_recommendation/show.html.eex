@@ -1,0 +1,18 @@
+<h1>Show Expert recommendation</h1>
+
+<ul>
+
+  <li>
+    <strong>Text:</strong>
+    <%= @expert_recommendation.text %>
+  </li>
+
+  <li>
+    <strong>Source:</strong>
+    <%= @expert_recommendation.source %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.expert_recommendation_path(@conn, :edit, @expert_recommendation) %></span>
+<span><%= link "Back", to: Routes.expert_recommendation_path(@conn, :index) %></span>

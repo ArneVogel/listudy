@@ -1,0 +1,38 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <label for="expert_recommendation[book]">Book</label>
+  <select name="expert_recommendation[book]" id="book">
+  <%= for book <- @books do %>
+    <option value="<%= book.id%>">
+      <%= book.title %>
+    </option>
+  <% end %>
+  </select>
+
+  <label for="expert_recommendation[player]">Expert</label>
+  <select name="expert_recommendation[player]" id="player">
+  <%= for player <- @players do %>
+    <option value="<%= player.id%>">
+      <%= player.name %>
+    </option>
+  <% end %>
+  </select>
+
+
+  <%= label f, :text %>
+  <%= textarea f, :text %>
+  <%= error_tag f, :text %>
+
+  <%= label f, :source %>
+  <%= textarea f, :source %>
+  <%= error_tag f, :source %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>
