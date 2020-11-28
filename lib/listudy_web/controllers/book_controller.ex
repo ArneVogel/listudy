@@ -93,6 +93,9 @@ defmodule ListudyWeb.BookController do
     File.rm(file)
   end
 
+  defp safe_cover(_) do
+  end
+
 
   defp file_name(slug) do
     slug <> ".jpg"
