@@ -7,6 +7,7 @@ defmodule Listudy.Tags do
   alias Listudy.Repo
 
   alias Listudy.Tags.Tag
+  alias Listudy.BookTags.BookTag
 
   @doc """
   Returns the list of tags.
@@ -20,6 +21,19 @@ defmodule Listudy.Tags do
   def list_tags do
     Repo.all(Tag)
   end
+
+  def get_by_book(id) do
+    query =
+      from t in Tag,
+        join: b in BookTag,
+        on: t.id == b.tag,
+        where: t.id == ^id,
+        select: t
+
+    Repo.all(query)
+  end
+
+
 
   @doc """
   Gets a single tag.

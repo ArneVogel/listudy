@@ -37,6 +37,8 @@ defmodule Listudy.Books do
   """
   def get_book!(id), do: Repo.get!(Book, id)
 
+  def get_book_by_slug!(slug), do: Repo.get_by(Book, slug: slug)
+
   @doc """
   Creates a book.
 

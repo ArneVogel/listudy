@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="two-thirds column">
+    <b><%= @author.name %></b>
+    <h1><%= @book.title %></h1>
+    <p><%= @book.summary %></p>
+    <%= if length(@tags) > 0 do %>
+    <b>Tags</b>
+    <% end %>
+    <%= for tag <- @tags do %>
+      <%= tag.title %>
+    <% end %>
+
+  </div>
+  <div class="one-third column">
+    <a class="book-container" href="#" rel="noreferrer noopener">
+      <div class="book">
+        <img
+          alt="<%= gettext("%{book_name} book cover", book_name: @book.title) %>"
+          src="/book_cover/<%= @book.slug %>.jpg"
+          />
+      </div>
+    </a>
+  </div>
+</div>
+
+<%= raw Earmark.as_html!(@book.text)%>

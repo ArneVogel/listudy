@@ -2,6 +2,7 @@ defmodule ListudyWeb.BookController do
   use ListudyWeb, :controller
 
   alias Listudy.Books
+  alias Listudy.Tags
   alias Listudy.Authors
   alias Listudy.Books.Book
 
@@ -32,6 +33,13 @@ defmodule ListudyWeb.BookController do
   def show(conn, %{"id" => id}) do
     book = Books.get_book!(id)
     render(conn, "show.html", book: book)
+  end
+
+  def show(conn, %{"slug" => slug}) do
+    book = Books.get_book_by_slug!(slug)
+    author = Authors.get_author!(book.author)
+    tags = Tags.get_by_book(book.id)
+    render(conn, "public.html", book: book, author: author, tags: tags, noindex: true)
   end
 
   def edit(conn, %{"id" => id}) do
