@@ -4,11 +4,9 @@
 
 <%= for book_tag <- @tag.book_tags do %>
   <% book = book_tag.book %>
-  <div>
-    <%= book.title %>
-    <%= book.author.name %>
-  </div>
+  <%= render ListudyWeb.BookView, "thumb.html", Map.put(assigns, :book, book_tag.book) %>
 <% end %>
+
 
 <%= raw Earmark.as_html!(@tag.description) %>
 

@@ -3,6 +3,24 @@
     margin-bottom: 1em;
 }
 
+.book-thumb {
+    border: 1px solid var(--font-color);
+    margin: 1em;
+    padding: 1em;
+}
+
+.small-book,
+.small-book > :first-child,
+.book::after {
+    width: 100px !important;
+    height: 150px !important;
+}
+.small-book::before {
+    width: 48px !important;
+    height: 144px !important;
+    transform: translateX(72px) rotateY(90deg) !important;
+}
+
 /* 
  * START 3D BOOK CSS
  * Generated with:
