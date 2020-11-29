@@ -25,6 +25,22 @@
     color: var(--font-color);
 }
 
+.book-page-intro {
+    padding: 1em;
+    border: 1px solid var(--font-color);
+    border-radius: var(--small-border-radius);
+    margin-bottom: 1em;
+    position: relative;
+}
+
+@media (min-width: 600px) {                  
+    .book-page-intro-bottom {
+        position: absolute;                  
+        bottom: 1em;                          
+        left: 1em;  
+    }
+}
+
 /* 
  * START 3D BOOK CSS
  * Generated with:
