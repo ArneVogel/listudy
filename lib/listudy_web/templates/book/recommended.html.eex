@@ -1,0 +1,10 @@
+<h1><%= gettext("Grandmaster recommended") %> <nobr><%= gettext("Chess Books") %></nobr></h1>
+<p><%= dgettext "recommended", "The 20 best chess books as recommended by Grandmasters." %></p>
+
+<%= for book <- @books do %>
+  <%= book.title %>
+  <%= for er <- book.expert_recommendations do %>
+    <%= er.player.name %>
+  <% end %>
+<% end %>
+

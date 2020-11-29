@@ -12,6 +12,9 @@ defmodule Listudy.Books.Book do
     field :title, :string
     field :year, :integer
     belongs_to(:author, Author)
+    has_many :book_openings, Listudy.BookOpenings.BookOpening
+    has_many :book_tags, Listudy.BookTags.BookTag
+    has_many :expert_recommendations, Listudy.ExpertRecommendations.ExpertRecommendation
 
     timestamps()
   end

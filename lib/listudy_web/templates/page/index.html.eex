@@ -17,8 +17,23 @@
     <p><%= gettext "Get better at identifying and exploiting tactics." %></p>
     <p><%= gettext "Train your tactical abilities: "%> <%= link (gettext "Tactics"), to: Routes.tactic_path(@conn, :random, @locale) %></p>
   </div>
-
 </div>
+
+<div class="row">
+  <div class="one-half column">
+    <h2><%= gettext "Books" %></h2>
+    <p><%= gettext "Find the best chess books for you." %></p>
+    <p><%= gettext "Discover the greatest books with the help of Grandmaster recommendations." %></p>
+    <p><%= gettext "Explore the" %> <%= link (gettext "best books"), to: Routes.book_path(@conn, :recommended, @locale) %>.</p>
+  </div>
+  <div class="one-half column">
+    <h2><%= gettext "Endgames" %></h2>
+    <p><%= gettext "Become unbeatable in endgames." %></p>
+    <p><%= gettext "Train endgames against Stockfish to become skilled and ready to take on any human opponent." %></p>
+    <p><%= gettext "Train your endgame abilities: "%> <%= link (gettext "Endgames"), to: Routes.endgame_path(@conn, :index, @locale) %></p>
+  </div>
+</div>
+
 
 <div class="row">
   <div class="one-half column">

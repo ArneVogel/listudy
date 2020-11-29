@@ -139,6 +139,7 @@ defmodule ListudyWeb.Router do
       layout: {ListudyWeb.LayoutView, :live},
       as: :player_tactics
 
+    get "/books/best-chess-books", BookController, :recommended
     get "/books/list/:slug", TagController, :show
     get "/books/author/:slug", AuthorController, :show
     get "/books/:slug", BookController, :show

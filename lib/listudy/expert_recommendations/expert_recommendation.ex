@@ -5,8 +5,8 @@ defmodule Listudy.ExpertRecommendations.ExpertRecommendation do
   schema "expert_recommendation" do
     field :source, :string
     field :text, :string
-    field :player, :id
-    field :book, :id
+    belongs_to(:book, Listudy.Books.Book)
+    belongs_to(:player, Listudy.Players.Player)
 
     timestamps()
   end
@@ -14,7 +14,7 @@ defmodule Listudy.ExpertRecommendations.ExpertRecommendation do
   @doc false
   def changeset(expert_recommendation, attrs) do
     expert_recommendation
-    |> cast(attrs, [:text, :source, :player, :book])
-    |> validate_required([:text, :source, :player, :book])
+    |> cast(attrs, [:text, :source, :player_id, :book_id])
+    |> validate_required([:text, :source, :player_id, :book_id])
   end
 end

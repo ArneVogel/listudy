@@ -26,7 +26,7 @@ defmodule Listudy.ExpertRecommendations do
     query =
       from r in ExpertRecommendation,
         join: p in Player,
-        on: r.player == p.id,
+        on: r.player_id == p.id,
         where: p.id == ^book,
         select: {r, p}
 

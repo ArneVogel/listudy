@@ -5,8 +5,8 @@
     </div>
   <% end %>
 
-  <label for="expert_recommendation[book]">Book</label>
-  <select name="expert_recommendation[book]" id="book">
+  <label for="expert_recommendation[book_id]">Book</label>
+  <select name="expert_recommendation[book_id]" id="book">
   <%= for book <- @books do %>
     <option value="<%= book.id%>">
       <%= book.title %>
@@ -14,8 +14,8 @@
   <% end %>
   </select>
 
-  <label for="expert_recommendation[player]">Expert</label>
-  <select name="expert_recommendation[player]" id="player">
+  <label for="expert_recommendation[player_id]">Expert</label>
+  <select name="expert_recommendation[player_id]" id="player">
   <%= for player <- @players do %>
     <option value="<%= player.id%>">
       <%= player.name %>

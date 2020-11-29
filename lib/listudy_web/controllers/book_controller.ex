@@ -52,6 +52,11 @@ defmodule ListudyWeb.BookController do
     )
   end
 
+  def recommended(conn, _) do
+    books = Books.recommended_books()
+    render(conn, "recommended.html", books: books)
+  end
+
   def edit(conn, %{"id" => id}) do
     book = Books.get_book!(id)
     authors = Authors.list_authors()
