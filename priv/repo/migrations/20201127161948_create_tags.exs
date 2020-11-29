@@ -10,6 +10,5 @@ defmodule Listudy.Repo.Migrations.CreateTags do
 
       timestamps()
     end
-
   end
 end

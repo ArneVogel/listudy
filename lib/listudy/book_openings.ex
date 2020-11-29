@@ -33,8 +33,6 @@ defmodule Listudy.BookOpenings do
     Repo.all(query)
   end
 
-
-
   @doc """
   Gets a single book_opening.
 

@@ -37,7 +37,6 @@ defmodule ListudyWeb.TagController do
     render(conn, "public.html", tag: tag)
   end
 
-
   def edit(conn, %{"id" => id}) do
     tag = Tags.get_tag!(id)
     changeset = Tags.change_tag(tag)

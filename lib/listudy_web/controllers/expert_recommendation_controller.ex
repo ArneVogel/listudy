@@ -44,20 +44,28 @@ defmodule ListudyWeb.ExpertRecommendationController do
   def update(conn, %{"id" => id, "expert_recommendation" => expert_recommendation_params}) do
     expert_recommendation = ExpertRecommendations.get_expert_recommendation!(id)
 
-    case ExpertRecommendations.update_expert_recommendation(expert_recommendation, expert_recommendation_params) do
+    case ExpertRecommendations.update_expert_recommendation(
+           expert_recommendation,
+           expert_recommendation_params
+         ) do
       {:ok, expert_recommendation} ->
         conn
         |> put_flash(:info, "Expert recommendation updated successfully.")
         |> redirect(to: Routes.expert_recommendation_path(conn, :show, expert_recommendation))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", expert_recommendation: expert_recommendation, changeset: changeset)
+        render(conn, "edit.html",
+          expert_recommendation: expert_recommendation,
+          changeset: changeset
+        )
     end
   end
 
   def delete(conn, %{"id" => id}) do
     expert_recommendation = ExpertRecommendations.get_expert_recommendation!(id)
-    {:ok, _expert_recommendation} = ExpertRecommendations.delete_expert_recommendation(expert_recommendation)
+
+    {:ok, _expert_recommendation} =
+      ExpertRecommendations.delete_expert_recommendation(expert_recommendation)
 
     conn
     |> put_flash(:info, "Expert recommendation deleted successfully.")

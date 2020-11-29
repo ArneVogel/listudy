@@ -21,6 +21,7 @@ defmodule ListudyWeb.BookController do
 
   def create(conn, %{"book" => book_params}) do
     safe_cover(book_params)
+
     case Books.create_book(book_params) do
       {:ok, book} ->
         conn
@@ -42,7 +43,13 @@ defmodule ListudyWeb.BookController do
     tags = Tags.get_by_book(book.id)
     recommendations = ExpertRecommendations.get_by_book(book.id)
     openings = BookOpenings.get_by_book(book.id)
-    render(conn, "public.html", book: book, openings: openings, tags: tags, recommendations: recommendations)
+
+    render(conn, "public.html",
+      book: book,
+      openings: openings,
+      tags: tags,
+      recommendations: recommendations
+    )
   end
 
   def edit(conn, %{"id" => id}) do
@@ -56,6 +63,7 @@ defmodule ListudyWeb.BookController do
     book = Books.get_book!(id)
 
     safe_cover(book_params)
+
     case Books.update_book(book, book_params) do
       {:ok, book} ->
         conn
@@ -96,9 +104,7 @@ defmodule ListudyWeb.BookController do
   defp safe_cover(_) do
   end
 
-
   defp file_name(slug) do
     slug <> ".jpg"
   end
-
 end

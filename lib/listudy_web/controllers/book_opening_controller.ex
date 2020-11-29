@@ -42,7 +42,13 @@ defmodule ListudyWeb.BookOpeningController do
     openings = Openings.list_openings()
     books = Books.list_books()
     changeset = BookOpenings.change_book_opening(book_opening)
-    render(conn, "edit.html", book_opening: book_opening, changeset: changeset, books: books, openings: openings)
+
+    render(conn, "edit.html",
+      book_opening: book_opening,
+      changeset: changeset,
+      books: books,
+      openings: openings
+    )
   end
 
   def update(conn, %{"id" => id, "book_opening" => book_opening_params}) do

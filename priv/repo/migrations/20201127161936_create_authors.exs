@@ -9,6 +9,5 @@ defmodule Listudy.Repo.Migrations.CreateAuthors do
 
       timestamps()
     end
-
   end
 end
