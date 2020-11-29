@@ -51,6 +51,22 @@ defmodule Listudy.Books do
     Repo.all(query)
   end
 
+  def search_by_title(word) do
+    word = "%" <> word <> "%"
+
+    query =
+      from b in Book,
+        join: a in Listudy.Authors.Author,
+        on: a.id == b.author_id,
+        where:
+          like(fragment("lower(?)", b.title), fragment("lower(?)", ^word)) or
+            like(fragment("lower(?)", a.name), fragment("lower(?)", ^word)),
+        limit: 20,
+        order_by: [desc: b.updated_at]
+
+    Repo.all(query) |> Repo.preload(:author)
+  end
+
   @doc """
   Creates a book.
 

@@ -142,6 +142,7 @@ defmodule ListudyWeb.Router do
     get "/books/list/:slug", TagController, :show
     get "/books/author/:slug", AuthorController, :show
     get "/books/:slug", BookController, :show
+    live "/books", BookSearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :book_search
 
     resources "/studies", StudyController
     get "/blog", PostController, :index
