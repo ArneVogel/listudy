@@ -42,7 +42,7 @@ defmodule ListudyWeb.BookController do
     tags = Tags.get_by_book(book.id)
     recommendations = ExpertRecommendations.get_by_book(book.id)
     openings = BookOpenings.get_by_book(book.id)
-    render(conn, "public.html", book: book, openings: openings, tags: tags, recommendations: recommendations, noindex: true)
+    render(conn, "public.html", book: book, openings: openings, tags: tags, recommendations: recommendations)
   end
 
   def edit(conn, %{"id" => id}) do
