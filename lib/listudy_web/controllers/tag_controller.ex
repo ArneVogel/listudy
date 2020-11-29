@@ -34,8 +34,7 @@ defmodule ListudyWeb.TagController do
 
   def show(conn, %{"slug" => slug}) do
     tag = Tags.get_by_slug!(slug)
-    books = Books.get_books_by_tag(tag.id)
-    render(conn, "public.html", tag: tag, books: books)
+    render(conn, "public.html", tag: tag)
   end
 
 

@@ -21,6 +21,10 @@
     transform: translateX(72px) rotateY(90deg) !important;
 }
 
+.book-author {
+    color: var(--font-color);
+}
+
 /* 
  * START 3D BOOK CSS
  * Generated with:

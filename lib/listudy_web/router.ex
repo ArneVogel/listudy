@@ -140,6 +140,7 @@ defmodule ListudyWeb.Router do
       as: :player_tactics
 
     get "/books/list/:slug", TagController, :show
+    get "/books/author/:slug", AuthorController, :show
     get "/books/:slug", BookController, :show
 
     resources "/studies", StudyController

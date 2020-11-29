@@ -30,6 +30,11 @@ defmodule ListudyWeb.AuthorController do
     author = Authors.get_author!(id)
     render(conn, "show.html", author: author)
   end
+  def show(conn, %{"slug" => slug}) do
+    author = Authors.get_by_slug!(slug)
+    render(conn, "public.html", author: author)
+  end
+
 
   def edit(conn, %{"id" => id}) do
     author = Authors.get_author!(id)

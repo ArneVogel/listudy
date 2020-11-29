@@ -7,6 +7,8 @@ defmodule Listudy.Authors.Author do
     field :name, :string
     field :slug, :string
 
+    has_many :books, Listudy.Books.Book
+
     timestamps()
   end
 

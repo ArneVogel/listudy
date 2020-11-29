@@ -1,6 +1,6 @@
 <div class="row">
   <div class="two-thirds column">
-    <b><%= @book.author.name %></b>
+    <b><%= link @book.author.name, to: Routes.author_path(@conn, :show, @locale, @book.author.slug), class: "book-author" %></b>
     <h1><%= @book.title %></h1>
     <p><%= @book.summary %></p>
     <%= if length(@tags) > 0 do %>
