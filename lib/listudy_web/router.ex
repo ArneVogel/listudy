@@ -85,6 +85,7 @@ defmodule ListudyWeb.Router do
     pipe_through :browser
 
     get "/sitemap.xml", SitemapController, :index
+    get "/sitemap.books.xml", SitemapController, :books
     live "/studies/search", StudySearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :search
     live "/events", EventSearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :event_search
 

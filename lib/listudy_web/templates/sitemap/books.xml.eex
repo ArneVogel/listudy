@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+     <loc><%= base_url() <> Routes.book_path(@conn, :recommended, @locale) %></loc>
+   </url>
+  <%= for tag <- @tags do %>
+   <url>
+     <loc><%= base_url() <> Routes.tag_path(@conn, :show, @locale, tag.slug) %></loc>
+     <lastmod><%= format_date(tag.updated_at) %></lastmod>
+   </url>
+  <% end %>
+  <%= for book <- @books do %>
+   <url>
+     <loc><%= base_url() <> Routes.book_path(@conn, :show, @locale, book.slug) %></loc>
+     <lastmod><%= format_date(book.updated_at) %></lastmod>
+   </url>
+  <% end %>
+  <%= for author <- @authors do %>
+   <url>
+     <loc><%= base_url() <> Routes.author_path(@conn, :show, @locale, author.slug) %></loc>
+     <lastmod><%= format_date(author.updated_at) %></lastmod>
+   </url>
+  <% end %>
+</urlset>
