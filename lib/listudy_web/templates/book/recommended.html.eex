@@ -32,3 +32,5 @@
 
 <% end %>
 
+<p><%= dgettext "recommended", "These books were all recommended by chess grandmasters! Click on the more information to find out in detail what they have to say about each book." %></p>
+<p><%= dgettext "recommended", "I hope this list of recommendations will help you find the best chess textbooks for you. Because who else could judge whether a chess book is good or not if not grandmasters." %></p>
