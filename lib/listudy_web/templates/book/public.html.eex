@@ -12,7 +12,7 @@
       <% end %>
     </div>
     <% end %>
-    <%= if length(@tags) > 0 do %>
+    <%= if length(@openings) > 0 do %>
     <div>
       <b><%= gettext("Opening") %>:</b>
       <%= for opening <- @openings do %>

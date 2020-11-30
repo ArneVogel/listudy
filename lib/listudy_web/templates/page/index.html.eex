@@ -24,7 +24,7 @@
     <h2><%= gettext "Books" %></h2>
     <p><%= gettext "Find the best chess books for you." %></p>
     <p><%= gettext "Discover the greatest books with the help of Grandmaster recommendations." %></p>
-    <p><%= gettext "Explore the" %> <%= link (gettext "best books"), to: Routes.book_path(@conn, :recommended, @locale) %>.</p>
+    <p><%= gettext "Explore the" %> <%= link (gettext "best chess books"), to: Routes.book_path(@conn, :recommended, @locale) %>.</p>
   </div>
   <div class="one-half column">
     <h2><%= gettext "Endgames" %></h2>

@@ -2,9 +2,33 @@
 <p><%= dgettext "recommended", "The 20 best chess books as recommended by Grandmasters." %></p>
 
 <%= for book <- @books do %>
-  <%= book.title %>
-  <%= for er <- book.expert_recommendations do %>
-    <%= er.player.name %>
-  <% end %>
+  <div class="row book-thumb">
+    <div class="two-thirds column">
+      <b><%= book.author.name %></b>
+      <h1><%= book.title %></h1>
+      <p><%= book.summary %></p>
+      <b><%= gettext("Recommended by")%>:</b>
+      <p>
+      <%= for er <- book.expert_recommendations do %>
+        <%= er.player.name %>
+      <% end %>
+      </p>
+
+      <a href="<%= Routes.book_path(@conn, :show, @locale, book.slug) %>">
+        <button><%= gettext("More") %></button>
+      </a>
+    </div>
+    <div class="one-third column">
+      <a class="book-container">
+        <div class="book small-book">
+          <img
+            alt="<%= gettext("%{book_name} book cover", book_name: book.title) %>"
+            src="/book_cover/<%= book.slug %>.jpg" loading="lazy"
+            />
+        </div>
+      </a>
+    </div>
+  </div>
+
 <% end %>
 
