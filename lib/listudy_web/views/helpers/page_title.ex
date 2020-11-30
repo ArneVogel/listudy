@@ -73,5 +73,34 @@ defmodule ListudyWeb.PageTitle do
        }),
        do: opening.name
 
+  defp get(%{
+         view_module: Elixir.ListudyWeb.BookView,
+         view_template: "public.html",
+         book: book
+       }),
+       do: "#{book.title} by #{book.author.name}"
+
+  defp get(%{
+         view_module: Elixir.ListudyWeb.BookView,
+         view_template: "recommended.html"
+       }),
+       do: "The 20 best Chess Books as recommended by Grandmasters"
+
+
+  defp get(%{
+         view_module: Elixir.ListudyWeb.AuthorView,
+         view_template: "public.html",
+         author: author
+       }),
+       do: author.name
+
+  defp get(%{
+         view_module: Elixir.ListudyWeb.TagView,
+         view_template: "public.html",
+         tag: tag
+       }),
+       do: tag.title
+
+
   defp get(_), do: nil
 end
