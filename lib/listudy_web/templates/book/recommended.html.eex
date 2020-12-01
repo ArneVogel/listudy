@@ -10,7 +10,7 @@
       <b><%= gettext("Recommended by")%>:</b>
       <p>
       <%= for er <- book.expert_recommendations do %>
-        <span class="book-expert-name-tag"><%= er.player.name %></span>
+        <span class="book-expert-name-tag"><nobr><%= er.player.name %></nobr></span>
       <% end %>
       </p>
 
