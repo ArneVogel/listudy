@@ -10,6 +10,14 @@
     border-radius: var(--small-border-radius);
 }
 
+.book-expert-name-tag {
+    border: 1px solid var(--font-color);
+    border-radius: var(--small-border-radius);
+    margin-right: 0.2em;
+    padding: 0.2em;
+
+}
+
 .small-book,
 .small-book > :first-child,
 .book::after {
