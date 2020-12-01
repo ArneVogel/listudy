@@ -37,8 +37,16 @@ defmodule ListudyWeb.ExpertRecommendationController do
 
   def edit(conn, %{"id" => id}) do
     expert_recommendation = ExpertRecommendations.get_expert_recommendation!(id)
+    books = Books.list_books()
+    players = Players.list_players()
     changeset = ExpertRecommendations.change_expert_recommendation(expert_recommendation)
-    render(conn, "edit.html", expert_recommendation: expert_recommendation, changeset: changeset)
+
+    render(conn, "edit.html",
+      expert_recommendation: expert_recommendation,
+      books: books,
+      players: players,
+      changeset: changeset
+    )
   end
 
   def update(conn, %{"id" => id, "expert_recommendation" => expert_recommendation_params}) do
