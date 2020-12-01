@@ -27,7 +27,7 @@ defmodule Listudy.ExpertRecommendations do
       from r in ExpertRecommendation,
         join: p in Player,
         on: r.player_id == p.id,
-        where: p.id == ^book,
+        where: r.book_id == ^book,
         select: {r, p}
 
     Repo.all(query)
