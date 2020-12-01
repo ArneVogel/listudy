@@ -1,0 +1,7 @@
+<h1><%= @author.name %></h1>
+
+<%= raw Earmark.as_html!(@author.description) %>
+
+<%= for book <- @author.books do %>
+  <%= render ListudyWeb.BookView, "thumb.html", Map.put(assigns, :book, book) %>
+<% end %>

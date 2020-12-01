@@ -1,0 +1,28 @@
+<h1>Listing Expert recommendation</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Source</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for expert_recommendation <- @expert_recommendation do %>
+    <tr>
+      <td><%= expert_recommendation.text %></td>
+      <td><%= expert_recommendation.source %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.expert_recommendation_path(@conn, :show, expert_recommendation) %></span>
+        <span><%= link "Edit", to: Routes.expert_recommendation_path(@conn, :edit, expert_recommendation) %></span>
+        <span><%= link "Delete", to: Routes.expert_recommendation_path(@conn, :delete, expert_recommendation), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Expert recommendation", to: Routes.expert_recommendation_path(@conn, :new) %></span>

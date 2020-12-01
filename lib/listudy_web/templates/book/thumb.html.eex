@@ -1,0 +1,21 @@
+<div class="row book-thumb">
+  <div class="two-thirds column">
+    <b><%= @book.author.name %></b>
+    <h1><%= @book.title %></h1>
+    <p><%= @book.summary %></p>
+    <a href="<%= Routes.book_path(@conn, :show, @locale, @book.slug) %>">
+      <button><%= gettext("More") %></button>
+    </a>
+  </div>
+  <div class="one-third column">
+    <a class="book-container">
+      <div class="book small-book">
+        <img
+          alt="<%= gettext("%{book_name} book cover", book_name: @book.title) %>"
+          src="/book_cover/<%= @book.slug %>.jpg"
+          />
+      </div>
+    </a>
+  </div>
+</div>
+

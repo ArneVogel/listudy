@@ -60,6 +60,13 @@ defmodule ListudyWeb.Router do
     resources "/events", EventController
     resources "/tactics", TacticController
 
+    resources "/book_opening", BookOpeningController
+    resources "/book_tag", BookTagController
+    resources "/books", BookController
+    resources "/tags", TagController
+    resources "/authors", AuthorController
+    resources "/expert_recommendation", ExpertRecommendationController
+
     resources "/blind_tactics", BlindTacticController
   end
 
@@ -78,6 +85,7 @@ defmodule ListudyWeb.Router do
     pipe_through :browser
 
     get "/sitemap.xml", SitemapController, :index
+    get "/sitemap.books.xml", SitemapController, :books
     live "/studies/search", StudySearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :search
     live "/events", EventSearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :event_search
 
@@ -131,6 +139,12 @@ defmodule ListudyWeb.Router do
     live "/tactics/player/:player/:id", TacticsLive,
       layout: {ListudyWeb.LayoutView, :live},
       as: :player_tactics
+
+    get "/books/best-chess-books", BookController, :recommended
+    get "/books/list/:slug", TagController, :show
+    get "/books/author/:slug", AuthorController, :show
+    get "/books/:slug", BookController, :show
+    live "/books", BookSearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :book_search
 
     resources "/studies", StudyController
     get "/blog", PostController, :index

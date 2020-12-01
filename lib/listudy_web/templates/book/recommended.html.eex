@@ -1,0 +1,37 @@
+<h1><%= gettext("Grandmaster recommended") %> <nobr><%= gettext("Chess Books") %></nobr></h1>
+<p><%= dgettext "recommended", "This list contains the 20 best chess books as ranked by grandmasters. I hope this list helps you to find the perfect book for you." %></p>
+
+<%= for book <- @books do %>
+  <div class="row book-thumb">
+    <div class="two-thirds column">
+      <b><%= book.author.name %></b>
+      <h1><%= book.title %></h1>
+      <p><%= book.summary %></p>
+      <b><%= gettext("Recommended by")%>:</b>
+      <p>
+      <%= for er <- book.expert_recommendations do %>
+        <%= er.player.name %>
+      <% end %>
+      </p>
+
+      <a href="<%= Routes.book_path(@conn, :show, @locale, book.slug) %>">
+        <button><%= gettext("More") %></button>
+      </a>
+    </div>
+    <div class="one-third column">
+      <a class="book-container">
+        <div class="book small-book">
+          <img
+            alt="<%= gettext("%{book_name} book cover", book_name: book.title) %>"
+            src="/book_cover/<%= book.slug %>.jpg" loading="lazy"
+            />
+        </div>
+      </a>
+    </div>
+  </div>
+
+<% end %>
+
+<p><%= dgettext "recommended", "These books were all recommended by chess grandmasters! Click on the more information to find out in detail what they have to say about each book." %></p>
+<p><%= dgettext "recommended", "I hope this list of recommendations will help you find the best chess textbooks for you. Because who else could judge whether a chess book is good or not if not grandmasters." %></p>
+<p><%= dgettext "recommended", "Have you found a recommendation from a grandmaster that is not yet in the list? Send me an email and I will add it." %></p>
