@@ -40,11 +40,11 @@
   <div>
   <h2><%= gettext("Recommendations") %></h2>
   <%= for {recommendation, player}<- @recommendations do %>
-    <figure>
-        <blockquote>
+    <figure class="book-figure">
+        <blockquote class="book-blockquote">
           <p><%= recommendation.text %></p>
         </blockquote>
-        <figcaption>—<%= player.name %>, <i><%= recommendation.source %></i></figcaption>
+        <figcaption class="book-figcaption">—<%= player.name %>, <i><%= recommendation.source %></i></figcaption>
     </figure>
 
   <% end %>

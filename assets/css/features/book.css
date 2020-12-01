@@ -18,6 +18,20 @@
 
 }
 
+.book-figure {
+    border: 1px solid var(--font-color);
+    border-radius: var(--small-border-radius);
+    padding-bottom: 1em;
+}
+
+.book-blockquote > p::after {
+    content: "\"";
+}
+.book-blockquote > p::before {
+    content: "\"";
+}
+
+
 .small-book,
 .small-book > :first-child,
 .book::after {
