@@ -22,9 +22,14 @@
     </script>
 
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+
     <%= if is_halloween() do %>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/halloween.css") %>"/>
     <% end %>
+    <%= if is_xmas() do %>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/xmas.css") %>"/>
+    <% end %>
+
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
     <script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
       <%# This is here to stop the default white theme to flash on load %>
