@@ -26,5 +26,4 @@ defmodule ListudyWeb.SitemapController do
     |> put_resp_content_type("text/xml")
     |> render("books.xml", books: books, tags: tags, authors: authors)
   end
-
 end

@@ -86,7 +86,6 @@ defmodule ListudyWeb.PageTitle do
        }),
        do: "The 20 best Chess Books as recommended by Grandmasters"
 
-
   defp get(%{
          view_module: Elixir.ListudyWeb.AuthorView,
          view_template: "public.html",
@@ -100,7 +99,6 @@ defmodule ListudyWeb.PageTitle do
          tag: tag
        }),
        do: tag.title
-
 
   defp get(_), do: nil
 end

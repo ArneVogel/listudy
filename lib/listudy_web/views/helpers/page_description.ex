@@ -76,8 +76,8 @@ defmodule ListudyWeb.PageDescription do
          view_module: Elixir.ListudyWeb.BookView,
          view_template: "recommended.html"
        }),
-       do: "Browse the best chess books in this list of 20 books in the order in which they were ranked by grandmasters."
-
+       do:
+         "Browse the best chess books in this list of 20 books in the order in which they were ranked by grandmasters."
 
   defp get(%{
          view_module: Elixir.ListudyWeb.AuthorView,
@@ -92,7 +92,6 @@ defmodule ListudyWeb.PageDescription do
          tag: tag
        }),
        do: tag.summary
-
 
   defp get(_), do: gettext("Improve your chess game on Listudy")
 
