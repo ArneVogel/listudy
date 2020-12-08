@@ -19,18 +19,26 @@
 }
 
 .book-figure {
-    border: 1px solid var(--font-color);
-    border-radius: var(--small-border-radius);
-    padding-bottom: 1em;
+	border-left: 2px solid var(--font-highlight-color);
 }
 
-.book-blockquote > p::after {
-    content: "\"";
+.book-blockquote:before {
+    font-family: "listudy";
+	font-size: 32px;
+	color: var(--font-color);
+	content: "&";
+	display: block;
+	position: absolute;
+	top: -15px;
+	left: 0;
+	transform: scaleX(-1);
 }
-.book-blockquote > p::before {
-    content: "\"";
+.book-blockquote {
+	font-size: 1.1em;
+    margin: 0 0 27px;
+    padding-left: 48px;
+    position: relative;
 }
-
 
 .small-book,
 .small-book > :first-child,
