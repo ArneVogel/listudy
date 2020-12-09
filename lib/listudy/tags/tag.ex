@@ -7,6 +7,7 @@ defmodule Listudy.Tags.Tag do
     field :slug, :string
     field :summary, :string
     field :title, :string
+    field :name, :string
 
     has_many :book_tags, Listudy.BookTags.BookTag
 
@@ -16,7 +17,7 @@ defmodule Listudy.Tags.Tag do
   @doc false
   def changeset(tag, attrs) do
     tag
-    |> cast(attrs, [:title, :slug, :summary, :description])
-    |> validate_required([:title, :slug, :summary, :description])
+    |> cast(attrs, [:title, :slug, :name, :summary, :description])
+    |> validate_required([:title, :slug, :name, :summary, :description])
   end
 end

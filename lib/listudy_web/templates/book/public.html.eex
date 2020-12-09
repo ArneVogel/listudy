@@ -8,7 +8,7 @@
     <div>
       <b><%= gettext("Tags") %>:</b>
       <%= for tag <- @tags do %>
-        <%= link tag.title, to: Routes.tag_path(@conn, :show, @locale, tag.slug) %>
+        <%= link tag.name, to: Routes.tag_path(@conn, :show, @locale, tag.slug) %>
       <% end %>
     </div>
     <% end %>
