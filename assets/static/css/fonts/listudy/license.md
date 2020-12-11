@@ -9,6 +9,6 @@ See https://github.com/ornicar/lila/blob/master/COPYING.md#exceptions-free
 
 ---
 
-Quote symbol by https://github.com/Automattic/genericons-neue
+Quote/info symbol by https://github.com/Automattic/genericons-neue
 
 Licensed under GPL: https://github.com/Automattic/genericons-neue/blob/master/LICENSE.md
