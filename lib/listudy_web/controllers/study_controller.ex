@@ -63,10 +63,11 @@ defmodule ListudyWeb.StudyController do
     else
       {:error, reason} ->
         changeset = Studies.change_study(%Study{})
+        openings = Listudy.Openings.list_openings_study_form()
 
         conn
         |> put_flash(:info, reason)
-        |> render("new.html", changeset: changeset)
+        |> render("new.html", changeset: changeset, openings: openings)
     end
   end
 
