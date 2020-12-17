@@ -22,24 +22,6 @@
 	border-left: 2px solid var(--font-highlight-color);
 }
 
-.book-blockquote:before {
-    font-family: "listudy";
-	font-size: 32px;
-	color: var(--font-color);
-	content: "&";
-	display: block;
-	position: absolute;
-	top: -15px;
-	left: 0;
-	transform: scaleX(-1);
-}
-.book-blockquote {
-	font-size: 1.1em;
-    margin: 0 0 27px;
-    padding-left: 48px;
-    position: relative;
-}
-
 .small-book,
 .small-book > :first-child,
 .book::after {

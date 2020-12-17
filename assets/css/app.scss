@@ -103,6 +103,26 @@ input:invalid {
   border: 2px solid red;
 }
 
+blockquote:before {
+    font-family: "listudy";
+	font-size: 32px;
+	color: var(--font-color);
+	content: "&";
+	display: block;
+	position: absolute;
+	top: -15px;
+	left: 0;
+	transform: scaleX(-1);
+}
+blockquote {
+	font-size: 1.1em;
+    margin: 0 0 27px;
+    padding-left: 48px;
+    position: relative;
+}
+
+
+
 
 /* Basic CSS */
 body {
