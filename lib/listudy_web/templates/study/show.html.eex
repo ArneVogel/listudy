@@ -7,7 +7,9 @@
   <div class="sidebar">
     <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
     
-    <p id="comments" class="study_comments"></p>
+    <p id="comments" class="study_comments">
+      <span id="comments_text"></span>
+    </p>
 
     <div class="study_options">
       <div class="chapter_selection">
