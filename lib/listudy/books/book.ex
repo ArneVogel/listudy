@@ -23,6 +23,6 @@ defmodule Listudy.Books.Book do
   def changeset(book, attrs) do
     book
     |> cast(attrs, [:title, :slug, :year, :isbn, :amazon_id, :summary, :text, :author_id])
-    |> validate_required([:title, :slug, :year, :isbn, :amazon_id, :summary, :text, :author_id])
+    |> validate_required([:title, :slug, :year, :isbn, :amazon_id, :summary, :author_id])
   end
 end
