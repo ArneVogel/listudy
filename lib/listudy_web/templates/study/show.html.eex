@@ -51,8 +51,6 @@
 </div>
 
 <hr>
-<div id="share"></div>
-<hr>
 <%= render ListudyWeb.CommentView, "show_comments.html", type: "study", id: Integer.to_string(@study.id), action: Routes.comment_path(@conn, :new_comment), conn: @conn %>
 <%= render ListudyWeb.CommentView, "comment_form.html", type: "study", id: Integer.to_string(@study.id), action: Routes.comment_path(@conn, :new_comment), conn: @conn %>
 
