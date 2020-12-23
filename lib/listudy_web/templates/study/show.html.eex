@@ -28,6 +28,7 @@
 
         <nobr><a class="icon" data-icon="%" id="arrows_toggle"><%= gettext("Hide Arrows") %></a></nobr>
         <nobr><a class="icon" data-icon="%" id="line_review" title="<%= gettext("At the end of lines the board is only reset after 3 seconds giving you time to review the final position.") %>"><%= gettext("Slow board reset") %></a></nobr>
+        <nobr><a class="icon" data-icon="(" id="move_delay"><%= gettext("Move delay:") %> <span id="move_delay_time"><%= gettext("instant") %></span></a></nobr>
       </div>
     </div>
   </div>
@@ -106,4 +107,8 @@
   i18n.arrows_show = "<%= gettext "Show Arrows" %>";
   i18n.review_slow = "<%= gettext "Slow board reset" %>";
   i18n.review_fast = "<%= gettext "Fast board reset" %>";
+  i18n.slow = "<%= gettext "slow" %>";
+  i18n.fast = "<%= gettext "fast" %>";
+  i18n.medium = "<%= gettext "medium" %>";
+  i18n.instant = "<%= gettext "instant" %>";
 </script>

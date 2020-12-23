@@ -9,6 +9,7 @@ import { tree_move_index, tree_children, tree_possible_moves, has_children, tree
          need_hint, update_value, value_sort, tree_get_node, tree_children_filter_sort } from './modules/tree_utils.js';
 import { generate_move_trees } from './modules/tree_from_pgn.js';
 import { sleep } from './modules/sleep.js';
+import { getRandomIntFromRange } from './modules/random.js';
 import { unescape_string } from './modules/security_related.js';
 import { ground_init_state, resize_ground, setup_ground, ground_set_moves, 
          ground_undo_last_move, setup_move_handler, ground_move } from './modules/ground.js';
@@ -17,6 +18,8 @@ import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_
 const mode_free = "free_mode";
 
 const comments_div = "comments";
+
+let move_delay_time = i18n.instant;
 
 let combo_count = 0;
 let show_arrows = true;
@@ -58,7 +61,7 @@ async function handle_move(orig, dest) {
         combo_count += 1;
         set_text(success_div, right_move_text());
         let reply = ai_move(curr_move);
-        await sleep(300); // instant play by the ai feels weird
+        await sleep(get_move_delay()); // instant play by the ai feels weird
         if (reply == undefined) {
             achievement_end_of_line();
             set_text(success_div, right_move_text() + "\n" + i18n.success_end_of_line);
@@ -306,12 +309,56 @@ function toggle_review() {
         link.textContent = i18n.review_slow;
         board_review = false;
     }
-
 }
+
+function toggle_move_delay() {
+    let span = document.getElementById("move_delay_time");
+    let curr = span.textContent;
+    switch (curr) {
+        case i18n.instant: 
+            curr = i18n.fast;
+            break;
+        case i18n.fast:
+            curr = i18n.medium;
+            break;
+        case i18n.medium:
+            curr = i18n.slow;
+            break;
+        case i18n.slow:
+            curr = i18n.instant;
+            break;
+    }
+    span.textContent = curr;
+    move_delay_time = curr;
+}
+
+function get_move_delay() {
+    let delay = 300;
+    switch (move_delay_time) {
+        case i18n.instant: 
+            delay = 300;
+            break;
+        case i18n.fast:
+            delay = getRandomIntFromRange(500, 1500);
+            break;
+        case i18n.medium:
+            delay = getRandomIntFromRange(1500, 3000);
+            break;
+        case i18n.slow:
+            delay = getRandomIntFromRange(5000, 10000);
+            break;
+        default:
+            console.log("Got non supported move delay: ", move_delay_time);
+            delay = 300;
+    }
+    return delay;
+}
+
 
 function setup_configs() {
     document.getElementById("arrows_toggle").onclick = toggle_arrows;
     document.getElementById("line_review").onclick = toggle_review;
+    document.getElementById("move_delay").onclick = toggle_move_delay;
 }
 
 function main() {
