@@ -12,3 +12,9 @@ See https://github.com/ornicar/lila/blob/master/COPYING.md#exceptions-free
 Quote/info symbol by https://github.com/Automattic/genericons-neue
 
 Licensed under GPL: https://github.com/Automattic/genericons-neue/blob/master/LICENSE.md
+
+---
+
+Finger pointing right by Font Awesome
+
+Licensed under CC BY 4.0 https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
