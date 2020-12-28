@@ -8,6 +8,7 @@ defmodule Listudy.Content.Post do
     field :published, :boolean, default: false
     field :slug, :string
     field :title, :string
+    field :script, :string
     field :author_id, :id
 
     timestamps()
@@ -16,7 +17,7 @@ defmodule Listudy.Content.Post do
   @doc false
   def changeset(post, attrs) do
     post
-    |> cast(attrs, [:title, :slug, :body, :published])
+    |> cast(attrs, [:title, :slug, :body, :published, :script])
     |> validate_required([:title, :slug, :body, :published])
     |> unique_constraint(:title)
     |> unique_constraint(:slug)

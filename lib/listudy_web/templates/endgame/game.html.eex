@@ -41,6 +41,8 @@
   let fen = "<%= fen %>";
   let target_result = "<%= result %>";
   let id = "<%= @chapter_slug %>_<%= @subchapter_slug %>_<%= @index %>";
+
+  let i18n = {};
   i18n.success = "<%= gettext("Success!") %>";
   i18n.error = "<%= gettext("Try again!") %>";
 </script>

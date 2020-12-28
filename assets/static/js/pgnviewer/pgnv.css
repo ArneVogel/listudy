@@ -1,0 +1,26 @@
+.moves .move .comment {
+	color: var(--font-color);
+	font-weight: 500;
+}
+
+.moves .move, select.games {
+	color: var(--font-color);
+}
+
+div.buttons > i.button, div.edit > i.button {
+    height: max-content;
+}
+
+.moves .move a {
+    cursor: pointer;
+}
+
+.moves .move a:hover {
+	cursor: pointer;
+}
+
+.whole.layout-top {
+    display: inherit;
+    margin-bottom: 2em;
+    margin-top: 1em;
+}

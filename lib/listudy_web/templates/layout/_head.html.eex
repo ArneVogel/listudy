@@ -14,13 +14,6 @@
     <%= raw ListudyWeb.Seo.hreflang(@conn) %>
     <%= raw ListudyWeb.Seo.noindex(@conn) %>
 
-    <script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
-      <%# Translations used by javascript %>
-      let i18n = {
-        "share_on": "<%= gettext("Share on") %>",
-      };
-    </script>
-
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
 
     <%= if is_halloween() do %>

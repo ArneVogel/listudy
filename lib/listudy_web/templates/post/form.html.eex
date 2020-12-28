@@ -17,6 +17,10 @@
   <%= textarea f, :body, class: "deep_input big_input" %>
   <%= error_tag f, :body %>
 
+  <%= label f, :script %>
+  <%= textarea f, :script , class: "deep_input big_input" %>
+  <%= error_tag f, :script %>
+
   <%= label f, :published %>
   <%= checkbox f, :published %>
   <%= error_tag f, :published %>

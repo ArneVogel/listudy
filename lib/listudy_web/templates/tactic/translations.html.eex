@@ -1,3 +1,4 @@
+let i18n = {};
 i18n.success = "<%= gettext "Tactic solved!" %>";
 i18n.wrong_move = "<%= gettext "Wrong Move." %>";
 i18n.keep_trying = "<%= gettext "Keep trying!" %>";

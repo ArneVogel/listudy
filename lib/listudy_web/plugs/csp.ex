@@ -30,6 +30,7 @@ defmodule ListudyWeb.Plugs.CSP do
       conn.private.plug_session["csp_nonce"]
     }'; \
     img-src 'self' data:; \
+    font-src 'self' data:; \
     style-src 'self' 'unsafe-inline'"
   end
 
