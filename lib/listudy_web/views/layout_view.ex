@@ -11,11 +11,20 @@ defmodule ListudyWeb.LayoutView do
     month == 12 and day in 22..26
   end
 
+  def is_new_year(date) do
+    {{_, month, day}, {_, _, _}} = date
+    month == 12 and day == 31 or month == 1 and day == 1
+  end
+
   def is_halloween do
     is_halloween(:calendar.universal_time())
   end
 
   def is_xmas do
     is_xmas(:calendar.universal_time())
+  end
+
+  def is_new_year do
+    is_new_year(:calendar.universal_time())
   end
 end
