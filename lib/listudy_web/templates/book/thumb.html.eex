@@ -3,7 +3,7 @@
       <b><%= @book.author.name %></b>
       <h2><%= @book.title %></h2>
       <p><%= @book.summary %></p>
-      <%= if @book.expert_recommendations do %>
+      <%= if length(@book.expert_recommendations) != 0 do %>
       <b><%= gettext("Recommended by")%>:</b>
       <p>
       <%= for er <- @book.expert_recommendations do %>
