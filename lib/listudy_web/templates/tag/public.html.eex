@@ -4,7 +4,7 @@
 
 <%= for book_tag <- @tag.book_tags do %>
   <% book = book_tag.book %>
-  <%= render ListudyWeb.BookView, "thumb.html", Map.put(assigns, :book, book_tag.book) %>
+  <%= render ListudyWeb.BookView, "thumb.html", Map.put(assigns, :book, book) %>
 <% end %>
 
 
