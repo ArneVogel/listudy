@@ -4,13 +4,29 @@
       <h2><%= @book.title %></h2>
       <p><%= @book.summary %></p>
       <%= if length(@book.expert_recommendations) != 0 do %>
-      <b><%= gettext("Recommended by")%>:</b>
-      <p>
-      <%= for er <- @book.expert_recommendations do %>
-        <span class="book-expert-name-tag"><nobr><%= er.player.name %></nobr></span>
+        <b><%= gettext("Recommended by")%>:</b>
+        <div class="book-thumb-recommendations">
+        <%= for {er, i} <- Enum.with_index(@book.expert_recommendations) do %>
+          <span class="book-expert-name-tag">
+            <nobr>
+            <span class="modal_open" id="<%= er.player.slug %><%= i %>"><%= er.player.name %></span>
+            </nobr>
+          </span>
+          <div id="<%= er.player.slug %><%= i %>_modal" class="modal">
+            <div class="modal-content">
+              <span class="modal_close">&times;</span>
+              <figure>
+                <blockquote class="book-blockquote">
+                  <p><%= er.text %></p>
+                </blockquote>
+                <figcaption class="book-figcaption">—<%= er.player.name %>, <i><%= er.source %></i></figcaption>
+              </figure>
+
+            </div>
+          </div>
+        <% end %>
+        </div>
       <% end %>
-      <% end %>
-      </p>
 
       <a href="<%= Routes.book_path(@conn, :show, @locale, @book.slug) %>">
         <button><%= gettext("More") %></button>

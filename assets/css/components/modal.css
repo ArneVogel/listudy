@@ -33,3 +33,7 @@
     text-decoration: none;
     cursor: pointer;
 } 
+
+.modal_open {
+    cursor: pointer;
+}
