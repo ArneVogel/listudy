@@ -9,16 +9,4 @@
      <lastmod><%= format_date(tag.updated_at) %></lastmod>
    </url>
   <% end %>
-  <%= for book <- @books do %>
-   <url>
-     <loc><%= base_url() <> Routes.book_path(@conn, :show, @locale, book.slug) %></loc>
-     <lastmod><%= format_date(book.updated_at) %></lastmod>
-   </url>
-  <% end %>
-  <%= for author <- @authors do %>
-   <url>
-     <loc><%= base_url() <> Routes.author_path(@conn, :show, @locale, author.slug) %></loc>
-     <lastmod><%= format_date(author.updated_at) %></lastmod>
-   </url>
-  <% end %>
 </urlset>

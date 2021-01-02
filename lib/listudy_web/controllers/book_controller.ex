@@ -48,7 +48,8 @@ defmodule ListudyWeb.BookController do
       book: book,
       openings: openings,
       tags: tags,
-      recommendations: recommendations
+      recommendations: recommendations,
+      noindex: true
     )
   end
 
