@@ -50,7 +50,9 @@ defmodule Listudy.Tags do
   def get_tag!(id), do: Repo.get!(Tag, id)
 
   def get_by_slug!(slug),
-    do: Repo.get_by(Tag, slug: slug) |> Repo.preload(book_tags: [:tag, [book: [:author, expert_recommendations: :player]]])
+    do:
+      Repo.get_by(Tag, slug: slug)
+      |> Repo.preload(book_tags: [:tag, [book: [:author, expert_recommendations: :player]]])
 
   @doc """
   Creates a tag.

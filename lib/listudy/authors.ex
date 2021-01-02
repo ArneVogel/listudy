@@ -37,7 +37,10 @@ defmodule Listudy.Authors do
   """
   def get_author!(id), do: Repo.get!(Author, id)
 
-  def get_by_slug!(slug), do: Repo.get_by(Author, slug: slug) |> Repo.preload(books: [:author, expert_recommendations: :player])
+  def get_by_slug!(slug),
+    do:
+      Repo.get_by(Author, slug: slug)
+      |> Repo.preload(books: [:author, expert_recommendations: :player])
 
   @doc """
   Creates a author.

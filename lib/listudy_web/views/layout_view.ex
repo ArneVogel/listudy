@@ -13,7 +13,7 @@ defmodule ListudyWeb.LayoutView do
 
   def is_new_year(date) do
     {{_, month, day}, {_, _, _}} = date
-    month == 12 and day == 31 or month == 1 and day == 1
+    (month == 12 and day == 31) or (month == 1 and day == 1)
   end
 
   def is_halloween do
