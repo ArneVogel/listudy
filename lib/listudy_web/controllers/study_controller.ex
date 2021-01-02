@@ -120,7 +120,12 @@ defmodule ListudyWeb.StudyController do
 
   def edit(conn, %{"id" => id}) do
     study = Studies.get_study_by_slug!(id)
+
     {_, user} = get_user(conn)
+    [unique_id | _] = id |> String.split("-")
+    file = unique_id <> ".pgn"
+    {_, pgn} = File.read(get_path(file))
+    study = Map.put(study, :pgn, pgn)
 
     if allowed(study, user) do
       openings = Listudy.Openings.list_openings_study_form()
