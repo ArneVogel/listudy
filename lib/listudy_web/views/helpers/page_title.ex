@@ -10,18 +10,18 @@ defmodule ListudyWeb.PageTitle do
   defp put_suffix(title), do: title <> " - " <> @suffix
 
   defp get(%{view_module: Elixir.ListudyWeb.TacticView, view_template: "daily.html"}),
-    do: gettext("Daily Chess Puzzle")
+    do: dgettext("page_titles", "Daily Chess Puzzle")
 
   defp get(%{view_module: PageView, view_template: "blind-tactics.html"}),
-    do: gettext("Blind Tactics")
+    do: dgettext("page_titles", "Blind Tactics")
 
   defp get(%{view_module: PageView, view_template: "play_stockfish.html"}),
-    do: gettext("Play against Stockfish Online")
+    do: dgettext("page_titles", "Play against Stockfish Online")
 
   defp get(%{view_module: PageView, view_template: "achievements.html"}),
-    do: gettext("Achievements")
+    do: dgettext("page_titles", "Achievements")
 
-  defp get(%{view_module: PageView}), do: gettext("Improve you chess game with spaced repetition")
+  defp get(%{view_module: PageView}), do: dgettext("page_titles", "Improve you chess game with spaced repetition")
 
   defp get(%{view_module: Elixir.ListudyWeb.StudyView, view_template: "show.html", study: study}),
     do: study.title
@@ -29,8 +29,8 @@ defmodule ListudyWeb.PageTitle do
   defp get(%{view_module: Elixir.ListudyWeb.PostView, view_template: "show.html", post: post}),
     do: post.title
 
-  defp get(%{live_module: StudySearchLive}), do: gettext("Search Studies")
-  defp get(%{live_module: TacticsLive}), do: gettext("Tactics")
+    defp get(%{live_module: StudySearchLive}), do: dgettext("page_titles", "Search Studies")
+    defp get(%{live_module: TacticsLive}), do: dgettext("page_titles", "Tactics")
 
   defp get(%{view_module: Elixir.ListudyWeb.MotifView, view_template: "public.html", motif: motif}),
        do: motif.name
@@ -49,7 +49,7 @@ defmodule ListudyWeb.PageTitle do
          view_module: Elixir.ListudyWeb.EndgameView,
          view_template: "index.html"
        }),
-       do: gettext("Endgames")
+       do: dgettext("page_titles", "Endgames")
 
   defp get(%{
          view_module: Elixir.ListudyWeb.EndgameView,

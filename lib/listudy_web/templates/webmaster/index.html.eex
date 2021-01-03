@@ -9,7 +9,7 @@
     <p><%= dgettext "webmaster", "Bring more interactivity to your tactics. Embed your tactics and let users solve them." %></p>
 
     <a href="<%= Routes.webmaster_path(@conn, :show, @locale, "custom-tactics") %>">
-      <button><%= gettext "Learn More" %></button>
+      <button><%= dgettext("webmaster", "Learn More") %></button>
     </a>
   </div>
   <div class="one-half column">

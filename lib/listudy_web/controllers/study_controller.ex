@@ -162,14 +162,14 @@ defmodule ListudyWeb.StudyController do
               save_pgn(pgn, file)
 
               conn
-              |> put_flash(:info, gettext("Study info updated, PGN changed."))
+              |> put_flash(:info, dgettext("study", "Study info updated, PGN changed."))
               |> redirect(
                 to: Routes.study_path(conn, :show, conn.private.plug_session["locale"], study)
               )
 
             {:error, _} ->
               conn
-              |> put_flash(:info, gettext("Study info updated, no PGN change."))
+              |> put_flash(:info, dgettext("study", "Study info updated, no PGN change."))
               |> redirect(
                 to: Routes.study_path(conn, :show, conn.private.plug_session["locale"], study)
               )
@@ -218,7 +218,7 @@ defmodule ListudyWeb.StudyController do
   defp get_user(conn) do
     case Pow.Plug.current_user(conn) != nil do
       true -> {:ok, Pow.Plug.current_user(conn)}
-      _ -> {:error, gettext("Please log in")}
+      _ -> {:error, dgettext("study", "Please log in")}
     end
   end
 
@@ -236,7 +236,7 @@ defmodule ListudyWeb.StudyController do
         if size < 50000 do
           {:ok, file}
         else
-          {:error, gettext("PGN is too big, only 50kb allowed")}
+          {:error, dgettext("study", "PGN is too big, only 50kb allowed")}
         end
 
       {:error, _} ->
@@ -259,16 +259,16 @@ defmodule ListudyWeb.StudyController do
             {:ok, id}
 
           _ ->
-            {:error, gettext("Could not download the study from lichess, please check the link")}
+            {:error, dgettext("study", "Could not download the study from lichess, please check the link")}
         end
 
       _ ->
-        {:error, gettext("The provided link is not a Lichess study")}
+        {:error, dgettext("study", "The provided link is not a Lichess study")}
     end
   end
 
   defp check_pgn(_study_params) do
-    {:error, gettext("No PGN provided")}
+    {:error, dgettext("study", "No PGN provided")}
   end
 
   defp get_path(file) do
@@ -282,10 +282,10 @@ defmodule ListudyWeb.StudyController do
     {_, message} =
       case StudyFavorites.favorite_study(%{study_id: study.id, user_id: user_id}) do
         {:ok, _} ->
-          {:ok, gettext("Study favorited")}
+          {:ok, dgettext("study", "Study favorited")}
 
         {:error, %Ecto.Changeset{} = _changeset} ->
-          {:error, gettext("Could not favorite this study")}
+          {:error, dgettext("study", "Could not favorite this study")}
       end
 
     conn
@@ -300,10 +300,10 @@ defmodule ListudyWeb.StudyController do
     {_, message} =
       case StudyFavorites.unfavorite_study(user_id, study.id) do
         {:ok, _} ->
-          {:ok, gettext("Study unfavorited")}
+          {:ok, dgettext("study", "Study unfavorited")}
 
         {:error, %Ecto.Changeset{} = _changeset} ->
-          {:error, gettext("Could not unfavorite this study")}
+          {:error, dgettext("study", "Could not unfavorite this study")}
       end
 
     conn

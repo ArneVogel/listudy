@@ -44,3 +44,8 @@ msgstr ""
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:32
 msgid "stockfish.wasm"
 msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:1
+msgid "Play against Stockfish"
+msgstr ""

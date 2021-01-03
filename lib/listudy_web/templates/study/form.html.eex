@@ -5,27 +5,27 @@
     </div>
   <% end %>
 
-  <%= label f, :title, gettext "Title" %>
-  <%= text_input f, :title, class: "big_input", minlength: 3, maxlength: 60, placeholder: (gettext "Caro-Kann Defense"), required: true %>
+  <%= label f, :title, dgettext("study", "Title") %>
+  <%= text_input f, :title, class: "big_input", minlength: 3, maxlength: 60, placeholder: dgettext("study", "Caro-Kann Defense"), required: true %>
   <%= error_tag f, :title %>
 
-  <%= label f, :description, gettext "Description" %>
-  <%= textarea f, :description, class: "big_input", minlength: 20, maxlength: 1000, required: true, placeholder: (gettext "In this study I work on my 1.e4 openings...") %>
+  <%= label f, :description, dgettext("study", "Description") %>
+  <%= textarea f, :description, class: "big_input", minlength: 20, maxlength: 1000, required: true, placeholder: dgettext("study", "In this study I work on my 1.e4 openings...") %>
   <%= error_tag f, :description %>
 
-  <%= label f, :opening_id, gettext "Opening" %>
+  <%= label f, :opening_id, dgettext("study", "Opening") %>
   <%= select(f, :opening_id, Enum.map(@assigns.openings, fn %{name: name, id: id} -> [key: name, value: id] end), selected: selected_opening(@assigns), class: "study_opening_id big_input") %>
 
   <div class="pgn_choice">
-    <p><%= gettext "Either upload a PGN file or provide a link to a public Lichess study:" %></p>
+    <p><%= dgettext("study", "Either upload a PGN file or provide a link to a public Lichess study:") %></p>
     <div class="row">
       <div class="one-half column">
-        <%= label f, :pgn, gettext "Select a PGN to upload" %>
+        <%= label f, :pgn, dgettext("study", "Select a PGN to upload") %>
         <%= file_input f, :pgn %>
       </div>
 
       <div class="one-half column">
-        <%= label f, :lichess_study, gettext "Lichess Study" %>
+        <%= label f, :lichess_study, dgettext("study", "Lichess Study") %>
         <%= text_input f, :lichess_study, placeholder: "https://lichess.org/study/ZWHbJIPd", class: "big_input" %>
         <%= error_tag f, :lichess_study %>
       </div>
@@ -35,12 +35,12 @@
 
   <div class="row study_below_highlight">
     <div class="one-half column">
-      <%= label f, :color, gettext "For which side is this study" %>
+      <%= label f, :color, dgettext("study", "For which side is this study") %>
       <%= select(f, :color, ["White": "white", "Black": "black"]) %>
     </div>
 
     <div class="one-half column">
-      <%= label f, :private, gettext "Keep this study private" %>
+      <%= label f, :private, dgettext("study", "Keep this study private") %>
       <%= checkbox f, :private %>
     </div>
   </div>
@@ -67,6 +67,6 @@ $(document).ready(function() {
 
 <div>
   <%= submit "Save", class: "primary" %>
-  <button class="go-back tertiary"><%= gettext "Back" %></button>
+  <button class="go-back tertiary"><%= dgettext("study", "Back") %></button>
 </div>
 <% end %>

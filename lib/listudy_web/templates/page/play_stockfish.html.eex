@@ -1,4 +1,4 @@
-<h1><%= gettext "Play against Stockfish" %></h1>
+<h1><%= dgettext("play_stockfish", "Play against Stockfish") %></h1>
 
 <div class="with_sidebar">
   <div id="game_container" class="sidebar_main">

@@ -17,13 +17,13 @@ defmodule ListudyWeb.CommentController do
 
     if !allowed_to_comment(comment, user) do
       conn
-      |> put_flash(:info, gettext("You're not allowed to do that."))
+      |> put_flash(:info, dgettext("comments", "You're not allowed to do that."))
       |> redirect(to: NavigationHistory.last_path(conn))
     else
       {:ok, _} = Comments.delete_comment(type, comment)
 
       conn
-      |> put_flash(:info, gettext("Comment deleted successfully."))
+      |> put_flash(:info, dgettext("comments", "Comment deleted successfully."))
       |> redirect(to: NavigationHistory.last_path(conn))
     end
   end
@@ -37,15 +37,15 @@ defmodule ListudyWeb.CommentController do
 
     case Comments.create_comment(type, %{user_id: user_id, id: id, text: text}) do
       {:ok, _} ->
-        {:ok, gettext("Comment created")}
+        {:ok, dgettext("comments", "Comment created")}
 
       {:error, %Ecto.Changeset{} = _changeset} ->
-        {:error, gettext("Comment could not get created")}
+        {:error, dgettext("comments", "Comment could not get created")}
     end
   end
 
   defp save_comment(_, _) do
-    {:error, gettext("Error")}
+    {:error, dgettext("comments", "Error")}
   end
 
   defp allowed_to_comment(comment, user) do

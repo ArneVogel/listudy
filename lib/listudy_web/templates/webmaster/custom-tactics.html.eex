@@ -1,10 +1,10 @@
-<h1><%= dgettext "webmaster", "Embed Custom Tactics" %></h1>
+<h1><%= dgettext("webmaster", "Embed Custom Tactics") %></h1>
 
 <div class="row">
   <div class="one-half column">
-    <p><%= dgettext "webmaster", "Bring more interactivity to your tactics. Embed your tactics and let users solve them." %></p>
-    <p><%= dgettext "webmaster", "You have full control over the tactics." %></p>
-    <p><%= dgettext "webmaster", "You can specify the position, what the right moves are and what the last move was." %></p>
+    <p><%= dgettext("webmaster", "Bring more interactivity to your tactics. Embed your tactics and let users solve them.") %></p>
+    <p><%= dgettext("webmaster", "You have full control over the tactics.") %></p>
+    <p><%= dgettext("webmaster", "You can specify the position, what the right moves are and what the last move was.") %></p>
   </div>
   <div class="one-half column">
     <b>Example</b><br>
@@ -13,32 +13,32 @@
 </div>
 
 
-<h2><%= dgettext "webmaster", "How to embed your own Tactics" %></h2>
+<h2><%= dgettext("webmaster", "How to embed your own Tactics") %></h2>
 
-<p><%= dgettext "webmaster", "On the page where you can create your own tactics is an embed button. This button will automatically creates the iframe code that you have to insert on your website." %></p>
+<p><%= dgettext("webmaster", "On the page where you can create your own tactics is an embed button. This button will automatically creates the iframe code that you have to insert on your website.") %></p>
 <ol>
-  <li><%= dgettext "webmaster", "First you have to create your tactics with the tactic creator." %></li>
-  <li><%= dgettext "webmaster", "After you have done this click on the button \"Embed\"." %></li>
-  <li><%= dgettext "webmaster", "Copy the iframe code and paste it into your page." %></li>
+  <li><%= dgettext("webmaster", "First you have to create your tactics with the tactic creator.") %></li>
+  <li><%= dgettext("webmaster", "After you have done this click on the button \"Embed\".") %></li>
+  <li><%= dgettext("webmaster", "Copy the iframe code and paste it into your page.") %></li>
 </ol>
 
-<p><%= dgettext "webmaster", "Use this link to create and embed your tactic:" %>
-<%= link (gettext "Create your own Tactic"), to: "#{Routes.tactic_path(@conn, :custom, @locale)}#own" %>
+<p><%= dgettext("webmaster", "Use this link to create and embed your tactic:") %>
+<%= link dgettext("webmaster", "Create your own Tactic"), to: "#{Routes.tactic_path(@conn, :custom, @locale)}#own" %>
 </p>
 
 
-<h3><%= dgettext "webmaster", "Automation" %></h3>
-<p><%= dgettext "webmaster", "This process can also be automated. All information needed for tactics are stored in the hash of the embed url." %></p>
-<p><%= dgettext "webmaster", "To generate tactics automatically you can create this hash yourself." %></p>
-<p><%= dgettext "webmaster", "The hash is the base64 encoded string which consists of the fen, the moves and the last move." %></p>
+<h3><%= dgettext("webmaster", "Automation") %></h3>
+<p><%= dgettext("webmaster", "This process can also be automated. All information needed for tactics are stored in the hash of the embed url.") %></p>
+<p><%= dgettext("webmaster", "To generate tactics automatically you can create this hash yourself.") %></p>
+<p><%= dgettext("webmaster", "The hash is the base64 encoded string which consists of the fen, the moves and the last move.") %></p>
 <code>base64.encode("${fen};${moves};${last_move}")</code>
-<p><%= dgettext "webmaster", "The values are each separated by a \";\". The moves must be in san notation and the last move in uci notation. " %></p>
+<p><%= dgettext("webmaster", "The values are each separated by a \";\". The moves must be in san notation and the last move in uci notation.") %></p>
 
 
-<h2><%= dgettext "webmaster", "Implementation details" %></h2>
-<p><%= dgettext "webmaster", "You can change the standard width and height if you wish. Just make sure that the height is about 80px higher than the width so that the \"x to play\" message fits under the board." %></p>
+<h2><%= dgettext("webmaster", "Implementation details") %></h2>
+<p><%= dgettext("webmaster", "You can change the standard width and height if you wish. Just make sure that the height is about 80px higher than the width so that the \"x to play\" message fits under the board.") %></p>
 
-<p><%= dgettext "webmaster", "For mobile devices it is recommended to limit the width iframes to 100%. Below you will find the css to achieve that." %></p>
+<p><%= dgettext("webmaster", "For mobile devices it is recommended to limit the width iframes to 100%. Below you will find the css to achieve that.") %></p>
 <code>iframe {
   max-width: 100%;
 }

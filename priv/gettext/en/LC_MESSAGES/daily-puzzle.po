@@ -10,13 +10,3 @@ msgid ""
 msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=2\n"
-
-#, elixir-format
-#: lib/listudy_web/templates/tactic/daily.html.eex:8
-msgid "Solve more tactics:"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/tactic/daily.html.eex:6
-msgid "Solve the daily chess puzzle. Improve your chess skills every day one tactic at a time."
-msgstr ""

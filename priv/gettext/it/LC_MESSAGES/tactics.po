@@ -28,7 +28,7 @@ msgstr ""
 
 #, elixir-format
 #: lib/listudy_web/templates/live/blind_tactics.html.leex:17
-#: lib/listudy_web/templates/live/tactics.html.leex:9
+#: lib/listudy_web/templates/live/tactics.html.leex:9 lib/listudy_web/templates/tactic/tactic.html.eex:11
 msgid "Continue"
 msgstr ""
 
@@ -120,6 +120,7 @@ msgstr ""
 
 #, elixir-format
 #: lib/listudy_web/templates/live/tactics.html.leex:6
+#: lib/listudy_web/templates/tactic/tactic.html.eex:6
 msgid "Tactic"
 msgstr ""
 
@@ -162,4 +163,153 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/live/blind_tactics.html.leex:13
 msgid "to play and win."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/event/public.html.eex:13
+#: lib/listudy_web/templates/motif/public.html.eex:8 lib/listudy_web/templates/motif/public.html.eex:14
+#: lib/listudy_web/templates/opening/public.html.eex:49
+msgid "%{name} Tactics"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:39
+msgid "%{name} Traps and Tactics"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:8
+msgid "%{opening} after the moves %{moves}"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:9
+msgid "Chessboard showing the %{opening} with the moves %{moves} played"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:12
+msgid "Contents"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/tactic.html.eex:28
+msgid "Currently playing tactics by:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/tactic.html.eex:25
+msgid "Currently playing tactics from the event:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/tactic.html.eex:22
+msgid "Currently training in the motif:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/tactic.html.eex:19
+msgid "Currently training in the opening:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:64
+msgid "Do you want to try out the %{name}? Train this opening against Stockfish."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/motif/public.html.eex:10
+msgid "Get better at %{name} by solving tactics."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:43
+msgid "Get better in the %{name} opening by practicing tactics taken from the early game."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:27
+msgid "Learn the %{opening} using public studies."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:14
+msgid "Learn the Opening"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:19
+#: lib/listudy_web/templates/opening/public.html.eex:52
+msgid "Play against Stockfish"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:65
+msgid "Play against Stockfish either as white or black and explore the opening."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:60
+msgid "Play against the %{name}"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:56
+msgid "Play the %{name}"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:45
+msgid "Recognize traps and mistakes of your opponents and exploit them."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:17
+msgid "Solve Traps and Tactics"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:26
+msgid "Studies about the %{opening}"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/motif/public.html.eex:12
+msgid "Train real tactics from %{amount} different games."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/event/public.html.eex:11
+#: lib/listudy_web/templates/opening/public.html.eex:47
+msgid "Train tactics from %{amount} different games."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/event/public.html.eex:9
+msgid "Solve tactics from games played at %{name}."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/event/public.html.eex:6
+msgid "Traps and Tactics from %{name}"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/daily.html.eex:1
+msgid "Daily Chess Puzzle"
+msgstr ""
+
+#, elixir-format, fuzzy
+#: lib/listudy_web/templates/tactic/daily.html.eex:10
+msgid "Random Tactic"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/daily.html.eex:8
+msgid "Solve more tactics:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/daily.html.eex:6
+msgid "Solve the daily chess puzzle. Improve your chess skills every day one tactic at a time."
 msgstr ""

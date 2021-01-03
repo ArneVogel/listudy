@@ -1,12 +1,12 @@
-<h1><%= gettext "Daily Chess Puzzle" %></h1>
+<h1><%= dgettext "tactics", "Daily Chess Puzzle" %></h1>
 
 <% next_url = Routes.tactic_path(@conn, :random, @locale) %>
 <%= render ListudyWeb.TacticView, "tactic.html", conn: @conn, tactic: @tactic, next: next_url %>
 
-<p><%= dgettext "daily-puzzle", "Solve the daily chess puzzle. Improve your chess skills every day one tactic at a time." %></p>
+<p><%= dgettext "tactics", "Solve the daily chess puzzle. Improve your chess skills every day one tactic at a time." %></p>
 
-<p><%= dgettext "daily-puzzle", "Solve more tactics:" %>
+<p><%= dgettext "tactics", "Solve more tactics:" %>
   <a href="<%= Routes.tactic_path(@conn, :random, @locale) %>">
-    <button class="highlight-button"><%= gettext "Random Tactic" %></button>
+    <button class="highlight-button"><%= dgettext "tactics", "Random Tactic" %></button>
   </a>
 </p>

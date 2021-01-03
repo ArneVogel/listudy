@@ -77,11 +77,6 @@ msgid "The hash is the base64 encoded string which consists of the fen, the move
 msgstr ""
 
 #, elixir-format
-#: tactics.html.eex:35
-msgid "The values are each separated by a \";\". The moves must be in san notation and the last move in uci notation. "
-msgstr ""
-
-#, elixir-format
 #: tactics.html.eex:31
 msgid "This process can also be automated. All information needed for tactics are stored in the hash of the embed url."
 msgstr ""
@@ -114,4 +109,19 @@ msgstr ""
 #, elixir-format
 #: tactics.html.eex:6
 msgid "You have full control over the tactics."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/webmaster/index.html.eex:12
+msgid "Learn More"
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:26
+msgid "Create your own Tactic"
+msgstr ""
+
+#, elixir-format, fuzzy
+#: tactics.html.eex:35
+msgid "The values are each separated by a \";\". The moves must be in san notation and the last move in uci notation."
 msgstr ""

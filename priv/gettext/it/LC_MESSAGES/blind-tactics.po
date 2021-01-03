@@ -80,3 +80,23 @@ msgstr ""
 #: tactics.html.eex:49
 msgid "solved tactic"
 msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:3
+msgid "Blind Tactics"
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:14
+msgid "How it works"
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:4
+msgid "Improve your chess visualization skills"
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:11
+msgid "Play Now!"
+msgstr ""

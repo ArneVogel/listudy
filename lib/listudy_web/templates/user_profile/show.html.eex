@@ -1,16 +1,16 @@
-<h1><%= gettext "Profile of %{name}", name: @user.username %></h1>
+<h1><%= dgettext("user_profile", "Profile of %{name}", name: @user.username) %></h1>
 
-<p><%= gettext "%{name} has been a member since %{signup}.", name: @user.username, signup: hd(String.split(to_string(@user.inserted_at), " ")) %></p>
+<p><%= dgettext("user_profile", "%{name} has been a member since %{signup}.", name: @user.username, signup: hd(String.split(to_string(@user.inserted_at), " "))) %></p>
 
 <%= if length(@studies) != 0 do %>
-<h2><%= gettext "Public studies by %{name}", name: @user.username %></h2>
+<h2><%= dgettext("user_profile", "Public studies by %{name}", name: @user.username) %></h2>
   <%= for study <- @studies do %>
         <h3><%= study.title%></h3>
         <p><%= study.description %></p>
-        <a href="<%= Routes.study_path(@conn, :show, @locale, study) %>"><button class="secondary"><%= gettext "Show" %></button></a>
+        <a href="<%= Routes.study_path(@conn, :show, @locale, study) %>"><button class="secondary"><%= dgettext("user_profile", "Show") %></button></a>
       </tr>
   <% end %>
 <% else %>
-  <p><%= gettext "%{name} does not have any public studies.", name: @user.username %></p>
+  <p><%= dgettext("user_profile", "%{name} does not have any public studies.", name: @user.username) %></p>
 <% end %>
 

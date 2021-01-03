@@ -1,0 +1,31 @@
+## This file is a PO Template file.
+##
+## "msgid"s here are often extracted from source code.
+## Add new translations manually only if they're dynamic
+## translations that can't be statically extracted.
+##
+## Run "mix gettext.extract" to bring this file up to
+## date. Leave "msgstr"s empty as changing them here as no
+## effect: edit them in PO (.po) files instead.
+msgid ""
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/player/public.html.eex:13
+msgid "%{name} Tactics"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/player/public.html.eex:9
+msgid "Are you better than %{name}?"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/player/public.html.eex:11
+msgid "Play real tactics from %{amount} different games played by %{name}."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/player/public.html.eex:6
+msgid "Tactics by %{name}"
+msgstr ""

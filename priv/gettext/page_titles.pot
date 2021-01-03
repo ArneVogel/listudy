@@ -1,0 +1,51 @@
+## This file is a PO Template file.
+##
+## "msgid"s here are often extracted from source code.
+## Add new translations manually only if they're dynamic
+## translations that can't be statically extracted.
+##
+## Run "mix gettext.extract" to bring this file up to
+## date. Leave "msgstr"s empty as changing them here as no
+## effect: edit them in PO (.po) files instead.
+msgid ""
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:22
+msgid "Achievements"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:16
+msgid "Blind Tactics"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:13
+msgid "Daily Chess Puzzle"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:52
+msgid "Endgames"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:24
+msgid "Improve you chess game with spaced repetition"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:19
+msgid "Play against Stockfish Online"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:32
+msgid "Search Studies"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:33
+msgid "Tactics"
+msgstr ""

@@ -285,6 +285,7 @@ msgstr ""
 
 #, elixir-format
 #: lib/listudy_web/templates/endgame/game.html.eex:2
+#: lib/listudy_web/templates/endgame/index.html.eex:1
 msgid "Endgames"
 msgstr ""
 
@@ -312,4 +313,14 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/endgame/game.html.eex:15
 msgid "White to play and"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/endgame/index.html.eex:8
+msgid "Learn"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/endgame/index.html.eex:2
+msgid "No idea what to do in the endgame? Learn endgames by playing against stockfish."
 msgstr ""

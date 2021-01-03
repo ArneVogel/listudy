@@ -1,0 +1,57 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: en\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:41
+msgid "Explore our collection of tactics taken from games by %{name}."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:24
+msgid "Get better at %{name} tactics with our huge library of puzzles taken from real games. Explore our free collection of %{name} tactics."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:49
+msgid "Get better in the %{name} opening. Study the opening and learn from traps and tactics collected from real games."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:96
+msgid "Improve your chess game on Listudy"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:66
+msgid "Learn chess endgames interactively playing against Stockfish"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:12
+msgid "Play against Stockfish Online - Unlimited and for Free"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:31
+msgid "Play tactics from the event %{}. Are you better than the professionals?"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:21
+msgid "Search for studies to train specific openings"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:8
+msgid "Solve the Daily Chess Puzzle! Updated every day from our list of best puzzles."
+msgstr ""

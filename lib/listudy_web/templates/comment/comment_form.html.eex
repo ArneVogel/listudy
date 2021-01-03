@@ -1,6 +1,6 @@
 <%= if Pow.Plug.current_user(@conn) do %>
   <%= form_for @conn, @action, fn f -> %>
-    <%= label f, :comment, gettext "Comment" %>
+    <%= label f, :comment, dgettext("comments", "Comment") %>
     <%= textarea f, :comment, minlength: 4, maxlength: 500 %>
     <%= error_tag f, :comment %>
 
@@ -8,9 +8,9 @@
     <%= hidden_input f, :type, value: @type %>
 
     <div>
-      <%= submit gettext "Save" %>
+      <%= submit dgettext("comments", "Save") %>
     </div>
   <% end %>
 <% else %>
-  <p><%= gettext "Log in to comment" %></p>
+  <p><%= dgettext("comments", "Log in to comment") %></p>
 <% end %>

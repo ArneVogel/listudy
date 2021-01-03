@@ -5,26 +5,26 @@
 
 <img src="<%= Routes.static_path(@conn, "/images/opening/" <> @opening.slug <> ".svg") %>" 
      width="350px" height="350px" class="opening_svg"
-     title="<%= gettext "%{opening} after the moves %{moves}", opening: @opening.name, moves: @opening.moves %>"
-     alt="<%= gettext "Chessboard showing the %{opening} with the moves %{moves} played", opening: @opening.name, moves: @opening.moves %>"/>
+     title="<%= dgettext("tactics", "%{opening} after the moves %{moves}", opening: @opening.name, moves: @opening.moves) %>"
+     alt="<%= dgettext("tactics", "Chessboard showing the %{opening} with the moves %{moves} played", opening: @opening.name, moves: @opening.moves) %>"/>
 
 <div class="highlight">
-  <b><%= gettext "Contents" %></b><br>
+  <b><%= dgettext("tactics", "Contents") %></b><br>
   <%= if show_studies do %>
-  <a href="#studies"><%= gettext "Learn the Opening" %></a><br>
+  <a href="#studies"><%= dgettext("tactics", "Learn the Opening") %></a><br>
   <% end %>
   <%= if show_tactics do %>
-  <a href="#tactics"><%= gettext "Solve Traps and Tactics" %></a><br>
+  <a href="#tactics"><%= dgettext("tactics", "Solve Traps and Tactics") %></a><br>
   <% end %>
-  <a href="#stockfish"><%= gettext "Play against Stockfish" %></a>
+  <a href="#stockfish"><%= dgettext("tactics", "Play against Stockfish") %></a>
 </div>
 
 <%= raw Earmark.as_html!(@opening.description)%>
 
 <%= if show_studies do %>
 <div>
-  <h2 id="studies"><%= gettext "Studies about the %{opening}", opening: @opening.name %></h2>
-  <p><%= gettext "Learn the %{opening} using public studies.", opening: @opening.name %></p>
+  <h2 id="studies"><%= dgettext("tactics", "Studies about the %{opening}", opening: @opening.name) %></h2>
+  <p><%= dgettext("tactics", "Learn the %{opening} using public studies.", opening: @opening.name) %></p>
   <ul>
   <%= for study <- @studies do %>
     <li>
@@ -36,32 +36,32 @@
 <% end %>
 
 <%= if show_tactics do %>
-  <h2 id="tactics"><%= gettext "%{name} Traps and Tactics", name: @opening.name %></h2>
+  <h2 id="tactics"><%= dgettext("tactics", "%{name} Traps and Tactics", name: @opening.name) %></h2>
   <% next_url = Routes.random_opening_tactic_path(@conn, :random, @locale, @opening.slug) %>
   <%= render ListudyWeb.TacticView, "tactic.html", conn: @conn, tactic: @tactic, next: next_url %>
   <p>
-  <%= gettext "Get better in the %{name} opening by practicing tactics taken from the early game.", name: @opening.name %>
+  <%= dgettext("tactics", "Get better in the %{name} opening by practicing tactics taken from the early game.", name: @opening.name) %>
 
-  <%= gettext "Recognize traps and mistakes of your opponents and exploit them." %>
+  <%= dgettext("tactics", "Recognize traps and mistakes of your opponents and exploit them.") %>
 
-  <%= gettext "Train tactics from %{amount} different games.", amount: @tactics_amount %>
+  <%= dgettext("tactics", "Train tactics from %{amount} different games.", amount: @tactics_amount) %>
   </p>
-  <%= link (gettext "%{name} Tactics", name: @opening.name) , to: next_url %>
+  <%= link dgettext("tactics", "%{name} Tactics", name: @opening.name) , to: next_url %>
 <% end %>
 
-<h2 id="stockfish"><%= gettext "Play against Stockfish" %></h2>
+<h2 id="stockfish"><%= dgettext("tactics", "Play against Stockfish") %></h2>
 
 <div class="highlight">
   <a href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#<%= @opening.fen %>;sf">
-    <%= gettext "Play the %{name}", name: @opening.name %>
+    <%= dgettext("tactics", "Play the %{name}", name: @opening.name) %>
   </a>
   <br>
   <a href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#<%= @opening.fen %>">
-    <%= gettext "Play against the %{name}", name: @opening.name %>
+    <%= dgettext("tactics", "Play against the %{name}", name: @opening.name) %>
   </a>
 </div>
 
-<p><%= gettext "Do you want to try out the %{name}? Train this opening against Stockfish.", name: @opening.name %></p>
-<p><%= gettext "Play against Stockfish either as white or black and explore the opening." %></p>
+<p><%= dgettext("tactics", "Do you want to try out the %{name}? Train this opening against Stockfish.", name: @opening.name) %></p>
+<p><%= dgettext("tactics", "Play against Stockfish either as white or black and explore the opening.") %></p>
 
 
