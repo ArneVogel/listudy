@@ -820,7 +820,7 @@ msgstr ""
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:74
-#: lib/listudy_web/templates/page/achievements.html.eex:1 lib/listudy_web/views/helpers/page_title.ex:22
+#: lib/listudy_web/views/helpers/page_title.ex:22
 msgid "Achievements"
 msgstr ""
 
@@ -844,11 +844,6 @@ msgstr ""
 #: lib/listudy_web/templates/layout/_header.html.eex:72
 #: lib/listudy_web/templates/layout/_header.html.eex:91
 msgid "Board Settings"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/page/achievements.html.eex:2
-msgid "Can you get all achievements?"
 msgstr ""
 
 #, elixir-format
