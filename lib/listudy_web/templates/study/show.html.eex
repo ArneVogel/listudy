@@ -13,22 +13,22 @@
 
     <div class="study_options">
       <div class="chapter_selection">
-        <label for="chapter_select"><%= gettext "Chapter Selection" %></label>
+        <label for="chapter_select"><%= dgettext "study", "Chapter Selection" %></label>
         <select id="chapter_select"></select>
       </div>
 
       <div>
-        <a class="icon" data-icon="!" id="play_stockfish" href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1" title="<%= gettext "Play against Stockfish" %>">Stockfish</a>
+        <a class="icon" data-icon="!" id="play_stockfish" href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1" title="<%= dgettext "study", "Play against Stockfish" %>">Stockfish</a>
       
         <%= if !@study.favorites do %>
-          <%= link gettext("Favorite"), to: Routes.study_path(@conn, :favorite_study, @study.slug), method: :post, class: "icon", "data-icon": "#" %>
+          <%= link dgettext("study", "Favorite"), to: Routes.study_path(@conn, :favorite_study, @study.slug), method: :post, class: "icon", "data-icon": "#" %>
         <% else %>
-          <%= link gettext("Unfavorite"), to: Routes.study_path(@conn, :unfavorite_study, @study.slug), method: :post, class: "icon", "data-icon": '"' %>
+          <%= link dgettext("study" ,"Unfavorite"), to: Routes.study_path(@conn, :unfavorite_study, @study.slug), method: :post, class: "icon", "data-icon": '"' %>
         <% end %>
 
-        <nobr><a class="icon" data-icon="%" id="arrows_toggle"><%= gettext("Hide Arrows") %></a></nobr>
-        <nobr><a class="icon" data-icon="%" id="line_review" title="<%= gettext("At the end of lines the board is only reset after 3 seconds giving you time to review the final position.") %>"><%= gettext("Slow board reset") %></a></nobr>
-        <nobr><a class="icon" data-icon="(" id="move_delay"><%= gettext("Move delay:") %> <span id="move_delay_time"><%= gettext("instant") %></span></a></nobr>
+        <nobr><a class="icon" data-icon="%" id="arrows_toggle"><%= dgettext("study", "Hide Arrows") %></a></nobr>
+        <nobr><a class="icon" data-icon="%" id="line_review" title="<%= dgettext("study", "At the end of lines the board is only reset after 3 seconds giving you time to review the final position.") %>"><%= dgettext("study", "Slow board reset") %></a></nobr>
+        <nobr><a class="icon" data-icon="(" id="move_delay"><%= dgettext("study", "Move delay:") %> <span id="move_delay_time"><%= dgettext("study", "instant") %></span></a></nobr>
       </div>
     </div>
   </div>
@@ -36,17 +36,17 @@
 
 
 <div class="highlight">
-  <b><%= gettext "Description" %></b>
+  <b><%= dgettext "study", "Description" %></b>
   <p><%= @study.description %></p>
 
   <%= if @study.is_owner do %>
-    <p><%= link (gettext "Edit"), to: Routes.study_path(@conn, :edit, @locale, @study) %></p>
+    <p><%= link (dgettext "study", "Edit"), to: Routes.study_path(@conn, :edit, @locale, @study) %></p>
   <% end %>
 
-  <b><%= gettext "Creator" %></b>
+  <b><%= dgettext "study", "Creator" %></b>
   <p><%= link @study.user.username, to: Routes.user_profile_path(@conn, :show, @locale, @study.user.username) %></p>
 
-  <b><%= gettext "Opening"%></b>
+  <b><%= dgettext "study", "Opening"%></b>
   <p><%= link @opening.name, to: Routes.opening_path(@conn, :show, @locale, @opening.slug) %></p>
 </div>
 
@@ -90,24 +90,24 @@
   <% end %>
 
   let i18n = {};
-  i18n.info_intro = "<%= gettext "Starting training." %>";
-  i18n.info_arrows = "<%= gettext "At first the arrows will show you which moves are in this study. Once you have played these moves twice, the arrows are no longer shown." %>";
-  i18n.error_wrong_move = "<%= gettext "This move is not in the study, try again." %>";
-  i18n.success_right_move = "<%= gettext "Right move!" %>";
-  i18n.success_end_of_line = "<%= gettext "You reached the end of this line." %>";
-  i18n.translation_chapter = "<%= gettext "Chapter" %>";
-  i18n.suggestion_favorite = "<%= gettext "If you like this study make sure to favorite it to have it listed under Your Studies" %>";
-  i18n.suggestion_share = "<%= gettext "Do you like this study? Share it with your friends." %>";
-  i18n.suggestion_account = "<%= gettext "Create an account to get all the features of Listudy and upload your own studies." %>";
-  i18n.suggestion_comment = "<%= gettext "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below." %>";
-  i18n.suggestion_100moves = "<%= gettext "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect." %>";
-  i18n.suggestion_250moves = "<%= raw gettext "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop." %>";
-  i18n.arrows_hide = "<%= gettext "Hide Arrows" %>";
-  i18n.arrows_show = "<%= gettext "Show Arrows" %>";
-  i18n.review_slow = "<%= gettext "Slow board reset" %>";
-  i18n.review_fast = "<%= gettext "Fast board reset" %>";
-  i18n.slow = "<%= gettext "slow" %>";
-  i18n.fast = "<%= gettext "fast" %>";
-  i18n.medium = "<%= gettext "medium" %>";
-  i18n.instant = "<%= gettext "instant" %>";
+  i18n.info_intro = "<%= dgettext "study", "Starting training." %>";
+  i18n.info_arrows = "<%= dgettext "study", "At first the arrows will show you which moves are in this study. Once you have played these moves twice, the arrows are no longer shown." %>";
+  i18n.error_wrong_move = "<%= dgettext "study", "This move is not in the study, try again." %>";
+  i18n.success_right_move = "<%= dgettext "study", "Right move!" %>";
+  i18n.success_end_of_line = "<%= dgettext "study", "You reached the end of this line." %>";
+  i18n.translation_chapter = "<%= dgettext "study", "Chapter" %>";
+  i18n.suggestion_favorite = "<%= dgettext "study", "If you like this study make sure to favorite it to have it listed under Your Studies" %>";
+  i18n.suggestion_share = "<%= dgettext "study", "Do you like this study? Share it with your friends." %>";
+  i18n.suggestion_account = "<%= dgettext "study", "Create an account to get all the features of Listudy and upload your own studies." %>";
+  i18n.suggestion_comment = "<%= dgettext "study", "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below." %>";
+  i18n.suggestion_100moves = "<%= dgettext "study", "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect." %>";
+  i18n.suggestion_250moves = "<%= raw dgettext "study", "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop." %>";
+  i18n.arrows_hide = "<%= dgettext "study", "Hide Arrows" %>";
+  i18n.arrows_show = "<%= dgettext "study", "Show Arrows" %>";
+  i18n.review_slow = "<%= dgettext "study", "Slow board reset" %>";
+  i18n.review_fast = "<%= dgettext "study", "Fast board reset" %>";
+  i18n.slow = "<%= dgettext "study", "slow" %>";
+  i18n.fast = "<%= dgettext "study", "fast" %>";
+  i18n.medium = "<%= dgettext "study", "medium" %>";
+  i18n.instant = "<%= dgettext "study", "instant" %>";
 </script>
