@@ -121,7 +121,7 @@ msgstr ""
 msgid "Create your own Tactic"
 msgstr ""
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: tactics.html.eex:35
 msgid "The values are each separated by a \";\". The moves must be in san notation and the last move in uci notation."
 msgstr ""

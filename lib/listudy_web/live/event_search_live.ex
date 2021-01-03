@@ -7,9 +7,9 @@ defmodule ListudyWeb.EventSearchLive do
 
   def render(assigns) do
     ~L"""
-    <h1><%= gettext "Events" %></h1>
+    <h1><%= dgettext("events", "Events") %></h1>
     <form phx-change="suggest" phx-submit="search">
-      <input class="big_search" type="text" name="q" value="<%= @query %>" list="matches" placeholder="<%= gettext "Search"%>..." autocomplete="off"/>
+      <input class="big_search" type="text" name="q" value="<%= @query %>" list="matches" placeholder="<%= dgettext("events", "Search")%>..." autocomplete="off"/>
       <br>
       <%= for match <- @matches do %>
         <a href="<%= Routes.event_path(@socket, :show, @locale, match.slug) %>"><%= match.name %></a>

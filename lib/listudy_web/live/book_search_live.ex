@@ -7,13 +7,13 @@ defmodule ListudyWeb.BookSearchLive do
 
   def render(assigns) do
     ~L"""
-    <h1><%= gettext "Chess Book Search" %></h1>
+    <h1><%= dgettext("book", "Chess Book Search") %></h1>
     <form phx-change="suggest" phx-submit="search">
-      <input class="big_search" type="text" name="q" value="<%= @query %>" list="matches" placeholder="<%= gettext "Search"%>..." autocomplete="off"/>
+      <input class="big_search" type="text" name="q" value="<%= @query %>" list="matches" placeholder="<%= dgettext("book", "Search")%>..." autocomplete="off"/>
       <br>
       <%= for match <- @matches do %>
         <p><a href="<%= Routes.book_path(@socket, :show, @locale, match.slug) %>"><%= match.title %></a>
-        <%= gettext("by") %>:
+        <%= dgettext("book", "by") %>:
         <a href="<%= Routes.author_path(@socket, :show, @locale, match.author.slug) %>"><%= match.author.name %></a>
         </p>
       <% end %>

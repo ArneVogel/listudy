@@ -6,13 +6,13 @@ defmodule ListudyWeb.StudySearchLive do
 
   def render(assigns) do
     ~L"""
-    <h1><%= gettext "Search for studies" %></h1>
+    <h1><%= dgettext("study", "Search for studies") %></h1>
     <form phx-change="suggest" phx-submit="search">
-      <input class="big_search" type="text" name="q" value="<%= @query %>" list="matches" placeholder="<%= gettext "Search" %>..." autocomplete="off"/>
+      <input class="big_search" type="text" name="q" value="<%= @query %>" list="matches" placeholder="<%= dgettext("study", "Search") %>..." autocomplete="off"/>
       <br>
       <%= for match <- @matches do %>
         <a href="/<%=@locale%>/studies/<%=match.slug%>"><%= match.title %></a> 
-        <%= gettext "by" %> 
+        <%= dgettext("study", "by") %> 
         <a href="/<%=@locale%>/profile/<%=match.username%>"><%= match.username %></a> 
         <p><%= shorten_description(match.description) %></p>
 

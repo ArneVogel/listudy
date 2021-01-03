@@ -51,7 +51,7 @@ msgstr ""
 msgid "Comment could not get created"
 msgstr ""
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:40
 msgid "Comment created"
 msgstr ""

@@ -7,9 +7,9 @@ defmodule ListudyWeb.OpeningSearchLive do
 
   def render(assigns) do
     ~L"""
-    <h1><%= gettext "Openings" %></h1>
+    <h1><%= dgettext("openings", "Openings") %></h1>
     <form phx-change="suggest" phx-submit="search">
-      <input class="big_search" type="text" name="q" value="<%= @query %>" list="matches" placeholder="<%= gettext "Search"%>..." autocomplete="off"/>
+      <input class="big_search" type="text" name="q" value="<%= @query %>" list="matches" placeholder="<%= dgettext("openings", "Search")%>..." autocomplete="off"/>
       <br>
       <%= for match <- @matches do %>
         <a href="<%= Routes.opening_path(@socket, :show, @locale, match.slug) %>"><%= match.name %></a>

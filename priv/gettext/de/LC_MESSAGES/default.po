@@ -73,25 +73,6 @@ msgid "Title"
 msgstr "Titel"
 
 #, elixir-format
-#: lib/listudy_web/live/book_search_live.ex:12
-#: lib/listudy_web/live/event_search_live.ex:12 lib/listudy_web/live/motif_search_live.ex:12
-#: lib/listudy_web/live/opening_search_live.ex:12 lib/listudy_web/live/player_search_live.ex:12
-#: lib/listudy_web/live/study_search_live.ex:11
-msgid "Search"
-msgstr "Suchen"
-
-#, elixir-format
-#: lib/listudy_web/live/study_search_live.ex:9
-msgid "Search for studies"
-msgstr "Suche nach Studien"
-
-#, elixir-format
-#: lib/listudy_web/live/book_search_live.ex:16
-#: lib/listudy_web/live/study_search_live.ex:15
-msgid "by"
-msgstr "von"
-
-#, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:9
 #: lib/listudy_web/templates/post/index.html.eex:1
 msgid "Blog"
@@ -227,11 +208,6 @@ msgid "Delete Account"
 msgstr "Löschen"
 
 #, elixir-format
-#: lib/listudy_web/live/event_search_live.ex:10
-msgid "Events"
-msgstr "Events"
-
-#, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:14
 msgid "Features"
 msgstr "Funktionen"
@@ -246,21 +222,6 @@ msgstr "Zuletzt verändert"
 #: lib/listudy_web/templates/layout/_footer.html.eex:18
 msgid "Make your own Tactic"
 msgstr "Mach deine eigenen Taktiken"
-
-#, elixir-format
-#: lib/listudy_web/live/motif_search_live.ex:10
-msgid "Motifs"
-msgstr "Motifs"
-
-#, elixir-format
-#: lib/listudy_web/live/opening_search_live.ex:10
-msgid "Openings"
-msgstr "Studiere Eröffnungen"
-
-#, elixir-format
-#: lib/listudy_web/live/player_search_live.ex:10
-msgid "Players"
-msgstr "Spieler"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:24
@@ -298,11 +259,6 @@ msgstr "Einstellungen"
 #: lib/listudy_web/templates/layout/_header.html.eex:139
 msgid "Capture"
 msgstr "Kapitel"
-
-#, elixir-format
-#: lib/listudy_web/live/book_search_live.ex:10
-msgid "Chess Book Search"
-msgstr ""
 
 #, elixir-format
 #: lib/listudy_web/templates/endgame/chapter.html.eex:2

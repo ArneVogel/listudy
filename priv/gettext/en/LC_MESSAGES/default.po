@@ -73,25 +73,6 @@ msgid "Title"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/live/book_search_live.ex:12
-#: lib/listudy_web/live/event_search_live.ex:12 lib/listudy_web/live/motif_search_live.ex:12
-#: lib/listudy_web/live/opening_search_live.ex:12 lib/listudy_web/live/player_search_live.ex:12
-#: lib/listudy_web/live/study_search_live.ex:11
-msgid "Search"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/live/study_search_live.ex:9
-msgid "Search for studies"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/live/book_search_live.ex:16
-#: lib/listudy_web/live/study_search_live.ex:15
-msgid "by"
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:9
 #: lib/listudy_web/templates/post/index.html.eex:1
 msgid "Blog"
@@ -227,11 +208,6 @@ msgid "Delete Account"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/live/event_search_live.ex:10
-msgid "Events"
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:14
 msgid "Features"
 msgstr ""
@@ -245,21 +221,6 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:18
 msgid "Make your own Tactic"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/live/motif_search_live.ex:10
-msgid "Motifs"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/live/opening_search_live.ex:10
-msgid "Openings"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/live/player_search_live.ex:10
-msgid "Players"
 msgstr ""
 
 #, elixir-format
@@ -297,11 +258,6 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:139
 msgid "Capture"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/live/book_search_live.ex:10
-msgid "Chess Book Search"
 msgstr ""
 
 #, elixir-format

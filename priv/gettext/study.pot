@@ -336,3 +336,18 @@ msgstr ""
 #: lib/listudy_web/templates/study/edit.html.eex:32
 msgid "This can not be undone!"
 msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/live/study_search_live.ex:11
+msgid "Search"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/live/study_search_live.ex:9
+msgid "Search for studies"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/live/study_search_live.ex:15
+msgid "by"
+msgstr ""

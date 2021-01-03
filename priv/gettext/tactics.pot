@@ -312,3 +312,13 @@ msgstr ""
 #: lib/listudy_web/templates/tactic/daily.html.eex:6
 msgid "Solve the daily chess puzzle. Improve your chess skills every day one tactic at a time."
 msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/live/motif_search_live.ex:10
+msgid "Motifs"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/live/motif_search_live.ex:12
+msgid "Search"
+msgstr ""

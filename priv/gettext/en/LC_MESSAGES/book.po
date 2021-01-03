@@ -71,3 +71,18 @@ msgstr ""
 #: lib/listudy_web/templates/book/recommended.html.eex:2
 msgid "This list contains the 20 best chess books as ranked by grandmasters. I hope this list helps you to find the perfect book for you."
 msgstr ""
+
+#, elixir-format, fuzzy
+#: lib/listudy_web/live/book_search_live.ex:10
+msgid "Chess Book Search"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/live/book_search_live.ex:12
+msgid "Search"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/live/book_search_live.ex:16
+msgid "by"
+msgstr ""
