@@ -867,11 +867,6 @@ msgid "Chess Book Search"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/book/recommended.html.eex:1
-msgid "Chess Books"
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:12
 msgid "Contents"
 msgstr ""
@@ -922,11 +917,6 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/tactic/translations.html.eex:8
 msgid "Find the best move for white."
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/book/recommended.html.eex:1
-msgid "Grandmaster recommended"
 msgstr ""
 
 #, elixir-format

@@ -41,3 +41,33 @@ msgstr ""
 #: lib/listudy_web/templates/book/public.html.eex:9
 msgid "Tags"
 msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/book/recommended.html.eex:1
+msgid "Chess Books"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/book/recommended.html.eex:1
+msgid "Grandmaster recommended"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/book/recommended.html.eex:10
+msgid "Have you found a recommendation from a grandmaster that is not yet in the list? Send me an email and I will add it."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/book/recommended.html.eex:9
+msgid "I hope this list of recommendations will help you find the best chess textbooks for you. Because who else could judge whether a chess book is good or not if not grandmasters."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/book/recommended.html.eex:8
+msgid "These books were all recommended by chess grandmasters! Click on the more information to find out in detail what they have to say about each book."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/book/recommended.html.eex:2
+msgid "This list contains the 20 best chess books as ranked by grandmasters. I hope this list helps you to find the perfect book for you."
+msgstr ""
