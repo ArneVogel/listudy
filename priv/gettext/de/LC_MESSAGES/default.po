@@ -237,7 +237,7 @@ msgstr "Dies kann nicht rückgängig gemacht werden! Bust du sicher?"
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:74
 msgid "Achievements"
-msgstr ""
+msgstr "Errungenschaften"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/edit.html.eex:32
@@ -264,7 +264,7 @@ msgstr "Kapitel"
 #: lib/listudy_web/templates/endgame/chapter.html.eex:2
 #: lib/listudy_web/templates/layout/_header.html.eex:36
 msgid "Endgames"
-msgstr ""
+msgstr "Endspiele"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:138
@@ -274,17 +274,17 @@ msgstr "Züge"
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:131
 msgid "Play Sound"
-msgstr ""
+msgstr "Ton abspielen"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:94
 msgid "Select a color:"
-msgstr ""
+msgstr "Farbe auswählen:"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:101
 msgid "Select a piece set:"
-msgstr ""
+msgstr "Wähle ein Figurenstyle:"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:71
@@ -295,19 +295,19 @@ msgstr "Einstellungen"
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:140
 msgid "Success"
-msgstr ""
+msgstr "Erfolg"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:137
 msgid "Test Sounds"
-msgstr ""
+msgstr "Test Ton"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:134
 msgid "Volume"
-msgstr ""
+msgstr "Lautstärke"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:10
 msgid "Webmaster"
-msgstr ""
+msgstr "Webmaster"
