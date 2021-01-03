@@ -2,7 +2,6 @@ defmodule ListudyWeb.TagController do
   use ListudyWeb, :controller
 
   alias Listudy.Tags
-  alias Listudy.Books
   alias Listudy.Tags.Tag
 
   def index(conn, _params) do

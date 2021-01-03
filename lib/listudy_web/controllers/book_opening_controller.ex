@@ -8,8 +8,6 @@ defmodule ListudyWeb.BookOpeningController do
 
   def index(conn, _params) do
     book_opening = BookOpenings.list_book_opening()
-    book = Books.list_books()
-    openings = Openings.list_openings()
     render(conn, "index.html", book_opening: book_opening)
   end
 
