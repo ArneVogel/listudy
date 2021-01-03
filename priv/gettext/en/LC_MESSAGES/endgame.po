@@ -262,3 +262,54 @@ msgstr ""
 #: lib/listudy_web/controllers/endgame_controller.ex:128
 msgid "Win games with only Pawns on the board"
 msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/live/tactics.html.leex:25
+msgid "Currently playing tactics by:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/live/tactics.html.leex:22
+msgid "Currently playing tactics from the event:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/live/tactics.html.leex:19
+msgid "Currently training in the motif:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/live/tactics.html.leex:16
+msgid "Currently training in the opening:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/endgame/game.html.eex:2
+msgid "Endgames"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/endgame/game.html.eex:28
+#: lib/listudy_web/templates/endgame/game.html.eex:30
+msgid "Next"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/endgame/game.html.eex:25
+msgid "Reset"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/endgame/game.html.eex:46
+msgid "Success!"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/endgame/game.html.eex:47
+msgid "Try again!"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/endgame/game.html.eex:15
+msgid "White to play and"
+msgstr ""

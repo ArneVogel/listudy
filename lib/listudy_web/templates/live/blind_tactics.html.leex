@@ -3,24 +3,24 @@
     <%= render ListudyWeb.ComponentView, "chessground.html" %>
   </div>
   <div class="sidebar">
-    <h2><%= gettext "Blind Tactic"%> <%= @tactic.id %></h2>
+    <h2><%= dgettext "tactics", "Blind Tactic"%> <%= @tactic.id %></h2>
 
     <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
     
     <div>
-      <p><%= gettext "In this position the following moves were played:" %> <b id="moves"></b></p>
-      <p><%= if @tactic.color == "white" do %><%= gettext "White" %><% else %><%= gettext "Black" %><% end %>
-        <%= gettext "to play and win." %>
+      <p><%= dgettext "tactics", "In this position the following moves were played:" %> <b id="moves"></b></p>
+      <p><%= if @tactic.color == "white" do %><%= dgettext "tactics", "White" %><% else %><%= dgettext "tactics", "Black" %><% end %>
+        <%= dgettext "tactics", "to play and win." %>
       </p>
     </div>
 
-    <button id="next" class="hidden continue_button" phx-click="next"><%= gettext "Continue" %></button>
+    <button id="next" class="hidden continue_button" phx-click="next"><%= dgettext "tactics", "Continue" %></button>
 
     <div>
       <hr>
       <p><%= @tactic.description %></p>
     </div>
-    <label for="ply_select"><%= gettext "How many plies should be hidden? (Updates next Tactic)" %></label>
+    <label for="ply_select"><%= dgettext "tactics", "How many plies should be hidden? (Updates next Tactic)" %></label>
 
     <input type="number" value=4 min=0 id="ply_select">
 
@@ -41,7 +41,7 @@ let color = "<%= @tactic.color %>";
 let ply = "<%= @tactic.ply %>";
 
 let i18n = {};
-i18n.success = "<%= gettext "Tactic solved!"%>";
-i18n.wrong_move = "<%= gettext "Wrong Move"%>";
-i18n.right_move = "<%= gettext "Correct move, there are still more moves."%>";
+i18n.success = "<%= dgettext "tactics", "Tactic solved!"%>";
+i18n.wrong_move = "<%= dgettext "tactics", "Wrong Move"%>";
+i18n.right_move = "<%= dgettext "tactics", "Correct move, there are still more moves."%>";
 </script>

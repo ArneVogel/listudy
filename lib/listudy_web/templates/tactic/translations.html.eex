@@ -1,9 +1,9 @@
 let i18n = {};
-i18n.success = "<%= gettext "Tactic solved!" %>";
-i18n.wrong_move = "<%= gettext "Wrong Move." %>";
-i18n.keep_trying = "<%= gettext "Keep trying!" %>";
-i18n.best_move = "<%= gettext "Best Move!" %>";
-i18n.keep_going = "<%= gettext "Keep going..." %>";
-i18n.your_turn = "<%= gettext "Your turn." %>";
-i18n.find_the_best_white = "<%= gettext "Find the best move for white." %>";
-i18n.find_the_best_black = "<%= gettext "Find the best move for black." %>";
+i18n.success = "<%= dgettext "tactics", "Tactic solved!" %>";
+i18n.wrong_move = "<%= dgettext "tactics", "Wrong Move." %>";
+i18n.keep_trying = "<%= dgettext "tactics", "Keep trying!" %>";
+i18n.best_move = "<%= dgettext "tactics", "Best Move!" %>";
+i18n.keep_going = "<%= dgettext "tactics", "Keep going..." %>";
+i18n.your_turn = "<%= dgettext "tactics", "Your turn." %>";
+i18n.find_the_best_white = "<%= dgettext "tactics", "Find the best move for white." %>";
+i18n.find_the_best_black = "<%= dgettext "tactics", "Find the best move for black." %>";

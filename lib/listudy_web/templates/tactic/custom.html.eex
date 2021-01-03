@@ -3,12 +3,12 @@
     <%= render ListudyWeb.ComponentView, "chessground.html" %>
   </div>
   <div class="sidebar">
-    <h1><%= gettext "Custom Tactic"%></h1>
+    <h1><%= dgettext "tactics", "Custom Tactic"%></h1>
 
     <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
     
     <a href="<%= Routes.tactic_path(@conn, :random, @locale) %>">
-      <button id="next" class="hidden continue_button"><%= gettext "More Tactics" %></button>
+      <button id="next" class="hidden continue_button"><%= dgettext "tactics", "More Tactics" %></button>
     </a>
     <details class="hidden" id="solution">
         <summary>Solution</summary>
@@ -85,33 +85,33 @@ document.addEventListener('DOMContentLoaded', function () {
 <hr>
 <div class="row">
   <div class="one-half column">
-    <h2 id="own"><%= gettext "Make your own Tactic" %></h2>
+    <h2 id="own"><%= dgettext "tactics", "Make your own Tactic" %></h2>
 
-    <label for="fen"><%= gettext "FEN" %>:</label>
+    <label for="fen"><%= dgettext "tactics", "FEN" %>:</label>
     <input type="text" id="fen_input" name="fen" required placeholder="r3k3/pppb4/6N1/3Pp3/N3n2b/8/PP1P2PP/R1B2K1R b q - 0 17">
 
-    <label for="moves"><%= gettext "Moves" %>:</label>
+    <label for="moves"><%= dgettext "tactics", "Moves" %>:</label>
     <input type="text" id="moves_input" name="moves" required placeholder="Bb5+ d3 Bxd3+ Kg1 Bf2#">
 
-    <label for="last_move"><%= gettext "Last Move" %>:</label>
+    <label for="last_move"><%= dgettext "tactics", "Last Move" %>:</label>
     <input type="text" id="last_move_input" name="last_move" required placeholder="h8g6">
 
     <br>
-    <button id="create_button"><%= gettext "Create" %></button>
+    <button id="create_button"><%= dgettext "tactics", "Create" %></button>
   </div>
   <div class="one-half column">
-    <h2><%= gettext "Embed this Tactic" %></h2>
-    <p><%= gettext "Use this tactic on your website. Creates an iframe that you can use on you website to share this tactic." %></p>
-    <p><%= link (gettext "Learn more"), to: Routes.webmaster_path(@conn, :show, @locale, "custom-tactics") %></p>
-    <button class="secondary modal_open" id="embed"><%= gettext "Embed" %></button>
+    <h2><%= dgettext "tactics", "Embed this Tactic" %></h2>
+    <p><%= dgettext "tactics", "Use this tactic on your website. Creates an iframe that you can use on you website to share this tactic." %></p>
+    <p><%= link (dgettext "tactics", "Learn more"), to: Routes.webmaster_path(@conn, :show, @locale, "custom-tactics") %></p>
+    <button class="secondary modal_open" id="embed"><%= dgettext "tactics", "Embed" %></button>
   </div>
 </div>
 
 <div id="embed_modal" class="modal">
   <div class="modal-content">
     <span class="modal_close">&times;</span>
-    <h3><%= gettext("Embed")%></h3>
-    <label for="iframe_code"><%= gettext("iframe code") %></label>
+    <h3><%= dgettext("tactics", "Embed")%></h3>
+    <label for="iframe_code"><%= dgettext("tactics", "iframe code") %></label>
     <input type="text" name="iframe_code" id="iframe_code" class="big_input">
   </div>
 </div>

@@ -3,26 +3,26 @@
     <%= render ListudyWeb.ComponentView, "chessground.html" %>
   </div>
   <div class="sidebar">
-    <h1><%= gettext "Tactic"%> <%= @tactic.id %></h1>
+    <h1><%= dgettext "tactics", "Tactic"%> <%= @tactic.id %></h1>
     <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
 
-    <button id="next" class="hidden continue_button" phx-click="next"><%= gettext "Continue"%></button>
+    <button id="next" class="hidden continue_button" phx-click="next"><%= dgettext "tactics", "Continue"%></button>
     <details class="hidden" id="solution">
         <summary>Solution</summary>
         <%= @tactic.moves %>
     </details>
 
     <%= if assigns[:opening] do %>
-      <p><%= gettext("Currently training in the opening:") <> " " <> @opening.name %></p>
+      <p><%= dgettext("endgame", "Currently training in the opening:") <> " " <> @opening.name %></p>
     <% end %>
     <%= if assigns[:motif] do %>
-      <p><%= gettext("Currently training in the motif:") <> " " <> @motif.name %></p>
+      <p><%= dgettext("endgame", "Currently training in the motif:") <> " " <> @motif.name %></p>
     <% end %>
     <%= if assigns[:event] do %>
-      <p><%= gettext("Currently playing tactics from the event:") <> " " <> @event.name %></p>
+      <p><%= dgettext("endgame", "Currently playing tactics from the event:") <> " " <> @event.name %></p>
     <% end %>
     <%= if assigns[:player] do %>
-      <p><%= gettext("Currently playing tactics by:") <> " " <> @player.name %></p>
+      <p><%= dgettext("endgame", "Currently playing tactics by:") <> " " <> @player.name %></p>
     <% end %>
 
   </div>
