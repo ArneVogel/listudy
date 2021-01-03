@@ -1,0 +1,46 @@
+## This file is a PO Template file.
+##
+## "msgid"s here are often extracted from source code.
+## Add new translations manually only if they're dynamic
+## translations that can't be statically extracted.
+##
+## Run "mix gettext.extract" to bring this file up to
+## date. Leave "msgstr"s empty as changing them here as no
+## effect: edit them in PO (.po) files instead.
+msgid ""
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:28
+msgid "Official Stockfish Website"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:22
+msgid "Play against Stockfish:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:25
+msgid "Stockfish is one of the best chess engines avaliable. And with the help of WebAssembly the engine can now also be executed online in the browser. This means that the engine is running in your own browser."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:31
+msgid "Thanks to Niklas Fiekas for the WebAssembly port of Stockfish!"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:27
+msgid "Thanks to the developers of stockfish!"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:23
+msgid "learn with the best chess engine."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:32
+msgid "stockfish.wasm"
+msgstr ""

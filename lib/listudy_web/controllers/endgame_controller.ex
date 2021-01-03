@@ -57,15 +57,16 @@ defmodule ListudyWeb.EndgameController do
 
   defp basic() do
     %{
-      name: gettext("Checkmating"),
-      description: gettext("Learn the basic checkmating techniques."),
+      name: dgettext("endgame", "Checkmating"),
+      description: dgettext("endgame", "Learn the basic checkmating techniques."),
       body:
-        gettext(
+        dgettext(
+          "endgame",
           "This chapter has endgames for checkmating with queen, rook, bishop + knight and bishop + bishop."
         ),
       endgames: [
         queen: %{
-          name: gettext("Queen"),
+          name: dgettext("endgame", "Queen"),
           games: [
             ["3k4/7Q/3K4/8/8/8/8/8 w - - 0 1", "w"],
             ["3k4/8/3K4/8/8/8/7Q/8 w - - 0 1", "w"],
@@ -77,7 +78,7 @@ defmodule ListudyWeb.EndgameController do
           ]
         },
         rook: %{
-          name: gettext("Rook"),
+          name: dgettext("endgame", "Rook"),
           games: [
             ["3k4/7R/3K4/8/8/8/8/8 w - - 0 1", "w"],
             ["1k6/7R/3K4/8/8/8/8/8 w - - 0 1", "w"],
@@ -90,7 +91,7 @@ defmodule ListudyWeb.EndgameController do
           ]
         },
         "bishop-bishop": %{
-          name: gettext("Bishop + Bishop"),
+          name: dgettext("endgame", "Bishop + Bishop"),
           games: [
             ["k7/3B4/K2B4/8/8/8/8/8 w - - 0 1", "w"],
             ["k7/3B4/KB6/8/8/8/8/8 w - - 0 1", "w"],
@@ -105,7 +106,7 @@ defmodule ListudyWeb.EndgameController do
           ]
         },
         "bishop-knight": %{
-          name: gettext("Bishop + Knight"),
+          name: dgettext("endgame", "Bishop + Knight"),
           games: [
             ["k7/3N4/BK6/8/8/8/8/8 w - - 0 1", "w"],
             ["1k6/1B6/1K3N2/8/8/8/8/8 w - - 0 1", "w"],
@@ -123,16 +124,18 @@ defmodule ListudyWeb.EndgameController do
 
   defp king_and_pawn() do
     %{
-      name: gettext("King and Pawn Endgames"),
-      description: gettext("Win games with only Pawns on the board"),
+      name: dgettext("endgame", "King and Pawn Endgames"),
+      description: dgettext("endgame", "Win games with only Pawns on the board"),
       body:
-        gettext(
+        dgettext(
+          "endgame",
           "This chapter has endgames about the King and Pawn endgame. Many of the examples are taken from Capablancas \"Chess Fundamentals\"."
         ),
       endgames: [
         "endings-of-games": %{
-          name: gettext("Endings of Games"),
-          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          name: dgettext("endgame", "Endings of Games"),
+          description:
+            dgettext("endgame", "From the book \"Chess Studies, Or, Endings of Games\"."),
           games: [
             ["8/3k4/1p1P4/1P1K4/8/8/8/8 w - - 0 1", "w"],
             ["3k4/3p4/8/3P4/3P4/3K4/8/8 w - - 0 1", "w"],
@@ -153,7 +156,7 @@ defmodule ListudyWeb.EndgameController do
           ]
         },
         "pawn-promotion": %{
-          name: gettext("Pawn Promotion"),
+          name: dgettext("endgame", "Pawn Promotion"),
           games: [
             ["8/8/5k2/8/5K2/8/4P3/8 w - - 0 1", "p"],
             ["8/3kp3/8/4K3/8/8/8/8 w - - 0 1", "d"],
@@ -161,7 +164,7 @@ defmodule ListudyWeb.EndgameController do
           ]
         },
         "pawn-endings": %{
-          name: gettext("Pawn Endings"),
+          name: dgettext("endgame", "Pawn Endings"),
           games: [
             ["5k2/6p1/4K1P1/5P2/8/8/8/8 w - - 0 1", "w"],
             ["8/6p1/3k4/8/3K1PP1/8/8/8 w - - 0 1", "w"],
@@ -172,14 +175,14 @@ defmodule ListudyWeb.EndgameController do
           ]
         },
         "passed-pawn": %{
-          name: gettext("Obtaining a Passed Pawn"),
+          name: dgettext("endgame", "Obtaining a Passed Pawn"),
           games: [
             ["8/ppp4k/8/PPP5/8/8/7K/8 w - - 0 1", "w"],
             ["8/p5kp/8/1P6/8/1K6/P7/8 w - - 0 1", "w"]
           ]
         },
         "the-opposition": %{
-          name: gettext("The Opposition"),
+          name: dgettext("endgame", "The Opposition"),
           games: [
             ["8/8/4k3/1p5p/1P2K2P/8/8/8 w - - 0 1", "d"],
             ["4k3/8/8/1p5p/1P5P/8/8/4K3 w - - 0 1", "w"],
@@ -192,13 +195,14 @@ defmodule ListudyWeb.EndgameController do
 
   defp kings_bishops_and_pawns() do
     %{
-      name: gettext("Bishops and Pawns"),
-      description: gettext("Endgames with only Bishops and Pawns on the board."),
-      body: gettext("This chapter has endgames about Pawn and Bishop endings."),
+      name: dgettext("endgame", "Bishops and Pawns"),
+      description: dgettext("endgame", "Endgames with only Bishops and Pawns on the board."),
+      body: dgettext("endgame", "This chapter has endgames about Pawn and Bishop endings."),
       endgames: [
         "endings-of-games": %{
-          name: gettext("Endings of Games"),
-          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          name: dgettext("endgame", "Endings of Games"),
+          description:
+            dgettext("endgame", "From the book \"Chess Studies, Or, Endings of Games\"."),
           games: [
             ["8/8/2b5/2P5/1k1K1P2/8/8/8 w - - 0 1", "w"],
             ["1k1b4/1P1P4/K1P5/8/8/8/8/8 w - - 0 1", "w"],
@@ -223,13 +227,14 @@ defmodule ListudyWeb.EndgameController do
 
   defp knights_bishops_and_pawns() do
     %{
-      name: gettext("Knights, Bishops and Pawns"),
-      description: gettext("Endgames with Knights, Bishops and Pawns."),
-      body: gettext("This chapter has endgames about Knight and Bishop endings."),
+      name: dgettext("endgame", "Knights, Bishops and Pawns"),
+      description: dgettext("endgame", "Endgames with Knights, Bishops and Pawns."),
+      body: dgettext("endgame", "This chapter has endgames about Knight and Bishop endings."),
       endgames: [
         "endings-of-games": %{
-          name: gettext("Endings of Games"),
-          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          name: dgettext("endgame", "Endings of Games"),
+          description:
+            dgettext("endgame", "From the book \"Chess Studies, Or, Endings of Games\"."),
           games: [
             ["k7/2K5/8/nPN5/8/8/8/8 w - - 0 1", "w"],
             ["8/2k2b2/4p1p1/2K1P1P1/2N5/8/8/8 w - - 0 1", "w"],
@@ -246,13 +251,15 @@ defmodule ListudyWeb.EndgameController do
 
   defp two_minor_pieces_against_one() do
     %{
-      name: gettext("Two Minor Pieces against one Minor Piece"),
-      description: gettext("Two minor pieces gainst one minor piece, with and without pawns."),
-      body: gettext("Two against one."),
+      name: dgettext("endgame", "Two Minor Pieces against one Minor Piece"),
+      description:
+        dgettext("endgame", "Two minor pieces gainst one minor piece, with and without pawns."),
+      body: dgettext("endgame", "Two against one."),
       endgames: [
         "endings-of-games": %{
-          name: gettext("Endings of Games"),
-          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          name: dgettext("endgame", "Endings of Games"),
+          description:
+            dgettext("endgame", "From the book \"Chess Studies, Or, Endings of Games\"."),
           games: [
             ["8/5k2/5n2/5K2/8/5B2/8/4B3 w - - 0 1", "w"],
             ["7k/4b3/6K1/7N/8/8/8/2B5 w - - 0 1", "w"],
@@ -270,13 +277,14 @@ defmodule ListudyWeb.EndgameController do
 
   defp rook_against_pawns() do
     %{
-      name: gettext("Rook against Pawns"),
-      description: gettext("Rook against Pawn endgames."),
-      body: gettext("Train rook against pawn endgames."),
+      name: dgettext("endgame", "Rook against Pawns"),
+      description: dgettext("endgame", "Rook against Pawn endgames."),
+      body: dgettext("endgame", "Train rook against pawn endgames."),
       endgames: [
         "endings-of-games": %{
-          name: gettext("Endings of Games"),
-          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          name: dgettext("endgame", "Endings of Games"),
+          description:
+            dgettext("endgame", "From the book \"Chess Studies, Or, Endings of Games\"."),
           games: [
             ["8/8/8/8/k1K5/2p5/1p5R/8 w - - 0 1", "w"],
             ["8/8/5K2/7k/8/p7/1p6/1R6 w - - 0 1", "d"],
@@ -292,13 +300,15 @@ defmodule ListudyWeb.EndgameController do
 
   defp rook_against_minor_pieces() do
     %{
-      name: gettext("Rook against minor Pieces"),
-      description: gettext("Rook against minor pieces endgames."),
-      body: gettext("Rook and pawn against bishop or knight, with and without pawns."),
+      name: dgettext("endgame", "Rook against minor Pieces"),
+      description: dgettext("endgame", "Rook against minor pieces endgames."),
+      body:
+        dgettext("endgame", "Rook and pawn against bishop or knight, with and without pawns."),
       endgames: [
         "endings-of-games": %{
-          name: gettext("Endings of Games"),
-          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          name: dgettext("endgame", "Endings of Games"),
+          description:
+            dgettext("endgame", "From the book \"Chess Studies, Or, Endings of Games\"."),
           games: [
             ["7k/4R3/5K2/8/8/8/7P/1b6 w - - 0 1", "w"],
             ["5k2/6R1/5K2/8/8/5b2/8/8 w - - 0 1", "w"],
@@ -313,13 +323,14 @@ defmodule ListudyWeb.EndgameController do
 
   defp minor_pieces_against_rook() do
     %{
-      name: gettext("Minor pirces against Rook"),
-      description: gettext("Minor pieces against Rook endgames."),
-      body: gettext("Bishops and/or knights against rook, with and without pawns."),
+      name: dgettext("endgame", "Minor pirces against Rook"),
+      description: dgettext("endgame", "Minor pieces against Rook endgames."),
+      body: dgettext("endgame", "Bishops and/or knights against rook, with and without pawns."),
       endgames: [
         "endings-of-games": %{
-          name: gettext("Endings of Games"),
-          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          name: dgettext("endgame", "Endings of Games"),
+          description:
+            dgettext("endgame", "From the book \"Chess Studies, Or, Endings of Games\"."),
           games: [
             ["6k1/8/r2BK2P/6N1/8/8/8/8 w - - 0 1", "w"],
             ["7k/r7/5NKB/8/8/8/7P/8 w - - 0 1", "w"],
@@ -334,13 +345,14 @@ defmodule ListudyWeb.EndgameController do
 
   defp queen_against_pawns() do
     %{
-      name: gettext("Queen against Pawns"),
-      description: gettext("Queen against pawn endgames."),
-      body: gettext("Queen against pawn endgames."),
+      name: dgettext("endgame", "Queen against Pawns"),
+      description: dgettext("endgame", "Queen against pawn endgames."),
+      body: dgettext("endgame", "Queen against pawn endgames."),
       endgames: [
         "endings-of-games": %{
-          name: gettext("Endings of Games"),
-          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          name: dgettext("endgame", "Endings of Games"),
+          description:
+            dgettext("endgame", "From the book \"Chess Studies, Or, Endings of Games\"."),
           games: [
             ["8/7Q/6p1/5k2/8/8/8/K7 w - - 0 1", "w"],
             ["1K3Q2/8/8/8/8/8/1p3p2/k7 w - - 0 1", "w"],
@@ -358,13 +370,14 @@ defmodule ListudyWeb.EndgameController do
 
   defp queens_and_pawns() do
     %{
-      name: gettext("Queens and Pawns"),
-      description: gettext("Queens and pawn endgames."),
-      body: gettext("Train endgames with queens and pawns on the board."),
+      name: dgettext("endgame", "Queens and Pawns"),
+      description: dgettext("endgame", "Queens and pawn endgames."),
+      body: dgettext("endgame", "Train endgames with queens and pawns on the board."),
       endgames: [
         "endings-of-games": %{
-          name: gettext("Endings of Games"),
-          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          name: dgettext("endgame", "Endings of Games"),
+          description:
+            dgettext("endgame", "From the book \"Chess Studies, Or, Endings of Games\"."),
           games: [
             ["8/3KP1q1/8/8/8/4Q3/k7/8 w - - 0 1", "w"],
             ["1k6/3q4/3P4/3K4/5Q2/8/8/8 w - - 0 1", "w"],
@@ -385,13 +398,14 @@ defmodule ListudyWeb.EndgameController do
 
   defp queen_against_rook() do
     %{
-      name: gettext("Queen against Rook"),
-      description: gettext("Queen against Rook"),
-      body: gettext("Train queen and rook endgames."),
+      name: dgettext("endgame", "Queen against Rook"),
+      description: dgettext("endgame", "Queen against Rook"),
+      body: dgettext("endgame", "Train queen and rook endgames."),
       endgames: [
         "endings-of-games": %{
-          name: gettext("Endings of Games"),
-          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          name: dgettext("endgame", "Endings of Games"),
+          description:
+            dgettext("endgame", "From the book \"Chess Studies, Or, Endings of Games\"."),
           games: [
             ["7k/6r1/5K2/8/8/8/8/4Q3 w - - 0 1", "w"],
             ["K2k4/8/1q6/8/8/8/8/R7 w - - 0 1", "d"],
@@ -404,9 +418,10 @@ defmodule ListudyWeb.EndgameController do
           ]
         },
         euclid: %{
-          name: gettext("King and Queen against King and Rook"),
+          name: dgettext("endgame", "King and Queen against King and Rook"),
           description:
-            gettext(
+            dgettext(
+              "endgame",
               "From the book \"Analysis of the  Chess Ending King and Queen against King and Rook\"."
             ),
           games: [
@@ -423,8 +438,8 @@ defmodule ListudyWeb.EndgameController do
           ]
         },
         "chess-fundamentals": %{
-          name: gettext("Chess Fundamentals"),
-          description: gettext("From the Capablancas \"Chess Fundamentals\"."),
+          name: dgettext("endgame", "Chess Fundamentals"),
+          description: dgettext("endgame", "From the Capablancas \"Chess Fundamentals\"."),
           games: [
             ["1k6/1r6/2K5/Q7/8/8/8/8 w - - 0 1", "w"],
             ["8/k7/2K5/4Q3/8/8/8/1r6 w - - 0 1", "w"],
@@ -437,13 +452,14 @@ defmodule ListudyWeb.EndgameController do
 
   defp queen_against_minor_pieces() do
     %{
-      name: gettext("Queen against Minor Pieces"),
-      description: gettext("Queen against minor pieces."),
-      body: gettext("Train queen and minor piece endgames."),
+      name: dgettext("endgame", "Queen against Minor Pieces"),
+      description: dgettext("endgame", "Queen against minor pieces."),
+      body: dgettext("endgame", "Train queen and minor piece endgames."),
       endgames: [
         "endings-of-games": %{
-          name: gettext("Endings of Games"),
-          description: gettext("From the book \"Chess Studies, Or, Endings of Games\"."),
+          name: dgettext("endgame", "Endings of Games"),
+          description:
+            dgettext("endgame", "From the book \"Chess Studies, Or, Endings of Games\"."),
           games: [
             ["8/5Q2/8/8/8/6kp/p5p1/1b4K1 w - - 0 1", "w"],
             ["K7/8/2n3k1/n7/8/Q7/8/8 w - - 0 1", "d"],

@@ -4,7 +4,7 @@
       <h2><%= @book.title %></h2>
       <p><%= @book.summary %></p>
       <%= if length(@book.expert_recommendations) != 0 do %>
-        <b><%= gettext("Recommended by")%>:</b>
+        <b><%= dgettext("book", "Recommended by")%>:</b>
         <div class="book-thumb-recommendations">
         <%= for {er, i} <- Enum.with_index(@book.expert_recommendations) do %>
           <span class="book-expert-name-tag">
@@ -29,14 +29,14 @@
       <% end %>
 
       <a href="<%= Routes.book_path(@conn, :show, @locale, @book.slug) %>">
-        <button><%= gettext("More") %></button>
+        <button><%= dgettext("book", "More") %></button>
       </a>
     </div>
     <div class="one-third column">
       <a class="book-container">
         <div class="book small-book">
           <img
-            alt="<%= gettext("%{book_name} book cover", book_name: @book.title) %>"
+            alt="<%= dgettext("book", "%{book_name} book cover", book_name: @book.title) %>"
             src="/book_cover/<%= @book.slug %>.jpg" loading="lazy"
             />
         </div>

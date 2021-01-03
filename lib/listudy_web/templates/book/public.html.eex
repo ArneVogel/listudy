@@ -6,7 +6,7 @@
     <div class="book-page-intro-bottom">
     <%= if length(@tags) > 0 do %>
     <div>
-      <b><%= gettext("Tags") %>:</b>
+      <b><%= dgettext("book", "Tags") %>:</b>
       <%= for tag <- @tags do %>
         <%= link tag.name, to: Routes.tag_path(@conn, :show, @locale, tag.slug) %>
       <% end %>
@@ -14,7 +14,7 @@
     <% end %>
     <%= if length(@openings) > 0 do %>
     <div>
-      <b><%= gettext("Opening") %>:</b>
+      <b><%= dgettext("book", "Opening") %>:</b>
       <%= for opening <- @openings do %>
         <%= link opening.name, to: Routes.opening_path(@conn, :show, @locale, opening.slug) %>
       <% end %>
@@ -29,7 +29,7 @@
     <a class="book-container" href="#" rel="noreferrer noopener">
       <div class="book">
         <img
-          alt="<%= gettext("%{book_name} book cover", book_name: @book.title) %>"
+          alt="<%= dgettext("book", "%{book_name} book cover", book_name: @book.title) %>"
           src="/book_cover/<%= @book.slug %>.jpg"
           />
       </div>
@@ -38,7 +38,7 @@
 </div>
 <%= if length(@recommendations) > 0 do %>
   <div>
-  <h2><%= gettext("Recommendations") %></h2>
+  <h2><%= dgettext("book", "Recommendations") %></h2>
   <%= for {recommendation, player}<- @recommendations do %>
     <figure class="book-figure">
         <blockquote class="book-blockquote">

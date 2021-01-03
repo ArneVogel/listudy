@@ -1,0 +1,263 @@
+## This file is a PO Template file.
+##
+## "msgid"s here are often extracted from source code.
+## Add new translations manually only if they're dynamic
+## translations that can't be statically extracted.
+##
+## Run "mix gettext.extract" to bring this file up to
+## date. Leave "msgstr"s empty as changing them here as no
+## effect: edit them in PO (.po) files instead.
+msgid ""
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:94
+msgid "Bishop + Bishop"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:109
+msgid "Bishop + Knight"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:198
+msgid "Bishops and Pawns"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:328
+msgid "Bishops and/or knights against rook, with and without pawns."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:60
+msgid "Checkmating"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:441
+msgid "Chess Fundamentals"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:231
+msgid "Endgames with Knights, Bishops and Pawns."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:199
+msgid "Endgames with only Bishops and Pawns on the board."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:136
+#: lib/listudy_web/controllers/endgame_controller.ex:203 lib/listudy_web/controllers/endgame_controller.ex:235
+#: lib/listudy_web/controllers/endgame_controller.ex:260 lib/listudy_web/controllers/endgame_controller.ex:285
+#: lib/listudy_web/controllers/endgame_controller.ex:309 lib/listudy_web/controllers/endgame_controller.ex:331
+#: lib/listudy_web/controllers/endgame_controller.ex:353 lib/listudy_web/controllers/endgame_controller.ex:378
+#: lib/listudy_web/controllers/endgame_controller.ex:406 lib/listudy_web/controllers/endgame_controller.ex:460
+msgid "Endings of Games"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:442
+msgid "From the Capablancas \"Chess Fundamentals\"."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:423
+msgid "From the book \"Analysis of the  Chess Ending King and Queen against King and Rook\"."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:138
+#: lib/listudy_web/controllers/endgame_controller.ex:205 lib/listudy_web/controllers/endgame_controller.ex:237
+#: lib/listudy_web/controllers/endgame_controller.ex:262 lib/listudy_web/controllers/endgame_controller.ex:287
+#: lib/listudy_web/controllers/endgame_controller.ex:311 lib/listudy_web/controllers/endgame_controller.ex:333
+#: lib/listudy_web/controllers/endgame_controller.ex:355 lib/listudy_web/controllers/endgame_controller.ex:380
+#: lib/listudy_web/controllers/endgame_controller.ex:408 lib/listudy_web/controllers/endgame_controller.ex:462
+msgid "From the book \"Chess Studies, Or, Endings of Games\"."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:127
+msgid "King and Pawn Endgames"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:421
+msgid "King and Queen against King and Rook"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:230
+msgid "Knights, Bishops and Pawns"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:61
+msgid "Learn the basic checkmating techniques."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:327
+msgid "Minor pieces against Rook endgames."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:326
+msgid "Minor pirces against Rook"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:178
+msgid "Obtaining a Passed Pawn"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:167
+msgid "Pawn Endings"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:159
+msgid "Pawn Promotion"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:69
+msgid "Queen"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:455
+msgid "Queen against Minor Pieces"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:348
+msgid "Queen against Pawns"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:401
+#: lib/listudy_web/controllers/endgame_controller.ex:402
+msgid "Queen against Rook"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:456
+msgid "Queen against minor pieces."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:349
+#: lib/listudy_web/controllers/endgame_controller.ex:350
+msgid "Queen against pawn endgames."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:373
+msgid "Queens and Pawns"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:374
+msgid "Queens and pawn endgames."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:81
+msgid "Rook"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:281
+msgid "Rook against Pawn endgames."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:280
+msgid "Rook against Pawns"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:303
+msgid "Rook against minor Pieces"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:304
+msgid "Rook against minor pieces endgames."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:306
+msgid "Rook and pawn against bishop or knight, with and without pawns."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:185
+msgid "The Opposition"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:232
+msgid "This chapter has endgames about Knight and Bishop endings."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:200
+msgid "This chapter has endgames about Pawn and Bishop endings."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:130
+msgid "This chapter has endgames about the King and Pawn endgame. Many of the examples are taken from Capablancas \"Chess Fundamentals\"."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:63
+msgid "This chapter has endgames for checkmating with queen, rook, bishop + knight and bishop + bishop."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:375
+msgid "Train endgames with queens and pawns on the board."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:457
+msgid "Train queen and minor piece endgames."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:403
+msgid "Train queen and rook endgames."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:282
+msgid "Train rook against pawn endgames."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:254
+msgid "Two Minor Pieces against one Minor Piece"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:257
+msgid "Two against one."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:256
+msgid "Two minor pieces gainst one minor piece, with and without pawns."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/controllers/endgame_controller.ex:128
+msgid "Win games with only Pawns on the board"
+msgstr ""
