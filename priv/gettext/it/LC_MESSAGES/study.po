@@ -1,0 +1,165 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: it\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:94
+msgid "At first the arrows will show you which moves are in this study. Once you have played these moves twice, the arrows are no longer shown."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:30
+msgid "At the end of lines the board is only reset after 3 seconds giving you time to review the final position."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:98
+msgid "Chapter"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:16
+msgid "Chapter Selection"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:101
+msgid "Create an account to get all the features of Listudy and upload your own studies."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:46
+msgid "Creator"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:39
+msgid "Description"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:102
+msgid "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:100
+msgid "Do you like this study? Share it with your friends."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:43
+msgid "Edit"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:108
+msgid "Fast board reset"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:24
+msgid "Favorite"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:29
+#: lib/listudy_web/templates/study/show.html.eex:105
+msgid "Hide Arrows"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:99
+msgid "If you like this study make sure to favorite it to have it listed under Your Studies"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:31
+msgid "Move delay:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:49
+msgid "Opening"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:21
+msgid "Play against Stockfish"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:96
+msgid "Right move!"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:106
+msgid "Show Arrows"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:30
+#: lib/listudy_web/templates/study/show.html.eex:107
+msgid "Slow board reset"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:93
+msgid "Starting training."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:95
+msgid "This move is not in the study, try again."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:26
+msgid "Unfavorite"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:103
+msgid "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:104
+msgid "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:97
+msgid "You reached the end of this line."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:110
+msgid "fast"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:31
+#: lib/listudy_web/templates/study/show.html.eex:112
+msgid "instant"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:111
+msgid "medium"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:109
+msgid "slow"
+msgstr ""
