@@ -28,7 +28,7 @@ config :listudy, :seo,
 
 config :listudy, :languages,
   default: "en",
-  translations: ["en", "de"]
+  translations: ["en", "de", "it"]
 
 # Configures Elixir's Logger
 config :logger, :console,
