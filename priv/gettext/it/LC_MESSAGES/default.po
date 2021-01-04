@@ -184,7 +184,7 @@ msgstr "Tattiche alla Cieca"
 #: lib/listudy_web/templates/layout/_footer.html.eex:17
 #: lib/listudy_web/templates/layout/_header.html.eex:28
 msgid "ChessClicker"
-msgstr "ChessCliker"
+msgstr "ChessClicker"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/edit.html.eex:37
