@@ -140,7 +140,7 @@ msgstr "Termini del Servizio"
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:36
 msgid "The email is used to log in. It doesn't have to be real, as long as you remember it."
-msgstr "QQuest email è usata solo per loggarti. Anche se ne inserisci una fake, l'importante è che tu la ricordi"
+msgstr "Questa email è usata solo per loggarti. Anche se ne inserisci una fake, l'importante è che tu la ricordi"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/imprint.html.eex:2
