@@ -15,127 +15,127 @@ msgstr ""
 #: lib/listudy_web/templates/layout/_header.html.eex:52
 #: lib/listudy_web/templates/pow/registration/new.html.eex:29
 msgid "Register"
-msgstr ""
+msgstr "Registrati"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:55
 msgid "Sign in"
-msgstr ""
+msgstr "Entra"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:78
 msgid "Sign out"
-msgstr ""
+msgstr "Esci"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:68
 msgid "Settings"
-msgstr ""
+msgstr "Impostazioni"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:70
 msgid "Toggle Darkmode"
-msgstr ""
+msgstr "Tema Scuro"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:76
 msgid "User Settings"
-msgstr ""
+msgstr "Impostazioni Utente"
 
 #, elixir-format
 #: lib/listudy/users/user.ex:43
 msgid "Only alphanumeric characters allowed"
-msgstr ""
+msgstr "Ammessi solo caratteri alfanumerici"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:16
 msgid "Search for Studies"
-msgstr ""
+msgstr "Cerca Studi"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:14
 msgid "Your Studies"
-msgstr ""
+msgstr "I tuoi Studi"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:141
 msgid "Error"
-msgstr ""
+msgstr "Errore"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:11
 msgid "Study"
-msgstr ""
+msgstr "Studio"
 
 #, elixir-format
 #: lib/listudy_web/templates/post/index.html.eex:6
 msgid "Title"
-msgstr ""
+msgstr "Titolo"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:9
 #: lib/listudy_web/templates/post/index.html.eex:1
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:17
 msgid "Create a new Study"
-msgstr ""
+msgstr "Crea nuovo Studio"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:36
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:8
 #: lib/listudy_web/templates/page/imprint.html.eex:1
 msgid "Imprint"
-msgstr ""
+msgstr "In Evidenza"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:60
 msgid "Language"
-msgstr ""
+msgstr "Lingua"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:37
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:37
 msgid "Please choose a secure password. The password must be at least eight characters long."
-msgstr ""
+msgstr "Perfavore scegli una password sicura. La password deve essere lunga almeno otto caratteri"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:5
 #: lib/listudy_web/templates/page/imprint.html.eex:8
 msgid "Privacy"
-msgstr ""
+msgstr "Privacy"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:1
 #: lib/listudy_web/templates/pow/registration/new.html.eex:38
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Politica della Privacy"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:77
 msgid "Profile"
-msgstr ""
+msgstr "Profilo"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:34
 msgid "Register to get access to all features."
-msgstr ""
+msgstr "Registrati per accedere a tutti i contenuti"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:6
 #: lib/listudy_web/templates/page/imprint.html.eex:9 service.html.eex:1 lib/listudy_web/templates/pow/registration/new.html.eex:39
 msgid "Terms of Service"
-msgstr ""
+msgstr "Termini del Servizio"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:36
