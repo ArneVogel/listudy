@@ -26,6 +26,10 @@ config :listudy, :seo,
   # how many favorites a study needs to not get noindexed
   study_min_favorites: 3
 
+config :listudy, :languages,
+  default: "en",
+  translations: ["en", "de"]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

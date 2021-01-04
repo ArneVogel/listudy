@@ -2,7 +2,7 @@ defmodule ListudyWeb.PageController do
   use ListudyWeb, :controller
   alias Listudy.Content
 
-  @languages ["en", "de"]
+  @languages Application.get_env(:listudy, :languages)[:translations]
   @pages ["privacy", "terms-of-service", "imprint", "copyright", "achievements", "icons"]
   @features ["blind-tactics"]
 
