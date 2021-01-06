@@ -69,7 +69,8 @@ function handle_click(square) {
             // "check: true" would sometimes result in the wrong king being shown in check
             ground.set({check: t});
         } else {
-            set_div_text(info_div, i18n.right_move)
+            let last_move = get_current_chess().history().pop();
+            set_div_text(info_div, i18n.right_move + last_move)
         }
         current_chess = get_current_chess();
         legal_moves = ground_legal_moves(current_chess);
