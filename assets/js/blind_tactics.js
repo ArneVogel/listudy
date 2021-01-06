@@ -128,13 +128,34 @@ function get_base_position() {
     return tc.fen();
 }
 
+// the moves that were played from the base position to the current ply
 function played_from_base() {
     return chess.history().slice(ply - hidden_moves,current_move);
 }
 
+// the fen of the position that is initially shown on the board
+function base_fen() {
+    let tc = new Chess();
+    for (let m of chess.history().slice(0, ply - hidden_moves)) {
+        tc.move(m);
+    }
+    return tc.fen();
+}
+
+// generates the pgn of the moves that were played from the base position
 function setup_move_text() {
-    let m = played_from_base();
-    document.getElementById("moves").innerText = m.join(" ");
+    let moves = played_from_base();
+    let tc = new Chess(base_fen());
+
+    for (let m of moves) {
+        tc.move(m);
+    }
+
+    let pgn = tc.pgn();
+    pgn = pgn.split("\n");
+    pgn = pgn[pgn.length-1];
+
+    document.getElementById("moves").innerText = pgn;
 }
 
 function main() {
