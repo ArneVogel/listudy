@@ -12,5 +12,6 @@
     </div>
   <% end %>
 <% else %>
-  <p><%= dgettext("comments", "Log in to comment") %></p>
+  <% {_, register} = safe_to_string(link dgettext("comments", "Register"), to: Routes.pow_registration_path(@conn, :new)) |> raw %>
+  <p><%= raw dgettext "comments", "%{register} to comment", register: register %></p>
 <% end %>
