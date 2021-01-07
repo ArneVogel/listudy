@@ -15,6 +15,6 @@ defmodule ListudyWeb.ChessClickerLive do
 
   def handle_event("next", _value, socket) do
     tactic = Tactics.get_random_easy_tactic()
-    {:ok, assign(socket, tactic: tactic)}
+    {:noreply, assign(socket, tactic: tactic)}
   end
 end
