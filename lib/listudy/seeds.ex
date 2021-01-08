@@ -7,6 +7,9 @@ defmodule Listudy.Seeds do
     alias Listudy.Openings.Opening
     alias Listudy.Events.Event
     alias Listudy.Players.Player
+    alias Listudy.Authors.Author
+    alias Listudy.Books.Book
+    alias Listudy.ExpertRecommendations.ExpertRecommendation
 
     user = %User{
       username: "Arne",
@@ -75,6 +78,32 @@ defmodule Listudy.Seeds do
       ply: 16
     }
 
+    author = %Author{
+      name: "J. R. R. Tolkien",
+      slug: "tolkien",
+      description: "The creator of Lord of the Rings."
+    }
+
+    book = %Book{
+      title: "The Hobbit",
+      slug: "the-hobbit",
+      author_id: 1,
+      year: 1937,
+      isbn: "some-number",
+      amazon_id: "some-id",
+      summary: "The story of a Hobbits Holiday",
+      text: "Some text at the bottom."
+    }
+
+    recommendation = %ExpertRecommendation{
+      book_id: 1,
+      player_id: 1,
+      text: "A great book!",
+      source: "I read it."
+    }
+
+
+
     Listudy.Repo.insert!(user)
     Listudy.Repo.insert!(regular)
     Listudy.Repo.insert!(event)
@@ -83,5 +112,8 @@ defmodule Listudy.Seeds do
     Listudy.Repo.insert!(opening)
     Listudy.Repo.insert!(tactic)
     Listudy.Repo.insert!(blind_tactic)
+    Listudy.Repo.insert!(author)
+    Listudy.Repo.insert!(book)
+    Listudy.Repo.insert!(recommendation)
   end
 end
