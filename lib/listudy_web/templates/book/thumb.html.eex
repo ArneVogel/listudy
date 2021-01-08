@@ -7,12 +7,13 @@
         <b><%= dgettext("book", "Recommended by")%>:</b>
         <div class="book-thumb-recommendations">
         <%= for {er, i} <- Enum.with_index(@book.expert_recommendations) do %>
+          <% modal_id = "#{er.player.slug}-#{i}-#{@book.slug}" %>
           <span class="book-expert-name-tag">
             <nobr>
-            <span class="modal_open" id="<%= er.player.slug %><%= i %>"><%= er.player.name %></span>
+            <span class="modal_open" id="<%= modal_id %>"><%= er.player.name %></span>
             </nobr>
           </span>
-          <div id="<%= er.player.slug %><%= i %>_modal" class="modal">
+          <div id="<%= modal_id %>_modal" class="modal">
             <div class="modal-content">
               <span class="modal_close">&times;</span>
               <figure>
