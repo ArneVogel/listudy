@@ -24,3 +24,20 @@ div.buttons > i.button, div.edit > i.button {
     margin-bottom: 2em;
     margin-top: 1em;
 }
+
+i.button {
+    width: 48px;
+    height: 48px !important;
+    padding-top: 10px !important;
+    font-size: 24px;
+}
+
+div.buttons {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+span.move {
+    padding-right: 0.2em;
+    padding-left: 0.2em;
+}
