@@ -21,6 +21,7 @@ To start the server:
   * Install npm dependencies with `npm install --prefix assets`. For Windows, you need to run `cd assets` then `npm install` then `cd ..`.
   * Make study pgn directory with `mkdir priv/static/study_pgn`
   * Opening svg directory with `mkdir priv/static/images/opening`
+  * Create database with `mix ecto.create`, migrate databse with `mix ecto.migrate`, fill database with seed dataset `mix run priv/repo/seeds.exs`
   * Start Phoenix endpoint with `mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
