@@ -86,7 +86,7 @@
   }
   var pgn = clean_pgn(`<%= javascript_escape @study.pgn %>`);
   var color = "<%= @study.color %>";
-  var study_id = "<%= @study.id %>";
+  var study_id = "<%= @study.slug %>".split("-")[0];
   <%= if Pow.Plug.current_user(@conn) do %>
   var logged_in = true;
   <% else %>
