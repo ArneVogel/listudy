@@ -1,3 +1,15 @@
+@media (max-width: 600px) {                  
+    .moves .move a {
+        cursor: pointer;
+        display: inline-block;
+        width: 48px;
+        text-align: center;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+}
+
+
 .moves .move .comment {
 	color: var(--font-color);
 	font-weight: 500;
