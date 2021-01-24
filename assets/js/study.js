@@ -24,7 +24,10 @@ let move_delay_time = i18n.instant;
 let combo_count = 0;
 let show_arrows = true;
 let board_review = false;
+// Note: When enabled, will skip to the first branch point in the PGN tree. If the move list is flat then this has no effect.
 let key_moves_mode = true;
+// Note: NULL if disabled, otherwise an integer value based on the PGN move number.
+let max_depth_mode = null;
 
 function combo_text() {
     return "" + combo_count + "x ";
@@ -56,14 +59,26 @@ async function handle_move(orig, dest) {
 
     let possible_moves = tree_possible_moves(curr_move);
     if(possible_moves.indexOf(san) != -1) {
+        // console.log('curr_move', orig, dest, JSON.stringify(curr_move));
         // the move is one of the possible moves in the current position
         update_value(curr_move, 1, san);
         play_move(san);
         combo_count += 1;
         set_text(success_div, right_move_text());
         let reply = ai_move(curr_move);
+        let end_of_line = reply == undefined;
+        if (!end_of_line && max_depth_mode !== null) {
+            let curr_node = tree_get_node(curr_move);
+            let curr_depth = curr_node.move_index == 0 ? 1 : 1 + Math.floor(curr_node.move_index / 2);
+            if (!key_moves_mode || window.first_variation === null) {
+                end_of_line = curr_depth >= max_depth_mode;
+            } else {
+                end_of_line = curr_node.move_index >= window.first_variation && curr_depth >= max_depth_mode;
+            }
+            // console.log('CURR_DEPTH', end_of_line, curr_node.move, curr_node.move_index, curr_depth);
+        }
         await sleep(get_move_delay()); // instant play by the ai feels weird
-        if (reply == undefined) {
+        if (end_of_line) {
             achievement_end_of_line();
             set_text(success_div, right_move_text() + "\n" + i18n.success_end_of_line);
             if (board_review) {
