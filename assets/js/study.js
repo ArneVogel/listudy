@@ -7,11 +7,11 @@ import { string_hash } from './modules/hash.js';
 import { clear_local_storage } from './modules/localstorage.js';
 import { tree_move_index, tree_children, tree_possible_moves, has_children, tree_value,
          need_hint, update_value, value_sort, tree_get_node, tree_children_filter_sort } from './modules/tree_utils.js';
-import { generate_move_trees } from './modules/tree_from_pgn.js';
+import { generate_move_trees, annotate_pgn } from './modules/tree_from_pgn.js';
 import { sleep } from './modules/sleep.js';
 import { getRandomIntFromRange } from './modules/random.js';
 import { unescape_string } from './modules/security_related.js';
-import { ground_init_state, resize_ground, setup_ground, ground_set_moves, 
+import { ground_init_state, resize_ground, setup_ground, ground_set_moves,
          ground_undo_last_move, setup_move_handler, ground_move } from './modules/ground.js';
 import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 
@@ -24,6 +24,7 @@ let move_delay_time = i18n.instant;
 let combo_count = 0;
 let show_arrows = true;
 let board_review = false;
+let key_moves_mode = true;
 
 function combo_text() {
     return "" + combo_count + "x ";
@@ -52,11 +53,11 @@ async function handle_move(orig, dest) {
     total_moves += 1;
 
     let san = uci_to_san(chess, orig, dest);
-    
+
     let possible_moves = tree_possible_moves(curr_move);
     if(possible_moves.indexOf(san) != -1) {
         // the move is one of the possible moves in the current position
-        update_value(curr_move, 1, san); 
+        update_value(curr_move, 1, san);
         play_move(san);
         combo_count += 1;
         set_text(success_div, right_move_text());
@@ -75,15 +76,15 @@ async function handle_move(orig, dest) {
         }
     } else {
         // wrong move at the current position
-        update_value(curr_move, 0); //retrain all the possible replies 
+        update_value(curr_move, 0); //retrain all the possible replies
         combo_count = 0; //reset the combo
         // it is important that chess is set to the right position before
-        // calling ground_undo_last_move(); since it used chess.fen() to 
+        // calling ground_undo_last_move(); since it used chess.fen() to
         // reset the position to the previous position
-        ground_undo_last_move(); 
+        ground_undo_last_move();
         set_text(error_div, i18n.error_wrong_move);
     }
-    store_trees(); 
+    store_trees();
     setup_move();
 }
 
@@ -149,7 +150,7 @@ function ai_move(access) {
     // change the last updated value of the node so if other moves exists they will be
     // picked next time instead
     if (m !== undefined) {
-        update_value(access, 1, m); 
+        update_value(access, 1, m);
     }
     return m;
 }
@@ -166,13 +167,21 @@ function play_move(san) {
 
 function start_training() {
     window.curr_move = [chapter];
+    window.first_variation = trees[chapter].first_variation;
     // this fen is the normal chess starting position
     let fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
     if ("headers" in trees[chapter]) {
         fen = trees[chapter].headers.FEN || fen;
-    } 
+    }
     setup_chess(fen);
     ground_init_state(fen);
+    if (key_moves_mode && window.first_variation !== null) {
+        // console.log('First variation index:', window.first_variation);
+        for (let ki = 0; ki < window.first_variation; ++ki) {
+            // console.log('KEY MOVE SKIP', ki, JSON.stringify(curr_move));
+            play_move(ai_move(curr_move));
+        }
+    }
     if (color != turn_color(chess)) {
         play_move(ai_move(curr_move));
     }
@@ -201,14 +210,16 @@ function setup_trees() {
     if (last_hash == undefined || curr_hash != last_hash) {
         const pgnParser = require('pgn-parser'); // slows down page load, so only require if actually needed
         try {
-            trees = generate_move_trees(pgnParser.parse(pgn));
+            const parsedpgn = pgnParser.parse(pgn);
+            annotate_pgn(parsedpgn);
+            trees = generate_move_trees(parsedpgn);
             clear_local_storage();
             localStorage.setItem(hash_key, curr_hash);
             localStorage.setItem(tree_key, JSON.stringify(trees));
         } catch(caught_error) {
             console.log(caught_error);
-            let error_text = caught_error.name + " at line: " + caught_error.location.start.line + 
-                             ", character: " + caught_error.location.start.column + "; Unexpected: \"" + 
+            let error_text = caught_error.name + " at line: " + caught_error.location.start.line +
+                             ", character: " + caught_error.location.start.column + "; Unexpected: \"" +
                              caught_error.found + "\"";
             set_text(error_div, error_text);
         }
@@ -247,7 +258,7 @@ function setup_chapter_select() {
 }
 
 /*
- * Show suggestions based on the move number 
+ * Show suggestions based on the move number
  */
 function show_suggestions() {
     let suggestions = [
@@ -315,7 +326,7 @@ function toggle_move_delay() {
     let span = document.getElementById("move_delay_time");
     let curr = span.textContent;
     switch (curr) {
-        case i18n.instant: 
+        case i18n.instant:
             curr = i18n.fast;
             break;
         case i18n.fast:
@@ -335,7 +346,7 @@ function toggle_move_delay() {
 function get_move_delay() {
     let delay = 300;
     switch (move_delay_time) {
-        case i18n.instant: 
+        case i18n.instant:
             delay = 300;
             break;
         case i18n.fast:
