@@ -2,10 +2,10 @@ exports.config = {
   tests: './*_test.js',
   output: './output',
   helpers: {
-    Puppeteer: {
+    Playwright: {
       url: 'http://localhost:4000',
       show: false,
-      windowSize: '1200x900'
+      browser: 'firefox'
     }
   },
   include: {
@@ -13,13 +13,5 @@ exports.config = {
   },
   bootstrap: null,
   mocha: {},
-  name: 'test',
-  plugins: {
-    retryFailedStep: {
-      enabled: true
-    },
-    screenshotOnFail: {
-      enabled: true
-    }
-  }
+  name: 'test'
 }

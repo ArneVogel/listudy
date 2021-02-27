@@ -14,6 +14,7 @@
     "phoenix": "file:../deps/phoenix",
     "phoenix_html": "file:../deps/phoenix_html",
     "phoenix_live_view": "file:../deps/phoenix_live_view",
+    "playwright": "^1.9.1",
     "stockfish.wasm": "^0.9.1"
   },
   "devDependencies": {
@@ -26,7 +27,6 @@
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
-    "puppeteer": "^5.5.0",
     "sass-loader": "^8.0.2",
     "terser-webpack-plugin": "^2.3.8",
     "webpack": "4.41.5",
