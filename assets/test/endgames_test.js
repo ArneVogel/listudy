@@ -1,6 +1,6 @@
 Feature("endgames");
 
-Scenario("visit a endgame", (I) => {
+Scenario("visit a endgame", ({ I }) => {
     I.amOnPage("/en");
     I.click("Endgames");
     I.see("Endgames");

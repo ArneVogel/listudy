@@ -1,6 +1,6 @@
 Feature("register");
 
-Scenario("invalid register", (I) => {
+Scenario("invalid register", ({ I }) => {
     I.amOnPage("/en");
     I.click("Register");
     I.fillField("Username", "a");
@@ -13,7 +13,7 @@ Scenario("invalid register", (I) => {
     I.see("should be at least 8 character(s)");
 });
 
-Scenario("valid register + deletion", (I) => {
+Scenario("valid register + deletion", ({ I }) => {
     I.amOnPage("/en");
     I.click("Register");
     I.fillField("Username", "abcd");

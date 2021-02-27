@@ -1,6 +1,6 @@
 Feature("studies");
 
-Scenario("create study from lichess study", (I) => {
+Scenario("create study from lichess study", ({ I }) => {
     I.amOnPage("/session/new");
     I.fillField("Email", "arne@listudy.org");
     I.fillField("Password", "temppass");
@@ -18,7 +18,7 @@ Scenario("create study from lichess study", (I) => {
     I.see("Study deleted successfully.");
 });
 
-Scenario("create study from file upload", (I) => {
+Scenario("create study from file upload", ({ I }) => {
     I.amOnPage("/session/new");
     I.fillField("Email", "arne@listudy.org");
     I.fillField("Password", "temppass");
@@ -36,7 +36,7 @@ Scenario("create study from file upload", (I) => {
     I.see("Study deleted successfully.");
 });
 
-Scenario("study with error", (I) => {
+Scenario("study with error", ({ I }) => {
     I.amOnPage("/session/new");
     I.fillField("Email", "arne@listudy.org");
     I.fillField("Password", "temppass");

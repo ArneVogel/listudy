@@ -1,6 +1,6 @@
 Feature("login");
 
-Scenario("valid login", (I) => {
+Scenario("valid login", ({ I }) => {
     I.amOnPage("/en");
     I.click("Sign in");
     I.see("Password");
@@ -10,7 +10,7 @@ Scenario("valid login", (I) => {
     I.see("Welcome to Listudy");
 });
 
-Scenario("invalid login", (I) => {
+Scenario("invalid login", ({ I }) => {
     I.amOnPage("/en");
     I.click("Sign in");
     I.see("Password");
