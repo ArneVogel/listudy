@@ -33,6 +33,12 @@ defmodule ListudyWeb.StudySearchLive do
     {:noreply, assign(socket, matches: result)}
   end
 
+  def handle_event("search", %{"q" => query}, socket) when byte_size(query) <= 100 do
+    result = Studies.search_by_title(query)
+    {:noreply, assign(socket, matches: result)}
+  end
+
+
   defp shorten_description(description) do
     limit = 200
 
