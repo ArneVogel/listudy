@@ -25,10 +25,11 @@
         <% else %>
           <%= link dgettext("study" ,"Unfavorite"), to: Routes.study_path(@conn, :unfavorite_study, @study.slug), method: :post, class: "icon", "data-icon": '"' %>
         <% end %>
+        <br>
 
-        <nobr><a class="icon" data-icon="%" id="arrows_toggle"><%= dgettext("study", "Hide Arrows") %></a></nobr>
-        <nobr><a class="icon" data-icon="%" id="line_review" title="<%= dgettext("study", "At the end of lines the board is only reset after 3 seconds giving you time to review the final position.") %>"><%= dgettext("study", "Slow board reset") %></a></nobr>
-        <nobr><a class="icon" data-icon="(" id="move_delay"><%= dgettext("study", "Move delay:") %> <span id="move_delay_time"><%= dgettext("study", "instant") %></span></a></nobr>
+        <a class="icon" data-icon="%" id="arrows_toggle"><%= dgettext("study", "Hide Arrows") %></a><br>
+        <a class="icon" data-icon="%" id="line_review" title="<%= dgettext("study", "At the end of lines the board is only reset after 3 seconds giving you time to review the final position.") %>"><%= dgettext("study", "Slow board reset") %></a><br>
+        <a class="icon" data-icon="(" id="move_delay"><%= dgettext("study", "Move delay:") %> <span id="move_delay_time"><%= dgettext("study", "instant") %></span></a>
       </div>
     </div>
   </div>
