@@ -11,10 +11,8 @@ function legal_moves_san(c) {
 
 function legal_moves_uci(c) {
     let moves = [];
-    for (let m of c.moves()) {
-        let move_result = c.move(m);
-        moves.push({from: move_result.from, to: move_result.to});
-        c.undo();
+    for (let m of c.moves({verbose: true})) {
+        moves.push({from: m.from, to: m.to});
     }
     return moves;
 }
