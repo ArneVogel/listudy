@@ -1,0 +1,5 @@
+<h2>FAQ</h2>
+
+<%= for faq <- @faqs do %>
+  <%= faq.question %>
+<% end %>
