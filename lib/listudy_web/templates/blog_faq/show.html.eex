@@ -1,0 +1,18 @@
+<h1>Show Blog faq</h1>
+
+<ul>
+
+  <li>
+    <strong>Question:</strong>
+    <%= @blog_faq.question %>
+  </li>
+
+  <li>
+    <strong>Answer:</strong>
+    <%= @blog_faq.answer %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.blog_faq_path(@conn, :edit, @blog_faq) %></span>
+<span><%= link "Back", to: Routes.blog_faq_path(@conn, :index) %></span>

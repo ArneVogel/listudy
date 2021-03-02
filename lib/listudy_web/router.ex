@@ -54,6 +54,9 @@ defmodule ListudyWeb.Router do
     delete "/blog/:id", PostController, :delete
     get "/", PageController, :index
 
+    resources "/blog_faq", BlogFaqController
+    resources "/opening_faq", OpeningFaqController
+
     resources "/motifs", MotifController
     resources "/openings", OpeningController
     resources "/players", PlayerController

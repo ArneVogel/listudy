@@ -11,6 +11,8 @@
 
 <%= raw Earmark.as_html!(@post.body)%>
 
+<%= render ListudyWeb.FaqView, "show.html", faqs: @post.blog_faq %>
+
 <script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
 <%= raw @post.script %>
 </script>

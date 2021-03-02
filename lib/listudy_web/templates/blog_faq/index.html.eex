@@ -1,0 +1,28 @@
+<h1>Listing Blog faq</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Answer</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for blog_faq <- @blog_faq do %>
+    <tr>
+      <td><%= blog_faq.question %></td>
+      <td><%= blog_faq.answer %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.blog_faq_path(@conn, :show, blog_faq) %></span>
+        <span><%= link "Edit", to: Routes.blog_faq_path(@conn, :edit, blog_faq) %></span>
+        <span><%= link "Delete", to: Routes.blog_faq_path(@conn, :delete, blog_faq), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Blog faq", to: Routes.blog_faq_path(@conn, :new) %></span>

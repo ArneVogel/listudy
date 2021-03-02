@@ -10,6 +10,7 @@ defmodule Listudy.Content.Post do
     field :title, :string
     field :script, :string
     field :author_id, :id
+    has_many :blog_faq, Listudy.BlogFaqs.BlogFaq
 
     timestamps()
   end

@@ -11,6 +11,7 @@ defmodule Listudy.Openings.Opening do
     field :fen, :string
     field :uci_moves, :string
 
+    has_many :opening_faq, Listudy.OpeningFaqs.OpeningFaq
     timestamps()
   end
 

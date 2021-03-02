@@ -9,6 +9,7 @@ defmodule Listudy.Seeds do
     alias Listudy.Players.Player
     alias Listudy.Authors.Author
     alias Listudy.Books.Book
+    alias Listudy.Content.Post
     alias Listudy.ExpertRecommendations.ExpertRecommendation
 
     user = %User{
@@ -102,6 +103,15 @@ defmodule Listudy.Seeds do
       source: "I read it."
     }
 
+    post = %Post{
+      body: "Example body",
+      published: true,
+      slug: "example-post",
+      title: "Example Post",
+      script: "",
+      author_id: 1
+    }
+
 
 
     Listudy.Repo.insert!(user)
@@ -114,6 +124,7 @@ defmodule Listudy.Seeds do
     Listudy.Repo.insert!(blind_tactic)
     Listudy.Repo.insert!(author)
     Listudy.Repo.insert!(book)
+    Listudy.Repo.insert!(post)
     Listudy.Repo.insert!(recommendation)
   end
 end
