@@ -1,5 +1,30 @@
-<h2>FAQ</h2>
+<%= if length(@faqs) != 0 do %>
+<h2><%= dgettext "faq", "Frequently Asked Questions" %></h2>
 
 <%= for faq <- @faqs do %>
-  <%= faq.question %>
+  <h3><%= faq.question %></h3>
+  <p><%= faq.answer %></p>
+<% end %>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+<%= for {faq, index} <- Enum.with_index(@faqs) do %>
+  {
+    "@type": "Question",
+    "name": "<%= faq.question %>",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<%= faq.answer %>"
+    }
+  <%= if index == length(@faqs)-1 do %>
+  }
+  <%= else %>
+  },
+  <% end %>
+<% end %>
+  ]
+}
+</script>
 <% end %>
