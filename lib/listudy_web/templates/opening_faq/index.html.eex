@@ -1,0 +1,28 @@
+<h1>Listing Opening faq</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Answer</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for opening_faq <- @opening_faq do %>
+    <tr>
+      <td><%= opening_faq.question %></td>
+      <td><%= opening_faq.answer %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.opening_faq_path(@conn, :show, opening_faq) %></span>
+        <span><%= link "Edit", to: Routes.opening_faq_path(@conn, :edit, opening_faq) %></span>
+        <span><%= link "Delete", to: Routes.opening_faq_path(@conn, :delete, opening_faq), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Opening faq", to: Routes.opening_faq_path(@conn, :new) %></span>

@@ -55,6 +55,7 @@ defmodule ListudyWeb.Router do
     get "/", PageController, :index
 
     resources "/blog_faq", BlogFaqController
+    resources "/opening_faq", OpeningFaqController
 
     resources "/motifs", MotifController
     resources "/openings", OpeningController
