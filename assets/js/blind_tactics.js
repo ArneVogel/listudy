@@ -169,6 +169,10 @@ function main() {
         old_pgn = pgn;
     }
     window.current_move = Number(ply);
+    // get_current_chess() assumes that current_chess is undefined on first load
+    // since the page can get reloaded by live_view the current_chess could still be
+    // defined from the previous puzzles, causing errors
+    window.current_chess = undefined; 
     window.current_chess = get_current_chess();
     window.legal_moves = ground_legal_moves(current_chess);
 
