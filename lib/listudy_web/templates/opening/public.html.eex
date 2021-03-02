@@ -64,4 +64,4 @@
 <p><%= dgettext("tactics", "Do you want to try out the %{name}? Train this opening against Stockfish.", name: @opening.name) %></p>
 <p><%= dgettext("tactics", "Play against Stockfish either as white or black and explore the opening.") %></p>
 
-
+<%= render ListudyWeb.FaqView, "show.html", faqs: @opening.opening_faq %>

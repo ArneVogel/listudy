@@ -5,7 +5,7 @@ defmodule Listudy.Repo.Migrations.CreateOpeningFaq do
     create table(:opening_faq) do
       add :question, :text
       add :answer, :text
-      add :opening_id, references(:opening, on_delete: :nothing)
+      add :opening_id, references(:openings, on_delete: :nothing)
 
       timestamps()
     end

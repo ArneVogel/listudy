@@ -11,7 +11,8 @@ defmodule ListudyWeb.OpeningFaqController do
 
   def new(conn, _params) do
     changeset = OpeningFaqs.change_opening_faq(%OpeningFaq{})
-    render(conn, "new.html", changeset: changeset)
+    openings = Listudy.Openings.list_openings()
+    render(conn, "new.html", changeset: changeset, openings: openings)
   end
 
   def create(conn, %{"opening_faq" => opening_faq_params}) do
@@ -33,8 +34,9 @@ defmodule ListudyWeb.OpeningFaqController do
 
   def edit(conn, %{"id" => id}) do
     opening_faq = OpeningFaqs.get_opening_faq!(id)
+    openings = Listudy.Openings.list_openings()
     changeset = OpeningFaqs.change_opening_faq(opening_faq)
-    render(conn, "edit.html", opening_faq: opening_faq, changeset: changeset)
+    render(conn, "edit.html", opening_faq: opening_faq, changeset: changeset, openings: openings)
   end
 
   def update(conn, %{"id" => id, "opening_faq" => opening_faq_params}) do
@@ -47,7 +49,8 @@ defmodule ListudyWeb.OpeningFaqController do
         |> redirect(to: Routes.opening_faq_path(conn, :show, opening_faq))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", opening_faq: opening_faq, changeset: changeset)
+        openings = Listudy.Openings.list_openings()
+        render(conn, "edit.html", opening_faq: opening_faq, changeset: changeset, openings: openings)
     end
   end
 

@@ -5,7 +5,7 @@ defmodule Listudy.OpeningFaqs.OpeningFaq do
   schema "opening_faq" do
     field :answer, :string
     field :question, :string
-    field :opening_id, :id
+    belongs_to(:opening, Listudy.Openings.Opening)
 
     timestamps()
   end
@@ -13,7 +13,7 @@ defmodule Listudy.OpeningFaqs.OpeningFaq do
   @doc false
   def changeset(opening_faq, attrs) do
     opening_faq
-    |> cast(attrs, [:question, :answer])
-    |> validate_required([:question, :answer])
+    |> cast(attrs, [:question, :answer, :opening_id])
+    |> validate_required([:question, :answer, :opening_id])
   end
 end
