@@ -5,7 +5,7 @@ defmodule Listudy.BlogFaqs.BlogFaq do
   schema "blog_faq" do
     field :answer, :string
     field :question, :string
-    field :post_id, :id
+    belongs_to(:post, Listudy.Content.Post)
 
     timestamps()
   end
@@ -13,7 +13,7 @@ defmodule Listudy.BlogFaqs.BlogFaq do
   @doc false
   def changeset(blog_faq, attrs) do
     blog_faq
-    |> cast(attrs, [:question, :answer])
-    |> validate_required([:question, :answer])
+    |> cast(attrs, [:post_id, :question, :answer])
+    |> validate_required([:question, :answer, :post_id])
   end
 end

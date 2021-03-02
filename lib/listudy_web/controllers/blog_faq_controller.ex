@@ -11,7 +11,8 @@ defmodule ListudyWeb.BlogFaqController do
 
   def new(conn, _params) do
     changeset = BlogFaqs.change_blog_faq(%BlogFaq{})
-    render(conn, "new.html", changeset: changeset)
+    posts = Listudy.Content.list_posts()
+    render(conn, "new.html", changeset: changeset, posts: posts)
   end
 
   def create(conn, %{"blog_faq" => blog_faq_params}) do
@@ -34,7 +35,8 @@ defmodule ListudyWeb.BlogFaqController do
   def edit(conn, %{"id" => id}) do
     blog_faq = BlogFaqs.get_blog_faq!(id)
     changeset = BlogFaqs.change_blog_faq(blog_faq)
-    render(conn, "edit.html", blog_faq: blog_faq, changeset: changeset)
+    posts = Listudy.Content.list_posts()
+    render(conn, "edit.html", blog_faq: blog_faq, changeset: changeset, posts: posts)
   end
 
   def update(conn, %{"id" => id, "blog_faq" => blog_faq_params}) do
@@ -47,7 +49,8 @@ defmodule ListudyWeb.BlogFaqController do
         |> redirect(to: Routes.blog_faq_path(conn, :show, blog_faq))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", blog_faq: blog_faq, changeset: changeset)
+        posts = Listudy.Content.list_posts()
+        render(conn, "edit.html", blog_faq: blog_faq, changeset: changeset, posts: posts)
     end
   end
 

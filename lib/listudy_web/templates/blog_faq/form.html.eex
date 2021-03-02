@@ -4,6 +4,26 @@
       <p>Oops, something went wrong! Please check the errors below.</p>
     </div>
   <% end %>
+  
+  <label for="blog_faq[post_id]">Book</label>
+  <select name="blog_faq[post_id]" id="post_id">
+  <%= for post <- @posts do %>
+    <%= if Map.has_key?(assigns, :blog_faq) do %>
+      <%= if @blog_faq.post_id == post.id do %>
+        <option selected value="<%= post.id %>">
+      <%= else %>
+        <option value="<%= post.id %>">
+      <% end %>
+    <%= else %>
+      <option value="<%= post.id %>">
+    <% end %>
+
+      <%= post.title %>
+    </option>
+  <% end %>
+  </select>
+
+
 
   <%= label f, :question %>
   <%= textarea f, :question %>
