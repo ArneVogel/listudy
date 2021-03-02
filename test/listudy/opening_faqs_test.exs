@@ -6,9 +6,9 @@ defmodule Listudy.OpeningFaqsTest do
   describe "opening_faq" do
     alias Listudy.OpeningFaqs.OpeningFaq
 
-    @valid_attrs %{answer: "some answer", question: "some question"}
-    @update_attrs %{answer: "some updated answer", question: "some updated question"}
-    @invalid_attrs %{answer: nil, question: nil}
+    @valid_attrs %{answer: "some answer", question: "some question", opening_id: 1}
+    @update_attrs %{answer: "some updated answer", question: "some updated question", opening_id: 1}
+    @invalid_attrs %{answer: nil, question: nil, opening_id: nil}
 
     def opening_faq_fixture(attrs \\ %{}) do
       {:ok, opening_faq} =
