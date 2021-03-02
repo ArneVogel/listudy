@@ -15,8 +15,9 @@ function show_div(id) {
 function get_current_chess() {
     let tc = (typeof current_chess == 'undefined') ? new Chess() : current_chess;
     let moves_played = tc.history().length
+    let history = chess.history();
     for (let i = moves_played; i < current_move; ++i) {
-        let m = chess.history()[i];
+        let m = history[i];
         tc.move(m);
     }
     return tc;
@@ -117,37 +118,24 @@ function setup_ply() {
     document.getElementById("ply_select").addEventListener("change", ply_change);
 }
 
-/*
- * The position that should get displayed by the board
- * returns the fen of that position
- */
-function get_base_position() {
-    let tc = new Chess();
-    for (let i = 0; i < ply - hidden_moves; ++i) {
-        let m = chess.history()[i];
-        tc.move(m);
-    }
-    return tc.fen();
-}
-
 // the moves that were played from the base position to the current ply
 function played_from_base() {
     return chess.history().slice(ply - hidden_moves,current_move);
 }
 
-// the fen of the position that is initially shown on the board
-function base_fen() {
+// generates the fen of the position that is initially shown on the board
+function generate_base_fen() {
     let tc = new Chess();
     for (let m of chess.history().slice(0, ply - hidden_moves)) {
         tc.move(m);
     }
-    return tc.fen();
+    base_fen = tc.fen();
 }
 
 // generates the pgn of the moves that were played from the base position
 function setup_move_text() {
     let moves = played_from_base();
-    let tc = new Chess(base_fen());
+    let tc = new Chess(base_fen);
 
     for (let m of moves) {
         tc.move(m);
@@ -162,10 +150,13 @@ function setup_move_text() {
 
 function main() {
     setup_ply();
+    // generates the window.chess object
     load_data();
 
+    window.base_fen = undefined; 
+    generate_base_fen();
     if (pgn != old_pgn) {
-        setup_ground(get_base_position());    
+        setup_ground(base_fen);
         old_pgn = pgn;
     }
     window.current_move = Number(ply);
