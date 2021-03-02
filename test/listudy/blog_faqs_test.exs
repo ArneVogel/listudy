@@ -6,9 +6,9 @@ defmodule Listudy.BlogFaqsTest do
   describe "blog_faq" do
     alias Listudy.BlogFaqs.BlogFaq
 
-    @valid_attrs %{answer: "some answer", question: "some question"}
-    @update_attrs %{answer: "some updated answer", question: "some updated question"}
-    @invalid_attrs %{answer: nil, question: nil}
+    @valid_attrs %{answer: "some answer", question: "some question", post_id: 1}
+    @update_attrs %{answer: "some updated answer", question: "some updated question", post_id: 1}
+    @invalid_attrs %{answer: nil, question: nil, post_id: nil}
 
     def blog_faq_fixture(attrs \\ %{}) do
       {:ok, blog_faq} =
