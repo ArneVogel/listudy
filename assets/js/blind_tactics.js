@@ -13,8 +13,9 @@ function show_div(id) {
 }
 
 function get_current_chess() {
-    let tc = new Chess();
-    for (let i = 0; i < current_move; ++i) {
+    let tc = (typeof current_chess == 'undefined') ? new Chess() : current_chess;
+    let moves_played = tc.history().length
+    for (let i = moves_played; i < current_move; ++i) {
         let m = chess.history()[i];
         tc.move(m);
     }
@@ -58,6 +59,7 @@ function handle_click(square) {
         // has to be manually reset because highlight_moves is not called in this branch
         highlighted_squares = []; 
         current_move += 2;
+        current_chess = get_current_chess();
         if (current_move >= chess.history().length) {
             let total = localStorage.getItem("achievements_blind_tactics_solved");
             localStorage.setItem("achievements_blind_tactics_solved", Number(total) + 1);
@@ -69,10 +71,9 @@ function handle_click(square) {
             // "check: true" would sometimes result in the wrong king being shown in check
             ground.set({check: t});
         } else {
-            let last_move = get_current_chess().history().pop();
+            let last_move = current_chess.history().pop();
             set_div_text(info_div, i18n.right_move + last_move)
         }
-        current_chess = get_current_chess();
         legal_moves = ground_legal_moves(current_chess);
     } else {
         if (highlighted_squares.indexOf(square) != -1) {
