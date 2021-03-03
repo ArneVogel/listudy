@@ -63,9 +63,6 @@ jobs:
           mkdir -p priv/static/study_pgn
           npm run deploy --prefix ./assets
           mix phx.digest
-          mix phx.server &
-          sleep 10
-          npm test --prefix ./assets
   Deploy:
     name: Deploy
     needs: Test
