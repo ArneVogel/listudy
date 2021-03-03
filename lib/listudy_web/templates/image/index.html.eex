@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Images</th>
-      <th>Alt</th>
+      <th>ref</th>
 
       <th></th>
     </tr>
@@ -13,7 +13,7 @@
 <%= for image <- @images do %>
     <tr>
       <td><%= image.images.file_name %></td>
-      <td><%= image.alt %></td>
+      <td><%= image.ref %></td>
 
       <td>
         <span><%= link "Show", to: Routes.image_path(@conn, :show, image) %></span>

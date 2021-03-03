@@ -55,6 +55,8 @@ defmodule Listudy.Images do
     |> Repo.insert()
   end
 
+  def get_by_ref(ref), do: Repo.get_by(Image, ref: ref)
+
   @doc """
   Updates a image.
 

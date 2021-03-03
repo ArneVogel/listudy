@@ -5,6 +5,7 @@ defmodule Listudy.Images.Image do
 
   schema "images" do
     field :alt, :string
+    field :ref, :string
     field :images, Listudy.Image.Type
 
     timestamps()
@@ -13,8 +14,8 @@ defmodule Listudy.Images.Image do
   @doc false
   def changeset(image, attrs) do
     image
-    |> cast(attrs, [:images, :alt])
+    |> cast(attrs, [:images, :ref, :alt])
     |> cast_attachments(attrs, [:images])
-    |> validate_required([:images, :alt])
+    |> validate_required([:images, :ref, :alt])
   end
 end
