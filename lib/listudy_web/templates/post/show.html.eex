@@ -9,7 +9,7 @@
 <%# required by PgnViewerJS, has to be set before the include of pgnv.js %>
 <script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>__globalCustomDomain = '/js/pgnviewer/';</script>
 
-<%= raw Earmark.as_html!(@post.body)%>
+<%= raw ListudyWeb.EexMarkdown.as_html(@post.body)%>
 
 <%= render ListudyWeb.FaqView, "show.html", faqs: @post.blog_faq %>
 

@@ -38,3 +38,6 @@ priv/mnesia/
 
 # Files created by codeceptjs
 assets/test/output/
+
+# Image files uploaded with arc
+priv/images

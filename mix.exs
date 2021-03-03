@@ -49,7 +49,9 @@ defmodule Listudy.MixProject do
       {:floki, ">= 0.0.0", only: :test},
       {:navigation_history, "~> 0.3"},
       {:earmark, ">= 1.4.5"},
-      {:httpoison, "~> 1.6"}
+      {:httpoison, "~> 1.6"},
+      {:arc, "~> 0.11.0"},
+      {:arc_ecto, "~> 0.11.1"}
     ]
   end
 
