@@ -45,8 +45,11 @@ defmodule Listudy.Books do
       from b in Book,
         join: t in BookTag,
         on: b.id == t.book_id,
+        left_join: r in Listudy.ExpertRecommendations.ExpertRecommendation,
+        on: b.id == r.book_id,
         where: t.id == ^tag_id,
-        select: b
+        select: b,
+        order_by: [desc: count(r.id)]
 
     Repo.all(query)
   end
