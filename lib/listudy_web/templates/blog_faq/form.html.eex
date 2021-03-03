@@ -11,10 +11,10 @@
     <%= if Map.has_key?(assigns, :blog_faq) do %>
       <%= if @blog_faq.post_id == post.id do %>
         <option selected value="<%= post.id %>">
-      <%= else %>
+      <% else %>
         <option value="<%= post.id %>">
       <% end %>
-    <%= else %>
+    <% else %>
       <option value="<%= post.id %>">
     <% end %>
 

@@ -14,7 +14,7 @@
       <% else %>
         <option value="<%= opening.id %>">
       <% end %>
-    <%= else %>
+    <% else %>
       <option value="<%= opening.id %>">
     <% end %>
 

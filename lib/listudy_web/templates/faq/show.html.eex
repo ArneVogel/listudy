@@ -20,7 +20,7 @@
     }
   <%= if index == length(@faqs)-1 do %>
   }
-  <%= else %>
+  <% else %>
   },
   <% end %>
 <% end %>
