@@ -19,7 +19,7 @@
   <a href="#stockfish"><%= dgettext("tactics", "Play against Stockfish") %></a>
 </div>
 
-<%= raw Earmark.as_html!(@opening.description)%>
+<%= raw ListudyWeb.EexMarkdown.as_html(@opening.description)%>
 
 <%= if show_studies do %>
 <div>
