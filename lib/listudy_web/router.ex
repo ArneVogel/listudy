@@ -57,6 +57,8 @@ defmodule ListudyWeb.Router do
     resources "/blog_faq", BlogFaqController
     resources "/opening_faq", OpeningFaqController
 
+    resources "/images", ImageController
+
     resources "/motifs", MotifController
     resources "/openings", OpeningController
     resources "/players", PlayerController

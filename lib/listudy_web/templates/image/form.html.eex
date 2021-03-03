@@ -1,0 +1,19 @@
+<%= form_for @changeset, @action, [multipart: true], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <%= label f, :images %>
+  <%= file_input f, :images %>
+  <%= error_tag f, :images %>
+
+  <%= label f, :alt %>
+  <%= text_input f, :alt %>
+  <%= error_tag f, :alt %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>
