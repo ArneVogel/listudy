@@ -6,9 +6,9 @@ defmodule ListudyWeb.EexMarkdown do
   @doc """
   Hello world.
   """
-  def as_html(lines, options \\ %Earmark.Options{}) do
+  def as_html(lines, conn, options \\ %Earmark.Options{}) do
     {:ok, html, _} = lines
-      |> EEx.eval_string([], functions: [{ListudyWeb.EexMarkdown.Helper, ListudyWeb.EexMarkdown.Helper.__info__(:functions)}])
+      |> EEx.eval_string(ListudyWeb.EexMarkdown.Helper.generate_verbs(conn), functions: [{ListudyWeb.EexMarkdown.Helper, ListudyWeb.EexMarkdown.Helper.__info__(:functions)}])
       |> Earmark.as_html(options)
     html
   end

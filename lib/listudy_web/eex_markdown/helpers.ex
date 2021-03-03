@@ -11,4 +11,59 @@ defmodule ListudyWeb.EexMarkdown.Helper do
     "<figure><img src=\"/images/#{image.images.file_name}\" alt=\"#{image.alt}\"><figcaption>#{caption}</figcaption></figure>"
   end
 
+  def pgn(nonce, opts) do
+    defaults = [fen: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      orientation: "white",
+      pgn: ""
+    ]
+    options = Keyword.merge(defaults, opts)
+    div_id = random()
+    """
+    <div id="#{div_id}"></div>
+    <script #{nonce}>
+    window.addEventListener('load', function() {
+      PGNV.pgnView('#{div_id}', {position: '#{options[:fen]}', pgn: '#{options[:pgn]}', orientation: '#{options[:orientation]}'});
+    });
+    </script>
+    """
+  end
+  def fen(nonce, opts) do
+    defaults = [fen: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      orientation: "white"
+    ]
+    options = Keyword.merge(defaults, opts)
+    div_id = random()
+    """
+    <div id="#{div_id}"></div>
+    <script #{nonce}>
+    window.addEventListener('load', function() {
+      PGNV.pgnBoard('#{div_id}', {position: '#{options[:fen]}', orientation: '#{options[:orientation]}'});
+    });
+    </script>
+    """
+  end
+
+
+  def include_pgnviewer(nonce) do
+    """
+    <script #{nonce}>__globalCustomDomain = '/js/pgnviewer/';</script>
+    <script src="/js/pgnviewer/pgnv.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/js/pgnviewer/pgnv.css" />
+    """
+  end
+
+  def generate_verbs(conn) do
+    [csp_nonce: "#{ListudyWeb.Plugs.CSP.put_nonce(conn)}"]
+  end
+  defp random() do
+    min = String.to_integer("AAAAAA", 36)
+    max = String.to_integer("ZZZZZZ", 36)
+
+    max
+    |> Kernel.-(min)
+    |> :rand.uniform()
+    |> Kernel.+(min)
+    |> Integer.to_string(36)
+  end
+
 end
