@@ -1,4 +1,3 @@
-#!/bin/python3
 import chess, chess.svg, chess.pgn, sys, io, argparse
 
 def generate_svg(args, board, last_move):
