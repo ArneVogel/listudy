@@ -6,10 +6,38 @@ defmodule ListudyWeb.EexMarkdown.Helper do
     image = Listudy.Images.get_by_ref(ref)
     "<figure><img src=\"/images/#{image.images.file_name}\" alt=\"#{image.alt}\"></figure>"
   end
+
   def img(ref, caption) do
     image = Listudy.Images.get_by_ref(ref)
     "<figure><img src=\"/images/#{image.images.file_name}\" alt=\"#{image.alt}\"><figcaption>#{caption}</figcaption></figure>"
   end
+
+  def fen_img(ref, file_name, alt, options) do
+    image = Listudy.Images.get_by_ref(ref)
+    case image do
+      nil -> 
+        tmp_file_name = "/tmp/#{file_name}"
+        generate_svg(tmp_file_name, options)
+        Listudy.Images.create_image(%{images: tmp_file_name, alt: alt, ref: ref})   
+        File.rm(tmp_file_name)
+      _ -> {}
+    end
+    case options[:caption] do
+      nil -> img(ref)
+      _ -> img(ref, options[:caption])
+    end
+  end
+
+  defp generate_svg(file_name, opts) do
+    defaults = [fen: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      last_move: "0000",
+      orientation: "white"
+    ]
+    options = Keyword.merge(defaults, opts)
+
+    System.cmd("python3", ["scripts/action/svg_generator.py", "--output", file_name, "--size", "500","--fen", options[:fen], "--last-move", options[:last_move], "--orientation", options[:orientation]])
+  end
+
 
   def pgn(nonce, opts) do
     defaults = [fen: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
