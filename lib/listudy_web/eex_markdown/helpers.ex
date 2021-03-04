@@ -4,12 +4,19 @@ defmodule ListudyWeb.EexMarkdown.Helper do
 
   def img(ref) do
     image = Listudy.Images.get_by_ref(ref)
-    "<figure><img src=\"/images/#{image.images.file_name}\" alt=\"#{image.alt}\"></figure>"
+    image_html(image)
   end
 
   def img(ref, caption) do
     image = Listudy.Images.get_by_ref(ref)
+    image_html(image, caption)
+  end
 
+  defp image_html(image) do
+    "<figure><img src=\"/images/#{image.images.file_name}\" alt=\"#{image.alt}\"></figure>"
+  end
+
+  defp image_html(image, caption) do
     "<figure><img src=\"/images/#{image.images.file_name}\" alt=\"#{image.alt}\"><figcaption>#{
       caption
     }</figcaption></figure>"
@@ -20,18 +27,23 @@ defmodule ListudyWeb.EexMarkdown.Helper do
 
     case image do
       nil ->
+        # this is the first load, generate the image first
         tmp_file_name = "/tmp/#{file_name}"
         generate_svg(tmp_file_name, options)
         Listudy.Images.create_image(%{images: tmp_file_name, alt: alt, ref: ref})
         File.rm(tmp_file_name)
+        # also display it
+        case options[:caption] do
+          nil -> image_html(image)
+          _ -> image_html(image, options[:caption])
+        end
 
       _ ->
-        {}
-    end
-
-    case options[:caption] do
-      nil -> img(ref)
-      _ -> img(ref, options[:caption])
+        # the image was already generated, just display it
+        case options[:caption] do
+          nil -> image_html(image)
+          _ -> image_html(image, options[:caption])
+        end
     end
   end
 
