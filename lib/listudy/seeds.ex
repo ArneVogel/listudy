@@ -112,8 +112,6 @@ defmodule Listudy.Seeds do
       author_id: 1
     }
 
-
-
     Listudy.Repo.insert!(user)
     Listudy.Repo.insert!(regular)
     Listudy.Repo.insert!(event)

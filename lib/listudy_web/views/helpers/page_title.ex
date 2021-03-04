@@ -21,7 +21,8 @@ defmodule ListudyWeb.PageTitle do
   defp get(%{view_module: PageView, view_template: "achievements.html"}),
     do: dgettext("page_titles", "Achievements")
 
-  defp get(%{view_module: PageView}), do: dgettext("page_titles", "Improve you chess game with spaced repetition")
+  defp get(%{view_module: PageView}),
+    do: dgettext("page_titles", "Improve you chess game with spaced repetition")
 
   defp get(%{view_module: Elixir.ListudyWeb.StudyView, view_template: "show.html", study: study}),
     do: study.title
@@ -29,8 +30,8 @@ defmodule ListudyWeb.PageTitle do
   defp get(%{view_module: Elixir.ListudyWeb.PostView, view_template: "show.html", post: post}),
     do: post.title
 
-    defp get(%{live_module: StudySearchLive}), do: dgettext("page_titles", "Search Studies")
-    defp get(%{live_module: TacticsLive}), do: dgettext("page_titles", "Tactics")
+  defp get(%{live_module: StudySearchLive}), do: dgettext("page_titles", "Search Studies")
+  defp get(%{live_module: TacticsLive}), do: dgettext("page_titles", "Tactics")
 
   defp get(%{view_module: Elixir.ListudyWeb.MotifView, view_template: "public.html", motif: motif}),
        do: motif.name

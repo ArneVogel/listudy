@@ -50,7 +50,12 @@ defmodule ListudyWeb.OpeningFaqController do
 
       {:error, %Ecto.Changeset{} = changeset} ->
         openings = Listudy.Openings.list_openings()
-        render(conn, "edit.html", opening_faq: opening_faq, changeset: changeset, openings: openings)
+
+        render(conn, "edit.html",
+          opening_faq: opening_faq,
+          changeset: changeset,
+          openings: openings
+        )
     end
   end
 

@@ -259,7 +259,8 @@ defmodule ListudyWeb.StudyController do
             {:ok, id}
 
           _ ->
-            {:error, dgettext("study", "Could not download the study from lichess, please check the link")}
+            {:error,
+             dgettext("study", "Could not download the study from lichess, please check the link")}
         end
 
       _ ->

@@ -38,7 +38,6 @@ defmodule ListudyWeb.StudySearchLive do
     {:noreply, assign(socket, matches: result)}
   end
 
-
   defp shorten_description(description) do
     limit = 200
 

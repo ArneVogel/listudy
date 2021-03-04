@@ -5,6 +5,5 @@ defmodule Listudy.Repo.Migrations.AddRefToImages do
     alter table("images") do
       add :ref, :string
     end
-
   end
 end

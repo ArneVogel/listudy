@@ -8,6 +8,5 @@ defmodule Listudy.Repo.Migrations.CreateImages do
 
       timestamps()
     end
-
   end
 end

@@ -7,7 +7,11 @@ defmodule Listudy.OpeningFaqsTest do
     alias Listudy.OpeningFaqs.OpeningFaq
 
     @valid_attrs %{answer: "some answer", question: "some question", opening_id: 1}
-    @update_attrs %{answer: "some updated answer", question: "some updated question", opening_id: 1}
+    @update_attrs %{
+      answer: "some updated answer",
+      question: "some updated question",
+      opening_id: 1
+    }
     @invalid_attrs %{answer: nil, question: nil, opening_id: nil}
 
     def opening_faq_fixture(attrs \\ %{}) do
@@ -41,14 +45,20 @@ defmodule Listudy.OpeningFaqsTest do
 
     test "update_opening_faq/2 with valid data updates the opening_faq" do
       opening_faq = opening_faq_fixture()
-      assert {:ok, %OpeningFaq{} = opening_faq} = OpeningFaqs.update_opening_faq(opening_faq, @update_attrs)
+
+      assert {:ok, %OpeningFaq{} = opening_faq} =
+               OpeningFaqs.update_opening_faq(opening_faq, @update_attrs)
+
       assert opening_faq.answer == "some updated answer"
       assert opening_faq.question == "some updated question"
     end
 
     test "update_opening_faq/2 with invalid data returns error changeset" do
       opening_faq = opening_faq_fixture()
-      assert {:error, %Ecto.Changeset{}} = OpeningFaqs.update_opening_faq(opening_faq, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               OpeningFaqs.update_opening_faq(opening_faq, @invalid_attrs)
+
       assert opening_faq == OpeningFaqs.get_opening_faq!(opening_faq.id)
     end
 
