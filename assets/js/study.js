@@ -191,10 +191,16 @@ function start_training() {
     setup_chess(fen);
     ground_init_state(fen);
     if (key_moves_mode && window.first_variation !== null) {
-        // console.log('First variation index:', window.first_variation);
         for (let ki = 0; ki < window.first_variation; ++ki) {
-            // console.log('KEY MOVE SKIP', ki, JSON.stringify(curr_move));
+            // Moves that are not fully trained are not skipped
+            if (tree_children(curr_move)[0].value != 5) { break; }
+            // Multiple moves are played without delay, causes distorted sound
+            // sound_enabled controls if sound is played in sound.js
+            // the sounds are initiated by ground.move which is used by play_move
+            let stored_sound = sound_enabled;
+            sound_enabled = false;
             play_move(ai_move(curr_move));
+            sound_enabled = stored_sound;
         }
     }
     if (color != turn_color(chess)) {
@@ -219,7 +225,7 @@ function setup_trees() {
 
     let last_hash = localStorage.getItem(hash_key);
     let curr_hash = string_hash(pgn + color);
-    curr_hash += 2; // increase when trees have to be redone; for example when bugs in free_from_pgn are fixed
+    curr_hash += 3; // increase when trees have to be redone; for example when bugs in free_from_pgn are fixed
     let trees = {};
 
     if (last_hash == undefined || curr_hash != last_hash) {
@@ -323,6 +329,20 @@ function toggle_arrows() {
     }
 }
 
+function toggle_key_move() {
+    let link = document.getElementById("key_move");
+    let curr = link.attributes["data-icon"].textContent;
+    let next = curr == "%" ? "$" : "%";
+    link.setAttribute("data-icon", next);
+    if (next == "%") {
+        link.textContent = i18n.key_move_enabled;
+        key_moves_mode = false;
+    } else {
+        link.textContent = i18n.key_move_disabled;
+        key_moves_mode = true;
+    }
+}
+
 function toggle_review() {
     let link = document.getElementById("line_review");
     let curr = link.attributes["data-icon"].textContent;
@@ -358,6 +378,7 @@ function toggle_move_delay() {
     move_delay_time = curr;
 }
 
+
 function get_move_delay() {
     let delay = 300;
     switch (move_delay_time) {
@@ -385,6 +406,7 @@ function setup_configs() {
     document.getElementById("arrows_toggle").onclick = toggle_arrows;
     document.getElementById("line_review").onclick = toggle_review;
     document.getElementById("move_delay").onclick = toggle_move_delay;
+    document.getElementById("key_move").onclick = toggle_key_move;
 }
 
 function main() {
