@@ -1,0 +1,52 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: nl\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:28
+msgid "Official Stockfish Website"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:22
+msgid "Play against Stockfish:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:25
+msgid "Stockfish is one of the best chess engines avaliable. And with the help of WebAssembly the engine can now also be executed online in the browser. This means that the engine is running in your own browser."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:31
+msgid "Thanks to Niklas Fiekas for the WebAssembly port of Stockfish!"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:27
+msgid "Thanks to the developers of stockfish!"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:23
+msgid "learn with the best chess engine."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:32
+msgid "stockfish.wasm"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:1
+msgid "Play against Stockfish"
+msgstr ""
