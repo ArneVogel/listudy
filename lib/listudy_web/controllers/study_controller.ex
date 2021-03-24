@@ -71,8 +71,27 @@ defmodule ListudyWeb.StudyController do
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    study = Studies.get_study_by_slug!(id)
+  # the main show did not find any study for the id
+  # either redirect or show error
+  defp show(conn, id, nil) do
+    redir_study = Studies.get_study_by_slug_start(id_from_slug(id))
+    if redir_study != nil and !redir_study.private do
+      conn
+      |> redirect(
+        to: Routes.study_path(conn, :show, conn.private.plug_session["locale"], redir_study)
+      )
+    else
+      conn
+      |> put_flash(:error, "This study does not exist.")
+      |> put_view(ListudyWeb.ErrorView)
+      |> put_status(:not_found)
+      |> render(:"404")
+
+    end
+  end
+
+  # the study exists
+  defp show(conn, id, study) do
     opening = Listudy.Openings.get_opening!(study.opening_id)
     # if the study has less than the min favorites => noindex it
     noindex =
@@ -87,7 +106,7 @@ defmodule ListudyWeb.StudyController do
 
     if study != nil and (!study.private or study.user_id == user_id) do
       study = Map.put(study, :is_owner, study.user_id == user_id)
-      # todo maybe reduce the number of extra querys
+      # TODO maybe reduce the number of extra querys
       study = Map.put(study, :favorites, StudyFavorites.user_favorites_study(user_id, study.id))
       study = Map.put(study, :user, Users.get_user!(study.user_id))
       [unique_id | _] = id |> String.split("-")
@@ -95,27 +114,12 @@ defmodule ListudyWeb.StudyController do
       {_, pgn} = File.read(get_path(file))
       study = Map.put(study, :pgn, pgn)
       render(conn, "show.html", study: study, noindex: noindex, opening: opening)
-    else
-      redir_study = Studies.get_study_by_slug_start(id_from_slug(id))
-
-      if redir_study != nil and !redir_study.private do
-        conn
-        |> redirect(
-          to: Routes.study_path(conn, :show, conn.private.plug_session["locale"], redir_study)
-        )
-      else
-        conn
-        |> put_flash(:error, "This study is private.")
-        |> redirect(
-          to:
-            Routes.search_path(
-              conn,
-              ListudyWeb.StudySearchLive,
-              conn.private.plug_session["locale"]
-            )
-        )
-      end
     end
+  end
+
+  def show(conn, %{"id" => id}) do
+    study = Studies.get_study_by_slug!(id)
+    show(conn, id, study)
   end
 
   def edit(conn, %{"id" => id}) do
