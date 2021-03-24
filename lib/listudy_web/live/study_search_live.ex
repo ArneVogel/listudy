@@ -38,7 +38,8 @@ defmodule ListudyWeb.StudySearchLive do
     {:ok, assign(socket, query: nil, ordering: "favorites", matches: result, locale: locale)}
   end
 
-  def handle_event(_, %{"q" => query, "ordering" => order}, socket) when byte_size(query) <= 100 do
+  def handle_event(_, %{"q" => query, "ordering" => order}, socket)
+      when byte_size(query) <= 100 do
     result = Studies.search_by_title(query, order)
     {:noreply, assign(socket, matches: result, ordering: order, query: query)}
   end

@@ -75,6 +75,7 @@ defmodule ListudyWeb.StudyController do
   # either redirect or show error
   defp show(conn, id, nil) do
     redir_study = Studies.get_study_by_slug_start(id_from_slug(id))
+
     if redir_study != nil and !redir_study.private do
       conn
       |> redirect(
@@ -86,7 +87,6 @@ defmodule ListudyWeb.StudyController do
       |> put_view(ListudyWeb.ErrorView)
       |> put_status(:not_found)
       |> render(:"404")
-
     end
   end
 
