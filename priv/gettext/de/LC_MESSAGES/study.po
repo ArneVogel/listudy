@@ -358,7 +358,7 @@ msgstr ""
 msgid "Don't repeat the early moves that are already known. Skips to the first branching move in the study."
 msgstr ""
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/listudy_web/live/study_search_live.ex:13
 msgid "Favorites"
 msgstr ""
@@ -374,7 +374,7 @@ msgstr ""
 msgid "Newest"
 msgstr ""
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/listudy_web/live/study_search_live.ex:23
 msgid "favorites"
 msgstr ""

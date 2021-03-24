@@ -319,7 +319,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/listudy_web/templates/live/blind_tactics.html.leex:46
 msgid "Correct move, there are still more moves. They replied with"
 msgstr ""

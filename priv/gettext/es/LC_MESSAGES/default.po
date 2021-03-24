@@ -305,3 +305,18 @@ msgstr ""
 #: lib/listudy_web/templates/layout/_footer.html.eex:10
 msgid "Webmaster"
 msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/pow/messages.ex:7
+msgid "The provided login details did not work. Make sure to log in with your email and not your username!"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/pow/session/new.html.eex:11
+msgid "Use your email to log in."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/pow/session/new.html.eex:18
+msgid "Your session will be persistent. Only use on your own devices."
+msgstr ""

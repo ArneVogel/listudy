@@ -44,7 +44,8 @@ config :listudy, :pow,
   extensions: [PowPersistentSession],
   web_module: ListudyWeb,
   controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
-  cache_store_backend: Pow.Store.Backend.MnesiaCache
+  cache_store_backend: Pow.Store.Backend.MnesiaCache,
+  messages_backend: ListudyWeb.Pow.Messages
 
 config :mnesia, dir: 'priv/mnesia'
 

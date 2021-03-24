@@ -8,14 +8,14 @@
   <% end %>
 
   <%= label f, Pow.Ecto.Schema.user_id_field(@changeset) %>
-  <%= text_input f, Pow.Ecto.Schema.user_id_field(@changeset) %>
+  <%= email_input f, Pow.Ecto.Schema.user_id_field(@changeset), title: gettext("Use your email to log in.") %>
   <%= error_tag f, Pow.Ecto.Schema.user_id_field(@changeset) %>
 
   <%= label f, :password %>
   <%= password_input f, :password %>
   <%= error_tag f, :password %>
 
-  <%= label f, :persistent_session, "Remember me" %>
+  <%= label f, :persistent_session, "Remember me", title: gettext("Your session will be persistent. Only use on your own devices.") %>
   <%= checkbox f, :persistent_session %>
 
   <div>
