@@ -9,9 +9,10 @@ defmodule Listudy.Studies.Study do
     field :slug, :string
     field :color, :string
     field :private, :boolean
-    field :user_id, :id
     field :opening_id, :id
 
+    belongs_to(:user, Listudy.Users.User)
+    has_many :study_favorites, Listudy.StudyFavorites.StudyFavorite
     timestamps()
   end
 
