@@ -33,11 +33,6 @@ msgid "Continue"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/live/blind_tactics.html.leex:46
-msgid "Correct move, there are still more moves."
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/templates/tactic/custom.html.eex:100
 msgid "Create"
 msgstr ""
@@ -322,4 +317,9 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/live/motif_search_live.ex:12
 msgid "Search"
+msgstr ""
+
+#, elixir-format, fuzzy
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:46
+msgid "Correct move, there are still more moves. They replied with"
 msgstr ""

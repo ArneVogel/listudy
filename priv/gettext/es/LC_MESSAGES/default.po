@@ -12,33 +12,33 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:52
+#: lib/listudy_web/templates/layout/_header.html.eex:51
 #: lib/listudy_web/templates/pow/registration/new.html.eex:29
 msgid "Register"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:55
+#: lib/listudy_web/templates/layout/_header.html.eex:54
 msgid "Sign in"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:78
+#: lib/listudy_web/templates/layout/_header.html.eex:77
 msgid "Sign out"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:68
+#: lib/listudy_web/templates/layout/_header.html.eex:67
 msgid "Settings"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:70
+#: lib/listudy_web/templates/layout/_header.html.eex:69
 msgid "Toggle Darkmode"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:76
+#: lib/listudy_web/templates/layout/_header.html.eex:75
 msgid "User Settings"
 msgstr ""
 
@@ -58,7 +58,7 @@ msgid "Your Studies"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:141
+#: lib/listudy_web/templates/layout/_header.html.eex:140
 msgid "Error"
 msgstr ""
 
@@ -95,7 +95,7 @@ msgid "Imprint"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:60
+#: lib/listudy_web/templates/layout/_header.html.eex:59
 msgid "Language"
 msgstr ""
 
@@ -122,7 +122,7 @@ msgid "Privacy Policy"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:77
+#: lib/listudy_web/templates/layout/_header.html.eex:76
 msgid "Profile"
 msgstr ""
 
@@ -181,12 +181,6 @@ msgid "Blind Tactics"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_footer.html.eex:17
-#: lib/listudy_web/templates/layout/_header.html.eex:28
-msgid "ChessClicker"
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/templates/pow/registration/edit.html.eex:37
 msgid "Close Account"
 msgstr ""
@@ -219,7 +213,7 @@ msgid "Last updated"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_footer.html.eex:18
+#: lib/listudy_web/templates/layout/_footer.html.eex:17
 msgid "Make your own Tactic"
 msgstr ""
 
@@ -235,7 +229,7 @@ msgid "This can not be reversed! Are you sure?"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:74
+#: lib/listudy_web/templates/layout/_header.html.eex:73
 msgid "Achievements"
 msgstr ""
 
@@ -250,60 +244,60 @@ msgid "Before creating your account, please read the %{privacy_policy} and %{tos
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:72
-#: lib/listudy_web/templates/layout/_header.html.eex:91
+#: lib/listudy_web/templates/layout/_header.html.eex:71
+#: lib/listudy_web/templates/layout/_header.html.eex:90
 msgid "Board Settings"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:139
+#: lib/listudy_web/templates/layout/_header.html.eex:138
 msgid "Capture"
 msgstr ""
 
 #, elixir-format
 #: lib/listudy_web/templates/endgame/chapter.html.eex:2
-#: lib/listudy_web/templates/layout/_header.html.eex:36
+#: lib/listudy_web/templates/layout/_header.html.eex:35
 msgid "Endgames"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:138
+#: lib/listudy_web/templates/layout/_header.html.eex:137
 msgid "Move"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:131
+#: lib/listudy_web/templates/layout/_header.html.eex:130
 msgid "Play Sound"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:94
+#: lib/listudy_web/templates/layout/_header.html.eex:93
 msgid "Select a color:"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:101
+#: lib/listudy_web/templates/layout/_header.html.eex:100
 msgid "Select a piece set:"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:71
-#: lib/listudy_web/templates/layout/_header.html.eex:130
+#: lib/listudy_web/templates/layout/_header.html.eex:70
+#: lib/listudy_web/templates/layout/_header.html.eex:129
 msgid "Sound Settings"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:140
+#: lib/listudy_web/templates/layout/_header.html.eex:139
 msgid "Success"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:137
+#: lib/listudy_web/templates/layout/_header.html.eex:136
 msgid "Test Sounds"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:134
+#: lib/listudy_web/templates/layout/_header.html.eex:133
 msgid "Volume"
 msgstr ""
 
