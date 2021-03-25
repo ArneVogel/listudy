@@ -12,7 +12,7 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 
 #, elixir-format
-#: lib/listudy_web/templates/comment/show_comments.html.eex:10
+#: lib/listudy_web/templates/comment/show_comments.html.eex:11
 msgid "Are you sure?"
 msgstr "¿Estás seguro?"
 
@@ -27,7 +27,7 @@ msgid "Comments"
 msgstr "Comentarios"
 
 #, elixir-format
-#: lib/listudy_web/templates/comment/show_comments.html.eex:10
+#: lib/listudy_web/templates/comment/show_comments.html.eex:11
 msgid "Delete"
 msgstr "Borrar"
 
@@ -36,13 +36,12 @@ msgstr "Borrar"
 msgid "Log in to comment"
 msgstr "Inicia sesión para comentar"
 
-#, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:11
 msgid "Save"
 msgstr "Guardar"
 
 #, elixir-format
-#: lib/listudy_web/templates/comment/show_comments.html.eex:7
+#: lib/listudy_web/templates/comment/show_comments.html.eex:8
 msgid "by"
 msgstr "por"
 
@@ -70,3 +69,18 @@ msgstr "Error"
 #: lib/listudy_web/controllers/comment_controller.ex:20
 msgid "You're not allowed to do that."
 msgstr "No tienes permisos para hacer eso."
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/comment_form.html.eex:16
+msgid "%{register} to comment"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/show_comments.html.eex:17
+msgid "No comments yet, be the first to write one!"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/comment_form.html.eex:15
+msgid "Register"
+msgstr ""

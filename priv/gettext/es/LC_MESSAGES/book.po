@@ -13,12 +13,12 @@ msgstr ""
 
 #, elixir-format
 #: lib/listudy_web/templates/book/public.html.eex:32
-#: lib/listudy_web/templates/book/thumb.html.eex:39
+#: lib/listudy_web/templates/book/thumb.html.eex:40
 msgid "%{book_name} book cover"
 msgstr "%{book_name} cubierta del libro"
 
 #, elixir-format
-#: lib/listudy_web/templates/book/thumb.html.eex:32
+#: lib/listudy_web/templates/book/thumb.html.eex:33
 msgid "More"
 msgstr "Más"
 

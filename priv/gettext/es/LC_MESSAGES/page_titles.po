@@ -27,12 +27,12 @@ msgid "Daily Chess Puzzle"
 msgstr "Problema Diario"
 
 #, elixir-format
-#: lib/listudy_web/views/helpers/page_title.ex:52
+#: lib/listudy_web/views/helpers/page_title.ex:53
 msgid "Endgames"
 msgstr "Finales"
 
 #, elixir-format
-#: lib/listudy_web/views/helpers/page_title.ex:24
+#: lib/listudy_web/views/helpers/page_title.ex:25
 msgid "Improve you chess game with spaced repetition"
 msgstr "Mejora tu Ajedrez repitiendo"
 
@@ -42,11 +42,11 @@ msgid "Play against Stockfish Online"
 msgstr "Juega contra Stockfish online"
 
 #, elixir-format
-#: lib/listudy_web/views/helpers/page_title.ex:32
+#: lib/listudy_web/views/helpers/page_title.ex:33
 msgid "Search Studies"
 msgstr "Busca Estudios"
 
 #, elixir-format
-#: lib/listudy_web/views/helpers/page_title.ex:33
+#: lib/listudy_web/views/helpers/page_title.ex:34
 msgid "Tactics"
 msgstr "Tácticas"

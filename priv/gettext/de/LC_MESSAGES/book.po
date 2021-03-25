@@ -13,12 +13,12 @@ msgstr ""
 
 #, elixir-format
 #: lib/listudy_web/templates/book/public.html.eex:32
-#: lib/listudy_web/templates/book/thumb.html.eex:39
+#: lib/listudy_web/templates/book/thumb.html.eex:40
 msgid "%{book_name} book cover"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/book/thumb.html.eex:32
+#: lib/listudy_web/templates/book/thumb.html.eex:33
 msgid "More"
 msgstr ""
 
@@ -72,7 +72,7 @@ msgstr ""
 msgid "This list contains the 20 best chess books as ranked by grandmasters. I hope this list helps you to find the perfect book for you."
 msgstr ""
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/listudy_web/live/book_search_live.ex:10
 msgid "Chess Book Search"
 msgstr ""

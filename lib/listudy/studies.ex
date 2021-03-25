@@ -120,24 +120,60 @@ defmodule Listudy.Studies do
     Repo.all(query)
   end
 
-  def search_by_title(word) do
+  defp by_title(query, word) do
     word = "%" <> word <> "%"
 
-    query =
-      from c in Study,
-        join: u in User,
-        on: u.id == c.user_id,
-        where: like(fragment("lower(?)", c.title), fragment("lower(?)", ^word)) and not c.private,
-        select: %{
-          :title => c.title,
-          :slug => c.slug,
-          :username => u.username,
-          :description => c.description
-        },
-        limit: 20,
-        order_by: [desc: c.updated_at]
+    from c in query,
+      where: like(fragment("lower(?)", c.title), fragment("lower(?)", ^word))
+  end
 
-    Repo.all(query)
+  defp not_private(query) do
+    from c in query,
+      where: not c.private
+  end
+
+  defp title_limit(query) do
+    from c in query,
+      limit: 20
+  end
+
+  defp order_by_favorites(query) do
+    from c in query,
+      join: f in StudyFavorite,
+      on: f.study_id == c.id,
+      group_by: c.id,
+      order_by: [desc: count(f.id)]
+  end
+
+  defp order_by_newest(query) do
+    from c in query,
+      order_by: [desc: c.updated_at]
+  end
+
+  def search_by_title(word, "favorites") do
+    query =
+      Study
+      |> by_title(word)
+      |> not_private
+      |> title_limit
+      |> order_by_favorites
+
+    Repo.all(query) |> Repo.preload([:study_favorites, :user])
+  end
+
+  def search_by_title(word, "newest") do
+    query =
+      Study
+      |> by_title(word)
+      |> not_private
+      |> title_limit
+      |> order_by_newest
+
+    Repo.all(query) |> Repo.preload([:study_favorites, :user])
+  end
+
+  def search_by_title(title) do
+    search_by_title(title, "favorites")
   end
 
   @doc """
