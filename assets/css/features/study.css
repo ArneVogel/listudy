@@ -28,3 +28,12 @@
     overflow-y: auto;
     max-height: 15em;
 }
+
+.study_search_results {
+    display: flex;
+    flex-wrap: wrap;
+}
+.study_search_result {
+    flex: 250px;
+    padding: 0.5em;
+}
