@@ -14,341 +14,341 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:94
 msgid "At first the arrows will show you which moves are in this study. Once you have played these moves twice, the arrows are no longer shown."
-msgstr ""
+msgstr "Al principio las flechas te mostrarán qué movimientos pertenecen al estudio. Cuando hayas hecho los movimientos 2 veces, las flechas no se mostrarán."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:30
 msgid "At the end of lines the board is only reset after 3 seconds giving you time to review the final position."
-msgstr ""
+msgstr "Al final de las líneas el tablero se reinicia después de 3 segundos, para que puedas revisar la última posición."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:98
 msgid "Chapter"
-msgstr ""
+msgstr "Capitulo"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:16
 msgid "Chapter Selection"
-msgstr ""
+msgstr "Selección de Capitulo"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:101
 msgid "Create an account to get all the features of Listudy and upload your own studies."
-msgstr ""
+msgstr "Crea una cuenta para tener todas las funciones de Listudy y subir tus propios estudios."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:46
 msgid "Creator"
-msgstr ""
+msgstr "Creador"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:12
 #: lib/listudy_web/templates/study/show.html.eex:39
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:102
 msgid "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below."
-msgstr ""
+msgstr "¿Tienes recomendaciones o quieres decir algo? Comenta en el estudio"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:100
 msgid "Do you like this study? Share it with your friends."
-msgstr ""
+msgstr "¿Te gusta este estudio? Compártelo con tus amigos."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:24
 #: lib/listudy_web/templates/study/show.html.eex:43
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:108
 msgid "Fast board reset"
-msgstr ""
+msgstr "Reiniciar tablero"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:24
 msgid "Favorite"
-msgstr ""
+msgstr "Favorito"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:29
 #: lib/listudy_web/templates/study/show.html.eex:105
 msgid "Hide Arrows"
-msgstr ""
+msgstr "Esconder flechas"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:99
 msgid "If you like this study make sure to favorite it to have it listed under Your Studies"
-msgstr ""
+msgstr "Si te gusta este estudio agregalo a tus favoritos para tenerlo listado en Tus Estudios"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:31
 msgid "Move delay:"
-msgstr ""
+msgstr "Retraso de movimiento:"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:16
 #: lib/listudy_web/templates/study/show.html.eex:49
 msgid "Opening"
-msgstr ""
+msgstr "Apertura"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:21
 msgid "Play against Stockfish"
-msgstr ""
+msgstr "Juega contra Stockfish"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:96
 msgid "Right move!"
-msgstr ""
+msgstr "¡Movimiento correcto!"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:106
 msgid "Show Arrows"
-msgstr ""
+msgstr "Mostrar flechas"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:30
 #: lib/listudy_web/templates/study/show.html.eex:107
 msgid "Slow board reset"
-msgstr ""
+msgstr "Reiniciar tablero"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:93
 msgid "Starting training."
-msgstr ""
+msgstr "Empezando entrenamiento"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:95
 msgid "This move is not in the study, try again."
-msgstr ""
+msgstr "Este movimiento no está en el estudio, intenta de nuevo."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:26
 msgid "Unfavorite"
-msgstr ""
+msgstr "Quitar favorito"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:103
 msgid "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect."
-msgstr ""
+msgstr "Ya aprendiste 100 movimientos hoy. Tal vez toma un descando o vuelve mañana para tener efectos positivos"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:104
 msgid "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop."
-msgstr ""
+msgstr "Ya aprendiste 250 movimientos hoy. Para tener más efectos positivos vuelve mañana, o no, soy un texto no un policia."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:97
 msgid "You reached the end of this line."
-msgstr ""
+msgstr "Llegaste al final de esta línea."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:110
 msgid "fast"
-msgstr ""
+msgstr "rápido"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:31
 #: lib/listudy_web/templates/study/show.html.eex:112
 msgid "instant"
-msgstr ""
+msgstr "instantáneo"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:111
 msgid "medium"
-msgstr ""
+msgstr "medio"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:109
 msgid "slow"
-msgstr ""
+msgstr "lento"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:70
 msgid "Back"
-msgstr ""
+msgstr "Atrás"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:9
 msgid "Caro-Kann Defense"
-msgstr ""
+msgstr "Defensa Caro-Kann"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:262
 msgid "Could not download the study from lichess, please check the link"
-msgstr ""
+msgstr "No se pudo descargar el estudio de lichess, por favor revisa el link"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:288
 msgid "Could not favorite this study"
-msgstr ""
+msgstr "No se pudo agregar el estudio a tus favoritos"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:306
 msgid "Could not unfavorite this study"
-msgstr ""
+msgstr "No se pudo quitar el favorito a este estudio"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:20
 msgid "Either upload a PGN file or provide a link to a public Lichess study:"
-msgstr ""
+msgstr "Sube un archivo PGN o suministra un link de un estudio público en Lichess:"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:38
 msgid "For which side is this study"
-msgstr ""
+msgstr "¿Para qué bando es el estudio?"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:13
 msgid "In this study I work on my 1.e4 openings..."
-msgstr ""
+msgstr "En este estudio presento mis aperturas con 1. e4..."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:43
 msgid "Keep this study private"
-msgstr ""
+msgstr "Mantener este estudio privado"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:28
 msgid "Lichess Study"
-msgstr ""
+msgstr "Estudio de Lichess"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:271
 msgid "No PGN provided"
-msgstr ""
+msgstr "No se proporcionó un archivo PGN"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:239
 msgid "PGN is too big, only 50kb allowed"
-msgstr ""
+msgstr "El PGN es muy pesado, sólo se permite 50kb máximo"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:221
 msgid "Please log in"
-msgstr ""
+msgstr "Por favor inicia sesión"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:23
 msgid "Select a PGN to upload"
-msgstr ""
+msgstr "Selecciona un PGN para subir"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:285
 msgid "Study favorited"
-msgstr ""
+msgstr "Estudio favorito"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:165
 msgid "Study info updated, PGN changed."
-msgstr ""
+msgstr "Información del estudio actualizada, el PGN cambió."
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:172
 msgid "Study info updated, no PGN change."
-msgstr ""
+msgstr "Información del estudio actualizada, sin cambio PGN."
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:303
 msgid "Study unfavorited"
-msgstr ""
+msgstr "Estudio sin favorito"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:266
 msgid "The provided link is not a Lichess study"
-msgstr ""
+msgstr "El link suministrado en es un estudio de Lichess"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:8
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:14
 msgid "Create a Study"
-msgstr ""
+msgstr "Crear un Estudio"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:13
 msgid "Create a new study and start learning."
-msgstr ""
+msgstr "Crea un nuevo estudio y empieza a aprender."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:30
 msgid "Favored Studies"
-msgstr ""
+msgstr "Estudios Favoritos"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:8
 msgid "New Study"
-msgstr ""
+msgstr "Nuevo Estudio"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:15
 msgid "Search for Studies"
-msgstr ""
+msgstr "Buscar Estudios"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:23
 #: lib/listudy_web/templates/study/index.html.eex:34
 msgid "Show"
-msgstr ""
+msgstr "Mostrar"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:1
 msgid "Your Studies"
-msgstr ""
+msgstr "Tus Estudios"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/new.html.eex:1
 msgid "Create a new Study"
-msgstr ""
+msgstr "Crear un nuevo Estudio"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/new.html.eex:9
 msgid "For more information read the Copyright Policy"
-msgstr ""
+msgstr "Para obtener más información lee la Política de Copyright"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/new.html.eex:8
 msgid "Please remember to only upload PGNs for which you have the rights to publish them. This is especially true, but not limited, for PGN files that you have acquired from paid platforms."
-msgstr ""
+msgstr "Por favor recuerda subir archivos de los que tengas permisos para publicarlos. Esto aplica especialmente a archivos PGN pero no se limita a ello."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/edit.html.eex:33
 msgid "Are you sure?"
-msgstr ""
+msgstr "¿Estás seguro?"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/edit.html.eex:33
 msgid "Delete"
-msgstr ""
+msgstr "Borrar"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/edit.html.eex:31
 msgid "Delete Study"
-msgstr ""
+msgstr "Borrar Estudio"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/edit.html.eex:32
 msgid "This can not be undone!"
-msgstr ""
+msgstr "¡Esto no se puede deshacer!"
 
 #, elixir-format
 #: lib/listudy_web/live/study_search_live.ex:11
 msgid "Search"
-msgstr ""
+msgstr "Buscar"
 
 #, elixir-format
 #: lib/listudy_web/live/study_search_live.ex:9
 msgid "Search for studies"
-msgstr ""
+msgstr "Buscar estudios"
 
 #, elixir-format
 #: lib/listudy_web/live/study_search_live.ex:15
 msgid "by"
-msgstr ""
+msgstr "por"
