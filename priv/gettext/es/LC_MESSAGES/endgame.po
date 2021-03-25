@@ -63,8 +63,8 @@ msgstr "Finales"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:442
-msgid "De Capablanca \"Fundamentos de Ajedrez\"."
-msgstr ""
+msgid "From the Capablancas \"Chess Fundamentals\"."
+msgstr "De Capablanca \"Fundamentos de Ajedrez\"."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:423
@@ -108,7 +108,7 @@ msgstr "Finales de piezas menores contra Torre"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:326
-msgid "Minor pieces against Rook"
+msgid "Minor pirces against Rook"
 msgstr "Piezas menores contra Torre"
 
 #, elixir-format
@@ -255,7 +255,7 @@ msgstr "Dos contra uno."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:256
-msgid "Two minor pieces against one minor piece, with and without pawns."
+msgid "Two minor pieces gainst one minor piece, with and without pawns."
 msgstr "Dos piezas menores contra una pieza menor, con y sin peones."
 
 #, elixir-format

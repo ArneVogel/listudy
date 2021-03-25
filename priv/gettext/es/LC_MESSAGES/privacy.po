@@ -28,7 +28,7 @@ msgstr "La información es recolectada en los servidores de Listudy, los cuales 
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:16
-msgid "Closing your account"
+msgid "Colsing your account"
 msgstr "Cerrando tu cuenta"
 
 #, elixir-format
