@@ -356,25 +356,25 @@ msgstr "por"
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:32
 msgid "Don't repeat the early moves that are already known. Skips to the first branching move in the study."
-msgstr ""
+msgstr "No repite movimientos que ya se conocen. Salta al primer movimiento del estudio."
 
 #, elixir-format
 #: lib/listudy_web/live/study_search_live.ex:13
 msgid "Favorites"
-msgstr ""
+msgstr "Favoritos"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:32
 #: lib/listudy_web/templates/study/show.html.eex:115 lib/listudy_web/templates/study/show.html.eex:116
 msgid "Key Move"
-msgstr ""
+msgstr "Movimiento Clave"
 
 #, elixir-format
 #: lib/listudy_web/live/study_search_live.ex:14
 msgid "Newest"
-msgstr ""
+msgstr "Más Nuevo"
 
 #, elixir-format
 #: lib/listudy_web/live/study_search_live.ex:23
 msgid "favorites"
-msgstr ""
+msgstr "favoritos"
