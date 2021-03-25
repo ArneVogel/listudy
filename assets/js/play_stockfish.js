@@ -59,8 +59,27 @@ function stockfish_listener(line) {
     }
 }
 
-function main() {
-    let hash = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1;p";
+function setup_options() {
+    document.getElementById("reset_white").addEventListener('click', function (event) {
+        reset("white");
+    });
+    document.getElementById("reset_black").addEventListener('click', function (event) {
+        reset("black");
+    });
+}
+function reset(c) {
+    let fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+    setup_chess(fen);
+    color = c;
+    setup_ground(fen); //uses global color for orientation
+    ground_set_moves();
+    setup_move_handler(handle_move);
+    if (c == "black") {
+        ai_move();
+    }
+}
+
+function main(hash) {
     if (document.location.hash != "") {
         let regex = /%20/g
         hash = document.location.hash.split("#")[1].replace(regex, " ");
@@ -81,7 +100,7 @@ function main() {
         // switch the board rotation for the player to be bottom
         color = color == "white" ? "black" : "white";
     }
-    setup_ground(fen);
+    setup_ground(fen); //uses global color for orientation
     resize_ground();
     setup_move_handler(handle_move);
     ground_set_moves();
@@ -93,7 +112,8 @@ function main() {
             ai_move();
         }
     });
+    setup_options();
 }
 
 window.onresize = resize_ground;
-main();
+main("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1;p");

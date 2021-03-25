@@ -5,6 +5,9 @@
     <%= render ListudyWeb.ComponentView, "chessground.html" %>
   </div>
   <div class="sidebar">
+    <% black = "<a id=\"reset_black\">#{gettext("black")}</a>"%>
+    <% white = "<a id=\"reset_white\">#{gettext("white")}</a>"%>
+    <div><p><%= raw dgettext("play_stockfish", "Reset as %{white}, %{black}.", black: black, white: white) %></p></div>
     <div id="progress_container">
       <div class="progress-bar">
           <span id="progress" class="progress-bar-fill"></span>
