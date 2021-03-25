@@ -253,7 +253,7 @@ defmodule ListudyWeb.EndgameController do
     %{
       name: dgettext("endgame", "Two Minor Pieces against one Minor Piece"),
       description:
-        dgettext("endgame", "Two minor pieces gainst one minor piece, with and without pawns."),
+        dgettext("endgame", "Two minor pieces against one minor piece, with and without pawns."),
       body: dgettext("endgame", "Two against one."),
       endgames: [
         "endings-of-games": %{
@@ -323,7 +323,7 @@ defmodule ListudyWeb.EndgameController do
 
   defp minor_pieces_against_rook() do
     %{
-      name: dgettext("endgame", "Minor pirces against Rook"),
+      name: dgettext("endgame", "Minor pieces against Rook"),
       description: dgettext("endgame", "Minor pieces against Rook endgames."),
       body: dgettext("endgame", "Bishops and/or knights against rook, with and without pawns."),
       endgames: [
