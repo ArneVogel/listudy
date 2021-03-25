@@ -14,89 +14,89 @@ msgstr ""
 #, elixir-format
 #: tactics.html.eex:45
 msgid "As soon as you have solved the tactic, the final position is displayed. Did you have the same position in your head?"
-msgstr ""
+msgstr "Tan pronto como hayas resuelto la táctica, se muestra la posición final. ¿Tenías la misma posición en mente?"
 
 #, elixir-format
 #: tactics.html.eex:19
 msgid "Frozen Board"
-msgstr ""
+msgstr "Tablero Congelado"
 
 #, elixir-format
 #: tactics.html.eex:21
 msgid "If you click on the position where a piece is positioned you will be shown the possible legal moves. If you then click again on the correct square, the move will be executed and the exercise will continue."
-msgstr ""
+msgstr "Si haces clic en la posición donde está colocada una pieza, se te mostrarán los movimientos legales. Si haces click de nuevo en la casilla correcta, el movimiento se ejecutará y el ejercicio continuará."
 
 #, elixir-format
 #: tactics.html.eex:36
 msgid "Next to the board you will see the list of moves that have been played since the board was frozen. This list shows the current state of the game and the moves the opponent played."
-msgstr ""
+msgstr "Junto al tablero verás la lista de movimientos que se han jugado desde que se congeló el tablero. Esta lista muestra el estado actual del juego y los moviemientos que jugó el oponente."
 
 #, elixir-format
 #: tactics.html.eex:43
 msgid "Tactics"
-msgstr ""
+msgstr "Tácticas"
 
 #, elixir-format
 #: tactics.html.eex:20
 msgid "The board is frozen and does not show the current state of the game. This means you do not see the latest state of the board. The pieces are not animated during the tactics. You have to keep the positions of the pieces in your head!"
-msgstr ""
+msgstr "El tablero está congelado y no muestra el estado actual del juego. Esto significa que no puedes ver el último estado del tablero. Las piezas no se animan durante las tácticas. Tienes que mantener la posición de las piezas en tu mente."
 
 #, elixir-format
 #: tactics.html.eex:35
 msgid "The move list"
-msgstr ""
+msgstr "La lista de movimietnos"
 
 #, elixir-format
 #: tactics.html.eex:37
 msgid "The moves the opponent plays during tactics are added to this list!"
-msgstr ""
+msgstr "Los moviemientos que el oponente hace durante las tácticas son agregados a esta lista."
 
 #, elixir-format
 #: tactics.html.eex:8
 msgid "Use blind tactics to improve your chess visualisation skills. Solve tactics while seeing the board state of several moves from the past. You are given the representation of the board and the moves that have been made since then, and then you then have to solve the tactical problem by imagining the board and the moves played in your head."
-msgstr ""
+msgstr "Usa las tácticas a ciegas para mejorar tu visualización en ajedrez. Resuelve tácticas mientras vez el estado del tablero varias jugadas en el pasado. Se muestra la representación del tablero y los movimientos que se han hecho desde entonces, luego tienes que resolver el problema táctico imaginando el tablero y los movimientos hechos en tu mente."
 
 #, elixir-format
 #: tactics.html.eex:15
 msgid "Using the blind tactics takes getting used to. Here I try to explain it as simple and as clear as possible."
-msgstr ""
+msgstr "Acostumbrarse a las tácticas a ciegas toma tiempo. Aquí trato de explicarlo de la manera más simple y clara posible."
 
 #, elixir-format
 #: tactics.html.eex:44
 msgid "Your task is to solve the exercise like with normal tactics. There is only one continuation that is correct."
-msgstr ""
+msgstr "Tu trabajo es resolver el ejercicio como las tácticas normales. Sólo hay una continuación que es correcta."
 
 #, elixir-format
 #: tactics.html.eex:25
 msgid "different board state"
-msgstr ""
+msgstr "estado de tablero diferente"
 
 #, elixir-format
 #: tactics.html.eex:32
 msgid "move list"
-msgstr ""
+msgstr "lista de movimientos"
 
 #, elixir-format
 #: tactics.html.eex:49
 msgid "solved tactic"
-msgstr ""
+msgstr "táctica resuelta"
 
 #, elixir-format
 #: tactics.html.eex:3
 msgid "Blind Tactics"
-msgstr ""
+msgstr "Tácticas a Ciegas"
 
 #, elixir-format
 #: tactics.html.eex:14
 msgid "How it works"
-msgstr ""
+msgstr "¿Cómo funciona?"
 
 #, elixir-format
 #: tactics.html.eex:4
 msgid "Improve your chess visualization skills"
-msgstr ""
+msgstr "Mejora tu visualización en ajedrez"
 
 #, elixir-format
 #: tactics.html.eex:11
 msgid "Play Now!"
-msgstr ""
+msgstr "¡Juega ahora!"

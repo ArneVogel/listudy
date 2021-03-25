@@ -14,57 +14,61 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:11
 msgid "Are you sure?"
-msgstr ""
+msgstr "¿Estás seguro?"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:3
 msgid "Comment"
-msgstr ""
+msgstr "Comentar"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:3
 msgid "Comments"
-msgstr ""
+msgstr "Comentarios"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:11
 msgid "Delete"
-msgstr ""
+msgstr "Borrar"
 
 #, elixir-format
+#: lib/listudy_web/templates/comment/comment_form.html.eex:15
+msgid "Log in to comment"
+msgstr "Inicia sesión para comentar"
+
 #: lib/listudy_web/templates/comment/comment_form.html.eex:11
 msgid "Save"
-msgstr ""
+msgstr "Guardar"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:8
 msgid "by"
-msgstr ""
+msgstr "por"
 
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:43
 msgid "Comment could not get created"
-msgstr ""
+msgstr "El comentzario no pudo ser creado"
 
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:40
 msgid "Comment created"
-msgstr ""
+msgstr "Comentario creado"
 
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:26
 msgid "Comment deleted successfully."
-msgstr ""
+msgstr "Comentario borrado"
 
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:48
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:20
 msgid "You're not allowed to do that."
-msgstr ""
+msgstr "No tienes permisos para hacer eso."
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:16
