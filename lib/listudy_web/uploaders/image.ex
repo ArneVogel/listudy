@@ -32,13 +32,13 @@ defmodule Listudy.Image do
   # end
 
   # Override the storage directory:
-  def storage_dir(version, {file, scope}) do
+  def storage_dir(_version, {_file, _scope}) do
     "priv/images/"
   end
 
-  defp delete_image!(image) do
-    delete(image)
-  end
+  #defp delete_image!(image) do
+  #  delete(image)
+  #end
 
   # Provide a default URL if there hasn't been a file uploaded
   # def default_url(version, scope) do

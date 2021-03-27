@@ -13,7 +13,7 @@
         </p>
       </div>
     <% end %>
-  <%= else %>
+  <% else %>
   <p><%= dgettext("comments", "No comments yet, be the first to write one!") %></p>
   <% end %>
 </div>

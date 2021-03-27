@@ -8,7 +8,6 @@ defmodule Listudy.Studies do
   alias Listudy.Helpers
 
   alias Listudy.Studies.Study
-  alias Listudy.Users.User
   alias Listudy.StudyFavorites.StudyFavorite
 
   @doc """
