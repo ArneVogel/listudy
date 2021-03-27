@@ -107,7 +107,7 @@ msgstr "Password"
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:37
 msgid "Please choose a secure password. The password must be at least eight characters long."
-msgstr "Perfavore scegli una password sicura. La password deve essere lunga almeno otto caratteri"
+msgstr "Per favore scegli una password sicura. La password deve essere lunga almeno otto caratteri."
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:5
@@ -129,7 +129,7 @@ msgstr "Profilo"
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:34
 msgid "Register to get access to all features."
-msgstr "Registrati per accedere a tutti i contenuti"
+msgstr "Registrati per accedere a tutti i funzionalità."
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:6
@@ -140,12 +140,12 @@ msgstr "Termini del Servizio"
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:36
 msgid "The email is used to log in. It doesn't have to be real, as long as you remember it."
-msgstr "Questa email è usata solo per loggarti. Anche se ne inserisci una fake, l'importante è che tu la ricordi"
+msgstr "Questa email è usata solo per loggarti. Non deve essere reale, l'importante è che tu la ricordi."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/imprint.html.eex:2
 msgid "The provider of this website is Arne Vogel."
-msgstr "Il provider di questo sito è Arne Vogel"
+msgstr "Il provider di questo sito è Arne Vogel."
 
 #, elixir-format
 #: lib/listudy_web/controllers/page_controller.ex:18
@@ -166,7 +166,7 @@ msgstr "Username"
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:35
 msgid "You are welcome to use a pseudonym."
-msgstr "Sei invitato ad usare uno pseudonimo"
+msgstr "Sei libero di usare uno pseudonimo."
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:7
@@ -189,7 +189,7 @@ msgstr "Chiudi Account"
 #: lib/listudy_web/templates/post/index.html.eex:7
 #: lib/listudy_web/templates/post/show.html.eex:3
 msgid "Created at"
-msgstr "Creato per"
+msgstr "Creato il"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:16
@@ -241,7 +241,7 @@ msgstr "Indietro"
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:40
 msgid "Before creating your account, please read the %{privacy_policy} and %{tos}. By creating the account, you agree to those terms."
-msgstr "Prima di creare il tuo account, perfavore leggi %{privacy_policy} e %{tos}.Creando questo account, acconsenti ai termini."
+msgstr "Prima di creare il tuo account, per favore leggi %{privacy_policy} e %{tos}. Creando l'account, acconsenti ai termini."
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:71
@@ -273,12 +273,12 @@ msgstr "Riproduci Suono"
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:93
 msgid "Select a color:"
-msgstr "Seleziona un colore"
+msgstr "Seleziona un colore:"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:100
 msgid "Select a piece set:"
-msgstr "Seleziona un set di scacchi"
+msgstr "Seleziona un set di scacchi:"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:70
@@ -309,14 +309,14 @@ msgstr "Webmaster"
 #, elixir-format
 #: lib/listudy_web/pow/messages.ex:7
 msgid "The provided login details did not work. Make sure to log in with your email and not your username!"
-msgstr ""
+msgstr "Le informazioni fornite per il login non hanno funzionato. Assicurati di accedere con la tua email e non con il tuo username"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/session/new.html.eex:11
 msgid "Use your email to log in."
-msgstr ""
+msgstr "Usa la tua email per accedere."
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/session/new.html.eex:18
 msgid "Your session will be persistent. Only use on your own devices."
-msgstr ""
+msgstr "La tua sessione sarà persistente. Usa solo sui tuoi dispositivi."
