@@ -20,7 +20,7 @@ defmodule Listudy.MixProject do
   def application do
     [
       mod: {Listudy.Application, []},
-      extra_applications: [:logger, :runtime_tools, :mnesia]
+      extra_applications: [:logger, :runtime_tools, :mnesia, :logger_file_backend]
     ]
   end
 
@@ -51,7 +51,8 @@ defmodule Listudy.MixProject do
       {:earmark, ">= 1.4.5"},
       {:httpoison, "~> 1.6"},
       {:arc, "~> 0.11.0"},
-      {:arc_ecto, "~> 0.11.1"}
+      {:arc_ecto, "~> 0.11.1"},
+      {:logger_file_backend, "~> 0.0.10"}
     ]
   end
 

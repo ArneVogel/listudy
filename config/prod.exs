@@ -16,7 +16,16 @@ config :listudy, ListudyWeb.Endpoint,
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
-config :logger, level: :info
+# config :logger, level: :info
+
+config :logger,
+  backends: [{LoggerFileBackend, :error_log}]
+
+# configuration for the {LoggerFileBackend, :error_log} backend
+config :logger, :error_log,
+  path: "/var/log/listudy.error.log",
+  level: :error
+
 
 # ## SSL Support
 #
