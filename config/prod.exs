@@ -26,7 +26,6 @@ config :logger, :error_log,
   path: "/var/log/listudy.error.log",
   level: :error
 
-
 # ## SSL Support
 #
 # To get SSL working, you will need to add the `https` key

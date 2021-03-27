@@ -30,7 +30,7 @@ defmodule ListudyWeb.TacticsLive do
   end
 
   def handle_event(event, _, socket) do
-    Logger.error "Unhandled event in tactics live: #{event}"
+    Logger.error("Unhandled event in tactics live: #{event}")
     {:noreply, socket}
   end
 

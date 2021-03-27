@@ -36,9 +36,9 @@ defmodule Listudy.Image do
     "priv/images/"
   end
 
-  #defp delete_image!(image) do
+  # defp delete_image!(image) do
   #  delete(image)
-  #end
+  # end
 
   # Provide a default URL if there hasn't been a file uploaded
   # def default_url(version, scope) do

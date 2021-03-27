@@ -24,10 +24,9 @@ defmodule ListudyWeb.BlindTacticsLive do
   end
 
   def handle_event(event, _, socket) do
-    Logger.error "Unhandled event in blind tactics live: #{event}"
+    Logger.error("Unhandled event in blind tactics live: #{event}")
     {:noreply, socket}
   end
-
 
   defp get_next_tactic(socket) do
     BlindTactics.get_random_tactic(socket.assigns.tactic.id)
