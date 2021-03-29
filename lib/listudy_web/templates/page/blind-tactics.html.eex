@@ -22,14 +22,14 @@
   </div>
 
   <div class="one-half column">
-    <img alt="<%= dgettext("blind-tactics", "different board state") %>" src="<%= Routes.static_path(@conn, "/images/features/board-state.png") %>"></img>
+    <img alt="<%= dgettext("blind-tactics", "different board state") %>" src="<%= Routes.static_path(@conn, "/images/features/blind/board-state.png") %>"></img>
   </div>
 </div>
 
 
 <div class="row">
   <div class="one-half column">
-    <img alt="<%= dgettext("blind-tactics", "move list") %>" src="<%= Routes.static_path(@conn, "/images/features/move-list.png") %>"></img>
+    <img alt="<%= dgettext("blind-tactics", "move list") %>" src="<%= Routes.static_path(@conn, "/images/features/blind/move-list.png") %>"></img>
   </div>
   <div class="one-half column">
     <h3><%= dgettext("blind-tactics", "The move list") %></h3>
@@ -46,7 +46,7 @@
   </div>
 
   <div class="one-half column">
-    <img alt="<%= dgettext("blind-tactics", "solved tactic") %>" src="<%= Routes.static_path(@conn, "/images/features/solved.png") %>"></img>
+    <img alt="<%= dgettext("blind-tactics", "solved tactic") %>" src="<%= Routes.static_path(@conn, "/images/features/blind/solved.png") %>"></img>
   </div>
 </div>
 

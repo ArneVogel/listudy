@@ -27,6 +27,10 @@
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/confetti.browser.min.js") %>"></script>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/holidays/new-year.js") %>"></script>
     <% end %>
+    <%= if is_april_fools() do %>
+    <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/holidays/april-fools.21.js") %>"></script>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/april-fools.21.css") %>"/>
+    <% end %>
 
 
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
