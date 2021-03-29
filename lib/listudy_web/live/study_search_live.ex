@@ -3,6 +3,7 @@ defmodule ListudyWeb.StudySearchLive do
 
   alias Listudy.Studies
   import ListudyWeb.Gettext
+  alias ListudyWeb.Router.Helpers, as: Routes
 
   def render(assigns) do
     ~L"""
@@ -17,7 +18,7 @@ defmodule ListudyWeb.StudySearchLive do
       <div class="study_search_results">
         <%= for match <- @matches do %>
           <div class="study_search_result">
-            <a href="/<%=@locale%>/studies/<%=match.slug%>">
+            <a href="<%= Routes.study_path(@socket, :show, @locale, match) %>">
               <h5><%= match.title %></h5>
             </a>
             <span title="# <%= dgettext("study", "favorites")%>"><%= length(match.study_favorites) %> <span class="icon" data-icon="#"></span></span> <%= dgettext("study", "by") %> <%= match.user.username %>
