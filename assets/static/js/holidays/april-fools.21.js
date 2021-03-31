@@ -5,7 +5,7 @@ let div = `
             <h5 class="doge-title">So Chess, Much DogeStudy!</h5>
             <p>Welcome to the future of chess. Wow!</p>
             <p>More features!</p>
-            <p>Learn how to improve with <a class="doge-link" href="/en/features/dogestudy">DogeStudy</a></p>
+            <p>Learn about the all new <a class="doge-link" href="/en/features/dogestudy">DogeStudy</a></p>
         </div>
         <div class="sidebar">
             <div class="doge-logo"></div>
@@ -14,8 +14,13 @@ let div = `
 
 <p></p>
 </div>`;
-if (document.URL.indexOf("studies") != -1) {
+document.getElementsByClassName("logo_name")[0].innerText = "dogestudy"
+if (document.URL.indexOf("studies") != -1 || document.URL.indexOf("tactic") != -1) {
     let wrapper = document.createElement('div');
     wrapper.innerHTML = div;
     document.getElementsByTagName("main")[0].prepend(wrapper);
+}
+
+if (document.location.pathname == "/en") {
+    document.getElementsByTagName("h1")[0].innerText = "Welcome to DogeStudy!";
 }
