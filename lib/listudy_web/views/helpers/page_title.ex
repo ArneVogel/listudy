@@ -61,6 +61,11 @@ defmodule ListudyWeb.PageTitle do
        do: "#{subchapter.name} #{index}"
 
   defp get(%{
+         view_module: Elixir.ListudyWeb.PiecelessTacticView,
+       }),
+       do: "Pieceless Tactics"
+
+  defp get(%{
          view_module: Elixir.ListudyWeb.PlayerView,
          view_template: "public.html",
          player: player
