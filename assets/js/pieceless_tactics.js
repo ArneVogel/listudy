@@ -130,9 +130,15 @@ function setup_pieces(chess) {
     }
 }
 
+function setup_to_play(chess) {
+    let to_play = chess.turn() == "w" ? i18n.white : i18n.black;
+    document.getElementById("pieceless_to_play").innerText = to_play;
+}
+
 function main() {
     window.chess = new Chess(fen);
     setup_pieces(chess);
+    setup_to_play(chess);
     window.color = chess.turn() == "w" ? "white" : "black";
     setup_ground(fen);
 

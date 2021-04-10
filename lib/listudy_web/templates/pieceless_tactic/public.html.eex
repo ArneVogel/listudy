@@ -8,6 +8,8 @@
     <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
     
     <div id="info">
+      <% color = "<span id=\"pieceless_to_play\"></span>" %>
+      <p><%= raw dgettext("tactics", "%{color} to play and win.", color: color) %></p>
       <div id="pieceless_pieces"></div>
       <p id="history_container" class="hidden"><%= dgettext("tactics", "History") %>: <span id="history"></span></p>
 
@@ -30,4 +32,6 @@ i18n.success = "<%= dgettext "tactics", "Tactic solved!"%>";
 i18n.wrong_move = "<%= dgettext "tactics", "Wrong Move"%>";
 i18n.right_move = "<%= dgettext "tactics", "Correct move, there are still more moves." %> ";
 i18n.solved = "<%= dgettext "tactics", "Solved!" %> ";
+i18n.white = "<%= dgettext "tactics", "White" %> ";
+i18n.black = "<%= dgettext "tactics", "Black" %> ";
 </script>
