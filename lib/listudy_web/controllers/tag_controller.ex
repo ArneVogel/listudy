@@ -32,8 +32,9 @@ defmodule ListudyWeb.TagController do
   end
 
   def show(conn, %{"slug" => slug}) do
+    tags = Listudy.Tags.list_tags_preloaded()
     tag = Tags.get_by_slug!(slug)
-    render(conn, "public.html", tag: tag)
+    render(conn, "public.html", tag: tag, tags: tags)
   end
 
   def edit(conn, %{"id" => id}) do

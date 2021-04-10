@@ -54,8 +54,9 @@ defmodule ListudyWeb.BookController do
   end
 
   def recommended(conn, _) do
+    tags = Listudy.Tags.list_tags_preloaded()
     books = Books.recommended_books()
-    render(conn, "recommended.html", books: books)
+    render(conn, "recommended.html", books: books, tags: tags)
   end
 
   def edit(conn, %{"id" => id}) do

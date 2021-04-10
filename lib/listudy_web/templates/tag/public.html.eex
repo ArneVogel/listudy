@@ -10,3 +10,4 @@
 
 <%= raw Earmark.as_html!(@tag.description) %>
 
+<%= render ListudyWeb.BookView, "footer.html", Map.put(assigns, :tags, @tags) %>
