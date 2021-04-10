@@ -33,7 +33,7 @@ defmodule ListudyWeb.PiecelessTacticController do
 
   def public(conn, %{"id" => id}) do
     pieceless_tactic = PiecelessTactics.get_pieceless_tactic!(id)
-    render(conn, "public.html", pieceless_tactic: pieceless_tactic)
+    render(conn, "public.html", pieceless_tactic: pieceless_tactic, noindex: true)
   end
 
   def random(conn, params) do
