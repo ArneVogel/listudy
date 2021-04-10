@@ -1,0 +1,30 @@
+<h1>Listing Piecelesstactic</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fen</th>
+      <th>Solution</th>
+      <th>Pieces</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for pieceless_tactic <- @piecelesstactic do %>
+    <tr>
+      <td><%= pieceless_tactic.fen %></td>
+      <td><%= pieceless_tactic.solution %></td>
+      <td><%= pieceless_tactic.pieces %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.pieceless_tactic_path(@conn, :show, pieceless_tactic) %></span>
+        <span><%= link "Edit", to: Routes.pieceless_tactic_path(@conn, :edit, pieceless_tactic) %></span>
+        <span><%= link "Delete", to: Routes.pieceless_tactic_path(@conn, :delete, pieceless_tactic), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Pieceless tactic", to: Routes.pieceless_tactic_path(@conn, :new) %></span>

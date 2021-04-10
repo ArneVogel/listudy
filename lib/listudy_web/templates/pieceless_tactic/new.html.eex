@@ -1,0 +1,5 @@
+<h1>New Pieceless tactic</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.pieceless_tactic_path(@conn, :create)) %>
+
+<span><%= link "Back", to: Routes.pieceless_tactic_path(@conn, :index) %></span>
