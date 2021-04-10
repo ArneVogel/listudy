@@ -64,6 +64,7 @@ defmodule ListudyWeb.Router do
     resources "/players", PlayerController
     resources "/events", EventController
     resources "/tactics", TacticController
+    resources "/piecelesstactic", PiecelessTacticController
 
     resources "/book_opening", BookOpeningController
     resources "/book_tag", BookTagController
@@ -122,6 +123,10 @@ defmodule ListudyWeb.Router do
     live "/blind-tactics/:id", BlindTacticsLive,
       layout: {ListudyWeb.LayoutView, :live},
       as: :blind_tactics
+
+    get "/pieceless-tactics", PiecelessTacticController, :random
+    get "/pieceless-tactics-random/:id", PiecelessTacticController, :random
+    get "/pieceless-tactics/:id", PiecelessTacticController, :public
 
     live "/games/chessclicker", ChessClickerLive,
       layout: {ListudyWeb.LayoutView, :live},

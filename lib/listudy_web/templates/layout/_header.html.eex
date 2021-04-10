@@ -25,6 +25,7 @@
                 <div class="dropdown-content">
                   <%= link (gettext "Tactics"), to: Routes.tactic_path(@conn, :random, @assigns.locale) %>
                   <%= link (gettext "Blind Tactics"), to: Routes.blind_tactic_path(@conn, :random, @assigns.locale) %>
+                  <%= link (gettext "Pieceless Tactics"), to: Routes.pieceless_tactic_path(@conn, :random, @assigns.locale) %>
                 </div>
               </div> 
             </div>
