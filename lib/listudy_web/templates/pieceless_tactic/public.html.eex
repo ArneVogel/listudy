@@ -9,7 +9,7 @@
     
     <div id="info">
       <% color = "<span id=\"pieceless_to_play\"></span>" %>
-      <p><%= raw dgettext("tactics", "%{color} to play and win.", color: color) %></p>
+      <p><%= raw dgettext("tactics", "%{color} to play.", color: color) %></p>
       <div id="pieceless_pieces"></div>
       <p id="history_container" class="hidden"><%= dgettext("tactics", "History") %>: <span id="history"></span></p>
 
