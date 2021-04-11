@@ -1,0 +1,35 @@
+<h1><%= dgettext("thanks", "Thank you!") %></h1>
+<p><%= dgettext("thanks", "Thanks to all who have helped directly on Listudy and to all projects that make code and other content openly available. Without this help Listudy could not exist in this form.") %></p>
+
+
+<% contributors = "<a href=\"https://github.com/ArneVogel/listudy/graphs/contributors\">Contributors</a>" %>
+<p><%= raw dgettext("thanks", "Thanks to all %{contributors}.", contributors: contributors) %></p>
+
+<p><%= dgettext("thanks", "Thanks to all those who have provided translations.") %></p>
+
+<% database_link = "<a href=\"https://database.lichess.org/\">database.lichess.org</a>" %>
+<% lichess = "<a href=\"https://lichess.org/\">Lichess</a>" %>
+<% chessground = "<a href=\"https://github.com/ornicar/chessground/\">Chessground</a>" %>
+<p><%= raw dgettext("thanks", "Thanks to %{lichess} for all their work. In particular for making studies, their puzzle database (%{database_link}), %{chessground}, and their freely avaliable icons.", database_link: database_link, lichess: lichess, chessground: chessground) %></p>
+
+<% stockfish = "<a href=\"https://github.com/niklasf/stockfish.wasm\">stockfish.wasm</a>" %>
+<% niklas = "<a href=\"https://github.com/niklasf\">Niklas Fiekas</a>" %>
+<p><%= raw dgettext("thanks", "Thanks to %{niklas} for %{stockfish}.", stockfish: stockfish, niklas: niklas)%></p>
+
+<% chessjs = "<a href=\"https://github.com/jhlywa/chess.js\">chess.js</a>" %>
+<% jeff = "<a href=\"https://github.com/jhlywa\">Jeff Hlywa</a>" %>
+<p><%= raw dgettext("thanks", "Thanks to %{jeff} for %{chessjs}.", jeff: jeff, chessjs: chessjs) %></p>
+
+<% cburnett = "<a href=\"https://en.wikipedia.org/wiki/User:Cburnett\">Colin M.L. Burnett</a>" %>
+<% chessnut = "<a href=\"https://github.com/LexLuengas\">Alexis Luengas</a>" %>
+<% letter = "<a href=\"https://lichess.org/@/usolando\">Usolando</a>" %>
+<% pirouetti = "<a href=\"https://lichess.org/@/pirouetti\">pirouetti</a>" %>
+<% pixel = "<a href=\"https://twitter.com/therealqtpi\">therealqtpi</a>" %>
+<% shapes = "<a href=\"https://github.com/flugsio/chess_shapes\">Jimmie Elvenmark</a>" %>
+<p><%= raw dgettext("thanks", "Thanks to %{cburnett}, Armando Hernandez Marroquin, %{chessnut}, %{letter}, %{pirouetti}, %{pixel}, %{shapes} for their piece sets.", cburnett: cburnett, letter: letter, pirouetti: pirouetti, pixel: pixel, shapes: shapes, chessnut: chessnut) %></p>
+
+
+<% phoenix = "<a href=\"https://www.phoenixframework.org/\">Phoenix</a>" %>
+<% elixir = "<a href=\"https://elixir-lang.org/\">Elixir</a>" %>
+<p><%= raw dgettext("thanks", "Thanks to the authors of %{elixir} and %{phoenix}.", elixir: elixir, phoenix: phoenix) %></p>
+
