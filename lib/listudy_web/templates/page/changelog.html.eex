@@ -1,0 +1,12 @@
+<h1><%= dgettext("changelog", "Changelog") %></h1>
+
+<b>2021-04-11</b>
+<% {:safe , changelog} = link dgettext("changelog", "Thank you"), to: Routes.page_path(@conn, :show, @locale, "thanks") %>
+<% {:safe, thanks} = link dgettext("changelog", "Changelog"), to: Routes.page_path(@conn, :show, @locale, "changelog") %>
+
+<p><%= raw dgettext("changelog", "Added pages %{changelog} and %{thanks}", changelog: changelog, thanks: thanks) %></p>
+
+<b>2021-04-10</b>
+<% {:safe, pieceless} = link dgettext("changelog", "Pieceless Tactics"), to: Routes.pieceless_tactic_path(@conn, :random, @locale) %>
+<p><%= raw dgettext("changelog", "Added %{pieceless}", pieceless: pieceless) %></p>
+
