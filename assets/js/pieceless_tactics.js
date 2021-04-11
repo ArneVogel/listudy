@@ -44,7 +44,13 @@ function handle_move(orig, dest, extraInfo) {
             // make the ai move
             let ai_move = solution[0].match(/.{1,2}/g); // split "a2a4" into ["a2", "a4"]
 
-            chess.move({from: ai_move[0], to: ai_move[1]});
+            let move = {from: ai_move[0], to: ai_move[1]};
+            if (ai_move.length == 3) {
+                move.promotion = ai_move[2];
+
+            }
+
+            chess.move(move);
             solution = solution.slice(1); // remove the ai move from the solution
 
             // let me player know there are move moves needed
