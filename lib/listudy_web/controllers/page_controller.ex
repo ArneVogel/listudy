@@ -4,7 +4,7 @@ defmodule ListudyWeb.PageController do
 
   @languages Application.get_env(:listudy, :languages)[:translations]
   @pages ["privacy", "terms-of-service", "imprint", "copyright", "achievements", "icons", "thanks", "changelog"]
-  @features ["blind-tactics", "dogestudy"]
+  @features ["blind-tactics", "dogestudy", "pieceless-tactics"]
 
   def index(conn, %{"locale" => locale}) do
     case locale in @languages do

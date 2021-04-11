@@ -1,0 +1,56 @@
+<div class="features-header">
+  <h1><%= dgettext("tactics", "Pieceless Tactics") %></h1>
+  <b><%= dgettext("tactics", "Improve your chess visualization skills") %></b>
+</div>
+
+
+<p><%= dgettext("tactics", "All the pieces have disappeared! There is only a list of where the pieces should be next to the board. Can you visualize the position well enough in your head to solve the tactic?") %></p>
+
+<a href="<%= Routes.pieceless_tactic_path(@conn, :random, @locale) %>">
+  <button class="highlight-button"><%= dgettext("tactics", "Play Now!") %></button>
+</a>
+
+<h2 id="help"><%= dgettext("tactics", "How it works") %></h2>
+<p><%= dgettext("tactics", "Using pieceless tactics takes getting used to. Here I try to explain how to use them as simple and as clear as possible.") %></p>
+
+<div class="row">
+  <div class="one-half column">
+    <h3><%= dgettext("tactics", "Where are the pieces?") %></h3>
+    <p><%= dgettext("tactics", "If you load a pieceless tactic, you will be looking at an empty chessboard. Next to the chessboard, however, you will see exactly where the pieces should be placed on the chessboard.") %></p>
+    <p><%= dgettext("tactics", "Your task now is to visualize the pieces on the board and to try to solve the tactic.") %></p>
+  </div>
+
+  <div class="one-half column">
+    <img alt="<%= dgettext("tactics", "Piece list") %>" src="<%= Routes.static_path(@conn, "/images/features/pieceless/pieces.png") %>"></img>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="one-half column">
+    <img alt="<%= dgettext("tactics", "Board showing the legal moves if you click on the square of a piece") %>" src="<%= Routes.static_path(@conn, "/images/features/pieceless/moves.png") %>"></img>
+  </div>
+  <div class="one-half column">
+    <h3><%= dgettext("tactics", "Solve the tactic") %></h3>
+    <p><%= dgettext("tactics", "Have you visualized the position and solved the tactics? Then you can play the solution now.") %></p>
+    <p><%= dgettext("tactics", "If you click on the position on the field on which a piece is standing, you will be shown where the piece can move to. Simply move the piece as you normally would.") %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="one-half column">
+    <h3><%= dgettext("tactics", "History") %></h3>
+    <p><%= dgettext("tactics", "If you have made the right move, the history is displayed. There you can see what the AI played in response to your move.") %></p>
+    <p><%= dgettext("tactics", "Keep playing until the tactic is solved!") %></p>
+  </div>
+
+  <div class="one-half column">
+    <img alt="<%= dgettext("tactics", "move history showing the moves played") %>" src="<%= Routes.static_path(@conn, "/images/features/pieceless/history.png") %>"></img>
+  </div>
+</div>
+
+<a href="<%= Routes.pieceless_tactic_path(@conn, :random, @locale) %>">
+  <button class="highlight-button"><%= dgettext("tactics", "Play Now!") %></button>
+</a>
+
+

@@ -15,6 +15,15 @@ defmodule ListudyWeb.PageTitle do
   defp get(%{view_module: PageView, view_template: "blind-tactics.html"}),
     do: dgettext("page_titles", "Blind Tactics")
 
+  defp get(%{view_module: PageView, view_template: "pieceless-tactics.html"}),
+    do: dgettext("page_titles", "Pieceless Tactics")
+
+  defp get(%{view_module: PageView, view_template: "changelog.html"}),
+    do: dgettext("page_titles", "Changelog")
+
+  defp get(%{view_module: PageView, view_template: "thanks.html"}),
+    do: dgettext("page_titles", "Thank you!")
+
   defp get(%{view_module: PageView, view_template: "play_stockfish.html"}),
     do: dgettext("page_titles", "Play against Stockfish Online")
 

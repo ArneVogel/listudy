@@ -3,8 +3,9 @@
 <b>2021-04-11</b>
 <% {:safe , changelog} = link dgettext("changelog", "Thank you"), to: Routes.page_path(@conn, :show, @locale, "thanks") %>
 <% {:safe, thanks} = link dgettext("changelog", "Changelog"), to: Routes.page_path(@conn, :show, @locale, "changelog") %>
+<% {:safe, pieceless_info} = link dgettext("changelog", "Pieceless info page"), to: Routes.page_path(@conn, :features, @locale, "pieceless-tactics") %>
 
-<p><%= raw dgettext("changelog", "Added pages %{changelog} and %{thanks}", changelog: changelog, thanks: thanks) %></p>
+<p><%= raw dgettext("changelog", "Added pages %{changelog}, %{thanks}, and %{pieceless_info}", changelog: changelog, thanks: thanks, pieceless_info: pieceless_info) %></p>
 
 <b>2021-04-10</b>
 <% {:safe, pieceless} = link dgettext("changelog", "Pieceless Tactics"), to: Routes.pieceless_tactic_path(@conn, :random, @locale) %>
