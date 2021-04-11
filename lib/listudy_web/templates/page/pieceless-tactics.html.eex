@@ -28,12 +28,12 @@
 
 <div class="row">
   <div class="one-half column">
-    <img alt="<%= dgettext("tactics", "Board showing the legal moves if you click on the square of a piece") %>" src="<%= Routes.static_path(@conn, "/images/features/pieceless/moves.png") %>"></img>
-  </div>
-  <div class="one-half column">
     <h3><%= dgettext("tactics", "Solve the tactic") %></h3>
     <p><%= dgettext("tactics", "Have you visualized the position and solved the tactics? Then you can play the solution now.") %></p>
     <p><%= dgettext("tactics", "If you click on the position on the field on which a piece is standing, you will be shown where the piece can move to. Simply move the piece as you normally would.") %></p>
+  </div>
+  <div class="one-half column">
+    <img alt="<%= dgettext("tactics", "Board showing the legal moves if you click on the square of a piece") %>" src="<%= Routes.static_path(@conn, "/images/features/pieceless/moves.png") %>"></img>
   </div>
 </div>
 

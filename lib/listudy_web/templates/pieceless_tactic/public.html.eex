@@ -17,6 +17,9 @@
         <button id="next" class="hidden continue_button"><%= dgettext "tactics", "Continue"%></button>
       </a>
     </div>
+    <br>
+    <br>
+    <a class="pieceless_info" href="<%= Routes.page_path(@conn, :features, @conn.assigns.locale, "pieceless-tactics") %>#help"><%= dgettext("tactics", "[Help] How pieceless tactics work.") %></a>
   </div>
 </div>
 
