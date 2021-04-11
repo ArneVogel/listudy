@@ -4,6 +4,7 @@
 
 .pieceless_piece_square {
     line-height: 45px;
+    width: 2em;
 }
 
 cg-board > piece {
@@ -21,11 +22,12 @@ piece.ghost {
 
 #pieceless_pieces {
     display: flex;
+    flex-wrap: wrap;
 }
 .pieceless_piece_container {
 	background: var(--bg-highlight-color);
 	padding: 2px 10px;
-    margin: 0px 2px;
+    margin: 2px 2px;
 	border-radius: var(--small-border-radius);
 }
 #history_container {
