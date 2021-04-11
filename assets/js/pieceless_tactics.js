@@ -21,7 +21,7 @@ function show_history(chess) {
 function handle_move(orig, dest, extraInfo) {
     clear_all_text();
     let expected = solution[0];
-    if (orig+dest == expected) {
+    if (expected.startsWith(orig+dest)) {
         // we need more than three for this to continue so less means solved
         // [0] current (correct) move
         // [1] ai reply
