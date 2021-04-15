@@ -3,13 +3,8 @@
 <p><%= dgettext("user_profile", "%{name} has been a member since %{signup}.", name: @user.username, signup: hd(String.split(to_string(@user.inserted_at), " "))) %></p>
 
 <%= if length(@studies) != 0 do %>
-<h2><%= dgettext("user_profile", "Public studies by %{name}", name: @user.username) %></h2>
-  <%= for study <- @studies do %>
-        <h3><%= study.title%></h3>
-        <p><%= study.description %></p>
-        <a href="<%= Routes.study_path(@conn, :show, @locale, study) %>"><button class="secondary"><%= dgettext("user_profile", "Show") %></button></a>
-      </tr>
-  <% end %>
+  <h2><%= dgettext("user_profile", "Public studies by %{name}", name: @user.username) %></h2>
+  <%= render ListudyWeb.StudyView, "list.html", studies: @studies, conn: @conn, locale: @locale %>
 <% else %>
   <p><%= dgettext("user_profile", "%{name} does not have any public studies.", name: @user.username) %></p>
 <% end %>
