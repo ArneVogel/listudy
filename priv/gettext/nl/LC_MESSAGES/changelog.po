@@ -1,0 +1,43 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: nl\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/changelog.html.eex:12
+msgid "Added %{pieceless}"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/changelog.html.eex:8
+msgid "Added pages %{changelog}, %{thanks}, and %{pieceless_info}"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/changelog.html.eex:1
+#: lib/listudy_web/templates/page/changelog.html.eex:5
+msgid "Changelog"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/changelog.html.eex:11
+msgid "Pieceless Tactics"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/changelog.html.eex:6
+msgid "Pieceless info page"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/changelog.html.eex:4
+msgid "Thank you"
+msgstr ""

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/user_profile/show.html.eex:14
+#: lib/listudy_web/templates/user_profile/show.html.eex:9
 msgid "%{name} does not have any public studies."
 msgstr ""
 
@@ -28,9 +28,4 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/user_profile/show.html.eex:6
 msgid "Public studies by %{name}"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/user_profile/show.html.eex:10
-msgid "Show"
 msgstr ""

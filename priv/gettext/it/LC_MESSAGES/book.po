@@ -86,3 +86,24 @@ msgstr ""
 #: lib/listudy_web/live/book_search_live.ex:16
 msgid "by"
 msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/book/footer.html.eex:5
+#: lib/listudy_web/templates/book/footer.html.eex:9
+msgid "%{amount} books"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/book/footer.html.eex:2
+msgid "Looking for something more specific? Take a look at these book lists:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/book/footer.html.eex:1
+msgid "More book lists"
+msgstr ""
+
+#, elixir-format, fuzzy
+#: lib/listudy_web/templates/book/footer.html.eex:5
+msgid "Most Grandmaster recommended books"
+msgstr ""

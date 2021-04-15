@@ -58,7 +58,7 @@ msgid "Do you like this study? Share it with your friends."
 msgstr "¿Te gusta este estudio? Compártelo con tus amigos."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/index.html.eex:24
+#: lib/listudy_web/templates/study/list.html.eex:15
 #: lib/listudy_web/templates/study/show.html.eex:45
 msgid "Edit"
 msgstr "Editar"
@@ -278,7 +278,7 @@ msgid "Create a new study and start learning."
 msgstr "Crea un nuevo estudio y empieza a aprender."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/index.html.eex:30
+#: lib/listudy_web/templates/study/index.html.eex:25
 msgid "Favored Studies"
 msgstr "Estudios Favoritos"
 
@@ -291,12 +291,6 @@ msgstr "Nuevo Estudio"
 #: lib/listudy_web/templates/study/index.html.eex:15
 msgid "Search for Studies"
 msgstr "Buscar Estudios"
-
-#, elixir-format
-#: lib/listudy_web/templates/study/index.html.eex:23
-#: lib/listudy_web/templates/study/index.html.eex:34
-msgid "Show"
-msgstr "Mostrar"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:1
@@ -339,17 +333,18 @@ msgid "This can not be undone!"
 msgstr "¡Esto no se puede deshacer!"
 
 #, elixir-format
-#: lib/listudy_web/live/study_search_live.ex:11
+#: lib/listudy_web/live/study_search_live.ex:12
 msgid "Search"
 msgstr "Buscar"
 
 #, elixir-format
-#: lib/listudy_web/live/study_search_live.ex:9
+#: lib/listudy_web/live/study_search_live.ex:10
 msgid "Search for studies"
 msgstr "Buscar estudios"
 
 #, elixir-format
-#: lib/listudy_web/live/study_search_live.ex:23
+#: lib/listudy_web/live/study_search_live.ex:24
+#: lib/listudy_web/templates/study/list.html.eex:8
 msgid "by"
 msgstr "por"
 
@@ -359,7 +354,7 @@ msgid "Don't repeat the early moves that are already known. Skips to the first b
 msgstr "No repite movimientos que ya se conocen. Salta al primer movimiento del estudio."
 
 #, elixir-format
-#: lib/listudy_web/live/study_search_live.ex:13
+#: lib/listudy_web/live/study_search_live.ex:14
 msgid "Favorites"
 msgstr "Favoritos"
 
@@ -370,11 +365,12 @@ msgid "Key Move"
 msgstr "Movimiento Clave"
 
 #, elixir-format
-#: lib/listudy_web/live/study_search_live.ex:14
+#: lib/listudy_web/live/study_search_live.ex:15
 msgid "Newest"
 msgstr "Más Nuevo"
 
 #, elixir-format
-#: lib/listudy_web/live/study_search_live.ex:23
+#: lib/listudy_web/live/study_search_live.ex:24
+#: lib/listudy_web/templates/study/list.html.eex:8
 msgid "favorites"
 msgstr "favoritos"

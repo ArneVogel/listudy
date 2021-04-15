@@ -32,10 +32,6 @@ msgid "Delete"
 msgstr "Borrar"
 
 #, elixir-format
-#: lib/listudy_web/templates/comment/comment_form.html.eex:15
-msgid "Log in to comment"
-msgstr "Inicia sesión para comentar"
-
 #: lib/listudy_web/templates/comment/comment_form.html.eex:11
 msgid "Save"
 msgstr "Guardar"

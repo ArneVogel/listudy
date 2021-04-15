@@ -17,6 +17,7 @@ msgid "A cookie is a text string that Listudy stores in your browser in order to
 msgstr "Una cookies es una cadena de texto que Listudy guarda en tu navegador para mantener tu sesión iniciada y guardar tus preferencias."
 
 #, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:16
 #: lib/listudy_web/templates/page/privacy.html.eex:55
 msgid "Closing your account"
 msgstr "Cerrando tu cuenta"
@@ -25,11 +26,6 @@ msgstr "Cerrando tu cuenta"
 #: lib/listudy_web/templates/page/privacy.html.eex:53
 msgid "Collected information is stored on Listudy’ servers, which are hosted by DigitalOcean."
 msgstr "La información es recolectada en los servidores de Listudy, los cuales se alojan por DigitalOcean."
-
-#, elixir-format
-#: lib/listudy_web/templates/page/privacy.html.eex:16
-msgid "Colsing your account"
-msgstr "Cerrando tu cuenta"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:43

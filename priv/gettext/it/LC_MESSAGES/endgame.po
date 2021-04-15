@@ -107,11 +107,6 @@ msgid "Minor pieces against Rook endgames."
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/endgame_controller.ex:326
-msgid "Minor pirces against Rook"
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:178
 msgid "Obtaining a Passed Pawn"
 msgstr ""
@@ -254,11 +249,6 @@ msgid "Two against one."
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/endgame_controller.ex:256
-msgid "Two minor pieces gainst one minor piece, with and without pawns."
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:128
 msgid "Win games with only Pawns on the board"
 msgstr ""
@@ -323,4 +313,14 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/endgame/index.html.eex:2
 msgid "No idea what to do in the endgame? Learn endgames by playing against stockfish."
+msgstr ""
+
+#, elixir-format, fuzzy
+#: lib/listudy_web/controllers/endgame_controller.ex:326
+msgid "Minor pieces against Rook"
+msgstr ""
+
+#, elixir-format, fuzzy
+#: lib/listudy_web/controllers/endgame_controller.ex:256
+msgid "Two minor pieces against one minor piece, with and without pawns."
 msgstr ""
