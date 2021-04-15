@@ -12,6 +12,10 @@ defmodule ListudyWeb.EexMarkdown.Helper do
     image_html(image, caption)
   end
 
+  def cta(text, link, link_text) do
+    "<p class=\"blog_action\">#{text} <a href=\"#{link}\">#{link_text}</a></p>"
+  end
+
   defp image_html(image) do
     "<figure><img src=\"/images/#{image.images.file_name}\" alt=\"#{image.alt}\"></figure>"
   end
