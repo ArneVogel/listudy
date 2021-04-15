@@ -84,9 +84,7 @@ defmodule Listudy.Studies do
   end
 
   def get_opening_studies(opening_id) do
-    # TODO optional: change out when enough studies have been uploaded
-    # min_favs = Application.get_env(:listudy, :seo)[:study_min_favorites]
-    min_favs = 0
+    min_favs = Application.get_env(:listudy, :seo)[:study_min_favorites]
 
     query =
       from(s in Study,
@@ -94,18 +92,13 @@ defmodule Listudy.Studies do
         on: s.id == f.study_id,
         where: s.private == false and s.opening_id == ^opening_id,
         group_by: s.id,
-        limit: 10,
+        order_by: [desc: count(f.id)],
+        limit: 6,
         having: count(f.id) >= ^min_favs,
-        select: %{
-          :id => s.id,
-          :title => s.title,
-          :slug => s.slug,
-          :description => s.description,
-          :favorites => count(f.id)
-        }
+        select: s
       )
 
-    Repo.all(query)
+    Repo.all(query) |> Repo.preload([:study_favorites, :user])
   end
 
   def get_studies_by_favorite!(user) do

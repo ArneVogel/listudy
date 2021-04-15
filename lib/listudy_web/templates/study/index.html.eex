@@ -17,35 +17,13 @@
 <% end %>
 
 <%= if has_studies do %>
-  <div class="study_search_results">
-  <%= for study <- @studies do %>
-        <div class="study_search_result">
-          <a href="<%= Routes.study_path(@conn, :show, @locale, study) %>">
-            <h5><%= study.title%></h5>
-          </a>
-          <p><%= study.description %></p>
-          <a href="<%= Routes.study_path(@conn, :show, @locale, study) %>"><button class="secondary"><%= dgettext("study", "Show") %></button></a>
-          <a href="<%= Routes.study_path(@conn, :edit, @locale, study) %>"><button class="tertiary"><%= dgettext("study", "Edit") %></button></a>
-        </div>
-
-  <% end %>
-  </div>
+  <%= render ListudyWeb.StudyView, "list.html", studies: @studies, conn: @conn, locale: @locale, edit: true %>
 <% end %>
 
 <%= if length(@favorites) != 0 do %>
   <hr>
 <h2><%= dgettext("study", "Favored Studies") %></h2>
-  <div class="study_search_results">
-  <%= for study <- @favorites do %>
-    <div class="study_search_result">
-      <a href="<%= Routes.study_path(@conn, :show, @locale, study) %>">
-        <h5><%= study.title%></h5>
-      </a>
-      <p><%= study.description %></p>
-      <a href="<%= Routes.study_path(@conn, :show, @locale, study) %>"><button class="secondary"><%= dgettext "study", "Show" %></button></a>
-    </div>
-  <% end %>
-  </div>
+  <%= render ListudyWeb.StudyView, "list.html", studies: @favorites, conn: @conn, locale: @locale %>
 <% end %>
 
 

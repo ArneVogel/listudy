@@ -25,13 +25,8 @@
 <div>
   <h2 id="studies"><%= dgettext("tactics", "Studies about the %{opening}", opening: @opening.name) %></h2>
   <p><%= dgettext("tactics", "Learn the %{opening} using public studies.", opening: @opening.name) %></p>
-  <ul>
-  <%= for study <- @studies do %>
-    <li>
-      <%= link study.title, to: Routes.study_path(@conn, :show, @locale, study.slug) %>
-    </li>
-  <% end %>
-  </ul>
+
+  <%= render ListudyWeb.StudyView, "list.html", studies: @studies, conn: @conn, locale: @locale, favorites: true %>
 </div>
 <% end %>
 

@@ -21,7 +21,8 @@ defmodule ListudyWeb.StudySearchLive do
             <a href="<%= Routes.study_path(@socket, :show, @locale, match) %>">
               <h5><%= match.title %></h5>
             </a>
-            <span title="# <%= dgettext("study", "favorites")%>"><%= length(match.study_favorites) %> <span class="icon" data-icon="#"></span></span> <%= dgettext("study", "by") %> <%= match.user.username %>
+            <span><span title="# <%= dgettext("study", "favorites")%>"><%= length(match.study_favorites) %> <span class="icon" data-icon="#"></span></span> <%= dgettext("study", "by") %> <%= match.user.username %>
+            </span>
             <p><%= shorten_description(match.description) %></p>
           </div>
           </a>

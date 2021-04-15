@@ -32,6 +32,7 @@
 .study_search_results {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 .study_search_result {
     flex: 250px;
