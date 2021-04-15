@@ -9,6 +9,5 @@ defmodule Listudy.Repo.Migrations.CreatePiecelesstactic do
 
       timestamps()
     end
-
   end
 end

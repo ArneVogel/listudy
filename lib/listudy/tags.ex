@@ -21,6 +21,7 @@ defmodule Listudy.Tags do
   def list_tags do
     Repo.all(Tag)
   end
+
   def list_tags_preloaded do
     Repo.all(Tag) |> Repo.preload(:book_tags)
   end

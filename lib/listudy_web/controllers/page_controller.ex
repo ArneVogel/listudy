@@ -3,7 +3,16 @@ defmodule ListudyWeb.PageController do
   alias Listudy.Content
 
   @languages Application.get_env(:listudy, :languages)[:translations]
-  @pages ["privacy", "terms-of-service", "imprint", "copyright", "achievements", "icons", "thanks", "changelog"]
+  @pages [
+    "privacy",
+    "terms-of-service",
+    "imprint",
+    "copyright",
+    "achievements",
+    "icons",
+    "thanks",
+    "changelog"
+  ]
   @features ["blind-tactics", "dogestudy", "pieceless-tactics"]
 
   def index(conn, %{"locale" => locale}) do

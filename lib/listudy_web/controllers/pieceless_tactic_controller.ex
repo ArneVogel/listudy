@@ -55,6 +55,7 @@ defmodule ListudyWeb.PiecelessTacticController do
   defp get_random_tactic(%{"id" => id}) do
     Listudy.PiecelessTactics.get_random_tactic(id)
   end
+
   defp get_random_tactic(_) do
     Listudy.PiecelessTactics.get_random_tactic()
   end
