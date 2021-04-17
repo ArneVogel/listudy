@@ -27,6 +27,13 @@ defmodule Listudy.Users.User do
     |> validate_length(:username, min: 3, max: 20)
   end
 
+  def admin_changeset(user_or_changeset, attrs) do
+    import Ecto.Changeset
+
+    user_or_changeset
+    |> Ecto.Changeset.cast(attrs, [:username, :email])
+  end
+
   defp validate_alphanumeric(changeset, field, _options \\ []) do
     case changeset.valid? do
       true ->

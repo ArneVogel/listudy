@@ -24,4 +24,13 @@ defmodule Listudy.Users do
     |> Ecto.Changeset.change(%{last_visited: DateTime.truncate(DateTime.utc_now(), :second)})
     |> Repo.update()
   end
+
+  def admin_change_user(%User{} = user, attrs \\ %{}) do
+    User.admin_changeset(user, attrs)
+  end
+
+  def admin_update_user(%User{} = user, attrs) do
+    changeset = User.admin_changeset(user, attrs)
+    Repo.update(changeset)
+  end
 end

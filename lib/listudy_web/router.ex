@@ -54,6 +54,9 @@ defmodule ListudyWeb.Router do
     delete "/blog/:id", PostController, :delete
     get "/", PageController, :index
 
+    get "/update-email/:username", UserAdministrationController, :email
+    put "/update-email/:username", UserAdministrationController, :update_email
+
     resources "/blog_faq", BlogFaqController
     resources "/opening_faq", OpeningFaqController
 
