@@ -56,6 +56,8 @@ defmodule ListudyWeb.Router do
 
     get "/update-email/:username", UserAdministrationController, :email
     put "/update-email/:username", UserAdministrationController, :update_email
+    get "/update-password/:username", UserAdministrationController, :password
+    put "/update-password/:username", UserAdministrationController, :update_password
 
     resources "/blog_faq", BlogFaqController
     resources "/opening_faq", OpeningFaqController
