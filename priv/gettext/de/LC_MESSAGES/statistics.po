@@ -14,19 +14,19 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/stats/index.html.eex:2
 msgid "If you're like me, you can't get enough of stats. Here you can find statistics about Listudy:"
-msgstr ""
+msgstr "Wenn Sie wie ich sind, können Sie nicht genug von Statistiken bekommen. Hier finden Sie Statistiken über Listudy:"
 
 #, elixir-format
 #: lib/listudy_web/templates/stats/index.html.eex:1
 msgid "Statistics"
-msgstr ""
+msgstr "Statistiken"
 
 #, elixir-format
 #: lib/listudy_web/templates/stats/index.html.eex:5
 msgid "Uploaded Studies"
-msgstr ""
+msgstr "Studien hochladen"
 
 #, elixir-format
 #: lib/listudy_web/templates/stats/index.html.eex:11
 msgid "User Registrations"
-msgstr ""
+msgstr "Benutzerregistrierungen"

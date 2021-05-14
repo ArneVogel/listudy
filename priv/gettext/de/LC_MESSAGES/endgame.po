@@ -14,42 +14,42 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:94
 msgid "Bishop + Bishop"
-msgstr ""
+msgstr "Läufer + Läufer"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:109
 msgid "Bishop + Knight"
-msgstr ""
+msgstr "Bishop + Springer"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:198
 msgid "Bishops and Pawns"
-msgstr ""
+msgstr "Läufer und Bauern"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:328
 msgid "Bishops and/or knights against rook, with and without pawns."
-msgstr ""
+msgstr "Läufer und/oder Springer gegen Turm, mit und ohne Bauern"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:60
 msgid "Checkmating"
-msgstr ""
+msgstr "Matt setzen"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:441
 msgid "Chess Fundamentals"
-msgstr ""
+msgstr "Schach Grundlagen"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:231
 msgid "Endgames with Knights, Bishops and Pawns."
-msgstr ""
+msgstr "Endspiele mit Springern, Läufern und Bauern"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:199
 msgid "Endgames with only Bishops and Pawns on the board."
-msgstr ""
+msgstr "Endspiele mit nur Läufern und Bauern auf dem Brett"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:136
@@ -59,7 +59,7 @@ msgstr ""
 #: lib/listudy_web/controllers/endgame_controller.ex:353 lib/listudy_web/controllers/endgame_controller.ex:378
 #: lib/listudy_web/controllers/endgame_controller.ex:406 lib/listudy_web/controllers/endgame_controller.ex:460
 msgid "Endings of Games"
-msgstr ""
+msgstr "Spielenden"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:442
@@ -69,7 +69,7 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:423
 msgid "From the book \"Analysis of the  Chess Ending King and Queen against King and Rook\"."
-msgstr ""
+msgstr "Aus dem Buch \"Analysis of the  Chess Ending King and Queen against King and Rook\"."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:138
@@ -79,248 +79,248 @@ msgstr ""
 #: lib/listudy_web/controllers/endgame_controller.ex:355 lib/listudy_web/controllers/endgame_controller.ex:380
 #: lib/listudy_web/controllers/endgame_controller.ex:408 lib/listudy_web/controllers/endgame_controller.ex:462
 msgid "From the book \"Chess Studies, Or, Endings of Games\"."
-msgstr ""
+msgstr "Aus dem Buch \"Chess Studies, Or, Endings of Games\"."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:127
 msgid "King and Pawn Endgames"
-msgstr ""
+msgstr "König und Bauer Endspiele"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:421
 msgid "King and Queen against King and Rook"
-msgstr ""
+msgstr "König und Dame gegen König und Turm"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:230
 msgid "Knights, Bishops and Pawns"
-msgstr ""
+msgstr "Springer, Läufer und Bauern"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:61
 msgid "Learn the basic checkmating techniques."
-msgstr ""
+msgstr "Lernen Sie die grundlegenden Schachmatt-Techniken."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:327
 msgid "Minor pieces against Rook endgames."
-msgstr ""
+msgstr "Leichtfiguren gegen Turmendspiele."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:178
 msgid "Obtaining a Passed Pawn"
-msgstr ""
+msgstr "Einen Freibauern erhalten"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:167
 msgid "Pawn Endings"
-msgstr ""
+msgstr "Bauern Endspiele"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:159
 msgid "Pawn Promotion"
-msgstr ""
+msgstr "Bauernumwandlung"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:69
 msgid "Queen"
-msgstr ""
+msgstr "Dame"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:455
 msgid "Queen against Minor Pieces"
-msgstr ""
+msgstr "Dame gegen Leichtfiguren"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:348
 msgid "Queen against Pawns"
-msgstr ""
+msgstr "Dame gegen Bauern"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:401
 #: lib/listudy_web/controllers/endgame_controller.ex:402
 msgid "Queen against Rook"
-msgstr ""
+msgstr "Dame gegen Turm"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:456
 msgid "Queen against minor pieces."
-msgstr ""
+msgstr "Dame gegen Leichtfiguren."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:349
 #: lib/listudy_web/controllers/endgame_controller.ex:350
 msgid "Queen against pawn endgames."
-msgstr ""
+msgstr "Dame gegen Bauern Endspiele"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:373
 msgid "Queens and Pawns"
-msgstr ""
+msgstr "Damen und Bauern"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:374
 msgid "Queens and pawn endgames."
-msgstr ""
+msgstr "Damen und Bauer Endspiele"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:81
 msgid "Rook"
-msgstr ""
+msgstr "Turm"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:281
 msgid "Rook against Pawn endgames."
-msgstr ""
+msgstr "Turm gegen Bauer Endspiele"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:280
 msgid "Rook against Pawns"
-msgstr ""
+msgstr "Turm gegen Bauern"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:303
 msgid "Rook against minor Pieces"
-msgstr ""
+msgstr "Turm gegen Leichtfiguren"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:304
 msgid "Rook against minor pieces endgames."
-msgstr ""
+msgstr "Turm gegen Leichtfiguren Endspiele"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:306
 msgid "Rook and pawn against bishop or knight, with and without pawns."
-msgstr ""
+msgstr "Turm und Bauer gegen Läufer oder Springer, mit und ohne Bauern"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:185
 msgid "The Opposition"
-msgstr ""
+msgstr "Die Opposition"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:232
 msgid "This chapter has endgames about Knight and Bishop endings."
-msgstr ""
+msgstr "Dieses Kapitel enthält Endspiele über Springer- und Läuferendspiele."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:200
 msgid "This chapter has endgames about Pawn and Bishop endings."
-msgstr ""
+msgstr "Dieses Kapitel enthält Endspiele über Bauern- und Läuferendspiele."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:130
 msgid "This chapter has endgames about the King and Pawn endgame. Many of the examples are taken from Capablancas \"Chess Fundamentals\"."
-msgstr ""
+msgstr "Dieses Kapitel enthält Endspiele über das Königs- und Bauernendspiel. Viele der Beispiele sind aus Capablancas \"Chess Fundamentals\"."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:63
 msgid "This chapter has endgames for checkmating with queen, rook, bishop + knight and bishop + bishop."
-msgstr ""
+msgstr "Dieses Kapitel enthält Endspiele für Schachmatt mit Dame, Turm, Läufer + Springer und Läufer + Läufer."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:375
 msgid "Train endgames with queens and pawns on the board."
-msgstr ""
+msgstr "Trainieren Sie Endspiele mit Damen und Bauern auf dem Brett."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:457
 msgid "Train queen and minor piece endgames."
-msgstr ""
+msgstr "Trainieren Sie Damen- und Leichtfigurenendspiele."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:403
 msgid "Train queen and rook endgames."
-msgstr ""
+msgstr "Trainieren Sie Damen- und Turmendspiele."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:282
 msgid "Train rook against pawn endgames."
-msgstr ""
+msgstr "Trainieren Sie Turm-gegen-Bauer-Endspiele."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:254
 msgid "Two Minor Pieces against one Minor Piece"
-msgstr ""
+msgstr "Zwei Leichtfiguren gegen eine Leichtfigur"
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:257
 msgid "Two against one."
-msgstr ""
+msgstr "Zwei gegen eins."
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:128
 msgid "Win games with only Pawns on the board"
-msgstr ""
+msgstr "Gewinnen Sie Spiele mit nur Bauern auf dem Spielbrett"
 
 #, elixir-format
 #: lib/listudy_web/templates/live/tactics.html.leex:25
 msgid "Currently playing tactics by:"
-msgstr ""
+msgstr "Spiele Taktik von:"
 
 #, elixir-format
 #: lib/listudy_web/templates/live/tactics.html.leex:22
 msgid "Currently playing tactics from the event:"
-msgstr ""
+msgstr "Spiele Taktik aus der Veranstaltung:"
 
 #, elixir-format
 #: lib/listudy_web/templates/live/tactics.html.leex:19
 msgid "Currently training in the motif:"
-msgstr ""
+msgstr "Training im Motiv:"
 
 #, elixir-format
 #: lib/listudy_web/templates/live/tactics.html.leex:16
 msgid "Currently training in the opening:"
-msgstr ""
+msgstr "Training in der Eröffnung:"
 
 #, elixir-format
 #: lib/listudy_web/templates/endgame/game.html.eex:2
 #: lib/listudy_web/templates/endgame/index.html.eex:1
 msgid "Endgames"
-msgstr ""
+msgstr "Endspiele"
 
 #, elixir-format
 #: lib/listudy_web/templates/endgame/game.html.eex:28
 #: lib/listudy_web/templates/endgame/game.html.eex:30
 msgid "Next"
-msgstr ""
+msgstr "Weiter"
 
 #, elixir-format
 #: lib/listudy_web/templates/endgame/game.html.eex:25
 msgid "Reset"
-msgstr ""
+msgstr "Zurücksetzen"
 
 #, elixir-format
 #: lib/listudy_web/templates/endgame/game.html.eex:46
 msgid "Success!"
-msgstr ""
+msgstr "Erfolg!"
 
 #, elixir-format
 #: lib/listudy_web/templates/endgame/game.html.eex:47
 msgid "Try again!"
-msgstr ""
+msgstr "Versuchen Sie es noch einmal!"
 
 #, elixir-format
 #: lib/listudy_web/templates/endgame/game.html.eex:15
 msgid "White to play and"
-msgstr ""
+msgstr "Weiß am Zug und"
 
 #, elixir-format
 #: lib/listudy_web/templates/endgame/index.html.eex:8
 msgid "Learn"
-msgstr ""
+msgstr "Lernen"
 
 #, elixir-format
 #: lib/listudy_web/templates/endgame/index.html.eex:2
 msgid "No idea what to do in the endgame? Learn endgames by playing against stockfish."
-msgstr ""
+msgstr "Keine Ahnung, was Sie im Endspiel tun sollen? Lernen Sie Endspiele, indem Sie gegen Stockfish spielen."
 
 #, elixir-format, fuzzy
 #: lib/listudy_web/controllers/endgame_controller.ex:326
 msgid "Minor pieces against Rook"
-msgstr ""
+msgstr "Leichtfiguren gegen Turm"
 
 #, elixir-format, fuzzy
 #: lib/listudy_web/controllers/endgame_controller.ex:256
 msgid "Two minor pieces against one minor piece, with and without pawns."
-msgstr ""
+msgstr "Zwei Leichtfiguren gegen eine Leichtfigur, mit und ohne Bauern."

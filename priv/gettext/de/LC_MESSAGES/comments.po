@@ -14,69 +14,69 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:11
 msgid "Are you sure?"
-msgstr ""
+msgstr "Sind Sie sicher?"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:3
 msgid "Comment"
-msgstr ""
+msgstr "Kommentar"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:3
 msgid "Comments"
-msgstr ""
+msgstr "Kommentare"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:11
 msgid "Delete"
-msgstr ""
+msgstr "Löschen"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:11
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:8
 msgid "by"
-msgstr ""
+msgstr "von"
 
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:43
 msgid "Comment could not get created"
-msgstr ""
+msgstr "Kommentar konnte nicht erstellt werden"
 
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:40
 msgid "Comment created"
-msgstr ""
+msgstr "Kommentar erstellt"
 
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:26
 msgid "Comment deleted successfully."
-msgstr ""
+msgstr "Kommentar erfolgreich gelöscht"
 
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:48
 msgid "Error"
-msgstr ""
+msgstr "Fehler"
 
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:20
 msgid "You're not allowed to do that."
-msgstr ""
+msgstr "Sie verfügen nicht über die Berechtigung dafür."
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:16
 msgid "%{register} to comment"
-msgstr ""
+msgstr "%{register} zum Kommentieren"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:17
 msgid "No comments yet, be the first to write one!"
-msgstr ""
+msgstr "Keine Kommentare bisher, hinterlassen Sie den ersten!"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:15
 msgid "Register"
-msgstr ""
+msgstr "Registrieren"

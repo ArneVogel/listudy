@@ -86,7 +86,7 @@ msgstr "Erstelle eine neue Studie"
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:36
 msgid "Email"
-msgstr "Email"
+msgstr "E-Mail"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:8
@@ -178,7 +178,7 @@ msgstr "Urheberrecht"
 #: lib/listudy_web/templates/layout/_footer.html.eex:17
 #: lib/listudy_web/templates/layout/_header.html.eex:27
 msgid "Blind Tactics"
-msgstr "Blinde Taktiken"
+msgstr "Blind-Taktiken"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/edit.html.eex:37
@@ -226,12 +226,12 @@ msgstr "Taktiken"
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/edit.html.eex:37
 msgid "This can not be reversed! Are you sure?"
-msgstr "Dies kann nicht rückgängig gemacht werden! Bust du sicher?"
+msgstr "Dies kann nicht rückgängig gemacht werden! Sind Sie sicher?"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:74
 msgid "Achievements"
-msgstr "Errungenschaften"
+msgstr "Erfolge"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/edit.html.eex:32
@@ -309,40 +309,40 @@ msgstr "Webmaster"
 #, elixir-format
 #: lib/listudy_web/pow/messages.ex:9
 msgid "The provided login details did not work. Make sure to log in with your email and not your username!"
-msgstr ""
+msgstr "Die angegebenen Anmeldedaten haben nicht funktioniert. Stellen Sie sicher, dass Sie sich mit Ihrer E-Mail und nicht mit Ihrem Benutzernamen anmelden!"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/session/new.html.eex:11
 msgid "Use your email to log in."
-msgstr ""
+msgstr "Melden Sie sich mit Ihrer E-Mail an."
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/session/new.html.eex:18
 msgid "Your session will be persistent. Only use on your own devices."
-msgstr ""
+msgstr "Ihre Sitzung bleibt bestehen. Verwenden Sie sie nur auf Ihren eigenen Geräten."
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:10
 msgid "Changelog"
-msgstr ""
+msgstr "Änderungshistorie"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:18
 #: lib/listudy_web/templates/layout/_header.html.eex:28
 msgid "Pieceless Tactics"
-msgstr ""
+msgstr "Figurenlose Taktiken"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:9
 msgid "Thank you!"
-msgstr ""
+msgstr "Danke!"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:8
 msgid "black"
-msgstr ""
+msgstr "schwarz"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:9
 msgid "white"
-msgstr ""
+msgstr "weiß"
