@@ -113,7 +113,7 @@ msgstr "Sie haben die volle Kontrolle über die Taktik."
 
 #, elixir-format
 #: lib/listudy_web/templates/webmaster/index.html.eex:12
-msgid "Learn more"
+msgid "Learn More"
 msgstr "Mehr erfahren"
 
 #, elixir-format
