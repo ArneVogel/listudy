@@ -98,7 +98,7 @@ msgstr "Letzter Zug"
 #, elixir-format
 #: lib/listudy_web/templates/tactic/custom.html.eex:105
 msgid "Learn more"
-msgstr Mehr erfahren""
+msgstr "Mehr erfahren"
 
 #, elixir-format
 #: lib/listudy_web/templates/tactic/custom.html.eex:88

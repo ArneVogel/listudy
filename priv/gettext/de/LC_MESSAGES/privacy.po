@@ -85,7 +85,7 @@ msgstr "Listudy kann diese Richtlinie nach eigenem Ermessen ändern."
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:7
 msgid "Listudy.org (“Listudy”) is an online chess site. Users can optionally register for an account; however, certain features are available for registered users only. This is because Listudy needs basic information from its users in order to function."
-msgstr "Listudy.org ("Listudy") ist eine Online-Schachseite. Benutzer können sich optional für ein Konto registrieren; bestimmte Funktionen sind jedoch nur für registrierte Benutzer verfügbar. Dies liegt daran, dass Listudy grundlegende Informationen von seinen Nutzern benötigt, um zu funktionieren."
+msgstr "Listudy.org (\"Listudy\") ist eine Online-Schachseite. Benutzer können sich optional für ein Konto registrieren; bestimmte Funktionen sind jedoch nur für registrierte Benutzer verfügbar. Dies liegt daran, dass Listudy grundlegende Informationen von seinen Nutzern benötigt, um zu funktionieren."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:14

@@ -24,7 +24,7 @@ msgstr "Sind Sie besser als %{name}?"
 #, elixir-format
 #: lib/listudy_web/templates/player/public.html.eex:11
 msgid "Play real tactics from %{amount} different games played by %{name}."
-msgstr "Spielen Sie echte Taktiken aus %{amount} verschiedenen Spielen, die von %{name} gespielt wurden.""
+msgstr "Spielen Sie echte Taktiken aus %{amount} verschiedenen Spielen, die von %{name} gespielt wurden."
 
 #, elixir-format
 #: lib/listudy_web/templates/player/public.html.eex:6
