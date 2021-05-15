@@ -31,7 +31,7 @@ defmodule ListudyWeb.PageTitle do
     do: dgettext("page_titles", "Achievements")
 
   defp get(%{view_module: PageView}),
-    do: dgettext("page_titles", "Improve you chess game with spaced repetition")
+    do: dgettext("page_titles", "Improve your chess game with spaced repetition")
 
   defp get(%{view_module: Elixir.ListudyWeb.StudyView, view_template: "show.html", study: study}),
     do: study.title
