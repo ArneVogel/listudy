@@ -14,54 +14,54 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:31
 msgid "Achievements"
-msgstr ""
+msgstr "Erfolge"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:16
 msgid "Blind Tactics"
-msgstr ""
+msgstr "Blind-Taktiken"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:13
 msgid "Daily Chess Puzzle"
-msgstr ""
+msgstr "Täglische Schach-Puzzle"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:62
 msgid "Endgames"
-msgstr ""
+msgstr "Endspiele"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:34
 msgid "Improve you chess game with spaced repetition"
-msgstr ""
+msgstr "Verbessern Sie Ihr Schachspiel mit Spaced repetition"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:28
 msgid "Play against Stockfish Online"
-msgstr ""
+msgstr "Spielen Sie online gegen Stockfish"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:42
 msgid "Search Studies"
-msgstr ""
+msgstr "Studien durchsuchen"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:43
 msgid "Tactics"
-msgstr ""
+msgstr "Taktiken"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:22
 msgid "Changelog"
-msgstr ""
+msgstr "Änderungshistorie"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:19
 msgid "Pieceless Tactics"
-msgstr ""
+msgstr "Figurlose Taktiken"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:25
 msgid "Thank you!"
-msgstr ""
+msgstr "Danke!"

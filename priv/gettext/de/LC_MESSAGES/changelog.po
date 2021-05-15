@@ -14,30 +14,30 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:12
 msgid "Added %{pieceless}"
-msgstr ""
+msgstr "%{pieceless} hinzugefügt"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:8
 msgid "Added pages %{changelog}, %{thanks}, and %{pieceless_info}"
-msgstr ""
+msgstr "%{changelog} Seiten hinzugefügt, %{thanks}, und %{pieceless_info}"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:1
 #: lib/listudy_web/templates/page/changelog.html.eex:5
 msgid "Changelog"
-msgstr ""
+msgstr "Änderungshistorie"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:11
 msgid "Pieceless Tactics"
-msgstr ""
+msgstr "Figurlose Taktiken"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:6
 msgid "Pieceless info page"
-msgstr ""
+msgstr "Figurlos Infoseite"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:4
 msgid "Thank you"
-msgstr ""
+msgstr "Danke"
