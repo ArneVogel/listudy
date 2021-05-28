@@ -83,7 +83,7 @@ defmodule ListudyWeb.StudyController do
       )
     else
       conn
-      |> put_flash(:error, "This study does not exist.")
+      |> put_flash(:error, "This study does not exist or is privat or is private.")
       |> put_view(ListudyWeb.ErrorView)
       |> put_status(:not_found)
       |> render(:"404")
@@ -114,6 +114,8 @@ defmodule ListudyWeb.StudyController do
       {_, pgn} = File.read(get_path(file))
       study = Map.put(study, :pgn, pgn)
       render(conn, "show.html", study: study, noindex: noindex, opening: opening)
+    else
+      show(conn, id, nil)
     end
   end
 
