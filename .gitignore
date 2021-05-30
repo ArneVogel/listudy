@@ -41,3 +41,6 @@ assets/test/output/
 
 # Image files uploaded with arc
 priv/images
+
+# Don't commit real env variables!
+scripts/prod/env.sh
