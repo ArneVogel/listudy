@@ -25,10 +25,9 @@
     <button id="reset"><%= dgettext("endgame", "Reset") %></button>
 
     <%= if @next == "back" do %>
-      <a href="<%= Routes.endgame_path(@conn, :chapter, @locale, @chapter_slug) %>"><button id="next" class="hidden continue_button"><%= dgettext("endgame", "Next") %></button></a>
+      <%= raw next_button(Routes.endgame_path(@conn, :chapter, @locale, @chapter_slug)) %>
     <% else %>
-      <a href="<%= Routes.endgame_path(@conn, :game, @locale, @chapter_slug, @subchapter_slug, @next) %>"><button id="next" class="hidden continue_button"><%= dgettext("endgame", "Next") %></button></a>
-
+      <%= raw next_button(Routes.endgame_path(@conn, :game, @locale, @chapter_slug, @subchapter_slug, @next)) %>
     <% end %>
 
   </div>
