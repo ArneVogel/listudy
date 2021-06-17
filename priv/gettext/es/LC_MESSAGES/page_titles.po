@@ -32,11 +32,6 @@ msgid "Endgames"
 msgstr "Finales"
 
 #, elixir-format
-#: lib/listudy_web/views/helpers/page_title.ex:34
-msgid "Improve you chess game with spaced repetition"
-msgstr "Mejora tu Ajedrez repitiendo"
-
-#, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:28
 msgid "Play against Stockfish Online"
 msgstr "Juega contra Stockfish online"
@@ -65,3 +60,8 @@ msgstr ""
 #: lib/listudy_web/views/helpers/page_title.ex:25
 msgid "Thank you!"
 msgstr ""
+
+#, elixir-format, fuzzy
+#: lib/listudy_web/views/helpers/page_title.ex:34
+msgid "Improve your chess game with spaced repetition"
+msgstr "Mejora tu Ajedrez repitiendo"

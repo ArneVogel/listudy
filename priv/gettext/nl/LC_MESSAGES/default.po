@@ -43,7 +43,7 @@ msgid "User Settings"
 msgstr "Instellingen gebruiker"
 
 #, elixir-format
-#: lib/listudy/users/user.ex:43
+#: lib/listudy/users/user.ex:50
 msgid "Only alphanumeric characters allowed"
 msgstr "Enkel alfanumerieke karakters toegelaten"
 

@@ -103,7 +103,7 @@ msgstr "Suchen Sie nach etwas Speziellerem? Werfen Sie einen Blick auf diese Bü
 msgid "More book lists"
 msgstr "Weitere Bücherlisten"
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/listudy_web/templates/book/footer.html.eex:5
 msgid "Most Grandmaster recommended books"
 msgstr "Meist von Großmeistern empfohlene Bücher"

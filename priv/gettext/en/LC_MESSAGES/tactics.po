@@ -343,7 +343,7 @@ msgstr ""
 msgid "Board showing the legal moves if you click on the square of a piece"
 msgstr ""
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/listudy_web/templates/pieceless_tactic/public.html.eex:36
 msgid "Correct move, there are still more moves."
 msgstr ""
@@ -409,7 +409,7 @@ msgstr ""
 msgid "Play Now!"
 msgstr ""
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: tactics.html.eex:31
 msgid "Solve the tactic"
 msgstr ""

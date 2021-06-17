@@ -178,17 +178,17 @@ msgid "Caro-Kann Defense"
 msgstr "Defensa Caro-Kann"
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:267
+#: lib/listudy_web/controllers/study_controller.ex:269
 msgid "Could not download the study from lichess, please check the link"
 msgstr "No se pudo descargar el estudio de lichess, por favor revisa el link"
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:293
+#: lib/listudy_web/controllers/study_controller.ex:295
 msgid "Could not favorite this study"
 msgstr "No se pudo agregar el estudio a tus favoritos"
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:311
+#: lib/listudy_web/controllers/study_controller.ex:313
 msgid "Could not unfavorite this study"
 msgstr "No se pudo quitar el favorito a este estudio"
 
@@ -218,17 +218,17 @@ msgid "Lichess Study"
 msgstr "Estudio de Lichess"
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:276
+#: lib/listudy_web/controllers/study_controller.ex:278
 msgid "No PGN provided"
 msgstr "No se proporcionó un archivo PGN"
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:243
+#: lib/listudy_web/controllers/study_controller.ex:245
 msgid "PGN is too big, only 50kb allowed"
 msgstr "El PGN es muy pesado, sólo se permite 50kb máximo"
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:225
+#: lib/listudy_web/controllers/study_controller.ex:227
 msgid "Please log in"
 msgstr "Por favor inicia sesión"
 
@@ -238,27 +238,27 @@ msgid "Select a PGN to upload"
 msgstr "Selecciona un PGN para subir"
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:290
+#: lib/listudy_web/controllers/study_controller.ex:292
 msgid "Study favorited"
 msgstr "Estudio favorito"
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:169
+#: lib/listudy_web/controllers/study_controller.ex:171
 msgid "Study info updated, PGN changed."
 msgstr "Información del estudio actualizada, el PGN cambió."
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:176
+#: lib/listudy_web/controllers/study_controller.ex:178
 msgid "Study info updated, no PGN change."
 msgstr "Información del estudio actualizada, sin cambio PGN."
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:308
+#: lib/listudy_web/controllers/study_controller.ex:310
 msgid "Study unfavorited"
 msgstr "Estudio sin favorito"
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:271
+#: lib/listudy_web/controllers/study_controller.ex:273
 msgid "The provided link is not a Lichess study"
 msgstr "El link suministrado en es un estudio de Lichess"
 

@@ -280,8 +280,7 @@ msgid "Endgames"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/endgame/game.html.eex:28
-#: lib/listudy_web/templates/endgame/game.html.eex:30
+#: lib/listudy_web/views/endgame_view.ex:6
 msgid "Next"
 msgstr ""
 
@@ -291,12 +290,12 @@ msgid "Reset"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/endgame/game.html.eex:46
+#: lib/listudy_web/templates/endgame/game.html.eex:45
 msgid "Success!"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/endgame/game.html.eex:47
+#: lib/listudy_web/templates/endgame/game.html.eex:46
 msgid "Try again!"
 msgstr ""
 
@@ -315,12 +314,12 @@ msgstr ""
 msgid "No idea what to do in the endgame? Learn endgames by playing against stockfish."
 msgstr ""
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:326
 msgid "Minor pieces against Rook"
 msgstr ""
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:256
 msgid "Two minor pieces against one minor piece, with and without pawns."
 msgstr ""

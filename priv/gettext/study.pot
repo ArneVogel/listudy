@@ -177,17 +177,17 @@ msgid "Caro-Kann Defense"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:267
+#: lib/listudy_web/controllers/study_controller.ex:269
 msgid "Could not download the study from lichess, please check the link"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:293
+#: lib/listudy_web/controllers/study_controller.ex:295
 msgid "Could not favorite this study"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:311
+#: lib/listudy_web/controllers/study_controller.ex:313
 msgid "Could not unfavorite this study"
 msgstr ""
 
@@ -217,17 +217,17 @@ msgid "Lichess Study"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:276
+#: lib/listudy_web/controllers/study_controller.ex:278
 msgid "No PGN provided"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:243
+#: lib/listudy_web/controllers/study_controller.ex:245
 msgid "PGN is too big, only 50kb allowed"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:225
+#: lib/listudy_web/controllers/study_controller.ex:227
 msgid "Please log in"
 msgstr ""
 
@@ -237,27 +237,27 @@ msgid "Select a PGN to upload"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:290
+#: lib/listudy_web/controllers/study_controller.ex:292
 msgid "Study favorited"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:169
+#: lib/listudy_web/controllers/study_controller.ex:171
 msgid "Study info updated, PGN changed."
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:176
+#: lib/listudy_web/controllers/study_controller.ex:178
 msgid "Study info updated, no PGN change."
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:308
+#: lib/listudy_web/controllers/study_controller.ex:310
 msgid "Study unfavorited"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:271
+#: lib/listudy_web/controllers/study_controller.ex:273
 msgid "The provided link is not a Lichess study"
 msgstr ""
 

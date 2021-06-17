@@ -343,7 +343,7 @@ msgstr "Alle Figuren sind verschwunden! Es gibt nur noch eine Liste, wo die Figu
 msgid "Board showing the legal moves if you click on the square of a piece"
 msgstr "Brett, das die legalen Züge anzeigt, wenn Sie auf das Feld einer Figur klicken"
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/listudy_web/templates/pieceless_tactic/public.html.eex:36
 msgid "Correct move, there are still more moves."
 msgstr "Richtiger Zug, es gibt noch weitere Züge."
@@ -409,7 +409,7 @@ msgstr "Figurlose Taktiken"
 msgid "Play Now!"
 msgstr "Jetzt spielen"
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: tactics.html.eex:31
 msgid "Solve the tactic"
 msgstr "Lösen Sie die Taktik"
