@@ -8,7 +8,7 @@ If you find any bugs, please let me know. You can submit bugs here: https://gith
 Help with translations if you can. You find the current translations [here](https://github.com/ArneVogel/listudy/tree/master/priv/gettext). 
 If you want to help with a language that is not currently avaliable message me or create a [issue](https://github.com/ArneVogel/listudy/issues) and I will create the language. 
 
-This project used gettext for translations. Gettext uses PO files for translations ([example](https://github.com/ArneVogel/listudy/blob/master/priv/gettext/de/LC_MESSAGES/default.po)). In these files the original english sentence or phrase is above what the translation should be. Sometimes special sequences like `%{name}` are in the english text. These must be copied exactly (not to be translated) into the translation.  
+This project used gettext for translations. Gettext uses PO files for translations ([example](https://github.com/ArneVogel/listudy/blob/master/priv/gettext/de/LC_MESSAGES/default.po)). In these files the original english sentence or phrase `msgid` is above what the translation should be `msgstr`. Only edit `msgstr` in the PO files. Sometimes special sequences like `%{name}` are in the english text. These must be copied exactly (not translated) into the translation.  
 
 ## Development
 Listudy is developed in Elixir using the phoenix framework. It uses postgresql as database. You can checkout `scripts/prod/*.sh` for how the server is run in production.
