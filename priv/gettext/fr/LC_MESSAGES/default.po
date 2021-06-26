@@ -15,334 +15,334 @@ msgstr ""
 #: lib/listudy_web/templates/layout/_header.html.eex:52
 #: lib/listudy_web/templates/pow/registration/new.html.eex:29
 msgid "Register"
-msgstr ""
+msgstr "S'inscrire"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:55
 msgid "Sign in"
-msgstr ""
+msgstr "Se connecter"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:78
 msgid "Sign out"
-msgstr ""
+msgstr "Déconnexion"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:68
 msgid "Settings"
-msgstr ""
+msgstr "Paramètres"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:70
 msgid "Toggle Darkmode"
-msgstr ""
+msgstr "Mode Sombre"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:76
 msgid "User Settings"
-msgstr ""
+msgstr "Paramètres Utilisateur"
 
 #, elixir-format
 #: lib/listudy/users/user.ex:50
 msgid "Only alphanumeric characters allowed"
-msgstr ""
+msgstr "Seuls les caractères alphanumériques sont autorisés."
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:16
 msgid "Search for Studies"
-msgstr ""
+msgstr "Rechercher une étude"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:14
 msgid "Your Studies"
-msgstr ""
+msgstr "Vos études"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:141
 msgid "Error"
-msgstr ""
+msgstr "Erreur"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:11
 msgid "Study"
-msgstr ""
+msgstr "Etude"
 
 #, elixir-format
 #: lib/listudy_web/templates/post/index.html.eex:6
 msgid "Title"
-msgstr ""
+msgstr "Titre"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:11
 #: lib/listudy_web/templates/post/index.html.eex:1
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:17
 msgid "Create a new Study"
-msgstr ""
+msgstr "Créer une nouvelle Etude"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:36
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:8
 #: lib/listudy_web/templates/page/imprint.html.eex:1
 msgid "Imprint"
-msgstr ""
+msgstr "Imprimer"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:60
 msgid "Language"
-msgstr ""
+msgstr "Langue"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:37
 msgid "Password"
-msgstr ""
+msgstr "Mot de passe"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:37
 msgid "Please choose a secure password. The password must be at least eight characters long."
-msgstr ""
+msgstr "Merci de choisir un mot de passe sécurisé. Le mot de passe doit faire au moins huit caractères."
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:5
 #: lib/listudy_web/templates/page/imprint.html.eex:8
 msgid "Privacy"
-msgstr ""
+msgstr "Vie privée"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:1
 #: lib/listudy_web/templates/pow/registration/new.html.eex:38
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Politique de confidentialité"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:77
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:34
 msgid "Register to get access to all features."
-msgstr ""
+msgstr "S'enregister pour avoir accès à toutes les fonctionnalités."
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:6
 #: lib/listudy_web/templates/page/imprint.html.eex:9 service.html.eex:1 lib/listudy_web/templates/pow/registration/new.html.eex:39
 msgid "Terms of Service"
-msgstr ""
+msgstr "Conditions d'utilisation"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:36
 msgid "The email is used to log in. It doesn't have to be real, as long as you remember it."
-msgstr ""
+msgstr "L'adresse emil est utilisée pour se connecter. Elle n'a pas besoin d'être réelle tant que vous la mémorisez."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/imprint.html.eex:2
 msgid "The provider of this website is Arne Vogel."
-msgstr ""
+msgstr "Le fournisseur de ce site web est Arne Vogel."
 
 #, elixir-format
 #: lib/listudy_web/controllers/page_controller.ex:27
 #: lib/listudy_web/controllers/page_controller.ex:55 lib/listudy_web/controllers/webmaster_controller.ex:21
 msgid "This page does not exist"
-msgstr ""
+msgstr "Cette page n'existe pas"
 
 #, elixir-format
 #: lib/listudy_web/controllers/post_controller.ex:41
 msgid "This post does not exist"
-msgstr ""
+msgstr "Cette entrée n'existe pas"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:35
 msgid "Username"
-msgstr ""
+msgstr "Nom d'utilisateur"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:35
 msgid "You are welcome to use a pseudonym."
-msgstr ""
+msgstr "Merci d'utiliser un pseudonyme"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:7
 #: lib/listudy_web/templates/page/copyright.html.eex:1
 msgid "Copyright"
-msgstr ""
+msgstr "Droit d'auteur"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:17
 #: lib/listudy_web/templates/layout/_header.html.eex:27
 msgid "Blind Tactics"
-msgstr ""
+msgstr "Tactiques à l'aveugle"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/edit.html.eex:37
 msgid "Close Account"
-msgstr ""
+msgstr "Fermer le compte"
 
 #, elixir-format
 #: lib/listudy_web/templates/post/index.html.eex:7
 #: lib/listudy_web/templates/post/show.html.eex:3
 msgid "Created at"
-msgstr ""
+msgstr "Créé à"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:19
 msgid "Daily Puzzle"
-msgstr ""
+msgstr "Puzzle du jour"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/edit.html.eex:36
 msgid "Delete Account"
-msgstr ""
+msgstr "Supprimer le compte"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:16
 msgid "Features"
-msgstr ""
+msgstr "Fonctionnalités"
 
 #, elixir-format
 #: lib/listudy_web/templates/post/index.html.eex:8
 #: lib/listudy_web/templates/post/show.html.eex:5
 msgid "Last updated"
-msgstr ""
+msgstr "Dernière mise à jour"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:20
 msgid "Make your own Tactic"
-msgstr ""
+msgstr "Faites vos propres tactiques"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:24
 #: lib/listudy_web/templates/layout/_header.html.eex:26
 msgid "Tactics"
-msgstr ""
+msgstr "Tactiques"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/edit.html.eex:37
 msgid "This can not be reversed! Are you sure?"
-msgstr ""
+msgstr "Cette action est irréversible ! Etes vous sur ?"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:74
 msgid "Achievements"
-msgstr ""
+msgstr "Trophés"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/edit.html.eex:32
 msgid "Back"
-msgstr ""
+msgstr "Retour"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:40
 msgid "Before creating your account, please read the %{privacy_policy} and %{tos}. By creating the account, you agree to those terms."
-msgstr ""
+msgstr "Avant de créer votre compte merci de lire %{privacy_policy} et %{tos}. En créant ce compte vous accepter les Conditions d'utilisation."
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:72
 #: lib/listudy_web/templates/layout/_header.html.eex:91
 msgid "Board Settings"
-msgstr ""
+msgstr "Paramètres de l'échiquier"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:139
 msgid "Capture"
-msgstr ""
+msgstr "Capture"
 
 #, elixir-format
 #: lib/listudy_web/templates/endgame/chapter.html.eex:2
 #: lib/listudy_web/templates/layout/_header.html.eex:36
 msgid "Endgames"
-msgstr ""
+msgstr "Finales"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:138
 msgid "Move"
-msgstr ""
+msgstr "Déplacement"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:131
 msgid "Play Sound"
-msgstr ""
+msgstr "Activer Son"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:94
 msgid "Select a color:"
-msgstr ""
+msgstr "Sélectionnez une couleur:"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:101
 msgid "Select a piece set:"
-msgstr ""
+msgstr "Sélectionnez un ensemble de pièces:"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:71
 #: lib/listudy_web/templates/layout/_header.html.eex:130
 msgid "Sound Settings"
-msgstr ""
+msgstr "Paramètres Sonore"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:140
 msgid "Success"
-msgstr ""
+msgstr "Succès"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:137
 msgid "Test Sounds"
-msgstr ""
+msgstr "Test de Son"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:134
 msgid "Volume"
-msgstr ""
+msgstr "Volume"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:12
 msgid "Webmaster"
-msgstr ""
+msgstr "Webmaster"
 
 #, elixir-format
 #: lib/listudy_web/pow/messages.ex:9
 msgid "The provided login details did not work. Make sure to log in with your email and not your username!"
-msgstr ""
+msgstr "Les identifiants fournis ne sont pas correctes. Utiliser votre email et non pas votre nom d'utilisateur !"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/session/new.html.eex:11
 msgid "Use your email to log in."
-msgstr ""
+msgstr "Utilisez votre email pour vous connecter."
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/session/new.html.eex:18
 msgid "Your session will be persistent. Only use on your own devices."
-msgstr ""
+msgstr "Votre session sera persistante. Utilisez seulement des appareils de confiance."
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:10
 msgid "Changelog"
-msgstr ""
+msgstr "Journal des changements"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:18
 #: lib/listudy_web/templates/layout/_header.html.eex:28
 msgid "Pieceless Tactics"
-msgstr ""
+msgstr "Tactiques sans pièces"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:9
 msgid "Thank you!"
-msgstr ""
+msgstr "Merci !"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:8
 msgid "black"
-msgstr ""
+msgstr "noir"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:9
 msgid "white"
-msgstr ""
+msgstr "blanc"
