@@ -20,7 +20,7 @@
                 <blockquote class="book-blockquote">
                   <p><%= er.text %></p>
                 </blockquote>
-                <figcaption class="book-figcaption">—<%= er.player.name %>, <i><%= er.source %></i></figcaption>
+                <figcaption class="book-figcaption">—<%= link er.player.name, to: Routes.player_path(@conn, :book_recommendation, @locale, er.player.slug ) %>, <i><%= er.source %></i></figcaption>
               </figure>
 
             </div>
