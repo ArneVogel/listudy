@@ -158,6 +158,7 @@ defmodule ListudyWeb.Router do
     get "/books/best-chess-books", BookController, :recommended
     get "/books/list/:slug", TagController, :show
     get "/books/author/:slug", AuthorController, :show
+    get "/books/recommended-by/:slug", PlayerController, :book_recommendation
     get "/books/:slug", BookController, :show
     live "/books", BookSearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :book_search
 

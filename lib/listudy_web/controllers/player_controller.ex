@@ -3,6 +3,7 @@ defmodule ListudyWeb.PlayerController do
 
   alias Listudy.Tactics
   alias Listudy.Players
+  alias Listudy.Books
   alias Listudy.Players.Player
 
   def index(conn, _params) do
@@ -45,6 +46,18 @@ defmodule ListudyWeb.PlayerController do
       noindex: true
     )
   end
+
+  def book_recommendation(conn, %{"slug" => id}) do
+    player = Players.get_by_slug!(id)
+    books = Books.recommended_by(player.id)
+
+    render(conn, "book_recommendations.html",
+      player: player,
+      books: books
+    )
+  end
+
+
 
   def edit(conn, %{"id" => id}) do
     player = Players.get_player!(id)

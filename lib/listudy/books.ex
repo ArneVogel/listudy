@@ -8,6 +8,7 @@ defmodule Listudy.Books do
 
   alias Listudy.Books.Book
   alias Listudy.BookTags.BookTag
+  alias Listudy.ExpertRecommendations.ExpertRecommendation
 
   @doc """
   Returns the list of books.
@@ -80,6 +81,20 @@ defmodule Listudy.Books do
         order_by: [desc: b.updated_at]
 
     Repo.all(query) |> Repo.preload(:author)
+  end
+
+  defp recommended_by(query, player_id) do
+    from c in query,
+      join: er in ExpertRecommendation,
+      on: c.id == er.book_id,
+      where: er.player_id == ^player_id
+  end
+
+  def recommended_by(player_id) do
+    query = Book
+            |> recommended_by(player_id)
+
+    Repo.all(query) |> Repo.preload([:author, expert_recommendations: :player])
   end
 
   @doc """
