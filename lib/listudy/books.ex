@@ -91,8 +91,9 @@ defmodule Listudy.Books do
   end
 
   def recommended_by(player_id) do
-    query = Book
-            |> recommended_by(player_id)
+    query =
+      Book
+      |> recommended_by(player_id)
 
     Repo.all(query) |> Repo.preload([:author, expert_recommendations: :player])
   end

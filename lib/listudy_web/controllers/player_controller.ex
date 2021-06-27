@@ -60,8 +60,6 @@ defmodule ListudyWeb.PlayerController do
     )
   end
 
-
-
   def edit(conn, %{"id" => id}) do
     player = Players.get_player!(id)
     changeset = Players.change_player(player)

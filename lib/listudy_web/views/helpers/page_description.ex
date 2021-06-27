@@ -59,9 +59,10 @@ defmodule ListudyWeb.PageDescription do
        }) do
     dngettext(
       "page_descriptions",
-      "A chess book recommendation by %{player}", "%{count} chess book recommendations by %{player}",
+      "A chess book recommendation by %{player}",
+      "%{count} chess book recommendations by %{player}",
       length(books),
-      player: player.name,
+      player: player.name
     )
   end
 
