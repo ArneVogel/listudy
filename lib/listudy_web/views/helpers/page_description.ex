@@ -52,6 +52,20 @@ defmodule ListudyWeb.PageDescription do
   end
 
   defp get(%{
+         view_module: Elixir.ListudyWeb.PlayerView,
+         view_template: "book_recommendations.html",
+         player: player,
+         books: books
+       }) do
+    dngettext(
+      "page_descriptions",
+      "A chess book recommendation by %{player}", "%{count} chess book recommendations by %{player}",
+      length(books),
+      player: player.name,
+    )
+  end
+
+  defp get(%{
          view_module: Elixir.ListudyWeb.OpeningView,
          view_template: "public.html",
          opening: opening

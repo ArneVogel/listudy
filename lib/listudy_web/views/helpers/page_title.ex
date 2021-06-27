@@ -82,6 +82,13 @@ defmodule ListudyWeb.PageTitle do
        do: player.name
 
   defp get(%{
+         view_module: Elixir.ListudyWeb.PlayerView,
+         view_template: "book_recommendations.html",
+         player: player
+       }),
+       do: dgettext("page_titles", "Books Recommended by %{player}", player: player.name)
+
+  defp get(%{
          view_module: Elixir.ListudyWeb.OpeningView,
          view_template: "public.html",
          opening: opening
