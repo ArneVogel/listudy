@@ -10,7 +10,7 @@
     <% end %>
 
     <%= label f, :username %>
-    <%= text_input f, :username %>
+    <%= text_input f, :username, [autofocus: true]%>
     <%= error_tag f, :username %>
 
     <%= label f, Pow.Ecto.Schema.user_id_field(@changeset) %>

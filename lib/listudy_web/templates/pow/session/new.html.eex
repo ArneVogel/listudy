@@ -8,7 +8,7 @@
   <% end %>
 
   <%= label f, Pow.Ecto.Schema.user_id_field(@changeset) %>
-  <%= email_input f, Pow.Ecto.Schema.user_id_field(@changeset), title: gettext("Use your email to log in.") %>
+  <%= email_input f, Pow.Ecto.Schema.user_id_field(@changeset), title: gettext("Use your email to log in."), autofocus: true %>
   <%= error_tag f, Pow.Ecto.Schema.user_id_field(@changeset) %>
 
   <%= label f, :password %>
