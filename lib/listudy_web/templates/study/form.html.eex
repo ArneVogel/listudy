@@ -6,7 +6,7 @@
   <% end %>
 
   <%= label f, :title, dgettext("study", "Title") %>
-  <%= text_input f, :title, class: "big_input", minlength: 3, maxlength: 60, placeholder: dgettext("study", "Caro-Kann Defense"), required: true %>
+  <%= text_input f, :title, class: "big_input", minlength: 3, maxlength: 60, placeholder: dgettext("study", "Caro-Kann Defense"), required: true, autofocus: true %>
   <%= error_tag f, :title %>
 
   <%= label f, :description, dgettext("study", "Description") %>
