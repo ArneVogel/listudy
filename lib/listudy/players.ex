@@ -18,7 +18,7 @@ defmodule Listudy.Players do
 
   """
   def list_players do
-    Repo.all(Player)
+    Repo.all(Player) |> Repo.preload([:expert_recommendation])
   end
 
   @doc """

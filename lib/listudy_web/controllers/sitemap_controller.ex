@@ -21,9 +21,10 @@ defmodule ListudyWeb.SitemapController do
     books = Books.list_books()
     authors = Authors.list_authors()
     tags = Tags.list_tags()
+    players = Listudy.Players.list_players()
 
     conn
     |> put_resp_content_type("text/xml")
-    |> render("books.xml", books: books, tags: tags, authors: authors)
+    |> render("books.xml", books: books, tags: tags, authors: authors, players: players)
   end
 end

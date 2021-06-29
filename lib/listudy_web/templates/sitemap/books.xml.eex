@@ -9,4 +9,12 @@
      <lastmod><%= format_date(tag.updated_at) %></lastmod>
    </url>
   <% end %>
+  <%= for player <- @players do %>
+     <%= if length(player.expert_recommendation) >= 1 do %>
+     <url>
+       <loc><%= base_url() <> Routes.player_path(@conn, :book_recommendation, @locale, player.slug) %></loc>
+       <lastmod><%= format_date(player.updated_at) %></lastmod>
+     </url>
+    <% end %>
+  <% end %>
 </urlset>
