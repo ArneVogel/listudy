@@ -51,7 +51,7 @@ defmodule ListudyWeb.PlayerController do
     player = Players.get_by_slug!(id)
     books = Books.recommended_by(player.id)
 
-    noindex = length(books) >= 1
+    noindex = length(player.expert_recommendation) == 0
 
     render(conn, "book_recommendations.html",
       player: player,
