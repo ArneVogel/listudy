@@ -19,14 +19,14 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/stats/index.html.eex:1
 msgid "Statistics"
-msgstr ""
+msgstr "Statistiques"
 
 #, elixir-format
 #: lib/listudy_web/templates/stats/index.html.eex:5
 msgid "Uploaded Studies"
-msgstr ""
+msgstr "Etudes uploadées"
 
 #, elixir-format
 #: lib/listudy_web/templates/stats/index.html.eex:11
 msgid "User Registrations"
-msgstr ""
+msgstr "Utilisateurs enregistrés"
