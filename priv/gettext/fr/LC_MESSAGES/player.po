@@ -14,29 +14,29 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/player/public.html.eex:13
 msgid "%{name} Tactics"
-msgstr ""
+msgstr "%{name} Tactiques"
 
 #, elixir-format
 #: lib/listudy_web/templates/player/public.html.eex:9
 msgid "Are you better than %{name}?"
-msgstr ""
+msgstr "Êtes vous meilleur que %{name}?"
 
 #, elixir-format
 #: lib/listudy_web/templates/player/public.html.eex:11
 msgid "Play real tactics from %{amount} different games played by %{name}."
-msgstr ""
+msgstr "Jouez de vraies tactiques à partir de %{amount} différentes parties jouées par %{name}."
 
 #, elixir-format
 #: lib/listudy_web/templates/player/public.html.eex:6
 msgid "Tactics by %{name}"
-msgstr ""
+msgstr "Tactiques par %{name}"
 
 #, elixir-format
 #: lib/listudy_web/live/player_search_live.ex:10
 msgid "Players"
-msgstr ""
+msgstr "Joueurs"
 
 #, elixir-format
 #: lib/listudy_web/live/player_search_live.ex:12
 msgid "Search"
-msgstr ""
+msgstr "Chercher"
