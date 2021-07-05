@@ -14,44 +14,44 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:1
 msgid "Thank you!"
-msgstr ""
+msgstr "Merci!"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:29
 msgid "Thanks to %{cburnett}, Armando Hernandez Marroquin, %{chessnut}, %{letter}, %{pirouetti}, %{pixel}, %{shapes} for their piece sets."
-msgstr ""
+msgstr "Merci à %{cburnett}, Armando Hernandez Marroquin, %{chessnut}, %{letter}, %{pirouetti}, %{pixel}, %{shapes} pour leurs ensembles de pièces."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:21
 msgid "Thanks to %{jeff} for %{chessjs}."
-msgstr ""
+msgstr "Merci à %{jeff} pour %{chessjs}."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:13
 msgid "Thanks to %{lichess} for all their work. In particular for making studies, their puzzle database (%{database_link}), %{chessground}, and their freely avaliable icons."
-msgstr ""
+msgstr "Merci à %{lichess} pour tout leur travail. Notamment pour faire des études, leur base de données de puzzles (%{database_link}), %{chessground}, et leurs icônes librement disponibles."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:17
 msgid "Thanks to %{niklas} for %{stockfish}."
-msgstr ""
+msgstr "Merci à %{niklas} pour %{stockfish}."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:6
 msgid "Thanks to all %{contributors}."
-msgstr ""
+msgstr "Merci à tous les %{contributeurs}."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:8
 msgid "Thanks to all those who have provided translations."
-msgstr ""
+msgstr "Merci à tous ceux qui ont aidé à la traduction du site."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:2
 msgid "Thanks to all who have helped directly on Listudy and to all projects that make code and other content openly available. Without this help Listudy could not exist in this form."
-msgstr ""
+msgstr "Merci à tous ceux qui ont aidé directement sur Listudy et à tous les projets qui rendent le code et autres contenus librement disponibles. Sans cette aide, Listudy ne pourrait pas exister sous cette forme."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:34
 msgid "Thanks to the authors of %{elixir} and %{phoenix}."
-msgstr ""
+msgstr "Merci aux auteurs de %{elixir} et %{phoenix}."
