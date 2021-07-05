@@ -24,7 +24,7 @@ msgstr "Devenez imbattable dans les finales."
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:4
 msgid "Better train openings, endgames and tactics with the help of systematic repetition."
-msgstr "Mieux s'entrainer aux ouvertures, les fins de partie et les tactiques à l'aide d'une répétition systématique."
+msgstr "Entrainer vous aux ouvertures, finales et tactiques à l'aide d'une répétition systématique."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:53
@@ -39,7 +39,7 @@ msgstr "Livres"
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:60
 msgid "Contribute"
-msgstr "Contriuber"
+msgstr "Contribuer"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:91
@@ -54,7 +54,7 @@ msgstr "Découvrez les plus grands livres à l'aide de recommandations de Grands
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:73
 msgid "Distribute copies of your modified versions"
-msgstr "Distribuez votre version modifiée"
+msgstr "Distribuer votre version modifiée"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:30
@@ -131,7 +131,7 @@ msgstr "Redistribuer le logiciel"
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:70
 msgid "Run the server yourself as you wish, for any purpose"
-msgstr "Runnez le serveur vous-même comme vous le souhaitez, pour n'importe quel but"
+msgstr "Faire tourner le serveur vous-même comme vous le souhaitez, pour n'importe quel but"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:52
@@ -146,7 +146,7 @@ msgstr "Etudiez les ouvertures"
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:71
 msgid "Study how the software works, and change it so it does your computing as you wish"
-msgstr "Étudiez le fonctionnement du logiciel et modifiez-le pour qu'il fasse votre calcul comme vous le souhaitez"
+msgstr "Étudie le fonctionnement du logiciel et de le modifiez pour qu'il fasse ce que vous souhaitez"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:18
@@ -206,7 +206,7 @@ msgstr "Visualisation"
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:2
 msgid "Welcome to %{name}!"
-msgstr "Bienvenue à %{name}!"
+msgstr "Bienvenue sur %{name}!"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:3

@@ -39,7 +39,7 @@ msgstr "Merci à %{niklas} pour %{stockfish}."
 #, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:6
 msgid "Thanks to all %{contributors}."
-msgstr "Merci à tous les %{contributeurs}."
+msgstr "Merci à tous les %{contributors}."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:8
