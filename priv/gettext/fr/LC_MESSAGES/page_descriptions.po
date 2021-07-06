@@ -60,5 +60,5 @@ msgstr "Résolvez le puzzle quotidien ! Mis à jour tous les jours à partir de
 #: lib/listudy_web/views/helpers/page_description.ex:60
 msgid "A chess book recommendation by %{player}"
 msgid_plural "%{count} chess book recommendations by %{player}"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Un livre sur les échecs recommandé par %{player}"
+msgstr[1] "%{count} livres sur les échecs recommandés par %{player}"
