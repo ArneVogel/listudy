@@ -37,6 +37,10 @@ defmodule ListudyWeb.PageController do
     renderer(conn, @pages, page)
   end
 
+  def admin_index(conn, _) do
+    render(conn, "admin_index.html")
+  end
+
   def features(conn, %{"page" => page}) do
     renderer(conn, @features, page)
   end

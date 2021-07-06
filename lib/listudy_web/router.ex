@@ -45,6 +45,8 @@ defmodule ListudyWeb.Router do
   scope "/admin", ListudyWeb do
     pipe_through [:browser, :admin]
 
+    get "/", PageController, :admin_index
+
     resources "/studies", StudyController, as: :admin_study
     get "/blog", PostController, :index_all
     get "/blog/:id/edit", PostController, :edit
