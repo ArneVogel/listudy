@@ -14,44 +14,44 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:31
 msgid "Official Stockfish Website"
-msgstr ""
+msgstr "Site officiel de Stockfish"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:25
 msgid "Play against Stockfish:"
-msgstr ""
+msgstr "Jouer contre Stockfish:"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:28
 msgid "Stockfish is one of the best chess engines avaliable. And with the help of WebAssembly the engine can now also be executed online in the browser. This means that the engine is running in your own browser."
-msgstr ""
+msgstr "Stockfish est l'un des meilleurs moteurs d'échecs disponibles. Et avec l'aide de WebAssembly, le moteur peut désormais également être exécuté en ligne dans le navigateur. Cela signifie que le moteur s'exécute dans votre propre navigateur."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:34
 msgid "Thanks to Niklas Fiekas for the WebAssembly port of Stockfish!"
-msgstr ""
+msgstr "Merci à Niklas Fiekas pour le portage de Stockfish en WebAssembly"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:30
 msgid "Thanks to the developers of stockfish!"
-msgstr ""
+msgstr "Merci aux developeurs de Stockfish"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:26
 msgid "learn with the best chess engine."
-msgstr ""
+msgstr "Apprendre avec le meilleur moteur d'échecs"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:35
 msgid "stockfish.wasm"
-msgstr ""
+msgstr "stockfish.wasm"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:1
 msgid "Play against Stockfish"
-msgstr ""
+msgstr "Jouer contre Stockfish"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:10
 msgid "Reset as %{white}, %{black}."
-msgstr ""
+msgstr "Réinitialiser en tant que %{white}, %{black}."

@@ -14,54 +14,54 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:31
 msgid "Achievements"
-msgstr ""
+msgstr "Récompenses"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:16
 msgid "Blind Tactics"
-msgstr ""
+msgstr "Tactiques à l'aveugle"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:13
 msgid "Daily Chess Puzzle"
-msgstr ""
+msgstr "Puzzle quotidien"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:62
 msgid "Endgames"
-msgstr ""
+msgstr "Finales"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:28
 msgid "Play against Stockfish Online"
-msgstr ""
+msgstr "Jouez contre Stockfish en ligne"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:42
 msgid "Search Studies"
-msgstr ""
+msgstr "Chercher des études"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:43
 msgid "Tactics"
-msgstr ""
+msgstr "Tactiques"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:22
 msgid "Changelog"
-msgstr ""
+msgstr "Changelog"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:19
 msgid "Pieceless Tactics"
-msgstr ""
+msgstr "Tactiques à l'aveugle"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:25
 msgid "Thank you!"
-msgstr ""
+msgstr "Merci"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:34
 msgid "Improve your chess game with spaced repetition"
-msgstr ""
+msgstr "Améliorez votre jeu d'échecs avec la répétition espacée"
