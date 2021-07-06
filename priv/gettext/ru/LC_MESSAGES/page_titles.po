@@ -65,3 +65,8 @@ msgstr ""
 #: lib/listudy_web/views/helpers/page_title.ex:34
 msgid "Improve your chess game with spaced repetition"
 msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:89
+msgid "Books Recommended by %{player}"
+msgstr ""

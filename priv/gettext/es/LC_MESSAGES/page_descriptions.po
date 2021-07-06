@@ -22,17 +22,17 @@ msgid "Get better at %{name} tactics with our huge library of puzzles taken from
 msgstr "Mejora en tácticas de %{name} con nuestra gran colección de problemas tomados de juegos reales. Explora nuestra colección gratuita de ${name}."
 
 #, elixir-format
-#: lib/listudy_web/views/helpers/page_description.ex:59
+#: lib/listudy_web/views/helpers/page_description.ex:74
 msgid "Get better in the %{name} opening. Study the opening and learn from traps and tactics collected from real games."
 msgstr "Mejora en la apertura %{name}. Estudia la apertura y aprende trampas y tácticas de juegos reales."
 
 #, elixir-format
-#: lib/listudy_web/views/helpers/page_description.ex:111
+#: lib/listudy_web/views/helpers/page_description.ex:126
 msgid "Improve your chess game on Listudy"
 msgstr "Mejora de Ajedrez con Listudy"
 
 #, elixir-format
-#: lib/listudy_web/views/helpers/page_description.ex:78
+#: lib/listudy_web/views/helpers/page_description.ex:93
 msgid "Learn chess endgames interactively playing against Stockfish"
 msgstr "Aprende finales interactivamente jugando contra Stockfish"
 
@@ -55,3 +55,10 @@ msgstr "Busca estudios para entrenar aperturas especificas"
 #: lib/listudy_web/views/helpers/page_description.ex:8
 msgid "Solve the Daily Chess Puzzle! Updated every day from our list of best puzzles."
 msgstr "Resuelve el Problema Diario, actualizado cada día de nuestra lista."
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:60
+msgid "A chess book recommendation by %{player}"
+msgid_plural "%{count} chess book recommendations by %{player}"
+msgstr[0] ""
+msgstr[1] ""

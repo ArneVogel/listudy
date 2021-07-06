@@ -107,3 +107,8 @@ msgstr ""
 #: lib/listudy_web/templates/book/footer.html.eex:5
 msgid "Most Grandmaster recommended books"
 msgstr "Gran Maestro recomendó"
+
+#, elixir-format
+#: lib/listudy_web/templates/player/book_recommendations.html.eex:1
+msgid "Books recommended by %{player}"
+msgstr ""
