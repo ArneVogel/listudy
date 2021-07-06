@@ -92,7 +92,7 @@ msgstr "Email"
 #: lib/listudy_web/templates/layout/_footer.html.eex:8
 #: lib/listudy_web/templates/page/imprint.html.eex:1
 msgid "Imprint"
-msgstr "Imprimer"
+msgstr "Fournisseur"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:60
@@ -140,7 +140,7 @@ msgstr "Conditions d'utilisation"
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:36
 msgid "The email is used to log in. It doesn't have to be real, as long as you remember it."
-msgstr "L'adresse emil est utilisée pour se connecter. Elle n'a pas besoin d'être réelle tant que vous la mémorisez."
+msgstr "L'adresse email est utilisée pour se connecter. Elle n'a pas besoin d'être réelle tant que vous la mémorisez."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/imprint.html.eex:2
@@ -268,7 +268,7 @@ msgstr "Déplacement"
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:131
 msgid "Play Sound"
-msgstr "Activer Son"
+msgstr "Activer le son"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:94
@@ -335,7 +335,7 @@ msgstr "Tactiques sans pièces"
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:9
 msgid "Thank you!"
-msgstr "Merci !"
+msgstr "Merci!"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:8
