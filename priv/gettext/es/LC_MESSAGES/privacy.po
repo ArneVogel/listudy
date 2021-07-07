@@ -89,10 +89,6 @@ msgstr "Listudy.org (“Listudy”) es un sitio de Ajedrez. Los usuarios pueden 
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:14
-msgid "Managing you information"
-msgstr "Manejando tu información"
-
-#, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:46
 msgid "Managing your information"
 msgstr "Manejando tu información"
@@ -178,11 +174,11 @@ msgid "Your email address will remain confidential and is used to log in or in c
 msgstr "Tu dirección de correo electrónico se mantendrá confidencial y es usado para iniciar sesión y para restablecer tu contraseña en caso de que la olvides. Los moderadores pueden establecer correos de cuentas para ayudar."
 
 #, elixir-format
-#: lib/listudy_web/templates/page/privacy.html.eex:40
-msgid "Your information will only be disclosed if it is legally necessary to do so. For example, if Lichess is ordered to hand over a certain user’s information, or if someone hacks Lichess."
-msgstr "Tu información divulgada si es legalmente necesario hacerlo. Por ejemplo, si se le pide a Lichess dar información sobre cierto usuario, o si alguien hackea Lichess.sssssss"
-
-#, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:50
 msgid "Your technical informations are needed for administrative purposes and cannot be deleted."
 msgstr "Tus datos técnicos se necesitan con propósitos administrativos y no pueden ser borrados."
+
+#, elixir-format, fuzzy
+#: lib/listudy_web/templates/page/privacy.html.eex:40
+msgid "Your information will only be disclosed if it is legally necessary to do so. For example, if Listudy is ordered to hand over a certain user’s information, or if someone hacks Listudy."
+msgstr "Tu información divulgada si es legalmente necesario hacerlo. Por ejemplo, si se le pide a Listudy dar información sobre cierto usuario, o si alguien hackea Listudy."
