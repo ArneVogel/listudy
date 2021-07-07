@@ -88,10 +88,6 @@ msgstr ""
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:14
-msgid "Managing you information"
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:46
 msgid "Managing your information"
 msgstr ""
@@ -177,11 +173,11 @@ msgid "Your email address will remain confidential and is used to log in or in c
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/page/privacy.html.eex:40
-msgid "Your information will only be disclosed if it is legally necessary to do so. For example, if Lichess is ordered to hand over a certain user’s information, or if someone hacks Lichess."
+#: lib/listudy_web/templates/page/privacy.html.eex:50
+msgid "Your technical informations are needed for administrative purposes and cannot be deleted."
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/page/privacy.html.eex:50
-msgid "Your technical informations are needed for administrative purposes and cannot be deleted."
+#: lib/listudy_web/templates/page/privacy.html.eex:40
+msgid "Your information will only be disclosed if it is legally necessary to do so. For example, if Listudy is ordered to hand over a certain user’s information, or if someone hacks Listudy."
 msgstr ""

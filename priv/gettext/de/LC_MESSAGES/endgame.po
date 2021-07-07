@@ -280,7 +280,7 @@ msgid "Endgames"
 msgstr "Endspiele"
 
 #, elixir-format
-#: lib/listudy_web/views/endgame_view.ex:6
+#: lib/listudy_web/views/endgame_view.ex:7
 msgid "Next"
 msgstr "Weiter"
 
