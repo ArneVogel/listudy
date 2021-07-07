@@ -49,6 +49,38 @@ function achievement_end_of_line() {
 
 }
 
+// "cxb8=Q" => "cxb8="
+// "abc" => ""
+function san_promotion_prefix(san) {
+    return san.substring(0, san.indexOf("=") + 1); 
+}
+
+// checks if the san would be a possible promotion
+// expected result for 
+//  moves: Array [ "cxb8=N" ]
+//  san:   cxb8=Q
+// would be "cxb8=Q.
+// Returns "" if the san is not a possible promotion
+// Used in handle_move to allow for underpromotions
+function possible_promotion(moves, san) {
+    let target_prefix = san_promotion_prefix(san);
+
+    // this move did not promote
+    if (target_prefix == "") {
+        return ""; 
+    }
+    for (let m of moves) {
+        let prefix = san_promotion_prefix(m);
+        if (prefix == "") {
+            continue;
+        }
+        if (prefix == target_prefix) {
+            return m;
+        }
+    }
+    return ""; 
+}
+
 async function handle_move(orig, dest) {
 
     clear_all_text();
@@ -58,6 +90,14 @@ async function handle_move(orig, dest) {
     let san = uci_to_san(chess, orig, dest);
 
     let possible_moves = tree_possible_moves(curr_move);
+
+    let possible_promotion_san = possible_promotion(possible_moves, san);
+    // the move automatically promoted to a queen, above we checked if it was
+    // also possible to underpromote, if so we returned that san instead
+    if (possible_promotion_san != "") {
+        san = possible_promotion_san;
+    }
+
     if(possible_moves.indexOf(san) != -1) {
         // console.log('curr_move', orig, dest, JSON.stringify(curr_move));
         // the move is one of the possible moves in the current position
