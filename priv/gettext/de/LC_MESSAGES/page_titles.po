@@ -69,4 +69,4 @@ msgstr "Verbessern Sie Ihr Schachspiel mit Spaced repetition"
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:89
 msgid "Books Recommended by %{player}"
-msgstr ""
+msgstr "Bücher empfohlen von %{player}"

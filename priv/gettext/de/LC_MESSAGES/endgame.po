@@ -64,7 +64,7 @@ msgstr "Spielenden"
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:442
 msgid "From the Capablancas \"Chess Fundamentals\"."
-msgstr ""
+msgstr "Von Capablancas \"Chess Fundamentals\""
 
 #, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:423
