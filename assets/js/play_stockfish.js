@@ -3,7 +3,7 @@ require("regenerator-runtime/runtime"); // required for sleep (https://github.co
 const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
 
-import { turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
+import { turn_color, setup_chess, uci_to_san, san_to_uci, initial_fen } from './modules/chess_utils.js';
 import { load_stockfish } from './modules/stockfish.js';
 import { tree_move_index, tree_children, tree_possible_moves, has_children, 
          need_hint, update_value, date_sort, tree_get_node, tree_children_filter_sort } from './modules/tree_utils.js';
@@ -68,7 +68,8 @@ function setup_options() {
     });
 }
 function reset(c) {
-    let fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+    //let fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+    let fen = initial_fen(chess);
     setup_chess(fen);
     color = c;
     setup_ground(fen); //uses global color for orientation

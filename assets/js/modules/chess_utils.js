@@ -67,6 +67,14 @@ function turn_color(chess) {
     console.log("Chess.js;turn_color; Color is neither b nor w.")
     return "white";
 }
+
+function initial_fen(chess) {
+    let pgn = chess.pgn();
+    let fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+    try {
+        fen = pgn.split("FEN")[1].split("\"")[1];
+    } catch (error) {}
+    return fen;
+}
  
- 
-export { turn_color, san_to_uci, uci_to_san, setup_chess, ground_legal_moves };
+export { turn_color, san_to_uci, uci_to_san, setup_chess, ground_legal_moves, initial_fen };
