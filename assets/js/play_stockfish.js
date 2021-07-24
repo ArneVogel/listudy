@@ -66,9 +66,11 @@ function setup_options() {
     document.getElementById("reset_black").addEventListener('click', function (event) {
         reset("black");
     });
+    document.getElementById("takeback").addEventListener('click', function (event) {
+        takeback();
+    });
 }
 function reset(c) {
-    //let fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
     let fen = initial_fen(chess);
     setup_chess(fen);
     color = c;
@@ -78,6 +80,18 @@ function reset(c) {
     if (c == "black") {
         ai_move();
     }
+}
+
+function takeback() {
+    if(chess.history().length < 2) {
+        return;
+    }
+    chess.undo();
+    chess.undo();
+    ground_undo_last_move()
+    ground_undo_last_move()
+    ground_set_moves();
+    setup_move_handler(handle_move);
 }
 
 function main(hash) {
