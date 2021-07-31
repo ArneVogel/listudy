@@ -178,7 +178,7 @@ msgstr ""
 msgid "Your technical informations are needed for administrative purposes and cannot be deleted."
 msgstr ""
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:40
 msgid "Your information will only be disclosed if it is legally necessary to do so. For example, if Listudy is ordered to hand over a certain user’s information, or if someone hacks Listudy."
 msgstr ""

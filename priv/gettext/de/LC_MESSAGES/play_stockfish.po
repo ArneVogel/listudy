@@ -12,37 +12,37 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 
 #, elixir-format
-#: lib/listudy_web/templates/page/play_stockfish.html.eex:31
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:32
 msgid "Official Stockfish Website"
 msgstr "Offizielle Sotckfish Website"
 
 #, elixir-format
-#: lib/listudy_web/templates/page/play_stockfish.html.eex:25
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:26
 msgid "Play against Stockfish:"
 msgstr "Spielen Sie gegen Stockfish:"
 
 #, elixir-format
-#: lib/listudy_web/templates/page/play_stockfish.html.eex:28
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:29
 msgid "Stockfish is one of the best chess engines avaliable. And with the help of WebAssembly the engine can now also be executed online in the browser. This means that the engine is running in your own browser."
 msgstr "Stockfish ist eine der besten Schachengines, die es gibt. Und mit Hilfe von WebAssembly kann die Engine nun auch online im Browser ausgeführt werden. Das bedeutet, dass die Engine in Ihrem eigenen Browser läuft."
 
 #, elixir-format
-#: lib/listudy_web/templates/page/play_stockfish.html.eex:34
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:35
 msgid "Thanks to Niklas Fiekas for the WebAssembly port of Stockfish!"
 msgstr "Vielen Dank an Niklas Fiekas für die WebAssembly-Portierung von Stockfish!"
 
 #, elixir-format
-#: lib/listudy_web/templates/page/play_stockfish.html.eex:30
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:31
 msgid "Thanks to the developers of stockfish!"
 msgstr "Vielen Dank an die Entwickler von Stockfish!"
 
 #, elixir-format
-#: lib/listudy_web/templates/page/play_stockfish.html.eex:26
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:27
 msgid "learn with the best chess engine."
 msgstr "Lernen Sie mit der besten Schachengine."
 
 #, elixir-format
-#: lib/listudy_web/templates/page/play_stockfish.html.eex:35
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:36
 msgid "stockfish.wasm"
 msgstr "stockfish.wasm"
 
@@ -55,3 +55,8 @@ msgstr "Spielen Sie gegen Stockfish"
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:10
 msgid "Reset as %{white}, %{black}."
 msgstr "Zurücksetzen als %{white}, %{black}."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:11
+msgid "Takeback"
+msgstr ""

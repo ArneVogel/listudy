@@ -178,7 +178,7 @@ msgstr "Tu dirección de correo electrónico se mantendrá confidencial y es usa
 msgid "Your technical informations are needed for administrative purposes and cannot be deleted."
 msgstr "Tus datos técnicos se necesitan con propósitos administrativos y no pueden ser borrados."
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:40
 msgid "Your information will only be disclosed if it is legally necessary to do so. For example, if Listudy is ordered to hand over a certain user’s information, or if someone hacks Listudy."
 msgstr "Tu información divulgada si es legalmente necesario hacerlo. Por ejemplo, si se le pide a Listudy dar información sobre cierto usuario, o si alguien hackea Listudy."

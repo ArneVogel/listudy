@@ -149,7 +149,7 @@ msgstr "El proveedor de este sitio web es Arne Vogel."
 
 #, elixir-format
 #: lib/listudy_web/controllers/page_controller.ex:27
-#: lib/listudy_web/controllers/page_controller.ex:55 lib/listudy_web/controllers/webmaster_controller.ex:21
+#: lib/listudy_web/controllers/page_controller.ex:59 lib/listudy_web/controllers/webmaster_controller.ex:21
 msgid "This page does not exist"
 msgstr "Esta página no existe"
 
