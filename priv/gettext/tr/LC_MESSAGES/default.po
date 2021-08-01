@@ -156,7 +156,7 @@ msgstr "Böyle bir sayfa yok"
 #, elixir-format
 #: lib/listudy_web/controllers/post_controller.ex:41
 msgid "This post does not exist"
-msgstr "Böyle bir ileti yok"
+msgstr "Böyle bir gönderi yok"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:35
