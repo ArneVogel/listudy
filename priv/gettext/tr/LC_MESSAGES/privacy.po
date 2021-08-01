@@ -14,171 +14,171 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:44
 msgid "A cookie is a text string that Listudy stores in your browser in order to keep you logged in throughout sessions and save your site preferences."
-msgstr ""
+msgstr "Bir çerez, Listudy sitesinin sizin oturumunuzu sürekli tutabilmek ve ayarlarınızı kaydetmek için kullandığı, tarayıcıda tutulan bir metindir."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:16
 #: lib/listudy_web/templates/page/privacy.html.eex:55
 msgid "Closing your account"
-msgstr ""
+msgstr "Hesabınızı kapatma"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:53
 msgid "Collected information is stored on Listudy’ servers, which are hosted by DigitalOcean."
-msgstr ""
+msgstr "Toplanan bilgiler DigitalOcean tarafından sağlanan Listudy sunucularında tutulmaktadır."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:43
 msgid "Cookies"
-msgstr ""
+msgstr "Çerezler"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:39
 msgid "Disclosing your information"
-msgstr ""
+msgstr "Bilgilerinizin paylaşılması"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:2
 msgid "English version of the Privacy Policy"
-msgstr ""
+msgstr "Gizlilik İlkesinin ingilizce versiyonu"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:13
 msgid "How cookies are used"
-msgstr ""
+msgstr "Çerezlerin kullanımı"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:41
 msgid "If Listudy is sold, the data provided by the user (such as emails, pgns, comments) will be transferred to a new third party owner."
-msgstr ""
+msgstr "Eğer Listudy satılırsa, kullanıcının sağladığı bilgiler de (örneğin email, pgn dosyaları, yorumlar) yeni üçüncü parti sahibe geçirilecektir."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:24
 msgid "If you create an account, you will be asked to provide a email address. This email address does not have to be a real email address."
-msgstr ""
+msgstr "Hesap oluştururken sizden bir email adresi vermeniz istenecektir. Bu email adresi gerçek bir email adresi olmak zorunda değil."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:21
 msgid "Information that Listudy collects:"
-msgstr ""
+msgstr "Listudy sitesinin topladığı bilgiler:"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:48
 msgid "Information you delete is deleted from the live site but remains in Listudy’ backups for up to one year."
-msgstr ""
+msgstr "Sildiğiniz bilgiler canlı siteden de silinecektir ancak Listudy'nin yedeklemesinde 1 yıla kadar saklanacaktır."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:6
 msgid "Introduction"
-msgstr ""
+msgstr "Giriş"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:4
 msgid "Last edited:"
-msgstr ""
+msgstr "Son değişiklik:"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:60
 msgid "Listudy can change this policy at its discretion."
-msgstr ""
+msgstr "Listudy bu ilkeleri değiştirme hakkını saklı tutar."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:7
 msgid "Listudy.org (“Listudy”) is an online chess site. Users can optionally register for an account; however, certain features are available for registered users only. This is because Listudy needs basic information from its users in order to function."
-msgstr ""
+msgstr "Listudy.org (\"Listudy\") bir çevrimiçi satranç sitesidir. Kullanıcılar kayıt olmak zorunda değildirler, ancak bazı özellikler sadece kayıtlı kullanıcılar için mevcuttur. Bunun sebebi Listudy sitesinin çalışabilmesi için kullanıcılardan bazı temel bilgilere ihtiyaç duymasıdır."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:14
 #: lib/listudy_web/templates/page/privacy.html.eex:46
 msgid "Managing your information"
-msgstr ""
+msgstr "Bilgilerini yönetmek"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:17
 #: lib/listudy_web/templates/page/privacy.html.eex:59
 msgid "Other"
-msgstr ""
+msgstr "Diğer"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:57
 msgid "Send me an email if you want to close your account."
-msgstr ""
+msgstr "Hesabınızı kapatmak istiyorsanız bana bir email atın."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:15
 #: lib/listudy_web/templates/page/privacy.html.eex:52
 msgid "Storage of the collected information"
-msgstr ""
+msgstr "Toplanan bilgilerin depolanması"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:27
 #: lib/listudy_web/templates/page/privacy.html.eex:36
 msgid "Technical information"
-msgstr ""
+msgstr "Teknik bilgiler"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:37
 msgid "This information is stored to detect attacks and malicious access to the site."
-msgstr ""
+msgstr "Bu bilgi siteye karşı olası saldırıları ve zararlı erişimi tespit edebilmek amacıyla kullanılır."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:9
 msgid "This privacy policy will detail:"
-msgstr ""
+msgstr "Bu gizlilik ilkesi şunları içerir:"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:2
 msgid "Translated privacy policies shall only serve as an informal source of information. Please read the english version for the official version applicable to the site."
-msgstr ""
+msgstr "Çevrilmiş gizlilik ilkeleri sadece bilgilendirme amacıyla kullanılır. Siteye uygulanan resmi versiyon için lütfen ingilizce versiyonunu okuyun."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:23
 #: lib/listudy_web/templates/page/privacy.html.eex:33
 msgid "User submitted information"
-msgstr ""
+msgstr "Kullanıcının sunduğu bilgiler"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:11
 #: lib/listudy_web/templates/page/privacy.html.eex:20
 msgid "What information Listudy collects"
-msgstr ""
+msgstr "Listudy sitesinin topladığı bilgiler"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:28
 msgid "When you visit Listudy, some information about the request is logged on the server. This information includes the time of the request, the HTTP method, the URI of the request, the status code generated by the server and the referrer of the request."
-msgstr ""
+msgstr "Listudy sitesini ziyaret ettiğinizde request ile alakalı bazı bilgiler sunucuya kaydedilir. Bu bilgiler şunları içerir: requestin zamanı, HTTP metodu, request URI, sunucu tarafından oluşturulan durum kodu ve request yönlendiricisi."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:12
 msgid "Why this information is collected and how it's used"
-msgstr ""
+msgstr "Bu bilgilerin neden toplandığı ve nasıl kullanıldığı"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:31
 msgid "Why this information is collected and how it’s used"
-msgstr ""
+msgstr "Bu bilgilerin neden toplandığı ve nasıl kullanıldığı"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:47
 msgid "You can edit or delete your user provided informations at any time."
-msgstr ""
+msgstr "İstediğiniz zaman sizin sunduğunuz bilgileri değiştirebilir veya silebilirsiniz."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:56
 msgid "You may choose to close your account at any time, for any reason."
-msgstr ""
+msgstr "İstediğiniz sebeple, istediğiniz zaman hesabınızı kapatabilirsiniz."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:34
 msgid "Your email address will remain confidential and is used to log in or in case you forget your password. Moderators are able to set email addresses for accounts to assist in troubleshooting."
-msgstr ""
+msgstr "Email adresiniz gizli tutulacaktır ve giriş yaparken veya şifrenizi unutmanız durumunda kullanılacaktır. Moderatörler sorunları giderme amacıyla hesapların email adreslerini ayarlayabilirler."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:50
 msgid "Your technical informations are needed for administrative purposes and cannot be deleted."
-msgstr ""
+msgstr "Teknik bilgileriniz yönetimsel amaçlar için gereklidir ve silinemez."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:40
 msgid "Your information will only be disclosed if it is legally necessary to do so. For example, if Listudy is ordered to hand over a certain user’s information, or if someone hacks Listudy."
-msgstr ""
+msgstr "Bilgileriniz sadece yasal olarak gerekliyse paylaşılacaktır. Örneğin, eğer Listudy sitesine bazı kullanıcı bilgilerini temin etmesi emredilirse, veya Listudy hacklenirse."
