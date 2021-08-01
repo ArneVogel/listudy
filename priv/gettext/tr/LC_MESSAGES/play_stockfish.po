@@ -14,49 +14,49 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:32
 msgid "Official Stockfish Website"
-msgstr ""
+msgstr "Resmi Stockfish İnternet Sitesi"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:26
 msgid "Play against Stockfish:"
-msgstr ""
+msgstr "Stockfish'e karşı oynayın:"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:29
 msgid "Stockfish is one of the best chess engines avaliable. And with the help of WebAssembly the engine can now also be executed online in the browser. This means that the engine is running in your own browser."
-msgstr ""
+msgstr "Stockfish mevcut en iyi satranç makinelerinden biridir. Ve WebAssembly sayesinde makine artık çevrimiçi olarak tarayıcıda da çalıştırılabiliyor. Yani makine sizin kendi tarayıcınızda çalışıyor."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:35
 msgid "Thanks to Niklas Fiekas for the WebAssembly port of Stockfish!"
-msgstr ""
+msgstr "Stockfish'in WebAssembly portu için Niklas Fiekas'a teşşekürler!"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:31
 msgid "Thanks to the developers of stockfish!"
-msgstr ""
+msgstr "Stockfish'in geliştiricilerine teşekkürler!"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:27
 msgid "learn with the best chess engine."
-msgstr ""
+msgstr "en iyi satranç makinesiyle öğrenin."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:36
 msgid "stockfish.wasm"
-msgstr ""
+msgstr "stockfish.wasm"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:1
 msgid "Play against Stockfish"
-msgstr ""
+msgstr "Stockfish'e karşı oyna"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:10
 msgid "Reset as %{white}, %{black}."
-msgstr ""
+msgstr "%{white}, %{black} olarak sıfırla."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:11
 msgid "Takeback"
-msgstr ""
+msgstr "Geri al"
