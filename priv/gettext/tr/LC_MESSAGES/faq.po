@@ -14,4 +14,4 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/faq/show.html.eex:2
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "Sıkça Sorulan Sorular"
