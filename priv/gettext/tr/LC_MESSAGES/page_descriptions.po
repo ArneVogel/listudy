@@ -14,51 +14,51 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_description.ex:47
 msgid "Explore our collection of tactics taken from games by %{name}."
-msgstr ""
+msgstr "%{name} tarafından oynanmış oyunlardan oluşturulmuş taktik koleksiyonumuzu keşfedin."
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_description.ex:27
 msgid "Get better at %{name} tactics with our huge library of puzzles taken from real games. Explore our free collection of %{name} tactics."
-msgstr ""
+msgstr "Gerçek oyunlardan derlenmiş devasa bulmaca kütüphanemizi kullanarak %{name} taktiklerinde gelişin. Bedava %{name} taktik koleksiyonumuzu keşfedin."
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_description.ex:74
 msgid "Get better in the %{name} opening. Study the opening and learn from traps and tactics collected from real games."
-msgstr ""
+msgstr "%{name} açılışlarında gelişin. Açılışa çalışın ve gerçek oyunlardan toplanmış taktik ve tuzaklardan öğrenin."
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_description.ex:126
 msgid "Improve your chess game on Listudy"
-msgstr ""
+msgstr "Listudy ile satranç oyununuzu geliştirin"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_description.ex:93
 msgid "Learn chess endgames interactively playing against Stockfish"
-msgstr ""
+msgstr "Stockfish'e karşı etkileşimli bir şekilde oynayarak oyunsonları öğrenin"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_description.ex:15
 msgid "Play against Stockfish Online - Unlimited and for Free"
-msgstr ""
+msgstr "Stockfish'e karşı çevrimiçi oynayın - Sınırsız ve Bedava"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_description.ex:35
 msgid "Play tactics from the event %{}. Are you better than the professionals?"
-msgstr ""
+msgstr "%{} etkinliğinden taktikler oynayın. Profesyonellerden daha mı iyisiniz?"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_description.ex:24
 msgid "Search for studies to train specific openings"
-msgstr ""
+msgstr "Belirli bir açılışa çalışmak için çalışmaları arayın"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_description.ex:8
 msgid "Solve the Daily Chess Puzzle! Updated every day from our list of best puzzles."
-msgstr ""
+msgstr "Günlük Satranç Bulmacasını çözün! Her gün en iyi bulmacalar listemizden güncelleniyor."
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_description.ex:60
 msgid "A chess book recommendation by %{player}"
 msgid_plural "%{count} chess book recommendations by %{player}"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%{player} tarafından önerilen bir satranç kitabı"
+msgstr[1] "%{player} tarafından önerilen %{count} satranç kitabı"
