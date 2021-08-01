@@ -12,76 +12,76 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 
 msgid "can't be blank"
-msgstr ""
+msgstr "boş bırakılamaz"
 
 msgid "has already been taken"
-msgstr ""
+msgstr "zaten alındı"
 
 msgid "is invalid"
-msgstr ""
+msgstr "geçersiz"
 
 msgid "must be accepted"
-msgstr ""
+msgstr "kabul edilmesi gerek"
 
 msgid "has invalid format"
-msgstr ""
+msgstr "geçersiz formata sahip"
 
 msgid "has an invalid entry"
-msgstr ""
+msgstr "geçersiz girdiye sahip"
 
 msgid "is reserved"
-msgstr ""
+msgstr "ters çevrilmiş"
 
 msgid "does not match confirmation"
-msgstr ""
+msgstr "doğrulmaya uymuyor"
 
 msgid "is still associated with this entry"
-msgstr ""
+msgstr "hala bu girdiyle bağlantılı"
 
 msgid "are still associated with this entry"
-msgstr ""
+msgstr "hala bu girdiyle bağlantılı"
 
 msgid "should be %{count} character(s)"
 msgid_plural "should be %{count} character(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%{count} karakter olmalı"
+msgstr[1] "%{count} karakter olmalı"
 
 msgid "should have %{count} item(s)"
 msgid_plural "should have %{count} item(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%{count} parça içermeli"
+msgstr[1] "%{count} parça içermeli"
 
 msgid "should be at least %{count} character(s)"
 msgid_plural "should be at least %{count} character(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "en az %{count} karakter olmalı"
+msgstr[1] "en az %{count} karakter olmalı"
 
 msgid "should have at least %{count} item(s)"
 msgid_plural "should have at least %{count} item(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "en az %{count} parça içermeli"
+msgstr[1] "en az %{count} parça içermeli"
 
 msgid "should be at most %{count} character(s)"
 msgid_plural "should be at most %{count} character(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "en fazla %{count} karakter olmalı"
+msgstr[1] "en fazla %{count} karakter olmalı"
 
 msgid "should have at most %{count} item(s)"
 msgid_plural "should have at most %{count} item(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "en fazla %{count} parça içermeli"
+msgstr[1] "en fazla %{count} parça içermeli"
 
 msgid "must be less than %{number}"
-msgstr ""
+msgstr "%{number}'den küçük olmalı"
 
 msgid "must be greater than %{number}"
-msgstr ""
+msgstr "%{number}'den büyük olmalı"
 
 msgid "must be less than or equal to %{number}"
-msgstr ""
+msgstr "%{number}'den küçük veya eşit olmalı"
 
 msgid "must be greater than or equal to %{number}"
-msgstr ""
+msgstr "%{number}'den büyük veya eşit olmalı"
 
 msgid "must be equal to %{number}"
-msgstr ""
+msgstr "%{number}'e eşit olmalı"
