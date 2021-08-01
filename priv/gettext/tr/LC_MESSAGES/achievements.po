@@ -19,4 +19,4 @@ msgstr "Başarılar"
 #, elixir-format
 #: lib/listudy_web/templates/page/achievements.html.eex:2
 msgid "Can you get all achievements?"
-msgstr "Bütün başarıları alabilecek misin?"
+msgstr "Bütün başarıları alabilecek misiniz?"
