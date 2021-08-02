@@ -14,363 +14,363 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:100
 msgid "At first the arrows will show you which moves are in this study. Once you have played these moves twice, the arrows are no longer shown."
-msgstr ""
+msgstr "Başta, oklar size bu çalışmada hangi hamlelerin olduğunu gösterecek. Bu hamleleri iki kere oynadıktan sonra oklar bir daha gösterilmeyecek."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:31
 msgid "At the end of lines the board is only reset after 3 seconds giving you time to review the final position."
-msgstr ""
+msgstr "Hamle serilerinin sonunda son pozisyonu inceleyebilmeniz için tahta 3 saniye sonra sıfırlanır."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:104
 msgid "Chapter"
-msgstr ""
+msgstr "Bölüm"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:16
 msgid "Chapter Selection"
-msgstr ""
+msgstr "Bölüm Seçimi"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:107
 msgid "Create an account to get all the features of Listudy and upload your own studies."
-msgstr ""
+msgstr "Listudy sitesinin tüm özelliklerinden faydalanabilmek ve kendi çalışmalarınızı oluşturabilmek için kayıt olun."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:48
 msgid "Creator"
-msgstr ""
+msgstr "Oluşturan"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:12
 #: lib/listudy_web/templates/study/show.html.eex:41
 msgid "Description"
-msgstr ""
+msgstr "Açıklama"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:108
 msgid "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below."
-msgstr ""
+msgstr "Bir geri dönüşünüz, bir öneriniz veya söyleyecek güzel bir şeyiniz mi var? Aşağıya yorum yapın."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:106
 msgid "Do you like this study? Share it with your friends."
-msgstr ""
+msgstr "Bu çalışmayı beğendiniz mi? Arkadaşlarınızla paylaşın."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/list.html.eex:15
 #: lib/listudy_web/templates/study/show.html.eex:45
 msgid "Edit"
-msgstr ""
+msgstr "Düzenle"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:114
 msgid "Fast board reset"
-msgstr ""
+msgstr "Hızlı tahta sıfırlama"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:24
 msgid "Favorite"
-msgstr ""
+msgstr "Favori"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:30
 #: lib/listudy_web/templates/study/show.html.eex:111
 msgid "Hide Arrows"
-msgstr ""
+msgstr "Okları Gizle"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:105
 msgid "If you like this study make sure to favorite it to have it listed under Your Studies"
-msgstr ""
+msgstr "Bu çalışmayı beğendiyseniz favorileyin ve böylece Kendi Çalışmalarınız kısmında görün"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:33
 msgid "Move delay:"
-msgstr ""
+msgstr "Hamle gecikmesi:"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:16
 #: lib/listudy_web/templates/study/show.html.eex:51
 msgid "Opening"
-msgstr ""
+msgstr "Açılış"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:21
 msgid "Play against Stockfish"
-msgstr ""
+msgstr "Stockfish'e karşı oyna"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:102
 msgid "Right move!"
-msgstr ""
+msgstr "Doğru hamle!"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:112
 msgid "Show Arrows"
-msgstr ""
+msgstr "Okları Göster"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:31
 #: lib/listudy_web/templates/study/show.html.eex:113
 msgid "Slow board reset"
-msgstr ""
+msgstr "Yavaş tahta sıfırlama"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:99
 msgid "Starting training."
-msgstr ""
+msgstr "Alıştırmaya başla."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:101
 msgid "This move is not in the study, try again."
-msgstr ""
+msgstr "Bu hamle çalışmada yok, tekrar deneyin."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:26
 msgid "Unfavorite"
-msgstr ""
+msgstr "Favoriden çıkar"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:109
 msgid "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect."
-msgstr ""
+msgstr "Bugün 100 hamle öğrendiniz. Alıştırmadan tam etkiyi almak için belki bir ara verin veya yarın devam edin."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:110
 msgid "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop."
-msgstr ""
+msgstr "Bugün 250 hamle öğrendiniz. Alıştırmadan en iyi etkiyi almak için yarın devam edin. Veya etmeyin, ben sadece bir metinim, polis değil."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:103
 msgid "You reached the end of this line."
-msgstr ""
+msgstr "Bu hamle serisinin sonuna ulaştınız."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:118
 msgid "fast"
-msgstr ""
+msgstr "hızlı"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:33
 #: lib/listudy_web/templates/study/show.html.eex:120
 msgid "instant"
-msgstr ""
+msgstr "anında"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:119
 msgid "medium"
-msgstr ""
+msgstr "orta"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:117
 msgid "slow"
-msgstr ""
+msgstr "yavaş"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:70
 msgid "Back"
-msgstr ""
+msgstr "Geri"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:9
 msgid "Caro-Kann Defense"
-msgstr ""
+msgstr "Caro-Kann Savunması"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:269
 msgid "Could not download the study from lichess, please check the link"
-msgstr ""
+msgstr "Çalışma lichess'ten indirilemedi, lütfen linki kontrol edin"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:295
 msgid "Could not favorite this study"
-msgstr ""
+msgstr "Bu çalışma favorilenemedi"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:313
 msgid "Could not unfavorite this study"
-msgstr ""
+msgstr "Bu çalışma favoriden çıkarılamadı"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:20
 msgid "Either upload a PGN file or provide a link to a public Lichess study:"
-msgstr ""
+msgstr "Ya bir PGN dosyası yükleyin ya da bir halka açık Lichess çalışmasının linkini verin:"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:38
 msgid "For which side is this study"
-msgstr ""
+msgstr "Bu çalışma hangi taraf için"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:13
 msgid "In this study I work on my 1.e4 openings..."
-msgstr ""
+msgstr "Bu çalışmada 1.e4 açılışlarını inceleyeceğim..."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:43
 msgid "Keep this study private"
-msgstr ""
+msgstr "Bu çalışmayı gizli tut"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:28
 msgid "Lichess Study"
-msgstr ""
+msgstr "Lichess Çalışması"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:278
 msgid "No PGN provided"
-msgstr ""
+msgstr "PGN yüklenmedi"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:245
 msgid "PGN is too big, only 50kb allowed"
-msgstr ""
+msgstr "PGN çok büyük, maksimum 50KB olabilir"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:227
 msgid "Please log in"
-msgstr ""
+msgstr "Lütfen giriş yapın"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:23
 msgid "Select a PGN to upload"
-msgstr ""
+msgstr "Yüklemek için bir PGN seçin"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:292
 msgid "Study favorited"
-msgstr ""
+msgstr "Çalışma favorilendi"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:171
 msgid "Study info updated, PGN changed."
-msgstr ""
+msgstr "Çalışma bilgisi güncellendi, PGN değiştirildi."
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:178
 msgid "Study info updated, no PGN change."
-msgstr ""
+msgstr "Çalışma bilgisi güncellendi, PGN değiştirilmedi."
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:310
 msgid "Study unfavorited"
-msgstr ""
+msgstr "Çalışma favoriden çıkarıldı"
 
 #, elixir-format
 #: lib/listudy_web/controllers/study_controller.ex:273
 msgid "The provided link is not a Lichess study"
-msgstr ""
+msgstr "Verdiğiniz link bir Lichess çalışmasına ait değil"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:8
 msgid "Title"
-msgstr ""
+msgstr "Başlık"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:14
 msgid "Create a Study"
-msgstr ""
+msgstr "Bir Çalışma Yarat"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:13
 msgid "Create a new study and start learning."
-msgstr ""
+msgstr "Bir çalışma yarat ve öğrenmeye başla."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:25
 msgid "Favored Studies"
-msgstr ""
+msgstr "Favorilenmiş Çalışmalar"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:8
 msgid "New Study"
-msgstr ""
+msgstr "Yeni Çalışma"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:15
 msgid "Search for Studies"
-msgstr ""
+msgstr "Çalışma Ara"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/index.html.eex:1
 msgid "Your Studies"
-msgstr ""
+msgstr "Çalışmalarınız"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/new.html.eex:1
 msgid "Create a new Study"
-msgstr ""
+msgstr "Yeni bir Çalışma yarat"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/new.html.eex:9
 msgid "For more information read the Copyright Policy"
-msgstr ""
+msgstr "Detaylı bilgi için Telif Hakkı İlkesini okuyun"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/new.html.eex:8
 msgid "Please remember to only upload PGNs for which you have the rights to publish them. This is especially true, but not limited, for PGN files that you have acquired from paid platforms."
-msgstr ""
+msgstr "Lütfen sadece yayınlamaya hakkınız olduğu PGN dosyalarını yüklemeyi unutmayın. Bu özellikle, ancak sınırlı olmayarak, paralı platformlardan elde ettiğiniz PGN dosyaları için geçerlidir."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/edit.html.eex:33
 msgid "Are you sure?"
-msgstr ""
+msgstr "Emin misiniz?"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/edit.html.eex:33
 msgid "Delete"
-msgstr ""
+msgstr "Sil"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/edit.html.eex:31
 msgid "Delete Study"
-msgstr ""
+msgstr "Çalışmayı Sil"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/edit.html.eex:32
 msgid "This can not be undone!"
-msgstr ""
+msgstr "Geri döndürülemez!"
 
 #, elixir-format
 #: lib/listudy_web/live/study_search_live.ex:12
 msgid "Search"
-msgstr ""
+msgstr "Ara"
 
 #, elixir-format
 #: lib/listudy_web/live/study_search_live.ex:10
 msgid "Search for studies"
-msgstr ""
+msgstr "Çalışma ara"
 
 #, elixir-format
 #: lib/listudy_web/live/study_search_live.ex:24
 #: lib/listudy_web/templates/study/list.html.eex:8
 msgid "by"
-msgstr ""
+msgstr "yayınlayan"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:32
 msgid "Don't repeat the early moves that are already known. Skips to the first branching move in the study."
-msgstr ""
+msgstr "Zaten bilinen erken hamleleri tekrar etmeyin. Çalışmadaki ilk dallanan hamleye atlar."
 
 #, elixir-format
 #: lib/listudy_web/live/study_search_live.ex:14
 msgid "Favorites"
-msgstr ""
+msgstr "Favoriler"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:32
 #: lib/listudy_web/templates/study/show.html.eex:115 lib/listudy_web/templates/study/show.html.eex:116
 msgid "Key Move"
-msgstr ""
+msgstr "Kilit Hamle"
 
 #, elixir-format
 #: lib/listudy_web/live/study_search_live.ex:15
 msgid "Newest"
-msgstr ""
+msgstr "En yeni"
 
 #, elixir-format
 #: lib/listudy_web/live/study_search_live.ex:24
 #: lib/listudy_web/templates/study/list.html.eex:8
 msgid "favorites"
-msgstr ""
+msgstr "favoriler"
