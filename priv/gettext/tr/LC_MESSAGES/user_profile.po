@@ -14,19 +14,19 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/user_profile/show.html.eex:9
 msgid "%{name} does not have any public studies."
-msgstr ""
+msgstr "%{name} hiç halka açık çalışmaya sahip değil."
 
 #, elixir-format
 #: lib/listudy_web/templates/user_profile/show.html.eex:3
 msgid "%{name} has been a member since %{signup}."
-msgstr ""
+msgstr "%{name}, %{signup} tarihinden beri üye."
 
 #, elixir-format
 #: lib/listudy_web/templates/user_profile/show.html.eex:1
 msgid "Profile of %{name}"
-msgstr ""
+msgstr "%{name} Profili"
 
 #, elixir-format
 #: lib/listudy_web/templates/user_profile/show.html.eex:6
 msgid "Public studies by %{name}"
-msgstr ""
+msgstr "%{name} halka açık çalışmaları"
