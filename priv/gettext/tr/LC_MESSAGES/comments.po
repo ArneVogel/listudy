@@ -14,69 +14,69 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:11
 msgid "Are you sure?"
-msgstr ""
+msgstr "Emin misiniz?"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:3
 msgid "Comment"
-msgstr ""
+msgstr "Yorum yap"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:3
 msgid "Comments"
-msgstr ""
+msgstr "Yorumlar"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:11
 msgid "Delete"
-msgstr ""
+msgstr "Sil"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:11
 msgid "Save"
-msgstr ""
+msgstr "Kaydet"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:8
 msgid "by"
-msgstr ""
+msgstr "yazan"
 
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:43
 msgid "Comment could not get created"
-msgstr ""
+msgstr "Yorum oluşturulamadı"
 
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:40
 msgid "Comment created"
-msgstr ""
+msgstr "Yorum oluşturuldu"
 
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:26
 msgid "Comment deleted successfully."
-msgstr ""
+msgstr "Yorum başarıyla silindi."
 
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:48
 msgid "Error"
-msgstr ""
+msgstr "Hata"
 
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:20
 msgid "You're not allowed to do that."
-msgstr ""
+msgstr "Bunu yapamazsınız."
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:16
 msgid "%{register} to comment"
-msgstr ""
+msgstr "Yorum yapmak için %{register}"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:17
 msgid "No comments yet, be the first to write one!"
-msgstr ""
+msgstr "Henüz hiç yorum yapılmamış, ilk yapan ol!"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:15
 msgid "Register"
-msgstr ""
+msgstr "Kayıt ol"

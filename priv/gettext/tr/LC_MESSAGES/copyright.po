@@ -14,54 +14,54 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:12
 msgid "Copyright holders"
-msgstr ""
+msgstr "Telif hakkı sahipleri"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:2
 msgid "English version of the Copyright Policy"
-msgstr ""
+msgstr "Telif hakkı ingilizce versiyonu"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:13
 msgid "If you believe that someone has uploaded or posted content of yours on Listudy.org without your permission, please contact us at: copyright@listudy.org"
-msgstr ""
+msgstr "Eğer birinin size ait olan bir içeriği sizin izniniz olmadan Listudy.org sitesinde paylaştığını veya yayınladığını düşünüyorsanız lütfen iletişime geçin: copyright@listudy.org"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:6
 msgid "Introduction"
-msgstr ""
+msgstr "Giriş"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:4
 msgid "Last edited:"
-msgstr ""
+msgstr "Son değişiklik:"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:16
 msgid "Listudy can change this policy at its discretion."
-msgstr ""
+msgstr "Listudy bu ilkeleri değiştirme hakkını saklı tutar."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:7
 msgid "Listudy respects and recognizes the copyright of third parties. You are only allowed to publish public content on Listudy, for which you have all necessary rights."
-msgstr ""
+msgstr "Listudy üçüncü parti telif haklarını tanır ve onlara saygı duyar. Listudy sitesinde sadece bütün gerekli haklarına sahip olduğunuz, halka açık içerikleri paylaşabilirsiniz."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:15
 msgid "Other"
-msgstr ""
+msgstr "Diğer"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:9
 msgid "PGN files"
-msgstr ""
+msgstr "PGN dosyaları"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:2
 msgid "Translated copyright policies shall only serve as an informal source of information. Please read the english version for the official version applicable to the site."
-msgstr ""
+msgstr "Çevrilmiş telif hakkı ilkeleri sadece bilgilendirme amacı taşır. Siteye uygulanan resmi versiyon için lütfen ingilizce versiyonunu okuyun."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:10
 msgid "You are only allowed to make public studies using PGN files, for which you have all necessary rights to. Do not copy PGN files from other websites for which you do not have the rights. This applies especially, but is not limited to, paid PGN files."
-msgstr ""
+msgstr "Halka açık çalışma oluşturmak sadece bütün gerekli haklarına sahip olduğunuz PGN dosyaları ile mümkündür. Haklarına sahip olmadığınız PGN dosyalarını diğer internet sitelerinden kopyalamayın. Bu özellikle, ancak sınırlı olmayarak, satın alınmış PGN dosyaları için de geçerlidir."
