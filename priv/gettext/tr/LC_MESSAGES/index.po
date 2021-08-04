@@ -86,7 +86,7 @@ msgstr "Sizin için en iyi satranç kitaplarını bulun."
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:67
 msgid "Free & Open Source"
-msgstr "Bedava & Açık Kaynak"
+msgstr "Bedava & Açık Kaynak Kodlu"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:17
@@ -141,7 +141,7 @@ msgstr "Tahtayı 2 hamle öncesinden görerek taktikleri çözüm."
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:9
 msgid "Study Openings"
-msgstr "Açılış Çalış"
+msgstr "Açılış Çalışın"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:71
@@ -206,7 +206,7 @@ msgstr "Görsel Yetenek"
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:2
 msgid "Welcome to %{name}!"
-msgstr "Welcome to %{name}!"
+msgstr "%{name}'ye Hoş Geldiniz!"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:3

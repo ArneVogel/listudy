@@ -189,7 +189,7 @@ msgstr "Hesabı Kapat"
 #: lib/listudy_web/templates/post/index.html.eex:7
 #: lib/listudy_web/templates/post/show.html.eex:3
 msgid "Created at"
-msgstr "Oluşturulan zaman:"
+msgstr "Oluşturulan zaman"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:19
