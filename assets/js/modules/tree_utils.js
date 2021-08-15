@@ -193,5 +193,23 @@ function tree_value(tree, minmax, {filter=function(){return true;}}={
     return minmax(curr_value, minmax_children);
 }
 
+/*
+ * Returns the sum of the values of the tree as well as the maximum possible value
+ */
+function tree_progress(tree) {
+    let value = parseInt(tree.value);
+    if (tree.children.length == 0) {
+        return [value, 5];
+    }
+    let child_values = tree.children.map(x => tree_progress(x));
+    let sum = [value, 5];
+    for (let c of child_values) {
+        sum[0] += c[0];
+        sum[1] += c[1];
 
-export { tree_children, tree_children_filter_sort, tree_possible_moves, tree_move_index, has_children, need_hint, update_value, date_sort, value_sort, tree_get_node, tree_value };
+    }
+    return sum;
+}
+
+
+export { tree_progress, tree_children, tree_children_filter_sort, tree_possible_moves, tree_move_index, has_children, need_hint, update_value, date_sort, value_sort, tree_get_node, tree_value };

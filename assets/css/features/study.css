@@ -38,3 +38,8 @@
     flex: 250px;
     padding: 0.5em;
 }
+
+.study_progress {
+    overflow-y: scroll;
+    max-height: 20em;
+}

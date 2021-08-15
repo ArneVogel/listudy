@@ -5,7 +5,7 @@ const Chess = require('chess.js')
 import { turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
 import { string_hash } from './modules/hash.js';
 import { clear_local_storage } from './modules/localstorage.js';
-import { tree_move_index, tree_children, tree_possible_moves, has_children, tree_value,
+import { tree_progress, tree_move_index, tree_children, tree_possible_moves, has_children, tree_value,
          need_hint, update_value, value_sort, tree_get_node, tree_children_filter_sort } from './modules/tree_utils.js';
 import { generate_move_trees, annotate_pgn } from './modules/tree_from_pgn.js';
 import { sleep } from './modules/sleep.js';
@@ -141,6 +141,7 @@ async function handle_move(orig, dest) {
     }
     store_trees();
     setup_move();
+    update_progress();
 }
 
 function give_hints(access) {
@@ -290,6 +291,12 @@ function setup_trees() {
     window.trees = trees;
 }
 
+/*
+ * Returns the name of the event or a generic Chapter 1 if no event is present
+ */
+function tree_chapter_name(tree_index) {
+    return trees[tree_index].headers.Event || i18n.translation_chapter + " " + (tree_index+1);
+}
 
 // generate the chapter selection below the game board
 // the chapter value is the id for the tree to use
@@ -302,7 +309,7 @@ function setup_chapter_select() {
     for (let i = 0; i < trees.length; ++i) {
         let option = document.createElement("option");
         option.value = i;
-        let name = trees[i].headers.Event || i18n.translation_chapter + " " + (i+1);
+        let name = tree_chapter_name(i);
         option.innerText = name;
         if (i == selected) {
             option.selected = true;
@@ -315,6 +322,7 @@ function setup_chapter_select() {
         localStorage.setItem(select_key, v);
         window.chapter = v;
         start_training();
+        update_progress(); // update the progress bar shown
     };
 }
 
@@ -441,6 +449,39 @@ function get_move_delay() {
     return delay;
 }
 
+/*
+ * Updates the progress modal html
+ */
+async function update_progress() {
+    let d = document.getElementById("study_progress");
+    d.innerHTML = "";
+
+    for (let tree_index in trees) {
+        let chapter_name = tree_chapter_name(tree_index);
+        let tree = trees[tree_index];
+        let progress = tree_progress(trees[tree_index].root[0]);
+        let percent = parseInt( (progress[0] / progress[1]) * 100);
+        let name = document.createElement("b");
+        name.innerText = `${chapter_name} (${percent}%)`;
+        d.appendChild(name);
+        d.innerHTML += `
+        <div class="progress-bar">
+            <span id="progress" class="progress-bar-fill" style="width: ${percent}%;"></span>
+        </div>
+        `
+    }
+
+    let cp = document.getElementById("chapter_progress");
+    let chapter_index = parseInt(chapter);
+    let progress = tree_progress(trees[chapter].root[0]);
+    let percent = parseInt( (progress[0] / progress[1]) * 100);
+    cp.innerHTML = `
+    <div class="progress-bar" title="${percent}%">
+        <span id="progress" class="progress-bar-fill" style="width: ${percent}%;"></span>
+    </div>
+    `
+
+}
 
 function setup_configs() {
     document.getElementById("arrows_toggle").onclick = toggle_arrows;
@@ -464,6 +505,7 @@ function main() {
 
     start_training();
     setup_configs();
+    update_progress();
 }
 
 window.onresize = resize_ground;
