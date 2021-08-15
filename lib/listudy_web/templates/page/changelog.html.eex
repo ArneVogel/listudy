@@ -1,4 +1,6 @@
 <h1><%= dgettext("changelog", "Changelog") %></h1>
+<b>2021-08-15</b>
+<p><%= dgettext("changelog", "Study progress bar") %></p>
 
 <b>2021-04-11</b>
 <% {:safe , changelog} = link dgettext("changelog", "Thank you"), to: Routes.page_path(@conn, :show, @locale, "thanks") %>
