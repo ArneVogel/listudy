@@ -211,5 +211,16 @@ function tree_progress(tree) {
     return sum;
 }
 
+/*
+ * Adds number to all the value of all nodes in the tree
+ */
+function tree_value_add(tree, number) {
+    tree.value += number;
+    tree.value = Math.min(5, Math.max(tree.value, 0));
+    for (let c of tree.children) {
+        tree_value_add(c, number);
+    }
+}
 
-export { tree_progress, tree_children, tree_children_filter_sort, tree_possible_moves, tree_move_index, has_children, need_hint, update_value, date_sort, value_sort, tree_get_node, tree_value };
+
+export { tree_value_add, tree_progress, tree_children, tree_children_filter_sort, tree_possible_moves, tree_move_index, has_children, need_hint, update_value, date_sort, value_sort, tree_get_node, tree_value };

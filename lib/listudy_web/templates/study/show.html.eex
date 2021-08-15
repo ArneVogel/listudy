@@ -121,6 +121,7 @@
   i18n.fast = "<%= dgettext "study", "fast" %>";
   i18n.medium = "<%= dgettext "study", "medium" %>";
   i18n.instant = "<%= dgettext "study", "instant" %>";
+  i18n.confirm_reset_progress = "<%= dgettext "study", "Are you sure you want to delete your study progress?" %>";
 </script>
 
 <div id="progress_modal" class="modal">
@@ -128,6 +129,7 @@
     <span class="modal_close">&times;</span>
     <h3><%= dgettext("study","Study Progress")%></h3>
     <div class="study_progress" id="study_progress"></div>
+    <button id="study_progress_reset" class="primary"><%= dgettext("study", "Reset progress") %></button>
   </div>
 </div>
 

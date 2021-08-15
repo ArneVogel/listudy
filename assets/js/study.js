@@ -5,7 +5,7 @@ const Chess = require('chess.js')
 import { turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
 import { string_hash } from './modules/hash.js';
 import { clear_local_storage } from './modules/localstorage.js';
-import { tree_progress, tree_move_index, tree_children, tree_possible_moves, has_children, tree_value,
+import { tree_value_add, tree_progress, tree_move_index, tree_children, tree_possible_moves, has_children, tree_value,
          need_hint, update_value, value_sort, tree_get_node, tree_children_filter_sort } from './modules/tree_utils.js';
 import { generate_move_trees, annotate_pgn } from './modules/tree_from_pgn.js';
 import { sleep } from './modules/sleep.js';
@@ -480,7 +480,18 @@ async function update_progress() {
         <span id="progress" class="progress-bar-fill" style="width: ${percent}%;"></span>
     </div>
     `
+}
 
+async function setup_progress_reset() {
+    let reset = document.getElementById("study_progress_reset");
+    reset.onclick = function() {
+        if (window.confirm(i18n.confirm_reset_progress)) {
+            for (let c of trees) {
+                tree_value_add(c.root[0], -5);
+            }
+            update_progress();
+        }
+    }
 }
 
 function setup_configs() {
@@ -506,6 +517,7 @@ function main() {
     start_training();
     setup_configs();
     update_progress();
+    setup_progress_reset();
 }
 
 window.onresize = resize_ground;
