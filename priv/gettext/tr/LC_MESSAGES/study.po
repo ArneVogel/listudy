@@ -12,7 +12,7 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:100
+#: lib/listudy_web/templates/study/show.html.eex:103
 msgid "At first the arrows will show you which moves are in this study. Once you have played these moves twice, the arrows are no longer shown."
 msgstr "Başta, oklar size bu çalışmada hangi hamlelerin olduğunu gösterecek. Bu hamleleri iki kere oynadıktan sonra oklar bir daha gösterilmeyecek."
 
@@ -22,7 +22,7 @@ msgid "At the end of lines the board is only reset after 3 seconds giving you ti
 msgstr "Hamle serilerinin sonunda son pozisyonu inceleyebilmeniz için tahta 3 saniye sonra sıfırlanır."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:104
+#: lib/listudy_web/templates/study/show.html.eex:107
 msgid "Chapter"
 msgstr "Bölüm"
 
@@ -32,39 +32,39 @@ msgid "Chapter Selection"
 msgstr "Bölüm Seçimi"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:107
+#: lib/listudy_web/templates/study/show.html.eex:110
 msgid "Create an account to get all the features of Listudy and upload your own studies."
 msgstr "Listudy sitesinin tüm özelliklerinden faydalanabilmek ve kendi çalışmalarınızı oluşturabilmek için kayıt olun."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:48
+#: lib/listudy_web/templates/study/show.html.eex:51
 msgid "Creator"
 msgstr "Oluşturan"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:12
-#: lib/listudy_web/templates/study/show.html.eex:41
+#: lib/listudy_web/templates/study/show.html.eex:44
 msgid "Description"
 msgstr "Açıklama"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:108
+#: lib/listudy_web/templates/study/show.html.eex:111
 msgid "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below."
 msgstr "Bir geri dönüşünüz, bir öneriniz veya söyleyecek güzel bir şeyiniz mi var? Aşağıya yorum yapın."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:106
+#: lib/listudy_web/templates/study/show.html.eex:109
 msgid "Do you like this study? Share it with your friends."
 msgstr "Bu çalışmayı beğendiniz mi? Arkadaşlarınızla paylaşın."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/list.html.eex:15
-#: lib/listudy_web/templates/study/show.html.eex:45
+#: lib/listudy_web/templates/study/show.html.eex:48
 msgid "Edit"
 msgstr "Düzenle"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:114
+#: lib/listudy_web/templates/study/show.html.eex:117
 msgid "Fast board reset"
 msgstr "Hızlı tahta sıfırlama"
 
@@ -75,12 +75,12 @@ msgstr "Favori"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:30
-#: lib/listudy_web/templates/study/show.html.eex:111
+#: lib/listudy_web/templates/study/show.html.eex:114
 msgid "Hide Arrows"
 msgstr "Okları Gizle"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:105
+#: lib/listudy_web/templates/study/show.html.eex:108
 msgid "If you like this study make sure to favorite it to have it listed under Your Studies"
 msgstr "Bu çalışmayı beğendiyseniz favorileyin ve böylece Kendi Çalışmalarınız kısmında görün"
 
@@ -91,7 +91,7 @@ msgstr "Hamle gecikmesi:"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:16
-#: lib/listudy_web/templates/study/show.html.eex:51
+#: lib/listudy_web/templates/study/show.html.eex:54
 msgid "Opening"
 msgstr "Açılış"
 
@@ -101,28 +101,28 @@ msgid "Play against Stockfish"
 msgstr "Stockfish'e karşı oyna"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:102
+#: lib/listudy_web/templates/study/show.html.eex:105
 msgid "Right move!"
 msgstr "Doğru hamle!"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:112
+#: lib/listudy_web/templates/study/show.html.eex:115
 msgid "Show Arrows"
 msgstr "Okları Göster"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:31
-#: lib/listudy_web/templates/study/show.html.eex:113
+#: lib/listudy_web/templates/study/show.html.eex:116
 msgid "Slow board reset"
 msgstr "Yavaş tahta sıfırlama"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:99
+#: lib/listudy_web/templates/study/show.html.eex:102
 msgid "Starting training."
 msgstr "Alıştırmaya başla."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:101
+#: lib/listudy_web/templates/study/show.html.eex:104
 msgid "This move is not in the study, try again."
 msgstr "Bu hamle çalışmada yok, tekrar deneyin."
 
@@ -132,38 +132,38 @@ msgid "Unfavorite"
 msgstr "Favoriden çıkar"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:109
+#: lib/listudy_web/templates/study/show.html.eex:112
 msgid "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect."
 msgstr "Bugün 100 hamle öğrendiniz. Alıştırmadan tam etkiyi almak için belki bir ara verin veya yarın devam edin."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:110
+#: lib/listudy_web/templates/study/show.html.eex:113
 msgid "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop."
 msgstr "Bugün 250 hamle öğrendiniz. Alıştırmadan en iyi etkiyi almak için yarın devam edin. Veya etmeyin, ben sadece bir metinim, polis değil."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:103
+#: lib/listudy_web/templates/study/show.html.eex:106
 msgid "You reached the end of this line."
 msgstr "Bu hamle serisinin sonuna ulaştınız."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:118
+#: lib/listudy_web/templates/study/show.html.eex:121
 msgid "fast"
 msgstr "hızlı"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:33
-#: lib/listudy_web/templates/study/show.html.eex:120
+#: lib/listudy_web/templates/study/show.html.eex:123
 msgid "instant"
 msgstr "anında"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:119
+#: lib/listudy_web/templates/study/show.html.eex:122
 msgid "medium"
 msgstr "orta"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:117
+#: lib/listudy_web/templates/study/show.html.eex:120
 msgid "slow"
 msgstr "yavaş"
 
@@ -360,7 +360,7 @@ msgstr "Favoriler"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:32
-#: lib/listudy_web/templates/study/show.html.eex:115 lib/listudy_web/templates/study/show.html.eex:116
+#: lib/listudy_web/templates/study/show.html.eex:118 lib/listudy_web/templates/study/show.html.eex:119
 msgid "Key Move"
 msgstr "Kilit Hamle"
 
@@ -374,3 +374,23 @@ msgstr "En yeni"
 #: lib/listudy_web/templates/study/list.html.eex:8
 msgid "favorites"
 msgstr "favoriler"
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:124
+msgid "Are you sure you want to delete your study progress?"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:36
+msgid "Progress"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:132
+msgid "Reset progress"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:130
+msgid "Study Progress"
+msgstr ""

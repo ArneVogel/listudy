@@ -12,7 +12,7 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:100
+#: lib/listudy_web/templates/study/show.html.eex:103
 msgid "At first the arrows will show you which moves are in this study. Once you have played these moves twice, the arrows are no longer shown."
 msgstr "Au début, les flèches vous montreront quels coups sont dans cette étude. Une fois que vous avez joué ces coups deux fois, les flèches ne sont plus affichées."
 
@@ -22,7 +22,7 @@ msgid "At the end of lines the board is only reset after 3 seconds giving you ti
 msgstr "À la fin des coups, le plateau n'est réinitialisé qu'après 3 secondes, ce qui vous laisse le temps de revoir la position finale."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:104
+#: lib/listudy_web/templates/study/show.html.eex:107
 msgid "Chapter"
 msgstr "Chapitre"
 
@@ -32,39 +32,39 @@ msgid "Chapter Selection"
 msgstr "Sélection du chapitre"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:107
+#: lib/listudy_web/templates/study/show.html.eex:110
 msgid "Create an account to get all the features of Listudy and upload your own studies."
 msgstr "Créez un compte pour obtenir toutes les fonctionnalités de Listudy et uploader vos propres études."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:48
+#: lib/listudy_web/templates/study/show.html.eex:51
 msgid "Creator"
 msgstr "Créateur"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:12
-#: lib/listudy_web/templates/study/show.html.eex:41
+#: lib/listudy_web/templates/study/show.html.eex:44
 msgid "Description"
 msgstr "Description"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:108
+#: lib/listudy_web/templates/study/show.html.eex:111
 msgid "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below."
 msgstr "Avez-vous des commentaires, des suggestions ou voulez-vous dire quelque chose de gentil? Commentez l'étude ci-dessous."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:106
+#: lib/listudy_web/templates/study/show.html.eex:109
 msgid "Do you like this study? Share it with your friends."
 msgstr "Aimez-vous cette étude? Partage-la avec tes amis."
 
 #, elixir-format
 #: lib/listudy_web/templates/study/list.html.eex:15
-#: lib/listudy_web/templates/study/show.html.eex:45
+#: lib/listudy_web/templates/study/show.html.eex:48
 msgid "Edit"
 msgstr "Éditer"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:114
+#: lib/listudy_web/templates/study/show.html.eex:117
 msgid "Fast board reset"
 msgstr "Réinitialisation rapide du plateau"
 
@@ -75,12 +75,12 @@ msgstr "Favoris"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:30
-#: lib/listudy_web/templates/study/show.html.eex:111
+#: lib/listudy_web/templates/study/show.html.eex:114
 msgid "Hide Arrows"
 msgstr "Masquer les flèches"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:105
+#: lib/listudy_web/templates/study/show.html.eex:108
 msgid "If you like this study make sure to favorite it to have it listed under Your Studies"
 msgstr "Si vous aimez cette étude, assurez-vous de la mettre en favori pour qu'elle soit répertoriée sous Vos études"
 
@@ -91,7 +91,7 @@ msgstr "Délai du coup:"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/form.html.eex:16
-#: lib/listudy_web/templates/study/show.html.eex:51
+#: lib/listudy_web/templates/study/show.html.eex:54
 msgid "Opening"
 msgstr "Ouverture"
 
@@ -101,28 +101,28 @@ msgid "Play against Stockfish"
 msgstr "Jouer contre Stockfish"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:102
+#: lib/listudy_web/templates/study/show.html.eex:105
 msgid "Right move!"
 msgstr "Bon coup!"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:112
+#: lib/listudy_web/templates/study/show.html.eex:115
 msgid "Show Arrows"
 msgstr "Afficher les flèches"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:31
-#: lib/listudy_web/templates/study/show.html.eex:113
+#: lib/listudy_web/templates/study/show.html.eex:116
 msgid "Slow board reset"
 msgstr "Réinitialisation lent du plateau"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:99
+#: lib/listudy_web/templates/study/show.html.eex:102
 msgid "Starting training."
 msgstr "Début de la formation."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:101
+#: lib/listudy_web/templates/study/show.html.eex:104
 msgid "This move is not in the study, try again."
 msgstr "Ce coup n'est pas dans l'étude, réessayez."
 
@@ -132,38 +132,38 @@ msgid "Unfavorite"
 msgstr "Enlever des favoris"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:109
+#: lib/listudy_web/templates/study/show.html.eex:112
 msgid "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect."
 msgstr "Vous avez appris 100 coups aujourd'hui. Faites peut-être une pause ou revenez demain pour profiter pleinement de l'effet de l'entraînement."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:110
+#: lib/listudy_web/templates/study/show.html.eex:113
 msgid "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop."
 msgstr "Vous avez appris 250 coups aujourd'hui. Pour le meilleur effet d'entraînement, revenez demain. Ou pas, je suis juste un texte pas un flic."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:103
+#: lib/listudy_web/templates/study/show.html.eex:106
 msgid "You reached the end of this line."
 msgstr "Vous avez atteint la fin de cette ligne."
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:118
+#: lib/listudy_web/templates/study/show.html.eex:121
 msgid "fast"
 msgstr "rapide"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:33
-#: lib/listudy_web/templates/study/show.html.eex:120
+#: lib/listudy_web/templates/study/show.html.eex:123
 msgid "instant"
 msgstr "instant"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:119
+#: lib/listudy_web/templates/study/show.html.eex:122
 msgid "medium"
 msgstr "moyen"
 
 #, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:117
+#: lib/listudy_web/templates/study/show.html.eex:120
 msgid "slow"
 msgstr "lent"
 
@@ -360,7 +360,7 @@ msgstr "Favoris"
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:32
-#: lib/listudy_web/templates/study/show.html.eex:115 lib/listudy_web/templates/study/show.html.eex:116
+#: lib/listudy_web/templates/study/show.html.eex:118 lib/listudy_web/templates/study/show.html.eex:119
 msgid "Key Move"
 msgstr "Coup clé"
 
@@ -374,3 +374,23 @@ msgstr "Les plus récents"
 #: lib/listudy_web/templates/study/list.html.eex:8
 msgid "favorites"
 msgstr "favoris"
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:124
+msgid "Are you sure you want to delete your study progress?"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:36
+msgid "Progress"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:132
+msgid "Reset progress"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/study/show.html.eex:130
+msgid "Study Progress"
+msgstr ""

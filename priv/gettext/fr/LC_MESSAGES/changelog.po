@@ -12,32 +12,42 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 
 #, elixir-format
-#: lib/listudy_web/templates/page/changelog.html.eex:12
+#: lib/listudy_web/templates/page/changelog.html.eex:15
 msgid "Added %{pieceless}"
 msgstr "Ajouté %{pieceless}"
 
 #, elixir-format
-#: lib/listudy_web/templates/page/changelog.html.eex:8
+#: lib/listudy_web/templates/page/changelog.html.eex:11
 msgid "Added pages %{changelog}, %{thanks}, and %{pieceless_info}"
 msgstr "Pages ajoutées %{changelog}, %{thanks}, et %{pieceless_info}"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:1
-#: lib/listudy_web/templates/page/changelog.html.eex:5
+#: lib/listudy_web/templates/page/changelog.html.eex:8
 msgid "Changelog"
 msgstr "Historique des changements"
 
 #, elixir-format
-#: lib/listudy_web/templates/page/changelog.html.eex:11
+#: lib/listudy_web/templates/page/changelog.html.eex:14
 msgid "Pieceless Tactics"
 msgstr "Tactiques sans pièces"
 
 #, elixir-format
-#: lib/listudy_web/templates/page/changelog.html.eex:6
+#: lib/listudy_web/templates/page/changelog.html.eex:9
 msgid "Pieceless info page"
 msgstr "Page d'information pour les Tactiques sans pièces"
 
 #, elixir-format
-#: lib/listudy_web/templates/page/changelog.html.eex:4
+#: lib/listudy_web/templates/page/changelog.html.eex:7
 msgid "Thank you"
 msgstr "Merci"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/changelog.html.eex:3
+msgid "Study progress bar"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/changelog.html.eex:4
+msgid "Study reset option"
+msgstr ""
