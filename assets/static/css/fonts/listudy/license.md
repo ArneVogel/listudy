@@ -15,6 +15,8 @@ Licensed under GPL: https://github.com/Automattic/genericons-neue/blob/master/LI
 
 ---
 
-Finger pointing right by Font Awesome
+Finger pointing right by Font Awesome 4.0
+Line chart by Font Awesome 4.0
 
 Licensed under CC BY 4.0 https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
+
