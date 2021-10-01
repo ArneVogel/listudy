@@ -54,6 +54,40 @@ async function handle_move(orig, dest) {
     } else {
         ai_move();
     }
+    
+    fen_update();
+}
+
+// the fen is visible in multiple placed for users
+// use this as the single place to update them all
+function fen_update() {
+    update_fen_display();
+    update_lichess_analysis_link();
+}
+function update_fen_display() {
+    let element = document.getElementById("display_fen");
+    element.value = chess.fen();
+}
+
+function setup_fen_click_select_all() {
+    let element = document.getElementById("display_fen");
+    element.onclick = function() {
+        this.select();
+    }
+}
+
+function setup_copy_fen_button() {
+    let copy = document.getElementById("copy_fen");
+    copy.onclick = function() {
+        let element = document.getElementById("display_fen");
+        element.select();
+        document.execCommand('copy');
+    }
+}
+
+function update_lichess_analysis_link() {
+    let lichess = document.getElementById("lichess_analysis");
+    lichess.href = "https://lichess.org/analysis/" + chess.fen();
 }
 
 function move(orig,dest) {
@@ -128,6 +162,9 @@ function main() {
     document.getElementById("reset").addEventListener("click", main);
     document.getElementById("error").classList.add("hidden");
     document.getElementById("todo").classList.remove("hidden");
+    fen_update();
+    setup_fen_click_select_all();
+    setup_copy_fen_button();
 }
 
 window.main = main;

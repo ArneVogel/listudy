@@ -24,6 +24,7 @@
 
     <button id="reset"><%= dgettext("endgame", "Reset") %></button>
 
+
     <%= if @next == "back" do %>
       <%= raw next_button(Routes.endgame_path(@conn, :chapter, @locale, @chapter_slug)) %>
     <% else %>
@@ -32,6 +33,8 @@
 
   </div>
 </div>
+
+<p>Fen: <input id="display_fen"></input> <a id="copy_fen">Copy</a> <a id="lichess_analysis">Lichess Analysis</p></p>
 <script src="/stockfish/stockfish.js"></script>
 
 <% [fen,result] = @game %>
