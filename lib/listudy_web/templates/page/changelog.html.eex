@@ -1,4 +1,6 @@
 <h1><%= dgettext("changelog", "Changelog") %></h1>
+<b>2021-10-01</b>
+<p><%= dgettext("changelog", "Make fen copyable on endgame pages as well as link to lichess analysis page for tablebase analysis.") %></p>
 <b>2021-08-15</b>
 <p><%= dgettext("changelog", "Study progress bar") %></p>
 <p><%= dgettext("changelog", "Study reset option") %></p>
