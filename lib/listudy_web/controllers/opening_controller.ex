@@ -92,7 +92,9 @@ defmodule ListudyWeb.OpeningController do
   end
 
   defp name(slug) do
-    "priv/static/images/opening/" <> slug <> ".svg"
+    path = "priv/static/images/opening/"
+    File.mkdir(path)
+    path <> slug <> ".svg"
   end
 
   defp generate_svg(output, moves) do
