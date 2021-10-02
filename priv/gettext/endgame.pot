@@ -289,12 +289,12 @@ msgid "Reset"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/endgame/game.html.eex:45
+#: lib/listudy_web/templates/endgame/game.html.eex:48
 msgid "Success!"
 msgstr ""
 
 #, elixir-format
-#: lib/listudy_web/templates/endgame/game.html.eex:46
+#: lib/listudy_web/templates/endgame/game.html.eex:49
 msgid "Try again!"
 msgstr ""
 
