@@ -25,7 +25,7 @@ defmodule ListudyWeb.Plugs.CSP do
     "default-src 'self'; \
     base-uri 'self'; \
     object-src 'none'; \
-    connect-src 'self' #{ws_url(conn)} #{ws_url(conn, "wss")}; \
+    connect-src 'self' wss://listudy.org ws://listudy.org #{ws_url(conn)} #{ws_url(conn, "wss")}; \
     script-src 'self' 'unsafe-inline' 'unsafe-eval' 'nonce-#{
       conn.private.plug_session["csp_nonce"]
     }'; \
