@@ -1,0 +1,207 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: vi\n"
+"Plural-Forms: nplurals=1\n"
+
+#, elixir-format
+#: service.html.eex:24
+msgid "Both registered and unregistered users have rights to protect their property, privacy, and identity unless they have consented or agree to making their identity public. Most information on this topic can be found in our Privacy Policy."
+msgstr "Cả người dùng đã đăng ký và chưa đăng ký đều có quyền bảo vệ tài sản, quyền riêng tư và danh tính của họ trừ khi họ đã đồng ý hoặc đồng ý công khai danh tính của họ. Hầu hết thông tin về chủ đề này có thể được tìm thấy trong chính sách bảo mật của chúng tôi."
+
+#, elixir-format
+#: service.html.eex:28
+msgid "By agreeing to these Terms, registered Users can have access to all of Listudy’ features and are free to use them for their own personal, educational, charitable, or developmental purposes. Listudy itself is also free/libre open-source software licensed under the GNU AGPL. This doesn’t prevent Listudy from having the ultimate decision in what kind of use of the Services is appropriate."
+msgstr "Bằng cách đồng ý với các điều khoản này, người dùng đã đăng ký có thể truy cập vào tất cả các tính năng của Listudy và được tự do sử dụng chúng cho mục đích cá nhân, giáo dục, từ thiện hoặc phát triển của riêng họ. Bản thân Listudy cũng là phần mềm nguồn mở miễn phí / libre được cấp phép theo GNU AGPL. Điều này không ngăn listudy có quyết định cuối cùng trong loại sử dụng dịch vụ nào là phù hợp."
+
+#, elixir-format
+#: service.html.eex:8
+msgid "By using this website (the “Site”) and services (together with the Site, the “Services”) offered by Listudy.org (together with our subsidiaries, affiliates, representatives, and directors – collectively “Listudy”, “we”, or “us”) you’re agreeing to these legally binding rules (the “Terms”). You’re also agreeing to our Privacy Policy and Cookie Policy, and agreeing to follow any other rules on the Site."
+msgstr "Bằng cách sử dụng trang web này, và các dịch vụ (cùng trang web với “các dịch vụ”) được cung cấp bởi Listudy.org (cùng các công ty con, chi nhánh, người đại diện và các giám đốc của chúng tôi - viết chung là “Listudy”, “we”, hoặc “us”) bạn đồng ý với các quy tắc ràng buộc về mặt pháp lý này (“Các điều kiện”). Bạn cũng đồng ý với chính sách bảo mật và chính sách Cookie của chúng tôi và đồng ý tuân theo bất kỳ các quy tắc khác trên trang web."
+ 
+#, elixir-format
+#: service.html.eex:34
+msgid "Closing and Terminating your Account"
+msgstr "Đóng và chấm dứt tài khoản của bạn"
+
+#, elixir-format
+#: service.html.eex:55
+msgid "Copyright"
+msgstr "Bản quyền"
+
+#, elixir-format
+#: service.html.eex:12
+msgid "Creating an Account"
+msgstr "Tạo tài khoản"
+
+#, elixir-format
+#: service.html.eex:18
+msgid "Don’t impersonate anyone else or choose names that are offensive or that violate anyone’s rights. If you don’t follow these rules, we reserve the right to close your account without warning."
+msgstr "Không mạo danh bất kỳ ai khác hoặc chọn tên gây khó chịu hoặc vi phạm quyền của bất kỳ ai. Nếu bạn không tuân theo các quy tắc này, chúng tôi có quyền đóng tài khoản của bạn mà không cần cảnh báo."
+
+#, elixir-format
+#: service.html.eex:2
+msgid "English version of the Terms of Service"
+msgstr "Phiên bản tiếng Anh của điều khoản dịch vụ"
+
+#, elixir-format
+#: service.html.eex:61
+msgid "If you believe your content has been copied in a way that constitutes copyright infringement please alert us by contacting us at copyright@listudy.org."
+msgstr "Nếu bạn tin rằng nội dung của bạn đã được sao chép theo cách cấu thành vi phạm bản quyền, vui lòng cảnh báo chúng tôi bằng cách liên hệ với chúng tôi theo copyright@listudy.org."
+
+#, elixir-format
+#: service.html.eex:32
+msgid "In all circumstances, we may retain certain information as required by law or necessary for our legitimate operating purposes. All of the provisions within this agreement survive the termination of an account."
+msgstr "Trong mọi trường hợp, chúng tôi có thể giữ lại một số thông tin nhất định theo yêu cầu của pháp luật hoặc cần thiết cho mục đích hoạt động hợp pháp của chúng tôi. Tất cả các điều khoản trong thỏa thuận này đều tồn tại sau khi chấm dứt tài khoản."
+
+#, elixir-format
+#: service.html.eex:4
+msgid "Last edited:"
+msgstr "Sửa đổi lần cuối:"
+
+#, elixir-format
+#: service.html.eex:26
+msgid "Listudy believes that users should have their public information, identity, and data protected as strongly as possible. We use European Union data protection law as our baseline, and in many respects go further than what the law requires. We’ve also chosen to extend these rights to all users, not just those under a European Union jurisdiction."
+msgstr "Listudy tin rằng người dùng nên có thông tin công khai, danh tính và dữ liệu của họ được bảo vệ mạnh mẽ nhất có thể. Chúng tôi sử dụng luật bảo vệ dữ liệu của liên minh châu Âu làm cơ sở của chúng tôi, và trong nhiều khía cạnh đi xa hơn những gì luật pháp yêu cầu. Chúng tôi cũng đã chọn mở rộng các quyền này cho tất cả người dùng, không chỉ những người thuộc thẩm quyền của liên minh châu Âu."
+
+#, elixir-format
+#: service.html.eex:57
+msgid "Listudy is licensed under the GNU AGPL license."
+msgstr "Listudy được cấp phép theo giấy phép GNU AGPL."
+
+#, elixir-format
+#: service.html.eex:69
+msgid "Listudy makes no warranty or representation and disclaims all responsibility and liability for the completeness, availability, timeliness, accuracy and security of the content and services."
+msgstr "Listudy không bảo hành hoặc đảm bảo và từ chối tất cả trách nhiệm (kể cả pháp lý) đối với các tính đầy đủ, khả dụng, kịp thời, chính xác và bảo mật của nội dung và các dịch vụ."
+
+#, elixir-format
+#: service.html.eex:59
+msgid "Listudy respects the intellectual property rights of others and expects Users of the Services to do the same. Listudy reserves the right to remove content alleged to be infringing without prior notice at our sole discretion and without liability to you. We will respond to notices of alleged copyright infringement, that comply with applicable law and are properly provided to us, as described in our copyright policy."
+msgstr "Listudy tôn trọng quyền sở hữu trí tuệ của người khác và mong đợi người dùng dịch vụ cũng làm như vậy. Listudy có quyền xóa nội dung bị cáo buộc vi phạm mà không cần thông báo trước theo quyết định riêng của chúng tôi và không có trách nhiệm với bạn. Chúng tôi sẽ trả lời các thông báo về cáo buộc vi phạm bản quyền, tuân thủ luật pháp hiện hành và được cung cấp đúng cho chúng tôi, như được mô tả trong chính sách bản quyền của chúng tôi."
+
+#, elixir-format
+#: service.html.eex:73
+msgid "No advice, information or written correspondence whether oral or written procured from Listudy entities or through Listudy services will create any warranty or representation not expressly made herein."
+msgstr "Sẽ không có lời khuyên, thông tin hoặc văn bản dù bằng miệng hoặc được viết, được có từ Listudy hoặc thông qua các dịch vụ của Listudy, có giá trị làm bất kỳ bảo hành hay đảm bảo nào nếu không được đưa ra một cách rõ ràng ở đây."
+
+#, elixir-format
+#: service.html.eex:53
+msgid "Our privacy policy describes how we handle the information you provide to us when you use our services. You understand that through your use of the services you consent to the collection and use, as set out in the privacy policy, of this information. Listudy currently follows European Data Protection, and applies these rights to users of all nationalities, not just European users."
+msgstr "Chính sách bảo mật của chúng tôi mô tả cách chúng tôi xử lý thông tin bạn cung cấp cho chúng tôi khi bạn sử dụng dịch vụ của chúng tôi. Bạn hiểu rằng thông qua việc sử dụng các dịch vụ mà bạn đồng ý thu thập và sử dụng, như được nêu trong chính sách bảo mật, của thông tin này. Listudy hiện đang tuân theo bảo vệ dữ liệu châu Âu và áp dụng các quyền này cho người dùng thuộc mọi quốc tịch, không chỉ người dùng châu Âu."
+
+#, elixir-format
+#: service.html.eex:38
+msgid "Our rights"
+msgstr "Quyền của chúng tôi"
+
+#, elixir-format
+#: service.html.eex:51
+msgid "Privacy"
+msgstr "Quyền riêng tư"
+
+#, elixir-format
+#: service.html.eex:67
+msgid "Services made available are on an as is and as available basis. We’re not responsible for whether this stuff actually works, though if it does that’s an added bonus to all of us."
+msgstr "Các dịch vụ được cung cấp trên cơ sở hiện như đang có và có sẵn. Chúng tôi không chịu trách nhiệm về việc liệu trang web này có thực sự hoạt động hay không, còn nếu nó làm được thì đó là phần thưởng bổ sung cho tất cả chúng ta."
+
+#, elixir-format
+#: service.html.eex:65
+msgid "Stuff we’re not responsible for"
+msgstr "Những thứ chúng tôi không chịu trách nhiệm"
+
+#, elixir-format
+#: service.html.eex:49
+msgid "This list is non-exhaustive, and we reserve the right to add, edit, or remove entries from it at any time."
+msgstr "Danh sách này không đầy đủ và chúng tôi có quyền thêm, chỉnh sửa hoặc loại bỏ các mục khỏi nó bất cứ lúc nào."
+
+#, elixir-format
+#: service.html.eex:6
+msgid "This page explains our terms of use. When you use Listudy, you’re agreeing to all the rules on this page. Some of them need to be expressed in specific legal language but we’ve done our best to offer you clear and simple explanations of what everything means."
+msgstr "Trang này giải thích các điều khoản sử dụng của chúng tôi. Khi bạn sử dụng Listudy, bạn đồng ý với tất cả các quy tắc trên trang này. Một số quy tắc cần phải được thể hiện bằng ngôn ngữ pháp lý cụ thể nhưng chúng tôi đã cố gắng hết sức để cung cấp cho bạn những lời giải thích rõ ràng và đơn giản về ý nghĩa của mọi thứ."
+
+#, elixir-format
+#: service.html.eex:39
+msgid "To operate, we need to be able to maintain control over what happens on our website. To summarise, we reserve the right to make decisions to protect the health and integrity of our systems. We’ll only use these powers when we absolutely must."
+msgstr "Để hoạt động, chúng tôi cần có khả năng duy trì quyền kiểm soát những gì xảy ra trên trang web của chúng tôi. Tóm lại, chúng tôi có quyền đưa ra quyết định để bảo vệ sức khỏe và tính toàn vẹn của hệ thống của chúng tôi. Chúng tôi sẽ chỉ sử dụng những quyền này chỉ khi chúng tôi bắt buộc phải làm."
+
+#, elixir-format
+#: service.html.eex:14
+msgid "To sign up for a Listudy account, you need to be 16 or over. You’re responsible for your account and all the activity on it."
+msgstr "Để đăng ký tài khoản Listudy, bạn cần từ 16 tuổi trở lên. Bạn chịu trách nhiệm về tài khoản của mình và tất cả các hoạt động trên đó."
+
+#, elixir-format
+#: service.html.eex:2
+msgid "Translated terms of service shall only serve as an informal source of information. Please read the english version for the official version applicable to the site."
+msgstr "Các điều khoản được dịch chỉ được phục vụ như một nguồn thông tin không chính thức. Vui lòng đọc phiên bản tiếng Anh cho phiên bản chính thức áp dụng cho trang web."
+
+#, elixir-format
+#: service.html.eex:22
+msgid "User Rights"
+msgstr "Quyền người dùng"
+
+#, elixir-format
+#: service.html.eex:30
+msgid "Users are responsible for the content they post. Some examples of content would include information, data, text, and pgn files. We won’t be responsible for the content you post."
+msgstr "Người dùng chịu trách nhiệm về nội dung họ đăng. Một số ví dụ về nội dung sẽ bao gồm thông tin, dữ liệu, văn bản và tệp PGN. Chúng tôi sẽ không chịu trách nhiệm về nội dung bạn đăng."
+
+#, elixir-format
+#: service.html.eex:45
+msgid "We are not responsible for any loss, damage, or harm that may arise from any occasional downtime."
+msgstr "Chúng tôi không chịu trách nhiệm cho bất kỳ mất mát, thiệt hại hoặc thiệt hại nào có thể phát sinh bất kỳ thời gian nào trang web không hoạt động."
+
+#, elixir-format
+#: service.html.eex:41
+msgid "We can make changes to the Listudy Site and Services without letting you know in advance, or being liable for any loss, damage, or harm that arises as a result."
+msgstr "Chúng tôi có thể thực hiện thay đổi đối với trang web và dịch vụ Listudy mà không cho bạn biết trước hoặc chịu trách nhiệm cho bất kỳ tổn thất, thiệt hại hoặc thiệt hại nào phát sinh."
+
+#, elixir-format
+#: service.html.eex:71
+msgid "We disclaim all responsibility for any harm or loss of any data to your computer system, the deletion of or failure to store or transmit communications or content maintained by the services or whether the services will meet your requirements or be available on an uninterrupted, secure or error-free basis. Listudy cannot be held responsible for any loss, financial or otherwise, from third party sources, including misrepresentations, negligence or fraud."
+msgstr "Chúng tôi từ chối mọi trách nhiệm đối với bất kỳ thiệt hại hoặc hư hỏng nào đối với hệ thống máy tính của bạn, xóa hoặc không lưu trữ hoặc truyền thông tin liên lạc hoặc nội dung được duy trì bởi các dịch vụ hoặc liệu các dịch vụ sẽ đáp ứng các yêu cầu của bạn hoặc có sẵn trên cơ sở không bị gián đoạn, an toàn hoặc không có lỗi. Listudy không thể chịu trách nhiệm cho bất kỳ hư hỏng, thiệt hại tài chính hoặc mọi thứ khác, do bên thứ ba gây ra, bao gồm xuyên tạc, sơ suất hoặc gian lận."
+
+#, elixir-format
+#: service.html.eex:43
+msgid "We have the ultimate say in who can use our Site and Services. We can cancel accounts, or decline to let Users use our Services."
+msgstr "Chúng tôi có tiếng nói cuối cùng trong việc ai có thể sử dụng trang web và dịch vụ của chúng tôi. Chúng tôi có thể hủy tài khoản hoặc từ chối cho phép người dùng sử dụng dịch vụ của chúng tôi."
+
+#, elixir-format
+#: service.html.eex:10
+msgid "We may change these terms from time to time. If we do, we’ll let you know about any significant or material changes, by notifying you on the Site. New versions of the terms will never apply retroactively – we’ll tell you the exact date they go into effect. If you continue using Listudy after a change, that means you accept the new terms."
+msgstr "Chúng tôi có thể thay đổi các điều khoản này nếu cần. Nếu xảy ra, chúng tôi sẽ cho bạn biết về bất kỳ thay đổi quan trọng hoặc đáng kể nào, bằng cách thông báo cho bạn trên trang web. Các phiên bản mới của các điều khoản sẽ không bao giờ áp dụng hồi tố - chúng tôi sẽ cho bạn biết ngày chính xác chúng có hiệu lực. Nếu bạn tiếp tục sử dụng Listudy sau khi thay đổi, điều đó có nghĩa là bạn chấp nhận các điều khoản mới."
+
+#, elixir-format
+#: service.html.eex:47
+msgid "We reserve the right to contact the relevant authorities if a User is breaking the law, and share relevant data with the authorities, if harm or damage occurs either against our Users or against the operation of our infrastructure."
+msgstr "Chúng tôi có quyền liên hệ với các cơ quan có liên quan nếu người dùng vi phạm pháp luật và chia sẻ dữ liệu liên quan với chính quyền, nếu thiệt hại hoặc thiệt hại xảy ra đối với người dùng của chúng tôi hoặc chống lại hoạt động của cơ sở hạ tầng của chúng tôi."
+
+#, elixir-format
+#: service.html.eex:20
+msgid "When these terms discuss “Users” or a “User”, we’ll be referring to both registered and unregistered users, unless it relates to features, information or data an unregistered User does not or cannot have access to."
+msgstr "Khi các điều khoản này thảo luận về “Các người dùng” hoặc “Người dùng”, chúng tôi sẽ đề cập đến cả người dùng đã đăng ký và chưa đăng ký, trừ khi nó liên quan đến các tính năng, thông tin hoặc dữ liệu mà người dùng chưa đăng ký không hoặc không thể truy cập."
+
+#, elixir-format
+#: service.html.eex:16
+msgid "You can browse Listudy and use some of our Services without registering an account. But to use all of Listudy’ functions, you’ll need to register. This is done by choosing a username, setting a password, and securing it with an email address. If you don’t submit accurate information, you might not be able to access your account. You can choose any email (even fictitious ones). Just make sure to remember the email, because it is used to log in."
+msgstr "Bạn có thể truy cập Listudy và sử dụng một số dịch vụ của chúng tôi mà không cần đăng ký tài khoản. Nhưng để sử dụng tất cả các chức năng của Listudy, bạn sẽ cần phải đăng ký. Điều này được thực hiện bằng cách chọn tên người dùng, đặt mật khẩu và bảo mật mật khẩu bằng địa chỉ email. Nếu bạn không gửi thông tin chính xác, bạn có thể không thể truy cập vào tài khoản của mình. Bạn có thể chọn bất kỳ email nào (ngay cả những email hư cấu). Chỉ cần đảm bảo nhớ email, bởi vì nó được sử dụng để đăng nhập."
+
+#, elixir-format
+#: service.html.eex:35
+msgid "You can close your account at any time."
+msgstr "Bạn có thể đóng tài khoản của mình bất cứ lúc nào."
+
+#, elixir-format
+#: service.html.eex:36
+msgid "You can terminate your account at any time by contacting the Listudy administrators. This will permanently erase your account and all content and data. Although we may retain certain information as required by law or as necessary for our legitimate operating purposes. "
+msgstr "Bạn có thể chấm dứt tài khoản của mình bất cứ lúc nào bằng cách liên hệ với quản trị viên Listudy. Điều này sẽ xóa vĩnh viễn tài khoản của bạn và tất cả nội dung và dữ liệu. Mặc dù chúng tôi có thể giữ lại một số thông tin nhất định theo yêu cầu của pháp luật hoặc khi cần thiết cho mục đích hoạt động hợp pháp của chúng tôi."
+
+#, elixir-format
+#: service.html.eex:63
+msgid "You retain your rights to any content you submit, post or create through the services including chess games. By submitting, posting or displaying content on or through our services, you grant us a global, non-exclusive, royalty-free license, with the right to sublicense, to use, copy, reproduce, process, adapt, modify, publish, transmit, display and distribute such content in any and all media or distribution channels. Such additional uses may be made without compensation paid to you with respect to the content you make available through the services. This does not remove your rights from other 3rd party sites, such as Twitch or YouTube."
+msgstr "Bạn giữ quyền đối với bất kỳ nội dung nào bạn gửi, đăng hoặc tạo thông qua các dịch vụ bao gồm các trò chơi cờ vua. Bằng cách gửi, đăng hoặc hiển thị nội dung trên hoặc thông qua các dịch vụ của chúng tôi, bạn cấp cho chúng tôi giấy phép toàn cầu, không độc quyền, miễn phí bản quyền, với quyền cấp phép con, sử dụng, sao chép, sao chép, tái tạo, xử lý, điều chỉnh, sửa đổi, xuất bản, truyền tải, hiển thị và phân phối nội dung đó trong bất kỳ và tất cả các phương tiện truyền thông hoặc kênh phân phối. Việc sử dụng bổ sung như vậy có thể được thực hiện mà không cần bồi thường cho bạn đối với nội dung bạn cung cấp thông qua các dịch vụ. Điều này không loại bỏ quyền của bạn khỏi các trang web của bên thứ 3 khác, chẳng hạn như Twitch hoặc YouTube."

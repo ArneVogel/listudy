@@ -1,0 +1,72 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: vi\n"
+"Plural-Forms: nplurals=1\n"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:31
+msgid "Achievements"
+msgstr "Những thành tựu"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:16
+msgid "Blind Tactics"
+msgstr "Chiến thuật bịt mắt"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:13
+msgid "Daily Chess Puzzle"
+msgstr "Câu đố hàng ngày"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:62
+msgid "Endgames"
+msgstr "Cờ tàn"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:28
+msgid "Play against Stockfish Online"
+msgstr "Chơi chống lại Stockfish Online"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:42
+msgid "Search Studies"
+msgstr "Tìm kiếm bài học"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:43
+msgid "Tactics"
+msgstr "Chiến thuật"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:22
+msgid "Changelog"
+msgstr "Bản ghi các thay đổi"
+ 
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:19
+msgid "Pieceless Tactics"
+msgstr "Chiến thuật không quân cờ"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:25
+msgid "Thank you!"
+msgstr "Cám ơn bạn!"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:34
+msgid "Improve your chess game with spaced repetition"
+msgstr "Cải thiện trình độ cờ vua của bạn với phương pháp spaced repetition - lặp lại sau thời gian"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_title.ex:89
+msgid "Books Recommended by %{player}"
+msgstr "Sách được đề xuất bởi %{player}"

@@ -1,0 +1,184 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: vi\n"
+"Plural-Forms: nplurals=1\n"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:44
+msgid "A cookie is a text string that Listudy stores in your browser in order to keep you logged in throughout sessions and save your site preferences."
+msgstr "Cookie là một chuỗi văn bản mà Listudy lưu trữ trong trình duyệt của bạn để giữ cho bạn đăng nhập trong suốt các phiên và lưu tùy chọn trang web của bạn."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:16
+#: lib/listudy_web/templates/page/privacy.html.eex:55
+msgid "Closing your account"
+msgstr "Đóng tài khoản"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:53
+msgid "Collected information is stored on Listudy’ servers, which are hosted by DigitalOcean."
+msgstr "Thông tin thu thập được lưu trữ trên các máy chủ của Listudy, được lưu trữ bởi DigitalOcean."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:43
+msgid "Cookies"
+msgstr "Cookie"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:39
+msgid "Disclosing your information"
+msgstr "Tiết lộ thông tin của bạn"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:2
+msgid "English version of the Privacy Policy"
+msgstr "Phiên bản tiếng Anh của chính sách bảo mật"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:13
+msgid "How cookies are used"
+msgstr "Cách sử dụng cookie"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:41
+msgid "If Listudy is sold, the data provided by the user (such as emails, pgns, comments) will be transferred to a new third party owner."
+msgstr "Nếu Listudy được bán, dữ liệu do người dùng cung cấp (như email, PGNS, nhận xét) sẽ được chuyển cho chủ sở hữu bên thứ ba mới."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:24
+msgid "If you create an account, you will be asked to provide a email address. This email address does not have to be a real email address."
+msgstr "Nếu bạn tạo tài khoản, bạn sẽ được yêu cầu cung cấp địa chỉ email. Địa chỉ email này không nhất thiết phải là địa chỉ email thực sự."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:21
+msgid "Information that Listudy collects:"
+msgstr "Thông tin mà Listudy thu thập:"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:48
+msgid "Information you delete is deleted from the live site but remains in Listudy’ backups for up to one year."
+msgstr "Thông tin bạn xóa sẽ bị xóa khỏi trang web trực tiếp nhưng vẫn còn trong bản sao lưu của Listudy trong tối đa một năm."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:6
+msgid "Introduction"
+msgstr "Giới thiệu"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:4
+msgid "Last edited:"
+msgstr "Sửa đổi lần cuối:"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:60
+msgid "Listudy can change this policy at its discretion."
+msgstr "Listudy có thể thay đổi chính sách này theo quyết định của mình."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:7
+msgid "Listudy.org (“Listudy”) is an online chess site. Users can optionally register for an account; however, certain features are available for registered users only. This is because Listudy needs basic information from its users in order to function."
+msgstr "Listudy.org (“Listudy”) là một trang web cờ vua trực tuyến. Người dùng có thể tùy chọn đăng ký tài khoản; tuy nhiên, một số tính năng nhất định chỉ có sẵn cho người dùng đã đăng ký. Điều này là do Listudy cần thông tin cơ bản từ người dùng để hoạt động."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:14
+#: lib/listudy_web/templates/page/privacy.html.eex:46
+msgid "Managing your information"
+msgstr "Quản lý thông tin của bạn"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:17
+#: lib/listudy_web/templates/page/privacy.html.eex:59
+msgid "Other"
+msgstr "Các điều khoản khác"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:57
+msgid "Send me an email if you want to close your account."
+msgstr "Gửi email cho tôi nếu bạn muốn đóng tài khoản của mình."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:15
+#: lib/listudy_web/templates/page/privacy.html.eex:52
+msgid "Storage of the collected information"
+msgstr "Lưu trữ thông tin thu thập được"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:27
+#: lib/listudy_web/templates/page/privacy.html.eex:36
+msgid "Technical information"
+msgstr "Thông tin kỹ thuật"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:37
+msgid "This information is stored to detect attacks and malicious access to the site."
+msgstr "Thông tin này được lưu trữ để phát hiện các cuộc tấn công và truy cập độc hại vào trang web."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:9
+msgid "This privacy policy will detail:"
+msgstr "Chính sách bảo mật này sẽ nêu chi tiết:"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:2
+msgid "Translated privacy policies shall only serve as an informal source of information. Please read the english version for the official version applicable to the site."
+msgstr "Các chính sách bảo mật dịch ra sẽ chỉ được dùng như một nguồn thông tin không chính thức. Xin vui lòng đọc phiên bản tiếng Anh là phiên bản chính thức áp dụng cho trang web."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:23
+#: lib/listudy_web/templates/page/privacy.html.eex:33
+msgid "User submitted information"
+msgstr "Thông tin người dùng đã gửi"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:11
+#: lib/listudy_web/templates/page/privacy.html.eex:20
+msgid "What information Listudy collects"
+msgstr "Những thông tin listudy thu thập"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:28
+msgid "When you visit Listudy, some information about the request is logged on the server. This information includes the time of the request, the HTTP method, the URI of the request, the status code generated by the server and the referrer of the request."
+msgstr "Khi bạn truy cập Listudy, một số thông tin về yêu cầu được đăng nhập trên máy chủ. Thông tin này bao gồm thời gian yêu cầu, phương pháp HTTP, URI của yêu cầu, mã trạng thái do máy chủ tạo ra và người giới thiệu yêu cầu."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:12
+msgid "Why this information is collected and how it's used"
+msgstr "Tại sao thông tin này được thu thập và cách nó được sử dụng"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:31
+msgid "Why this information is collected and how it’s used"
+msgstr "Tại sao thông tin này được thu thập và cách nó được sử dụng"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:47
+msgid "You can edit or delete your user provided informations at any time."
+msgstr "Bạn có thể chỉnh sửa hoặc xóa thông tin được cung cấp của người dùng bất cứ lúc nào."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:56
+msgid "You may choose to close your account at any time, for any reason."
+msgstr "Bạn có thể đóng tài khoản của mình bất cứ lúc nào, vì bất kỳ lý do gì."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:34
+msgid "Your email address will remain confidential and is used to log in or in case you forget your password. Moderators are able to set email addresses for accounts to assist in troubleshooting."
+msgstr "Địa chỉ email của bạn sẽ được giữ bí mật và được sử dụng để đăng nhập hoặc trong trường hợp bạn quên mật khẩu. Người kiểm duyệt có thể đặt địa chỉ email cho tài khoản để hỗ trợ khắc phục sự cố."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:50
+msgid "Your technical informations are needed for administrative purposes and cannot be deleted."
+msgstr "Thông tin kỹ thuật của bạn cần thiết cho mục đích quản trị và không thể bị xóa."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/privacy.html.eex:40
+msgid "Your information will only be disclosed if it is legally necessary to do so. For example, if Listudy is ordered to hand over a certain user’s information, or if someone hacks Listudy."
+msgstr "Thông tin của bạn sẽ chỉ được tiết lộ nếu cần thiết về mặt pháp lý để làm như vậy. Ví dụ: nếu Listudy được lệnh giao thông tin của một người dùng nhất định hoặc nếu ai đó hack Listudy."

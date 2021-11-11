@@ -1,0 +1,81 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: vi\n"
+"Plural-Forms: nplurals=1\n"
+
+msgid "can't be blank"
+msgstr "Không thể trống"
+
+msgid "has already been taken"
+msgstr "đã được thực hiện"
+
+msgid "is invalid"
+msgstr "không hợp lệ"
+
+msgid "must be accepted"
+msgstr "phải được chấp nhận"
+
+msgid "has invalid format"
+msgstr "có định dạng không hợp lệ"
+
+msgid "has an invalid entry"
+msgstr "có mục nhập không hợp lệ"
+
+msgid "is reserved"
+msgstr "được bảo lưu"
+
+msgid "does not match confirmation"
+msgstr "không khớp với xác nhận"
+
+msgid "is still associated with this entry"
+msgstr "vẫn được liên kết với mục này"
+
+msgid "are still associated with this entry"
+msgstr "vẫn được liên kết với mục này"
+
+msgid "should be %{count} character(s)"
+msgid_plural "should be %{count} character(s)"
+msgstr[0] "nên có %{count} ký tự"
+
+msgid "should have %{count} item(s)"
+msgid_plural "should have %{count} item(s)"
+msgstr[0] "nên có %{count} mục"
+
+msgid "should be at least %{count} character(s)"
+msgid_plural "should be at least %{count} character(s)"
+msgstr[0] "nên có ít nhất %{count} character(s)"
+
+msgid "should have at least %{count} item(s)"
+msgid_plural "should have at least %{count} item(s)"
+msgstr[0] "nên có ít nhất %{count} item(s)"
+
+msgid "should be at most %{count} character(s)"
+msgid_plural "should be at most %{count} character(s)"
+msgstr[0] "nên có nhiều nhất %{count} character(s)"
+
+msgid "should have at most %{count} item(s)"
+msgid_plural "should be at most %{count} character(s)"
+msgstr[0] "nên có nhiều nhất %{count} character(s)"
+
+msgid "must be less than %{number}"
+msgstr "phải có ít hơn %{number}"
+
+msgid "must be greater than %{number}"
+msgstr "phải có lớn hơn %{number}"
+
+msgid "must be less than or equal to %{number}"
+msgstr "phải có ít hơn hoặc bằng %{number}"
+
+msgid "must be greater than or equal to %{number}"
+msgstr "phải có lớn hơn hoặc bằng %{number}"
+
+msgid "must be equal to %{number}"
+msgstr "phải có đúng %{number}"

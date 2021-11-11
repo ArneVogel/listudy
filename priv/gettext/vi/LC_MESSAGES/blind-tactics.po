@@ -1,0 +1,102 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: vi\n"
+"Plural-Forms: nplurals=1\n"
+
+#, elixir-format
+#: tactics.html.eex:45
+msgid "As soon as you have solved the tactic, the final position is displayed. Did you have the same position in your head?"
+msgstr "Ngay sau khi bạn giải chiến thuật xong, vị trí cuối cùng sẽ được hiển thị. Bạn có cùng lời giải này trong đầu bạn không?"
+
+#, elixir-format
+#: tactics.html.eex:19
+msgid "Frozen Board"
+msgstr "Bàn cờ bị đóng băng"
+
+#, elixir-format
+#: tactics.html.eex:21
+msgid "If you click on the position where a piece is positioned you will be shown the possible legal moves. If you then click again on the correct square, the move will be executed and the exercise will continue."
+msgstr "Nếu bạn nhấp vào vị trí mà một quân cờ được định vị, các nước đi cho phép có thể sẽ được hiển thị cho bạn xem. Nếu sau đó bạn nhấp một lần nữa vào ô cờ được chọn, nước đi sẽ được thực hiện và bài tập sẽ tiếp tục."
+
+#, elixir-format
+#: tactics.html.eex:36
+msgid "Next to the board you will see the list of moves that have been played since the board was frozen. This list shows the current state of the game and the moves the opponent played."
+msgstr "Bên cạnh bàn cờ, bạn sẽ thấy danh sách các nước đi đã được chơi kể từ khi bàn cờ bị đóng băng. Danh sách này chỉ ra vị trí hiện tại của ván cờ và các nước đi mà đối thủ đã chơi."
+
+#, elixir-format
+#: tactics.html.eex:43
+msgid "Tactics"
+msgstr "Chiến thuật"
+
+#, elixir-format
+#: tactics.html.eex:20
+msgid "The board is frozen and does not show the current state of the game. This means you do not see the latest state of the board. The pieces are not animated during the tactics. You have to keep the positions of the pieces in your head!"
+msgstr "Bàn cờ bị đóng băng và không hiển thị hiện trạng của ván cờ. Điều này có nghĩa là bạn không thấy hiện trạng mới nhất của bàn cờ. Các quân cờ không hoạt hình trong các chiến thuật. Bạn phải giữ các vị trí của các quân cờ trong đầu của bạn!"
+
+#, elixir-format
+#: tactics.html.eex:35
+msgid "The move list"
+msgstr "Danh sách nước đi"
+
+#, elixir-format
+#: tactics.html.eex:37
+msgid "The moves the opponent plays during tactics are added to this list!"
+msgstr "Các nước đi mà đối thủ chơi trong lúc chiến thuật được thêm vào danh sách này!"
+
+#, elixir-format
+#: tactics.html.eex:8
+msgid "Use blind tactics to improve your chess visualisation skills. Solve tactics while seeing the board state of several moves from the past. You are given the representation of the board and the moves that have been made since then, and then you then have to solve the tactical problem by imagining the board and the moves played in your head."
+msgstr "Sử dụng chiến thuật bịt mắt để cải thiện kỹ năng hình dung cờ vua của bạn. Tìm lời giải chiến thuật trong khi nhìn thấy vị trí hiện tại bàn cờ với các nước đi trong quá khứ. Hình dung hiện trạng bàn cờ với các nước đã được đi kể từ đó, và sau đó bạn phải tìm lời giải chiến thuật bằng cách tưởng tượng bàn cờ và các nước đi được chơi trong đầu bạn."
+
+#, elixir-format
+#: tactics.html.eex:15
+msgid "Using the blind tactics takes getting used to. Here I try to explain it as simple and as clear as possible."
+msgstr "Sử dụng các chiến thuật bịt mắt mà bạn cần làm quen với. Ở đây tôi cố gắng giải thích nó đơn giản và rõ ràng nhất có thể."
+
+#, elixir-format
+#: tactics.html.eex:44
+msgid "Your task is to solve the exercise like with normal tactics. There is only one continuation that is correct."
+msgstr "Nhiệm vụ của bạn là giải bài tập như với các chiến thuật thông thường. Chỉ có một lời giải là đúng."
+
+#, elixir-format
+#: tactics.html.eex:25
+msgid "different board state"
+msgstr "trạng thái bàn cờ khác nhau"
+
+#, elixir-format
+#: tactics.html.eex:32
+msgid "move list"
+msgstr "danh sách nước cờ"
+
+#, elixir-format
+#: tactics.html.eex:49
+msgid "solved tactic"
+msgstr "chiến thuật đã giải quyết"
+
+#, elixir-format
+#: tactics.html.eex:3
+msgid "Blind Tactics"
+msgstr "Chiến thuật bịt mắt"
+
+#, elixir-format
+#: tactics.html.eex:14
+msgid "How it works"
+msgstr "Nó hoạt động như thế nào"
+
+#, elixir-format
+#: tactics.html.eex:4
+msgid "Improve your chess visualization skills"
+msgstr "Cải thiện kỹ năng trực quan hóa cờ vua của bạn"
+
+#, elixir-format
+#: tactics.html.eex:11
+msgid "Play Now!"
+msgstr "Chơi ngay!"
