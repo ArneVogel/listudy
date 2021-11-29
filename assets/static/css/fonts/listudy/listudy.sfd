@@ -21,7 +21,7 @@ OS2Version: 3
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 0
 CreationTime: 1554434404
-ModificationTime: 1638194263
+ModificationTime: 1638195575
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -88,7 +88,7 @@ DisplaySize: -36
 AntiAlias: 1
 FitToEm: 0
 WinInfo: 0 9 18
-BeginChars: 65539 16
+BeginChars: 65539 17
 
 StartChar: .notdef
 Encoding: 65536 -1 0
@@ -156,6 +156,7 @@ SplineSet
  34 324 l 1,7,-1
  34 17 l 1,4,-1
 EndSplineSet
+Validated: 1
 EndChar
 
 StartChar: .null
@@ -164,6 +165,8 @@ Width: 0
 GlyphClass: 2
 Flags: W
 LayerCount: 2
+Fore
+Validated: 1
 EndChar
 
 StartChar: nonmarkingreturn
@@ -172,6 +175,8 @@ Width: 512
 GlyphClass: 2
 Flags: W
 LayerCount: 2
+Fore
+Validated: 1
 EndChar
 
 StartChar: fontawesome-webfont-40
@@ -218,6 +223,7 @@ SplineSet
  467 461 l 1,49,-1
  281 240 l 1,0,-1
 EndSplineSet
+Validated: 513
 EndChar
 
 StartChar: quotedbl
@@ -253,6 +259,7 @@ SplineSet
  269 42 l 2,40,0
  264 37 264 37 256 37 c 128,-1,1
 EndSplineSet
+Validated: 1
 EndChar
 
 StartChar: numbersign
@@ -315,6 +322,7 @@ SplineSet
  441 475 441 475 476 440 c 0,87,47
  512 404 512 404 512 342 c 128,-1,48
 EndSplineSet
+Validated: 1
 EndChar
 
 StartChar: dollar
@@ -339,6 +347,7 @@ SplineSet
  416 416 416 416 446 366 c 0,19,0
  475 318 475 318 475 256 c 128,-1,1
 EndSplineSet
+Validated: 1
 EndChar
 
 StartChar: percent
@@ -376,6 +385,7 @@ SplineSet
  416 416 416 416 446 366 c 0,39,20
  475 318 475 318 475 256 c 128,-1,21
 EndSplineSet
+Validated: 1
 EndChar
 
 StartChar: ampersand
@@ -405,6 +415,7 @@ SplineSet
  288 192 l 1,21,-1
  288 352 l 1,11,-1
 EndSplineSet
+Validated: 1
 EndChar
 
 StartChar: quotesingle
@@ -444,6 +455,7 @@ SplineSet
  208.600585938 85 l 1,25,-1
  362.200195312 85 l 1,16,-1
 EndSplineSet
+Validated: 526337
 EndChar
 
 StartChar: parenleft
@@ -497,6 +509,7 @@ SplineSet
  416 416 416 416 446 366 c 0,63,44
  475 318 475 318 475 256 c 128,-1,45
 EndSplineSet
+Validated: 2049
 EndChar
 
 StartChar: parenright
@@ -560,6 +573,7 @@ SplineSet
  56 92 56 92 62 98 c 128,-1,60
  68 104 68 104 68 112 c 128,-1,61
 EndSplineSet
+Validated: 526369
 EndChar
 
 StartChar: asterisk
@@ -612,6 +626,7 @@ SplineSet
  126 263 l 1,54,-1
  120 263 l 1,37,-1
 EndSplineSet
+Validated: 5
 EndChar
 
 StartChar: plus
@@ -651,6 +666,7 @@ SplineSet
  475.5 416 475.5 416 477.75 413.75 c 128,-1,31
  480 411.5 480 411.5 480 408 c 2,6,-1
 EndSplineSet
+Validated: 524289
 EndChar
 
 StartChar: comma
@@ -700,6 +716,7 @@ SplineSet
  128 352 l 1,45,-1
  193 352 l 1,23,-1
 EndSplineSet
+Validated: 1
 EndChar
 
 StartChar: hyphen
@@ -771,6 +788,56 @@ SplineSet
  483 435 483 435 485 437 c 0,99,100
  494 442 494 442 503 436 c 128,-1,101
  512 430 512 430 512 421 c 2,53,-1
+EndSplineSet
+Validated: 526369
+EndChar
+
+StartChar: period
+Encoding: 46 46 16
+Width: 512
+LayerCount: 2
+Fore
+SplineSet
+475 256 m 128,-1,1
+ 475 209 475 209 458 171 c 0,2,3
+ 438 127 438 127 411 101 c 0,4,5
+ 385 74 385 74 341 54 c 0,6,7
+ 303 37 303 37 256 37 c 0,8,9
+ 204 37 204 37 163 57 c 0,10,11
+ 120 77 120 77 87 116 c 0,12,13
+ 85 120 85 120 85 122 c 0,14,15
+ 85 125 85 125 88 128 c 2,16,-1
+ 127 167 l 2,17,18
+ 130 170 130 170 134 170 c 0,19,20
+ 135 170 135 170 141 167 c 0,21,22
+ 160 139 160 139 192 125 c 0,23,24
+ 222 110 222 110 256 110 c 0,25,26
+ 285 110 285 110 313 121 c 0,27,28
+ 341 133 341 133 359 153 c 0,29,30
+ 379 171 379 171 391 199 c 0,31,32
+ 402 227 402 227 402 256 c 128,-1,33
+ 402 285 402 285 391 313 c 0,34,35
+ 379 341 379 341 359 359 c 0,36,37
+ 341 379 341 379 313 391 c 0,38,39
+ 285 402 285 402 256 402 c 0,40,41
+ 226 402 226 402 202 392 c 0,42,43
+ 175 381 175 381 157 363 c 1,44,-1
+ 196 324 l 2,45,46
+ 205 315 205 315 200 304 c 0,47,48
+ 194 293 194 293 183 293 c 2,49,-1
+ 55 293 l 2,50,51
+ 47 293 47 293 42 298 c 128,-1,52
+ 37 303 37 303 37 311 c 2,53,-1
+ 37 439 l 2,54,55
+ 37 450 37 450 48 456 c 0,56,57
+ 59 461 59 461 68 452 c 2,58,-1
+ 105 415 l 1,59,60
+ 134 443 134 443 175 460 c 0,61,62
+ 214 475 214 475 256 475 c 0,63,64
+ 303 475 303 475 341 458 c 0,65,66
+ 385 438 385 438 411 411 c 0,67,68
+ 438 385 438 385 458 341 c 0,69,0
+ 475 303 475 303 475 256 c 128,-1,1
 EndSplineSet
 EndChar
 EndChars
