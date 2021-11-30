@@ -16,6 +16,8 @@
       <a href="<%= Routes.pieceless_tactic_path(@conn, :random, @locale, @pieceless_tactic.id) %>">
         <button id="next" class="hidden continue_button"><%= dgettext "tactics", "Continue"%></button>
       </a>
+
+      <a class="icon" data-icon="-" id="give-up"><%= dgettext("tactics", "Give up") %></a>
     </div>
     <br>
     <br>

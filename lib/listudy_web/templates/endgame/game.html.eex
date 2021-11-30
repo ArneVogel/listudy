@@ -22,8 +22,7 @@
       <br>
     </div>
 
-    <button id="reset"><%= dgettext("endgame", "Reset") %></button>
-
+    <a class="icon" data-icon="." id="reset"><%= dgettext("endgame", "Reset") %></a>
 
     <%= if @next == "back" do %>
       <%= raw next_button(Routes.endgame_path(@conn, :chapter, @locale, @chapter_slug)) %>

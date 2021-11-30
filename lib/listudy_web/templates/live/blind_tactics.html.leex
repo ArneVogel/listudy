@@ -16,6 +16,8 @@
 
     <button id="next" class="hidden continue_button" phx-click="next"><%= dgettext "tactics", "Continue" %></button>
 
+    <a class="icon" data-icon="," id="toggle-orientation"><%= dgettext("tactics", "Flip board") %></a><br>
+    <a class="icon" data-icon="-" id="give-up"><%= dgettext("tactics", "Give up") %></a>
     <div>
       <hr>
       <p><%= @tactic.description %></p>

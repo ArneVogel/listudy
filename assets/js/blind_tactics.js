@@ -53,6 +53,19 @@ function set_div_text(id, text) {
     set_text(id, text);
 }
 
+function reveal_solution() {
+    document.getElementById("next").classList.remove("hidden");
+    setup_ground(chess.fen());    
+    let t = chess.turn() == "w" ? "white" : "black";
+    // "check: true" would sometimes result in the wrong king being shown in check
+    ground.set({check: t});
+
+    // this is needed if the solution is revealed after giving up to show the move text
+    current_move = chess.history().length
+    current_chess = get_current_chess();
+    setup_move_text();
+}
+
 
 function handle_click(square) {
     ground.selectSquare(null);
@@ -66,11 +79,7 @@ function handle_click(square) {
             localStorage.setItem("achievements_blind_tactics_solved", Number(total) + 1);
 
             set_div_text(success_div, i18n.success)
-            document.getElementById("next").classList.remove("hidden");
-            setup_ground(chess.fen());    
-            let t = chess.turn() == "w" ? "white" : "black";
-            // "check: true" would sometimes result in the wrong king being shown in check
-            ground.set({check: t});
+            reveal_solution();
         } else {
             let last_move = current_chess.history().pop();
             set_div_text(info_div, i18n.right_move + last_move)
@@ -148,6 +157,17 @@ function setup_move_text() {
     document.getElementById("moves").innerText = pgn;
 }
 
+function setup_give_up() {
+    let e = document.getElementById("give-up");
+    e.onclick = reveal_solution;
+}
+
+function setup_flip_board() {
+    let e = document.getElementById("toggle-orientation");
+    e.onclick = ground.toggleOrientation;
+}
+
+
 function main() {
     setup_ply();
     // generates the window.chess object
@@ -179,6 +199,8 @@ function main() {
     resize_ground();
     window.setTimeout(ground.redrawAll, 10);
     window.setTimeout(ground.redrawAll, 100);
+    setup_give_up();
+    setup_flip_board();
 }
 
 document.addEventListener("phx:update", main);

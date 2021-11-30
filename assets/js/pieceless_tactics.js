@@ -141,6 +141,13 @@ function setup_to_play(chess) {
     document.getElementById("pieceless_to_play").innerText = to_play;
 }
 
+function setup_give_up() {
+    let e = document.getElementById("give-up");
+    e.onclick = function() {
+        document.getElementById("next").classList.remove("hidden");
+    };
+}
+
 function main() {
     window.chess = new Chess(fen);
     setup_pieces(chess);
@@ -158,6 +165,7 @@ function main() {
     resize_ground();
     window.setTimeout(ground.redrawAll, 10);
     window.setTimeout(ground.redrawAll, 100);
+    setup_give_up();
 }
 
 window.onresize = resize_ground;
