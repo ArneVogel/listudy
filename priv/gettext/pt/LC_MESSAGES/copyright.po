@@ -14,54 +14,54 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:12
 msgid "Copyright holders"
-msgstr ""
+msgstr "Copyright reservado a"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:2
 msgid "English version of the Copyright Policy"
-msgstr ""
+msgstr "Versão em inglês da política de copyright"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:13
 msgid "If you believe that someone has uploaded or posted content of yours on Listudy.org without your permission, please contact us at: copyright@listudy.org"
-msgstr ""
+msgstr "Se você acredita que alguém postou conteúdo seu aqui, no site Listudy.org, sem a sua permissão, por favor nos contate através de: copyright@listudy.org"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:6
 msgid "Introduction"
-msgstr ""
+msgstr "Introdução"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:4
 msgid "Last edited:"
-msgstr ""
+msgstr "Última edição:"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:16
 msgid "Listudy can change this policy at its discretion."
-msgstr ""
+msgstr "Listudy pode mudar esta política como desejar."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:7
 msgid "Listudy respects and recognizes the copyright of third parties. You are only allowed to publish public content on Listudy, for which you have all necessary rights."
-msgstr ""
+msgstr "Listudy respeita e reconhece o copyright de terceiros. Você tem permissão de publicar conteúdo em Listudy, contanto que tenha todos os direitos necessários."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:15
 msgid "Other"
-msgstr ""
+msgstr "Outro"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:9
 msgid "PGN files"
-msgstr ""
+msgstr "Arquivos PGN"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:2
 msgid "Translated copyright policies shall only serve as an informal source of information. Please read the english version for the official version applicable to the site."
-msgstr ""
+msgstr "As traduções das politicas de copyright devem servir apenas como fonte informal de informação. Leia a versão em ingles como a versão oficial aplicável a este site."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/copyright.html.eex:10
 msgid "You are only allowed to make public studies using PGN files, for which you have all necessary rights to. Do not copy PGN files from other websites for which you do not have the rights. This applies especially, but is not limited to, paid PGN files."
-msgstr ""
+msgstr "Você tem permissão de fazer estudos publicos usando PGN files, contanto que tenha todos os direitos necessários. Não deverão ser usados arquivos PGN de outros sites, dos quais não tem os direitos. Isso se aplica, mas não é limitado a, arquivos PGN pagos."
