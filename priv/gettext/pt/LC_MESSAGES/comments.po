@@ -14,22 +14,19 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:11
 msgid "Are you sure?"
-msgstr "Você tem certeza?"
-
+msgstr "Tem certeza?"
 #, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:3
 msgid "Comment"
-msgstr "Comentar"
-
+msgstr "Comentário"
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:3
 msgid "Comments"
 msgstr "Comentários"
-
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:11
 msgid "Delete"
-msgstr "Deletar"
+msgstr "Remover"
 
 #, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:11
@@ -44,18 +41,15 @@ msgstr "por"
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:43
 msgid "Comment could not get created"
-msgstr "Comentário não pode ser adicionado"
-
+msgstr "Não foi possível gerar criar comentário"
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:40
 msgid "Comment created"
-msgstr "Comentário adicionado"
-
+msgstr "Comentário criado"
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:26
 msgid "Comment deleted successfully."
-msgstr "Comentário deletado com sucesso."
-
+msgstr "Comentário removido com sucesso"
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:48
 msgid "Error"
@@ -64,19 +58,16 @@ msgstr "Erro"
 #, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:20
 msgid "You're not allowed to do that."
-msgstr "Você não tem permissão para isso."
-
+msgstr "Você não possui a permissão necessária para realizar essa tarefa."
 #, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:16
 msgid "%{register} to comment"
 msgstr "%{register} para comentar"
-
 #, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:17
 msgid "No comments yet, be the first to write one!"
-msgstr "Nenhum comentário ainda, seja o primeiro a comentar!"
-
+msgstr "Nenhum comentário registrado, seja o primeiro a criar um!"
 #, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:15
 msgid "Register"
-msgstr "Registar"
+msgstr "Registrar"

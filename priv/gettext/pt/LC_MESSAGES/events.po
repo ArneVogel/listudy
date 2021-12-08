@@ -14,9 +14,9 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/live/event_search_live.ex:10
 msgid "Events"
-msgstr ""
+msgstr "Eventos"
 
 #, elixir-format
 #: lib/listudy_web/live/event_search_live.ex:12
 msgid "Search"
-msgstr ""
+msgstr "Procura"
