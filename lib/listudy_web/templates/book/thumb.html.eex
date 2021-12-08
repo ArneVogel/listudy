@@ -32,6 +32,8 @@
       <a href="<%= Routes.book_path(@conn, :show, @locale, @book.slug) %>">
         <button><%= dgettext("book", "More") %></button>
       </a>
+      <%= render ListudyWeb.BookView, "affiliate.html", Map.put(assigns, :shop, %{name: "Amazon"}) %>
+
     </div>
     <div class="one-third column">
       <a class="book-container">
