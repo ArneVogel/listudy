@@ -14,40 +14,40 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/live/chessclicker.html.leex:74
 msgid "Continue"
-msgstr ""
+msgstr "Continue"
 
 #, elixir-format
 #: lib/listudy_web/templates/live/chessclicker.html.leex:63
 msgid "Cost"
-msgstr ""
+msgstr "Custo"
 
 #, elixir-format
 #: lib/listudy_web/templates/live/chessclicker.html.leex:57
 msgid "Get help by"
-msgstr ""
+msgstr "Ganhe ajuda de"
 
 #, elixir-format
 #: lib/listudy_web/templates/live/chessclicker.html.leex:40
 msgid "Rating Points"
-msgstr ""
+msgstr "Pontos de Rating"
 
 #, elixir-format
 #: lib/listudy_web/templates/live/chessclicker.html.leex:42
 #: lib/listudy_web/templates/live/chessclicker.html.leex:64
 msgid "Rating points per second"
-msgstr ""
+msgstr "Pontos de Rating por segundo"
 
 #, elixir-format
 #: lib/listudy_web/templates/live/chessclicker.html.leex:43
 msgid "Rating points per solved tactic"
-msgstr ""
+msgstr "Pontos de rating por tática resolvida"
 
 #, elixir-format
 #: lib/listudy_web/templates/live/chessclicker.html.leex:65
 msgid "Rating points per tactic solved"
-msgstr ""
+msgstr "Pontos de rating por tática resolvida"
 
 #, elixir-format
 #: lib/listudy_web/templates/live/chessclicker.html.leex:63
 msgid "rating points"
-msgstr ""
+msgstr "Pontos de Rating"
