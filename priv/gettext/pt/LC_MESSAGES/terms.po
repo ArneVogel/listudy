@@ -22,7 +22,7 @@ msgstr "Ao concordar com estes Termos, os usuários registrados podem ter acesso
 #, elixir-format
 #: service.html.eex:8
 msgid "By using this website (the “Site”) and services (together with the Site, the “Services”) offered by Listudy.org (together with our subsidiaries, affiliates, representatives, and directors – collectively “Listudy”, “we”, or “us”) you’re agreeing to these legally binding rules (the “Terms”). You’re also agreeing to our Privacy Policy and Cookie Policy, and agreeing to follow any other rules on the Site."
-msgstr "Ao usar este site (o "Site") e serviços (juntamente com o Site, os "Serviços") oferecidos por Listudy.org (juntamente com nossas subsidiárias, afiliadas, representantes e diretores - coletivamente "Listudy", "nós", ou “nós”) você concorda com essas regras juridicamente vinculativas (os “Termos”). Você também concorda com nossa Política de Privacidade e Política de Cookies, e concorda em seguir quaisquer outras regras do Site."
+msgstr "Ao usar este site (o “Site”) e serviços (juntamente com o Site, os “Serviços”) oferecidos por Listudy.org (juntamente com nossas subsidiárias, afiliadas, representantes e diretores - coletivamente “Listudy”, “nós”, ou “nós”) você concorda com essas regras juridicamente vinculativas (os “Termos”). Você também concorda com nossa Política de Privacidade e Política de Cookies, e concorda em seguir quaisquer outras regras do Site."
 #, elixir-format
 #: service.html.eex:34
 msgid "Closing and Terminating your Account"
