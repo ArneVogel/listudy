@@ -1,4 +1,6 @@
 <h1><%= dgettext("changelog", "Changelog") %></h1>
+<b>2022-02-28</b>
+<p><%= dgettext("changelog", "Added portugese translation") %></p>
 <b>2021-11-11</b>
 <p><%= dgettext("changelog", "Added vietnamese translation") %></p>
 <b>2021-10-01</b>
