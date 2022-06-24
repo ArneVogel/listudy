@@ -6,7 +6,7 @@
     <h1><%= dgettext "tactics", "Custom Tactic"%></h1>
 
     <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
-    
+
     <a href="<%= Routes.tactic_path(@conn, :random, @locale) %>">
       <button id="next" class="hidden continue_button"><%= dgettext "tactics", "More Tactics" %></button>
     </a>
@@ -35,11 +35,11 @@ function clean_input(i) {
   // this function is used to remove non wanted characters from the decoded hash
   // probably also remove xss vulnerabilities if input was used in unsafe functions, but
   // this does NOT replace the need to not use the input in unsafe function calls
-  return i.replace(/[^a-zA-Z0-9-_#+! /]/g, '');
+  return i.replace(/[^a-zA-Z0-9-_#+!= /]/g, '');
 }
 
 // atob => base64 decode the hash
-let t = atob(document.location.hash.slice(1)).split(";"); 
+let t = atob(document.location.hash.slice(1)).split(";");
 let fen = clean_input(t[0]);
 let color = clean_input(t[0]).split(" ")[1];
 if (color == "b") {
