@@ -44,3 +44,6 @@ priv/images
 
 # Don't commit real env variables!
 scripts/prod/env.sh
+
+# npm lock files
+assets/package-lock.json
