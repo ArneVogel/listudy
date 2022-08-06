@@ -37,6 +37,7 @@ header {
 
 nav > div {
     display: flex;
+    align-items: center;
 }
 
 nav > div > div {

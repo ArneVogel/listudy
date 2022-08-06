@@ -15,6 +15,10 @@
 @import "./components/modal.css";
 @import "./components/popup.css";
 
+body {
+    margin: 0;
+}
+
 /* Alerts and form errors */
 .alert {
   padding: 15px;
