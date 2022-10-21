@@ -14,89 +14,89 @@ msgstr ""
 #, elixir-format
 #: tactics.html.eex:45
 msgid "As soon as you have solved the tactic, the final position is displayed. Did you have the same position in your head?"
-msgstr ""
+msgstr "כשמסיימים לפתור את החידה, העמדה הסופית מוצגת. האם זו העמדה שהיתה לכם בראש?"
 
 #, elixir-format
 #: tactics.html.eex:19
 msgid "Frozen Board"
-msgstr ""
+msgstr "לוח קפוא"
 
 #, elixir-format
 #: tactics.html.eex:21
 msgid "If you click on the position where a piece is positioned you will be shown the possible legal moves. If you then click again on the correct square, the move will be executed and the exercise will continue."
-msgstr ""
+msgstr "אם תלחצו על משבצת בה ממוקם כלי, יוצגו בפניכם המסעים החוקיים. אם לאחר מכן תלחצו על המשבצת הנכונה, המהלך יבוצע והתרגיל ימשיך "
 
 #, elixir-format
 #: tactics.html.eex:36
 msgid "Next to the board you will see the list of moves that have been played since the board was frozen. This list shows the current state of the game and the moves the opponent played."
-msgstr ""
+msgstr "בצמוד ללוח תוכלו לראות את רשימת המהלכים ששוחקו מאז שהלוח הוקפא. הרשימה מראה את המצב הנוכחי של המשחק ואת מהלכי־היריב."
 
 #, elixir-format
 #: tactics.html.eex:43
 msgid "Tactics"
-msgstr ""
+msgstr "חידות"
 
 #, elixir-format
 #: tactics.html.eex:20
 msgid "The board is frozen and does not show the current state of the game. This means you do not see the latest state of the board. The pieces are not animated during the tactics. You have to keep the positions of the pieces in your head!"
-msgstr ""
+msgstr "הלוח קפוא ולא מציג את העמדה הנוכחית. כלומר, אינכם רואים את מצב הלוח העדכני. אין תזוזה של הכלים בהמלך החידה, כך שעליכם לזכור היטב את מיקומם!"
 
 #, elixir-format
 #: tactics.html.eex:35
 msgid "The move list"
-msgstr ""
+msgstr "רשימת המהלכים"
 
 #, elixir-format
 #: tactics.html.eex:37
 msgid "The moves the opponent plays during tactics are added to this list!"
-msgstr ""
+msgstr "המהלכים שהיריב משחק מתווספים לרשימה זו"
 
 #, elixir-format
 #: tactics.html.eex:8
 msgid "Use blind tactics to improve your chess visualisation skills. Solve tactics while seeing the board state of several moves from the past. You are given the representation of the board and the moves that have been made since then, and then you then have to solve the tactical problem by imagining the board and the moves played in your head."
-msgstr ""
+msgstr "השתמשו בחידות שחמט־עיוור כדי להתאמן על יכולתכם לתפוס את לוח השחמט באופן חזותי (ויזואלי). פתרו חידות בהן העמדה המוצגת התרחשה לפני מספר מהלכים. אתם תקבלו את רשימת המסעים ששהתרחשו מאז, ובעזרת דמיון ותפיסה חזותית נסו למדיין אותם בראשכם."
 
 #, elixir-format
 #: tactics.html.eex:15
 msgid "Using the blind tactics takes getting used to. Here I try to explain it as simple and as clear as possible."
-msgstr ""
+msgstr "לוקח זמן להתרגל לחידות שחמט עיוור. כאן אנסה להסביר לכם באופן פשוט ובהיר ככל האפשר."
 
 #, elixir-format
 #: tactics.html.eex:44
 msgid "Your task is to solve the exercise like with normal tactics. There is only one continuation that is correct."
-msgstr ""
+msgstr "מטרתכם לפתור את התרגיל כאילו הוא חידה רגילה. רק סדרת מסעים אחת היא ההמשך הנכון."
 
 #, elixir-format
 #: tactics.html.eex:25
 msgid "different board state"
-msgstr ""
+msgstr "מצב־לוח שונה"
 
 #, elixir-format
 #: tactics.html.eex:32
 msgid "move list"
-msgstr ""
+msgstr "רשימת מהלכים"
 
 #, elixir-format
 #: tactics.html.eex:49
 msgid "solved tactic"
-msgstr ""
+msgstr "חידה פתורה"
 
 #, elixir-format
 #: tactics.html.eex:3
 msgid "Blind Tactics"
-msgstr ""
+msgstr "חידות שחמט־עיוור"
 
 #, elixir-format
 #: tactics.html.eex:14
 msgid "How it works"
-msgstr ""
+msgstr "איך זה עובד?"
 
 #, elixir-format
 #: tactics.html.eex:4
 msgid "Improve your chess visualization skills"
-msgstr ""
+msgstr "התאמנו על כישורי השחמט החזותיים שלכם"
 
 #, elixir-format
 #: tactics.html.eex:11
 msgid "Play Now!"
-msgstr ""
+msgstr "שחקו עכשיו!"
