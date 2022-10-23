@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "chess.js": "^0.10.3",
-    "chessground": "^7.11.0",
+    "chessground": "^8.3.5",
     "pgn-parser": "^2.1.1",
     "phoenix": "file:../deps/phoenix",
     "phoenix_html": "file:../deps/phoenix_html",
