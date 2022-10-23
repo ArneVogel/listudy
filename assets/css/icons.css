@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'listudy';
-    src: url('/css/fonts/listudy/listudy.woff2');
+    src: url('../static/css/fonts/listudy/listudy.woff2');
     font-weight: normal;
     font-style: normal;
 }
