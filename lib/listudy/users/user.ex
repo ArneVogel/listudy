@@ -4,8 +4,8 @@ defmodule Listudy.Users.User do
   import ListudyWeb.Gettext
 
   schema "users" do
-    field :username, :string, null: false
-    field :role, :string, null: false, default: "user"
+    field :username, :string
+    field :role, :string, default: "user"
     pow_user_fields()
     field :last_visited, :utc_datetime
 
