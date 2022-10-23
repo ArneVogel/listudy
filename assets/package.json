@@ -15,7 +15,7 @@
     "phoenix_html": "file:../deps/phoenix_html",
     "phoenix_live_view": "file:../deps/phoenix_live_view",
     "playwright": "^1.9.1",
-    "stockfish.wasm": "^0.9.1"
+    "stockfish.wasm": "^0.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
