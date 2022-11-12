@@ -31,7 +31,21 @@ function setup_click_handler(f) {
 function setup_ground(fen) {
     const config = {};
     window.ground = Chessground(document.getElementById("chessground"), config);
+    window.window_width = window.innerWidth;
     ground_init_state(fen);
+}
+
+/*
+ * Window resize callback
+ */
+function onresize() {
+    // Don't resize ground if the window width is unchanged
+    if (window.innerWidth === window.window_width) {
+        return;
+    }
+
+    window.window_width = window.innerWidth;
+    resize_ground();
 }
 
 // call on window resizing
@@ -164,4 +178,4 @@ function ground_move(m, c = undefined) {
     }
 }
 
-export { ground_init_state, resize_ground, setup_ground, ground_set_moves, ground_set_moves_from_instance, ground_undo_last_move, setup_move_handler, setup_click_handler, ground_move };
+export { ground_init_state, onresize, resize_ground, setup_ground, ground_set_moves, ground_set_moves_from_instance, ground_undo_last_move, setup_move_handler, setup_click_handler, ground_move };

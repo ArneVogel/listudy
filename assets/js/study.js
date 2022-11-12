@@ -11,7 +11,7 @@ import { generate_move_trees, annotate_pgn } from './modules/tree_from_pgn.js';
 import { sleep } from './modules/sleep.js';
 import { getRandomIntFromRange } from './modules/random.js';
 import { unescape_string } from './modules/security_related.js';
-import { ground_init_state, resize_ground, setup_ground, ground_set_moves,
+import { ground_init_state, onresize, resize_ground, setup_ground, ground_set_moves,
          ground_undo_last_move, setup_move_handler, ground_move } from './modules/ground.js';
 import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 
@@ -520,5 +520,5 @@ function main() {
     setup_progress_reset();
 }
 
-window.onresize = resize_ground;
+window.onresize = onresize;
 main();

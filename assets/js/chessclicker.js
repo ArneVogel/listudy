@@ -1,6 +1,6 @@
 const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
-import { ground_init_state, resize_ground, setup_ground, ground_set_moves, 
+import { ground_init_state, onresize, resize_ground, setup_ground, ground_set_moves,
          ground_undo_last_move, setup_move_handler, ground_move } from './modules/ground.js';
 import { turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
 
@@ -249,7 +249,7 @@ function save() {
 }
 
 document.addEventListener("phx:update", main);
-window.onresize = resize_ground;
+window.onresize = onresize;
 window.old_fen = "abc";
 setup();
 window.setInterval(tick, 1000);
