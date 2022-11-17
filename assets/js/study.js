@@ -155,7 +155,6 @@ function give_hints(access) {
     if (show_arrows) {
         ground.setShapes(shapes);
     }
-    ground.redrawAll(); //TODO figure out how to remove this
 }
 
 /*
