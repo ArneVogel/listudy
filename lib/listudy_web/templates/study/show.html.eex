@@ -5,37 +5,55 @@
     <%= render ListudyWeb.ComponentView, "chessground.html" %>
   </div>
   <div class="sidebar">
-    <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
-    
-    <p id="comments" class="study_comments">
-      <span id="comments_text"></span>
-    </p>
+    <div>
+      <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
 
+      <div class="sidebar_padded">
+        <div style="margin-bottom: 1em">
+          <a class="icon large_clickarea" data-icon="-" id="hints"><%= dgettext("study", "Show hints for this move!") %></a><br>
+        </div>
+        
+        <!-- Putting the <p id="comments"> and <span id="comments_text"> on different lines below causes an extra line break because the "white-space: pre-line" is on the outer <p> -->
+        <p id="comments" class="study_comments"><span id="comments_text"></span></p>
+      </div>
+    </div>
     <div class="study_options">
-      <div class="chapter_selection">
+      <div class="chapter_selection sidebar_padded">
         <label for="chapter_select"><%= dgettext "study", "Chapter Selection" %></label>
         <select id="chapter_select"></select>
-      </div>
-
-      <div>
-        <a class="icon" data-icon="!" id="play_stockfish" href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1" title="<%= dgettext "study", "Play against Stockfish" %>">Stockfish</a>
-      
-        <%= if !@study.favorites do %>
-          <%= link dgettext("study", "Favorite"), to: Routes.study_path(@conn, :favorite_study, @study.slug), method: :post, class: "icon", "data-icon": "#" %>
-        <% else %>
-          <%= link dgettext("study" ,"Unfavorite"), to: Routes.study_path(@conn, :unfavorite_study, @study.slug), method: :post, class: "icon", "data-icon": '"' %>
-        <% end %>
-        <br>
-
-        <a class="icon" data-icon="%" id="arrows_toggle"><%= dgettext("study", "Hide Arrows") %></a><br>
-        <a class="icon" data-icon="%" id="line_review" title="<%= dgettext("study", "At the end of lines the board is only reset after 3 seconds giving you time to review the final position.") %>"><%= dgettext("study", "Slow board reset") %></a><br>
-        <a class="icon" data-icon="$" id="key_move" title="<%= dgettext("study", "Don't repeat the early moves that are already known. Skips to the first branching move in the study.") %>"><%= dgettext("study", "Key Move") %></a><br>
-        <a class="icon" data-icon="(" id="move_delay"><%= dgettext("study", "Move delay:") %> <span id="move_delay_time"><%= dgettext("study", "instant") %></span></a>
-
         <div id="chapter_progress"></div>
         <a href="#" data-icon="+" class="icon modal_open" id="progress"><%= dgettext("study","Progress") %></a>
       </div>
     </div>
+  </div>
+</div>
+<div class="study_options_below">
+  <div class="study_option_item_below">
+    <a class="icon" data-icon="!" id="play_stockfish" href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1" title="<%= dgettext "study", "Play against Stockfish" %>"><%= dgettext "study", "Play against Stockfish" %></a>
+  </div>
+
+  <div class="study_option_item_below">
+    <%= if !@study.favorites do %>
+      <%= link dgettext("study", "Favorite study"), to: Routes.study_path(@conn, :favorite_study, @study.slug), method: :post, class: "icon", "data-icon": "#" %>
+    <% else %>
+      <%= link dgettext("study" ,"Unfavorite study"), to: Routes.study_path(@conn, :unfavorite_study, @study.slug), method: :post, class: "icon", "data-icon": '"' %>
+    <% end %>
+  </div>
+
+  <div class="study_option_item_below">
+    <a class="icon" data-icon="(" id="line_review" title="<%= dgettext("study", "At the end of lines the board is only reset after 3 seconds giving you time to review the final position.") %>"><%= dgettext("study", "Board reset delay: fast") %></a>
+  </div>
+  <div class="study_option_item_below">
+    <a class="icon" data-icon="$" id="key_move" title="<%= dgettext("study", "Don't repeat the early moves that are already known. Skips to the first branching move in the study.") %>"><%= dgettext("study", "Jump to key move: on") %></a>
+  </div>
+  <div class="study_option_item_below">
+    <a class="icon" data-icon="(" id="move_delay"><%= dgettext("study", "Move delay:") %> <span id="move_delay_time"><%= dgettext("study", "instant") %></span></a>
+  </div>
+  <div class="study_option_item_below">
+    <a class="icon" data-icon="-" id="arrows_toggle"><%= dgettext("study", "Arrows: until played 2x") %></a>
+  </div>
+  <div class="study_option_item_below">
+    <a class="icon" data-icon="." id="reset_line"><%= dgettext("study", "Reset line") %></a>
   </div>
 </div>
 
@@ -111,12 +129,14 @@
   i18n.suggestion_comment = "<%= dgettext "study", "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below." %>";
   i18n.suggestion_100moves = "<%= dgettext "study", "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect." %>";
   i18n.suggestion_250moves = "<%= raw dgettext "study", "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop." %>";
-  i18n.arrows_hide = "<%= dgettext "study", "Hide Arrows" %>";
-  i18n.arrows_show = "<%= dgettext "study", "Show Arrows" %>";
-  i18n.review_slow = "<%= dgettext "study", "Slow board reset" %>";
-  i18n.review_fast = "<%= dgettext "study", "Fast board reset" %>";
-  i18n.key_move_enabled = "<%= dgettext "study", "Key Move" %>";
-  i18n.key_move_disabled = "<%= dgettext "study", "Key Move" %>";
+  i18n.arrows_new2x = "<%= dgettext "study", "Arrows: until played 2x" %>";
+  i18n.arrows_new5x = "<%= dgettext "study", "Arrows: until played 5x" %>";
+  i18n.arrows_always = "<%= dgettext "study", "Arrows: always on" %>";
+  i18n.arrows_hidden = "<%= dgettext "study", "Arrows: hidden" %>";
+  i18n.review_slow = "<%= dgettext "study", "Board reset delay: fast" %>";
+  i18n.review_fast = "<%= dgettext "study", "Board reset delay: slow" %>";
+  i18n.key_move_enabled = "<%= dgettext "study", "Jump to key move: off" %>";
+  i18n.key_move_disabled = "<%= dgettext "study", "Jump to key move: on" %>";
   i18n.slow = "<%= dgettext "study", "slow" %>";
   i18n.fast = "<%= dgettext "study", "fast" %>";
   i18n.medium = "<%= dgettext "study", "medium" %>";

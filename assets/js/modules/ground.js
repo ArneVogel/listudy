@@ -15,7 +15,10 @@ function ground_init_state(fen) {
     config["fen"] = fen;
     config["highlight"] = { check: true };
     config["lastMove"] = undefined;
-    config["drawable"] = {brushes: {hint: {key: "v", color: "#0034FF", opacity: 1, lineWidth: 10 }}}
+    config["drawable"] = {brushes: {
+        normal: {key: "v", color: "#0034FF", opacity: 1, lineWidth: 10 },
+        transparent: {key: "v", color: "#0034FF", opacity: 0.4, lineWidth: 10 }
+    }};
     ground.set(config);
 }
 

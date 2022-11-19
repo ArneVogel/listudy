@@ -22,7 +22,7 @@ const comments_div = "comments";
 let move_delay_time = i18n.instant;
 
 let combo_count = 0;
-let show_arrows = true;
+let show_arrows = i18n.arrows_new2x;
 let board_review = false;
 // Note: When enabled, will skip to the first branch point in the PGN tree. If the move list is flat then this has no effect.
 let key_moves_mode = true;
@@ -89,7 +89,7 @@ async function handle_move(orig, dest) {
 
     let san = uci_to_san(chess, orig, dest);
 
-    let possible_moves = tree_possible_moves(curr_move);
+    let possible_moves = tree_possible_moves(curr_move).map(m => m.move);
 
     let possible_promotion_san = possible_promotion(possible_moves, san);
     // the move automatically promoted to a queen, above we checked if it was
@@ -144,16 +144,34 @@ async function handle_move(orig, dest) {
     update_progress();
 }
 
-function give_hints(access) {
-    // need_hint also filters for has_children
-    let to_hint = tree_possible_moves(access, {filter: need_hint});
-    let shapes = [];
-    for (let m of to_hint) {
-        let ft = san_to_uci(chess, m);
-        shapes.push({orig: ft.from, dest: ft.to, brush: "hint"});
-    }
-    if (show_arrows) {
+function create_shape(move, brush) {
+    let ft = san_to_uci(chess, move);
+    return {orig: ft.from, dest: ft.to, brush: brush};
+}
+
+/**
+ * Update the hints/arrows on the board, depending on the current setting of the variable show_arrows.
+ * @param {*} once  Pass true to override any value of variable show_arrows and display hints temporarily.
+ */
+function give_hints(access, once) {
+    let all_moves = tree_possible_moves(access);
+    let min = Math.min(...all_moves.map(m => m.value));
+    let max = Math.max(...all_moves.map(m => m.value));
+
+    if (once || show_arrows == i18n.arrows_always ||
+        show_arrows == i18n.arrows_new2x && min < 2 ||
+        show_arrows == i18n.arrows_new5x && min < 5) {
+
+        let shapes = [];
+        for (let m of all_moves) {
+            let some_neglected = min < (0.5 * max);
+            let brush = some_neglected ? m.value < (0.5 * max) ? "normal" : "transparent" : "normal";
+            //console.log(m.move + " (" + m.value + "/" + max + ") min: " + min + " => brush: " + brush)
+            shapes.push(create_shape(m.move, brush));
+        }
         ground.setShapes(shapes);
+    } else {
+        ground.setShapes([]);
     }
 }
 
@@ -166,13 +184,13 @@ function display_comments(access) {
     let to_hint = tree_children_filter_sort(access, {filter: need_hint});
     for (let m of to_hint) {
         if (m.comments != undefined && m.comments[0] != undefined && m.comments[0].text != undefined) {
-            comment += m.comments[0].text + "\n";
+            comment += m.comments[0].text.trim() + "\n";
         }
     }
 
     // give comment on the current move if there are move to give hint to
     if (to_hint.length > 0 && cm.comments != undefined && cm.comments[0] != undefined && cm.comments[0].text != undefined) {
-        comment += cm.comments[0].text;
+        comment += cm.comments[0].text.trim();
     }
 
     // set_text is save to use with untrusted strings
@@ -189,7 +207,7 @@ function change_play_stockfish() {
 
 function setup_move() {
     change_play_stockfish();
-    give_hints(curr_move);
+    give_hints(curr_move, false);
     show_suggestions();
     display_comments(curr_move);
     ground_set_moves(); // the legal moves of the position
@@ -361,21 +379,30 @@ function setup_intro() {
     }
 }
 
+function turn_on_hints_for_current_move() {
+    give_hints(curr_move, true);
+}
+
 function toggle_arrows() {
-    let link = document.getElementById("arrows_toggle");
-    let curr = link.attributes["data-icon"].textContent;
-    let next = curr == "%" ? "$" : "%";
-    link.setAttribute("data-icon", next);
-    if (next == "$") {
-        // currently hidden
-        link.textContent = i18n.arrows_show;
-        show_arrows = false;
-        ground.setShapes([]);
-    } else {
-        link.textContent = i18n.arrows_hide;
-        show_arrows = true;
-        give_hints(curr_move);
+    let span = document.getElementById("arrows_toggle");
+    let curr = span.textContent;
+    switch (curr) {
+        case i18n.arrows_new2x:
+            curr = i18n.arrows_new5x;
+            break;
+        case i18n.arrows_new5x:
+            curr = i18n.arrows_always;
+            break;
+        case i18n.arrows_always:
+            curr = i18n.arrows_hidden;
+            break;
+        case i18n.arrows_hidden:
+            curr = i18n.arrows_new2x;
+            break;
     }
+    span.textContent = curr;
+    show_arrows = curr;
+    give_hints(curr_move);
 }
 
 function toggle_key_move() {
@@ -394,16 +421,19 @@ function toggle_key_move() {
 
 function toggle_review() {
     let link = document.getElementById("line_review");
-    let curr = link.attributes["data-icon"].textContent;
-    let next = curr == "%" ? "$" : "%";
-    link.setAttribute("data-icon", next);
-    if (next == "$") {
-        link.textContent = i18n.review_fast;
-        board_review = true;
-    } else {
-        link.textContent = i18n.review_slow;
-        board_review = false;
+
+    let curr = link.textContent;
+    switch (curr) {
+        case i18n.review_fast:
+            curr = i18n.review_slow;
+            board_review = false;
+            break;
+        case i18n.review_slow:
+            curr = i18n.review_fast;
+            board_review = true;
+            break;
     }
+    link.textContent = curr;
 }
 
 function toggle_move_delay() {
@@ -448,6 +478,10 @@ function get_move_delay() {
             delay = 300;
     }
     return delay;
+}
+
+function reset_line() {
+    start_training();
 }
 
 /*
@@ -496,10 +530,12 @@ async function setup_progress_reset() {
 }
 
 function setup_configs() {
+    document.getElementById("hints").onclick = turn_on_hints_for_current_move;
     document.getElementById("arrows_toggle").onclick = toggle_arrows;
     document.getElementById("line_review").onclick = toggle_review;
     document.getElementById("move_delay").onclick = toggle_move_delay;
     document.getElementById("key_move").onclick = toggle_key_move;
+    document.getElementById("reset_line").onclick = reset_line;
 }
 
 function main() {
