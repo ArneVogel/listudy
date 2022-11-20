@@ -1,4 +1,8 @@
 <h1><%= dgettext("changelog", "Changelog") %></h1>
+<b>2022-11-20</b>
+<p><%= dgettext("changelog", "Added a new and improved \"ai\" move picker. thanks to Olle Eriksson!") %></p>
+<b>2022-08-21</b>
+<p><%= dgettext("changelog", "Added basic hebrew transation, thanks to Arihol") %></p>
 <b>2022-06-26</b>
 <p><%= dgettext("changelog", "Allow promotion in own tactics, thanks to sampma309") %></p>
 <b>2022-02-28</b>
