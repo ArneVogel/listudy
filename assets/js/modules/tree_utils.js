@@ -114,6 +114,21 @@ function tree_get_node(access) {
 }
 
 /*
+ * Get the node depth of a move
+ */
+function tree_get_node_depth(access) {
+    return access.move_index == 0 ? 1 : 1 + Math.floor(access.move_index / 2);
+}
+
+/*
+ * Get a string representation of a move in SAN notation with move number for debugging purposes, ie 1.e4, or 1...e5
+ */
+function tree_get_node_string(access) {
+    let dots = access.move_index % 2 == 0 ? "." : "...";
+    return tree_get_node_depth(access) + dots + access.move;
+}
+
+/*
  * Can be used for tree_possible_moves to specify 
  * only moves that have a reply
  */
@@ -177,7 +192,42 @@ function value_sort(a,b) {
     return date_sort(a,b);
 }
 
+/*
+ * Picks the candidate move that has the largest subtree. This ensures moves from part of the repertoire
+ * that holds the most moves are played most often by the AI.
+ * 
+ * Ex: We have three candidates, the subtree sizes of them are 10, 5 and 2 nodes each.
+ *     A random number is picked between 1 and 17.
+ *     If the number is between 1 and 10 the first move is chosen,
+ *     If the number is between 11 and 15 the second move is chosen,
+ *     And if the number is between 16 and 17 the third move is chosen.
+ */
+function tree_size_weighted_random_move(candidates) {
+    if (candidates == undefined || candidates.length == 0) {
+        return undefined;
+    } else if (candidates.length == 1) {
+        //console.log('  Only one candidate: ' + candidates[0].move);
+        return candidates[0].move;
+    }
 
+    let subtree_sizes = candidates.map(c => tree_size(c));
+    let max = sum(subtree_sizes) + 1;
+    let rand = Math.floor(Math.random() * max);
+
+    let total = 0;
+    let i = 0;
+    while (i < candidates.length && (total + subtree_sizes[i]) < rand) {
+        total += subtree_sizes[i];
+        i += 1;
+    }
+    let pick = candidates[i].move;
+    //console.log('  Candidates: ' + candidates.map(c => c.move + ' (' + tree_size(c) + ')').join(',  ') + '  - Rand(1-' + max + '): ' + rand + ', Pick: ' + pick);
+    return pick;
+}
+
+function sum(values) {
+    return values.reduce((a, b) => { return a + b; }, 0);
+}
 
 /*
  * Returns the min or max value of a tree
@@ -191,6 +241,16 @@ function tree_value(tree, minmax, {filter=function(){return true;}}={
     let child_values = tree.children.filter(filter).map(x => tree_value(x, minmax, {filter:filter}));
     let minmax_children = minmax(...child_values);
     return minmax(curr_value, minmax_children);
+} 
+
+/**
+ * Returns the size of a subtree
+ */
+function tree_size(tree) { 
+    let num_child_nodes = sum(tree.children.map(x => tree_size(x)));
+    // Note that the logs below displays the tree upside down since the nodes are counted bottom-up
+    //console.log('  '.repeat(tree.move_index) + tree_get_node_string(tree) + '  (' + (num_child_nodes + 1) + ')');
+    return num_child_nodes + 1;
 }
 
 /*
@@ -223,4 +283,4 @@ function tree_value_add(tree, number) {
 }
 
 
-export { tree_value_add, tree_progress, tree_children, tree_children_filter_sort, tree_possible_moves, tree_move_index, has_children, need_hint, update_value, date_sort, value_sort, tree_get_node, tree_value };
+export { tree_value_add, tree_progress, tree_children, tree_children_filter_sort, tree_possible_moves, tree_move_index, has_children, need_hint, update_value, date_sort, value_sort, tree_get_node, tree_value, tree_size, tree_size_weighted_random_move, tree_get_node_depth, tree_get_node_string };

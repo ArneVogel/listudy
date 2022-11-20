@@ -6,7 +6,7 @@ import { turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess
 import { string_hash } from './modules/hash.js';
 import { clear_local_storage } from './modules/localstorage.js';
 import { tree_value_add, tree_progress, tree_move_index, tree_children, tree_possible_moves, has_children, tree_value,
-         need_hint, update_value, value_sort, tree_get_node, tree_children_filter_sort } from './modules/tree_utils.js';
+         need_hint, update_value, value_sort, tree_get_node, tree_children_filter_sort, tree_get_node_depth, tree_get_node_string, tree_size_weighted_random_move } from './modules/tree_utils.js';
 import { generate_move_trees, annotate_pgn } from './modules/tree_from_pgn.js';
 import { sleep } from './modules/sleep.js';
 import { getRandomIntFromRange } from './modules/random.js';
@@ -109,7 +109,7 @@ async function handle_move(orig, dest) {
         let end_of_line = reply == undefined;
         if (!end_of_line && max_depth_mode !== null) {
             let curr_node = tree_get_node(curr_move);
-            let curr_depth = curr_node.move_index == 0 ? 1 : 1 + Math.floor(curr_node.move_index / 2);
+            let curr_depth = tree_get_node_depth(curr_node);
             if (!key_moves_mode || window.first_variation === null) {
                 end_of_line = curr_depth >= max_depth_mode;
             } else {
@@ -197,11 +197,13 @@ function setup_move() {
 
 /*
  * Returns the ai move that should be played for the access position
- * the move should be the one with the lowest value or the move
- * played the latest
  */
 function ai_move(access) {
-    let m = tree_possible_moves(access, {filter: has_children, sort: value_sort})[0];
+    //console.log('Finding moves after ' + (tree_get_node(access).move_index > 0 ? tree_get_node_string(tree_get_node(access)) : 'starting position'));
+
+    let candidates = tree_children_filter_sort(access, {filter: has_children});
+    let m = tree_size_weighted_random_move(candidates);
+
     // change the last updated value of the node so if other moves exists they will be
     // picked next time instead
     if (m !== undefined) {
