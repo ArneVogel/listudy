@@ -66,7 +66,7 @@ msgstr "Bearbeiten"
 #: lib/listudy_web/templates/study/show.html.eex:37
 #, elixir-autogen, elixir-format
 msgid "Favorite study"
-msgstr "Favorisieren"
+msgstr ""
 
 #: lib/listudy_web/templates/study/show.html.eex:126
 #, elixir-autogen, elixir-format
@@ -419,4 +419,4 @@ msgstr ""
 #: lib/listudy_web/templates/study/show.html.eex:39
 #, elixir-autogen, elixir-format
 msgid "Unfavorite study"
-msgstr "Entfavorisieren"
+msgstr ""

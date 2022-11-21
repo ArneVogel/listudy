@@ -64,7 +64,7 @@ msgid "Edit"
 msgstr ""
 
 #: lib/listudy_web/templates/study/show.html.eex:37
-#, elixir-autogen, elixir-format, fuzzy
+#, elixir-autogen, elixir-format
 msgid "Favorite study"
 msgstr ""
 
