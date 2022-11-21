@@ -203,8 +203,16 @@ function change_play_stockfish() {
     link.href = `${base}#${fen}`;
 }
 
+function change_analysis_board() {
+    let pgn = encodeURIComponent(chess.pgn());
+    let color = turn_color(chess);
+    let link = document.getElementById("analysis_board");
+    link.href = `https://lichess.org/analysis/pgn/${pgn}?color=${color}`;
+}
+
 function setup_move() {
     change_play_stockfish();
+    change_analysis_board();
     give_hints(curr_move, false);
     show_suggestions();
     display_comments(curr_move);
