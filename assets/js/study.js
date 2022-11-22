@@ -157,22 +157,20 @@ function give_hints(access, once) {
     let all_moves = tree_possible_moves(access);
     let min = Math.min(...all_moves.map(m => m.value));
     let max = Math.max(...all_moves.map(m => m.value));
+    let shapes = [];
 
     if (once || show_arrows == i18n.arrows_always ||
         show_arrows == i18n.arrows_new2x && min < 2 ||
         show_arrows == i18n.arrows_new5x && min < 5) {
 
-        let shapes = [];
         for (let m of all_moves) {
             let some_neglected = min < (0.5 * max);
             let brush = some_neglected ? m.value < (0.5 * max) ? "normal" : "transparent" : "normal";
             //console.log(m.move + " (" + m.value + "/" + max + ") min: " + min + " => brush: " + brush)
             shapes.push(create_shape(m.move, brush));
         }
-        ground.setShapes(shapes);
-    } else {
-        ground.setShapes([]);
     }
+    ground.setShapes(shapes);
 }
 
 /*
@@ -267,6 +265,15 @@ function start_training() {
         play_move(ai_move(curr_move));
     }
     setup_move();
+
+    /* TODO figure out how to remove this. This is a workaround to make sure arrows appear right from
+    the start. Without this, setShapes() in give_hints() appear to have no effect. It's only needed the
+    first time hints are displayed, so this is a good location. The redraw scrolls the page to the top
+    on mobile devices, and having the call in give_hints() then forces a scroll to the top every time
+    the user makes a move or changes the Arrows option. Hours have been spent on this bug. Could be a
+    bug in chessground. */
+    ground.redrawAll();
+
     window.mode = mode_free;
 }
 
@@ -402,7 +409,7 @@ function toggle_arrows() {
     }
     span.textContent = curr;
     show_arrows = curr;
-    give_hints(curr_move);
+    give_hints(curr_move, false);
 }
 
 function toggle_key_move() {

@@ -49,6 +49,11 @@
 
 .study_option_item_below {
     margin-right: 3rem;
+    min-width: 23ch;
+}
+
+.study_option_item_below > a {
+	display: block;
 }
 
 .select2 {
