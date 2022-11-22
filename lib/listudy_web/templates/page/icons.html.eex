@@ -12,3 +12,7 @@
 <p>,: <span class="icon" data-icon=','></span></p>
 <p>-: <span class="icon" data-icon='-'></span></p>
 <p>.: <span class="icon" data-icon='.'></span></p>
+<p>/: <span class="icon" data-icon='/'></span></p>
+<p>0: <span class="icon" data-icon='0'></span></p>
+<p>1: <span class="icon" data-icon='1'></span></p>
+<p>2: <span class="icon" data-icon='2'></span></p>
