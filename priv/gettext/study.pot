@@ -69,7 +69,7 @@ msgstr ""
 
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:24
-msgid "Favorite"
+msgid "Favorite study"
 msgstr ""
 
 #, elixir-format
@@ -123,11 +123,6 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/study/show.html.eex:104
 msgid "This move is not in the study, try again."
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:26
-msgid "Unfavorite"
 msgstr ""
 
 #, elixir-format

@@ -47,7 +47,7 @@ function tree_possible_moves(access, {filter=function(){return true;},sort=funct
     let children = tree_children_filter_sort(access, {filter:filter, sort:sort});
     let moves = [];
     for (let c of children) {
-        moves.push(c.move);
+        moves.push(c);
     }
     return moves;
 }
