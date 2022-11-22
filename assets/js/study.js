@@ -13,7 +13,7 @@ import { getRandomIntFromRange } from './modules/random.js';
 import { unescape_string } from './modules/security_related.js';
 import { ground_init_state, onresize, resize_ground, setup_ground, ground_set_moves,
          ground_undo_last_move, setup_move_handler, ground_move } from './modules/ground.js';
-import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
+import { set_text, set_multiple_texts, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 
 const mode_free = "free_mode";
 
@@ -26,6 +26,8 @@ let show_arrows = i18n.arrows_new2x;
 let board_review = false;
 // Note: When enabled, will skip to the first branch point in the PGN tree. If the move list is flat then this has no effect.
 let key_moves_mode = true;
+// Note: When enabled the comments from the opposite side's responses are also shown.
+let show_comments = i18n.comments_move_and_responses;
 // Note: NULL if disabled, otherwise an integer value based on the PGN move number.
 let max_depth_mode = null;
 
@@ -174,26 +176,37 @@ function give_hints(access, once) {
 }
 
 /*
- * Display comments for moves that need hints and the current move
+ * Display comments, either only for the current move, or for the opposite side's responses as well
+ * if that option is turned on.
  */
 function display_comments(access) {
     let cm = tree_get_node(access);
     let comment = "";
-    let to_hint = tree_children_filter_sort(access, {filter: need_hint});
-    for (let m of to_hint) {
-        if (m.comments != undefined && m.comments[0] != undefined && m.comments[0].text != undefined) {
-            comment += m.comments[0].text.trim() + "\n";
+    let comments = [];
+
+    // Add comment from the current move that was just played
+    if (cm.comments != undefined && cm.comments[0] != undefined && cm.comments[0].text != undefined) {
+        comment += cm.comments[0].text.trim() + "\n";
+        comments.push(unescape_string(comment.trim()));
+    }
+
+    if (show_comments == i18n.comments_move_and_responses) {
+        // Add comments from the available responses
+        let children = tree_children(access);
+        if (children.length > 0) {
+            for (let m of children) {
+                if (m.comments != undefined && m.comments[0] != undefined && m.comments[0].text != undefined) {
+                    let child_comment = m.move + ": " + m.comments[0].text.trim();
+                    comment += child_comment + "\n";
+                    comments.push(unescape_string(child_comment));
+                }
+            }
         }
     }
-
-    // give comment on the current move if there are move to give hint to
-    if (to_hint.length > 0 && cm.comments != undefined && cm.comments[0] != undefined && cm.comments[0].text != undefined) {
-        comment += cm.comments[0].text.trim();
-    }
-
-    // set_text is save to use with untrusted strings
+    // set_text is safe to use with untrusted strings
     // => we can use unescape_string
-    set_text(comments_div, unescape_string(comment));
+    //set_text(comments_div, unescape_string(comment.trim()));
+    set_multiple_texts("comments", comments);
 }
 
 function change_play_stockfish() {
@@ -381,7 +394,7 @@ function setup_intro() {
     let roots = trees.map(x => x.root[0]);
     let max = Math.max(...roots.map(x => tree_value(x, Math.max)));
 
-    if (max == 0) {
+    if (max == 0 && show_arrows == i18n.arrows_new2x) {
         set_text(suggestion_div, i18n.info_arrows);
     }
 }
@@ -428,7 +441,6 @@ function toggle_key_move() {
 
 function toggle_review() {
     let link = document.getElementById("line_review");
-
     let curr = link.textContent;
     switch (curr) {
         case i18n.review_fast:
@@ -487,6 +499,22 @@ function get_move_delay() {
     return delay;
 }
 
+function toggle_comments() {
+    let link = document.getElementById("comments_toggle");
+    let curr = link.textContent;
+    switch (curr) {
+        case i18n.comments_move_and_responses:
+            curr = i18n.comments_only_move;
+            break;
+        case i18n.comments_only_move:
+            curr = i18n.comments_move_and_responses;
+            break;
+    }
+    link.textContent = curr;
+    show_comments = curr;
+    display_comments(curr_move);
+}
+
 function reset_line() {
     start_training();
 }
@@ -542,6 +570,7 @@ function setup_configs() {
     document.getElementById("line_review").onclick = toggle_review;
     document.getElementById("move_delay").onclick = toggle_move_delay;
     document.getElementById("key_move").onclick = toggle_key_move;
+    document.getElementById("comments_toggle").onclick = toggle_comments;
     document.getElementById("reset_line").onclick = reset_line;
 }
 

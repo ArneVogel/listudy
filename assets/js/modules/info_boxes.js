@@ -10,6 +10,20 @@ function clear_all_text() {
     set_text(suggestion_div, "");
 }
 
+function set_multiple_texts(container_id, texts) {
+    let container_div = document.getElementById(container_id);
+    container_div.innerHTML = '';
+    for (let [i, text] of texts.entries()) {
+        var comment_div = document.createElement('div');
+        comment_div.id = 'comment' + i;
+        var comment_text_div = document.createElement('div');
+        comment_text_div.id = comment_div.id + "_text"
+        comment_div.appendChild(comment_text_div);
+        container_div.appendChild(comment_div);
+        set_text(comment_div.id, text);
+    }
+}
+
 function set_text(id, text, extra = { bold_text: "", symbol: "" }) {
     let div = document.getElementById(id);
     let prefix_symbol = "";
@@ -54,4 +68,4 @@ function set_text_content(id, content) {
     }
 }
 
-export { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div };
+export { set_text, set_multiple_texts, clear_all_text, success_div, info_div, error_div, suggestion_div };

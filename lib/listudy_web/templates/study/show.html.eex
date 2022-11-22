@@ -14,7 +14,8 @@
         </div>
         
         <!-- Putting the <p id="comments"> and <span id="comments_text"> on different lines below causes an extra line break because the "white-space: pre-line" is on the outer <p> -->
-        <p id="comments" class="study_comments"><span id="comments_text"></span></p>
+        <!-- <p id="comments" class="study_comments"><span id="comments_text"></span></p> -->
+        <div id="comments" class="study_comment_list"></div>
       </div>
     </div>
     <div class="study_options">
@@ -38,6 +39,10 @@
     <% else %>
       <%= link dgettext("study" ,"Unfavorite study"), to: Routes.study_path(@conn, :unfavorite_study, @study.slug), method: :post, class: "icon", "data-icon": '"' %>
     <% end %>
+  </div>
+
+  <div class="study_option_item_below">
+    <a class="icon" data-icon="'" id="comments_toggle" title="<%= dgettext("study", "In addition to comments on the current move, also display comments from the available not-yet-played responses (from white or black).") %>"><%= dgettext("study", "Comments: move + responses") %></a>
   </div>
 
   <div class="study_option_item_below">
@@ -141,6 +146,8 @@
   i18n.fast = "<%= dgettext "study", "fast" %>";
   i18n.medium = "<%= dgettext "study", "medium" %>";
   i18n.instant = "<%= dgettext "study", "instant" %>";
+  i18n.comments_only_move = "<%= dgettext "study", "Comments: only played move" %>";
+  i18n.comments_move_and_responses = "<%= dgettext "study", "Comments: move + responses" %>";
   i18n.confirm_reset_progress = "<%= dgettext "study", "Are you sure you want to delete your study progress?" %>";
 </script>
 
