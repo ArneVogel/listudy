@@ -11,17 +11,17 @@ msgstr ""
 "Language: pt\n"
 "Plural-Forms: nplurals=2\n"
 
-#: lib/listudy_web/templates/study/show.html.eex:129
+#: lib/listudy_web/templates/study/show.html.eex:124
 #, elixir-autogen, elixir-format
 msgid "At first the arrows will show you which moves are in this study. Once you have played these moves twice, the arrows are no longer shown."
 msgstr "A princípio, as setas mostrarão quais movimentos estão neste estudo. Depois de executar esses movimentos duas vezes, as setas não serão mais exibidas."
 
-#: lib/listudy_web/templates/study/show.html.eex:52
+#: lib/listudy_web/templates/study/show.html.eex:48
 #, elixir-autogen, elixir-format
 msgid "At the end of lines the board is only reset after 3 seconds giving you time to review the final position."
 msgstr "No final das linhas, o tabuleiro só é reiniciado após 3 segundos, dando-lhe tempo para rever a posição final."
 
-#: lib/listudy_web/templates/study/show.html.eex:133
+#: lib/listudy_web/templates/study/show.html.eex:128
 #, elixir-autogen, elixir-format
 msgid "Chapter"
 msgstr "Capítulo"
@@ -31,55 +31,55 @@ msgstr "Capítulo"
 msgid "Chapter Selection"
 msgstr "Seleção de capítulo"
 
-#: lib/listudy_web/templates/study/show.html.eex:136
+#: lib/listudy_web/templates/study/show.html.eex:131
 #, elixir-autogen, elixir-format
 msgid "Create an account to get all the features of Listudy and upload your own studies."
 msgstr "Crie uma conta para obter todos os recursos do Listudy e carregue seus próprios estudos."
 
-#: lib/listudy_web/templates/study/show.html.eex:77
+#: lib/listudy_web/templates/study/show.html.eex:72
 #, elixir-autogen, elixir-format
 msgid "Creator"
 msgstr "Criador(a)"
 
 #: lib/listudy_web/templates/study/form.html.eex:12
-#: lib/listudy_web/templates/study/show.html.eex:70
+#: lib/listudy_web/templates/study/show.html.eex:65
 #, elixir-autogen, elixir-format
 msgid "Description"
 msgstr "Descrição"
 
-#: lib/listudy_web/templates/study/show.html.eex:137
+#: lib/listudy_web/templates/study/show.html.eex:132
 #, elixir-autogen, elixir-format
 msgid "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below."
 msgstr "Você tem feedback, sugestões ou quer dizer algo legal? Comente sobre o estudo abaixo."
 
-#: lib/listudy_web/templates/study/show.html.eex:135
+#: lib/listudy_web/templates/study/show.html.eex:130
 #, elixir-autogen, elixir-format
 msgid "Do you like this study? Share it with your friends."
 msgstr "Você gosta deste estudo? Compartilhe com seus amigos."
 
 #: lib/listudy_web/templates/study/list.html.eex:15
-#: lib/listudy_web/templates/study/show.html.eex:74
+#: lib/listudy_web/templates/study/show.html.eex:69
 #, elixir-autogen, elixir-format
 msgid "Edit"
 msgstr "Editar"
 
-#: lib/listudy_web/templates/study/show.html.eex:41
+#: lib/listudy_web/templates/study/show.html.eex:42
 #, elixir-autogen, elixir-format
 msgid "Favorite study"
 msgstr ""
 
-#: lib/listudy_web/templates/study/show.html.eex:134
+#: lib/listudy_web/templates/study/show.html.eex:129
 #, elixir-autogen, elixir-format
 msgid "If you like this study make sure to favorite it to have it listed under Your Studies"
 msgstr "Se você gostar deste estudo, certifique-se de adicioná-lo como favorito para que ele seja listado em Seus estudos"
 
-#: lib/listudy_web/templates/study/show.html.eex:58
+#: lib/listudy_web/templates/study/show.html.eex:54
 #, elixir-autogen, elixir-format
 msgid "Move delay:"
 msgstr "Atraso nos movimentos de peças:"
 
 #: lib/listudy_web/templates/study/form.html.eex:16
-#: lib/listudy_web/templates/study/show.html.eex:80
+#: lib/listudy_web/templates/study/show.html.eex:75
 #, elixir-autogen, elixir-format
 msgid "Opening"
 msgstr "Abertura"
@@ -90,53 +90,53 @@ msgstr "Abertura"
 msgid "Play against Stockfish"
 msgstr "Jogue contra Stockfish"
 
-#: lib/listudy_web/templates/study/show.html.eex:131
+#: lib/listudy_web/templates/study/show.html.eex:126
 #, elixir-autogen, elixir-format
 msgid "Right move!"
 msgstr "Lance correto!"
 
-#: lib/listudy_web/templates/study/show.html.eex:128
+#: lib/listudy_web/templates/study/show.html.eex:123
 #, elixir-autogen, elixir-format
 msgid "Starting training."
 msgstr "Iniciar treinamento."
 
-#: lib/listudy_web/templates/study/show.html.eex:130
+#: lib/listudy_web/templates/study/show.html.eex:125
 #, elixir-autogen, elixir-format
 msgid "This move is not in the study, try again."
 msgstr "Este lance não está no estudo, tente novamente."
 
-#: lib/listudy_web/templates/study/show.html.eex:138
+#: lib/listudy_web/templates/study/show.html.eex:133
 #, elixir-autogen, elixir-format
 msgid "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect."
 msgstr "Você aprendeu 100 movimentos hoje. Faça uma pausa ou volte amanhã para obter o efeito de treinamento completo."
 
-#: lib/listudy_web/templates/study/show.html.eex:139
+#: lib/listudy_web/templates/study/show.html.eex:134
 #, elixir-autogen, elixir-format
 msgid "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop."
 msgstr "Você aprendeu 250 movimentos hoje. Para obter o melhor efeito de treinamento, volte amanhã. Ou não, estou apenas enviando uma mensagem e não sou um policial."
 
-#: lib/listudy_web/templates/study/show.html.eex:132
+#: lib/listudy_web/templates/study/show.html.eex:127
 #, elixir-autogen, elixir-format
 msgid "You reached the end of this line."
 msgstr "Você chegou ao fim desta linha."
 
-#: lib/listudy_web/templates/study/show.html.eex:149
+#: lib/listudy_web/templates/study/show.html.eex:144
 #, elixir-autogen, elixir-format
 msgid "fast"
 msgstr "rápido"
 
-#: lib/listudy_web/templates/study/show.html.eex:58
-#: lib/listudy_web/templates/study/show.html.eex:151
+#: lib/listudy_web/templates/study/show.html.eex:54
+#: lib/listudy_web/templates/study/show.html.eex:146
 #, elixir-autogen, elixir-format
 msgid "instant"
 msgstr "Instantâneo"
 
-#: lib/listudy_web/templates/study/show.html.eex:150
+#: lib/listudy_web/templates/study/show.html.eex:145
 #, elixir-autogen, elixir-format
 msgid "medium"
 msgstr "médio"
 
-#: lib/listudy_web/templates/study/show.html.eex:148
+#: lib/listudy_web/templates/study/show.html.eex:143
 #, elixir-autogen, elixir-format
 msgid "slow"
 msgstr "devagar"
@@ -322,7 +322,7 @@ msgstr "Procurar por estudos"
 msgid "by"
 msgstr "por"
 
-#: lib/listudy_web/templates/study/show.html.eex:55
+#: lib/listudy_web/templates/study/show.html.eex:51
 #, elixir-autogen, elixir-format
 msgid "Don't repeat the early moves that are already known. Skips to the first branching move in the study."
 msgstr "Não repita os primeiros movimentos que já são conhecidos. Pula para o primeiro movimento de ramificação no estudo."
@@ -343,7 +343,7 @@ msgstr "Mais novo"
 msgid "favorites"
 msgstr "favoritos"
 
-#: lib/listudy_web/templates/study/show.html.eex:154
+#: lib/listudy_web/templates/study/show.html.eex:147
 #, elixir-autogen, elixir-format
 msgid "Are you sure you want to delete your study progress?"
 msgstr "Tem certeza de que deseja excluir seu progresso de estudo?"
@@ -353,65 +353,65 @@ msgstr "Tem certeza de que deseja excluir seu progresso de estudo?"
 msgid "Progress"
 msgstr "Progresso"
 
-#: lib/listudy_web/templates/study/show.html.eex:163
+#: lib/listudy_web/templates/study/show.html.eex:155
 #, elixir-autogen, elixir-format
 msgid "Reset progress"
 msgstr "Reiniciar progresso"
 
-#: lib/listudy_web/templates/study/show.html.eex:161
+#: lib/listudy_web/templates/study/show.html.eex:153
 #, elixir-autogen, elixir-format
 msgid "Study Progress"
 msgstr "Progresso dos estudos"
 
-#: lib/listudy_web/templates/study/show.html.eex:36
+#: lib/listudy_web/templates/study/show.html.eex:37
 #, elixir-autogen, elixir-format
 msgid "Analyze this position with the Lichess Analysis Board"
 msgstr ""
 
-#: lib/listudy_web/templates/study/show.html.eex:142
+#: lib/listudy_web/templates/study/show.html.eex:137
 #, elixir-autogen, elixir-format
 msgid "Arrows: always on"
 msgstr ""
 
-#: lib/listudy_web/templates/study/show.html.eex:143
+#: lib/listudy_web/templates/study/show.html.eex:138
 #, elixir-autogen, elixir-format
 msgid "Arrows: hidden"
 msgstr ""
 
-#: lib/listudy_web/templates/study/show.html.eex:61
-#: lib/listudy_web/templates/study/show.html.eex:140
+#: lib/listudy_web/templates/study/show.html.eex:57
+#: lib/listudy_web/templates/study/show.html.eex:135
 #, elixir-autogen, elixir-format
 msgid "Arrows: until played 2x"
 msgstr ""
 
-#: lib/listudy_web/templates/study/show.html.eex:141
+#: lib/listudy_web/templates/study/show.html.eex:136
 #, elixir-autogen, elixir-format
 msgid "Arrows: until played 5x"
 msgstr ""
 
-#: lib/listudy_web/templates/study/show.html.eex:52
-#: lib/listudy_web/templates/study/show.html.eex:144
+#: lib/listudy_web/templates/study/show.html.eex:48
+#: lib/listudy_web/templates/study/show.html.eex:139
 #, elixir-autogen, elixir-format
 msgid "Board reset delay: fast"
 msgstr ""
 
-#: lib/listudy_web/templates/study/show.html.eex:145
+#: lib/listudy_web/templates/study/show.html.eex:140
 #, elixir-autogen, elixir-format
 msgid "Board reset delay: slow"
 msgstr ""
 
-#: lib/listudy_web/templates/study/show.html.eex:146
+#: lib/listudy_web/templates/study/show.html.eex:141
 #, elixir-autogen, elixir-format
 msgid "Jump to key move: off"
 msgstr ""
 
-#: lib/listudy_web/templates/study/show.html.eex:55
-#: lib/listudy_web/templates/study/show.html.eex:147
+#: lib/listudy_web/templates/study/show.html.eex:51
+#: lib/listudy_web/templates/study/show.html.eex:142
 #, elixir-autogen, elixir-format
 msgid "Jump to key move: on"
 msgstr ""
 
-#: lib/listudy_web/templates/study/show.html.eex:64
+#: lib/listudy_web/templates/study/show.html.eex:60
 #, elixir-autogen, elixir-format
 msgid "Reset line"
 msgstr ""
@@ -421,33 +421,12 @@ msgstr ""
 msgid "Show hints for this move!"
 msgstr ""
 
-#: lib/listudy_web/templates/study/show.html.eex:43
+#: lib/listudy_web/templates/study/show.html.eex:44
 #, elixir-autogen, elixir-format
 msgid "Unfavorite study"
 msgstr ""
 
-#: lib/listudy_web/templates/study/show.html.eex:36
+#: lib/listudy_web/templates/study/show.html.eex:37
 #, elixir-autogen, elixir-format
 msgid "Analyze position"
-msgstr ""
-
-#: lib/listudy_web/templates/study/show.html.eex:48
-#: lib/listudy_web/templates/study/show.html.eex:153
-#, elixir-autogen, elixir-format
-msgid "Comments: move + responses"
-msgstr ""
-
-#: lib/listudy_web/templates/study/show.html.eex:152
-#, elixir-autogen, elixir-format
-msgid "Comments: only played move"
-msgstr ""
-
-#: lib/listudy_web/templates/study/show.html.eex:48
-#, elixir-autogen, elixir-format
-msgid "In addition to comments on the current move, also display comments from the available not-yet-played responses (from white or black)."
-msgstr ""
-
-#: lib/listudy_web/templates/study/show.html.eex:155
-#, elixir-autogen, elixir-format
-msgid "response"
 msgstr ""

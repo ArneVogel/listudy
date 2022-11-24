@@ -38,6 +38,11 @@
     <a class="icon" data-icon="." id="reset_line"><%= dgettext("study", "Reset line") %></a>
   </div>
   <div class="study_option_item_below">
+    <a class="icon" data-icon="/" id="analysis_board" href="https://lichess.org/analysis"
+    title="<%= dgettext "study", "Analyze this position with the Lichess Analysis Board" %>"><%= dgettext "study", "Analyze position" %></a>
+  </div>
+
+  <div class="study_option_item_below">
     <%= if !@study.favorites do %>
       <%= link dgettext("study", "Favorite study"), to: Routes.study_path(@conn, :favorite_study, @study.slug), method: :post, class: "icon", "data-icon": "#" %>
     <% else %>
