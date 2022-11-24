@@ -554,9 +554,11 @@ function toggle_comments() {
     switch (curr) {
         case i18n.comments_move_and_responses:
             curr = i18n.comments_only_move;
+            link.setAttribute("data-icon", "3");
             break;
         case i18n.comments_only_move:
             curr = i18n.comments_move_and_responses;
+            link.setAttribute("data-icon", "4");
             break;
     }
     link.textContent = curr;
