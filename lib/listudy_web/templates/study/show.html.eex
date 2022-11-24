@@ -13,9 +13,7 @@
           <a class="icon large_clickarea" data-icon="-" id="hints"><%= dgettext("study", "Show hints for this move!") %></a><br>
         </div>
         
-        <!-- Putting the <p id="comments"> and <span id="comments_text"> on different lines below causes an extra line break because the "white-space: pre-line" is on the outer <p> -->
-        <!-- <p id="comments" class="study_comments"><span id="comments_text"></span></p> -->
-        <div id="comments" class="study_comment_list"></div>
+        <div id="comments" class="study_comments"></div>
       </div>
     </div>
     <div class="study_options">
@@ -149,6 +147,7 @@
   i18n.comments_only_move = "<%= dgettext "study", "Comments: only played move" %>";
   i18n.comments_move_and_responses = "<%= dgettext "study", "Comments: move + responses" %>";
   i18n.confirm_reset_progress = "<%= dgettext "study", "Are you sure you want to delete your study progress?" %>";
+  i18n.response = "<%= dgettext "study", "response" %>";
 </script>
 
 <div id="progress_modal" class="modal">

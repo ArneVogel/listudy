@@ -2,7 +2,7 @@ require("regenerator-runtime/runtime"); // required for sleep (https://github.co
 
 const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
-import { turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
+import { turn_color, non_turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
 import { string_hash } from './modules/hash.js';
 import { clear_local_storage } from './modules/localstorage.js';
 import { tree_value_add, tree_progress, tree_move_index, tree_children, tree_possible_moves, has_children, tree_value,
@@ -13,7 +13,7 @@ import { getRandomIntFromRange } from './modules/random.js';
 import { unescape_string } from './modules/security_related.js';
 import { ground_init_state, onresize, resize_ground, setup_ground, ground_set_moves,
          ground_undo_last_move, setup_move_handler, ground_move } from './modules/ground.js';
-import { set_text, set_multiple_texts, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
+import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 
 const mode_free = "free_mode";
 
@@ -175,38 +175,79 @@ function give_hints(access, once) {
     ground.setShapes(shapes);
 }
 
+function capitalize_first_letter(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+function create_comment(container_div, response_num, move, decorate_color) {
+    var comment_div = document.createElement('div');
+    comment_div.id = 'comment' + response_num;
+
+    var bold_text_elem = document.createElement('div');
+    bold_text_elem.id = comment_div.id + "_bold";
+    bold_text_elem.className = "bold";
+
+    var comment_text_elem = document.createElement('div');
+    comment_text_elem.id = comment_div.id + "_text";
+    comment_text_elem.className = "text";
+
+    comment_div.appendChild(bold_text_elem);
+    comment_div.appendChild(comment_text_elem);
+    container_div.appendChild(comment_div);
+
+    let response_color = capitalize_first_letter(turn_color(chess));
+    let move_color = capitalize_first_letter(non_turn_color(chess));
+    let ext_san = tree_get_node_string(move);
+
+    let text = unescape_string(move.comments[0].text.trim());
+    let bold_text = response_num == undefined ?
+        (decorate_color ? move_color : "") + " " + ext_san + ":"
+        : response_color + " " + i18n.response + " " + ext_san + ":" ;
+
+    set_text(comment_div.id, text, { bold_text: bold_text });
+}
+
+function create_comment_list(container_id, current_move, response_moves) {
+    let container_div = document.getElementById(container_id);
+    container_div.innerHTML = '';
+
+    if (current_move != undefined) {
+        // Don't decorate the current move with the color if it's the only comment
+        let decorate_color = response_moves.length > 0;
+        create_comment(container_div, undefined, current_move, decorate_color);
+    }
+
+    for (let [i, move] of response_moves.entries()) {
+        create_comment(container_div, i, move, true);
+    }
+}
+
 /*
  * Display comments, either only for the current move, or for the opposite side's responses as well
  * if that option is turned on.
  */
 function display_comments(access) {
     let cm = tree_get_node(access);
-    let comment = "";
-    let comments = [];
+    let current_move = undefined;
+    let response_moves = [];
 
-    // Add comment from the current move that was just played
+    // Get current move if it has a comment
     if (cm.comments != undefined && cm.comments[0] != undefined && cm.comments[0].text != undefined) {
-        comment += cm.comments[0].text.trim() + "\n";
-        comments.push(unescape_string(comment.trim()));
+        current_move = cm;
     }
-
+    // Get response moves with comments
     if (show_comments == i18n.comments_move_and_responses) {
-        // Add comments from the available responses
+        // Get the reponse moves that has comments
         let children = tree_children(access);
         if (children.length > 0) {
             for (let m of children) {
                 if (m.comments != undefined && m.comments[0] != undefined && m.comments[0].text != undefined) {
-                    let child_comment = m.move + ": " + m.comments[0].text.trim();
-                    comment += child_comment + "\n";
-                    comments.push(unescape_string(child_comment));
+                    response_moves.push(m);
                 }
             }
         }
     }
-    // set_text is safe to use with untrusted strings
-    // => we can use unescape_string
-    //set_text(comments_div, unescape_string(comment.trim()));
-    set_multiple_texts("comments", comments);
+    create_comment_list("comments", current_move, response_moves);
 }
 
 function change_play_stockfish() {

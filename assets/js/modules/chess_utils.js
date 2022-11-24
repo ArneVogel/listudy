@@ -68,6 +68,10 @@ function turn_color(chess) {
     return "white";
 }
 
+function non_turn_color(chess) {
+    return turn_color(chess) == "white" ? "black" : "white";
+}
+
 function initial_fen(chess) {
     let pgn = chess.pgn();
     let fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -77,4 +81,4 @@ function initial_fen(chess) {
     return fen;
 }
  
-export { turn_color, san_to_uci, uci_to_san, setup_chess, ground_legal_moves, initial_fen };
+export { turn_color, san_to_uci, uci_to_san, setup_chess, ground_legal_moves, initial_fen, non_turn_color };

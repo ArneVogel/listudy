@@ -43,8 +43,8 @@
     width: 90%;
     position: relative;
     z-index: 1;
-    padding: 1.5em 1.5em 1.5em 0em;
-    margin: -1.5em -1.5em -1.5em 0em;
+    padding: 1.5em 1.5em 1em 0em;
+    margin: -1.5em -1.5em -1em 0em;
 }
 
 .study_option_item_below {
@@ -64,20 +64,19 @@
     margin-top: 1.5rem;
 }
 
-/*
 .study_comments {
     overflow-y: auto;
-    max-height: 15em;
-}
-*/
-
-.study_comments_list {
-    overflow-y: auto;
-    max-height: 15em;
+    max-height: 20em;
 }
 
-.study_comment_list > div {
+.study_comments > div {
     margin-bottom: 0.8em;
+    font-size: 0.9em;
+}
+
+.study_comments > div > .bold {
+    font-weight: bolder;
+    margin-right: 0.6em;
     font-size: 0.9em;
 }
 
