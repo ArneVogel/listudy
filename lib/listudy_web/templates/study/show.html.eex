@@ -48,7 +48,7 @@
     <a class="icon" data-icon="-" id="arrows_toggle"><%= dgettext("study", "Arrows: until played 2x") %></a>
   </div>
   <div class="study_option_item_below">
-    <a class="icon" data-icon="'" id="comments_toggle" title="<%= dgettext("study", "In addition to comments on the current move, also display comments from the available not-yet-played responses (from white or black).") %>"><%= dgettext("study", "Comments: move + responses") %></a>
+    <a class="icon" data-icon="3" id="comments_toggle" title="<%= dgettext("study", "Option to control when comments are displayed") %>"><%= dgettext("study", "Comments: when arrows show") %></a>
   </div>
   <div class="study_option_item_below">
     <a class="icon" data-icon="(" id="line_review" title="<%= dgettext("study", "At the end of lines the board is only reset after 3 seconds giving you time to review the final position.") %>"><%= dgettext("study", "Board reset delay: fast") %></a>
@@ -145,8 +145,9 @@
   i18n.fast = "<%= dgettext "study", "fast" %>";
   i18n.medium = "<%= dgettext "study", "medium" %>";
   i18n.instant = "<%= dgettext "study", "instant" %>";
-  i18n.comments_only_move = "<%= dgettext "study", "Comments: only played move" %>";
-  i18n.comments_move_and_responses = "<%= dgettext "study", "Comments: move + responses" %>";
+  i18n.comments_when_arrows = "<%= dgettext "study", "Comments: when arrows show" %>";
+  i18n.comments_always_on = "<%= dgettext "study", "Comments: always on" %>";
+  i18n.comments_hidden = "<%= dgettext "study", "Comments: hidden" %>";
   i18n.confirm_reset_progress = "<%= dgettext "study", "Are you sure you want to delete your study progress?" %>";
   i18n.response = "<%= dgettext "study", "response" %>";
 </script>

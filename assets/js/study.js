@@ -27,7 +27,7 @@ let board_review = false;
 // Note: When enabled, will skip to the first branch point in the PGN tree. If the move list is flat then this has no effect.
 let key_moves_mode = true;
 // Note: When enabled the comments from the opposite side's responses are also shown.
-let show_comments = i18n.comments_move_and_responses;
+let show_comments = i18n.comments_when_arrows;
 // Note: NULL if disabled, otherwise an integer value based on the PGN move number.
 let max_depth_mode = null;
 
@@ -152,22 +152,36 @@ function create_shape(move, brush) {
 }
 
 /**
+ * Returns true if arrows should be shown.
+ */
+function give_hints(once) {
+    if (once || show_arrows == i18n.arrows_always) {
+        return true;
+    }
+
+    let all_moves = tree_possible_moves(curr_move);
+    let min = Math.min(...all_moves.map(m => m.value));
+    if (show_arrows == i18n.arrows_new2x && min < 2 ||
+        show_arrows == i18n.arrows_new5x && min < 5) {
+        return true;
+    }
+    return false;
+}
+
+/**
  * Update the hints/arrows on the board, depending on the current setting of the variable show_arrows.
  * @param {*} once  Pass true to override any value of variable show_arrows and display hints temporarily.
  */
-function give_hints(access, once) {
-    let all_moves = tree_possible_moves(access);
+function display_arrows(once) {
+    let all_moves = tree_possible_moves(curr_move);
     let min = Math.min(...all_moves.map(m => m.value));
     let max = Math.max(...all_moves.map(m => m.value));
     let shapes = [];
 
-    if (once || show_arrows == i18n.arrows_always ||
-        show_arrows == i18n.arrows_new2x && min < 2 ||
-        show_arrows == i18n.arrows_new5x && min < 5) {
-
+    if (give_hints(once)) {
         for (let m of all_moves) {
             let some_neglected = min < (0.5 * max);
-            let brush = some_neglected ? m.value < (0.5 * max) ? "normal" : "transparent" : "normal";
+            let brush = some_neglected ? (m.value < (0.5 * max) ? "normal" : "transparent") : "normal";
             //console.log(m.move + " (" + m.value + "/" + max + ") min: " + min + " => brush: " + brush)
             shapes.push(create_shape(m.move, brush));
         }
@@ -179,7 +193,7 @@ function capitalize_first_letter(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
-function create_comment(container_div, response_num, move, decorate_color) {
+function create_comment(container_div, response_num, move) {
     var comment_div = document.createElement('div');
     comment_div.id = 'comment' + response_num;
 
@@ -198,11 +212,13 @@ function create_comment(container_div, response_num, move, decorate_color) {
     let response_color = capitalize_first_letter(turn_color(chess));
     let move_color = capitalize_first_letter(non_turn_color(chess));
     let ext_san = tree_get_node_string(move);
+    let current_move = response_num == undefined;
+    let first_move = move.move_index == 0;
 
     let text = unescape_string(move.comments[0].text.trim());
-    let bold_text = response_num == undefined ?
-        (decorate_color ? move_color : "") + " " + ext_san + ":"
-        : response_color + " " + i18n.response + " " + ext_san + ":" ;
+    let bold_text = current_move ? 
+         move_color + " " + ext_san + ":"  // current move
+         : response_color + " " + (!first_move ? i18n.response : "") + " " + ext_san + ":" ; // response move
 
     set_text(comment_div.id, text, { bold_text: bold_text });
 }
@@ -212,9 +228,7 @@ function create_comment_list(container_id, current_move, response_moves) {
     container_div.innerHTML = '';
 
     if (current_move != undefined) {
-        // Don't decorate the current move with the color if it's the only comment
-        let decorate_color = response_moves.length > 0;
-        create_comment(container_div, undefined, current_move, decorate_color);
+        create_comment(container_div, undefined, current_move);
     }
 
     for (let [i, move] of response_moves.entries()) {
@@ -226,19 +240,20 @@ function create_comment_list(container_id, current_move, response_moves) {
  * Display comments, either only for the current move, or for the opposite side's responses as well
  * if that option is turned on.
  */
-function display_comments(access) {
-    let cm = tree_get_node(access);
+function display_comments(once) {
+    let cm = tree_get_node(curr_move);
     let current_move = undefined;
     let response_moves = [];
 
-    // Get current move if it has a comment
-    if (cm.comments != undefined && cm.comments[0] != undefined && cm.comments[0].text != undefined) {
-        current_move = cm;
-    }
-    // Get response moves with comments
-    if (show_comments == i18n.comments_move_and_responses) {
+    if (once || show_comments == i18n.comments_always_on ||
+        show_comments == i18n.comments_when_arrows && give_hints(once)) {
+
+        // Get current move if it has a comment
+        if (cm.move != undefined && cm.comments != undefined && cm.comments[0] != undefined && cm.comments[0].text != undefined) {
+            current_move = cm;
+        }
         // Get the reponse moves that has comments
-        let children = tree_children(access);
+        let children = tree_children(curr_move);
         if (children.length > 0) {
             for (let m of children) {
                 if (m.comments != undefined && m.comments[0] != undefined && m.comments[0].text != undefined) {
@@ -247,6 +262,7 @@ function display_comments(access) {
             }
         }
     }
+
     create_comment_list("comments", current_move, response_moves);
 }
 
@@ -267,9 +283,9 @@ function change_analysis_board() {
 function setup_move() {
     change_play_stockfish();
     change_analysis_board();
-    give_hints(curr_move, false);
+    display_arrows(false);
     show_suggestions();
-    display_comments(curr_move);
+    display_comments(false);
     ground_set_moves(); // the legal moves of the position
 }
 
@@ -329,9 +345,9 @@ function start_training() {
     setup_move();
 
     /* TODO figure out how to remove this. This is a workaround to make sure arrows appear right from
-    the start. Without this, setShapes() in give_hints() appear to have no effect. It's only needed the
+    the start. Without this, setShapes() in display_arrows() appear to have no effect. It's only needed the
     first time hints are displayed, so this is a good location. The redraw scrolls the page to the top
-    on mobile devices, and having the call in give_hints() then forces a scroll to the top every time
+    on mobile devices, and having the call in display_arrows() then forces a scroll to the top every time
     the user makes a move or changes the Arrows option. Hours have been spent on this bug. Could be a
     bug in chessground. */
     ground.redrawAll();
@@ -449,7 +465,8 @@ function setup_intro() {
 }
 
 function turn_on_hints_for_current_move() {
-    give_hints(curr_move, true);
+    display_arrows(true);
+    display_comments(true);
 }
 
 function toggle_arrows() {
@@ -471,7 +488,8 @@ function toggle_arrows() {
     }
     span.textContent = curr;
     show_arrows = curr;
-    give_hints(curr_move, false);
+    display_arrows(false);
+    display_comments(false);
 }
 
 function toggle_key_move() {
@@ -552,18 +570,19 @@ function toggle_comments() {
     let link = document.getElementById("comments_toggle");
     let curr = link.textContent;
     switch (curr) {
-        case i18n.comments_move_and_responses:
-            curr = i18n.comments_only_move;
-            link.setAttribute("data-icon", "3");
+        case i18n.comments_when_arrows:
+            curr = i18n.comments_always_on;
             break;
-        case i18n.comments_only_move:
-            curr = i18n.comments_move_and_responses;
-            link.setAttribute("data-icon", "4");
+        case i18n.comments_always_on:
+            curr = i18n.comments_hidden;
             break;
-    }
+        case i18n.comments_hidden:
+            curr = i18n.comments_when_arrows;
+            break;
+        }
     link.textContent = curr;
     show_comments = curr;
-    display_comments(curr_move);
+    display_comments(false);
 }
 
 function reset_line() {
@@ -611,6 +630,8 @@ async function setup_progress_reset() {
                 tree_value_add(c.root[0], -5);
             }
             update_progress();
+            display_arrows(false);
+            display_comments(false);
         }
     }
 }
