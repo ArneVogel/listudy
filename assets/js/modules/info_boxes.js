@@ -44,7 +44,7 @@ function set_text(id, text, extra = { bold_text: "", symbol: "" }) {
     // https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html#rule-6-populate-the-dom-using-safe-javascript-functions-or-properties
     set_text_content(id + "_text", text);
     set_text_content(id + "_symbol", prefix_symbol);
-    set_text_content(id + "_bold", extra.bold);
+    set_text_content(id + "_bold", extra.bold_text);
 }
 
 function set_text_content(id, content) {

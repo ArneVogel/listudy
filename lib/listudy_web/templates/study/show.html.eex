@@ -13,8 +13,7 @@
           <a class="icon large_clickarea" data-icon="-" id="hints"><%= dgettext("study", "Show hints for this move!") %></a><br>
         </div>
         
-        <!-- Putting the <p id="comments"> and <span id="comments_text"> on different lines below causes an extra line break because the "white-space: pre-line" is on the outer <p> -->
-        <p id="comments" class="study_comments"><span id="comments_text"></span></p>
+        <div id="comments" class="study_comments"></div>
       </div>
     </div>
     <div class="study_options">
@@ -31,12 +30,13 @@
   <div class="study_option_item_below">
     <a class="icon" data-icon="!" id="play_stockfish" href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1" title="<%= dgettext "study", "Play against Stockfish" %>"><%= dgettext "study", "Play against Stockfish" %></a>
   </div>
-
   <div class="study_option_item_below">
     <a class="icon" data-icon="/" id="analysis_board" href="https://lichess.org/analysis"
     title="<%= dgettext "study", "Analyze this position with the Lichess Analysis Board" %>"><%= dgettext "study", "Analyze position" %></a>
   </div>
-
+  <div class="study_option_item_below">
+    <a class="icon" data-icon="." id="reset_line"><%= dgettext("study", "Reset line") %></a>
+  </div>
   <div class="study_option_item_below">
     <%= if !@study.favorites do %>
       <%= link dgettext("study", "Favorite study"), to: Routes.study_path(@conn, :favorite_study, @study.slug), method: :post, class: "icon", "data-icon": "#" %>
@@ -44,7 +44,12 @@
       <%= link dgettext("study" ,"Unfavorite study"), to: Routes.study_path(@conn, :unfavorite_study, @study.slug), method: :post, class: "icon", "data-icon": '"' %>
     <% end %>
   </div>
-
+  <div class="study_option_item_below">
+    <a class="icon" data-icon="-" id="arrows_toggle"><%= dgettext("study", "Arrows: until played 2x") %></a>
+  </div>
+  <div class="study_option_item_below">
+    <a class="icon" data-icon="3" id="comments_toggle" title="<%= dgettext("study", "Option to control when comments are displayed") %>"><%= dgettext("study", "Comments: when arrows show") %></a>
+  </div>
   <div class="study_option_item_below">
     <a class="icon" data-icon="(" id="line_review" title="<%= dgettext("study", "At the end of lines the board is only reset after 3 seconds giving you time to review the final position.") %>"><%= dgettext("study", "Board reset delay: fast") %></a>
   </div>
@@ -53,12 +58,6 @@
   </div>
   <div class="study_option_item_below">
     <a class="icon" data-icon="(" id="move_delay"><%= dgettext("study", "Move delay:") %> <span id="move_delay_time"><%= dgettext("study", "instant") %></span></a>
-  </div>
-  <div class="study_option_item_below">
-    <a class="icon" data-icon="-" id="arrows_toggle"><%= dgettext("study", "Arrows: until played 2x") %></a>
-  </div>
-  <div class="study_option_item_below">
-    <a class="icon" data-icon="." id="reset_line"><%= dgettext("study", "Reset line") %></a>
   </div>
 </div>
 
@@ -146,7 +145,11 @@
   i18n.fast = "<%= dgettext "study", "fast" %>";
   i18n.medium = "<%= dgettext "study", "medium" %>";
   i18n.instant = "<%= dgettext "study", "instant" %>";
+  i18n.comments_when_arrows = "<%= dgettext "study", "Comments: when arrows show" %>";
+  i18n.comments_always_on = "<%= dgettext "study", "Comments: always on" %>";
+  i18n.comments_hidden = "<%= dgettext "study", "Comments: hidden" %>";
   i18n.confirm_reset_progress = "<%= dgettext "study", "Are you sure you want to delete your study progress?" %>";
+  i18n.response = "<%= dgettext "study", "response" %>";
 </script>
 
 <div id="progress_modal" class="modal">

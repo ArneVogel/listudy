@@ -2,7 +2,7 @@ require("regenerator-runtime/runtime"); // required for sleep (https://github.co
 
 const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
-import { turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
+import { turn_color, non_turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
 import { string_hash } from './modules/hash.js';
 import { clear_local_storage } from './modules/localstorage.js';
 import { tree_value_add, tree_progress, tree_move_index, tree_children, tree_possible_moves, has_children, tree_value,
@@ -26,6 +26,8 @@ let show_arrows = i18n.arrows_new2x;
 let board_review = false;
 // Note: When enabled, will skip to the first branch point in the PGN tree. If the move list is flat then this has no effect.
 let key_moves_mode = true;
+// Note: When enabled the comments from the opposite side's responses are also shown.
+let show_comments = i18n.comments_when_arrows;
 // Note: NULL if disabled, otherwise an integer value based on the PGN move number.
 let max_depth_mode = null;
 
@@ -150,22 +152,36 @@ function create_shape(move, brush) {
 }
 
 /**
+ * Returns true if arrows should be shown.
+ */
+function give_hints(once) {
+    if (once || show_arrows == i18n.arrows_always) {
+        return true;
+    }
+
+    let all_moves = tree_possible_moves(curr_move);
+    let min = Math.min(...all_moves.map(m => m.value));
+    if (show_arrows == i18n.arrows_new2x && min < 2 ||
+        show_arrows == i18n.arrows_new5x && min < 5) {
+        return true;
+    }
+    return false;
+}
+
+/**
  * Update the hints/arrows on the board, depending on the current setting of the variable show_arrows.
  * @param {*} once  Pass true to override any value of variable show_arrows and display hints temporarily.
  */
-function give_hints(access, once) {
-    let all_moves = tree_possible_moves(access);
+function display_arrows(once) {
+    let all_moves = tree_possible_moves(curr_move);
     let min = Math.min(...all_moves.map(m => m.value));
     let max = Math.max(...all_moves.map(m => m.value));
     let shapes = [];
 
-    if (once || show_arrows == i18n.arrows_always ||
-        show_arrows == i18n.arrows_new2x && min < 2 ||
-        show_arrows == i18n.arrows_new5x && min < 5) {
-
+    if (give_hints(once)) {
         for (let m of all_moves) {
             let some_neglected = min < (0.5 * max);
-            let brush = some_neglected ? m.value < (0.5 * max) ? "normal" : "transparent" : "normal";
+            let brush = some_neglected ? (m.value < (0.5 * max) ? "normal" : "transparent") : "normal";
             //console.log(m.move + " (" + m.value + "/" + max + ") min: " + min + " => brush: " + brush)
             shapes.push(create_shape(m.move, brush));
         }
@@ -173,27 +189,87 @@ function give_hints(access, once) {
     ground.setShapes(shapes);
 }
 
+function capitalize_first_letter(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+function create_comment(container_div, response_num, move) {
+    var comment_div = document.createElement('div');
+    comment_div.id = 'comment' + response_num;
+
+    var bold_text_elem = document.createElement('div');
+    bold_text_elem.id = comment_div.id + "_bold";
+    bold_text_elem.className = "bold";
+
+    var comment_text_elem = document.createElement('div');
+    comment_text_elem.id = comment_div.id + "_text";
+    comment_text_elem.className = "text";
+
+    comment_div.appendChild(bold_text_elem);
+    comment_div.appendChild(comment_text_elem);
+    container_div.appendChild(comment_div);
+
+    let response_color = capitalize_first_letter(turn_color(chess));
+    let move_color = capitalize_first_letter(non_turn_color(chess));
+    let ext_san = tree_get_node_string(move);
+    let current_move = response_num == undefined;
+    let before_start = current_move && move.move == undefined;
+    let first_move = move.move_index == 0;
+    let text = unescape_string(move.comments[0].text.trim());
+    let bold_text = undefined;
+
+    if (before_start) {
+        bold_text = "";
+    } else if (current_move) {
+        bold_text = move_color + " " + ext_san + ":"
+    } else {  // response move
+        bold_text = response_color + " " + (!first_move ? i18n.response : "") + " " + ext_san + ":";
+    }
+
+    set_text(comment_div.id, text, { bold_text: bold_text });
+}
+
+function create_comment_list(container_id, current_move, response_moves) {
+    let container_div = document.getElementById(container_id);
+    container_div.innerHTML = '';
+
+    if (current_move != undefined) {
+        create_comment(container_div, undefined, current_move);
+    }
+
+    for (let [i, move] of response_moves.entries()) {
+        create_comment(container_div, i, move, true);
+    }
+}
+
 /*
- * Display comments for moves that need hints and the current move
+ * Display comments, either only for the current move, or for the opposite side's responses as well
+ * if that option is turned on.
  */
-function display_comments(access) {
-    let cm = tree_get_node(access);
-    let comment = "";
-    let to_hint = tree_children_filter_sort(access, {filter: need_hint});
-    for (let m of to_hint) {
-        if (m.comments != undefined && m.comments[0] != undefined && m.comments[0].text != undefined) {
-            comment += m.comments[0].text.trim() + "\n";
+function display_comments(once) {
+    let cm = tree_get_node(curr_move);
+    let current_move = undefined;
+    let response_moves = [];
+
+    if (once || show_comments == i18n.comments_always_on ||
+        show_comments == i18n.comments_when_arrows && give_hints(once)) {
+
+        // Get current move if it has a comment
+        if (cm.comments != undefined && cm.comments[0] != undefined && cm.comments[0].text != undefined) {
+            current_move = cm;
+        }
+        // Get the reponse moves that has comments
+        let children = tree_children(curr_move);
+        if (children.length > 0) {
+            for (let m of children) {
+                if (m.comments != undefined && m.comments[0] != undefined && m.comments[0].text != undefined) {
+                    response_moves.push(m);
+                }
+            }
         }
     }
 
-    // give comment on the current move if there are move to give hint to
-    if (to_hint.length > 0 && cm.comments != undefined && cm.comments[0] != undefined && cm.comments[0].text != undefined) {
-        comment += cm.comments[0].text.trim();
-    }
-
-    // set_text is save to use with untrusted strings
-    // => we can use unescape_string
-    set_text(comments_div, unescape_string(comment));
+    create_comment_list("comments", current_move, response_moves);
 }
 
 function change_play_stockfish() {
@@ -213,9 +289,9 @@ function change_analysis_board() {
 function setup_move() {
     change_play_stockfish();
     change_analysis_board();
-    give_hints(curr_move, false);
+    display_arrows(false);
     show_suggestions();
-    display_comments(curr_move);
+    display_comments(false);
     ground_set_moves(); // the legal moves of the position
 }
 
@@ -275,9 +351,9 @@ function start_training() {
     setup_move();
 
     /* TODO figure out how to remove this. This is a workaround to make sure arrows appear right from
-    the start. Without this, setShapes() in give_hints() appear to have no effect. It's only needed the
+    the start. Without this, setShapes() in display_arrows() appear to have no effect. It's only needed the
     first time hints are displayed, so this is a good location. The redraw scrolls the page to the top
-    on mobile devices, and having the call in give_hints() then forces a scroll to the top every time
+    on mobile devices, and having the call in display_arrows() then forces a scroll to the top every time
     the user makes a move or changes the Arrows option. Hours have been spent on this bug. Could be a
     bug in chessground. */
     ground.redrawAll();
@@ -389,13 +465,14 @@ function setup_intro() {
     let roots = trees.map(x => x.root[0]);
     let max = Math.max(...roots.map(x => tree_value(x, Math.max)));
 
-    if (max == 0) {
+    if (max == 0 && show_arrows == i18n.arrows_new2x) {
         set_text(suggestion_div, i18n.info_arrows);
     }
 }
 
 function turn_on_hints_for_current_move() {
-    give_hints(curr_move, true);
+    display_arrows(true);
+    display_comments(true);
 }
 
 function toggle_arrows() {
@@ -417,7 +494,8 @@ function toggle_arrows() {
     }
     span.textContent = curr;
     show_arrows = curr;
-    give_hints(curr_move, false);
+    display_arrows(false);
+    display_comments(false);
 }
 
 function toggle_key_move() {
@@ -436,7 +514,6 @@ function toggle_key_move() {
 
 function toggle_review() {
     let link = document.getElementById("line_review");
-
     let curr = link.textContent;
     switch (curr) {
         case i18n.review_fast:
@@ -495,6 +572,25 @@ function get_move_delay() {
     return delay;
 }
 
+function toggle_comments() {
+    let link = document.getElementById("comments_toggle");
+    let curr = link.textContent;
+    switch (curr) {
+        case i18n.comments_when_arrows:
+            curr = i18n.comments_always_on;
+            break;
+        case i18n.comments_always_on:
+            curr = i18n.comments_hidden;
+            break;
+        case i18n.comments_hidden:
+            curr = i18n.comments_when_arrows;
+            break;
+        }
+    link.textContent = curr;
+    show_comments = curr;
+    display_comments(false);
+}
+
 function reset_line() {
     start_training();
 }
@@ -540,6 +636,8 @@ async function setup_progress_reset() {
                 tree_value_add(c.root[0], -5);
             }
             update_progress();
+            display_arrows(false);
+            display_comments(false);
         }
     }
 }
@@ -550,6 +648,7 @@ function setup_configs() {
     document.getElementById("line_review").onclick = toggle_review;
     document.getElementById("move_delay").onclick = toggle_move_delay;
     document.getElementById("key_move").onclick = toggle_key_move;
+    document.getElementById("comments_toggle").onclick = toggle_comments;
     document.getElementById("reset_line").onclick = reset_line;
 }
 
