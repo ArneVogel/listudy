@@ -213,12 +213,18 @@ function create_comment(container_div, response_num, move) {
     let move_color = capitalize_first_letter(non_turn_color(chess));
     let ext_san = tree_get_node_string(move);
     let current_move = response_num == undefined;
+    let before_start = current_move && move.move == undefined;
     let first_move = move.move_index == 0;
-
     let text = unescape_string(move.comments[0].text.trim());
-    let bold_text = current_move ? 
-         move_color + " " + ext_san + ":"  // current move
-         : response_color + " " + (!first_move ? i18n.response : "") + " " + ext_san + ":" ; // response move
+    let bold_text = undefined;
+
+    if (before_start) {
+        bold_text = "";
+    } else if (current_move) {
+        bold_text = move_color + " " + ext_san + ":"
+    } else {  // response move
+        bold_text = response_color + " " + (!first_move ? i18n.response : "") + " " + ext_san + ":";
+    }
 
     set_text(comment_div.id, text, { bold_text: bold_text });
 }
@@ -249,7 +255,7 @@ function display_comments(once) {
         show_comments == i18n.comments_when_arrows && give_hints(once)) {
 
         // Get current move if it has a comment
-        if (cm.move != undefined && cm.comments != undefined && cm.comments[0] != undefined && cm.comments[0].text != undefined) {
+        if (cm.comments != undefined && cm.comments[0] != undefined && cm.comments[0].text != undefined) {
             current_move = cm;
         }
         // Get the reponse moves that has comments
