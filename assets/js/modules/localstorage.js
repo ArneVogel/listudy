@@ -46,4 +46,18 @@ function clear_local_storage() {
     to_remove.forEach(remove_tree);
 }
 
-export { clear_local_storage };
+/**
+ * Gets an option by key from local storage. Also verifies the key is one of the allowed values
+ * in case the code has changed since the user used the app last time. In such case it falls back
+ * on the default value.
+ */
+function get_option_from_localstorage(key, default_value, allowed_values = undefined) {
+    let ls_value = localStorage.getItem(key);
+    if (ls_value && (allowed_values == undefined || allowed_values.indexOf(ls_value) >= 0)) {
+        return ls_value
+    } else {
+        return default_value;
+    }
+}
+
+export { clear_local_storage, get_option_from_localstorage };

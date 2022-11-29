@@ -4,7 +4,7 @@ const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
 import { turn_color, non_turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
 import { string_hash } from './modules/hash.js';
-import { clear_local_storage } from './modules/localstorage.js';
+import { clear_local_storage, get_option_from_localstorage } from './modules/localstorage.js';
 import { tree_value_add, tree_progress, tree_move_index, tree_children, tree_possible_moves, has_children, tree_value,
          need_hint, update_value, value_sort, tree_get_node, tree_children_filter_sort, tree_get_node_depth, tree_get_node_string, tree_size_weighted_random_move } from './modules/tree_utils.js';
 import { generate_move_trees, annotate_pgn } from './modules/tree_from_pgn.js';
@@ -19,15 +19,28 @@ const mode_free = "free_mode";
 
 const comments_div = "comments";
 
-let move_delay_time = i18n.instant;
-
 let combo_count = 0;
-let show_arrows = i18n.arrows_new2x;
-let board_review = false;
-// Note: When enabled, will skip to the first branch point in the PGN tree. If the move list is flat then this has no effect.
-let key_moves_mode = true;
-// Note: When enabled the comments from the opposite side's responses are also shown.
-let show_comments = i18n.comments_when_arrows;
+
+// Option to control how quickly the ai plays each move
+let move_delay_time_key = "move_delay_time";
+let move_delay_time = get_option_from_localstorage(move_delay_time_key, i18n.instant, [i18n.instant, i18n.fast, i18n.medium, i18n.slow]);
+
+// Option to control how and when arrows are displayed
+let show_arrows_key = "show_arrows";
+let show_arrows = get_option_from_localstorage(show_arrows_key, i18n.arrows_new2x, [i18n.arrows_new2x, i18n.arrows_new5x, i18n.arrows_always, i18n.arrows_hidden]);
+
+// When enabled the board waits a few seconds at the end of the line before resetting.
+let board_review_key = "board_review";
+let board_review = get_option_from_localstorage(board_review_key, i18n.review_fast, [i18n.review_fast, i18n.review_slow]);
+
+// When enabled, will skip to the first branch point in the PGN tree. If the move list is flat then this has no effect.
+let key_moves_mode_key = "key_moves_mode";
+let key_moves_mode = get_option_from_localstorage(key_moves_mode_key, i18n.key_move_enabled, [i18n.key_move_enabled, i18n.key_move_disabled]);
+
+//  When enabled the comments from the opposite side's responses are also shown.
+let show_comments_key = "show_comments";
+let show_comments = get_option_from_localstorage(show_comments_key, i18n.comments_when_arrows, [i18n.comments_when_arrows, i18n.comments_always_on, i18n.comments_hidden]);
+
 // Note: NULL if disabled, otherwise an integer value based on the PGN move number.
 let max_depth_mode = null;
 
@@ -112,7 +125,7 @@ async function handle_move(orig, dest) {
         if (!end_of_line && max_depth_mode !== null) {
             let curr_node = tree_get_node(curr_move);
             let curr_depth = tree_get_node_depth(curr_node);
-            if (!key_moves_mode || window.first_variation === null) {
+            if (key_moves_mode == i18n.key_move_disabled || window.first_variation === null) {
                 end_of_line = curr_depth >= max_depth_mode;
             } else {
                 end_of_line = curr_node.move_index >= window.first_variation && curr_depth >= max_depth_mode;
@@ -123,8 +136,7 @@ async function handle_move(orig, dest) {
         if (end_of_line) {
             achievement_end_of_line();
             set_text(success_div, right_move_text() + "\n" + i18n.success_end_of_line);
-            if (board_review) {
-                // user wants to do the slow board reset
+            if (board_review == i18n.review_slow) {
                 await sleep(3000);
             }
             start_training();
@@ -332,7 +344,7 @@ function start_training() {
     }
     setup_chess(fen);
     ground_init_state(fen);
-    if (key_moves_mode && window.first_variation !== null) {
+    if (key_moves_mode == i18n.key_move_enabled && window.first_variation !== null) {
         for (let ki = 0; ki < window.first_variation; ++ki) {
             // Moves that are not fully trained are not skipped
             if (tree_children(curr_move)[0].value != 5) { break; }
@@ -489,6 +501,7 @@ function toggle_arrows() {
             curr = i18n.arrows_hidden;
             break;
         case i18n.arrows_hidden:
+        default:
             curr = i18n.arrows_new2x;
             break;
     }
@@ -496,20 +509,26 @@ function toggle_arrows() {
     show_arrows = curr;
     display_arrows(false);
     display_comments(false);
+    localStorage.setItem(show_arrows_key, show_arrows);
 }
 
 function toggle_key_move() {
     let link = document.getElementById("key_move");
-    let curr = link.attributes["data-icon"].textContent;
-    let next = curr == "%" ? "$" : "%";
-    link.setAttribute("data-icon", next);
-    if (next == "%") {
-        link.textContent = i18n.key_move_enabled;
-        key_moves_mode = false;
-    } else {
-        link.textContent = i18n.key_move_disabled;
-        key_moves_mode = true;
+    let curr = link.textContent;
+    switch (curr) {
+        case i18n.key_move_enabled:
+            curr = i18n.key_move_disabled;
+            link.setAttribute("data-icon", "%");
+            break;
+        case i18n.key_move_disabled:
+        default:
+            curr = i18n.key_move_enabled;
+            link.setAttribute("data-icon", "$");
+            break;
     }
+    key_moves_mode = curr;
+    link.textContent = curr;
+    localStorage.setItem(key_moves_mode_key, key_moves_mode);
 }
 
 function toggle_review() {
@@ -518,14 +537,15 @@ function toggle_review() {
     switch (curr) {
         case i18n.review_fast:
             curr = i18n.review_slow;
-            board_review = false;
             break;
         case i18n.review_slow:
+        default:
             curr = i18n.review_fast;
-            board_review = true;
             break;
     }
+    board_review = curr;
     link.textContent = curr;
+    localStorage.setItem(board_review_key, board_review);
 }
 
 function toggle_move_delay() {
@@ -542,11 +562,13 @@ function toggle_move_delay() {
             curr = i18n.slow;
             break;
         case i18n.slow:
+        default:
             curr = i18n.instant;
             break;
     }
     span.textContent = curr;
     move_delay_time = curr;
+    localStorage.setItem(move_delay_time_key, move_delay_time);
 }
 
 
@@ -576,19 +598,21 @@ function toggle_comments() {
     let link = document.getElementById("comments_toggle");
     let curr = link.textContent;
     switch (curr) {
-        case i18n.comments_when_arrows:
-            curr = i18n.comments_always_on;
-            break;
         case i18n.comments_always_on:
             curr = i18n.comments_hidden;
             break;
         case i18n.comments_hidden:
             curr = i18n.comments_when_arrows;
             break;
+        case i18n.comments_when_arrows:
+        default:
+            curr = i18n.comments_always_on;
+            break;
         }
     link.textContent = curr;
     show_comments = curr;
     display_comments(false);
+    localStorage.setItem(show_comments_key, show_comments);
 }
 
 function reset_line() {
@@ -642,6 +666,27 @@ async function setup_progress_reset() {
     }
 }
 
+/**
+ * Initiate all option values on the page.
+ */
+function set_options_values() {
+    let move_delay = document.getElementById("move_delay_time");
+    move_delay.innerHTML = move_delay_time;
+
+    let arrows_toggle = document.getElementById("arrows_toggle");
+    arrows_toggle.innerHTML = show_arrows;
+
+    let line_review = document.getElementById("line_review");
+    line_review.innerHTML = board_review;
+
+    let key_move = document.getElementById("key_move");
+    key_move.innerHTML = key_moves_mode;
+    key_move.setAttribute("data-icon", key_moves_mode == i18n.key_move_enabled ? "$" : "%");
+
+    let comments_toggle = document.getElementById("comments_toggle");
+    comments_toggle.innerHTML = show_comments;
+}
+
 function setup_configs() {
     document.getElementById("hints").onclick = turn_on_hints_for_current_move;
     document.getElementById("arrows_toggle").onclick = toggle_arrows;
@@ -657,6 +702,7 @@ function main() {
     setup_chess();
     setup_trees();
     setup_chapter_select();
+    set_options_values();
     setup_move_handler(handle_move);
 
     window.total_moves = 0;
