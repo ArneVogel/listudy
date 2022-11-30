@@ -671,20 +671,20 @@ async function setup_progress_reset() {
  */
 function set_options_values() {
     let move_delay = document.getElementById("move_delay_time");
-    move_delay.innerHTML = move_delay_time;
+    move_delay.innerText = move_delay_time;
 
     let arrows_toggle = document.getElementById("arrows_toggle");
-    arrows_toggle.innerHTML = show_arrows;
+    arrows_toggle.innerText = show_arrows;
 
     let line_review = document.getElementById("line_review");
-    line_review.innerHTML = board_review;
+    line_review.innerText = board_review;
 
     let key_move = document.getElementById("key_move");
-    key_move.innerHTML = key_moves_mode;
+    key_move.innerText = key_moves_mode;
     key_move.setAttribute("data-icon", key_moves_mode == i18n.key_move_enabled ? "$" : "%");
 
     let comments_toggle = document.getElementById("comments_toggle");
-    comments_toggle.innerHTML = show_comments;
+    comments_toggle.innerText = show_comments;
 }
 
 function setup_configs() {
