@@ -49,7 +49,7 @@
 
 .study_option_item_below {
     margin-right: 3rem;
-    min-width: 23ch;
+    min-width: 24ch;
 }
 
 .study_option_item_below > a {
@@ -93,4 +93,28 @@
 .study_progress {
     overflow-y: scroll;
     max-height: 20em;
+}
+
+.max_depth_label {
+    display: inline-block;
+    min-width: 2ch;
+}
+
+.max_depth_ctrl {
+    /* This all make the click area a little larger */
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    padding: 0.4em;
+    margin: -0.4em;
+
+    /* Make it non-selectable */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.max_depth_range {
+    width: 50px;
+    margin-top: 3px;
 }

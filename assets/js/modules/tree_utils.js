@@ -120,6 +120,28 @@ function tree_get_node_depth(access) {
     return access.move_index == 0 ? 1 : 1 + Math.floor(access.move_index / 2);
 }
 
+/**
+ * Returns maximum tree depth in terms of turns (white + black = two turns)
+ */
+function tree_max_depth(tree) { 
+    if (tree.children == undefined || tree.children.length == 0) {
+        return 1;
+    } else {
+        let child_depths = tree.children.map(x => tree_max_depth(x));
+        return 1 + Math.max(...child_depths);
+    }
+}
+
+/**
+ * Returns maximum tree depth in terms of moves (two turns = one move) for an array of moves,
+ * such as the starting position of a game.
+ */
+function tree_max_num_moves_deep(start_moves) { 
+    let child_node_depths = start_moves.map(m => tree_max_depth(m));
+    let max_depth = 1 + Math.max(...child_node_depths);
+    return Math.floor((max_depth) / 2);
+}
+
 /*
  * Get a string representation of a move in SAN notation with move number for debugging purposes, ie 1.e4, or 1...e5
  */
@@ -283,4 +305,4 @@ function tree_value_add(tree, number) {
 }
 
 
-export { tree_value_add, tree_progress, tree_children, tree_children_filter_sort, tree_possible_moves, tree_move_index, has_children, need_hint, update_value, date_sort, value_sort, tree_get_node, tree_value, tree_size, tree_size_weighted_random_move, tree_get_node_depth, tree_get_node_string };
+export { tree_value_add, tree_progress, tree_children, tree_children_filter_sort, tree_possible_moves, tree_move_index, has_children, need_hint, update_value, date_sort, value_sort, tree_get_node, tree_value, tree_size, tree_size_weighted_random_move, tree_get_node_depth, tree_get_node_string, tree_max_num_moves_deep };
