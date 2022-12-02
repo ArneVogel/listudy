@@ -16,8 +16,31 @@ function ground_init_state(fen) {
     config["highlight"] = { check: true };
     config["lastMove"] = undefined;
     config["drawable"] = {brushes: {
-        normal: {key: "v", color: "#0034FF", opacity: 1, lineWidth: 10 },
-        transparent: {key: "v", color: "#0034FF", opacity: 0.4, lineWidth: 10 }
+        // normal: {key: "n", color: "#001a80", opacity: 1, lineWidth: 10 },
+        // transparent: {key: "t", color: "#001a80", opacity: 0.5, lineWidth: 10 },
+        // thin_normal: {key: "tn", color: "#000033", opacity: 1, lineWidth: 7 },  // #001a80 #000080 #000033
+        // thin_transparent: {key: "tt", color: "#000033", opacity: 0.5, lineWidth: 7 },
+        // green: {key: "g", color: "#00802b", opacity: 0.8, lineWidth: 10 },
+        // blue: {key: "b", color: "#3333ff", opacity: 0.8, lineWidth: 10 },
+        // red: {key: "r", color: "#ff0000", opacity: 0.8, lineWidth: 10 },
+        // yellow: {key: "y", color: "#ffcc00", opacity: 0.85, lineWidth: 10 },
+        // thick_green: {key: "tg", color: "#00802b", opacity: 0.7, lineWidth: 13 },
+        // thick_blue: {key: "tb", color: "#3333ff", opacity: 0.7, lineWidth: 13 },
+        // thick_red: {key: "tr", color: "#ff0000", opacity: 0.7, lineWidth: 13 },
+        // thick_yellow: {key: "ty", color: "#ffcc00", opacity: 0.9, lineWidth: 13 }
+
+        normal: {key: "n", color: "#3333ff", opacity: 1, lineWidth: 10 },
+        transparent: {key: "t", color: "#3333ff", opacity: 0.5, lineWidth: 10 },
+        thin_normal: {key: "tn", color: "#000000", opacity: 1, lineWidth: 11 },  // #001a80 #000080 #000033
+        thin_transparent: {key: "tt", color: "#000000", opacity: 0.6, lineWidth: 11 },
+        green: {key: "g", color: "#00802b", opacity: 0.8, lineWidth: 10 },
+        blue: {key: "b", color: "#3333ff", opacity: 0.8, lineWidth: 10 },
+        red: {key: "r", color: "#ff0000", opacity: 0.8, lineWidth: 10 },
+        yellow: {key: "y", color: "#ffcc00", opacity: 0.85, lineWidth: 10 },
+        thick_green: {key: "tg", color: "#00802b", opacity: 0.8, lineWidth: 8 },
+        thick_blue: {key: "tb", color: "#3333ff", opacity: 0.8, lineWidth: 8 },
+        thick_red: {key: "tr", color: "#ff0000", opacity: 0.8, lineWidth: 8 },
+        thick_yellow: {key: "ty", color: "#ffcc00", opacity: 0.85, lineWidth: 8 }
     }};
     ground.set(config);
 }

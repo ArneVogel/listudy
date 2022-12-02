@@ -66,6 +66,9 @@
       <a id="max_depth_sub" class="max_depth_ctrl" role="button">-</a><input type="range" id="max_depth_range" class="max_depth_range" min="1" max="1"><a id="max_depth_add" class="max_depth_ctrl" role="button">+</a>
     </div>
   </div>
+  <div class="study_option_item_below">
+    <a class="icon" data-icon="-" id="arrow_type" title="<%= dgettext("study", "Option to control the type of arrows shown.") %>">placeholder</a>
+  </div>
 </div>
 
 <div class="highlight">
@@ -139,10 +142,13 @@
   i18n.suggestion_comment = "<%= dgettext "study", "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below." %>";
   i18n.suggestion_100moves = "<%= dgettext "study", "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect." %>";
   i18n.suggestion_250moves = "<%= raw dgettext "study", "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop." %>";
-  i18n.arrows_new2x = "<%= dgettext "study", "Arrows: until played 2x" %>";
-  i18n.arrows_new5x = "<%= dgettext "study", "Arrows: until played 5x" %>";
-  i18n.arrows_always = "<%= dgettext "study", "Arrows: always on" %>";
-  i18n.arrows_hidden = "<%= dgettext "study", "Arrows: hidden" %>";
+  i18n.arrows_new2x = "<%= dgettext "study", "Hints: until played 2x" %>";
+  i18n.arrows_new5x = "<%= dgettext "study", "Hints: until played 5x" %>";
+  i18n.arrows_always = "<%= dgettext "study", "Hints: always on" %>";
+  i18n.arrows_hidden = "<%= dgettext "study", "Hints: hidden" %>";
+  i18n.arrow_type_auto = "<%= dgettext "study", "Hint source: automatic" %>";
+  i18n.arrow_type_pgn = "<%= dgettext "study", "Hint source: from pgn" %>";
+  i18n.arrow_type_both = "<%= dgettext "study", "Hint source: automatic + pgn" %>";
   i18n.review_slow = "<%= dgettext "study", "Board reset delay: slow" %>";
   i18n.review_fast = "<%= dgettext "study", "Board reset delay: fast" %>";
   i18n.key_move_enabled = "<%= dgettext "study", "Jump to key move: on" %>";

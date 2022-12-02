@@ -30,6 +30,10 @@ let move_delay_time = get_option_from_localstorage(move_delay_time_key, i18n.ins
 let show_arrows_key = "show_arrows";
 let show_arrows = get_option_from_localstorage(show_arrows_key, i18n.arrows_new2x, [i18n.arrows_new2x, i18n.arrows_new5x, i18n.arrows_always, i18n.arrows_hidden]);
 
+// Option to control how and when arrows are displayed
+let arrow_type_key = "arrow_type";
+let arrow_type = get_option_from_localstorage(arrow_type_key, i18n.arrow_type_auto, [i18n.arrow_type_auto, i18n.arrow_type_pgn, i18n.arrow_type_both]);
+
 // When enabled the board waits a few seconds at the end of the line before resetting.
 let board_review_key = "board_review";
 let board_review = get_option_from_localstorage(board_review_key, i18n.review_fast, [i18n.review_fast, i18n.review_slow]);
@@ -166,6 +170,49 @@ function create_shape(move, brush) {
     return {orig: ft.from, dest: ft.to, brush: brush};
 }
 
+function annotation_color(cmdStr) {
+    let c = cmdStr[0];
+    switch (c) {
+        case "G":
+            return "green";
+        case "R":
+            return "red";
+        case "Y":
+            return "yellow";
+        case "B":
+        default:
+            return "blue";
+    }
+}
+
+function create_auto_arrow(m, max, min, combined = false) {
+    let move = m.move;
+    let some_neglected = min < (0.5 * max);
+    let current_neglected = m.value < (0.5 * max);
+    let brush = undefined;
+    if(combined == true) {
+        brush = some_neglected ? (current_neglected ? "thin_normal" : "thin_transparent") : "thin_normal";
+    } else {
+        brush = some_neglected ? (current_neglected ? "normal" : "transparent") : "normal";
+    }
+    return create_shape(move, brush);
+}
+
+function create_annotation_arrow(cal, combined = false) {
+    let brush = (combined ? "thick_" : "") + annotation_color(cal);
+    let from = cal.substr(1, 2);
+    let to = cal.substr(3, 2);
+    //let modifiers = combined ? {lineWidth: 5} : {};
+    let modifiers = {};
+    return {orig: from, dest: to, brush: brush, modifiers: modifiers};
+}
+
+function create_annotation_circle(csl) {
+    let brush = annotation_color(csl);
+    let from = csl.substr(1, 2);
+    return {orig: from, brush: brush};
+}
+
 /**
  * Returns true if arrows should be shown.
  */
@@ -183,23 +230,90 @@ function give_hints(once) {
     return false;
 }
 
+function create_pgn_shapes(m, thick = false) {
+    if (m.comments != undefined) {
+        let commands = m.comments.filter(c => c.commands != undefined).flatMap(c => c.commands);
+        let circles = commands.filter(cmd => cmd.key == 'csl').flatMap(cmd => cmd.values);
+        let arrows = commands.filter(cmd => cmd.key == 'cal').flatMap(cmd => cmd.values);
+        arrows.forEach(a => console.log("Arrow: " + a));
+        circles.forEach(c => console.log("Circle: " + c));
+        let shapes = [];
+        shapes.push(...circles.map(c => create_annotation_circle(c)));
+        shapes.push(...arrows.map(a => create_annotation_arrow(a, thick)));
+        return shapes;
+    } else {
+        return [];
+    }
+}
+
+function get_pgn_annotations(m, keyword) {
+    if (m.comments != undefined) {
+        let commands = m.comments.filter(c => c.commands != undefined).flatMap(c => c.commands);
+        return commands.filter(cmd => cmd.key == keyword).flatMap(cmd => cmd.values);
+    } else {
+        return [];
+    }
+}
+
+function array_contains(arr, str) {
+    return arr.indexOf(str) > -1;
+}
+
+function get_arrow_cmd_from_cal(cal) {
+    return cal.substr(1,4);
+}
+
+function get_arrow_cmd_from_move(m) {
+    let uci = san_to_uci(chess, m.move);
+    return "" + uci.from + uci.to;
+}
+
 /**
  * Update the hints/arrows on the board, depending on the current setting of the variable show_arrows.
  * @param {*} once  Pass true to override any value of variable show_arrows and display hints temporarily.
  */
 function display_arrows(once) {
     let all_moves = tree_possible_moves(curr_move);
+    let current_move = tree_get_node(curr_move);
     let min = Math.min(...all_moves.map(m => m.value));
     let max = Math.max(...all_moves.map(m => m.value));
     let shapes = [];
 
-    if (give_hints(once)) {
-        for (let m of all_moves) {
-            let some_neglected = min < (0.5 * max);
-            let brush = some_neglected ? (m.value < (0.5 * max) ? "normal" : "transparent") : "normal";
-            //console.log(m.move + " (" + m.value + "/" + max + ") min: " + min + " => brush: " + brush)
-            shapes.push(create_shape(m.move, brush));
-        }
+    if (!give_hints(once)) {
+        ground.setShapes(shapes);
+        return;
+    }
+
+    if (arrow_type == i18n.arrow_type_auto) {
+        shapes.push(...all_moves.map(m => create_auto_arrow(m, max, min)));
+
+    } else if (arrow_type == i18n.arrow_type_pgn) {
+        let all_pgn_circles = get_pgn_annotations(current_move, "csl");
+        let all_pgn_arrows = get_pgn_annotations(current_move, "cal");
+
+        shapes.push(...all_pgn_circles.map(a => create_annotation_circle(a)));
+        shapes.push(...all_pgn_arrows.map(a => create_annotation_arrow(a)));
+
+    } else if (arrow_type = i18n.arrow_type_both) {
+        let all_pgn_circles = get_pgn_annotations(current_move, "csl");
+        shapes.push(...all_pgn_circles.map(a => create_annotation_circle(a)));
+
+        let all_pgn_arrows = get_pgn_annotations(current_move, "cal");
+        let all_pgn_arrows_str = all_pgn_arrows.map(cal => get_arrow_cmd_from_cal(cal));
+        let clean_auto_moves = all_moves.filter(m => !array_contains(all_pgn_arrows_str, get_arrow_cmd_from_move(m)));
+        let doubled_auto_moves = all_moves.filter(m => array_contains(all_pgn_arrows_str, get_arrow_cmd_from_move(m)));
+        let all_auto_arrows = [...clean_auto_moves, ...doubled_auto_moves].map(m => get_arrow_cmd_from_move(m));
+        let clean_pgn_arrows = all_pgn_arrows.filter(cal => !array_contains(all_auto_arrows, get_arrow_cmd_from_cal(cal)));
+        let doubled_pgn_arrows = all_pgn_arrows.filter(cal => array_contains(all_auto_arrows, get_arrow_cmd_from_cal(cal)));
+
+        shapes.push(...clean_auto_moves.map(m => create_auto_arrow(m, max, min, true)));
+        shapes.push(...clean_auto_moves.map(m => create_annotation_arrow("B" + get_arrow_cmd_from_move(m), true)));
+
+        shapes.push(...doubled_auto_moves.map(m => create_auto_arrow(m, max, min, true)));
+
+        shapes.push(...clean_pgn_arrows.map(a => create_annotation_arrow(a)));
+        shapes.push(...doubled_pgn_arrows.map(a => create_annotation_arrow(a, true)));
+
     }
     ground.setShapes(shapes);
 }
@@ -429,7 +543,8 @@ function setup_chapter_select() {
     let select_key = study_id + "_selected";
     let select_id = "chapter_select"
     let select = document.getElementById(select_id);
-    let selected = localStorage.getItem(select_key) || 0;
+    let selected = parseInt(localStorage.getItem(select_key) || 0);
+    selected = Math.min(selected, trees.length - 1);  // prevent error if uploading a pgn with fewer chapters
     window.chapter = selected;
     for (let i = 0; i < trees.length; ++i) {
         let option = document.createElement("option");
@@ -514,6 +629,28 @@ function toggle_arrows() {
     display_arrows(false);
     display_comments(false);
     localStorage.setItem(show_arrows_key, show_arrows);
+}
+
+function toggle_arrow_type() {
+    let span = document.getElementById("arrow_type");
+    let curr = span.textContent;
+    switch (curr) {
+        case i18n.arrow_type_auto:
+            curr = i18n.arrow_type_pgn;
+            break;
+        case i18n.arrow_type_pgn:
+            curr = i18n.arrow_type_both;
+            break;
+        case i18n.arrow_type_both:
+        default:
+            curr = i18n.arrow_type_auto;
+            break;
+    }
+    span.textContent = curr;
+    arrow_type = curr;
+    display_arrows(false);
+    display_comments(false);
+    localStorage.setItem(arrow_type_key, arrow_type);
 }
 
 function toggle_key_move() {
@@ -709,6 +846,9 @@ function set_options_values() {
     let arrows_toggle = document.getElementById("arrows_toggle");
     arrows_toggle.innerText = show_arrows;
 
+    let arrow_type_toggle = document.getElementById("arrow_type");
+    arrow_type_toggle.innerText = arrow_type;
+
     let line_review = document.getElementById("line_review");
     line_review.innerText = board_review;
 
@@ -740,6 +880,7 @@ function set_options_values_for_max_depth() {
 function setup_configs() {
     document.getElementById("hints").onclick = turn_on_hints_for_current_move;
     document.getElementById("arrows_toggle").onclick = toggle_arrows;
+    document.getElementById("arrow_type").onclick = toggle_arrow_type;
     document.getElementById("line_review").onclick = toggle_review;
     document.getElementById("move_delay").onclick = toggle_move_delay;
     document.getElementById("key_move").onclick = toggle_key_move;
