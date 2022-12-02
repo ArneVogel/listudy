@@ -101,6 +101,8 @@
 }
 
 .max_depth_ctrl {
+    min-width: 1ch;
+
     /* This all make the click area a little larger */
     display: inline-block;
     position: relative;
@@ -117,4 +119,6 @@
 .max_depth_range {
     width: 50px;
     margin-top: 3px;
+    margin-bottom: unset;
+    vertical-align: text-bottom;
 }
