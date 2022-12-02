@@ -50,6 +50,9 @@ function clear_local_storage() {
  * Gets an option by key from local storage. Also verifies the key is one of the allowed values
  * in case the code has changed since the user used the app last time. In such case it falls back
  * on the default value.
+ *
+ * Pass a validate function to provide custom validation of the read value from local storage.
+ * Pass a transform function to provide custom transformation of the value, such as convering to a number etc.
  */
 function get_option_from_localstorage(key, default_value, allowed_values = undefined, {validate=function(){return true;},transform=function(f){return f;}}={
     validate:function(){return true;},
@@ -59,8 +62,8 @@ function get_option_from_localstorage(key, default_value, allowed_values = undef
     let ls_value = localStorage.getItem(key);
     let is_allowed_value = allowed_values == undefined || allowed_values.indexOf(ls_value) >= 0;
     let transformed_value = transform(ls_value);
-    if (ls_value && is_allowed_value && validate(transformed_value)) {
-        return ls_value;
+    if (transformed_value && is_allowed_value && validate(transformed_value)) {
+        return transformed_value;
     } else {
         return default_value;
     }
