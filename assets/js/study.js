@@ -429,7 +429,8 @@ function setup_chapter_select() {
     let select_key = study_id + "_selected";
     let select_id = "chapter_select"
     let select = document.getElementById(select_id);
-    let selected = localStorage.getItem(select_key) || 0;
+    let selected = parseInt(localStorage.getItem(select_key) || 0);
+    selected = Math.min(selected, trees.length - 1);  // prevent error if replacing with a pgn with fewer chapters
     window.chapter = selected;
     for (let i = 0; i < trees.length; ++i) {
         let option = document.createElement("option");
