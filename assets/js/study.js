@@ -32,7 +32,7 @@ let show_arrows = get_option_from_localstorage(show_arrows_key, i18n.arrows_new2
 
 // Option to control how and when arrows are displayed
 let arrow_type_key = "arrow_type";
-let arrow_type = get_option_from_localstorage(arrow_type_key, i18n.arrow_type_auto, [i18n.arrow_type_auto, i18n.arrow_type_pgn, i18n.arrow_type_both]);
+let arrow_type = get_option_from_localstorage(arrow_type_key, i18n.arrow_type_both, [i18n.arrow_type_auto, i18n.arrow_type_pgn, i18n.arrow_type_both]);
 
 // When enabled the board waits a few seconds at the end of the line before resetting.
 let board_review_key = "board_review";
@@ -170,36 +170,31 @@ function create_shape(move, brush) {
     return {orig: ft.from, dest: ft.to, brush: brush};
 }
 
-function annotation_color(cmdStr) {
-    let c = cmdStr[0];
-    switch (c) {
-        case "G":
-            return "green";
-        case "R":
-            return "red";
-        case "Y":
-            return "yellow";
-        case "B":
-        default:
-            return "blue";
-    }
-}
-
-function create_auto_arrow(m, max, min, combined = false) {
+/**
+ * 
+ * @param {*} m 
+ * @param {*} max 
+ * @param {*} min 
+ * @param {*} pgn_color 
+ * @returns 
+ */
+function create_auto_arrow(m, max, min, pgn_color = undefined) {
     let move = m.move;
     let some_neglected = min < (0.5 * max);
     let current_neglected = m.value < (0.5 * max);
     let brush = undefined;
-    if(combined == true) {
-        brush = some_neglected ? (current_neglected ? "thin_normal" : "thin_transparent") : "thin_normal";
-    } else {
+    if(pgn_color) {  // pgn arrows
+        let brush_prefix = some_neglected ? 
+            (current_neglected ? "playable_pgn_normal_" : "playable_pgn_transparent_") : "playable_pgn_normal_";
+        brush = brush_prefix + pgn_color;
+    } else {  // normal auto arrows
         brush = some_neglected ? (current_neglected ? "normal" : "transparent") : "normal";
     }
     return create_shape(move, brush);
 }
 
-function create_annotation_arrow(cal, combined = false) {
-    let brush = (combined ? "thick_" : "") + annotation_color(cal);
+function create_pgn_arrow(cal, brush_prefix = "") {
+    let brush = brush_prefix + get_color_from_cal(cal);
     let from = cal.substr(1, 2);
     let to = cal.substr(3, 2);
     //let modifiers = combined ? {lineWidth: 5} : {};
@@ -207,8 +202,8 @@ function create_annotation_arrow(cal, combined = false) {
     return {orig: from, dest: to, brush: brush, modifiers: modifiers};
 }
 
-function create_annotation_circle(csl) {
-    let brush = annotation_color(csl);
+function create_pgn_circle(csl) {
+    let brush = get_color_from_cal(csl);
     let from = csl.substr(1, 2);
     return {orig: from, brush: brush};
 }
@@ -230,23 +225,7 @@ function give_hints(once) {
     return false;
 }
 
-function create_pgn_shapes(m, thick = false) {
-    if (m.comments != undefined) {
-        let commands = m.comments.filter(c => c.commands != undefined).flatMap(c => c.commands);
-        let circles = commands.filter(cmd => cmd.key == 'csl').flatMap(cmd => cmd.values);
-        let arrows = commands.filter(cmd => cmd.key == 'cal').flatMap(cmd => cmd.values);
-        arrows.forEach(a => console.log("Arrow: " + a));
-        circles.forEach(c => console.log("Circle: " + c));
-        let shapes = [];
-        shapes.push(...circles.map(c => create_annotation_circle(c)));
-        shapes.push(...arrows.map(a => create_annotation_arrow(a, thick)));
-        return shapes;
-    } else {
-        return [];
-    }
-}
-
-function get_pgn_annotations(m, keyword) {
+function get_pgn_shapes(m, keyword) {
     if (m.comments != undefined) {
         let commands = m.comments.filter(c => c.commands != undefined).flatMap(c => c.commands);
         return commands.filter(cmd => cmd.key == keyword).flatMap(cmd => cmd.values);
@@ -259,13 +238,55 @@ function array_contains(arr, str) {
     return arr.indexOf(str) > -1;
 }
 
-function get_arrow_cmd_from_cal(cal) {
+function get_color_from_cal(cal) {
+    let c = cal[0];
+    switch (c) {
+        case "G":
+            return "green";
+        case "R":
+            return "red";
+        case "Y":
+            return "yellow";
+        case "B":
+        default:
+            return "blue";
+    }
+}
+
+function get_arrow_code_from_cal(cal) {
     return cal.substr(1,4);
 }
 
-function get_arrow_cmd_from_move(m) {
+function get_arrow_code_from_move(m) {
     let uci = san_to_uci(chess, m.move);
     return "" + uci.from + uci.to;
+}
+
+function get_doubled_auto_moves_objects(all_moves, all_pgn_arrows) {
+    // Setup some lookup tables
+    let all_pgn_arrow_codes = [];
+    let color_by_pgn_arrow = {};
+    for (let cal of all_pgn_arrows) {
+        let arrow_code = get_arrow_code_from_cal(cal);
+        let color = get_color_from_cal(cal);
+        
+        color_by_pgn_arrow[arrow_code] = color;
+        all_pgn_arrow_codes.push(arrow_code);
+    }
+
+    // Merge the playable moves and the pgn arrows
+    let auto_pgn_union = all_moves.map(move => {
+        let arrow_code = get_arrow_code_from_move(move);
+        let color = color_by_pgn_arrow[arrow_code];
+        return {
+            color: color,
+            arrow_code: arrow_code,
+            move: move
+        };
+    })
+    // And filter so that only those moves that are both playable a pgn arrow are left
+    let filtered_moves = auto_pgn_union.filter(x => array_contains(all_pgn_arrow_codes, x.arrow_code))
+    return filtered_moves;
 }
 
 /**
@@ -288,31 +309,33 @@ function display_arrows(once) {
         shapes.push(...all_moves.map(m => create_auto_arrow(m, max, min)));
 
     } else if (arrow_type == i18n.arrow_type_pgn) {
-        let all_pgn_circles = get_pgn_annotations(current_move, "csl");
-        let all_pgn_arrows = get_pgn_annotations(current_move, "cal");
+        let all_pgn_circles = get_pgn_shapes(current_move, "csl");
+        let all_pgn_arrows = get_pgn_shapes(current_move, "cal");
 
-        shapes.push(...all_pgn_circles.map(a => create_annotation_circle(a)));
-        shapes.push(...all_pgn_arrows.map(a => create_annotation_arrow(a)));
+        shapes.push(...all_pgn_circles.map(a => create_pgn_circle(a)));
+        shapes.push(...all_pgn_arrows.map(a => create_pgn_arrow(a)));
 
     } else if (arrow_type = i18n.arrow_type_both) {
-        let all_pgn_circles = get_pgn_annotations(current_move, "csl");
-        shapes.push(...all_pgn_circles.map(a => create_annotation_circle(a)));
+        let all_pgn_circles = get_pgn_shapes(current_move, "csl");
+        shapes.push(...all_pgn_circles.map(a => create_pgn_circle(a)));
 
-        let all_pgn_arrows = get_pgn_annotations(current_move, "cal");
-        let all_pgn_arrows_str = all_pgn_arrows.map(cal => get_arrow_cmd_from_cal(cal));
-        let clean_auto_moves = all_moves.filter(m => !array_contains(all_pgn_arrows_str, get_arrow_cmd_from_move(m)));
-        let doubled_auto_moves = all_moves.filter(m => array_contains(all_pgn_arrows_str, get_arrow_cmd_from_move(m)));
-        let all_auto_arrows = [...clean_auto_moves, ...doubled_auto_moves].map(m => get_arrow_cmd_from_move(m));
-        let clean_pgn_arrows = all_pgn_arrows.filter(cal => !array_contains(all_auto_arrows, get_arrow_cmd_from_cal(cal)));
-        let doubled_pgn_arrows = all_pgn_arrows.filter(cal => array_contains(all_auto_arrows, get_arrow_cmd_from_cal(cal)));
+        let all_pgn_arrows = get_pgn_shapes(current_move, "cal");
+        let all_pgn_arrows_str = all_pgn_arrows.map(cal => get_arrow_code_from_cal(cal));
+        let clean_auto_moves = all_moves.filter(m => !array_contains(all_pgn_arrows_str, get_arrow_code_from_move(m)));
+        //let doubled_auto_moves = all_moves.filter(m => array_contains(all_pgn_arrows_str, get_arrow_cmd_from_move(m)));
+        let doubled_auto_moves_objects = get_doubled_auto_moves_objects(all_moves, all_pgn_arrows);
+        let all_auto_arrows = all_moves.map(m => get_arrow_code_from_move(m));
+        let decorate_pgn_arrows = all_pgn_arrows.filter(cal => !array_contains(all_auto_arrows, get_arrow_code_from_cal(cal)));
+        // let playable_pgn_arrows = all_pgn_arrows.filter(cal => array_contains(all_auto_arrows, get_arrow_cmd_from_cal(cal)));
 
-        shapes.push(...clean_auto_moves.map(m => create_auto_arrow(m, max, min, true)));
-        shapes.push(...clean_auto_moves.map(m => create_annotation_arrow("B" + get_arrow_cmd_from_move(m), true)));
+        // Pick one
+        //shapes.push(...clean_auto_moves.map(m => create_pgn_arrow("B" + get_arrow_cmd_from_move(m), "playable_pgn_normal_")));
+        shapes.push(...clean_auto_moves.map(m => create_auto_arrow(m, max, min, "blue")));
 
-        shapes.push(...doubled_auto_moves.map(m => create_auto_arrow(m, max, min, true)));
+        shapes.push(...doubled_auto_moves_objects.map(x => create_auto_arrow(x.move, max, min, x.color)));
+        //shapes.push(...playable_pgn_arrows.map(a => create_pgn_arrow(a, "playable_pgn_normal_")));
 
-        shapes.push(...clean_pgn_arrows.map(a => create_annotation_arrow(a)));
-        shapes.push(...doubled_pgn_arrows.map(a => create_annotation_arrow(a, true)));
+        shapes.push(...decorate_pgn_arrows.map(a => create_pgn_arrow(a, "decorate_pgn_")));
 
     }
     ground.setShapes(shapes);
@@ -878,6 +901,9 @@ function set_options_values_for_max_depth() {
 }
 
 function setup_configs() {
+    document.getElementById("study_mainpage1").onclick = turn_on_hints_for_current_move;
+    document.getElementById("study_mainpage2").onclick = turn_on_hints_for_current_move;
+    document.getElementById("study_mainpage3").onclick = turn_on_hints_for_current_move;
     document.getElementById("hints").onclick = turn_on_hints_for_current_move;
     document.getElementById("arrows_toggle").onclick = toggle_arrows;
     document.getElementById("arrow_type").onclick = toggle_arrow_type;

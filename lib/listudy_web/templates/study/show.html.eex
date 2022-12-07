@@ -1,13 +1,13 @@
 <h1><%= @study.title %></h1>
+<link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
 
 <div class="with_sidebar">
   <div id="game_container" class="sidebar_main">
     <%= render ListudyWeb.ComponentView, "chessground.html" %>
   </div>
-  <div class="sidebar">
+  <div class="sidebar" id="study_mainpage1">
     <div>
       <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
-
       <div class="sidebar_padded">
         <div style="margin-bottom: 1em">
           <a class="icon large_clickarea" data-icon="-" id="hints" role="button"><%= dgettext("study", "Show hints for this move!") %></a><br>
@@ -26,7 +26,7 @@
     </div>
   </div>
 </div>
-<div class="study_options_below">
+<div class="study_options_below" id="study_mainpage2">
   <div class="study_option_item_below">
     <a class="icon" data-icon="!" id="play_stockfish" href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1" title="<%= dgettext "study", "Play against Stockfish" %>"><%= dgettext "study", "Play against Stockfish" %></a>
   </div>
@@ -67,11 +67,11 @@
     </div>
   </div>
   <div class="study_option_item_below">
-    <a class="icon" data-icon="-" id="arrow_type" title="<%= dgettext("study", "Option to control the type of arrows shown.") %>">placeholder</a>
+    <a class="icon" data-icon="-" id="arrow_type" title="<%= dgettext("study", "Option to control the type of arrows shown. Automatic arrows are created for all playable moves in the repertoire. PGN means arrows and circles stored inside the PGN file. These can be created at Lichess.org and other sites.") %>">placeholder</a>
   </div>
 </div>
 
-<div class="highlight">
+<div class="highlight" id="study_mainpage3">
   <b><%= dgettext "study", "Description" %></b>
   <p><%= @study.description %></p>
 
@@ -92,7 +92,6 @@
 
 
 
-<link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
 <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/study.js") %>"></script>
 <script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
   /*
@@ -146,9 +145,9 @@
   i18n.arrows_new5x = "<%= dgettext "study", "Hints: until played 5x" %>";
   i18n.arrows_always = "<%= dgettext "study", "Hints: always on" %>";
   i18n.arrows_hidden = "<%= dgettext "study", "Hints: hidden" %>";
-  i18n.arrow_type_auto = "<%= dgettext "study", "Hint source: automatic" %>";
-  i18n.arrow_type_pgn = "<%= dgettext "study", "Hint source: from pgn" %>";
-  i18n.arrow_type_both = "<%= dgettext "study", "Hint source: automatic + pgn" %>";
+  i18n.arrow_type_both = "<%= raw dgettext "study", "Hint type: automatic & pgn" %>";
+  i18n.arrow_type_auto = "<%= dgettext "study", "Hint type: automatic" %>";
+  i18n.arrow_type_pgn = "<%= dgettext "study", "Hint type: pgn" %>";
   i18n.review_slow = "<%= dgettext "study", "Board reset delay: slow" %>";
   i18n.review_fast = "<%= dgettext "study", "Board reset delay: fast" %>";
   i18n.key_move_enabled = "<%= dgettext "study", "Jump to key move: on" %>";

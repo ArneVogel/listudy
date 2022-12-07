@@ -29,18 +29,30 @@ function ground_init_state(fen) {
         // thick_red: {key: "tr", color: "#ff0000", opacity: 0.7, lineWidth: 13 },
         // thick_yellow: {key: "ty", color: "#ffcc00", opacity: 0.9, lineWidth: 13 }
 
-        normal: {key: "n", color: "#3333ff", opacity: 1, lineWidth: 10 },
-        transparent: {key: "t", color: "#3333ff", opacity: 0.5, lineWidth: 10 },
-        thin_normal: {key: "tn", color: "#000000", opacity: 1, lineWidth: 11 },  // #001a80 #000080 #000033
-        thin_transparent: {key: "tt", color: "#000000", opacity: 0.6, lineWidth: 11 },
-        green: {key: "g", color: "#00802b", opacity: 0.8, lineWidth: 10 },
-        blue: {key: "b", color: "#3333ff", opacity: 0.8, lineWidth: 10 },
-        red: {key: "r", color: "#ff0000", opacity: 0.8, lineWidth: 10 },
-        yellow: {key: "y", color: "#ffcc00", opacity: 0.85, lineWidth: 10 },
-        thick_green: {key: "tg", color: "#00802b", opacity: 0.8, lineWidth: 8 },
-        thick_blue: {key: "tb", color: "#3333ff", opacity: 0.8, lineWidth: 8 },
-        thick_red: {key: "tr", color: "#ff0000", opacity: 0.8, lineWidth: 8 },
-        thick_yellow: {key: "ty", color: "#ffcc00", opacity: 0.85, lineWidth: 8 }
+        normal: {key: "n", color: "#3333ff", opacity: 0.6, lineWidth: 10 },
+        transparent: {key: "t", color: "#3333ff", opacity: 0.3, lineWidth: 10 },
+        thin_normal: {key: "tn", color: "#000000", opacity: 0.6, lineWidth: 12 },  // #001a80 #000080 #000033
+        thin_transparent: {key: "tt", color: "#000000", opacity: 0.3, lineWidth: 12 },
+        // 
+        green:  {key: "g", color: "hsl(120, 100%, 25%)", opacity: 0.6,  lineWidth: 10 },
+        blue:   {key: "b", color: "hsl(216, 100%, 60%)", opacity: 0.6,  lineWidth: 10 },
+        red:    {key: "r", color: "hsl(0, 100%, 50%)",   opacity: 0.6,  lineWidth: 10 },
+        yellow: {key: "y", color: "hsl(48, 100%, 45%)",  opacity: 0.65, lineWidth: 10 },
+        // 
+        decorate_pgn_green:  {key: "decorate_green",  color: "hsl(120, 100%, 27%)", opacity: 0.4,  lineWidth: 10 },
+        decorate_pgn_blue:   {key: "decorate_blue",   color: "hsl(216, 100%, 35%)", opacity: 0.4,  lineWidth: 10 },
+        decorate_pgn_red:    {key: "decorate_red",    color: "hsl(0, 100%, 55%)",   opacity: 0.4,  lineWidth: 10 },
+        decorate_pgn_yellow: {key: "decorate_yellow", color: "hsl(48, 100%, 45%)",  opacity: 0.45, lineWidth: 10 },
+        // 
+        playable_pgn_normal_green:  {key: "playable_normal_green",  color: "hsl(120, 100%, 20%)", opacity: 0.9,  lineWidth: 9 },
+        playable_pgn_normal_blue:   {key: "playable_normal_blue",   color: "hsl(216, 100%, 45%)", opacity: 0.9,  lineWidth: 9 },
+        playable_pgn_normal_red:    {key: "playable_normal_red",    color: "hsl(0, 100%, 60%)",   opacity: 0.9,  lineWidth: 9 },
+        playable_pgn_normal_yellow: {key: "playable_normal_yellow", color: "hsl(48, 100%, 45%)",  opacity: 0.9, lineWidth: 9 },
+        // 
+        playable_pgn_transparent_green:  {key: "playable_transparent_green",  color: "hsl(120, 100%, 30%)", opacity: 0.9,  lineWidth: 9 },
+        playable_pgn_transparent_blue:   {key: "playable_transparent_blue",   color: "hsl(216, 100%, 55%)", opacity: 0.9,  lineWidth: 9 },
+        playable_pgn_transparent_red:    {key: "playable_transparent_red",    color: "hsl(0, 100%, 60%)",   opacity: 0.9,  lineWidth: 9 },
+        playable_pgn_transparent_yellow: {key: "playable_transparent_yellow", color: "hsl(48, 100%, 55%)",  opacity: 0.9, lineWidth: 9 }
     }};
     ground.set(config);
 }

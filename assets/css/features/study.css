@@ -116,6 +116,91 @@
     user-select: none; /* Standard syntax */
 }
 
+.cg-wrap svg {
+    opacity: 1 !important;
+}
+
+/*
+ * The arrow head styles below are for PGN arrows, in their normal state, or if they
+ * have not been played enough and need to be highlighted through the normal non-transparent opacity.
+ */
+ #arrowhead-playable_normal_green {
+    stroke: hsl(120, 100%, 10%);
+    stroke-width: 0.35;
+    overflow: visible;
+}
+#arrowhead-playable_normal_blue {
+    stroke: hsl(216, 100%, 20%);
+    stroke-width: 0.35;
+    overflow: visible;
+}
+#arrowhead-playable_normal_red {
+    stroke: hsl(0, 100%, 25%);
+    stroke-width: 0.35;
+    overflow: visible;
+}
+#arrowhead-playable_normal_yellow {
+    stroke: hsl(48, 100%, 15%);
+    stroke-width: 0.35;
+    overflow: visible;
+}
+/*
+ * The arrow head styles below are for PGN arrows, when they have been played more
+ * than some others and need to made more transparent.
+ */
+#arrowhead-playable_transparent_green {
+    stroke: hsl(120, 100%, 10%);
+    stroke-width: 0.2;
+    overflow: visible;
+}
+#arrowhead-playable_transparent_blue {
+    stroke: hsl(216, 100%, 20%);
+    stroke-width: 0.2;
+    overflow: visible;
+}
+#arrowhead-playable_transparent_red {
+    stroke: hsl(0, 100%, 20%);
+    stroke-width: 0.2;
+    overflow: visible;
+}
+#arrowhead-playable_transparent_yellow {
+    stroke: hsl(48, 100%, 15%);
+    stroke-width: 0.2;
+    overflow: visible;
+}
+
+/* #arrowhead-tn {
+    display: none;
+    visibility: hidden;
+} */
+/* 
+line[cgHash *= "playable_pgn_normal_green"] {
+    opacity: 0.9;
+}
+line[cgHash *= "playable_pgn_normal_blue"] {
+    opacity: 0.9;
+}
+line[cgHash *= "playable_pgn_normal_red"] {
+    opacity: 0.9;
+}
+line[cgHash *= "playable_pgn_normal_yellow"] {
+    opacity: 0.9;
+} */
+
+/* line:has(#arrowhead-tg) {
+    stroke: black;
+    opacity: 1;
+    stroke-width: 0.3;
+    overflow: visible;
+} */
+
+/* #arrowhead-tb line {
+    stroke: black;
+    opacity: 1;
+    stroke-width: 0.3;
+    overflow: visible;
+} */
+
 .max_depth_range {
     width: 50px;
     margin-top: 3px;
