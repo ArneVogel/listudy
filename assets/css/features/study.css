@@ -107,8 +107,8 @@
     display: inline-block;
     position: relative;
     z-index: 1;
-    padding: 0.4em;
-    margin: -0.4em;
+    padding: 0.3em;
+    margin: -0.3em;
 
     /* Make it non-selectable */
     -webkit-user-select: none; /* Safari */
@@ -121,4 +121,8 @@
     margin-top: 3px;
     margin-bottom: unset;
     vertical-align: text-bottom;
+}
+
+.option-highlighted a {
+    color: red;
 }
