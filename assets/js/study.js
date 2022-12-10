@@ -291,11 +291,26 @@ function change_play_stockfish() {
     link.href = `${base}#${fen}`;
 }
 
+/**
+ * Lichess.org has two ways of launching an analysis board. One is through a FEN and the other
+ * is through a PGN and a color. The benefit of the PGN version is that it allows the user to 
+ * step back through the move line and evaluate the position at any of the played moves. If the
+ * repertoire doesn't start on move 1, ie it has a FEN code as a starting positionin the PGN
+ * file, then using the PGN url doesn't work. So to utilize the possibility of the GN url when
+ * we can, we use that url when the repoertoire starts at move 1, or else the FEN url.
+ */
 function change_analysis_board() {
-    let pgn = encodeURIComponent(chess.pgn());
-    let color = turn_color(chess);
     let link = document.getElementById("analysis_board");
-    link.href = `https://lichess.org/analysis/pgn/${pgn}?color=${color}`;
+    // The PGN standard requires a SetUp header when there is another start position
+    let starts_midgame = trees[chapter].headers.SetUp != undefined;
+    if (starts_midgame) {
+        let fen = chess.fen();
+        link.href = `https://lichess.org/analysis/${fen}`;
+    } else {
+        let pgn = encodeURIComponent(chess.pgn());
+        let color = turn_color(chess);
+        link.href = `https://lichess.org/analysis/pgn/${pgn}?color=${color}`;
+    }
 }
 
 function setup_move() {
