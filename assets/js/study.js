@@ -6,7 +6,8 @@ import { turn_color, non_turn_color, setup_chess, uci_to_san, san_to_uci } from 
 import { string_hash } from './modules/hash.js';
 import { clear_local_storage, get_option_from_localstorage } from './modules/localstorage.js';
 import { tree_value_add, tree_progress, tree_move_index, tree_children, tree_possible_moves, has_children, tree_value,
-         need_hint, update_value, value_sort, tree_get_node, tree_children_filter_sort, tree_get_node_depth, tree_get_node_string, tree_size_weighted_random_move } from './modules/tree_utils.js';
+         need_hint, update_value, value_sort, tree_get_node, tree_children_filter_sort, tree_get_node_depth,
+         tree_get_node_string, tree_size_weighted_random_move, tree_max_num_moves_deep } from './modules/tree_utils.js';
 import { generate_move_trees, annotate_pgn } from './modules/tree_from_pgn.js';
 import { sleep } from './modules/sleep.js';
 import { getRandomIntFromRange } from './modules/random.js';
@@ -41,8 +42,10 @@ let key_moves_mode = get_option_from_localstorage(key_moves_mode_key, i18n.key_m
 let show_comments_key = "show_comments";
 let show_comments = get_option_from_localstorage(show_comments_key, i18n.comments_when_arrows, [i18n.comments_when_arrows, i18n.comments_always_on, i18n.comments_hidden]);
 
-// Note: NULL if disabled, otherwise an integer value based on the PGN move number.
-let max_depth_mode = null;
+// Option to control the maximum number of moves being played
+const DEPTH_MAX = -1;  // This constant is used to avoid having to calculate the tree depth when max_depth is at the max depth.
+let max_depth_key_base = "max_depth_" + study_id + "_";
+let max_depth = DEPTH_MAX;
 
 function combo_text() {
     return "" + combo_count + "x ";
@@ -122,13 +125,13 @@ async function handle_move(orig, dest) {
         set_text(success_div, right_move_text());
         let reply = ai_move(curr_move);
         let end_of_line = reply == undefined;
-        if (!end_of_line && max_depth_mode !== null) {
+        if (!end_of_line && max_depth !== DEPTH_MAX) {
             let curr_node = tree_get_node(curr_move);
             let curr_depth = tree_get_node_depth(curr_node);
             if (key_moves_mode == i18n.key_move_disabled || window.first_variation === null) {
-                end_of_line = curr_depth >= max_depth_mode;
+                end_of_line = curr_depth >= max_depth;
             } else {
-                end_of_line = curr_node.move_index >= window.first_variation && curr_depth >= max_depth_mode;
+                end_of_line = curr_node.move_index >= window.first_variation && curr_depth >= max_depth;
             }
             // console.log('CURR_DEPTH', end_of_line, curr_node.move, curr_node.move_index, curr_depth);
         }
@@ -441,7 +444,8 @@ function setup_chapter_select() {
     let select_key = study_id + "_selected";
     let select_id = "chapter_select"
     let select = document.getElementById(select_id);
-    let selected = localStorage.getItem(select_key) || 0;
+    let selected = parseInt(localStorage.getItem(select_key) || 0);
+    selected = Math.min(selected, trees.length - 1);  // prevent error if replacing with a pgn with fewer chapters
     window.chapter = selected;
     for (let i = 0; i < trees.length; ++i) {
         let option = document.createElement("option");
@@ -460,6 +464,7 @@ function setup_chapter_select() {
         window.chapter = v;
         start_training();
         update_progress(); // update the progress bar shown
+        set_options_values_for_max_depth();  // update the max depth for the new chapter
     };
 }
 
@@ -630,6 +635,60 @@ function toggle_comments() {
     localStorage.setItem(show_comments_key, show_comments);
 }
 
+function get_repertoire_depth() {
+    let starting_moves = trees[chapter].root;
+    let for_white = color == "white";
+    return tree_max_num_moves_deep(starting_moves, for_white);
+}
+
+/**
+ * Update option label with a new max depth.
+ */
+ function update_max_depth_label(depth, tree_depth) {
+    let max_depth_container = document.getElementById("max_depth_container");
+    let max_depth_label = document.getElementById("max_depth_label");
+
+    max_depth_label.innerText = depth;
+    if (depth == tree_depth) {
+        max_depth = DEPTH_MAX;
+        max_depth_container.classList.remove("option-highlighted");
+    } else {
+        max_depth = depth;
+        max_depth_container.classList.add("option-highlighted");
+    }
+}
+
+/**
+ * User clicked on the + or - next to the max depth range control.
+ */
+function inc_or_dec_max_depth(delta) {
+    let max_depth_range = document.getElementById("max_depth_range");
+    let tree_depth = get_repertoire_depth();
+    let depth = parseInt(max_depth_range.value, 10) || tree_depth;
+
+    depth += delta;
+    // Make sure it's not lower than 1 or higher than the actual depth of the tree
+    depth = delta > 0 ? Math.min(depth, tree_depth) : Math.max(depth, 1);
+    max_depth_range.value = depth;
+
+    update_max_depth_label(depth, tree_depth);
+
+    localStorage.setItem(max_depth_key_base + chapter, max_depth);
+}
+
+/**
+ * User dragged the max depth range/slider control to a new value.
+ */
+function max_depth_changed() {
+    let max_depth_range = document.getElementById("max_depth_range");
+    let tree_depth = get_repertoire_depth();
+    let depth = parseInt(max_depth_range.value, 10) || tree_depth;
+
+    update_max_depth_label(depth, tree_depth);
+
+    localStorage.setItem(max_depth_key_base + chapter, max_depth);
+}
+
 function reset_line() {
     start_training();
 }
@@ -682,7 +741,7 @@ async function setup_progress_reset() {
 }
 
 /**
- * Initiate all option values on the page.
+ * Initiate all option labels on the page.
  */
 function set_options_values() {
     let move_delay = document.getElementById("move_delay_time");
@@ -700,6 +759,23 @@ function set_options_values() {
 
     let comments_toggle = document.getElementById("comments_toggle");
     comments_toggle.innerText = show_comments;
+
+    set_options_values_for_max_depth();
+}
+
+function set_options_values_for_max_depth() {
+    let max_depth_key = max_depth_key_base + chapter;
+    max_depth = get_option_from_localstorage(max_depth_key, DEPTH_MAX, undefined, {validate: Number.isInteger, transform: parseInt});
+
+    let tree_depth = get_repertoire_depth();
+    let max_depth_range = document.getElementById("max_depth_range");
+    let depth_as_num = max_depth == DEPTH_MAX ? tree_depth : max_depth;
+    let depth = Math.min(tree_depth, depth_as_num);
+    max_depth_range.max = tree_depth;
+    max_depth_range.value = depth;
+    max_depth_range.disabled = (tree_depth == 1);
+
+    update_max_depth_label(depth, tree_depth);
 }
 
 function setup_configs() {
@@ -710,6 +786,10 @@ function setup_configs() {
     document.getElementById("key_move").onclick = toggle_key_move;
     document.getElementById("comments_toggle").onclick = toggle_comments;
     document.getElementById("reset_line").onclick = reset_line;
+    document.getElementById("max_depth_sub").onclick = () => inc_or_dec_max_depth(-1);
+    document.getElementById("max_depth_add").onclick = () => inc_or_dec_max_depth(+1);
+    document.getElementById("max_depth_range").onchange = max_depth_changed;
+    document.getElementById("max_depth_range").oninput = max_depth_changed;
 }
 
 function main() {

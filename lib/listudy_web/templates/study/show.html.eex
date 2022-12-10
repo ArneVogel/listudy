@@ -10,7 +10,7 @@
 
       <div class="sidebar_padded">
         <div style="margin-bottom: 1em">
-          <a class="icon large_clickarea" data-icon="-" id="hints"><%= dgettext("study", "Show hints for this move!") %></a><br>
+          <a class="icon large_clickarea" data-icon="-" id="hints" role="button"><%= dgettext("study", "Show hints for this move!") %></a><br>
         </div>
         
         <div id="comments" class="study_comments"></div>
@@ -59,8 +59,14 @@
   <div class="study_option_item_below">
     <a class="icon" data-icon="(" id="move_delay"><%= dgettext("study", "Move delay:") %> <span id="move_delay_time">placeholder</span></a>
   </div>
+  <div class="study_option_item_below">
+    <div id="max_depth_container" title="<%= dgettext("study", "Lets you choose how many moves deep in the repertoire to train. The highest value you can choose is the length of the longest line. Set to a lower value to train against a more shallow subset of the repertoire, and to the highest value to train against the full repertoire.") %>">
+      <a class="icon" data-icon="+"><%= dgettext("study", "Max depth: ") %></a>
+      <a id="max_depth_label" class="max_depth_label">placeholder</a>
+      <a id="max_depth_sub" class="max_depth_ctrl" role="button">-</a><input type="range" id="max_depth_range" class="max_depth_range" min="1" max="1"><a id="max_depth_add" class="max_depth_ctrl" role="button">+</a>
+    </div>
+  </div>
 </div>
-
 
 <div class="highlight">
   <b><%= dgettext "study", "Description" %></b>
@@ -150,6 +156,7 @@
   i18n.comments_hidden = "<%= dgettext "study", "Comments: hidden" %>";
   i18n.confirm_reset_progress = "<%= dgettext "study", "Are you sure you want to delete your study progress?" %>";
   i18n.response = "<%= dgettext "study", "response" %>";
+  i18n.max_depth = "<%= dgettext "study", "Max depth: " %>";
 </script>
 
 <div id="progress_modal" class="modal">
