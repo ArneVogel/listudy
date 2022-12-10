@@ -4,16 +4,48 @@
     padding: 0.5em;
 }
 
+@media only screen and (max-width: 600px) {
+    .study_options_right {
+        position: relative !important;
+    }
+    .chapter_selection {
+        max-width: 100% !important;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .sidebar_innercontainer {
+        height:0;
+        min-height:100%;
+        overflow-x: hidden;
+        margin-bottom: 2em;
+    }
+}
+
+#study_mainpage1 {
+    margin-bottom: 2em;
+}
+
+@media only screen and (min-width: 600px) {
+    .area_below_main {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
 .chapter_selection {
-    margin-top: 0.5em;
-    max-width: 230px;
+    flex: 0;
+    margin-right: 2em;
+    max-width: 250px;
 }
 
 .study_favorite_form {
     margin-bottom: 0;
 }
 
-.study_options {
+.study_options_right {
+    display: inline-block;
+    flex: 0;
     margin-bottom: 2rem;
 }
 
@@ -23,7 +55,8 @@
     }
 }
 
-.study_options_below {
+.study_options_left {
+    flex: 2;
     margin-bottom: 2rem;
     display: flex;
     flex-direction: row;
@@ -31,7 +64,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .study_options_below {
+    .study_options_left {
         padding: 1em;
         display: flex;
         flex-direction: column;
@@ -49,7 +82,7 @@
 
 .study_option_item_below {
     margin-right: 3rem;
-    min-width: 24ch;
+    min-width: 26ch;
 }
 
 .study_option_item_below > a {
@@ -62,11 +95,6 @@
 
 .study_below_highlight {
     margin-top: 1.5rem;
-}
-
-.study_comments {
-    overflow-y: auto;
-    max-height: 20em;
 }
 
 .study_comments > div {

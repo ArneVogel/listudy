@@ -64,8 +64,21 @@ body {
 }
 
 .infoBox {
+    position: relative;
     margin: 10px 0px;
     padding:12px;
+}
+
+.close_button {
+    display: inline-block;
+	position: absolute;
+	top: -5px;
+	right: 1px;
+    cursor: pointer;
+    /* Make it non-selectable */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .hidden {
@@ -137,6 +150,7 @@ body {
 .with_sidebar {
     display: flex;
 }
+
 @media only screen and (max-width: 600px) {
     .with_sidebar {
         display: block;
@@ -145,17 +159,6 @@ body {
         margin-left: 0px !important;
         
     }
-    .study_options {
-        position: relative !important;
-    }
-    .chapter_selection {
-        max-width: 100% !important;
-    }
-}
-.study_options {
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
 
 .sidebar_main {
