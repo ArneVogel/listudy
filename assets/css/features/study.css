@@ -124,5 +124,5 @@
 }
 
 .option-highlighted a {
-    color: red;
+    color: var(--warn-color);
 }
