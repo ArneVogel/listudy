@@ -26,7 +26,7 @@
     </div>
   </div>
 </div>
-<div class="study_options_below" id="study_mainpage2">
+<div class="study_options_below">
   <div class="study_option_item_below">
     <a class="icon" data-icon="!" id="play_stockfish" href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1" title="<%= dgettext "study", "Play against Stockfish" %>"><%= dgettext "study", "Play against Stockfish" %></a>
   </div>

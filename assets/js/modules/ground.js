@@ -16,23 +16,8 @@ function ground_init_state(fen) {
     config["highlight"] = { check: true };
     config["lastMove"] = undefined;
     config["drawable"] = {brushes: {
-        // normal: {key: "n", color: "#001a80", opacity: 1, lineWidth: 10 },
-        // transparent: {key: "t", color: "#001a80", opacity: 0.5, lineWidth: 10 },
-        // thin_normal: {key: "tn", color: "#000033", opacity: 1, lineWidth: 7 },  // #001a80 #000080 #000033
-        // thin_transparent: {key: "tt", color: "#000033", opacity: 0.5, lineWidth: 7 },
-        // green: {key: "g", color: "#00802b", opacity: 0.8, lineWidth: 10 },
-        // blue: {key: "b", color: "#3333ff", opacity: 0.8, lineWidth: 10 },
-        // red: {key: "r", color: "#ff0000", opacity: 0.8, lineWidth: 10 },
-        // yellow: {key: "y", color: "#ffcc00", opacity: 0.85, lineWidth: 10 },
-        // thick_green: {key: "tg", color: "#00802b", opacity: 0.7, lineWidth: 13 },
-        // thick_blue: {key: "tb", color: "#3333ff", opacity: 0.7, lineWidth: 13 },
-        // thick_red: {key: "tr", color: "#ff0000", opacity: 0.7, lineWidth: 13 },
-        // thick_yellow: {key: "ty", color: "#ffcc00", opacity: 0.9, lineWidth: 13 }
-
         normal: {key: "n", color: "#3333ff", opacity: 0.6, lineWidth: 10 },
         transparent: {key: "t", color: "#3333ff", opacity: 0.3, lineWidth: 10 },
-        thin_normal: {key: "tn", color: "#000000", opacity: 0.6, lineWidth: 12 },  // #001a80 #000080 #000033
-        thin_transparent: {key: "tt", color: "#000000", opacity: 0.3, lineWidth: 12 },
         // 
         green:  {key: "g", color: "hsl(120, 100%, 25%)", opacity: 0.6,  lineWidth: 10 },
         blue:   {key: "b", color: "hsl(216, 100%, 60%)", opacity: 0.6,  lineWidth: 10 },
@@ -131,15 +116,15 @@ class TextOverlay {
     }
     fen_to_index(position) {
         let [row, rank] = position.split(""); // "e4" => "e" "4"
-        rank = parseInt(rank) - 1;
-        let m = {a: 0,
-                 b: 1,
-                 c: 2,
-                 d: 3,
-                 e: 4,
-                 f: 5,
-                 g: 6,
-                 h: 7};
+        rank = parseInt(rank);
+        let m = {a: 1,
+                 b: 2,
+                 c: 3,
+                 d: 4,
+                 e: 5,
+                 f: 6,
+                 g: 7,
+                 h: 8};
         row = m[row];
         return [row, rank];
     }
@@ -167,10 +152,10 @@ class TextOverlay {
         let [row, rank] = this.fen_to_index(this.position);
         let container = document.getElementById("game_container");
         let cell_width = calculate_width() / 8;
-        let left = cell_width * row;
+        let left = cell_width * (row - 1);
         let top = cell_width * (8-rank);
-        left += cell_width;
-        top += cell_width / 3;
+        left += cell_width * 0.5;
+        top += cell_width * 0.5;
         span.style.left = "" + left + "px";
         span.style.top = "" + top + "px";
         container.appendChild(span);

@@ -6,6 +6,16 @@
     text-align: center;
     z-index: 10;
     border: 1px solid black;
+    font-size: 0.8em;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -50px;
+    
+    /* Make it non-selectable */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .TextOverlayInfo {

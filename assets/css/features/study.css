@@ -1,3 +1,7 @@
+#game_container {
+    position: relative;
+}
+
 .pgn_choice {
     background-color: var(--bg-highlight-color);
     border-radius: 4px;
