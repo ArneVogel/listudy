@@ -5,9 +5,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .study_options_right {
-        position: relative !important;
-    }
     .chapter_selection {
         max-width: 100% !important;
     }
@@ -19,6 +16,7 @@
         min-height:100%;
         overflow-x: hidden;
         margin-bottom: 2em;
+        padding-right: 0.5em;
     }
 }
 
@@ -26,27 +24,13 @@
     margin-bottom: 2em;
 }
 
-@media only screen and (min-width: 600px) {
-    .area_below_main {
-        display: flex;
-        flex-direction: row;
-    }
-}
-
 .chapter_selection {
-    flex: 0;
     margin-right: 2em;
-    max-width: 250px;
+    max-width: 230px;
 }
 
 .study_favorite_form {
     margin-bottom: 0;
-}
-
-.study_options_right {
-    display: inline-block;
-    flex: 0;
-    margin-bottom: 2rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -55,16 +39,8 @@
     }
 }
 
-.study_options_left {
-    flex: 2;
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
 @media only screen and (max-width: 600px) {
-    .study_options_left {
+    .options_area {
         padding: 1em;
         display: flex;
         flex-direction: column;
@@ -80,13 +56,23 @@
     margin: -1.5em -1.5em -1em 0em;
 }
 
-.study_option_item_below {
+.options_area {
+    flex: 2;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.option_item {
     margin-right: 3rem;
     min-width: 26ch;
 }
 
-.study_option_item_below > a {
-	display: block;
+.option_item_progressbar {
+    margin-right: 3rem;
+    margin-bottom: 1em;
+    width: 55ch;
 }
 
 .select2 {
