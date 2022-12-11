@@ -13,7 +13,8 @@ import { sleep } from './modules/sleep.js';
 import { getRandomIntFromRange } from './modules/random.js';
 import { unescape_string } from './modules/security_related.js';
 import { ground_init_state, onresize, resize_ground, setup_ground, ground_set_moves,
-         ground_undo_last_move, setup_move_handler, ground_move } from './modules/ground.js';
+         ground_undo_last_move, setup_move_handler, ground_move,
+         TextOverlayDuration, TextOverlayType, TextOverlay, TextOverlayManager } from './modules/ground.js';
 import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 
 const mode_free = "free_mode";
@@ -104,6 +105,7 @@ function possible_promotion(moves, san) {
 }
 
 async function handle_move(orig, dest) {
+    overlay_manager.on_move();
 
     clear_all_text();
 
@@ -918,7 +920,10 @@ function setup_configs() {
     document.getElementById("max_depth_range").oninput = max_depth_changed;
 }
 
+window.overlay_manager = new TextOverlayManager();
+
 function main() {
+    overlay_manager.add_overlay(new TextOverlay("example", "d4", TextOverlayType.INFO, TextOverlayDuration.OneMove));;
     setup_ground();
     setup_chess();
     setup_trees();

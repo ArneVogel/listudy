@@ -86,17 +86,119 @@ function onresize() {
     resize_ground();
 }
 
-// call on window resizing
-function resize_ground() {
+/*
+ * Returns the width the chessground should have as integer
+ */
+function calculate_width() {
     let gc = document.getElementById("game_container");
     let gc_width = gc.offsetWidth;
     let width = gc_width - 7; // for the numbers on the side of the ground
     width -= width % 8; // fix chrome alignment errors; https://github.com/ornicar/lila/pull/3881
-    width = "" + width + "px";
+    return width;
+}
+
+// call on window resizing
+function resize_ground() {
+    let width_integer = calculate_width();
+    let width = "" + width_integer + "px";
     let chessground = document.getElementById("chessground");
     chessground.style.width = width;
     chessground.style.height = width;
     ground.redrawAll();
+}
+
+const TextOverlayDuration = {
+    OneMove: "OneMove",
+}
+const TextOverlayType = {
+    INFO: "TextOverlayInfo",
+}
+
+class TextOverlay {
+    contains(options, find) {
+        for (let key in Object.keys(options)) {
+            if (TextOverlayType[key] == find) {
+                return 0;
+            }
+        }
+        return -1;
+    }
+    clean_text(text) {
+        return text.replace(/ /gi, "-");
+    }
+    id() {
+        return `${this.position}${this.clean_text(this.text)}`;
+    }
+    fen_to_index(position) {
+        let [row, rank] = position.split(""); // "e4" => "e" "4"
+        rank = parseInt(rank) - 1;
+        let m = {a: 0,
+                 b: 1,
+                 c: 2,
+                 d: 3,
+                 e: 4,
+                 f: 5,
+                 g: 6,
+                 h: 7};
+        row = m[row];
+        return [row, rank];
+    }
+    constructor(text, position, type, duration) {
+        this.text = text;
+        if (!this.contains(TextOverlayDuration, duration)) {
+            console.error("TextOverlayDuration is not defined: ", duration);
+        }
+        this.duration = duration;
+        if (!this.contains(TextOverlayType, type)) {
+            console.error("TextOverlayType is not defined: ", type);
+        }
+        this.type = type;
+        this.position = position;
+
+        this.draw();
+    }
+
+    draw() {
+        let span = document.createElement("span");
+        span.id = this.id();
+        span.innerText = this.text;
+        span.classList.add("TextOverlay");
+        span.classList.add(this.type);
+        let [row, rank] = this.fen_to_index(this.position);
+        let container = document.getElementById("game_container");
+        let cell_width = calculate_width() / 8;
+        let left = cell_width * row;
+        let top = cell_width * (8-rank);
+        left += cell_width;
+        top += cell_width / 3;
+        span.style.left = "" + left + "px";
+        span.style.top = "" + top + "px";
+        container.appendChild(span);
+    }
+
+    remove() {
+        let id = this.id();
+        document.getElementById(id).remove();
+    }
+}
+
+class TextOverlayManager {
+    constructor() {
+        this.overlays = [];
+    }
+
+    add_overlay(overlay) {
+        this.overlays.push(overlay);
+    }
+
+    on_move() {
+        for (let overlay of this.overlays) {
+            if (overlay.duration === TextOverlayDuration.OneMove) {
+                overlay.remove();
+            }
+        }
+        this.overlays = this.overlays.filter((x) => x.duration != TextOverlayDuration.OneMove);
+    }
 }
 
 // sets the legal moves that can be played in the current chess instance
@@ -216,4 +318,4 @@ function ground_move(m, c = undefined) {
     }
 }
 
-export { ground_init_state, onresize, resize_ground, setup_ground, ground_set_moves, ground_set_moves_from_instance, ground_undo_last_move, setup_move_handler, setup_click_handler, ground_move };
+export { ground_init_state, onresize, resize_ground, setup_ground, ground_set_moves, ground_set_moves_from_instance, ground_undo_last_move, setup_move_handler, setup_click_handler, ground_move, TextOverlayDuration, TextOverlayType, TextOverlay, TextOverlayManager };
