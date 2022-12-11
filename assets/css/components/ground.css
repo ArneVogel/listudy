@@ -1,14 +1,14 @@
 
 .TextOverlay {
-	border-radius: 50%;
-	position: absolute;
-	padding: 10px;
-	text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    padding: 10px;
+    text-align: center;
     z-index: 10;
-	border: 1px solid black;
+    border: 1px solid black;
 }
 
 .TextOverlayInfo {
-	background: white;
+    background: white;
     color: black;
 }
