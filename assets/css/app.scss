@@ -71,9 +71,9 @@ body {
 
 .close_button {
     display: inline-block;
-	position: absolute;
-	top: -5px;
-	right: 1px;
+    position: absolute;
+    top: -5px;
+    right: 1px;
     cursor: pointer;
     /* Make it non-selectable */
     -webkit-user-select: none; /* Safari */
@@ -116,17 +116,17 @@ input:invalid {
 
 blockquote:before {
     font-family: "listudy";
-	font-size: 32px;
-	color: var(--font-color);
-	content: "&";
-	display: block;
-	position: absolute;
-	top: -15px;
-	left: 0;
-	transform: scaleX(-1);
+    font-size: 32px;
+    color: var(--font-color);
+    content: "&";
+    display: block;
+    position: absolute;
+    top: -15px;
+    left: 0;
+    transform: scaleX(-1);
 }
 blockquote {
-	font-size: 1.1em;
+    font-size: 1.1em;
     margin: 0 0 27px;
     padding-left: 48px;
     position: relative;
