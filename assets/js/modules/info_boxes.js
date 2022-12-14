@@ -12,6 +12,7 @@ function clear_all_text() {
 
 function set_text(id, text, extra = { bold_text: "", symbol: "" }) {
     let div = document.getElementById(id);
+
     let prefix_symbol = "";
     if (div == null) {
         return;
@@ -36,6 +37,12 @@ function set_text(id, text, extra = { bold_text: "", symbol: "" }) {
         }
     } else {
         div.classList.add("hidden");
+    }
+
+    // Button to close the info box
+    let div_close = div.querySelector(".close_button");
+    if (div_close != undefined) {
+        div_close.onclick = () => { div.classList.add("hidden") }
     }
 
     // This function can (and will be) be called with untrusted 

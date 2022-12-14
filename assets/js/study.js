@@ -473,11 +473,26 @@ function change_play_stockfish() {
     link.href = `${base}#${fen}`;
 }
 
+/**
+ * Lichess.org has two ways of launching an analysis board. One is through a FEN and the other
+ * is through a PGN and a color. The benefit of the PGN version is that it allows the user to 
+ * step back through the move line and evaluate the position at any of the played moves. If the
+ * repertoire doesn't start on move 1, ie it has a FEN code as a starting positionin the PGN
+ * file, then using the PGN url doesn't work. So to utilize the possibility of the GN url when
+ * we can, we use that url when the repoertoire starts at move 1, or else the FEN url.
+ */
 function change_analysis_board() {
-    let pgn = encodeURIComponent(chess.pgn());
-    let color = turn_color(chess);
     let link = document.getElementById("analysis_board");
-    link.href = `https://lichess.org/analysis/pgn/${pgn}?color=${color}`;
+    // The PGN standard requires a SetUp header when there is another start position
+    let starts_midgame = trees[chapter].headers.SetUp != undefined;
+    if (starts_midgame) {
+        let fen = chess.fen();
+        link.href = `https://lichess.org/analysis/${fen}`;
+    } else {
+        let pgn = encodeURIComponent(chess.pgn());
+        let color = turn_color(chess);
+        link.href = `https://lichess.org/analysis/pgn/${pgn}?color=${color}`;
+    }
 }
 
 function setup_move() {
@@ -609,7 +624,7 @@ function setup_chapter_select() {
     let select_id = "chapter_select"
     let select = document.getElementById(select_id);
     let selected = parseInt(localStorage.getItem(select_key) || 0);
-    selected = Math.min(selected, trees.length - 1);  // prevent error if uploading a pgn with fewer chapters
+    selected = Math.min(selected, trees.length - 1);  // prevent error if replacing with a pgn with fewer chapters
     window.chapter = selected;
     for (let i = 0; i < trees.length; ++i) {
         let option = document.createElement("option");
@@ -823,30 +838,55 @@ function toggle_comments() {
 
 function get_repertoire_depth() {
     let starting_moves = trees[chapter].root;
-    return tree_max_num_moves_deep(starting_moves);
+    let for_white = color == "white";
+    return tree_max_num_moves_deep(starting_moves, for_white);
 }
 
-function add_sub_max_depth(delta) {
-    let tree_depth = get_repertoire_depth();
+/**
+ * Update option label with a new max depth.
+ */
+ function update_max_depth_label(depth, tree_depth) {
+    let max_depth_container = document.getElementById("max_depth_container");
     let max_depth_label = document.getElementById("max_depth_label");
+
+    max_depth_label.innerText = depth;
+    if (depth == tree_depth) {
+        max_depth = DEPTH_MAX;
+        max_depth_container.classList.remove("option-highlighted");
+    } else {
+        max_depth = depth;
+        max_depth_container.classList.add("option-highlighted");
+    }
+}
+
+/**
+ * User clicked on the + or - next to the max depth range control.
+ */
+function inc_or_dec_max_depth(delta) {
     let max_depth_range = document.getElementById("max_depth_range");
-    let depth = parseInt(max_depth_label.textContent, 10) || tree_depth;
+    let tree_depth = get_repertoire_depth();
+    let depth = parseInt(max_depth_range.value, 10) || tree_depth;
+
     depth += delta;
     // Make sure it's not lower than 1 or higher than the actual depth of the tree
     depth = delta > 0 ? Math.min(depth, tree_depth) : Math.max(depth, 1);
-    max_depth_label.textContent = depth;
     max_depth_range.value = depth;
-    max_depth = depth == tree_depth ? DEPTH_MAX : depth;
+
+    update_max_depth_label(depth, tree_depth);
+
     localStorage.setItem(max_depth_key_base + chapter, max_depth);
 }
 
+/**
+ * User dragged the max depth range/slider control to a new value.
+ */
 function max_depth_changed() {
-    let tree_depth = get_repertoire_depth();
     let max_depth_range = document.getElementById("max_depth_range");
-    let max_depth_label = document.getElementById("max_depth_label");
-    let depth = max_depth_range.value || tree_depth;
-    max_depth_label.innerHTML = depth;
-    max_depth = depth == tree_depth ? DEPTH_MAX : depth;
+    let tree_depth = get_repertoire_depth();
+    let depth = parseInt(max_depth_range.value, 10) || tree_depth;
+
+    update_max_depth_label(depth, tree_depth);
+
     localStorage.setItem(max_depth_key_base + chapter, max_depth);
 }
 
@@ -902,7 +942,7 @@ async function setup_progress_reset() {
 }
 
 /**
- * Initiate all option values on the page.
+ * Initiate all option labels on the page.
  */
 function set_options_values() {
     let move_delay = document.getElementById("move_delay_time");
@@ -928,18 +968,18 @@ function set_options_values() {
 }
 
 function set_options_values_for_max_depth() {
-    // Option to control the maximum number of moves being played
     let max_depth_key = max_depth_key_base + chapter;
     max_depth = get_option_from_localstorage(max_depth_key, DEPTH_MAX, undefined, {validate: Number.isInteger, transform: parseInt});
 
-    let max_depth_label = document.getElementById("max_depth_label");
-    let max_depth_range = document.getElementById("max_depth_range");
     let tree_depth = get_repertoire_depth();
+    let max_depth_range = document.getElementById("max_depth_range");
     let depth_as_num = max_depth == DEPTH_MAX ? tree_depth : max_depth;
     let depth = Math.min(tree_depth, depth_as_num);
-    max_depth_label.innerHTML = depth
     max_depth_range.max = tree_depth;
     max_depth_range.value = depth;
+    max_depth_range.disabled = (tree_depth == 1);
+
+    update_max_depth_label(depth, tree_depth);
 }
 
 function setup_configs() {
@@ -953,8 +993,8 @@ function setup_configs() {
     document.getElementById("key_move").onclick = toggle_key_move;
     document.getElementById("comments_toggle").onclick = toggle_comments;
     document.getElementById("reset_line").onclick = reset_line;
-    document.getElementById("max_depth_sub").onclick = () => add_sub_max_depth(-1);
-    document.getElementById("max_depth_add").onclick = () => add_sub_max_depth(+1);
+    document.getElementById("max_depth_sub").onclick = () => inc_or_dec_max_depth(-1);
+    document.getElementById("max_depth_add").onclick = () => inc_or_dec_max_depth(+1);
     document.getElementById("max_depth_range").onchange = max_depth_changed;
     document.getElementById("max_depth_range").oninput = max_depth_changed;
 }

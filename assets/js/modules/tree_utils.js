@@ -134,12 +134,13 @@ function tree_max_depth(tree) {
 
 /**
  * Returns maximum tree depth in terms of moves (two turns = one move) for an array of moves,
- * such as the starting position of a game.
+ * such as the starting position of a game, from either white's or black's perspective.
  */
-function tree_max_num_moves_deep(start_moves) { 
-    let child_node_depths = start_moves.map(m => tree_max_depth(m));
-    let max_depth = 1 + Math.max(...child_node_depths);
-    return Math.floor((max_depth) / 2);
+function tree_max_num_moves_deep(start_moves, for_white) { 
+    let node_depths = start_moves.map(m => tree_max_depth(m));
+    let max_node_depths = Math.max(...node_depths);
+    let moves_float = max_node_depths / 2;
+    return for_white == true ? Math.ceil(moves_float) : Math.floor(moves_float);
 }
 
 /*
