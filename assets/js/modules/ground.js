@@ -24,10 +24,10 @@ function ground_init_state(fen) {
         red:    {key: "r", color: "hsl(0, 100%, 50%)",   opacity: 0.6,  lineWidth: 10 },
         yellow: {key: "y", color: "hsl(48, 100%, 45%)",  opacity: 0.65, lineWidth: 10 },
         // 
-        decorate_pgn_green:  {key: "decorate_green",  color: "hsl(120, 100%, 27%)", opacity: 0.4,  lineWidth: 10 },
-        decorate_pgn_blue:   {key: "decorate_blue",   color: "hsl(216, 100%, 35%)", opacity: 0.4,  lineWidth: 10 },
-        decorate_pgn_red:    {key: "decorate_red",    color: "hsl(0, 100%, 55%)",   opacity: 0.4,  lineWidth: 10 },
-        decorate_pgn_yellow: {key: "decorate_yellow", color: "hsl(48, 100%, 45%)",  opacity: 0.45, lineWidth: 10 },
+        decorate_pgn_green:  {key: "decorate_green",  color: "hsl(120, 100%, 27%)", opacity: 0.35, lineWidth: 10 },
+        decorate_pgn_blue:   {key: "decorate_blue",   color: "hsl(216, 100%, 35%)", opacity: 0.35, lineWidth: 10 },
+        decorate_pgn_red:    {key: "decorate_red",    color: "hsl(0, 100%, 55%)",   opacity: 0.35, lineWidth: 10 },
+        decorate_pgn_yellow: {key: "decorate_yellow", color: "hsl(48, 100%, 45%)",  opacity: 0.40, lineWidth: 10 },
         // 
         playable_pgn_normal_green:  {key: "playable_normal_green",  color: "hsl(120, 100%, 20%)", opacity: 0.9,  lineWidth: 9 },
         playable_pgn_normal_blue:   {key: "playable_normal_blue",   color: "hsl(216, 100%, 45%)", opacity: 0.9,  lineWidth: 9 },

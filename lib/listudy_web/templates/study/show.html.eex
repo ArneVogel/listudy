@@ -58,6 +58,9 @@
       <a id="max_depth_sub" class="max_depth_ctrl" role="button">-</a><input type="range" id="max_depth_range" class="max_depth_range" min="1" max="1"><a id="max_depth_add" class="max_depth_ctrl" role="button">+</a>
     </div>
   </div>
+  <div class="study_option_item_below">
+    <a class="icon" data-icon="-" id="arrow_type" title="<%= dgettext("study", "Option to control the type of arrows shown. Automatic arrows are created for all playable moves in the repertoire. PGN means arrows and circles stored inside the PGN file. These can be created at Lichess.org and other sites.") %>">placeholder</a>
+  </div>
 </div>
 
 <div class="options_area">
@@ -132,7 +135,7 @@
 
   let i18n = {};
   i18n.info_intro = "<%= dgettext "study", "Starting training." %>";
-  i18n.info_arrows = "<%= dgettext "study", "At first the arrows will show you which moves are in this study. Once you have played these moves twice, the arrows are no longer shown." %>";
+  i18n.info_arrows = "<%= dgettext "study", "By default arrows will provide hints to show which moves are in this study. Using the options below you can control for how many moves the arrows/hints should stay visible. By default they stay visible until all moves in a position has been played twice. Any non-playable arrows from the study itself will appear as transparent arrows." %>";
   i18n.error_wrong_move = "<%= dgettext "study", "This move is not in the study, try again." %>";
   i18n.success_right_move = "<%= dgettext "study", "Right move!" %>";
   i18n.success_end_of_line = "<%= dgettext "study", "You reached the end of this line." %>";
@@ -164,6 +167,8 @@
   i18n.confirm_reset_progress = "<%= dgettext "study", "Are you sure you want to delete your study progress?" %>";
   i18n.response = "<%= dgettext "study", "response" %>";
   i18n.max_depth = "<%= dgettext "study", "Max depth: " %>";
+  i18n.first_pgn_arrow_seen = "<%= dgettext "study", "The transparent arrows are arrows stored in the PGN file. These are not playable but commonly used to indicate threats, possible other moves, and future ideas." %>";
+  i18n.first_neglected_move_seen = "<%= dgettext "study", "One of the moves in the position has been played more than others and is marked with a thinner outline. To give all lines equal attention, play one of the other moves!" %>";
 </script>
 
 <div id="progress_modal" class="modal">
