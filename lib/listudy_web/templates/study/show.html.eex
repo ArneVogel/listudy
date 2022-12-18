@@ -167,8 +167,13 @@
   i18n.confirm_reset_progress = "<%= dgettext "study", "Are you sure you want to delete your study progress?" %>";
   i18n.response = "<%= dgettext "study", "response" %>";
   i18n.max_depth = "<%= dgettext "study", "Max depth: " %>";
-  i18n.first_pgn_arrow_seen = "<%= dgettext "study", "The transparent arrows are arrows stored in the PGN file. These are not playable but commonly used to indicate threats, possible other moves, and future ideas." %>";
+  i18n.first_pgn_arrow_seen = "<%= raw dgettext "study", "The transparent arrows are arrows stored in the study. These don't indicate playable moves but are commonly used to indicate threats, possible other moves, and future ideas." %>";
   i18n.first_neglected_move_seen = "<%= dgettext "study", "One of the moves in the position has been played more than others and is marked with a thinner outline. To give all lines equal attention, play one of the other moves!" %>";
+  i18n.explanation_playable_move = "<%= dgettext "study", "Opaque arrows with a black outline are playable moves" %>";
+  i18n.explanation_playable_short = "<%= dgettext "study", "Playable" %>";
+  i18n.explanation_pgn_arrow = "<%= dgettext "study", "Transparent arrows come from the study and are not playable" %>";
+  i18n.explanation_pgn_arrow_only = "<%= dgettext "study", "Transparent arrows come from the study and are hints only" %>";
+  i18n.explanation_frequently_played = "<%= dgettext "study", "Moves that have been played before are shown with a thinner outline" %>";
 </script>
 
 <div id="progress_modal" class="modal">

@@ -69,6 +69,7 @@ function onresize() {
 
     window.window_width = window.innerWidth;
     resize_ground();
+    window.overlay_manager.on_resize();
 }
 
 /*
@@ -140,25 +141,31 @@ class TextOverlay {
         this.type = type;
         this.position = position;
 
-        this.draw();
+        this.elem = this.create();
+        this.resize();
     }
 
-    draw() {
+    create() {
         let span = document.createElement("span");
         span.id = this.id();
         span.innerText = this.text;
         span.classList.add("TextOverlay");
         span.classList.add(this.type);
-        let [row, rank] = this.fen_to_index(this.position);
+
         let container = document.getElementById("game_container");
+        container.appendChild(span);
+        return span;
+    }
+
+    resize() {
+        let [row, rank] = this.fen_to_index(this.position);
         let cell_width = calculate_width() / 8;
         let left = cell_width * (row - 1);
         let top = cell_width * (8-rank);
         left += cell_width * 0.5;
         top += cell_width * 0.5;
-        span.style.left = "" + left + "px";
-        span.style.top = "" + top + "px";
-        container.appendChild(span);
+        this.elem.style.left = "" + left + "px";
+        this.elem.style.top = "" + top + "px";
     }
 
     remove() {
@@ -176,7 +183,7 @@ class TextOverlayManager {
         this.overlays.push(overlay);
     }
 
-    on_move() {
+    clear_overlays() {
         for (let overlay of this.overlays) {
             if (overlay.duration === TextOverlayDuration.OneMove) {
                 overlay.remove();
@@ -184,12 +191,19 @@ class TextOverlayManager {
         }
         this.overlays = this.overlays.filter((x) => x.duration != TextOverlayDuration.OneMove);
     }
+
+    on_resize() {
+        for (let overlay of this.overlays) {
+            overlay.resize();
+        }
+    }
 }
 
 // sets the legal moves that can be played in the current chess instance
 function ground_set_moves() {
     let moves = ground_legal_moves(chess);
     ground.set({movable: {dests: moves}});
+    return moves;
 }
 
 /*
