@@ -5,7 +5,7 @@
     position: absolute;
     padding: 13px;
     text-align: center;
-    z-index: 11;
+    z-index: 10;
     border: 1px solid black;
     font-size: 0.8em;
 
@@ -28,5 +28,4 @@
 .TextOverlayInfo {
     background: rgb(255, 255, 255, 0.85);
     color: rgb(78, 48, 48);
-    z-index: 10;
 }

@@ -1,5 +1,5 @@
 const Chessground = require('chessground').Chessground;
-import { ground_legal_moves } from './chess_utils';
+import { ground_legal_moves, cal_to_ftc, san_to_uci } from './chess_utils';
 import { sounds } from './sounds.js';
 
 /*
@@ -19,15 +19,10 @@ function ground_init_state(fen) {
         normal: {key: "n", color: "#3333ff", opacity: 0.6, lineWidth: 10 },
         transparent: {key: "t", color: "#3333ff", opacity: 0.3, lineWidth: 10 },
         // 
-        green:  {key: "g", color: "hsl(120, 100%, 25%)", opacity: 0.6,  lineWidth: 10 },
-        blue:   {key: "b", color: "hsl(216, 100%, 60%)", opacity: 0.6,  lineWidth: 10 },
-        red:    {key: "r", color: "hsl(0, 100%, 50%)",   opacity: 0.6,  lineWidth: 10 },
-        yellow: {key: "y", color: "hsl(48, 100%, 45%)",  opacity: 0.65, lineWidth: 10 },
-        // 
-        decorate_pgn_green:  {key: "decorate_green",  color: "hsl(120, 100%, 27%)", opacity: 0.35, lineWidth: 10 },
-        decorate_pgn_blue:   {key: "decorate_blue",   color: "hsl(216, 100%, 35%)", opacity: 0.35, lineWidth: 10 },
-        decorate_pgn_red:    {key: "decorate_red",    color: "hsl(0, 100%, 55%)",   opacity: 0.35, lineWidth: 10 },
-        decorate_pgn_yellow: {key: "decorate_yellow", color: "hsl(48, 100%, 45%)",  opacity: 0.40, lineWidth: 10 },
+        pgn_green:  {key: "pgn_green",  color: "hsl(120, 100%, 27%)", opacity: 0.35, lineWidth: 10 },
+        pgn_blue:   {key: "pgn_blue",   color: "hsl(216, 100%, 35%)", opacity: 0.35, lineWidth: 10 },
+        pgn_red:    {key: "pgn_red",    color: "hsl(0, 100%, 55%)",   opacity: 0.35, lineWidth: 10 },
+        pgn_yellow: {key: "pgn_yellow", color: "hsl(48, 100%, 45%)",  opacity: 0.40, lineWidth: 10 },
         // 
         playable_pgn_normal_green:  {key: "playable_normal_green",  color: "hsl(120, 100%, 20%)", opacity: 0.9,  lineWidth: 9 },
         playable_pgn_normal_blue:   {key: "playable_normal_blue",   color: "hsl(216, 100%, 45%)", opacity: 0.9,  lineWidth: 9 },
@@ -91,6 +86,32 @@ function resize_ground() {
     chessground.style.width = width;
     chessground.style.height = width;
     ground.redrawAll();
+}
+
+function create_arrow_from_move(move, brush) {
+    let ft = san_to_uci(chess, move);
+    return {orig: ft.from, dest: ft.to, brush: brush};
+}
+
+/**
+ * Create an arrow that represents a pure PGN arrow, that is not playable, but only exists as an arrow
+ * in the PGN file.
+ * @param  cal  The cal value (ie "Gd2d4" for a Green d2 -> d4 arrow).
+ */
+function create_pgn_arrow(cal) {
+    let ftc = cal_to_ftc(cal)
+    let brush = "pgn_" + ftc.color;
+    return {orig: ftc.from, dest: ftc.to, brush: brush};
+}
+
+/**
+ * Creates a circle from the PGN.
+ * @param  csl  The csl value from the PGN file (ie Bd2 for a Blue circle on d2).
+ */
+function create_pgn_circle(csl) {
+    let ftc = cal_to_ftc(csl)
+    let brush = "pgn_" + ftc.color;
+    return {orig: ftc.from, brush: brush};
 }
 
 const TextOverlayDuration = {
@@ -199,11 +220,14 @@ class TextOverlayManager {
     }
 }
 
+function array_contains(arr, str) {
+    return arr.indexOf(str) > -1;
+}
+
 // sets the legal moves that can be played in the current chess instance
 function ground_set_moves() {
     let moves = ground_legal_moves(chess);
     ground.set({movable: {dests: moves}});
-    return moves;
 }
 
 /*
@@ -212,6 +236,19 @@ function ground_set_moves() {
 function ground_set_moves_from_instance(c) {
     let moves = ground_legal_moves(c);
     ground.set({movable: {dests: moves}});
+}
+
+/**
+ * Checks whether a move is legal (after they have been set in chessground).
+ */
+function ground_is_legal_move(from, to) {
+    let legal_moves = ground.state.movable.dests;
+    if (legal_moves == undefined) {
+        return true;
+    }
+    let dests = legal_moves.get(from) || [];
+    let legal = array_contains(dests, to);
+    return legal;
 }
 
 function ground_undo_last_move() {
@@ -317,4 +354,4 @@ function ground_move(m, c = undefined) {
     }
 }
 
-export { ground_init_state, onresize, resize_ground, setup_ground, ground_set_moves, ground_set_moves_from_instance, ground_undo_last_move, setup_move_handler, setup_click_handler, ground_move, TextOverlayDuration, TextOverlayType, TextOverlay, TextOverlayManager };
+export { ground_init_state, onresize, resize_ground, setup_ground, ground_set_moves, ground_set_moves_from_instance, ground_undo_last_move, setup_move_handler, setup_click_handler, ground_move, TextOverlayDuration, TextOverlayType, TextOverlay, TextOverlayManager, ground_is_legal_move, create_arrow_from_move, create_pgn_arrow, create_pgn_circle };

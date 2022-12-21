@@ -2,7 +2,7 @@ require("regenerator-runtime/runtime"); // required for sleep (https://github.co
 
 const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
-import { turn_color, non_turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
+import { turn_color, non_turn_color, setup_chess, uci_to_san, san_to_uci, cal_to_ucistr, cal_to_ftc, move_to_ucistr } from './modules/chess_utils.js';
 import { string_hash } from './modules/hash.js';
 import { clear_local_storage, get_option_from_localstorage } from './modules/localstorage.js';
 import { tree_value_add, tree_progress, tree_move_index, tree_children, tree_possible_moves, has_children, tree_value,
@@ -14,7 +14,8 @@ import { getRandomIntFromRange } from './modules/random.js';
 import { unescape_string } from './modules/security_related.js';
 import { ground_init_state, onresize, resize_ground, setup_ground, ground_set_moves,
          ground_undo_last_move, setup_move_handler, setup_click_handler, ground_move,
-         TextOverlayDuration, TextOverlayType, TextOverlay, TextOverlayManager } from './modules/ground.js';
+         TextOverlayDuration, TextOverlayType, TextOverlay, TextOverlayManager,
+         ground_is_legal_move, create_arrow_from_move, create_pgn_arrow, create_pgn_circle } from './modules/ground.js';
 import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 
 const mode_free = "free_mode";
@@ -25,8 +26,8 @@ let combo_count = 0;
 
 let seen_suggestions = [];
 let scheduled_suggestions = [];
-const first_playable_move_distinction_key = "first_playable_move_distinction";
-const first_pgn_arrow_distinction_key = "first_pgn_arrow_distinction";
+const first_playable_move_key = "first_playable_move";
+const first_pgn_arrow_key = "first_pgn_arrow";
 const first_neglected_move_key = "first_neglected_move";
 
 // Option to control how quickly the ai plays each move
@@ -39,7 +40,7 @@ let show_arrows = get_option_from_localstorage(show_arrows_key, i18n.arrows_new2
 
 // Option to control how and when arrows are displayed
 let arrow_type_key = "arrow_type";
-let arrow_type = get_option_from_localstorage(arrow_type_key, i18n.arrow_type_both, [i18n.arrow_type_auto, i18n.arrow_type_pgn, i18n.arrow_type_both]);
+let arrow_type = get_option_from_localstorage(arrow_type_key, i18n.arrow_type_both, [i18n.arrow_type_playable, i18n.arrow_type_pgn, i18n.arrow_type_both]);
 
 // When enabled the board waits a few seconds at the end of the line before resetting.
 let board_review_key = "board_review";
@@ -111,6 +112,7 @@ function possible_promotion(moves, san) {
 }
 
 async function handle_move(orig, dest) {
+
     clear_all_text();
 
     seen_suggestions.push(...scheduled_suggestions);
@@ -174,15 +176,8 @@ async function handle_move(orig, dest) {
     update_progress();
 }
 
-async function handle_click() {
-    // Clearing the overlays here emulates the behaviour of normal arrows in chessground,
-    // which disappear when you click on the chess board.
-    overlay_manager.clear_overlays();
-}
-
-function create_shape(move, brush) {
-    let ft = san_to_uci(chess, move);
-    return {orig: ft.from, dest: ft.to, brush: brush};
+function array_contains(arr, str) {
+    return arr.indexOf(str) > -1;
 }
 
 function some_moves_neglected(max, min) {
@@ -192,49 +187,19 @@ function some_moves_neglected(max, min) {
 function current_move_neglected(move, max) {
     return move.value < (0.5 * max)
 }
+
 /**
- * Create a playable arrow.
- * 
- * @param  m  The move to create an arrow for.
- * @param  max  The number of times the most played candidate move has been played.
- * @param  min  The number of times the least played candidate move has been played.
- * @param  pgn_color  The color of the arrow to be created, or undefined for classic playable only arrows.
+ * Returns the PGN shapes (circles and arrows) from a move in the PGN file.
+ * @param  m  The move.
+ * @param  keyword  'cal' for arrows, and 'csl' for circles.
  */
-function create_playable_arrow(m, max, min, pgn_color = undefined) {
-    let move = m.move;
-    let some_neglected = some_moves_neglected(max, min);
-    let current_neglected = current_move_neglected(m, max);
-    let brush = undefined;
-    if(pgn_color) {  // pgn arrows
-        let brush_prefix = some_neglected ? 
-            (current_neglected ? "playable_pgn_normal_" : "playable_pgn_transparent_") : "playable_pgn_normal_";
-        brush = brush_prefix + pgn_color;
-    } else {  // normal auto arrows
-        brush = some_neglected ? (current_neglected ? "normal" : "transparent") : "normal";
+function get_pgn_shapes(m, keyword) {
+    if (m.comments != undefined) {
+        let commands = m.comments.filter(c => c.commands != undefined).flatMap(c => c.commands);
+        return commands.filter(cmd => cmd.key == keyword).flatMap(cmd => cmd.values);
+    } else {
+        return [];
     }
-    return create_shape(move, brush);
-}
-
-/**
- * Create an arrow that represents a pure PGN arrow, that is not playable, but only exists as an arrow
- * in the PGN file.
- * @param  cal  The cal value (ie "Gd2d4" for a Green d2 -> d4 arrow).
- * @param  brush_prefix  Prefix for the brush.
- */
-function create_pgn_arrow(cal, brush_prefix = "") {
-    let ftc = cal_to_ftc(cal)
-    let brush = brush_prefix + ftc.color;
-    return {orig: ftc.from, dest: ftc.to, brush: brush};
-}
-
-/**
- * Creates a circle from the PGN.
- * @param  csl  The csl value from the PGN file (ie Bd2 for a Blue circle on d2).
- */
-function create_pgn_circle(csl, brush_prefix = "") {
-    let ftc = cal_to_ftc(csl)
-    let brush = brush_prefix + ftc.color;
-    return {orig: ftc.from, brush: brush};
 }
 
 /**
@@ -255,54 +220,25 @@ function give_hints(once) {
 }
 
 /**
- * Returns the PGN shapes (circles and arrows) from a move in the PGN file.
- * @param  m  The move.
- * @param  keyword  'cal' for arrows, and 'csl' for circles.
+ * Create a playable arrow.
+ * 
+ * @param  m  The move to create an arrow for.
+ * @param  max  The number of times the most played candidate move has been played.
+ * @param  min  The number of times the least played candidate move has been played.
+ * @param  pgn_color  The color of the arrow to be created, or undefined for classic playable only arrows.
  */
-function get_pgn_shapes(m, keyword) {
-    if (m.comments != undefined) {
-        let commands = m.comments.filter(c => c.commands != undefined).flatMap(c => c.commands);
-        return commands.filter(cmd => cmd.key == keyword).flatMap(cmd => cmd.values);
-    } else {
-        return [];
+function create_playable_arrow(m, max, min, pgn_color = undefined) {
+    let move = m.move;
+    let some_neglected = some_moves_neglected(max, min);
+    let current_neglected = current_move_neglected(m, max);
+    let brush = undefined;
+    if(pgn_color) {  // pgn arrows
+        let brush_prefix = some_neglected ? (current_neglected ? "playable_pgn_normal_" : "playable_pgn_transparent_") : "playable_pgn_normal_";
+        brush = brush_prefix + pgn_color;
+    } else {  // auto arrows
+        brush = some_neglected ? (current_neglected ? "normal" : "transparent") : "normal";
     }
-}
-
-function array_contains(arr, str) {
-    return arr.indexOf(str) > -1;
-}
-
-function get_color_from_cal(cal) {
-    let c = cal[0];
-    switch (c) {
-        case "G":
-            return "green";
-        case "R":
-            return "red";
-        case "Y":
-            return "yellow";
-        case "B":
-        default:
-            return "blue";
-    }
-}
-
-function get_ucistr_from_cal(cal) {
-    return cal.substr(1,4);
-}
-
-// cal ex "Ye2e4" to ftc {from, to, color}
-function cal_to_ftc(cal) {
-    return {
-        from: cal.substr(1,2),
-        to: cal.substr(3,2),
-        color: get_color_from_cal(cal)
-    }
-}
-
-function get_ucistr_from_move(m) {
-    let uci = san_to_uci(chess, m.move);
-    return "" + uci.from + uci.to;
+    return create_arrow_from_move(move, brush);
 }
 
 /**
@@ -311,7 +247,6 @@ function get_ucistr_from_move(m) {
  * from both the move and the PGN arrow is returned.
  */
 function get_doubled_playable_move_objects(all_moves, all_pgn_arrows) {
-    // Setup some lookup tables
     let all_pgn_arrow_uci = [];
     let color_by_pgn_arrow_uci = {};
     for (let cal of all_pgn_arrows) {
@@ -324,7 +259,7 @@ function get_doubled_playable_move_objects(all_moves, all_pgn_arrows) {
 
     // Merge the playable moves and the pgn arrows
     let union = all_moves.map(move => {
-        let uci = get_ucistr_from_move(move);
+        let uci = move_to_ucistr(move);
         let color = color_by_pgn_arrow_uci[uci];
         return {
             color: color,
@@ -336,73 +271,52 @@ function get_doubled_playable_move_objects(all_moves, all_pgn_arrows) {
     return union.filter(x => array_contains(all_pgn_arrow_uci, x.uci))
 }
 
-function is_legal_move(from, to) {
-    let legal_moves = ground.state.movable.dests;
-    if (legal_moves == undefined) {
-        return true;
-    }
-    let dests = legal_moves.get(from) || [];
-    let legal = array_contains(dests, to);
-    return legal;
-}
-
-function seen_suggestion(key) {
-    return array_contains(seen_suggestions, key);
-}
-function scheduled_suggestion(key) {
-    return array_contains(scheduled_suggestions, key);
-}
-function schedule_suggestion(key) {
-    scheduled_suggestions.push(key)
-}
-
-function get_arrow_hints(all_moves, clean_pgn_arrows, max, min, only_pgn = false) {
-    let shapes = [];
-
+/**
+ * Add overlays to explain when certain arrow combinations appear.
+ */
+function setup_arrow_overlays(all_moves, clean_pgn_arrows, max, min, only_pgn = false) {
     let clean_legal_pgn_arrows = clean_pgn_arrows.filter(cal => {
         let ftc = cal_to_ftc(cal);
-        return is_legal_move(ftc.from, ftc.to);
+        return ground_is_legal_move(ftc.from, ftc.to);
     });
 
     let has_clean_legal_pgn_arrows = clean_legal_pgn_arrows.length > 0;
     let has_neglected_moves = some_moves_neglected(max, min);
 
-    // Explain playable moves when there's a PGN arrow and a playable move (which there always is)
-    if (!seen_suggestion(first_playable_move_distinction_key) && has_clean_legal_pgn_arrows && !only_pgn) {
-        schedule_suggestion(first_playable_move_distinction_key);
+    // Explain playable moves - when there's a PGN arrow and a playable move
+    if (!seen_suggestion(first_playable_move_key) && has_clean_legal_pgn_arrows && !only_pgn) {
+        schedule_suggestion(first_playable_move_key);
         let square = san_to_uci(chess, all_moves[0].move).to;
-        overlay_manager.add_overlay(new TextOverlay(i18n.explanation_playable_move, square, TextOverlayType.INFO, TextOverlayDuration.OneMove));
+        overlay_manager.add_overlay(new TextOverlay(i18n.overlay_playable_move, square, TextOverlayType.INFO, TextOverlayDuration.OneMove));
     }
-    // Explain PGN arrows when there's a PGN arrow and a playable move (which there always is)
-    else if (!seen_suggestion(first_pgn_arrow_distinction_key) && has_clean_legal_pgn_arrows) {
-        schedule_suggestion(first_pgn_arrow_distinction_key);
+    // Explain PGN arrows - when there's a PGN arrow and a playable move
+    else if (!seen_suggestion(first_pgn_arrow_key) && has_clean_legal_pgn_arrows) {
+        schedule_suggestion(first_pgn_arrow_key);
 
         if (only_pgn) {
-            // PGN arrow explanation
+            // In PGN only mode, explain only PGN arrows
             let square = cal_to_ftc(clean_legal_pgn_arrows[0]).to;
-            overlay_manager.add_overlay(new TextOverlay(i18n.explanation_pgn_arrow_only, square, TextOverlayType.INFO, TextOverlayDuration.OneMove));
+            overlay_manager.add_overlay(new TextOverlay(i18n.overlay_pgn_arrow_only, square, TextOverlayType.INFO, TextOverlayDuration.OneMove));
 
         } else {
-            // A short "Playable" for all playable moves
+            // In 'PGN and auto' mode, we also explain all playable moves
             let playable_dest_squares = all_moves.map(m => san_to_uci(chess, m.move).to);
             for (let square of playable_dest_squares) {
-                overlay_manager.add_overlay(new TextOverlay(i18n.explanation_playable_short, square, TextOverlayType.INFO, TextOverlayDuration.OneMove));
+                overlay_manager.add_overlay(new TextOverlay(i18n.overlay_playable_short, square, TextOverlayType.INFO, TextOverlayDuration.OneMove));
             }
-            // PGN arrow explanation
+            // ..and a PGN arrow explanation
             let square = cal_to_ftc(clean_legal_pgn_arrows[0]).to;
-            overlay_manager.add_overlay(new TextOverlay(i18n.explanation_pgn_arrow, square, TextOverlayType.INFO, TextOverlayDuration.OneMove));
+            overlay_manager.add_overlay(new TextOverlay(i18n.overlay_pgn_arrow, square, TextOverlayType.INFO, TextOverlayDuration.OneMove));
         }
     }
-    // Find out if it's the first time we see a neglected move arrow and create svg info shapes for them
+    // Explain neglected moves
     else if (!seen_suggestion(first_neglected_move_key) && has_neglected_moves && !only_pgn) {
         schedule_suggestion(first_neglected_move_key);
         let freq_played = all_moves.filter(m => !current_move_neglected(m, max));
         let square = san_to_uci(chess, freq_played[0].move).to;
-        overlay_manager.add_overlay(new TextOverlay(i18n.explanation_frequently_played, square, TextOverlayType.INFO, TextOverlayDuration.OneMove));
+        overlay_manager.add_overlay(new TextOverlay(i18n.overlay_frequently_played, square, TextOverlayType.INFO, TextOverlayDuration.OneMove));
     }
-    return shapes;
 }
-
 
 /**
  * Update the hints/arrows on the board, depending on the current setting of the variable show_arrows.
@@ -415,6 +329,7 @@ function get_arrow_hints(all_moves, clean_pgn_arrows, max, min, only_pgn = false
  * @param  once  Pass true to override any value of variable show_arrows and display hints temporarily.
  */
 function display_arrows(once) {
+    let shapes = [];
     let all_moves = tree_possible_moves(curr_move);
     let current_move = tree_get_node(curr_move);
     let min = Math.min(...all_moves.map(m => m.value));
@@ -425,35 +340,35 @@ function display_arrows(once) {
         ground.setShapes([]);
         return;
     }
-    let shapes = [];
-    if (arrow_type == i18n.arrow_type_auto) {
+
+    if (arrow_type == i18n.arrow_type_playable) {
         shapes.push(...all_moves.map(m => create_playable_arrow(m, max, min)));
 
     } else if (arrow_type == i18n.arrow_type_pgn) {
         let all_pgn_circles = get_pgn_shapes(current_move, "csl");
         let all_pgn_arrows = get_pgn_shapes(current_move, "cal");
 
-        shapes.push(...all_pgn_circles.map(a => create_pgn_circle(a, "decorate_pgn_")));
-        shapes.push(...all_pgn_arrows.map(a => create_pgn_arrow(a, "decorate_pgn_")));
-        shapes.push(...get_arrow_hints(all_moves, all_pgn_arrows, max, min, true));
+        shapes.push(...all_pgn_circles.map(a => create_pgn_circle(a)));
+        shapes.push(...all_pgn_arrows.map(a => create_pgn_arrow(a)));
+        setup_arrow_overlays(all_moves, all_pgn_arrows, max, min, true);
 
     } else if (arrow_type = i18n.arrow_type_both) {
         let all_pgn_circles = get_pgn_shapes(current_move, "csl");
         shapes.push(...all_pgn_circles.map(a => create_pgn_circle(a)));
 
         // Need to distinguish between three types of arrows: clean playable, doubled playable, and clean pgn arrows.
-        // See method docs for more info
+        // More info in method doc.
         let all_pgn_arrows = get_pgn_shapes(current_move, "cal");
-        let all_pgn_arrows_uci = all_pgn_arrows.map(cal => get_ucistr_from_cal(cal));
-        let all_playable_moves_uci = all_moves.map(m => get_ucistr_from_move(m));
-        let clean_playable_moves = all_moves.filter(m => !array_contains(all_pgn_arrows_uci, get_ucistr_from_move(m)));
+        let all_pgn_arrows_uci = all_pgn_arrows.map(cal => cal_to_ucistr(cal));
+        let all_playable_moves_uci = all_moves.map(m => move_to_ucistr(m));
+        let clean_playable_moves = all_moves.filter(m => !array_contains(all_pgn_arrows_uci, move_to_ucistr(m)));
         let doubled_playable_move_objects = get_doubled_playable_move_objects(all_moves, all_pgn_arrows);
-        let clean_pgn_arrows = all_pgn_arrows.filter(cal => !array_contains(all_playable_moves_uci, get_ucistr_from_cal(cal)));
+        let clean_pgn_arrows = all_pgn_arrows.filter(cal => !array_contains(all_playable_moves_uci, cal_to_ucistr(cal)));
 
         shapes.push(...clean_playable_moves.map(m => create_playable_arrow(m, max, min, "blue")));
         shapes.push(...doubled_playable_move_objects.map(x => create_playable_arrow(x.move, max, min, x.color)));
-        shapes.push(...clean_pgn_arrows.map(a => create_pgn_arrow(a, "decorate_pgn_")));
-        shapes.push(...get_arrow_hints(all_moves, clean_pgn_arrows, max, min));
+        shapes.push(...clean_pgn_arrows.map(a => create_pgn_arrow(a)));
+        setup_arrow_overlays(all_moves, clean_pgn_arrows, max, min);
     }
     ground.setShapes(shapes);
 }
@@ -722,17 +637,30 @@ function setup_chapter_select() {
     };
 }
 
+function seen_suggestion(key) {
+    return array_contains(seen_suggestions, key);
+}
+function scheduled_suggestion(key) {
+    return array_contains(scheduled_suggestions, key);
+}
+function schedule_suggestion(key) {
+    scheduled_suggestions.push(key)
+}
+
 function pgn_arrow_hints_scheduled() {
-    return scheduled_suggestion(first_pgn_arrow_distinction_key);
+    return scheduled_suggestion(first_pgn_arrow_key);
 }
 function neglected_move_hints_scheduled() {
     return scheduled_suggestion(first_neglected_move_key);
 }
 
+/*
+ * Show suggestions based on the move number
+ */
 function show_suggestions() {
     let suggestions = [
-        {expr: function(){ return pgn_arrow_hints_scheduled() },      text: i18n.first_pgn_arrow_seen, once: false, key: first_pgn_arrow_distinction_key},
-        {expr: function(){ return neglected_move_hints_scheduled() }, text: i18n.first_neglected_move_seen, once: false, key: first_neglected_move_key},
+        {expr: function(){ return pgn_arrow_hints_scheduled() },      text: i18n.suggestion_first_pgn_arrow, once: false, key: first_pgn_arrow_key},
+        {expr: function(){ return neglected_move_hints_scheduled() }, text: i18n.suggestion_first_neglected_move, once: false, key: first_neglected_move_key},
         {expr: function(){ return total_moves >= 15 },                text: i18n.suggestion_share, once: true, key: "share"},
         {expr: function(){ return total_moves >= 30 && logged_in },   text: i18n.suggestion_favorite, once: true, key: "favorite"},
         {expr: function(){ return total_moves >= 30 && !logged_in },  text: i18n.suggestion_account, once: false, key: "account"},
@@ -803,7 +731,7 @@ function toggle_arrow_type() {
     let span = document.getElementById("arrow_type");
     let curr = span.textContent;
     switch (curr) {
-        case i18n.arrow_type_auto:
+        case i18n.arrow_type_playable:
             curr = i18n.arrow_type_pgn;
             break;
         case i18n.arrow_type_pgn:
@@ -811,7 +739,7 @@ function toggle_arrow_type() {
             break;
         case i18n.arrow_type_both:
         default:
-            curr = i18n.arrow_type_auto;
+            curr = i18n.arrow_type_playable;
             break;
     }
     span.textContent = curr;
@@ -1071,9 +999,16 @@ function set_options_values_for_max_depth() {
     update_max_depth_label(depth, tree_depth);
 }
 
+async function handle_click() {
+    // Clearing the overlays here emulates the behaviour of normal arrows in chessground,
+    // which disappear when you click on the chess board.
+    overlay_manager.clear_overlays();
+}
+
 function setup_configs() {
-    document.getElementById("study_mainpage1").onclick = turn_on_hints_for_current_move;
-    document.getElementById("study_mainpage3").onclick = turn_on_hints_for_current_move;
+    var click_elems = document.getElementsByClassName("clicking_turns_on_hints");
+    Array.from(click_elems).forEach((el) => { el.onclick = turn_on_hints_for_current_move; });
+
     document.getElementById("hints").onclick = turn_on_hints_for_current_move;
     document.getElementById("arrows_toggle").onclick = toggle_arrows;
     document.getElementById("arrow_type").onclick = toggle_arrow_type;
