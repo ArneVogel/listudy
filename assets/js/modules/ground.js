@@ -137,7 +137,7 @@ class TextOverlay {
         return `${this.position}${this.clean_text(this.text)}`;
     }
     fen_to_index(position) {
-        let [row, rank] = position.split(""); // "e4" => "e" "4"
+        let [file, rank] = position.split(""); // "e4" => "e" "4"
         rank = parseInt(rank);
         let m = {a: 1,
                  b: 2,
@@ -147,8 +147,8 @@ class TextOverlay {
                  f: 6,
                  g: 7,
                  h: 8};
-        row = m[row];
-        return [row, rank];
+        file = m[file];
+        return [file, rank];
     }
     constructor(text, position, type, duration) {
         this.text = text;
@@ -179,10 +179,11 @@ class TextOverlay {
     }
 
     resize() {
-        let [row, rank] = this.fen_to_index(this.position);
+        let [file, rank] = this.fen_to_index(this.position);
         let cell_width = calculate_width() / 8;
-        let left = cell_width * (row - 1);
-        let top = cell_width * (8-rank);
+        let for_white = color == "white";
+        let left = cell_width * (for_white ? file - 1 : 8 - file);
+        let top = cell_width * (for_white ? 8 - rank : rank - 1);
         left += cell_width * 0.5;
         top += cell_width * 0.5;
         this.elem.style.left = "" + left + "px";

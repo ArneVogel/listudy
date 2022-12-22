@@ -115,8 +115,7 @@ async function handle_move(orig, dest) {
 
     clear_all_text();
 
-    seen_suggestions.push(...scheduled_suggestions);
-    scheduled_suggestions = [];
+    mark_scheduled_suggestions_seen();
 
     total_moves += 1;
 
@@ -284,13 +283,13 @@ function setup_arrow_overlays(all_moves, clean_pgn_arrows, max, min, only_pgn = 
     let has_neglected_moves = some_moves_neglected(max, min);
 
     // Explain playable moves - when there's a PGN arrow and a playable move
-    if (!seen_suggestion(first_playable_move_key) && has_clean_legal_pgn_arrows && !only_pgn) {
+    if (!seen_suggestion(first_playable_move_key, false) && has_clean_legal_pgn_arrows && !only_pgn) {
         schedule_suggestion(first_playable_move_key);
         let square = san_to_uci(chess, all_moves[0].move).to;
         overlay_manager.add_overlay(new TextOverlay(i18n.overlay_playable_move, square, TextOverlayType.INFO, TextOverlayDuration.OneMove));
     }
     // Explain PGN arrows - when there's a PGN arrow and a playable move
-    else if (!seen_suggestion(first_pgn_arrow_key) && has_clean_legal_pgn_arrows) {
+    else if (!seen_suggestion(first_pgn_arrow_key, false) && has_clean_legal_pgn_arrows) {
         schedule_suggestion(first_pgn_arrow_key);
 
         if (only_pgn) {
@@ -310,7 +309,7 @@ function setup_arrow_overlays(all_moves, clean_pgn_arrows, max, min, only_pgn = 
         }
     }
     // Explain neglected moves
-    else if (!seen_suggestion(first_neglected_move_key) && has_neglected_moves && !only_pgn) {
+    else if (!seen_suggestion(first_neglected_move_key, false) && has_neglected_moves && !only_pgn) {
         schedule_suggestion(first_neglected_move_key);
         let freq_played = all_moves.filter(m => !current_move_neglected(m, max));
         let square = san_to_uci(chess, freq_played[0].move).to;
@@ -637,21 +636,31 @@ function setup_chapter_select() {
     };
 }
 
-function seen_suggestion(key) {
-    return array_contains(seen_suggestions, key);
+function seen_suggestion(key, ever) {
+    if (ever) {
+        let lsKey = study_id + "_suggestions_" + key;
+        return localStorage.getItem(lsKey) === "true";
+    } else {
+        return array_contains(seen_suggestions, key);
+    }
 }
-function scheduled_suggestion(key) {
-    return array_contains(scheduled_suggestions, key);
+function mark_scheduled_suggestions_seen() {
+    for (let suggestion_key of scheduled_suggestions) {
+        let lsKey = study_id + "_suggestions_" + suggestion_key;
+        localStorage.setItem(lsKey, true);
+    }
+    seen_suggestions.push(...scheduled_suggestions);
+    scheduled_suggestions = [];
 }
+
 function schedule_suggestion(key) {
     scheduled_suggestions.push(key)
 }
-
 function pgn_arrow_hints_scheduled() {
-    return scheduled_suggestion(first_pgn_arrow_key);
+    return array_contains(scheduled_suggestions, first_pgn_arrow_key);
 }
 function neglected_move_hints_scheduled() {
-    return scheduled_suggestion(first_neglected_move_key);
+    return array_contains(scheduled_suggestions, first_neglected_move_key);
 }
 
 /*
@@ -668,19 +677,12 @@ function show_suggestions() {
         {expr: function(){ return total_moves >= 100 },               text: i18n.suggestion_100moves, once: false, key: "100moves"},
         {expr: function(){ return total_moves >= 250 },               text: i18n.suggestion_250moves, once: false, key: "250moves"}
     ]
-
     for (let suggestion of suggestions) {
-        let lsKey = study_id + "_suggestions_" + suggestion.key;
-        let show_once = suggestion.once;
-        let seen_ever = localStorage.getItem(lsKey) === "true";
-        let seen_this_time = array_contains(seen_suggestions, suggestion.key);
-        let show = (show_once && !seen_ever) || (!show_once && !seen_this_time);
-        let expression = suggestion.expr();
+        let seen = seen_suggestion(suggestion.key, suggestion.once);
 
-        if (expression && show) {
+        if (suggestion.expr() && !seen) {
             set_text(suggestion_div, suggestion.text);
-            localStorage.setItem(lsKey, true);
-            scheduled_suggestions.push(suggestion.key);
+            schedule_suggestion(suggestion.key);
             break;  // only show one suggestion at a time
         }
     }
