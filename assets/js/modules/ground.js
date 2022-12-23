@@ -1,6 +1,7 @@
 const Chessground = require('chessground').Chessground;
-import { ground_legal_moves, cal_to_ftc, san_to_uci } from './chess_utils';
+import { ground_legal_moves, cal_to_ftc, san_to_uci, move_to_ucistr } from './chess_utils';
 import { sounds } from './sounds.js';
+import { array_contains } from './utils.js';
 
 /*
  * All the functions assume there is a global variable
@@ -94,6 +95,59 @@ function create_arrow_from_move(move, brush) {
 }
 
 /**
+ * Create a playable arrow.
+ *
+ * @param  m  The move to create an arrow for.
+ * @param  max  The number of times the most played candidate move has been played.
+ * @param  min  The number of times the least played candidate move has been played.
+ * @param  pgn_color  The color of the arrow to be created, or undefined for classic playable only arrows.
+ */
+function create_playable_arrow(m, max, min, pgn_color = undefined) {
+    let move = m.move;
+    let some_neglected = some_moves_neglected(max, min);
+    let current_neglected = current_move_neglected(m, max);
+    let brush = undefined;
+    if(pgn_color) {  // pgn arrows
+        let brush_prefix = some_neglected ? (current_neglected ? "playable_pgn_normal_" : "playable_pgn_transparent_") : "playable_pgn_normal_";
+        brush = brush_prefix + pgn_color;
+    } else {  // auto arrows
+        brush = some_neglected ? (current_neglected ? "normal" : "transparent") : "normal";
+    }
+    return create_arrow_from_move(move, brush);
+}
+
+/**
+ * Combines all playable moves and all PGN arrows from the PGN file and returns the intersection of
+ * those two sets, ie all PGN arrows that are also playable moves. A special object containing information
+ * from both the move and the PGN arrow is returned. This is used to create arrows with the correct
+ * visual appearence when hints are turned on.
+ */
+function get_doubled_playable_move_objects(all_moves, all_pgn_arrows) {
+    let all_pgn_arrow_uci = [];
+    let color_by_pgn_arrow_uci = {};
+    for (let cal of all_pgn_arrows) {
+        let ftc = cal_to_ftc(cal);
+        let ucistr = ftc.from + ftc.to;
+
+        color_by_pgn_arrow_uci[ucistr] = ftc.color;
+        all_pgn_arrow_uci.push(ucistr);
+    }
+
+    // Merge the playable moves and the pgn arrows
+    let union = all_moves.map(move => {
+        let uci = move_to_ucistr(move);
+        let color = color_by_pgn_arrow_uci[uci];
+        return {
+            color: color,
+            uci: uci,
+            move: move
+        };
+    })
+    // And filter so that only those moves that are both playable a pgn arrow are left
+    return union.filter(x => array_contains(all_pgn_arrow_uci, x.uci))
+}
+
+/**
  * Create an arrow that represents a pure PGN arrow, that is not playable, but only exists as an arrow
  * in the PGN file.
  * @param  cal  The cal value (ie "Gd2d4" for a Green d2 -> d4 arrow).
@@ -114,115 +168,12 @@ function create_pgn_circle(csl) {
     return {orig: ftc.from, brush: brush};
 }
 
-const TextOverlayDuration = {
-    OneMove: "OneMove",
-}
-const TextOverlayType = {
-    INFO: "TextOverlayInfo",
+function some_moves_neglected(max, min) {
+    return min < (0.5 * max);
 }
 
-class TextOverlay {
-    contains(options, find) {
-        for (let key in Object.keys(options)) {
-            if (TextOverlayType[key] == find) {
-                return 0;
-            }
-        }
-        return -1;
-    }
-    clean_text(text) {
-        return text.replace(/ /gi, "-");
-    }
-    id() {
-        return `${this.position}${this.clean_text(this.text)}`;
-    }
-    fen_to_index(position) {
-        let [file, rank] = position.split(""); // "e4" => "e" "4"
-        rank = parseInt(rank);
-        let m = {a: 1,
-                 b: 2,
-                 c: 3,
-                 d: 4,
-                 e: 5,
-                 f: 6,
-                 g: 7,
-                 h: 8};
-        file = m[file];
-        return [file, rank];
-    }
-    constructor(text, position, type, duration) {
-        this.text = text;
-        if (!this.contains(TextOverlayDuration, duration)) {
-            console.error("TextOverlayDuration is not defined: ", duration);
-        }
-        this.duration = duration;
-        if (!this.contains(TextOverlayType, type)) {
-            console.error("TextOverlayType is not defined: ", type);
-        }
-        this.type = type;
-        this.position = position;
-
-        this.elem = this.create();
-        this.resize();
-    }
-
-    create() {
-        let span = document.createElement("span");
-        span.id = this.id();
-        span.innerText = this.text;
-        span.classList.add("TextOverlay");
-        span.classList.add(this.type);
-
-        let container = document.getElementById("game_container");
-        container.appendChild(span);
-        return span;
-    }
-
-    resize() {
-        let [file, rank] = this.fen_to_index(this.position);
-        let cell_width = calculate_width() / 8;
-        let for_white = color == "white";
-        let left = cell_width * (for_white ? file - 1 : 8 - file);
-        let top = cell_width * (for_white ? 8 - rank : rank - 1);
-        left += cell_width * 0.5;
-        top += cell_width * 0.5;
-        this.elem.style.left = "" + left + "px";
-        this.elem.style.top = "" + top + "px";
-    }
-
-    remove() {
-        let id = this.id();
-        document.getElementById(id).remove();
-    }
-}
-
-class TextOverlayManager {
-    constructor() {
-        this.overlays = [];
-    }
-
-    add_overlay(overlay) {
-        this.overlays.push(overlay);
-    }
-
-    clear_overlays() {
-        for (let overlay of this.overlays) {
-            if (overlay.duration === TextOverlayDuration.OneMove) {
-                overlay.remove();
-            }
-        }
-        this.overlays = this.overlays.filter((x) => x.duration != TextOverlayDuration.OneMove);
-    }
-
-    on_resize() {
-        for (let overlay of this.overlays) {
-            overlay.resize();
-        }
-    }
-}
-
-function array_contains(arr, str) {
-    return arr.indexOf(str) > -1;
+function current_move_neglected(move, max) {
+    return move.value < (0.5 * max)
 }
 
 // sets the legal moves that can be played in the current chess instance
@@ -355,4 +306,4 @@ function ground_move(m, c = undefined) {
     }
 }
 
-export { ground_init_state, onresize, resize_ground, setup_ground, ground_set_moves, ground_set_moves_from_instance, ground_undo_last_move, setup_move_handler, setup_click_handler, ground_move, TextOverlayDuration, TextOverlayType, TextOverlay, TextOverlayManager, ground_is_legal_move, create_arrow_from_move, create_pgn_arrow, create_pgn_circle };
+export { ground_init_state, onresize, calculate_width, resize_ground, setup_ground, ground_set_moves, ground_set_moves_from_instance, ground_undo_last_move, setup_move_handler, setup_click_handler, ground_move, ground_is_legal_move, create_arrow_from_move, create_pgn_arrow, create_pgn_circle, some_moves_neglected, current_move_neglected, create_playable_arrow, get_doubled_playable_move_objects };
