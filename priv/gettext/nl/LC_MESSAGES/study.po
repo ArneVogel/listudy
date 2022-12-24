@@ -412,11 +412,6 @@ msgstr ""
 msgid "Comments: always on"
 msgstr ""
 
-#: lib/listudy_web/templates/study/show.html.eex:168
-#, elixir-autogen, elixir-format
-msgid "Comments: when arrows show"
-msgstr ""
-
 #: lib/listudy_web/templates/study/show.html.eex:43
 #, elixir-autogen, elixir-format
 msgid "Option to control when comments are displayed"
@@ -436,26 +431,6 @@ msgstr ""
 #: lib/listudy_web/templates/study/show.html.eex:55
 #, elixir-autogen, elixir-format
 msgid "Lets you choose how many moves deep in the repertoire to train. The highest value you can choose is the length of the longest line. Set to a lower value to train against a more shallow subset of the repertoire, and to the highest value to train against the full repertoire."
-msgstr ""
-
-#: lib/listudy_web/templates/study/show.html.eex:140
-#, elixir-autogen, elixir-format
-msgid "By default arrows will provide hints to show which moves are in this study. Using the options below you can control for how many moves the arrows/hints should stay visible. By default they stay visible until all moves in a position has been played twice. Any non-playable arrows from the study itself will appear as transparent arrows."
-msgstr ""
-
-#: lib/listudy_web/templates/study/show.html.eex:159
-#, elixir-autogen, elixir-format
-msgid "Hint type: pgn"
-msgstr ""
-
-#: lib/listudy_web/templates/study/show.html.eex:158
-#, elixir-autogen, elixir-format
-msgid "Hint type: playable"
-msgstr ""
-
-#: lib/listudy_web/templates/study/show.html.eex:157
-#, elixir-autogen, elixir-format
-msgid "Hint type: playable & pgn"
 msgstr ""
 
 #: lib/listudy_web/templates/study/show.html.eex:155
@@ -493,11 +468,6 @@ msgstr ""
 msgid "Opaque arrows with a black outline are playable moves"
 msgstr ""
 
-#: lib/listudy_web/templates/study/show.html.eex:49
-#, elixir-autogen, elixir-format
-msgid "Option to control the type of arrows shown. Playable arrows are created for all playable moves in the repertoire. PGN means arrows and circles stored inside the study/PGN file. These can be created at Lichess.org and other sites."
-msgstr ""
-
 #: lib/listudy_web/templates/study/show.html.eex:175
 #, elixir-autogen, elixir-format
 msgid "Playable"
@@ -516,4 +486,34 @@ msgstr ""
 #: lib/listudy_web/templates/study/show.html.eex:176
 #, elixir-autogen, elixir-format
 msgid "Transparent arrows come from the study and are not playable"
+msgstr ""
+
+#: lib/listudy_web/templates/study/show.html.eex:140
+#, elixir-autogen, elixir-format
+msgid "By default arrows will provide hints to show which moves are in this study. Using the options below you can control for how many moves the arrows/hints should stay visible. By default they stay visible until all moves in a position has been played twice. Any non-playable arrow annotations from the study or PGN file will appear as transparent arrows."
+msgstr ""
+
+#: lib/listudy_web/templates/study/show.html.eex:168
+#, elixir-autogen, elixir-format
+msgid "Comments: when hints show"
+msgstr ""
+
+#: lib/listudy_web/templates/study/show.html.eex:49
+#, elixir-autogen, elixir-format
+msgid "Option to control the type of hints shown. 'Moves' means arrows are displayed for all playable moves in the study. 'Annotations' are arrows and circles from the study or PGN file. These can be created at Lichess.org and other sites."
+msgstr ""
+
+#: lib/listudy_web/templates/study/show.html.eex:159
+#, elixir-autogen, elixir-format
+msgid "Hints: annotations only"
+msgstr ""
+
+#: lib/listudy_web/templates/study/show.html.eex:157
+#, elixir-autogen, elixir-format
+msgid "Hints: moves & annotations"
+msgstr ""
+
+#: lib/listudy_web/templates/study/show.html.eex:158
+#, elixir-autogen, elixir-format
+msgid "Hints: playable moves only"
 msgstr ""
