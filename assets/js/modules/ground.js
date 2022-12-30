@@ -1,6 +1,7 @@
 const Chessground = require('chessground').Chessground;
-import { ground_legal_moves } from './chess_utils';
+import { ground_legal_moves, cal_to_ftc, san_to_uci, move_to_ucistr } from './chess_utils';
 import { sounds } from './sounds.js';
+import { array_contains } from './utils.js';
 
 /*
  * All the functions assume there is a global variable
@@ -16,8 +17,23 @@ function ground_init_state(fen) {
     config["highlight"] = { check: true };
     config["lastMove"] = undefined;
     config["drawable"] = {brushes: {
-        normal: {key: "v", color: "#0034FF", opacity: 1, lineWidth: 10 },
-        transparent: {key: "v", color: "#0034FF", opacity: 0.4, lineWidth: 10 }
+        normal: {key: "n", color: "#3333ff", opacity: 0.6, lineWidth: 10 },
+        transparent: {key: "t", color: "#3333ff", opacity: 0.3, lineWidth: 10 },
+        // 
+        pgn_green:  {key: "pgn_green",  color: "hsl(120, 100%, 27%)", opacity: 0.35, lineWidth: 10 },
+        pgn_blue:   {key: "pgn_blue",   color: "hsl(216, 100%, 35%)", opacity: 0.35, lineWidth: 10 },
+        pgn_red:    {key: "pgn_red",    color: "hsl(0, 100%, 55%)",   opacity: 0.35, lineWidth: 10 },
+        pgn_yellow: {key: "pgn_yellow", color: "hsl(48, 100%, 45%)",  opacity: 0.40, lineWidth: 10 },
+        // 
+        playable_pgn_normal_green:  {key: "playable_normal_green",  color: "hsl(120, 100%, 20%)", opacity: 0.9,  lineWidth: 9 },
+        playable_pgn_normal_blue:   {key: "playable_normal_blue",   color: "hsl(216, 100%, 45%)", opacity: 0.9,  lineWidth: 9 },
+        playable_pgn_normal_red:    {key: "playable_normal_red",    color: "hsl(0, 100%, 60%)",   opacity: 0.9,  lineWidth: 9 },
+        playable_pgn_normal_yellow: {key: "playable_normal_yellow", color: "hsl(48, 100%, 45%)",  opacity: 0.9, lineWidth: 9 },
+        // 
+        playable_pgn_transparent_green:  {key: "playable_transparent_green",  color: "hsl(120, 100%, 30%)", opacity: 0.9,  lineWidth: 9 },
+        playable_pgn_transparent_blue:   {key: "playable_transparent_blue",   color: "hsl(216, 100%, 55%)", opacity: 0.9,  lineWidth: 9 },
+        playable_pgn_transparent_red:    {key: "playable_transparent_red",    color: "hsl(0, 100%, 60%)",   opacity: 0.9,  lineWidth: 9 },
+        playable_pgn_transparent_yellow: {key: "playable_transparent_yellow", color: "hsl(48, 100%, 55%)",  opacity: 0.9, lineWidth: 9 }
     }};
     ground.set(config);
 }
@@ -49,19 +65,115 @@ function onresize() {
 
     window.window_width = window.innerWidth;
     resize_ground();
+    window.overlay_manager.on_resize();
 }
 
-// call on window resizing
-function resize_ground() {
+/*
+ * Returns the width the chessground should have as integer
+ */
+function calculate_width() {
     let gc = document.getElementById("game_container");
     let gc_width = gc.offsetWidth;
     let width = gc_width - 7; // for the numbers on the side of the ground
     width -= width % 8; // fix chrome alignment errors; https://github.com/ornicar/lila/pull/3881
-    width = "" + width + "px";
+    return width;
+}
+
+// call on window resizing
+function resize_ground() {
+    let width_integer = calculate_width();
+    let width = "" + width_integer + "px";
     let chessground = document.getElementById("chessground");
     chessground.style.width = width;
     chessground.style.height = width;
     ground.redrawAll();
+}
+
+function create_arrow_from_move(move, brush) {
+    let ft = san_to_uci(chess, move);
+    return {orig: ft.from, dest: ft.to, brush: brush};
+}
+
+/**
+ * Create a playable arrow.
+ *
+ * @param  m  The move to create an arrow for.
+ * @param  max  The number of times the most played candidate move has been played.
+ * @param  min  The number of times the least played candidate move has been played.
+ * @param  pgn_color  The color of the arrow to be created, or undefined for classic playable only arrows.
+ */
+function create_playable_arrow(m, max, min, pgn_color = undefined) {
+    let move = m.move;
+    let some_neglected = some_moves_neglected(max, min);
+    let current_neglected = current_move_neglected(m, max);
+    let brush = undefined;
+    if(pgn_color) {  // pgn arrows
+        let brush_prefix = some_neglected ? (current_neglected ? "playable_pgn_normal_" : "playable_pgn_transparent_") : "playable_pgn_normal_";
+        brush = brush_prefix + pgn_color;
+    } else {  // auto arrows
+        brush = some_neglected ? (current_neglected ? "normal" : "transparent") : "normal";
+    }
+    return create_arrow_from_move(move, brush);
+}
+
+/**
+ * Combines all playable moves and all PGN arrows from the PGN file and returns the intersection of
+ * those two sets, ie all PGN arrows that are also playable moves. A special object containing information
+ * from both the move and the PGN arrow is returned. This is used to create arrows with the correct
+ * visual appearence when hints are turned on.
+ */
+function get_doubled_playable_move_objects(all_moves, all_pgn_arrows) {
+    let all_pgn_arrow_uci = [];
+    let color_by_pgn_arrow_uci = {};
+    for (let cal of all_pgn_arrows) {
+        let ftc = cal_to_ftc(cal);
+        let ucistr = ftc.from + ftc.to;
+
+        color_by_pgn_arrow_uci[ucistr] = ftc.color;
+        all_pgn_arrow_uci.push(ucistr);
+    }
+
+    // Merge the playable moves and the pgn arrows
+    let union = all_moves.map(move => {
+        let uci = move_to_ucistr(move);
+        let color = color_by_pgn_arrow_uci[uci];
+        return {
+            color: color,
+            uci: uci,
+            move: move
+        };
+    })
+    // And filter so that only those moves that are both playable a pgn arrow are left
+    return union.filter(x => array_contains(all_pgn_arrow_uci, x.uci))
+}
+
+/**
+ * Create an arrow that represents a pure PGN arrow, that is not playable, but only exists as an arrow
+ * in the PGN file.
+ * @param  cal  The cal value (ie "Gd2d4" for a Green d2 -> d4 arrow).
+ */
+function create_pgn_arrow(cal) {
+    let ftc = cal_to_ftc(cal)
+    let brush = "pgn_" + ftc.color;
+    return {orig: ftc.from, dest: ftc.to, brush: brush};
+}
+
+/**
+ * Creates a circle from the PGN.
+ * @param  csl  The csl value from the PGN file (ie Bd2 for a Blue circle on d2).
+ */
+function create_pgn_circle(csl) {
+    let ftc = cal_to_ftc(csl)
+    let brush = "pgn_" + ftc.color;
+    return {orig: ftc.from, brush: brush};
+}
+
+function some_moves_neglected(max, min) {
+    return min < (0.5 * max);
+}
+
+function current_move_neglected(move, max) {
+    return move.value < (0.5 * max)
 }
 
 // sets the legal moves that can be played in the current chess instance
@@ -76,6 +188,19 @@ function ground_set_moves() {
 function ground_set_moves_from_instance(c) {
     let moves = ground_legal_moves(c);
     ground.set({movable: {dests: moves}});
+}
+
+/**
+ * Checks whether a move is legal (after they have been set in chessground).
+ */
+function ground_is_legal_move(from, to) {
+    let legal_moves = ground.state.movable.dests;
+    if (legal_moves == undefined) {
+        return true;
+    }
+    let dests = legal_moves.get(from) || [];
+    let legal = array_contains(dests, to);
+    return legal;
 }
 
 function ground_undo_last_move() {
@@ -181,4 +306,4 @@ function ground_move(m, c = undefined) {
     }
 }
 
-export { ground_init_state, onresize, resize_ground, setup_ground, ground_set_moves, ground_set_moves_from_instance, ground_undo_last_move, setup_move_handler, setup_click_handler, ground_move };
+export { ground_init_state, onresize, calculate_width, resize_ground, setup_ground, ground_set_moves, ground_set_moves_from_instance, ground_undo_last_move, setup_move_handler, setup_click_handler, ground_move, ground_is_legal_move, create_arrow_from_move, create_pgn_arrow, create_pgn_circle, some_moves_neglected, current_move_neglected, create_playable_arrow, get_doubled_playable_move_objects };

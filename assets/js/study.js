@@ -2,7 +2,7 @@ require("regenerator-runtime/runtime"); // required for sleep (https://github.co
 
 const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
-import { turn_color, non_turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
+import { turn_color, non_turn_color, setup_chess, uci_to_san, cal_to_ucistr, move_to_ucistr } from './modules/chess_utils.js';
 import { string_hash } from './modules/hash.js';
 import { clear_local_storage, get_option_from_localstorage } from './modules/localstorage.js';
 import { tree_value_add, tree_progress, tree_move_index, tree_children, tree_possible_moves, has_children, tree_value,
@@ -13,14 +13,21 @@ import { sleep } from './modules/sleep.js';
 import { getRandomIntFromRange } from './modules/random.js';
 import { unescape_string } from './modules/security_related.js';
 import { ground_init_state, onresize, resize_ground, setup_ground, ground_set_moves,
-         ground_undo_last_move, setup_move_handler, ground_move } from './modules/ground.js';
+         ground_undo_last_move, setup_move_handler, setup_click_handler, ground_move,
+         create_arrow_from_move, create_pgn_arrow, create_pgn_circle, create_playable_arrow, get_doubled_playable_move_objects } from './modules/ground.js';
+import { TextOverlayId, TextOverlayManager } from './modules/overlays.js';
 import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
+import { array_contains } from './modules/utils.js';
+
 
 const mode_free = "free_mode";
 
 const comments_div = "comments";
 
 let combo_count = 0;
+
+/* Suggestions seen during the current session */
+let seen_suggestions = [];
 
 // Option to control how quickly the ai plays each move
 let move_delay_time_key = "move_delay_time";
@@ -29,6 +36,10 @@ let move_delay_time = get_option_from_localstorage(move_delay_time_key, i18n.ins
 // Option to control how and when arrows are displayed
 let show_arrows_key = "show_arrows";
 let show_arrows = get_option_from_localstorage(show_arrows_key, i18n.arrows_new2x, [i18n.arrows_new2x, i18n.arrows_new5x, i18n.arrows_always, i18n.arrows_hidden]);
+
+// Option to control how and when arrows are displayed
+let arrow_type_key = "arrow_type";
+let arrow_type = get_option_from_localstorage(arrow_type_key, i18n.arrow_type_both, [i18n.arrow_type_playable, i18n.arrow_type_pgn, i18n.arrow_type_both]);
 
 // When enabled the board waits a few seconds at the end of the line before resetting.
 let board_review_key = "board_review";
@@ -70,11 +81,11 @@ function achievement_end_of_line() {
 // "cxb8=Q" => "cxb8="
 // "abc" => ""
 function san_promotion_prefix(san) {
-    return san.substring(0, san.indexOf("=") + 1); 
+    return san.substring(0, san.indexOf("=") + 1);
 }
 
 // checks if the san would be a possible promotion
-// expected result for 
+// expected result for
 //  moves: Array [ "cxb8=N" ]
 //  san:   cxb8=Q
 // would be "cxb8=Q.
@@ -85,7 +96,7 @@ function possible_promotion(moves, san) {
 
     // this move did not promote
     if (target_prefix == "") {
-        return ""; 
+        return "";
     }
     for (let m of moves) {
         let prefix = san_promotion_prefix(m);
@@ -96,12 +107,14 @@ function possible_promotion(moves, san) {
             return m;
         }
     }
-    return ""; 
+    return "";
 }
 
 async function handle_move(orig, dest) {
 
     clear_all_text();
+
+    overlay_manager.mark_current_overlays_seen();
 
     total_moves += 1;
 
@@ -161,9 +174,18 @@ async function handle_move(orig, dest) {
     update_progress();
 }
 
-function create_shape(move, brush) {
-    let ft = san_to_uci(chess, move);
-    return {orig: ft.from, dest: ft.to, brush: brush};
+/**
+ * Returns the PGN shapes (circles and arrows) from a move in the PGN file.
+ * @param  m  The move.
+ * @param  keyword  'cal' for arrows, and 'csl' for circles.
+ */
+function get_pgn_shapes(m, keyword) {
+    if (m.comments != undefined) {
+        let commands = m.comments.filter(c => c.commands != undefined).flatMap(c => c.commands);
+        return commands.filter(cmd => cmd.key == keyword).flatMap(cmd => cmd.values);
+    } else {
+        return [];
+    }
 }
 
 /**
@@ -185,21 +207,57 @@ function give_hints(once) {
 
 /**
  * Update the hints/arrows on the board, depending on the current setting of the variable show_arrows.
- * @param {*} once  Pass true to override any value of variable show_arrows and display hints temporarily.
+ *
+ * Clean playable moves = moves that don't have a corresponding PGN arrow
+ * Doubled playable moves = playable moves that DO have a corresponding PGN arrow
+ * Clean PGN arrows =  PGN arrows that are not playable
+ * Arrow hints = the overlays (speech bubbles) that help the user understand arrows the first time
+ *
+ * @param  once  Pass true to override any value of variable show_arrows and display hints temporarily.
  */
 function display_arrows(once) {
+    let shapes = [];
     let all_moves = tree_possible_moves(curr_move);
+    let current_move = tree_get_node(curr_move);
     let min = Math.min(...all_moves.map(m => m.value));
     let max = Math.max(...all_moves.map(m => m.value));
-    let shapes = [];
 
-    if (give_hints(once)) {
-        for (let m of all_moves) {
-            let some_neglected = min < (0.5 * max);
-            let brush = some_neglected ? (m.value < (0.5 * max) ? "normal" : "transparent") : "normal";
-            //console.log(m.move + " (" + m.value + "/" + max + ") min: " + min + " => brush: " + brush)
-            shapes.push(create_shape(m.move, brush));
-        }
+    overlay_manager.clear_overlays();
+    if (!give_hints(once)) {
+        ground.setShapes([]);
+        return;
+    }
+
+    if (arrow_type == i18n.arrow_type_playable) {
+        shapes.push(...all_moves.map(m => create_playable_arrow(m, max, min)));
+
+    } else if (arrow_type == i18n.arrow_type_pgn) {
+        let all_pgn_circles = get_pgn_shapes(current_move, "csl");
+        let all_pgn_arrows = get_pgn_shapes(current_move, "cal");
+
+        shapes.push(...all_pgn_circles.map(a => create_pgn_circle(a)));
+        shapes.push(...all_pgn_arrows.map(a => create_pgn_arrow(a)));
+
+        overlay_manager.setup_arrow_overlays(all_moves, all_pgn_arrows, max, min, true);
+
+    } else if (arrow_type = i18n.arrow_type_both) {
+        let all_pgn_circles = get_pgn_shapes(current_move, "csl");
+        shapes.push(...all_pgn_circles.map(a => create_pgn_circle(a)));
+
+        // Need to distinguish between three types of arrows: clean playable, doubled playable, and clean pgn arrows.
+        // More info in method doc.
+        let all_pgn_arrows = get_pgn_shapes(current_move, "cal");
+        let all_pgn_arrows_uci = all_pgn_arrows.map(cal => cal_to_ucistr(cal));
+        let all_playable_moves_uci = all_moves.map(m => move_to_ucistr(m));
+        let clean_playable_moves = all_moves.filter(m => !array_contains(all_pgn_arrows_uci, move_to_ucistr(m)));
+        let doubled_playable_move_objects = get_doubled_playable_move_objects(all_moves, all_pgn_arrows);
+        let clean_pgn_arrows = all_pgn_arrows.filter(cal => !array_contains(all_playable_moves_uci, cal_to_ucistr(cal)));
+
+        shapes.push(...clean_playable_moves.map(m => create_playable_arrow(m, max, min, "blue")));
+        shapes.push(...doubled_playable_move_objects.map(x => create_playable_arrow(x.move, max, min, x.color)));
+        shapes.push(...clean_pgn_arrows.map(a => create_pgn_arrow(a)));
+
+        overlay_manager.setup_arrow_overlays(all_moves, clean_pgn_arrows, max, min);
     }
     ground.setShapes(shapes);
 }
@@ -296,7 +354,7 @@ function change_play_stockfish() {
 
 /**
  * Lichess.org has two ways of launching an analysis board. One is through a FEN and the other
- * is through a PGN and a color. The benefit of the PGN version is that it allows the user to 
+ * is through a PGN and a color. The benefit of the PGN version is that it allows the user to
  * step back through the move line and evaluate the position at any of the played moves. If the
  * repertoire doesn't start on move 1, ie it has a FEN code as a starting positionin the PGN
  * file, then using the PGN url doesn't work. So to utilize the possibility of the GN url when
@@ -319,10 +377,10 @@ function change_analysis_board() {
 function setup_move() {
     change_play_stockfish();
     change_analysis_board();
-    display_arrows(false);
-    show_suggestions();
-    display_comments(false);
     ground_set_moves(); // the legal moves of the position
+    display_arrows(false);  // must come after ground_set_moves(), because it needs the legal_moves
+    show_suggestions();  // must come after display_arrows(), beacuse it needs the arrows
+    display_comments(false);
 }
 
 /*
@@ -468,25 +526,60 @@ function setup_chapter_select() {
     };
 }
 
+/**
+ * Check whether a suggestion has been seen before (ever, or just in this session).
+ * @param  key  The suggestion key
+ * @param  ever  true to check if it has ever been seen, and false for just this session.
+ */
+function has_seen_suggestion(key, ever) {
+    if (ever) {
+        let lsKey = study_id + "_suggestions_" + key;
+        return localStorage.getItem(lsKey) === "true";
+    } else {
+        return array_contains(seen_suggestions, key);
+    }
+}
+
+/**
+ * Marks a suggestion as seen, both in localstorage and the current session
+ */
+function mark_suggestion_seen(key) {
+    let lsKey = study_id + "_suggestions_" + key;
+    localStorage.setItem(lsKey, true);
+
+    if (!array_contains(seen_suggestions, key)) {
+        seen_suggestions.push(key);
+    }
+}
+
+function show_pgn_arrow_hints() {
+    return overlay_manager.has_current_overlay(TextOverlayId.FIRST_PGN_ARROW);
+}
+function show_neglected_move_hints() {
+    return overlay_manager.has_current_overlay(TextOverlayId.FIRST_NEGLECTED_MOVE);
+}
+
 /*
  * Show suggestions based on the move number
  */
 function show_suggestions() {
     let suggestions = [
-        {move: 15, show: true, text: i18n.suggestion_share, once: true, key: "share"},
-        {move: 30, show: logged_in, text: i18n.suggestion_favorite, once: true, key: "favorite"},
-        {move: 30, show: !logged_in, text: i18n.suggestion_account, once: false, key: "account"},
-        {move: 50, show: logged_in, text: i18n.suggestion_comment, once: true, key: "comment"},
-        {move: 100, show: true, text: i18n.suggestion_100moves, once: false, key: "100moves"},
-        {move: 250, show: true, text: i18n.suggestion_250moves, once: false, key: "250moves"}
+        {expr: function(){ return show_pgn_arrow_hints() },           text: i18n.suggestion_first_pgn_arrow, once: false, key: TextOverlayId.FIRST_PGN_ARROW},
+        {expr: function(){ return show_neglected_move_hints() },      text: i18n.suggestion_first_neglected_move, once: false, key: TextOverlayId.FIRST_NEGLECTED_MOVE},
+        {expr: function(){ return total_moves >= 15 },                text: i18n.suggestion_share, once: true, key: "share"},
+        {expr: function(){ return total_moves >= 30 && logged_in },   text: i18n.suggestion_favorite, once: true, key: "favorite"},
+        {expr: function(){ return total_moves >= 30 && !logged_in },  text: i18n.suggestion_account, once: false, key: "account"},
+        {expr: function(){ return total_moves >= 50 && logged_in },   text: i18n.suggestion_comment, once: true, key: "comment"},
+        {expr: function(){ return total_moves >= 100 },               text: i18n.suggestion_100moves, once: false, key: "100moves"},
+        {expr: function(){ return total_moves >= 250 },               text: i18n.suggestion_250moves, once: false, key: "250moves"}
     ]
-
     for (let suggestion of suggestions) {
-        let lsKey = study_id + "_suggestions_" + suggestion.key;
-        let alreadySuggested = localStorage.getItem(lsKey) || false;
-        if (total_moves == suggestion.move && suggestion.show && !(suggestion.once && alreadySuggested)) {
+        let seen = has_seen_suggestion(suggestion.key, suggestion.once);
+
+        if (suggestion.expr() && !seen) {
             set_text(suggestion_div, suggestion.text);
-            localStorage.setItem(lsKey, true);
+            mark_suggestion_seen(suggestion.key);
+            break;  // only show one suggestion at a time
         }
     }
 }
@@ -497,7 +590,7 @@ function setup_intro() {
     let roots = trees.map(x => x.root[0]);
     let max = Math.max(...roots.map(x => tree_value(x, Math.max)));
 
-    if (max == 0 && show_arrows == i18n.arrows_new2x) {
+    if (max == 0 && show_arrows != i18n.arrows_hidden) {
         set_text(suggestion_div, i18n.info_arrows);
     }
 }
@@ -530,6 +623,28 @@ function toggle_arrows() {
     display_arrows(false);
     display_comments(false);
     localStorage.setItem(show_arrows_key, show_arrows);
+}
+
+function toggle_arrow_type() {
+    let span = document.getElementById("arrow_type");
+    let curr = span.textContent;
+    switch (curr) {
+        case i18n.arrow_type_playable:
+            curr = i18n.arrow_type_pgn;
+            break;
+        case i18n.arrow_type_pgn:
+            curr = i18n.arrow_type_both;
+            break;
+        case i18n.arrow_type_both:
+        default:
+            curr = i18n.arrow_type_playable;
+            break;
+    }
+    span.textContent = curr;
+    arrow_type = curr;
+    display_arrows(false);
+    display_comments(false);
+    localStorage.setItem(arrow_type_key, arrow_type);
 }
 
 function toggle_key_move() {
@@ -733,6 +848,7 @@ async function setup_progress_reset() {
             for (let c of trees) {
                 tree_value_add(c.root[0], -5);
             }
+            store_trees();
             update_progress();
             display_arrows(false);
             display_comments(false);
@@ -749,6 +865,9 @@ function set_options_values() {
 
     let arrows_toggle = document.getElementById("arrows_toggle");
     arrows_toggle.innerText = show_arrows;
+
+    let arrow_type_toggle = document.getElementById("arrow_type");
+    arrow_type_toggle.innerText = arrow_type;
 
     let line_review = document.getElementById("line_review");
     line_review.innerText = board_review;
@@ -778,9 +897,19 @@ function set_options_values_for_max_depth() {
     update_max_depth_label(depth, tree_depth);
 }
 
+async function handle_click() {
+    // Clearing the overlays here emulates the behaviour of normal arrows in chessground,
+    // which disappear when you click on the chess board.
+    overlay_manager.clear_overlays();
+}
+
 function setup_configs() {
+    var click_elems = document.getElementsByClassName("clicking_turns_on_hints");
+    Array.from(click_elems).forEach((el) => { el.onclick = turn_on_hints_for_current_move; });
+
     document.getElementById("hints").onclick = turn_on_hints_for_current_move;
     document.getElementById("arrows_toggle").onclick = toggle_arrows;
+    document.getElementById("arrow_type").onclick = toggle_arrow_type;
     document.getElementById("line_review").onclick = toggle_review;
     document.getElementById("move_delay").onclick = toggle_move_delay;
     document.getElementById("key_move").onclick = toggle_key_move;
@@ -792,6 +921,8 @@ function setup_configs() {
     document.getElementById("max_depth_range").oninput = max_depth_changed;
 }
 
+window.overlay_manager = new TextOverlayManager();
+
 function main() {
     setup_ground();
     setup_chess();
@@ -799,6 +930,7 @@ function main() {
     setup_chapter_select();
     set_options_values();
     setup_move_handler(handle_move);
+    setup_click_handler(handle_click);
 
     window.total_moves = 0;
 

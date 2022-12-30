@@ -1,10 +1,10 @@
-<h1><%= @study.title %></h1>
+<h1 class="clicking_turns_on_hints"><%= @study.title %></h1>
 
 <div class="with_sidebar">
   <div id="game_container" class="sidebar_main">
     <%= render ListudyWeb.ComponentView, "chessground.html" %>
   </div>
-  <div class="sidebar" id="study_mainpage1">
+  <div class="sidebar clicking_turns_on_hints">
     <div class="sidebar_innercontainer">
       <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
 
@@ -46,7 +46,7 @@
     <a class="icon" data-icon="(" id="line_review" title="<%= dgettext("study", "At the end of lines the board is only reset after 3 seconds giving you time to review the final position.") %>">placeholder</a>
   </div>
   <div class="option_item">
-    <a class="icon" data-icon="$" id="key_move" title="<%= dgettext("study", "Don't repeat the early moves that are already known. Skips to the first branching move in the study.") %>">placeholder</a>
+    <a class="icon" data-icon="-" id="arrow_type" title="<%= dgettext("study", "Option to control the type of hints shown. 'Moves' means arrows are displayed for all playable moves in the study. 'Annotations' are arrows and circles from the study or PGN file. These can be created at Lichess.org and other sites.") %>">placeholder</a>
   </div>
   <div class="option_item">
     <a class="icon" data-icon="(" id="move_delay"><%= dgettext("study", "Move delay:") %> <span id="move_delay_time">placeholder</span></a>
@@ -58,11 +58,14 @@
       <a id="max_depth_sub" class="max_depth_ctrl" role="button">-</a><input type="range" id="max_depth_range" class="max_depth_range" min="1" max="1"><a id="max_depth_add" class="max_depth_ctrl" role="button">+</a>
     </div>
   </div>
+  <div class="option_item">
+    <a class="icon" data-icon="$" id="key_move" title="<%= dgettext("study", "Don't repeat the early moves that are already known. Skips to the first branching move in the study.") %>">placeholder</a>
+  </div>
 </div>
 
 <div class="options_area">
   <div class="option_item_progressbar">
-    <a style="padding-bottom: 5px;" href="#" data-icon="+" class="icon modal_open" id="progress"><%= dgettext("study","Progress") %></a>
+    <a style="display: block; padding-bottom: 5px;" href="#" data-icon="+" class="icon modal_open" id="progress"><%= dgettext("study","Progress") %></a>
     <div id="chapter_progress"></div>
   </div>
   <div class="option_item">
@@ -74,7 +77,7 @@
 </div>
 
 
-<div class="highlight">
+<div class="highlight clicking_turns_on_hints">
   <b><%= dgettext "study", "Description" %></b>
   <p><%= @study.description %></p>
 
@@ -134,21 +137,26 @@
 
   let i18n = {};
   i18n.info_intro = "<%= dgettext "study", "Starting training." %>";
-  i18n.info_arrows = "<%= dgettext "study", "At first the arrows will show you which moves are in this study. Once you have played these moves twice, the arrows are no longer shown." %>";
+  i18n.info_arrows = "<%= dgettext "study", "By default arrows will provide hints to show which moves are in this study. Using the options below you can control for how many moves the arrows/hints should stay visible. By default they stay visible until all moves in a position has been played twice. Any non-playable arrow annotations from the study or PGN file will appear as transparent arrows." %>";
   i18n.error_wrong_move = "<%= dgettext "study", "This move is not in the study, try again." %>";
   i18n.success_right_move = "<%= dgettext "study", "Right move!" %>";
   i18n.success_end_of_line = "<%= dgettext "study", "You reached the end of this line." %>";
   i18n.translation_chapter = "<%= dgettext "study", "Chapter" %>";
+  i18n.suggestion_first_pgn_arrow = "<%= raw dgettext "study", "The transparent arrows are arrows stored in the study. These don't indicate playable moves but are commonly used to indicate threats, alternative lines, and future ideas." %>";
+  i18n.suggestion_first_neglected_move = "<%= dgettext "study", "One of the moves in the position has been played more than others and is marked with a thinner outline. To give all lines equal attention, play one of the other moves!" %>";
   i18n.suggestion_favorite = "<%= dgettext "study", "If you like this study make sure to favorite it to have it listed under Your Studies" %>";
   i18n.suggestion_share = "<%= dgettext "study", "Do you like this study? Share it with your friends." %>";
   i18n.suggestion_account = "<%= dgettext "study", "Create an account to get all the features of Listudy and upload your own studies." %>";
   i18n.suggestion_comment = "<%= dgettext "study", "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below." %>";
   i18n.suggestion_100moves = "<%= dgettext "study", "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect." %>";
   i18n.suggestion_250moves = "<%= raw dgettext "study", "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop." %>";
-  i18n.arrows_new2x = "<%= dgettext "study", "Arrows: until played 2x" %>";
-  i18n.arrows_new5x = "<%= dgettext "study", "Arrows: until played 5x" %>";
-  i18n.arrows_always = "<%= dgettext "study", "Arrows: always on" %>";
-  i18n.arrows_hidden = "<%= dgettext "study", "Arrows: hidden" %>";
+  i18n.arrows_new2x = "<%= dgettext "study", "Hints: until played 2x" %>";
+  i18n.arrows_new5x = "<%= dgettext "study", "Hints: until played 5x" %>";
+  i18n.arrows_always = "<%= dgettext "study", "Hints: always on" %>";
+  i18n.arrows_hidden = "<%= dgettext "study", "Hints: hidden" %>";
+  i18n.arrow_type_both = "<%= raw dgettext "study", "Hints: moves & annotations" %>";
+  i18n.arrow_type_playable = "<%= dgettext "study", "Hints: playable moves only" %>";
+  i18n.arrow_type_pgn = "<%= dgettext "study", "Hints: annotations only" %>";
   i18n.review_slow = "<%= dgettext "study", "Board reset delay: slow" %>";
   i18n.review_fast = "<%= dgettext "study", "Board reset delay: fast" %>";
   i18n.key_move_enabled = "<%= dgettext "study", "Jump to key move: on" %>";
@@ -157,12 +165,17 @@
   i18n.fast = "<%= dgettext "study", "fast" %>";
   i18n.medium = "<%= dgettext "study", "medium" %>";
   i18n.instant = "<%= dgettext "study", "instant" %>";
-  i18n.comments_when_arrows = "<%= dgettext "study", "Comments: when arrows show" %>";
+  i18n.comments_when_arrows = "<%= dgettext "study", "Comments: when hints show" %>";
   i18n.comments_always_on = "<%= dgettext "study", "Comments: always on" %>";
   i18n.comments_hidden = "<%= dgettext "study", "Comments: hidden" %>";
   i18n.confirm_reset_progress = "<%= dgettext "study", "Are you sure you want to delete your study progress?" %>";
   i18n.response = "<%= dgettext "study", "response" %>";
   i18n.max_depth = "<%= dgettext "study", "Max depth: " %>";
+  i18n.overlay_playable_move = "<%= dgettext "study", "Opaque arrows with a black outline are playable moves" %>";
+  i18n.overlay_playable_short = "<%= dgettext "study", "Playable" %>";
+  i18n.overlay_pgn_arrow = "<%= dgettext "study", "Transparent arrows come from the study and are not playable" %>";
+  i18n.overlay_pgn_arrow_only = "<%= dgettext "study", "Transparent arrows come from the study and are hints only" %>";
+  i18n.overlay_frequently_played = "<%= dgettext "study", "Moves that have been played before are shown with a thinner outline" %>";
 </script>
 
 <div id="progress_modal" class="modal">

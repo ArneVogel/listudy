@@ -53,6 +53,39 @@ function san_to_uci(chess, san) {
     return {from: move.from, to: move.to};
 }
 
+function get_color_from_cal(cal) {
+    let c = cal[0];
+    switch (c) {
+        case "G":
+            return "green";
+        case "R":
+            return "red";
+        case "Y":
+            return "yellow";
+        case "B":
+        default:
+            return "blue";
+    }
+}
+
+function cal_to_ucistr(cal) {
+    return cal.substr(1,4);
+}
+
+// cal ex "Ye2e4" to ftc {from, to, color}
+function cal_to_ftc(cal) {
+    return {
+        from: cal.substr(1,2),
+        to: cal.substr(3,2),
+        color: get_color_from_cal(cal)
+    }
+}
+
+function move_to_ucistr(m) {
+    let uci = san_to_uci(chess, m.move);
+    return "" + uci.from + uci.to;
+}
+
 /*
  * Convert the color string to the one used in the db
  */
@@ -81,4 +114,4 @@ function initial_fen(chess) {
     return fen;
 }
  
-export { turn_color, san_to_uci, uci_to_san, setup_chess, ground_legal_moves, initial_fen, non_turn_color };
+export { turn_color, san_to_uci, uci_to_san, setup_chess, ground_legal_moves, initial_fen, non_turn_color, get_color_from_cal, cal_to_ucistr, cal_to_ftc, move_to_ucistr };
