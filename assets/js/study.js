@@ -454,7 +454,11 @@ function start_training() {
  */
 function store_trees() {
     let tree_key = study_id + "_tree";
-    localStorage.setItem(tree_key, JSON.stringify(trees));
+    try {
+        localStorage.setItem(tree_key, JSON.stringify(trees));
+    } catch(caught_error) {
+        console.log("Ignored localstorage error: " + caught_error);
+    }
 }
 
 // load the trees from the localStorage or generate if they dont exist
@@ -474,8 +478,6 @@ function setup_trees() {
             annotate_pgn(parsedpgn);
             trees = generate_move_trees(parsedpgn);
             clear_local_storage();
-            localStorage.setItem(hash_key, curr_hash);
-            localStorage.setItem(tree_key, JSON.stringify(trees));
         } catch(caught_error) {
             console.log(caught_error);
             let error_text = caught_error.name + " at line: " + caught_error.location.start.line +
@@ -483,6 +485,13 @@ function setup_trees() {
                              caught_error.found + "\"";
             set_text(error_div, error_text);
         }
+        try {
+            localStorage.setItem(tree_key, JSON.stringify(trees));
+            localStorage.setItem(hash_key, curr_hash);
+        } catch(caught_error) {
+            console.log("Ignored localstorage error: " + caught_error);
+        }
+
     } else {
         trees = JSON.parse(localStorage.getItem(tree_key));
     }
