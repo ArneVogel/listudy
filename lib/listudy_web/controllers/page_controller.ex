@@ -1,5 +1,6 @@
 defmodule ListudyWeb.PageController do
   use ListudyWeb, :controller
+  alias Listudy.Books
   alias Listudy.Content
 
   @languages Application.get_env(:listudy, :languages)[:translations]
@@ -46,7 +47,8 @@ defmodule ListudyWeb.PageController do
   end
 
   def play_stockfish(conn, _params) do
-    render(conn, "play_stockfish.html")
+    book = Books.random_book()
+    render(conn, "play_stockfish.html", book: book)
   end
 
   defp renderer(conn, pages, page) do

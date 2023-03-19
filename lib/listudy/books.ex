@@ -67,6 +67,19 @@ defmodule Listudy.Books do
     Repo.all(query) |> Repo.preload([:author, expert_recommendations: :player])
   end
 
+  def random_book() do
+    query =
+      from b in Book,
+        left_join: r in Listudy.ExpertRecommendations.ExpertRecommendation,
+        on: b.id == r.book_id,
+        limit: 1,
+        group_by: b.id,
+        order_by: fragment("RANDOM()")
+
+    Repo.one(query) |> Repo.preload([:author, expert_recommendations: :player])
+  end
+
+
   def search_by_title(word) do
     word = "%" <> word <> "%"
 

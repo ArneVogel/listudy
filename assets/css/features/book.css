@@ -27,10 +27,12 @@
 .book::after {
     width: 100px !important;
     height: 150px !important;
+    max-width: unset;
 }
 .small-book::before {
     width: 48px !important;
     height: 144px !important;
+    max-width: unset;
     transform: translateX(72px) rotateY(90deg) !important;
 }
 

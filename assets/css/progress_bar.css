@@ -14,3 +14,8 @@
     background: var(--primary-color);
     border-radius: 3px;
 }
+
+.progress_reason {
+    height: 1em;
+    display: inline-block;
+}
