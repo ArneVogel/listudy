@@ -16,7 +16,6 @@
       <span class="progress_reason" id="progress_reason"></span>
     </div>
 
-    <%= render ListudyWeb.BookView, "thumb.html", Map.put(assigns, :book, @book) %>
   </div>
 </div>
 <script src="/stockfish/stockfish.js"></script>
@@ -24,6 +23,7 @@
 <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
 <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/play_stockfish.js") %>"></script>
 
+<%= render ListudyWeb.BookView, "thumb.html", Map.put(assigns, :book, @book) %>
 <p>
   <b><%= dgettext "play_stockfish", "Play against Stockfish:" %></b>
   <%= dgettext "play_stockfish", "learn with the best chess engine." %>
