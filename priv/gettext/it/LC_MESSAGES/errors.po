@@ -12,76 +12,76 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 
 msgid "can't be blank"
-msgstr ""
+msgstr "non può essere vuoto"
 
 msgid "has already been taken"
-msgstr ""
+msgstr "è stato già preso"
 
 msgid "is invalid"
-msgstr ""
+msgstr "è invalido"
 
 msgid "must be accepted"
-msgstr ""
+msgstr "deve essere accettato"
 
 msgid "has invalid format"
-msgstr ""
+msgstr "ha un formato non valido"
 
 msgid "has an invalid entry"
-msgstr ""
+msgstr "ha una voce non valida"
 
 msgid "is reserved"
-msgstr ""
+msgstr "è riservato"
 
 msgid "does not match confirmation"
-msgstr ""
+msgstr "non rispetta la conferma"
 
 msgid "is still associated with this entry"
-msgstr ""
+msgstr "è ancora associato con questa voce"
 
 msgid "are still associated with this entry"
-msgstr ""
+msgstr "sono ancora associati con questa voce"
 
 msgid "should be %{count} character(s)"
 msgid_plural "should be %{count} character(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "deve avere %{count} caratteri"
+msgstr[1] "devono avere %{count} caratteri"
 
 msgid "should have %{count} item(s)"
 msgid_plural "should have %{count} item(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "dovrebbe avere %{count} elementi"
+msgstr[1] "dovrebbero avere %{count} elementi"
 
 msgid "should be at least %{count} character(s)"
 msgid_plural "should be at least %{count} character(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "dovrebbe avere almeno %{count} caratteri"
+msgstr[1] "dovrebbero avere almeno %{count} caratteri"
 
 msgid "should have at least %{count} item(s)"
 msgid_plural "should have at least %{count} item(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "dovrebbe avere almeno %{count} elementi"
+msgstr[1] "dovrebbero avere almeno %{count} elementi"
 
 msgid "should be at most %{count} character(s)"
 msgid_plural "should be at most %{count} character(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "dovrebbe avere al massimo %{count} caratteri"
+msgstr[1] "dovrebbero avere al massimo %{count} caratteri"
 
 msgid "should have at most %{count} item(s)"
 msgid_plural "should have at most %{count} item(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "dovrebbe avere al massimo %{count} elementi"
+msgstr[1] "dovrebbero avere al massimo %{count} elementi"
 
 msgid "must be less than %{number}"
-msgstr ""
+msgstr "deve essere minore di %{number}"
 
 msgid "must be greater than %{number}"
-msgstr ""
+msgstr "deve essere maggiore di %{number}"
 
 msgid "must be less than or equal to %{number}"
-msgstr ""
+msgstr "deve essere minore di o uguale a %{number}"
 
 msgid "must be greater than or equal to %{number}"
-msgstr ""
+msgstr "deve essere maggiore di o uguale a %{number}"
 
 msgid "must be equal to %{number}"
-msgstr ""
+msgstr "deve essere uguale a %{number}"

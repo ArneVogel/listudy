@@ -14,45 +14,45 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:17
 msgid "Added %{pieceless}"
-msgstr ""
+msgstr "Aggiunto %{pieceless}"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:13
 msgid "Added pages %{changelog}, %{thanks}, and %{pieceless_info}"
-msgstr ""
+msgstr "Aggiunte le pagine %{changelog}, %{thanks}, e %{pieceless_info}"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:1
 #: lib/listudy_web/templates/page/changelog.html.eex:10
 msgid "Changelog"
-msgstr ""
+msgstr "Changelog"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:16
 msgid "Pieceless Tactics"
-msgstr ""
+msgstr "Tattiche Senza Pezzi"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:11
 msgid "Pieceless info page"
-msgstr ""
+msgstr "Pagina d'informazioni delle tattiche senza pezzi"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:9
 msgid "Thank you"
-msgstr ""
+msgstr "Grazie"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:5
 msgid "Study progress bar"
-msgstr ""
+msgstr "Barra di progresso dello studio"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:6
 msgid "Study reset option"
-msgstr ""
+msgstr "Opzione di reset dello studio"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/changelog.html.eex:3
 msgid "Make fen copyable on endgame pages as well as link to lichess analysis page for tablebase analysis."
-msgstr ""
+msgstr "Reso il FEN copiabile nelle pagine dei finali e collegato la pagina di analisi di Lichess per l'analisi dei tablebase."
