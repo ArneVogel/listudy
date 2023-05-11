@@ -83,7 +83,7 @@ defmodule ListudyWeb.StudyController do
       )
     else
       conn
-      |> put_flash(:error, "This study does not exist or is privat or is private.")
+      |> put_flash(:error, "This study does not exist or is private.")
       |> put_view(ListudyWeb.ErrorView)
       |> put_status(:not_found)
       |> render(:"404")
