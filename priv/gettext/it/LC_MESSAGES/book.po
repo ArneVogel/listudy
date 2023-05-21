@@ -15,100 +15,100 @@ msgstr ""
 #: lib/listudy_web/templates/book/public.html.eex:32
 #: lib/listudy_web/templates/book/thumb.html.eex:40
 msgid "%{book_name} book cover"
-msgstr ""
+msgstr "copertina libro %{book_name}"
 
 #, elixir-format
 #: lib/listudy_web/templates/book/thumb.html.eex:33
 msgid "More"
-msgstr ""
+msgstr "Scopri di più"
 
 #, elixir-format
 #: lib/listudy_web/templates/book/public.html.eex:17
 msgid "Opening"
-msgstr ""
+msgstr "Apertura"
 
 #, elixir-format
 #: lib/listudy_web/templates/book/public.html.eex:41
 msgid "Recommendations"
-msgstr ""
+msgstr "Raccomandazioni"
 
 #, elixir-format
 #: lib/listudy_web/templates/book/thumb.html.eex:7
 msgid "Recommended by"
-msgstr ""
+msgstr "Raccomandato da"
 
 #, elixir-format
 #: lib/listudy_web/templates/book/public.html.eex:9
 msgid "Tags"
-msgstr ""
+msgstr "Tag"
 
 #, elixir-format
 #: lib/listudy_web/templates/book/recommended.html.eex:1
 msgid "Chess Books"
-msgstr ""
+msgstr "Suggeriti da Gran Maestri"
 
 #, elixir-format
 #: lib/listudy_web/templates/book/recommended.html.eex:1
 msgid "Grandmaster recommended"
-msgstr ""
+msgstr "Libri di Scacchi"
 
 #, elixir-format
 #: lib/listudy_web/templates/book/recommended.html.eex:10
 msgid "Have you found a recommendation from a grandmaster that is not yet in the list? Send me an email and I will add it."
-msgstr ""
+msgstr "Hai trovato un suggerimento di un gran maestro che non è ancora presente nell'elenco? Inviami un'e-mail e lo aggiungerò."
 
 #, elixir-format
 #: lib/listudy_web/templates/book/recommended.html.eex:9
 msgid "I hope this list of recommendations will help you find the best chess textbooks for you. Because who else could judge whether a chess book is good or not if not grandmasters."
-msgstr ""
+msgstr "Spero che questo elenco di raccomandazioni ti aiuti a trovare i migliori libri di scacchi per te. Perché chi altro, se non un gran maestro, può giudicare se un libro di scacchi è valido o meno?"
 
 #, elixir-format
 #: lib/listudy_web/templates/book/recommended.html.eex:8
 msgid "These books were all recommended by chess grandmasters! Click on the more information to find out in detail what they have to say about each book."
-msgstr ""
+msgstr "Questi libri sono stati tutti consigliati da grandi maestri di scacchi! Cliccate su ulteriori informazioni per scoprire in dettaglio cosa hanno da dire su ciascun libro."
 
 #, elixir-format
 #: lib/listudy_web/templates/book/recommended.html.eex:2
 msgid "This list contains the 20 best chess books as ranked by grandmasters. I hope this list helps you to find the perfect book for you."
-msgstr ""
+msgstr "Questo elenco contiene i 20 migliori libri di scacchi suggeriti dai grandi maestri. Mi auguro che questo elenco ti aiuti a trovare il libro perfetto per te."
 
 #, elixir-format
 #: lib/listudy_web/live/book_search_live.ex:10
 msgid "Chess Book Search"
-msgstr ""
+msgstr "Cerca Libro di Scacchi"
 
 #, elixir-format
 #: lib/listudy_web/live/book_search_live.ex:12
 msgid "Search"
-msgstr ""
+msgstr "Cerca"
 
 #, elixir-format
 #: lib/listudy_web/live/book_search_live.ex:16
 msgid "by"
-msgstr ""
+msgstr "di"
 
 #, elixir-format
 #: lib/listudy_web/templates/book/footer.html.eex:5
 #: lib/listudy_web/templates/book/footer.html.eex:9
 msgid "%{amount} books"
-msgstr ""
+msgstr "%{amount} libri"
 
 #, elixir-format
 #: lib/listudy_web/templates/book/footer.html.eex:2
 msgid "Looking for something more specific? Take a look at these book lists:"
-msgstr ""
+msgstr "Stai cercando qualcosa di più specifico? Dai un'occhiata a questi di libri:"
 
 #, elixir-format
 #: lib/listudy_web/templates/book/footer.html.eex:1
 msgid "More book lists"
-msgstr ""
+msgstr "Ulteriori libri"
 
 #, elixir-format
 #: lib/listudy_web/templates/book/footer.html.eex:5
 msgid "Most Grandmaster recommended books"
-msgstr ""
+msgstr "I libri più consigliati dai gran maestri"
 
 #, elixir-format
 #: lib/listudy_web/templates/player/book_recommendations.html.eex:1
 msgid "Books recommended by %{player}"
-msgstr ""
+msgstr "Libri consigliati da by %{player}"

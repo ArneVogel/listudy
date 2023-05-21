@@ -81,7 +81,7 @@ msgstr "Blog"
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:17
 msgid "Create a new Study"
-msgstr "Crea nuovo Studio"
+msgstr "Crea un nuovo Studio"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:36
@@ -119,7 +119,7 @@ msgstr "Privacy"
 #: lib/listudy_web/templates/page/privacy.html.eex:1
 #: lib/listudy_web/templates/pow/registration/new.html.eex:38
 msgid "Privacy Policy"
-msgstr "Politica della Privacy"
+msgstr "Policy sulla Privacy"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:77
@@ -129,7 +129,7 @@ msgstr "Profilo"
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:34
 msgid "Register to get access to all features."
-msgstr "Registrati per accedere a tutti i funzionalità."
+msgstr "Registrati per accedere a tutte le funzionalità."
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:6
@@ -140,12 +140,12 @@ msgstr "Termini del Servizio"
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:36
 msgid "The email is used to log in. It doesn't have to be real, as long as you remember it."
-msgstr "Questa email è usata solo per loggarti. Non deve essere reale, l'importante è che tu la ricordi."
+msgstr "Questa e-mail è usata solo per effettuare il login. Non deve essere reale, purché te la ricordi."
 
 #, elixir-format
 #: lib/listudy_web/templates/page/imprint.html.eex:2
 msgid "The provider of this website is Arne Vogel."
-msgstr "Il provider di questo sito è Arne Vogel."
+msgstr "Il provider di questo sito Web è Arne Vogel."
 
 #, elixir-format
 #: lib/listudy_web/controllers/page_controller.ex:27
@@ -194,7 +194,7 @@ msgstr "Creato il"
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:19
 msgid "Daily Puzzle"
-msgstr "Puzzle Giornaliero"
+msgstr "Problema del Giorno"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/edit.html.eex:36
@@ -215,7 +215,7 @@ msgstr "Ultimo aggiornamento"
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:20
 msgid "Make your own Tactic"
-msgstr "Crea le tue Tattiche"
+msgstr "Crea la tua Tattica"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:24
@@ -226,7 +226,7 @@ msgstr "Tattiche"
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/edit.html.eex:37
 msgid "This can not be reversed! Are you sure?"
-msgstr "Non si può tornare indietro. Sei sicuro?"
+msgstr "Non si può annullare. Sei sicuro?"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:74
@@ -241,7 +241,7 @@ msgstr "Indietro"
 #, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:40
 msgid "Before creating your account, please read the %{privacy_policy} and %{tos}. By creating the account, you agree to those terms."
-msgstr "Prima di creare il tuo account, per favore leggi %{privacy_policy} e %{tos}. Creando l'account, acconsenti ai termini."
+msgstr "Prima di creare il tuo account, per favore leggi %{privacy_policy} e %{tos}. Creando l'account, acconsenti a questi termini."
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:72
@@ -278,7 +278,7 @@ msgstr "Seleziona un colore:"
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:101
 msgid "Select a piece set:"
-msgstr "Seleziona un set di scacchi:"
+msgstr "Seleziona un set di pezzi:"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_header.html.eex:71
@@ -309,40 +309,40 @@ msgstr "Webmaster"
 #, elixir-format
 #: lib/listudy_web/pow/messages.ex:9
 msgid "The provided login details did not work. Make sure to log in with your email and not your username!"
-msgstr "Le informazioni fornite per il login non hanno funzionato. Assicurati di accedere con la tua email e non con il tuo username"
+msgstr "Le informazioni fornite per il login non hanno funzionato. Assicurati di accedere col tuo indirizzo e-mail e non con il tuo username"
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/session/new.html.eex:11
 msgid "Use your email to log in."
-msgstr "Usa la tua email per accedere."
+msgstr "Usa la tua e-mail per accedere."
 
 #, elixir-format
 #: lib/listudy_web/templates/pow/session/new.html.eex:18
 msgid "Your session will be persistent. Only use on your own devices."
-msgstr "La tua sessione sarà persistente. Usa solo sui tuoi dispositivi."
+msgstr "La tua sessione sarà persistente. Usata solo sui tuoi dispositivi."
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:10
 msgid "Changelog"
-msgstr ""
+msgstr "Changelog"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:18
 #: lib/listudy_web/templates/layout/_header.html.eex:28
 msgid "Pieceless Tactics"
-msgstr ""
+msgstr "Tattiche Senza Pezzi"
 
 #, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:9
 msgid "Thank you!"
-msgstr ""
+msgstr "Grazie!"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:8
 msgid "black"
-msgstr ""
+msgstr "nero"
 
 #, elixir-format
 #: lib/listudy_web/templates/page/play_stockfish.html.eex:9
 msgid "white"
-msgstr ""
+msgstr "bianco"

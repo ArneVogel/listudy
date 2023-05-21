@@ -14,7 +14,7 @@ msgstr ""
 #, elixir-format
 #: lib/listudy_web/templates/stats/index.html.eex:2
 msgid "If you're like me, you can't get enough of stats. Here you can find statistics about Listudy:"
-msgstr "Se sei come me, non ne hai mai abbastanza delle statistiche. Qui puoi trovare le statistiche su Listudy:"
+msgstr "Se sei come me, non ne hai mai abbastanza delle statistiche. Qui puoi trovare le statistiche di Listudy:"
 
 #, elixir-format
 #: lib/listudy_web/templates/stats/index.html.eex:1
@@ -24,9 +24,9 @@ msgstr "Statistiche"
 #, elixir-format
 #: lib/listudy_web/templates/stats/index.html.eex:5
 msgid "Uploaded Studies"
-msgstr "Studi caricati"
+msgstr "Studi Caricati"
 
 #, elixir-format
 #: lib/listudy_web/templates/stats/index.html.eex:11
 msgid "User Registrations"
-msgstr "Registrazioni utente"
+msgstr "Registrazioni Utente"

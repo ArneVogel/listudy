@@ -19,4 +19,4 @@ msgstr "Traguardi"
 #, elixir-format
 #: lib/listudy_web/templates/page/achievements.html.eex:2
 msgid "Can you get all achievements?"
-msgstr "Riesci a raggiungere tutti i traguardi?"
+msgstr "Sei in grado di raggiungere tutti i traguardi?"
