@@ -11,62 +11,62 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2\n"
 
-#, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:31
+#, elixir-autogen, elixir-format
 msgid "Achievements"
 msgstr "Récompenses"
 
-#, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:16
+#, elixir-autogen, elixir-format
 msgid "Blind Tactics"
 msgstr "Tactiques à l'aveugle"
 
-#, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:13
+#, elixir-autogen, elixir-format
 msgid "Daily Chess Puzzle"
 msgstr "Puzzle quotidien"
 
-#, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:62
+#, elixir-autogen, elixir-format
 msgid "Endgames"
 msgstr "Finales"
 
-#, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:28
+#, elixir-autogen, elixir-format
 msgid "Play against Stockfish Online"
 msgstr "Jouez contre Stockfish en ligne"
 
-#, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:42
+#, elixir-autogen, elixir-format
 msgid "Search Studies"
 msgstr "Chercher des études"
 
-#, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:43
+#, elixir-autogen, elixir-format
 msgid "Tactics"
 msgstr "Tactiques"
 
-#, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:22
+#, elixir-autogen, elixir-format
 msgid "Changelog"
 msgstr "Changelog"
 
-#, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:19
+#, elixir-autogen, elixir-format
 msgid "Pieceless Tactics"
 msgstr "Tactiques à l'aveugle"
 
-#, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:25
+#, elixir-autogen, elixir-format
 msgid "Thank you!"
 msgstr "Merci"
 
-#, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:34
+#, elixir-autogen, elixir-format
 msgid "Improve your chess game with spaced repetition"
 msgstr "Améliorez votre jeu d'échecs avec la répétition espacée"
 
-#, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:89
+#, elixir-autogen, elixir-format
 msgid "Books Recommended by %{player}"
 msgstr ""

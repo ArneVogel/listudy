@@ -11,435 +11,450 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2\n"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/translations.html.eex:5
+#, elixir-autogen, elixir-format
 msgid "Best Move!"
 msgstr "Meilleur coup!"
 
-#, elixir-format
 #: lib/listudy_web/templates/live/blind_tactics.html.leex:12
-#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:39
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:41
+#, elixir-autogen, elixir-format
 msgid "Black"
 msgstr "Noir"
 
-#, elixir-format
 #: lib/listudy_web/templates/live/blind_tactics.html.leex:6
+#, elixir-autogen, elixir-format
 msgid "Blind Tactic"
 msgstr "Tactique à l'aveugle"
 
-#, elixir-format
 #: lib/listudy_web/templates/live/blind_tactics.html.leex:17
-#: lib/listudy_web/templates/live/tactics.html.leex:9 lib/listudy_web/templates/pieceless_tactic/public.html.eex:17
+#: lib/listudy_web/templates/live/tactics.html.leex:9
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:17
 #: lib/listudy_web/templates/tactic/tactic.html.eex:11
+#, elixir-autogen, elixir-format
 msgid "Continue"
 msgstr "Continuer"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/custom.html.eex:100
+#, elixir-autogen, elixir-format
 msgid "Create"
 msgstr "Créer"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/custom.html.eex:6
+#, elixir-autogen, elixir-format
 msgid "Custom Tactic"
 msgstr "Tactique personnalisée"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/custom.html.eex:106
 #: lib/listudy_web/templates/tactic/custom.html.eex:113
+#, elixir-autogen, elixir-format
 msgid "Embed"
 msgstr "Intégrer"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/custom.html.eex:103
+#, elixir-autogen, elixir-format
 msgid "Embed this Tactic"
 msgstr "Intégrer cette tactique"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/custom.html.eex:90
+#, elixir-autogen, elixir-format
 msgid "FEN"
 msgstr "NFE"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/translations.html.eex:9
+#, elixir-autogen, elixir-format
 msgid "Find the best move for black."
 msgstr "Trouvez le meilleur coup pour les noirs."
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/translations.html.eex:8
+#, elixir-autogen, elixir-format
 msgid "Find the best move for white."
 msgstr "Trouvez le meilleur coup pour les blancs."
 
-#, elixir-format
-#: lib/listudy_web/templates/live/blind_tactics.html.leex:23
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:25
+#, elixir-autogen, elixir-format
 msgid "How many plies should be hidden? (Updates next Tactic)"
 msgstr "Combien de plis faut-il cacher ? (Mise à jour de la prochaine tactique)"
 
-#, elixir-format
 #: lib/listudy_web/templates/live/blind_tactics.html.leex:11
+#, elixir-autogen, elixir-format
 msgid "In this position the following moves were played:"
 msgstr "Dans cette position, les coups suivants ont été joués:"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/translations.html.eex:6
+#, elixir-autogen, elixir-format
 msgid "Keep going..."
 msgstr "Continue..."
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/translations.html.eex:4
+#, elixir-autogen, elixir-format
 msgid "Keep trying!"
 msgstr "Continue d'essayer!"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/custom.html.eex:96
+#, elixir-autogen, elixir-format
 msgid "Last Move"
 msgstr "Dernier coup"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/custom.html.eex:105
+#, elixir-autogen, elixir-format
 msgid "Learn more"
 msgstr "En apprendre plus"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/custom.html.eex:88
+#, elixir-autogen, elixir-format
 msgid "Make your own Tactic"
 msgstr "Créez vos propres tactiques"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/custom.html.eex:11
+#, elixir-autogen, elixir-format
 msgid "More Tactics"
 msgstr "Plus de tactiques"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/custom.html.eex:93
+#, elixir-autogen, elixir-format
 msgid "Moves"
 msgstr "Coups"
 
-#, elixir-format
 #: lib/listudy_web/templates/live/tactics.html.leex:6
 #: lib/listudy_web/templates/tactic/tactic.html.eex:6
+#, elixir-autogen, elixir-format
 msgid "Tactic"
 msgstr "Tactique"
 
-#, elixir-format
-#: lib/listudy_web/templates/live/blind_tactics.html.leex:44
-#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:34 lib/listudy_web/templates/tactic/translations.html.eex:2
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:46
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:36
+#: lib/listudy_web/templates/tactic/translations.html.eex:2
+#, elixir-autogen, elixir-format
 msgid "Tactic solved!"
 msgstr "Tactique résolue!"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/custom.html.eex:104
+#, elixir-autogen, elixir-format
 msgid "Use this tactic on your website. Creates an iframe that you can use on you website to share this tactic."
 msgstr "Utilisez cette tactique sur votre site Web. Crée un iframe que vous pouvez utiliser sur votre site Web pour partager cette tactique."
 
-#, elixir-format
 #: lib/listudy_web/templates/live/blind_tactics.html.leex:12
-#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:38
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:40
+#, elixir-autogen, elixir-format
 msgid "White"
 msgstr "Blanc"
 
-#, elixir-format
-#: lib/listudy_web/templates/live/blind_tactics.html.leex:45
-#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:35
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:47
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:37
+#, elixir-autogen, elixir-format
 msgid "Wrong Move"
 msgstr "Mauvais coup"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/translations.html.eex:3
+#, elixir-autogen, elixir-format
 msgid "Wrong Move."
 msgstr "Mauvais coup."
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/translations.html.eex:7
+#, elixir-autogen, elixir-format
 msgid "Your turn."
 msgstr "Votre tour."
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/custom.html.eex:114
+#, elixir-autogen, elixir-format
 msgid "iframe code"
 msgstr "iframe code"
 
-#, elixir-format
 #: lib/listudy_web/templates/live/blind_tactics.html.leex:13
+#, elixir-autogen, elixir-format
 msgid "to play and win."
 msgstr "jouer et gagner."
 
-#, elixir-format
 #: lib/listudy_web/templates/event/public.html.eex:13
-#: lib/listudy_web/templates/motif/public.html.eex:8 lib/listudy_web/templates/motif/public.html.eex:14
+#: lib/listudy_web/templates/motif/public.html.eex:8
+#: lib/listudy_web/templates/motif/public.html.eex:14
 #: lib/listudy_web/templates/opening/public.html.eex:44
+#, elixir-autogen, elixir-format
 msgid "%{name} Tactics"
 msgstr "Tactiques de %{name}"
 
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:34
+#, elixir-autogen, elixir-format
 msgid "%{name} Traps and Tactics"
 msgstr "Pièges et tactiques de %{name}"
 
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:8
+#, elixir-autogen, elixir-format
 msgid "%{opening} after the moves %{moves}"
 msgstr "%{opening} après les mouvements %{moves}"
 
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:9
+#, elixir-autogen, elixir-format
 msgid "Chessboard showing the %{opening} with the moves %{moves} played"
 msgstr "Échiquier montrant %{opening} avec les coups %{moves} joués"
 
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:12
+#, elixir-autogen, elixir-format
 msgid "Contents"
 msgstr "Contenu"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/tactic.html.eex:28
+#, elixir-autogen, elixir-format
 msgid "Currently playing tactics by:"
 msgstr "Joue actuellement aux tactiques de:"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/tactic.html.eex:25
+#, elixir-autogen, elixir-format
 msgid "Currently playing tactics from the event:"
 msgstr "Joue actuellement aux tactiques de l'événement:"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/tactic.html.eex:22
+#, elixir-autogen, elixir-format
 msgid "Currently training in the motif:"
 msgstr "Actuellement en train de s'entrainer sur le thème:"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/tactic.html.eex:19
+#, elixir-autogen, elixir-format
 msgid "Currently training in the opening:"
 msgstr "Actuellement en train de s'entrainer sur l'ouverture:"
 
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:59
+#, elixir-autogen, elixir-format
 msgid "Do you want to try out the %{name}? Train this opening against Stockfish."
 msgstr "Voulez-vous essayer %{name} ? Entraînez cette ouverture contre Stockfish."
 
-#, elixir-format
 #: lib/listudy_web/templates/motif/public.html.eex:10
+#, elixir-autogen, elixir-format
 msgid "Get better at %{name} by solving tactics."
 msgstr "Améliorez-vous à %{name} en résolvant des tactiques."
 
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:38
+#, elixir-autogen, elixir-format
 msgid "Get better in the %{name} opening by practicing tactics taken from the early game."
 msgstr "Améliorez-vous dans l'ouverture de %{name} en pratiquant des tactiques tirées de début de partie."
 
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:27
+#, elixir-autogen, elixir-format
 msgid "Learn the %{opening} using public studies."
 msgstr "Apprenez %{opening} à l'aide d'études publiques."
 
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:14
+#, elixir-autogen, elixir-format
 msgid "Learn the Opening"
 msgstr "Apprendre l'ouverture"
 
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:19
 #: lib/listudy_web/templates/opening/public.html.eex:47
+#, elixir-autogen, elixir-format
 msgid "Play against Stockfish"
 msgstr "Jouer contre Stockfish"
 
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:60
+#, elixir-autogen, elixir-format
 msgid "Play against Stockfish either as white or black and explore the opening."
 msgstr "Jouez contre Stockfish avec les blancs ou les noirs et explorez l'ouverture."
 
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:55
+#, elixir-autogen, elixir-format
 msgid "Play against the %{name}"
 msgstr "Jouer contre le %{name}"
 
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:51
+#, elixir-autogen, elixir-format
 msgid "Play the %{name}"
 msgstr "Jouer le %{name}"
 
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:40
+#, elixir-autogen, elixir-format
 msgid "Recognize traps and mistakes of your opponents and exploit them."
 msgstr "Reconnaître les pièges et les erreurs de vos adversaires et les exploiter."
 
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:17
+#, elixir-autogen, elixir-format
 msgid "Solve Traps and Tactics"
 msgstr "Résoudre des pièges et des tactiques"
 
-#, elixir-format
 #: lib/listudy_web/templates/opening/public.html.eex:26
+#, elixir-autogen, elixir-format
 msgid "Studies about the %{opening}"
 msgstr "Études sur %{opening}"
 
-#, elixir-format
 #: lib/listudy_web/templates/motif/public.html.eex:12
+#, elixir-autogen, elixir-format
 msgid "Train real tactics from %{amount} different games."
 msgstr "Entraînez-vous à de vraies tactiques à partir de %{amount} parties différentes."
 
-#, elixir-format
 #: lib/listudy_web/templates/event/public.html.eex:11
 #: lib/listudy_web/templates/opening/public.html.eex:42
+#, elixir-autogen, elixir-format
 msgid "Train tactics from %{amount} different games."
 msgstr "Entraînez-vous aux tactiques de %{amount} parties différentes."
 
-#, elixir-format
 #: lib/listudy_web/templates/event/public.html.eex:9
+#, elixir-autogen, elixir-format
 msgid "Solve tactics from games played at %{name}."
 msgstr "Résolvez les tactiques des parties jouées à %{name}."
 
-#, elixir-format
 #: lib/listudy_web/templates/event/public.html.eex:6
+#, elixir-autogen, elixir-format
 msgid "Traps and Tactics from %{name}"
 msgstr "Pièges et tactiques de %{name}"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/daily.html.eex:1
+#, elixir-autogen, elixir-format
 msgid "Daily Chess Puzzle"
 msgstr "Puzzle d'échecs quotidien"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/daily.html.eex:10
+#, elixir-autogen, elixir-format
 msgid "Random Tactic"
 msgstr "Tactique aléatoire"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/daily.html.eex:8
+#, elixir-autogen, elixir-format
 msgid "Solve more tactics:"
 msgstr "Résolvez plus de tactiques:"
 
-#, elixir-format
 #: lib/listudy_web/templates/tactic/daily.html.eex:6
+#, elixir-autogen, elixir-format
 msgid "Solve the daily chess puzzle. Improve your chess skills every day one tactic at a time."
 msgstr "Résolvez le puzzle d'échecs quotidien. Améliorez vos compétences aux échecs chaque jour, une tactique à la fois."
 
-#, elixir-format
 #: lib/listudy_web/live/motif_search_live.ex:10
+#, elixir-autogen, elixir-format
 msgid "Motifs"
 msgstr "thèmes"
 
-#, elixir-format
 #: lib/listudy_web/live/motif_search_live.ex:12
+#, elixir-autogen, elixir-format
 msgid "Search"
 msgstr "Chercher"
 
-#, elixir-format
-#: lib/listudy_web/templates/live/blind_tactics.html.leex:46
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:48
+#, elixir-autogen, elixir-format
 msgid "Correct move, there are still more moves. They replied with"
 msgstr "Coup correct, il y a encore des coups. Ils ont répondu avec"
 
-#, elixir-format
 #: lib/listudy_web/templates/pieceless_tactic/public.html.eex:12
+#, elixir-autogen, elixir-format
 msgid "%{color} to play."
 msgstr "Au %{color} de jouer."
 
-#, elixir-format
 #: tactics.html.eex:7
+#, elixir-autogen, elixir-format
 msgid "All the pieces have disappeared! There is only a list of where the pieces should be next to the board. Can you visualize the position well enough in your head to solve the tactic?"
 msgstr "Toutes les pièces ont disparu ! Il y a seulement une liste de l'endroit où les pièces doivent être à côté du plateau. Pouvez-vous visualiser la position suffisamment bien dans votre tête pour résoudre la tactique ?"
 
-#, elixir-format
 #: tactics.html.eex:36
+#, elixir-autogen, elixir-format
 msgid "Board showing the legal moves if you click on the square of a piece"
 msgstr "Plateau montrant les coups légaux si vous cliquez sur la case d'une pièce"
 
-#, elixir-format
-#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:36
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:38
+#, elixir-autogen, elixir-format
 msgid "Correct move, there are still more moves."
 msgstr "Coup correct, il y a encore plus de coups."
 
-#, elixir-format
 #: tactics.html.eex:32
+#, elixir-autogen, elixir-format
 msgid "Have you visualized the position and solved the tactics? Then you can play the solution now."
 msgstr "Avez-vous visualisé la position et résolu la tactique ? Vous pouvez désormais jouer la solution."
 
-#, elixir-format
 #: tactics.html.eex:42
 #: lib/listudy_web/templates/pieceless_tactic/public.html.eex:14
+#, elixir-autogen, elixir-format
 msgid "History"
 msgstr "Historique"
 
-#, elixir-format
 #: tactics.html.eex:13
+#, elixir-autogen, elixir-format
 msgid "How it works"
 msgstr "Comment ça marche"
 
-#, elixir-format
 #: tactics.html.eex:33
+#, elixir-autogen, elixir-format
 msgid "If you click on the position on the field on which a piece is standing, you will be shown where the piece can move to. Simply move the piece as you normally would."
 msgstr "Si vous cliquez sur la position sur la case sur laquelle se trouve une pièce, vous verrez où la pièce peut se déplacer. Déplacez simplement la pièce comme vous le feriez normalement."
 
-#, elixir-format
 #: tactics.html.eex:43
+#, elixir-autogen, elixir-format
 msgid "If you have made the right move, the history is displayed. There you can see what the AI played in response to your move."
 msgstr "Si vous avez fait le bon choix, l'historique s'affiche. Là, vous pouvez voir ce que l'IA a joué en réponse à votre mouvement."
 
-#, elixir-format
 #: tactics.html.eex:19
+#, elixir-autogen, elixir-format
 msgid "If you load a pieceless tactic, you will be looking at an empty chessboard. Next to the chessboard, however, you will see exactly where the pieces should be placed on the chessboard."
 msgstr "Si vous chargez une tactique sans pièces, vous verrez un échiquier vide. À côté de l'échiquier, cependant, vous verrez exactement où les pièces doivent être placées sur l'échiquier."
 
-#, elixir-format
 #: tactics.html.eex:3
+#, elixir-autogen, elixir-format
 msgid "Improve your chess visualization skills"
 msgstr "Améliorez vos compétences de visualisation d'échecs"
 
-#, elixir-format
 #: tactics.html.eex:44
+#, elixir-autogen, elixir-format
 msgid "Keep playing until the tactic is solved!"
 msgstr "Continuez à jouer jusqu'à ce que la tactique soit résolue !"
 
-#, elixir-format
 #: tactics.html.eex:24
+#, elixir-autogen, elixir-format
 msgid "Piece list"
 msgstr "Liste des pièces"
 
-#, elixir-format
 #: lib/listudy_web/templates/pieceless_tactic/public.html.eex:6
+#, elixir-autogen, elixir-format
 msgid "Pieceless Tactic"
 msgstr "Tactique sans pièce"
 
-#, elixir-format
 #: tactics.html.eex:2
+#, elixir-autogen, elixir-format
 msgid "Pieceless Tactics"
 msgstr "Tactique sans pièce"
 
-#, elixir-format
-#: tactics.html.eex:10 tactics.html.eex:53
+#: tactics.html.eex:10
+#: tactics.html.eex:53
+#, elixir-autogen, elixir-format
 msgid "Play Now!"
 msgstr "Jouer maintenant!"
 
-#, elixir-format
 #: tactics.html.eex:31
+#, elixir-autogen, elixir-format
 msgid "Solve the tactic"
 msgstr "Résolvez la tactique"
 
-#, elixir-format
-#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:37
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:39
+#, elixir-autogen, elixir-format
 msgid "Solved!"
 msgstr "Résolu!"
 
-#, elixir-format
 #: tactics.html.eex:14
+#, elixir-autogen, elixir-format
 msgid "Using pieceless tactics takes getting used to. Here I try to explain how to use them as simple and as clear as possible."
 msgstr "Il faut s'y habituer pour utiliser des tactiques sans pièce. Ici, j'essaie d'expliquer comment les utiliser de la manière la plus simple et la plus claire possible."
 
-#, elixir-format
 #: tactics.html.eex:18
+#, elixir-autogen, elixir-format
 msgid "Where are the pieces?"
 msgstr "Où sont les pièces?"
 
-#, elixir-format
 #: tactics.html.eex:20
+#, elixir-autogen, elixir-format
 msgid "Your task now is to visualize the pieces on the board and to try to solve the tactic."
 msgstr "Votre tâche est maintenant de visualiser les pièces sur l'échiquier et d'essayer de résoudre la tactique."
 
-#, elixir-format
-#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:22
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:24
+#, elixir-autogen, elixir-format
 msgid "[Help] How pieceless tactics work."
 msgstr "[Aide] Comment fonctionnent les tactiques sans pièce."
 
-#, elixir-format
 #: tactics.html.eex:48
+#, elixir-autogen, elixir-format
 msgid "move history showing the moves played"
 msgstr "historique des coups montrant les coups joués"
+
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:19
+#, elixir-autogen, elixir-format
+msgid "Flip board"
+msgstr ""
+
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:20
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:20
+#, elixir-autogen, elixir-format
+msgid "Give up"
+msgstr ""

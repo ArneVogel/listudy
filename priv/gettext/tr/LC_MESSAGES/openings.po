@@ -11,12 +11,12 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2\n"
 
-#, elixir-format
 #: lib/listudy_web/live/opening_search_live.ex:10
+#, elixir-autogen, elixir-format
 msgid "Openings"
 msgstr "Açılışlar"
 
-#, elixir-format
 #: lib/listudy_web/live/opening_search_live.ex:12
+#, elixir-autogen, elixir-format
 msgid "Search"
 msgstr "Ara"

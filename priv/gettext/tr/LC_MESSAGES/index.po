@@ -11,229 +11,229 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2\n"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:46
+#, elixir-autogen, elixir-format
 msgid "All blog posts"
 msgstr "Bütün blog gönderileri"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:31
+#, elixir-autogen, elixir-format
 msgid "Become unbeatable in endgames."
 msgstr "Oyunsonlarında yenilmez olun."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:4
+#, elixir-autogen, elixir-format
 msgid "Better train openings, endgames and tactics with the help of systematic repetition."
 msgstr "Sistematik tekrar yardımıyla açılış, oyunsonu ve taktiklerde daha iyi alıştırma yapın."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:53
+#, elixir-autogen, elixir-format
 msgid "Blind Tactics"
 msgstr "Kör Taktikler"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:24
+#, elixir-autogen, elixir-format
 msgid "Books"
 msgstr "Kitaplar"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:60
+#, elixir-autogen, elixir-format
 msgid "Contribute"
 msgstr "Katkıda bulunun"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:91
+#, elixir-autogen, elixir-format
 msgid "Daily Puzzle"
 msgstr "Günlük Bulmaca"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:26
+#, elixir-autogen, elixir-format
 msgid "Discover the greatest books with the help of Grandmaster recommendations."
 msgstr "Büyükusta önerileri yardımıyla muhteşem kitaplar keşfedin."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:73
+#, elixir-autogen, elixir-format
 msgid "Distribute copies of your modified versions"
 msgstr "Kendi değiştirdiğiniz versiyonun kopyalarını dağıtın"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:30
 #: lib/listudy_web/templates/page/index.html.eex:33
+#, elixir-autogen, elixir-format
 msgid "Endgames"
 msgstr "Oyunsonları"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:86
+#, elixir-autogen, elixir-format
 msgid "Events"
 msgstr "Etkinlikler"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:81
+#, elixir-autogen, elixir-format
 msgid "Explore"
 msgstr "Keşfet"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:12
 #: lib/listudy_web/templates/page/index.html.eex:27
+#, elixir-autogen, elixir-format
 msgid "Explore the"
 msgstr "Keşfet"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:25
+#, elixir-autogen, elixir-format
 msgid "Find the best chess books for you."
 msgstr "Sizin için en iyi satranç kitaplarını bulun."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:67
+#, elixir-autogen, elixir-format
 msgid "Free & Open Source"
 msgstr "Bedava & Açık Kaynak Kodlu"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:17
+#, elixir-autogen, elixir-format
 msgid "Get better at identifying and exploiting tactics."
 msgstr "Taktikleri tespit etmede ve faydalanmada gelişin."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:51
+#, elixir-autogen, elixir-format
 msgid "Improve your visualization skills with blind tactics."
 msgstr "Kör taktiklerle görsel hafızanızı geliştirin."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:40
+#, elixir-autogen, elixir-format
 msgid "Latest blog posts"
 msgstr "Son blog gönderileri"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:84
+#, elixir-autogen, elixir-format
 msgid "Motifs"
 msgstr "Motifler"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:83
+#, elixir-autogen, elixir-format
 msgid "Openings"
 msgstr "Açılışlar"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:11
+#, elixir-autogen, elixir-format
 msgid "Play against your opening repertoire and learn them playfully and with scientifically effective methods."
 msgstr "Kendi açılış repertuarınıza karşı oynayın ve onları bilimsel olarak etkin yöntemlerle oynayarak öğrenin."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:85
+#, elixir-autogen, elixir-format
 msgid "Players"
 msgstr "Kullanıcılar"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:72
+#, elixir-autogen, elixir-format
 msgid "Redistribute the software"
 msgstr "Yazılımı yeniden dağıtın"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:70
+#, elixir-autogen, elixir-format
 msgid "Run the server yourself as you wish, for any purpose"
 msgstr "Sunucuyu istediğiniz amaçla, istediğiniz şekilde çalıştırın"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:52
+#, elixir-autogen, elixir-format
 msgid "Solve tactics while only seeing the board from 2 moves ago."
 msgstr "Tahtayı 2 hamle öncesinden görerek taktikleri çözüm."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:9
+#, elixir-autogen, elixir-format
 msgid "Study Openings"
 msgstr "Açılış Çalışın"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:71
+#, elixir-autogen, elixir-format
 msgid "Study how the software works, and change it so it does your computing as you wish"
 msgstr "Yazılımın nasıl çalıştığını öğrenin ve istediğiniz şekilde değiştirerek kendi hesaplamanızı yaptırın"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:18
+#, elixir-autogen, elixir-format
 msgid "Tactics"
 msgstr "Taktikler"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:62
+#, elixir-autogen, elixir-format
 msgid "The support can look different. Report bugs if you find any, fix bugs if you can, help translate Listudy into other languages."
 msgstr "Farklı şekillerde yardım edebilirsiniz. Hata bulursanız rapor edin, düzeltebiliyorsanız düzeltin, Listudy sitesini diğer dillere çevirmeye yardım edin."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:15
+#, elixir-autogen, elixir-format
 msgid "Train Tactics"
 msgstr "Taktikler Çözün"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:32
+#, elixir-autogen, elixir-format
 msgid "Train endgames against Stockfish to become skilled and ready to take on any human opponent."
 msgstr "Stockfish'e karşı oyunsonları oynayın, böylece herhangi bir insan rakibe karşı hazır olun."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:16
+#, elixir-autogen, elixir-format
 msgid "Train tactics with thousands of tactical sequences from real games."
 msgstr "Gerçek oyunlardan derlenmiş binlerce taktiksel seri ile taktikler çözün."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:33
+#, elixir-autogen, elixir-format
 msgid "Train your endgame abilities: "
 msgstr "Oyunsonu yeteneklerinizi geliştirin: "
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:18
+#, elixir-autogen, elixir-format
 msgid "Train your tactical abilities: "
 msgstr "Taktiksel yeteneklerinizi geliştirin: "
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:53
+#, elixir-autogen, elixir-format
 msgid "Train your visualization skills: "
 msgstr "Görsel hafızanızı geliştirin: "
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:10
+#, elixir-autogen, elixir-format
 msgid "Use Listudy to better memorize openings. "
 msgstr "Açılışları daha iyi ezberlemek için Listudy kullanın. "
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:63
+#, elixir-autogen, elixir-format
 msgid "Visit github to find out more about how you can help:"
 msgstr "Nasıl yardım edebileceğinizi öğrenmek için github'ı ziyaret edin:"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:50
+#, elixir-autogen, elixir-format
 msgid "Visualization"
 msgstr "Görsel Yetenek"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:2
+#, elixir-autogen, elixir-format
 msgid "Welcome to %{name}!"
 msgstr "%{name}'ye Hoş Geldiniz!"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:3
+#, elixir-autogen, elixir-format
 msgid "With %{name} you can improve your chess skills with the help of spaced repetition."
 msgstr "%{name} ile aralıklı tekrar kullanarak satranç yeteneklerinizi geliştirin."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:75
+#, elixir-autogen, elixir-format
 msgid "You can find the source code running Listudy on github:"
 msgstr "Listudy'nin kaynak kodunu github'da bulabilirsiniz:"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:61
+#, elixir-autogen, elixir-format
 msgid "You can help make Listudy better."
 msgstr "Listudy sitesini geliştirmeye yardımcı olabilirsiniz."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:68
+#, elixir-autogen, elixir-format
 msgid "Your freedoms are important. That's why you have the rights to:"
 msgstr "Özgürlükleriniz önemli. Bu yüzden şu haklara sahipsiniz:"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:27
+#, elixir-autogen, elixir-format
 msgid "best chess books"
 msgstr "en iyi satranç kitapları"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/index.html.eex:12
+#, elixir-autogen, elixir-format
 msgid "latest openings"
 msgstr "son açılışlar"

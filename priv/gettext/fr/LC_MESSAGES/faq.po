@@ -11,7 +11,7 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2\n"
 
-#, elixir-format
 #: lib/listudy_web/templates/faq/show.html.eex:2
+#, elixir-autogen, elixir-format
 msgid "Frequently Asked Questions"
 msgstr "Foire Aux Questions"

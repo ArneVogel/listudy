@@ -11,72 +11,72 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2\n"
 
-#, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:11
+#, elixir-autogen, elixir-format
 msgid "Are you sure?"
 msgstr "Emin misiniz?"
 
-#, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:3
+#, elixir-autogen, elixir-format
 msgid "Comment"
 msgstr "Yorum yap"
 
-#, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:3
+#, elixir-autogen, elixir-format
 msgid "Comments"
 msgstr "Yorumlar"
 
-#, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:11
+#, elixir-autogen, elixir-format
 msgid "Delete"
 msgstr "Sil"
 
-#, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:11
+#, elixir-autogen, elixir-format
 msgid "Save"
 msgstr "Kaydet"
 
-#, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:8
+#, elixir-autogen, elixir-format
 msgid "by"
 msgstr "yazan"
 
-#, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:43
+#, elixir-autogen, elixir-format
 msgid "Comment could not get created"
 msgstr "Yorum oluşturulamadı"
 
-#, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:40
+#, elixir-autogen, elixir-format
 msgid "Comment created"
 msgstr "Yorum oluşturuldu"
 
-#, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:26
+#, elixir-autogen, elixir-format
 msgid "Comment deleted successfully."
 msgstr "Yorum başarıyla silindi."
 
-#, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:48
+#, elixir-autogen, elixir-format
 msgid "Error"
 msgstr "Hata"
 
-#, elixir-format
 #: lib/listudy_web/controllers/comment_controller.ex:20
+#, elixir-autogen, elixir-format
 msgid "You're not allowed to do that."
 msgstr "Bunu yapamazsınız."
 
-#, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:16
+#, elixir-autogen, elixir-format
 msgid "%{register} to comment"
 msgstr "Yorum yapmak için %{register}"
 
-#, elixir-format
 #: lib/listudy_web/templates/comment/show_comments.html.eex:17
+#, elixir-autogen, elixir-format
 msgid "No comments yet, be the first to write one!"
 msgstr "Henüz hiç yorum yapılmamış, ilk yapan ol!"
 
-#, elixir-format
 #: lib/listudy_web/templates/comment/comment_form.html.eex:15
+#, elixir-autogen, elixir-format
 msgid "Register"
 msgstr "Kayıt ol"

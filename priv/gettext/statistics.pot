@@ -10,22 +10,22 @@
 msgid ""
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/templates/stats/index.html.eex:2
+#, elixir-autogen, elixir-format
 msgid "If you're like me, you can't get enough of stats. Here you can find statistics about Listudy:"
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/templates/stats/index.html.eex:1
+#, elixir-autogen, elixir-format
 msgid "Statistics"
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/templates/stats/index.html.eex:5
+#, elixir-autogen, elixir-format
 msgid "Uploaded Studies"
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/templates/stats/index.html.eex:11
+#, elixir-autogen, elixir-format
 msgid "User Registrations"
 msgstr ""

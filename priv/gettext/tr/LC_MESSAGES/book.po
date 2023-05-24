@@ -11,104 +11,124 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2\n"
 
-#, elixir-format
 #: lib/listudy_web/templates/book/public.html.eex:32
-#: lib/listudy_web/templates/book/thumb.html.eex:40
+#: lib/listudy_web/templates/book/thumb.html.eex:42
+#, elixir-autogen, elixir-format
 msgid "%{book_name} book cover"
 msgstr "%{book_name} kitap kapağı"
 
-#, elixir-format
 #: lib/listudy_web/templates/book/thumb.html.eex:33
+#, elixir-autogen, elixir-format
 msgid "More"
 msgstr "Detaylar"
 
-#, elixir-format
 #: lib/listudy_web/templates/book/public.html.eex:17
+#, elixir-autogen, elixir-format
 msgid "Opening"
 msgstr "Açılış"
 
-#, elixir-format
 #: lib/listudy_web/templates/book/public.html.eex:41
+#, elixir-autogen, elixir-format
 msgid "Recommendations"
 msgstr "Önerilenler"
 
-#, elixir-format
 #: lib/listudy_web/templates/book/thumb.html.eex:7
+#, elixir-autogen, elixir-format
 msgid "Recommended by"
 msgstr "Önerenler"
 
-#, elixir-format
 #: lib/listudy_web/templates/book/public.html.eex:9
+#, elixir-autogen, elixir-format
 msgid "Tags"
 msgstr "Etiketler"
 
-#, elixir-format
 #: lib/listudy_web/templates/book/recommended.html.eex:1
+#, elixir-autogen, elixir-format
 msgid "Chess Books"
 msgstr "Satranç Kitapları"
 
-#, elixir-format
 #: lib/listudy_web/templates/book/recommended.html.eex:1
+#, elixir-autogen, elixir-format
 msgid "Grandmaster recommended"
 msgstr "Büyükusta önerisi"
 
-#, elixir-format
 #: lib/listudy_web/templates/book/recommended.html.eex:10
+#, elixir-autogen, elixir-format
 msgid "Have you found a recommendation from a grandmaster that is not yet in the list? Send me an email and I will add it."
 msgstr "Listede olmayan bir büyükusta önerisi mi fark ettiniz? Bir email atın, ekleyeyim."
 
-#, elixir-format
 #: lib/listudy_web/templates/book/recommended.html.eex:9
+#, elixir-autogen, elixir-format
 msgid "I hope this list of recommendations will help you find the best chess textbooks for you. Because who else could judge whether a chess book is good or not if not grandmasters."
 msgstr "Umarım bu öneri listesi sizin en iyi satranç kitabını bulmanıza yardımcı olacaktır. Çünkü bir satranç kitabının iyi olup olmadığını büyükustalar söylemeyecek de kim söyleyecek."
 
-#, elixir-format
 #: lib/listudy_web/templates/book/recommended.html.eex:8
+#, elixir-autogen, elixir-format
 msgid "These books were all recommended by chess grandmasters! Click on the more information to find out in detail what they have to say about each book."
 msgstr "Bütün bu kitaplar satranç büyükustaları tarafından önerildi! Detaylara tıklayarak her kitap hakkında büyükustaların neler söylediğini öğrenebilirsiniz."
 
-#, elixir-format
 #: lib/listudy_web/templates/book/recommended.html.eex:2
+#, elixir-autogen, elixir-format
 msgid "This list contains the 20 best chess books as ranked by grandmasters. I hope this list helps you to find the perfect book for you."
 msgstr "Bu liste büyükustalar tarafından derecelendirilmiş en iyi 20 satranç kitabını içerir. Umarım bu liste sizin mükemmel kitabı seçmenize yardımcı olur."
 
-#, elixir-format
 #: lib/listudy_web/live/book_search_live.ex:10
+#, elixir-autogen, elixir-format
 msgid "Chess Book Search"
 msgstr "Satranç Kitabı Araması"
 
-#, elixir-format
 #: lib/listudy_web/live/book_search_live.ex:12
+#, elixir-autogen, elixir-format
 msgid "Search"
 msgstr "Ara"
 
-#, elixir-format
 #: lib/listudy_web/live/book_search_live.ex:16
+#, elixir-autogen, elixir-format
 msgid "by"
 msgstr "tarafından"
 
-#, elixir-format
 #: lib/listudy_web/templates/book/footer.html.eex:5
 #: lib/listudy_web/templates/book/footer.html.eex:9
+#, elixir-autogen, elixir-format
 msgid "%{amount} books"
 msgstr "%{amount} kitap"
 
-#, elixir-format
 #: lib/listudy_web/templates/book/footer.html.eex:2
+#, elixir-autogen, elixir-format
 msgid "Looking for something more specific? Take a look at these book lists:"
 msgstr "Daha spesifik bir şey mi arıyordunuz? Bu kitap listesine bir göz atın:"
 
-#, elixir-format
 #: lib/listudy_web/templates/book/footer.html.eex:1
+#, elixir-autogen, elixir-format
 msgid "More book lists"
 msgstr "Daha fazla kitap listeleri"
 
-#, elixir-format
 #: lib/listudy_web/templates/book/footer.html.eex:5
+#, elixir-autogen, elixir-format
 msgid "Most Grandmaster recommended books"
 msgstr "En fazla büyükustanın önerdiği kitaplar"
 
-#, elixir-format
 #: lib/listudy_web/templates/player/book_recommendations.html.eex:1
+#, elixir-autogen, elixir-format
 msgid "Books recommended by %{player}"
 msgstr "%{player} tarafından önerilen kitaplar"
+
+#: lib/listudy_web/templates/book/affiliate.html.eex:7
+#, elixir-autogen, elixir-format
+msgid "%{shop_name} Affiliate Disclosure"
+msgstr ""
+
+#: lib/listudy_web/templates/book/affiliate.html.eex:10
+#, elixir-autogen, elixir-format
+msgid "As an Amazon Associate I earn from qualifying purchases."
+msgstr ""
+
+#: lib/listudy_web/templates/book/affiliate.html.eex:20
+#, elixir-autogen, elixir-format
+msgid "Continue"
+msgstr ""
+
+#: lib/listudy_web/templates/book/affiliate.html.eex:8
+#, elixir-autogen, elixir-format
+msgid "If you buy the book through this link we will receive a small provison for the referral. There will be no additional costs for you."
+msgstr ""

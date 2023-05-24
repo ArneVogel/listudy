@@ -11,47 +11,47 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2\n"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:1
+#, elixir-autogen, elixir-format
 msgid "Thank you!"
 msgstr "Teşekkürler!"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:29
+#, elixir-autogen, elixir-format
 msgid "Thanks to %{cburnett}, Armando Hernandez Marroquin, %{chessnut}, %{letter}, %{pirouetti}, %{pixel}, %{shapes} for their piece sets."
 msgstr "Taş setleri için teşekkürler: %{cburnett}, Armando Hernandez Marroquin, %{chessnut}, %{letter}, %{pirouetti}, %{pixel}, %{shapes}."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:21
+#, elixir-autogen, elixir-format
 msgid "Thanks to %{jeff} for %{chessjs}."
 msgstr "%{chessjs} için teşekkürler: %{jeff}."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:13
+#, elixir-autogen, elixir-format
 msgid "Thanks to %{lichess} for all their work. In particular for making studies, their puzzle database (%{database_link}), %{chessground}, and their freely avaliable icons."
 msgstr "Bütün çalışmalarınız için teşekkürler %{lichess}. Özellikle yaptıkları çalışmalar, bulmaca veritabanı (%{database_link}), %{chessground}, ve bedava simgeleri için."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:17
+#, elixir-autogen, elixir-format
 msgid "Thanks to %{niklas} for %{stockfish}."
 msgstr "%{stockfish} için teşekkürler %{niklas}."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:6
+#, elixir-autogen, elixir-format
 msgid "Thanks to all %{contributors}."
 msgstr "Teşekkürler %{contributors}."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:8
+#, elixir-autogen, elixir-format
 msgid "Thanks to all those who have provided translations."
 msgstr "Bütün çevirileri yapanlara teşekkürler."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:2
+#, elixir-autogen, elixir-format
 msgid "Thanks to all who have helped directly on Listudy and to all projects that make code and other content openly available. Without this help Listudy could not exist in this form."
 msgstr "Doğrudan Listudy'de yardımcı olan herkese ve kodu ve diğer içeriği açık bir şekilde kullanıma sunan tüm projelere teşekkür ederiz. Bu yardım olmadan Listudy bu biçimde var olamazdı."
 
-#, elixir-format
 #: lib/listudy_web/templates/page/thanks.html.eex:34
+#, elixir-autogen, elixir-format
 msgid "Thanks to the authors of %{elixir} and %{phoenix}."
 msgstr "%{elixir} ve %{phoenix} yazarlarına teşekkürler."

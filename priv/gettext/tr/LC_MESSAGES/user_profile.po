@@ -11,22 +11,22 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2\n"
 
-#, elixir-format
 #: lib/listudy_web/templates/user_profile/show.html.eex:9
+#, elixir-autogen, elixir-format
 msgid "%{name} does not have any public studies."
 msgstr "%{name} hiç halka açık çalışmaya sahip değil."
 
-#, elixir-format
 #: lib/listudy_web/templates/user_profile/show.html.eex:3
+#, elixir-autogen, elixir-format
 msgid "%{name} has been a member since %{signup}."
 msgstr "%{name}, %{signup} tarihinden beri üye."
 
-#, elixir-format
 #: lib/listudy_web/templates/user_profile/show.html.eex:1
+#, elixir-autogen, elixir-format
 msgid "Profile of %{name}"
 msgstr "%{name} Profili"
 
-#, elixir-format
 #: lib/listudy_web/templates/user_profile/show.html.eex:6
+#, elixir-autogen, elixir-format
 msgid "Public studies by %{name}"
 msgstr "%{name} halka açık çalışmaları"

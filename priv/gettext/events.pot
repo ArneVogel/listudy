@@ -10,12 +10,12 @@
 msgid ""
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/live/event_search_live.ex:10
+#, elixir-autogen, elixir-format
 msgid "Events"
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/live/event_search_live.ex:12
+#, elixir-autogen, elixir-format
 msgid "Search"
 msgstr ""

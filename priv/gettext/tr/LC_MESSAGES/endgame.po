@@ -11,315 +11,325 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2\n"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:94
+#, elixir-autogen, elixir-format
 msgid "Bishop + Bishop"
 msgstr "Fil + Fil"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:109
+#, elixir-autogen, elixir-format
 msgid "Bishop + Knight"
 msgstr "Fil + At"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:198
+#, elixir-autogen, elixir-format
 msgid "Bishops and Pawns"
 msgstr "Fil ve Piyonlar"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:328
+#, elixir-autogen, elixir-format
 msgid "Bishops and/or knights against rook, with and without pawns."
 msgstr "Filler ve/veya atlar kaleye karşı, piyonlu ve piyonsuz."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:60
+#, elixir-autogen, elixir-format
 msgid "Checkmating"
 msgstr "Şah mat"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:441
+#, elixir-autogen, elixir-format
 msgid "Chess Fundamentals"
 msgstr "Satrancın Esasları"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:231
+#, elixir-autogen, elixir-format
 msgid "Endgames with Knights, Bishops and Pawns."
 msgstr "Atlar, Filler ve Piyonlar Oyunsonları."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:199
+#, elixir-autogen, elixir-format
 msgid "Endgames with only Bishops and Pawns on the board."
 msgstr "Sadece Fil ve Piyon Oyunsonları."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:136
-#: lib/listudy_web/controllers/endgame_controller.ex:203 lib/listudy_web/controllers/endgame_controller.ex:235
-#: lib/listudy_web/controllers/endgame_controller.ex:260 lib/listudy_web/controllers/endgame_controller.ex:285
-#: lib/listudy_web/controllers/endgame_controller.ex:309 lib/listudy_web/controllers/endgame_controller.ex:331
-#: lib/listudy_web/controllers/endgame_controller.ex:353 lib/listudy_web/controllers/endgame_controller.ex:378
-#: lib/listudy_web/controllers/endgame_controller.ex:406 lib/listudy_web/controllers/endgame_controller.ex:460
+#: lib/listudy_web/controllers/endgame_controller.ex:203
+#: lib/listudy_web/controllers/endgame_controller.ex:235
+#: lib/listudy_web/controllers/endgame_controller.ex:260
+#: lib/listudy_web/controllers/endgame_controller.ex:285
+#: lib/listudy_web/controllers/endgame_controller.ex:309
+#: lib/listudy_web/controllers/endgame_controller.ex:331
+#: lib/listudy_web/controllers/endgame_controller.ex:353
+#: lib/listudy_web/controllers/endgame_controller.ex:378
+#: lib/listudy_web/controllers/endgame_controller.ex:406
+#: lib/listudy_web/controllers/endgame_controller.ex:460
+#, elixir-autogen, elixir-format
 msgid "Endings of Games"
 msgstr "Oyunların Sonları"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:442
+#, elixir-autogen, elixir-format
 msgid "From the Capablancas \"Chess Fundamentals\"."
 msgstr "Capablanca'nın \"Satrancın Esasları\" kitabından."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:423
+#, elixir-autogen, elixir-format
 msgid "From the book \"Analysis of the  Chess Ending King and Queen against King and Rook\"."
 msgstr "\"Analysis of the  Chess Ending King and Queen against King and Rook\" kitabından."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:138
-#: lib/listudy_web/controllers/endgame_controller.ex:205 lib/listudy_web/controllers/endgame_controller.ex:237
-#: lib/listudy_web/controllers/endgame_controller.ex:262 lib/listudy_web/controllers/endgame_controller.ex:287
-#: lib/listudy_web/controllers/endgame_controller.ex:311 lib/listudy_web/controllers/endgame_controller.ex:333
-#: lib/listudy_web/controllers/endgame_controller.ex:355 lib/listudy_web/controllers/endgame_controller.ex:380
-#: lib/listudy_web/controllers/endgame_controller.ex:408 lib/listudy_web/controllers/endgame_controller.ex:462
+#: lib/listudy_web/controllers/endgame_controller.ex:205
+#: lib/listudy_web/controllers/endgame_controller.ex:237
+#: lib/listudy_web/controllers/endgame_controller.ex:262
+#: lib/listudy_web/controllers/endgame_controller.ex:287
+#: lib/listudy_web/controllers/endgame_controller.ex:311
+#: lib/listudy_web/controllers/endgame_controller.ex:333
+#: lib/listudy_web/controllers/endgame_controller.ex:355
+#: lib/listudy_web/controllers/endgame_controller.ex:380
+#: lib/listudy_web/controllers/endgame_controller.ex:408
+#: lib/listudy_web/controllers/endgame_controller.ex:462
+#, elixir-autogen, elixir-format
 msgid "From the book \"Chess Studies, Or, Endings of Games\"."
 msgstr "\"Chess Studies, Or, Endings of Games\" kitabından."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:127
+#, elixir-autogen, elixir-format
 msgid "King and Pawn Endgames"
 msgstr "Şah ve Piyon Oyunsonları"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:421
+#, elixir-autogen, elixir-format
 msgid "King and Queen against King and Rook"
 msgstr "Şah ve Vezire karşı Şah ve Kale"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:230
+#, elixir-autogen, elixir-format
 msgid "Knights, Bishops and Pawns"
 msgstr "Atlar, Filler ve Piyonlar"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:61
+#, elixir-autogen, elixir-format
 msgid "Learn the basic checkmating techniques."
 msgstr "Temel şah mat tekniklerini öğrenin."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:327
+#, elixir-autogen, elixir-format
 msgid "Minor pieces against Rook endgames."
 msgstr "At veya file karşı Kale oyunsonları."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:178
+#, elixir-autogen, elixir-format
 msgid "Obtaining a Passed Pawn"
 msgstr "Geçer Piyon Oluşturmak"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:167
+#, elixir-autogen, elixir-format
 msgid "Pawn Endings"
 msgstr "Piyon Oyunsonları"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:159
+#, elixir-autogen, elixir-format
 msgid "Pawn Promotion"
 msgstr "Piyon Terfisi"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:69
+#, elixir-autogen, elixir-format
 msgid "Queen"
 msgstr "Vezir"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:455
+#, elixir-autogen, elixir-format
 msgid "Queen against Minor Pieces"
 msgstr "Vezire karşı At veya Fil"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:348
+#, elixir-autogen, elixir-format
 msgid "Queen against Pawns"
 msgstr "Vezire karşı Piyonlar"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:401
 #: lib/listudy_web/controllers/endgame_controller.ex:402
+#, elixir-autogen, elixir-format
 msgid "Queen against Rook"
 msgstr "Vezire karşı Kale"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:456
+#, elixir-autogen, elixir-format
 msgid "Queen against minor pieces."
 msgstr "Vezire karşı at veya fil."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:349
 #: lib/listudy_web/controllers/endgame_controller.ex:350
+#, elixir-autogen, elixir-format
 msgid "Queen against pawn endgames."
 msgstr "Vezire karşı piyon oyunsonları."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:373
+#, elixir-autogen, elixir-format
 msgid "Queens and Pawns"
 msgstr "Vezirler ve Piyonlar"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:374
+#, elixir-autogen, elixir-format
 msgid "Queens and pawn endgames."
 msgstr "Vezirler ve piyon oyunsonları"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:81
+#, elixir-autogen, elixir-format
 msgid "Rook"
 msgstr "Kale"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:281
+#, elixir-autogen, elixir-format
 msgid "Rook against Pawn endgames."
 msgstr "Kaleye karşı Piyon oyunsonları."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:280
+#, elixir-autogen, elixir-format
 msgid "Rook against Pawns"
 msgstr "Kaleye karşı Piyonlar"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:303
+#, elixir-autogen, elixir-format
 msgid "Rook against minor Pieces"
 msgstr "Kaleye karşı at veya fil"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:304
+#, elixir-autogen, elixir-format
 msgid "Rook against minor pieces endgames."
 msgstr "Kaleye karşı at veya fil oyunsonları."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:306
+#, elixir-autogen, elixir-format
 msgid "Rook and pawn against bishop or knight, with and without pawns."
 msgstr "Kale ve piyona karşı fil veya at, piyonlu ve piyonsuz."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:185
+#, elixir-autogen, elixir-format
 msgid "The Opposition"
 msgstr "Opozisyon"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:232
+#, elixir-autogen, elixir-format
 msgid "This chapter has endgames about Knight and Bishop endings."
 msgstr "Bu bölümde At ve Fil oyunsonları vardır."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:200
+#, elixir-autogen, elixir-format
 msgid "This chapter has endgames about Pawn and Bishop endings."
 msgstr "Bu bölümde Piyon ve Fil oyunsonları vardır."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:130
+#, elixir-autogen, elixir-format
 msgid "This chapter has endgames about the King and Pawn endgame. Many of the examples are taken from Capablancas \"Chess Fundamentals\"."
 msgstr "Bu bölümde Şah ve Piyon oyunsonları vardır. Çoğu örnek Capablanca'nın \"Satrancın Esasları\" kitabından alınmıştır."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:63
+#, elixir-autogen, elixir-format
 msgid "This chapter has endgames for checkmating with queen, rook, bishop + knight and bishop + bishop."
 msgstr "Bu bölümde vezir, kale, fil + at ve fil + fil ile şah mat oyunsonları vardır."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:375
+#, elixir-autogen, elixir-format
 msgid "Train endgames with queens and pawns on the board."
 msgstr "Vezir ve piyon oyunsonları ile alıştırma yap."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:457
+#, elixir-autogen, elixir-format
 msgid "Train queen and minor piece endgames."
 msgstr "Vezir ve at veya vezir ve fil oyunsonları ile alıştırma yap."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:403
+#, elixir-autogen, elixir-format
 msgid "Train queen and rook endgames."
 msgstr "Vezir ve kale oyunsonları ile alıştırma yap."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:282
+#, elixir-autogen, elixir-format
 msgid "Train rook against pawn endgames."
 msgstr "Kaleye karşı piyon oyunsonları ile alıştırma yap."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:254
+#, elixir-autogen, elixir-format
 msgid "Two Minor Pieces against one Minor Piece"
 msgstr "İki At veya File karşı bir At veya Fil"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:257
+#, elixir-autogen, elixir-format
 msgid "Two against one."
 msgstr "İkiye karşı bir."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:128
+#, elixir-autogen, elixir-format
 msgid "Win games with only Pawns on the board"
 msgstr "Sadece piyonlarla oyun kazanın"
 
-#, elixir-format
 #: lib/listudy_web/templates/live/tactics.html.leex:25
+#, elixir-autogen, elixir-format
 msgid "Currently playing tactics by:"
 msgstr "Şu an oynanan taktiklerin türü:"
 
-#, elixir-format
 #: lib/listudy_web/templates/live/tactics.html.leex:22
+#, elixir-autogen, elixir-format
 msgid "Currently playing tactics from the event:"
 msgstr "Şu an oynanan taktikler şu etkinlikten:"
 
-#, elixir-format
 #: lib/listudy_web/templates/live/tactics.html.leex:19
+#, elixir-autogen, elixir-format
 msgid "Currently training in the motif:"
 msgstr "Şu motifte alıştırma yapılıyor:"
 
-#, elixir-format
 #: lib/listudy_web/templates/live/tactics.html.leex:16
+#, elixir-autogen, elixir-format
 msgid "Currently training in the opening:"
 msgstr "Yapılan alıştırmanın açılışı:"
 
-#, elixir-format
 #: lib/listudy_web/templates/endgame/game.html.eex:2
 #: lib/listudy_web/templates/endgame/index.html.eex:1
+#, elixir-autogen, elixir-format
 msgid "Endgames"
 msgstr "Oyunsonları"
 
-#, elixir-format
 #: lib/listudy_web/views/endgame_view.ex:7
+#, elixir-autogen, elixir-format
 msgid "Next"
 msgstr "Sonraki"
 
-#, elixir-format
 #: lib/listudy_web/templates/endgame/game.html.eex:25
+#, elixir-autogen, elixir-format
 msgid "Reset"
 msgstr "Reset"
 
-#, elixir-format
-#: lib/listudy_web/templates/endgame/game.html.eex:48
+#: lib/listudy_web/templates/endgame/game.html.eex:47
+#, elixir-autogen, elixir-format
 msgid "Success!"
 msgstr "Başarılı!"
 
-#, elixir-format
-#: lib/listudy_web/templates/endgame/game.html.eex:49
+#: lib/listudy_web/templates/endgame/game.html.eex:48
+#, elixir-autogen, elixir-format
 msgid "Try again!"
 msgstr "Tekrar dene!"
 
-#, elixir-format
 #: lib/listudy_web/templates/endgame/game.html.eex:15
+#, elixir-autogen, elixir-format
 msgid "White to play and"
 msgstr "Hamle sırası beyazda ve"
 
-#, elixir-format
 #: lib/listudy_web/templates/endgame/index.html.eex:8
+#, elixir-autogen, elixir-format
 msgid "Learn"
 msgstr "Öğren"
 
-#, elixir-format
 #: lib/listudy_web/templates/endgame/index.html.eex:2
+#, elixir-autogen, elixir-format
 msgid "No idea what to do in the endgame? Learn endgames by playing against stockfish."
 msgstr "Oyunsonlarında ne yapacağınız hakkında bir fikriniz mi yok? Stockfish'e karşı oynayarak oyunsonları öğrenin."
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:326
+#, elixir-autogen, elixir-format
 msgid "Minor pieces against Rook"
 msgstr "At veya File karşı Kale"
 
-#, elixir-format
 #: lib/listudy_web/controllers/endgame_controller.ex:256
+#, elixir-autogen, elixir-format
 msgid "Two minor pieces against one minor piece, with and without pawns."
 msgstr "İki at veya file karşı bir at veya fil, piyonlu ve piyonsuz."

@@ -11,117 +11,118 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2\n"
 
-#, elixir-format
 #: tactics.html.eex:21
+#, elixir-autogen, elixir-format
 msgid "After you have done this click on the button \"Embed\"."
 msgstr "Après cela, cliquez sur le bouton \"Intégrer\"."
 
-#, elixir-format
 #: tactics.html.eex:30
+#, elixir-autogen, elixir-format
 msgid "Automation"
 msgstr "Automatisation"
 
-#, elixir-format
-#: tactics.html.eex:5 lib/listudy_web/templates/webmaster/index.html.eex:9
+#: tactics.html.eex:5
+#: lib/listudy_web/templates/webmaster/index.html.eex:9
+#, elixir-autogen, elixir-format
 msgid "Bring more interactivity to your tactics. Embed your tactics and let users solve them."
 msgstr "Apportez plus d'interactivité à vos tactiques. Intégrez vos tactiques et laissez les utilisateurs les résoudre."
 
-#, elixir-format
 #: tactics.html.eex:22
+#, elixir-autogen, elixir-format
 msgid "Copy the iframe code and paste it into your page."
 msgstr "Copiez le code iframe et collez-le dans votre page."
 
-#, elixir-format
 #: lib/listudy_web/templates/webmaster/index.html.eex:6
+#, elixir-autogen, elixir-format
 msgid "Custom Tactics"
 msgstr "Tactiques personnalisées"
 
-#, elixir-format
 #: tactics.html.eex:1
+#, elixir-autogen, elixir-format
 msgid "Embed Custom Tactics"
 msgstr "Intégrer des tactiques personnalisées"
 
-#, elixir-format
 #: lib/listudy_web/templates/webmaster/index.html.eex:3
+#, elixir-autogen, elixir-format
 msgid "Embed elements of Listudy on your website."
 msgstr "Intégrez des éléments de Listudy sur votre site Web."
 
-#, elixir-format
 #: tactics.html.eex:20
+#, elixir-autogen, elixir-format
 msgid "First you have to create your tactics with the tactic creator."
 msgstr "Vous devez d'abord créer vos tactiques avec le créateur de tactiques."
 
-#, elixir-format
 #: tactics.html.eex:41
+#, elixir-autogen, elixir-format
 msgid "For mobile devices it is recommended to limit the width iframes to 100%. Below you will find the css to achieve that."
 msgstr "Pour les appareils mobiles, il est recommandé de limiter la largeur des iframes à 100 %. Vous trouverez ci-dessous le css pour y parvenir."
 
-#, elixir-format
 #: tactics.html.eex:16
+#, elixir-autogen, elixir-format
 msgid "How to embed your own Tactics"
 msgstr "Comment intégrer vos propres tactiques"
 
-#, elixir-format
 #: tactics.html.eex:38
+#, elixir-autogen, elixir-format
 msgid "Implementation details"
 msgstr "Détails d'implémentation"
 
-#, elixir-format
 #: tactics.html.eex:18
+#, elixir-autogen, elixir-format
 msgid "On the page where you can create your own tactics is an embed button. This button will automatically creates the iframe code that you have to insert on your website."
 msgstr "Sur la page où vous pouvez créer vos propres tactiques se trouve un bouton d'intégration. Ce bouton créera automatiquement le code iframe que vous devrez insérer sur votre site web."
 
-#, elixir-format
 #: tactics.html.eex:33
+#, elixir-autogen, elixir-format
 msgid "The hash is the base64 encoded string which consists of the fen, the moves and the last move."
 msgstr "Le hachage est la chaîne encodée en base64 qui se compose du NFE, des coups et du dernier coup."
 
-#, elixir-format
 #: tactics.html.eex:31
+#, elixir-autogen, elixir-format
 msgid "This process can also be automated. All information needed for tactics are stored in the hash of the embed url."
 msgstr "Ce processus peut également être automatisé. Toutes les informations nécessaires aux tactiques sont stockées dans le hachage de l'URL d'intégration."
 
-#, elixir-format
 #: tactics.html.eex:32
+#, elixir-autogen, elixir-format
 msgid "To generate tactics automatically you can create this hash yourself."
 msgstr "Pour générer automatiquement des tactiques, vous pouvez créer vous-même ce hachage."
 
-#, elixir-format
 #: tactics.html.eex:25
+#, elixir-autogen, elixir-format
 msgid "Use this link to create and embed your tactic:"
 msgstr "Utilisez ce lien pour créer et intégrer votre tactique:"
 
-#, elixir-format
 #: lib/listudy_web/templates/webmaster/index.html.eex:1
+#, elixir-autogen, elixir-format
 msgid "Webmaster"
 msgstr "Webmaster"
 
-#, elixir-format
 #: tactics.html.eex:39
+#, elixir-autogen, elixir-format
 msgid "You can change the standard width and height if you wish. Just make sure that the height is about 80px higher than the width so that the \"x to play\" message fits under the board."
 msgstr "Vous pouvez modifier la largeur et la hauteur standard si vous le souhaitez. Assurez-vous simplement que la hauteur est supérieure d'environ 80 pixels à la largeur afin que le message \"à x de jouer\" s'insère sous le tableau."
 
-#, elixir-format
 #: tactics.html.eex:7
+#, elixir-autogen, elixir-format
 msgid "You can specify the position, what the right moves are and what the last move was."
 msgstr "Vous pouvez spécifier la position, les bons coups et le dernier coup."
 
-#, elixir-format
 #: tactics.html.eex:6
+#, elixir-autogen, elixir-format
 msgid "You have full control over the tactics."
 msgstr "Vous avez un contrôle total sur la tactique."
 
-#, elixir-format
 #: lib/listudy_web/templates/webmaster/index.html.eex:12
+#, elixir-autogen, elixir-format
 msgid "Learn More"
 msgstr "En apprendre plus"
 
-#, elixir-format
 #: tactics.html.eex:26
+#, elixir-autogen, elixir-format
 msgid "Create your own Tactic"
 msgstr "Créer votre propre tactique"
 
-#, elixir-format
 #: tactics.html.eex:35
+#, elixir-autogen, elixir-format
 msgid "The values are each separated by a \";\". The moves must be in san notation and the last move in uci notation."
 msgstr "Les valeurs sont chacune séparées par un \";\". Les coups doivent être en notation standard algébrique et le dernier coup en notation UCI."

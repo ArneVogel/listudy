@@ -11,12 +11,12 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2\n"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/achievements.html.eex:1
+#, elixir-autogen, elixir-format
 msgid "Achievements"
 msgstr "Erfolge"
 
-#, elixir-format
 #: lib/listudy_web/templates/page/achievements.html.eex:2
+#, elixir-autogen, elixir-format
 msgid "Can you get all achievements?"
 msgstr "Können Sie alle Erfolge erzielen?"

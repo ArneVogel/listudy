@@ -10,32 +10,32 @@
 msgid ""
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/templates/player/public.html.eex:13
+#, elixir-autogen, elixir-format
 msgid "%{name} Tactics"
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/templates/player/public.html.eex:9
+#, elixir-autogen, elixir-format
 msgid "Are you better than %{name}?"
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/templates/player/public.html.eex:11
+#, elixir-autogen, elixir-format
 msgid "Play real tactics from %{amount} different games played by %{name}."
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/templates/player/public.html.eex:6
+#, elixir-autogen, elixir-format
 msgid "Tactics by %{name}"
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/live/player_search_live.ex:10
+#, elixir-autogen, elixir-format
 msgid "Players"
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/live/player_search_live.ex:12
+#, elixir-autogen, elixir-format
 msgid "Search"
 msgstr ""

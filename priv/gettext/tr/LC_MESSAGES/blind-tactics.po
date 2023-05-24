@@ -11,92 +11,92 @@ msgstr ""
 "Language: tr\n"
 "Plural-Forms: nplurals=2\n"
 
-#, elixir-format
 #: tactics.html.eex:45
+#, elixir-autogen, elixir-format
 msgid "As soon as you have solved the tactic, the final position is displayed. Did you have the same position in your head?"
 msgstr "Taktiği çözdüğünüzde son pozisyon görüntülenecek. Aklınızda aynı pozisyon mu vardı?"
 
-#, elixir-format
 #: tactics.html.eex:19
+#, elixir-autogen, elixir-format
 msgid "Frozen Board"
 msgstr "Dondurulmuş Tahta"
 
-#, elixir-format
 #: tactics.html.eex:21
+#, elixir-autogen, elixir-format
 msgid "If you click on the position where a piece is positioned you will be shown the possible legal moves. If you then click again on the correct square, the move will be executed and the exercise will continue."
 msgstr "Bir taş bulunan kareye tıkladığınızda yapılabilir hamleler gözükecek. Yapılabilir hamlelerden birini seçtiğinizde o hamle gerçekleşecek ve alıştırma devam edecek."
 
-#, elixir-format
 #: tactics.html.eex:36
+#, elixir-autogen, elixir-format
 msgid "Next to the board you will see the list of moves that have been played since the board was frozen. This list shows the current state of the game and the moves the opponent played."
 msgstr "Tahtanın kenarında bir hamle listesi göreceksiniz. Bu liste, tahta donduğundan bu yana rakibin ve sizin yaptığınız hamleleri ve oyunun mevcut durumunu gösterir."
 
-#, elixir-format
 #: tactics.html.eex:43
+#, elixir-autogen, elixir-format
 msgid "Tactics"
 msgstr "Taktikler"
 
-#, elixir-format
 #: tactics.html.eex:20
+#, elixir-autogen, elixir-format
 msgid "The board is frozen and does not show the current state of the game. This means you do not see the latest state of the board. The pieces are not animated during the tactics. You have to keep the positions of the pieces in your head!"
 msgstr "Tahta donmuş durumda ve oyunun mevcut durumunu göstermiyor. Yani tahtanın son halini görmüyorsunuz. Taktik sırasında taşlar hareketsizdir. Taşların pozisyonlarını aklınızda tutmanız gerekiyor!"
 
-#, elixir-format
 #: tactics.html.eex:35
+#, elixir-autogen, elixir-format
 msgid "The move list"
 msgstr "Hamle listesi"
 
-#, elixir-format
 #: tactics.html.eex:37
+#, elixir-autogen, elixir-format
 msgid "The moves the opponent plays during tactics are added to this list!"
 msgstr "Taktik sırasında rakibin yaptığı hamleler bu listeye eklenir!"
 
-#, elixir-format
 #: tactics.html.eex:8
+#, elixir-autogen, elixir-format
 msgid "Use blind tactics to improve your chess visualisation skills. Solve tactics while seeing the board state of several moves from the past. You are given the representation of the board and the moves that have been made since then, and then you then have to solve the tactical problem by imagining the board and the moves played in your head."
 msgstr "Kör taktikleri kullanarak görsel satranç yeteneklerinizi geliştirin. Taktikleri tahtanın birkaç hamle önceki halini görerek çözün. Tahtanın önceki hali ve şu ana kadar yapılmış hamleleri kullanarak asıl taktiğin bulunduğu pozisyonu gözünüzde canlandırıp taktiği çözmeniz gerekiyor."
 
-#, elixir-format
 #: tactics.html.eex:15
+#, elixir-autogen, elixir-format
 msgid "Using the blind tactics takes getting used to. Here I try to explain it as simple and as clear as possible."
 msgstr "Kör taktiklere alışmak zaman alır. Burada olabildiğince basit ve anlaşılır şekilde açıklamaya çalıştım."
 
-#, elixir-format
 #: tactics.html.eex:44
+#, elixir-autogen, elixir-format
 msgid "Your task is to solve the exercise like with normal tactics. There is only one continuation that is correct."
 msgstr "Amacınız alıştırmayı normal taktikleri çözdüğünüz gibi çözmektir. Sadece bir doğru devam yolu var."
 
-#, elixir-format
 #: tactics.html.eex:25
+#, elixir-autogen, elixir-format
 msgid "different board state"
 msgstr "farklı tahta durumu"
 
-#, elixir-format
 #: tactics.html.eex:32
+#, elixir-autogen, elixir-format
 msgid "move list"
 msgstr "hamle listesi"
 
-#, elixir-format
 #: tactics.html.eex:49
+#, elixir-autogen, elixir-format
 msgid "solved tactic"
 msgstr "çözülmüş taktik"
 
-#, elixir-format
 #: tactics.html.eex:3
+#, elixir-autogen, elixir-format
 msgid "Blind Tactics"
 msgstr "Kör Taktikler"
 
-#, elixir-format
 #: tactics.html.eex:14
+#, elixir-autogen, elixir-format
 msgid "How it works"
 msgstr "Nasıl çalışır"
 
-#, elixir-format
 #: tactics.html.eex:4
+#, elixir-autogen, elixir-format
 msgid "Improve your chess visualization skills"
 msgstr "Görsel satranç yeteneğinizi geliştirin"
 
-#, elixir-format
 #: tactics.html.eex:11
+#, elixir-autogen, elixir-format
 msgid "Play Now!"
 msgstr "Şimdi Oyna!"
