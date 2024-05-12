@@ -23,7 +23,14 @@
 <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
 <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/play_stockfish.js") %>"></script>
 
-<%= render ListudyWeb.BookView, "thumb.html", Map.put(assigns, :book, @book) %>
+<!-- listudy-test -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6706752364351336"
+     data-ad-slot="7962822632"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+
 <p>
   <b><%= dgettext "play_stockfish", "Play against Stockfish:" %></b>
   <%= dgettext "play_stockfish", "learn with the best chess engine." %>
