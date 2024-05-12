@@ -1,0 +1,14 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "elixir": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#elixir",
+      "source": "nixpkg"
+    },
+    "nodejs": {
+      "plugin_version": "0.0.2",
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#nodejs",
+      "source": "nixpkg"
+    }
+  }
+}
