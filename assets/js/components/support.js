@@ -33,14 +33,17 @@ function askForConsent() {
     let allAds = createButton('Allow all Ads', 'primary', () => {
         storeResponse('all');
         document.getElementById('cookieConsent').remove();
+        updateSupport();
     });
     let nonPersonalizedAds = createButton('Allow non-personalized ads', 'secondary', () => {
         storeResponse('non-personalized');
         document.getElementById('cookieConsent').remove();
+        updateSupport();
     });
     let disableAds = createButton('Disable Ads', 'tertiary', () => {
         storeResponse('disable');
         document.getElementById('cookieConsent').remove();
+        updateSupport();
     });
     
     
@@ -62,6 +65,18 @@ function askForConsent() {
 
 if (localStorage.getItem('cookieConsent') === null) {
     askForConsent();
+} else {
+    updateSupport();
 }
 
-
+function updateSupport() {
+    if (localStorage.getItem('cookieConsent') === 'disable') {
+        console.log('Ads disabled');
+    }
+    if (localStorage.getItem('cookieConsent') === 'all') {
+        (adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=0;
+    }
+    if (localStorage.getItem('cookieConsent') === 'non-personalized') {
+        (adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;
+    }
+}
