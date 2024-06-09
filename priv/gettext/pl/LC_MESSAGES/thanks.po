@@ -1,0 +1,57 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: pl\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/thanks.html.eex:1
+msgid "Thank you!"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/thanks.html.eex:29
+msgid "Thanks to %{cburnett}, Armando Hernandez Marroquin, %{chessnut}, %{letter}, %{pirouetti}, %{pixel}, %{shapes} for their piece sets."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/thanks.html.eex:21
+msgid "Thanks to %{jeff} for %{chessjs}."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/thanks.html.eex:13
+msgid "Thanks to %{lichess} for all their work. In particular for making studies, their puzzle database (%{database_link}), %{chessground}, and their freely avaliable icons."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/thanks.html.eex:17
+msgid "Thanks to %{niklas} for %{stockfish}."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/thanks.html.eex:6
+msgid "Thanks to all %{contributors}."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/thanks.html.eex:8
+msgid "Thanks to all those who have provided translations."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/thanks.html.eex:2
+msgid "Thanks to all who have helped directly on Listudy and to all projects that make code and other content openly available. Without this help Listudy could not exist in this form."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/page/thanks.html.eex:34
+msgid "Thanks to the authors of %{elixir} and %{phoenix}."
+msgstr ""
