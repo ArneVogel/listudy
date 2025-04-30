@@ -24,7 +24,8 @@ defmodule ListudyWeb.Router do
   end
 
   pipeline :stockfish do
-    plug ListudyWeb.Plugs.Stockfish
+    #plug ListudyWeb.Plugs.Stockfish
+    plug ListudyWeb.Plugs.AllowIframe
   end
 
   pipeline :logged_in do

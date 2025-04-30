@@ -65,6 +65,3 @@
     <meta name="msapplication-TileColor" content="#2b5797">
     <meta name="theme-color" content="#ffffff">
     <%# Favicon end %>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6706752364351336" crossorigin="anonymous"></script>
-<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=1;</script>
