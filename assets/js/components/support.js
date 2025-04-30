@@ -64,7 +64,7 @@ function askForConsent() {
 }
 
 if (localStorage.getItem('cookieConsent') === null) {
-    askForConsent();
+    //askForConsent(); // do not ask for consent because we do not use ads any longer
 } else {
     updateSupport();
 }
