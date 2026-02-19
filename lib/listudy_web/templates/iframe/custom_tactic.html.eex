@@ -1,0 +1,70 @@
+<div class="with_sidebar">
+  <div id="game_container" class="sidebar_main">
+    <%= render ListudyWeb.ComponentView, "chessground.html" %>
+  </div>
+
+<div class="">
+  <span id="success" class="hidden">
+    <span id="success_symbol"></span>
+    <b id="success_bold"></b>
+    <span id="success_text"></span>
+  </span>
+</div>
+<div class="">
+  <span id="info" class="hidden">
+    <span id="info_symbol"></span>
+    <b id="info_bold"></b>
+    <span id="info_text"></span>
+  </span>
+</div>
+<div class="">
+  <span id="error" class="hidden">
+    <span id="error_symbol"></span>
+    <b id="error_bold"></b>
+    <span id="error_text"></span>
+  </span>
+</div>
+
+<span class="float_right">Powered by: <a target="_blank" rel="noopener" href="https://listudy.org<%= Routes.page_path(@conn, :index, @locale) %>">listudy.org</a></span>
+<p></p>
+
+</div>
+
+<link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
+<script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/tactics.js") %>"></script>
+<form class="hidden">
+  <input type="text" id="fen" value="">
+  <input type="text" id="color" value="">
+  <input type="text" id="moves" value="">
+  <input type="text" id="last_move" value="">
+</form>
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
+<%# CAREFUL! the hash is user supplies and its values can only be used in %>
+<%# save javascript functions! %>
+function clean_input(i) {
+  if (i == undefined) {
+    return "";
+  }
+  // this function is used to remove non wanted characters from the decoded hash
+  // probably also remove xss vulnerabilities if input was used in unsafe functions, but
+  // this does NOT replace the need to not use the input in unsafe function calls
+  return i.replace(/[^a-zA-Z0-9-_#+!= /]/g, '');
+}
+
+// atob => base64 decode the hash
+let t = atob(document.location.hash.slice(1)).split(";");
+let fen = clean_input(t[0]);
+let color = clean_input(t[0]).split(" ")[1];
+if (color == "b") {
+  color = "black";
+} else {
+  color = "white";
+}
+let moves = clean_input(t[1]);
+let last_move = clean_input(t[2]) || "";
+// tactics.js loads the data from the form so we have to populate it
+document.getElementById("fen").value = fen;
+document.getElementById("color").value = color;
+document.getElementById("moves").value = moves;
+<%= render ListudyWeb.TacticView, "translations.html" %>
+</script>

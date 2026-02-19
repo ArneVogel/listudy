@@ -15,38 +15,19 @@ import "../css/app.scss"
 //
 import "phoenix_html"
 
-document.getElementById("toggle_dark_mode").onclick = function() {
-    let theme = localStorage.getItem("data-theme") == "light" ? "dark" : "light";
-    localStorage.setItem("data-theme", theme);
-    document.documentElement.setAttribute('data-theme', theme);
-}
 
-/*
- * Setup share links if an element with id "share" exists on the page
- */
-function social_links() {
-    let div = document.getElementById("share");
-    if (div == undefined) {
-        return;
-    }
-    let url = window.location.href;
-    let sites = ["twitter", "reddit", "facebook"];
-    let urls = [`https://twitter.com/intent/tweet?text=${url}`, `https://www.reddit.com/submit?url=${url}`, `https://www.facebook.com/sharer/sharer.php?u=${url}`];
+import "./components/modal.js"
+import "./components/sound_settings.js"
+import "./components/achievements.js"
+import "./components/hamburger.js"
+import "./components/chessboard_settings.js"
+import "./components/support.js"
 
-    for (let i = 0; i < sites.length; ++i) {
-        let button = document.createElement("button");
-        button.textContent = translation_share_on + " " + sites[i];
-
-        let link = document.createElement("a");
-        link.href = urls[i];
-        link.rel = "nofollow noopener noreferrer";
-        link.appendChild(button);
-        div.appendChild(link);
+let toggle = document.getElementById("toggle_dark_mode");
+if (toggle != null) {
+    toggle.onclick = function() {
+        let theme = localStorage.getItem("data-theme") == "light" ? "dark" : "light";
+        localStorage.setItem("data-theme", theme);
+        document.documentElement.setAttribute('data-theme', theme);
     }
 }
-
-const load = () => {
-    social_links();
-}
-
-window.onload = load;

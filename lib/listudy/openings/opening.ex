@@ -8,15 +8,18 @@ defmodule Listudy.Openings.Opening do
     field :moves, :string
     field :name, :string
     field :slug, :string
+    field :fen, :string
+    field :uci_moves, :string
 
+    has_many :opening_faq, Listudy.OpeningFaqs.OpeningFaq
     timestamps()
   end
 
   @doc false
   def changeset(opening, attrs) do
     opening
-    |> cast(attrs, [:name, :slug, :description, :eco, :moves])
-    |> validate_required([:name, :slug, :description, :eco, :moves])
+    |> cast(attrs, [:name, :slug, :description, :eco, :moves, :fen, :uci_moves])
+    |> validate_required([:name, :slug, :description, :eco, :moves, :fen, :uci_moves])
     |> unique_constraint(:name)
     |> unique_constraint(:slug)
   end

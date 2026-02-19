@@ -1,14 +1,14 @@
-<h1><%= gettext "Statistics" %></h1>
-<p><%= gettext "If you're like me, you can't get enough of stats. Here you can find statistics about Listudy:" %></p>
+<h1><%= dgettext("statistics", "Statistics") %></h1>
+<p><%= dgettext("statistics", "If you're like me, you can't get enough of stats. Here you can find statistics about Listudy:") %></p>
 <div class="row">
   <div class="one-half column">
-    <h1><%= gettext "Uploaded Studies" %></h1>
+    <h1><%= dgettext("statistics", "Uploaded Studies") %></h1>
     <%= for [month,count]<- @studies do %>
       <p><%= month(month) %> : <%= count %></p>
     <% end %>
   </div>
   <div class="one-half column">
-    <h1><%= gettext "User Registrations" %></h1>
+    <h1><%= dgettext("statistics", "User Registrations") %></h1>
     <%= for [month,count]<- @users do %>
       <p><%= month(month) %> : <%= count %></p>
     <% end %>

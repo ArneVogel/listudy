@@ -1,0 +1,31 @@
+.TextOverlay {
+    max-width: 25ch;
+    width: max-content;
+    border-radius: 50%;
+    position: absolute;
+    padding: 13px;
+    text-align: center;
+    z-index: 10;
+    border: 1px solid black;
+    font-size: 0.8em;
+
+    /* Center it on its position */
+    -webkit-transform: translate(-50%, -110%);
+    -moz-transform: translate(-50%, -110%);
+    -ms-transform: translate(-50%, -110%);
+    -o-transform: translate(-50%, -110%);
+    transform: translate(-50%, -110%);
+
+    /* Make it non-selectable */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+.TextOverlayInfo {
+    background: rgb(255, 255, 255, 0.85);
+    color: rgb(78, 48, 48);
+}

@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'bungee-outline';
+    src: url('/css/fonts/bungee-outline/BungeeOutline-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family:'bungee-outline';
+}
+
+h1::before {
+    content: "🥳";
+}
+h1::after {
+    content: "🎉";
+}

@@ -1,0 +1,51 @@
+<ul class="breadcrumb">
+  <li><a href="<%= Routes.endgame_path(@conn, :index, @locale) %>"><%= dgettext("endgame", "Endgames") %></a></li>
+  <li><a href="<%= Routes.endgame_path(@conn, :chapter, @locale, @chapter_slug) %>"><%= @chapter.name %></a></li>
+  <li><%= "#{@subchapter.name} #{@index}" %></li>
+</ul> 
+
+
+<div class="with_sidebar">
+  <div id="game_container" class="sidebar_main">
+    <%= render ListudyWeb.ComponentView, "chessground.html" %>
+  </div>
+  <div class="sidebar">
+    <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
+
+    <p id="todo"><%= dgettext("endgame", "White to play and") %> <span id="target"></span></p>
+
+    <div id="progress_container">
+      <div class="progress-bar">
+          <span id="progress" class="progress-bar-fill"></span>
+      </div>
+      <span id="progress_reason"></span>
+      <br>
+    </div>
+
+    <a class="icon" data-icon="." id="reset"><%= dgettext("endgame", "Reset") %></a>
+
+    <%= if @next == "back" do %>
+      <%= raw next_button(Routes.endgame_path(@conn, :chapter, @locale, @chapter_slug)) %>
+    <% else %>
+      <%= raw next_button(Routes.endgame_path(@conn, :game, @locale, @chapter_slug, @subchapter_slug, @next)) %>
+    <% end %>
+
+  </div>
+</div>
+
+<p>Fen: <input id="display_fen"></input> <a id="copy_fen">Copy</a> <a id="lichess_analysis">Lichess Analysis</p></p>
+<script src="/stockfish/stockfish.js"></script>
+
+<% [fen,result] = @game %>
+
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
+  let fen = "<%= fen %>";
+  let target_result = "<%= result %>";
+  let id = "<%= @chapter_slug %>_<%= @subchapter_slug %>_<%= @index %>";
+
+  let i18n = {};
+  i18n.success = "<%= dgettext("endgame", "Success!") %>";
+  i18n.error = "<%= dgettext("endgame", "Try again!") %>";
+</script>
+<link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
+<script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/endgames.js") %>"></script>

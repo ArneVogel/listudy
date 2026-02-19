@@ -1,0 +1,63 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: vi\n"
+"Plural-Forms: nplurals=1\n"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:47
+msgid "Explore our collection of tactics taken from games by %{name}."
+msgstr "Khám phá bộ sưu tập chiến thuật của chúng tôi lấy từ các ván cờ theo %{name}"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:27
+msgid "Get better at %{name} tactics with our huge library of puzzles taken from real games. Explore our free collection of %{name} tactics."
+msgstr "Làm tốt hơn ở chiến thuật %{name} với thư viện câu đố khổng lồ của chúng tôi lấy từ các ván cờ thực. Khám phá bộ sưu tập miễn phí của chúng tôi về chiến thuật %{name}."
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:74
+msgid "Get better in the %{name} opening. Study the opening and learn from traps and tactics collected from real games."
+msgstr "Làm tốt hơn trong khai cuộc %{name}. Nghiên cứu khai cuộc và học hỏi từ bẫy và chiến thuật thu thập từ các ván cờ thực."
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:126
+msgid "Improve your chess game on Listudy"
+msgstr "Cải thiện cờ vua của bạn trên Listudy"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:93
+msgid "Learn chess endgames interactively playing against Stockfish"
+msgstr "Học tàn cuộc tương tác chơi chống Stockfish"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:15
+msgid "Play against Stockfish Online - Unlimited and for Free"
+msgstr "Chơi chống Stockfish Trực tuyến - Không giới hạn và miễn phí"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:35
+msgid "Play tactics from the event %{}. Are you better than the professionals?"
+msgstr "Chơi chiến thuật từ sự kiện %{}. Bạn có giỏi hơn các chuyên gia không?"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:24
+msgid "Search for studies to train specific openings"
+msgstr "Tìm kiếm các bài học để tập các khai cuộc cụ thể"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:8
+msgid "Solve the Daily Chess Puzzle! Updated every day from our list of best puzzles."
+msgstr "Giải câu đố hàng ngày! Cập nhật mỗi ngày từ danh sách các câu đố hay nhất của chúng tôi."
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:60
+msgid "A chess book recommendation by %{player}"
+msgid_plural "%{count} chess book recommendations by %{player}"
+msgstr[0] "%{count} sách cờ được đề xuất bởi %{player}"

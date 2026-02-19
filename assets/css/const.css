@@ -1,0 +1,14 @@
+:root {
+    --small-border-radius: 5px;
+
+    --shadow-color-20: rgba(0, 0, 0, .20);
+    --shadow-color-15: rgba(0, 0, 0, .15);
+    --shadow-color-10: rgba(0, 0, 0, .10);
+    --shadow-color-05: rgba(0, 0, 0, .05);
+    --xs-shadow: 0 1px 3px var(--shadow-color-10), 0 1px 2px var(--shadow-color-20);
+    --s-shadow: 0 3px 6px var(--shadow-color-15), 0 2px 4px var(--shadow-color-10);
+    --m-shadow: 0 10px 20px var(--shadow-color-15), 0 3px 6px var(--shadow-color-10);
+    --l-shadow: 0 15px 25px var(--shadow-color-15), 0 5px 10px var(--shadow-color-05);
+    --xl-shadow: 0 20px 40px var(--shadow-color-20);
+}
+

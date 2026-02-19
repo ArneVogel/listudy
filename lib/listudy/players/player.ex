@@ -8,6 +8,8 @@ defmodule Listudy.Players.Player do
     field :slug, :string
     field :title, :string
 
+    has_many :expert_recommendation, Listudy.ExpertRecommendations.ExpertRecommendation
+
     timestamps()
   end
 

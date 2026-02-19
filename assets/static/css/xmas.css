@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'dancing-script';
+    src: url('/css/fonts/dancing-script/static/DancingScript-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family:'dancing-script';
+}
+
+h1::before {
+  content: "🎄";
+}
+h1::after {
+  content: "🎄";
+}

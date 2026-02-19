@@ -1,0 +1,53 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: de\n"
+"Plural-Forms: nplurals=2\n"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:74
+#, elixir-autogen, elixir-format
+msgid "Continue"
+msgstr "Fortfahren"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:63
+#, elixir-autogen, elixir-format
+msgid "Cost"
+msgstr "Kosten"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:57
+#, elixir-autogen, elixir-format
+msgid "Get help by"
+msgstr "Hilfe erhalten durch"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:40
+#, elixir-autogen, elixir-format
+msgid "Rating Points"
+msgstr "Bewertungspunkte"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:42
+#: lib/listudy_web/templates/live/chessclicker.html.leex:64
+#, elixir-autogen, elixir-format
+msgid "Rating points per second"
+msgstr "Bewertungspunkte pro Sekunde"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:43
+#, elixir-autogen, elixir-format
+msgid "Rating points per solved tactic"
+msgstr "Bewertungspunkte pro gelöster Taktikaufgabe"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:65
+#, elixir-autogen, elixir-format
+msgid "Rating points per tactic solved"
+msgstr "Bewertungspunkte pro gelöster Taktikaufgabe"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:63
+#, elixir-autogen, elixir-format
+msgid "rating points"
+msgstr "Bewertungspunkte"

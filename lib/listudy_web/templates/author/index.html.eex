@@ -1,0 +1,30 @@
+<h1>Listing Authors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Slug</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for author <- @authors do %>
+    <tr>
+      <td><%= author.name %></td>
+      <td><%= author.slug %></td>
+      <td><%= author.description %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.author_path(@conn, :show, author) %></span>
+        <span><%= link "Edit", to: Routes.author_path(@conn, :edit, author) %></span>
+        <span><%= link "Delete", to: Routes.author_path(@conn, :delete, author), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Author", to: Routes.author_path(@conn, :new) %></span>

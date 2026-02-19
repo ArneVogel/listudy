@@ -2,7 +2,7 @@ const path = require('path');
 const glob = require('glob');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('css-minimizer-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, options) => {
@@ -21,6 +21,10 @@ module.exports = (env, options) => {
       'tactics': glob.sync('./vendor/**/*.js').concat(['./js/tactics.js']),
       'chessclicker': glob.sync('./vendor/**/*.js').concat(['./js/chessclicker.js']),
       'blind_tactics': glob.sync('./vendor/**/*.js').concat(['./js/blind_tactics.js']),
+      'pieceless_tactics': glob.sync('./vendor/**/*.js').concat(['./js/pieceless_tactics.js']),
+      'play_stockfish': glob.sync('./vendor/**/*.js').concat(['./js/play_stockfish.js']),
+      'endgames': glob.sync('./vendor/**/*.js').concat(['./js/endgames.js']),
+      'remember_lichess_study': glob.sync('./vendor/**/*.js').concat(['./js/remember_lichess_study.js']),
       'study': glob.sync('./vendor/**/*.js').concat(['./js/study.js'])
     },
     output: {
@@ -50,7 +54,13 @@ module.exports = (env, options) => {
     },
     plugins: [
       new MiniCssExtractPlugin({ filename: '../css/[name].css' }),
-      new CopyWebpackPlugin([{ from: 'static/', to: '../' }])
+      new CopyWebpackPlugin(
+          {
+              patterns: [
+                  { from: 'static/', to: '../' }
+              ]
+          }
+      )
     ]
   }
 };

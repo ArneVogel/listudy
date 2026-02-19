@@ -9,25 +9,25 @@ function legal_moves_san(c) {
     return c.moves()
 }
 
-function legal_moves_from_to(c) {
+function legal_moves_uci(c) {
     let moves = [];
-    for (let m of c.moves()) {
-        let move_result = c.move(m);
-        moves.push({from: move_result.from, to: move_result.to});
-        c.undo();
+    for (let m of c.moves({verbose: true})) {
+        moves.push({from: m.from, to: m.to});
     }
     return moves;
 }
 
 // the legal moves in the format that chessground can use
 function ground_legal_moves(c) {
-    let ft = legal_moves_from_to(c);
-    let moves = {};
+    let ft = legal_moves_uci(c);
+    let moves = new Map();
     for (let m of ft) {
-        if (moves[m.from] == undefined) {
-            moves[m.from] = [m.to];
+        if (!moves.has(m.from)) {
+            moves.set(m.from, [m.to]);
         } else {
-            moves[m.from].push(m.to);
+            let t = moves.get(m.from);
+            t.push(m.to);
+            moves.set(m.from, t);
         }
     }
     return moves;
@@ -38,19 +38,52 @@ function ground_legal_moves(c) {
  * to SAN notation (Nc3) 
  * iff the move is legal in the chess position 
  */
-function from_to_to_san(chess, from, to) {
+function uci_to_san(chess, from, to) {
     let move = chess.move({from:from, to:to, promotion: 'q'});
     chess.undo();
     return move.san;
 }
 
 /*
- * Reverse of from_to_to_san
+ * Reverse of uci_to_san
  */
-function san_to_from_to(chess, san) {
+function san_to_uci(chess, san) {
     let move = chess.move(san);
     chess.undo();
     return {from: move.from, to: move.to};
+}
+
+function get_color_from_cal(cal) {
+    let c = cal[0];
+    switch (c) {
+        case "G":
+            return "green";
+        case "R":
+            return "red";
+        case "Y":
+            return "yellow";
+        case "B":
+        default:
+            return "blue";
+    }
+}
+
+function cal_to_ucistr(cal) {
+    return cal.substr(1,4);
+}
+
+// cal ex "Ye2e4" to ftc {from, to, color}
+function cal_to_ftc(cal) {
+    return {
+        from: cal.substr(1,2),
+        to: cal.substr(3,2),
+        color: get_color_from_cal(cal)
+    }
+}
+
+function move_to_ucistr(m) {
+    let uci = san_to_uci(chess, m.move);
+    return "" + uci.from + uci.to;
 }
 
 /*
@@ -67,6 +100,18 @@ function turn_color(chess) {
     console.log("Chess.js;turn_color; Color is neither b nor w.")
     return "white";
 }
+
+function non_turn_color(chess) {
+    return turn_color(chess) == "white" ? "black" : "white";
+}
+
+function initial_fen(chess) {
+    let pgn = chess.pgn();
+    let fen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+    try {
+        fen = pgn.split("FEN")[1].split("\"")[1];
+    } catch (error) {}
+    return fen;
+}
  
- 
-export { turn_color, san_to_from_to, from_to_to_san, setup_chess, ground_legal_moves };
+export { turn_color, san_to_uci, uci_to_san, setup_chess, ground_legal_moves, initial_fen, non_turn_color, get_color_from_cal, cal_to_ucistr, cal_to_ftc, move_to_ucistr };

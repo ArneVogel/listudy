@@ -4,28 +4,32 @@
   "license": "MIT",
   "scripts": {
     "deploy": "webpack --mode production",
-    "watch": "webpack --mode development --watch"
+    "watch": "webpack --mode development --watch",
+    "test": "npx codeceptjs run-workers 5 -c test/codecept.conf.js"
   },
   "dependencies": {
     "chess.js": "^0.10.3",
-    "chessground": "^7.6.12",
-    "pgn-parser": "^2.0.0",
+    "chessground": "^8.3.5",
+    "pgn-parser": "^2.1.1",
     "phoenix": "file:../deps/phoenix",
     "phoenix_html": "file:../deps/phoenix_html",
-    "phoenix_live_view": "file:../deps/phoenix_live_view"
+    "phoenix_live_view": "file:../deps/phoenix_live_view",
+    "playwright": "^1.9.1",
+    "stockfish.wasm": "^0.10.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "babel-loader": "^8.0.0",
-    "copy-webpack-plugin": "^5.1.1",
-    "css-loader": "^3.4.2",
-    "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.13.1",
-    "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "sass-loader": "^8.0.2",
-    "terser-webpack-plugin": "^2.3.2",
-    "webpack": "4.41.5",
-    "webpack-cli": "^3.3.2"
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.8",
+    "babel-loader": "^8.2.2",
+    "codeceptjs": "^3.3.6",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.1",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "sass": "^1.53.0",
+    "sass-loader": "^13.0.1",
+    "terser-webpack-plugin": "^2.3.8",
+    "webpack": "5.74.0",
+    "webpack-cli": "4.10.0"
   }
 }

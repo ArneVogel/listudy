@@ -1,0 +1,42 @@
+<div class="with_sidebar">
+  <div id="game_container" class="sidebar_main">
+    <%= render ListudyWeb.ComponentView, "chessground.html" %>
+  </div>
+  <div class="sidebar">
+    <h2><%= dgettext "tactics", "Pieceless Tactic"%> <%= @pieceless_tactic.id %></h2>
+
+    <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
+    
+    <div id="info">
+      <% color = "<span id=\"pieceless_to_play\"></span>" %>
+      <p><%= raw dgettext("tactics", "%{color} to play.", color: color) %></p>
+      <div id="pieceless_pieces"></div>
+      <p id="history_container" class="hidden"><%= dgettext("tactics", "History") %>: <span id="history"></span></p>
+
+      <a href="<%= Routes.pieceless_tactic_path(@conn, :random, @locale, @pieceless_tactic.id) %>">
+        <button id="next" class="hidden continue_button"><%= dgettext "tactics", "Continue"%></button>
+      </a>
+
+      <a class="icon" data-icon="-" id="give-up"><%= dgettext("tactics", "Give up") %></a>
+    </div>
+    <br>
+    <br>
+    <a class="pieceless_info" href="<%= Routes.page_path(@conn, :features, @conn.assigns.locale, "pieceless-tactics") %>#help"><%= dgettext("tactics", "[Help] How pieceless tactics work.") %></a>
+  </div>
+</div>
+
+<link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
+<link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/features/pieceless.css") %>"/>
+<script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/pieceless_tactics.js") %>"></script>
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
+let fen = "<%= @pieceless_tactic.fen %>";
+let solution = "<%= @pieceless_tactic.solution %>";
+
+let i18n = {};
+i18n.success = "<%= dgettext "tactics", "Tactic solved!"%>";
+i18n.wrong_move = "<%= dgettext "tactics", "Wrong Move"%>";
+i18n.right_move = "<%= dgettext "tactics", "Correct move, there are still more moves." %> ";
+i18n.solved = "<%= dgettext "tactics", "Solved!" %> ";
+i18n.white = "<%= dgettext "tactics", "White" %> ";
+i18n.black = "<%= dgettext "tactics", "Black" %> ";
+</script>

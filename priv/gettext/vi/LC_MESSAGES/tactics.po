@@ -1,0 +1,445 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: vi\n"
+"Plural-Forms: nplurals=1\n"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/translations.html.eex:5
+msgid "Best Move!"
+msgstr "Nước cờ tốt nhất!"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:12
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:39
+msgid "Black"
+msgstr "Quân đen"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:6
+msgid "Blind Tactic"
+msgstr "chiến thuật mù"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:17
+#: lib/listudy_web/templates/live/tactics.html.leex:9 lib/listudy_web/templates/pieceless_tactic/public.html.eex:17
+#: lib/listudy_web/templates/tactic/tactic.html.eex:11
+msgid "Continue"
+msgstr "Tiếp tục"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/custom.html.eex:100
+msgid "Create"
+msgstr "Tạo"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/custom.html.eex:6
+msgid "Custom Tactic"
+msgstr "Chiến thuật tùy chỉnh"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/custom.html.eex:106
+#: lib/listudy_web/templates/tactic/custom.html.eex:113
+msgid "Embed"
+msgstr "Nhúng"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/custom.html.eex:103
+msgid "Embed this Tactic"
+msgstr "Nhúng chiến thuật này"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/custom.html.eex:90
+msgid "FEN"
+msgstr "FEN"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/translations.html.eex:9
+msgid "Find the best move for black."
+msgstr "Tìm nước tốt nhất cho đen."
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/translations.html.eex:8
+msgid "Find the best move for white."
+msgstr "Tìm nước tốt nhất cho trắng."
+
+#, elixir-format
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:23
+msgid "How many plies should be hidden? (Updates next Tactic)"
+msgstr "Có bao nhiêu plies nên được giấu? (Cập nhật chiến thuật tiếp theo)"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:11
+msgid "In this position the following moves were played:"
+msgstr "Ở vị trí này, các nước đi sau đây đã được chơi:"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/translations.html.eex:6
+msgid "Keep going..."
+msgstr "Tiếp tục đi..."
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/translations.html.eex:4
+msgid "Keep trying!"
+msgstr "Tiếp tục cố gắng!"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/custom.html.eex:96
+msgid "Last Move"
+msgstr "Nước đi cuối cùng"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/custom.html.eex:105
+msgid "Learn more"
+msgstr "Học thêm"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/custom.html.eex:88
+msgid "Make your own Tactic"
+msgstr "Thực hiện chiến thuật của riêng bạn"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/custom.html.eex:11
+msgid "More Tactics"
+msgstr "Thêm chiến thuật"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/custom.html.eex:93
+msgid "Moves"
+msgstr "Các nước đi"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/tactics.html.leex:6
+#: lib/listudy_web/templates/tactic/tactic.html.eex:6
+msgid "Tactic"
+msgstr "Chiến thuật"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:44
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:34 lib/listudy_web/templates/tactic/translations.html.eex:2
+msgid "Tactic solved!"
+msgstr "Chiến thuật đã được giải!"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/custom.html.eex:104
+msgid "Use this tactic on your website. Creates an iframe that you can use on you website to share this tactic."
+msgstr "Sử dụng chiến thuật này trên trang web của bạn. Tạo một iframe mà bạn có thể sử dụng trên trang web của mình để chia sẻ chiến thuật này."
+
+#, elixir-format
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:12
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:38
+msgid "White"
+msgstr "Quân trắng"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:45
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:35
+msgid "Wrong Move"
+msgstr "Nước đi sai"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/translations.html.eex:3
+msgid "Wrong Move."
+msgstr "Nước đi sai"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/translations.html.eex:7
+msgid "Your turn."
+msgstr "Đến lượt bạn."
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/custom.html.eex:114
+msgid "iframe code"
+msgstr "iframe code"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:13
+msgid "to play and win."
+msgstr "hãy chơi và thắng."
+
+#, elixir-format
+#: lib/listudy_web/templates/event/public.html.eex:13
+#: lib/listudy_web/templates/motif/public.html.eex:8 lib/listudy_web/templates/motif/public.html.eex:14
+#: lib/listudy_web/templates/opening/public.html.eex:44
+msgid "%{name} Tactics"
+msgstr "%{name} chiến thuật"
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:34
+msgid "%{name} Traps and Tactics"
+msgstr "%{name} bẫy và chiến thuật"
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:8
+msgid "%{opening} after the moves %{moves}"
+msgstr "%{opening} sau khi đi %{moves}"
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:9
+msgid "Chessboard showing the %{opening} with the moves %{moves} played"
+msgstr "Bàn cờ hiển thị %{opening} với các nước đi %{moves} được chơi"
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:12
+msgid "Contents"
+msgstr "Nội dung"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/tactic.html.eex:28
+msgid "Currently playing tactics by:"
+msgstr "Hiện tại đang chơi chiến thuật:"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/tactic.html.eex:25
+msgid "Currently playing tactics from the event:"
+msgstr "Hiện tại đang chơi chiến thuật từ sự kiện:"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/tactic.html.eex:22
+msgid "Currently training in the motif:"
+msgstr "Hiện đang được tập theo mô típ:"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/tactic.html.eex:19
+msgid "Currently training in the opening:"
+msgstr "Tập trong Khai cuộc"
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:59
+msgid "Do you want to try out the %{name}? Train this opening against Stockfish."
+msgstr "Bạn có muốn thử %{name}? Tập khai cuộc này chống lại Stockfish."
+
+#, elixir-format
+#: lib/listudy_web/templates/motif/public.html.eex:10
+msgid "Get better at %{name} by solving tactics."
+msgstr "Trở nên tốt hơn trong %{name} bằng cách giải các chiến thuật."
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:38
+msgid "Get better in the %{name} opening by practicing tactics taken from the early game."
+msgstr "Trở nên tốt hơn trong %{name} khai cuộc bằng cách thực hành các chiến thuật lấy từ trận đấu sớm."
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:27
+msgid "Learn the %{opening} using public studies."
+msgstr "Học %{opening} sử dụng các bài học công cộng."
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:14
+msgid "Learn the Opening"
+msgstr "Học khai cuộc"
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:19
+#: lib/listudy_web/templates/opening/public.html.eex:47
+msgid "Play against Stockfish"
+msgstr "Chơi chống lại Stockfish"
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:60
+msgid "Play against Stockfish either as white or black and explore the opening."
+msgstr "Chơi chống lại Stockfish hoặc với quân trắng hoặc với đen và khám phá khai cuộc."
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:55
+msgid "Play against the %{name}"
+msgstr "Chơi chống lại %{name}"
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:51
+msgid "Play the %{name}"
+msgstr "Chơi %{name}"
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:40
+msgid "Recognize traps and mistakes of your opponents and exploit them."
+msgstr "Nhận ra bẫy và sai lầm của đối thủ và khai thác chúng."
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:17
+msgid "Solve Traps and Tactics"
+msgstr "Giải quyết bẫy và chiến thuật"
+
+#, elixir-format
+#: lib/listudy_web/templates/opening/public.html.eex:26
+msgid "Studies about the %{opening}"
+msgstr "Các bài học về %{opening}"
+
+#, elixir-format
+#: lib/listudy_web/templates/motif/public.html.eex:12
+msgid "Train real tactics from %{amount} different games."
+msgstr "Rèn luyện chiến thuật thực sự từ %{amount} các ván cờ khác nhau."
+
+#, elixir-format
+#: lib/listudy_web/templates/event/public.html.eex:11
+#: lib/listudy_web/templates/opening/public.html.eex:42
+msgid "Train tactics from %{amount} different games."
+msgstr "Chiến thuật tập từ %{amount} các ván cờ khác nhau."
+
+#, elixir-format
+#: lib/listudy_web/templates/event/public.html.eex:9
+msgid "Solve tactics from games played at %{name}."
+msgstr "Giải quyết chiến thuật từ các ván cờ  được chơi tại%{name}."
+
+#, elixir-format
+#: lib/listudy_web/templates/event/public.html.eex:6
+msgid "Traps and Tactics from %{name}"
+msgstr "Bẫy và chiến thuật từ %{name}"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/daily.html.eex:1
+msgid "Daily Chess Puzzle"
+msgstr "Câu đố hàng ngày"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/daily.html.eex:10
+msgid "Random Tactic"
+msgstr "Chiến thuật ngẫu nhiên"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/daily.html.eex:8
+msgid "Solve more tactics:"
+msgstr "Giải quyết thêm chiến thuật:"
+
+#, elixir-format
+#: lib/listudy_web/templates/tactic/daily.html.eex:6
+msgid "Solve the daily chess puzzle. Improve your chess skills every day one tactic at a time."
+msgstr "Giải câu đố hàng ngày. Cải thiện kỹ năng cờ vua của bạn với mỗi ngày một chiến thuật, hết chiến thuật này đến chiến thuật khác."
+
+#, elixir-format
+#: lib/listudy_web/live/motif_search_live.ex:10
+msgid "Motifs"
+msgstr "Môtíp"
+
+#, elixir-format
+#: lib/listudy_web/live/motif_search_live.ex:12
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:46
+msgid "Correct move, there are still more moves. They replied with"
+msgstr "Nước đi chính xác, vẫn còn nhiều nước đi hơn. Họ trả lời với"
+
+#, elixir-format
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:12
+msgid "%{color} to play."
+msgstr "%{color} chơi."
+
+#, elixir-format
+#: tactics.html.eex:7
+msgid "All the pieces have disappeared! There is only a list of where the pieces should be next to the board. Can you visualize the position well enough in your head to solve the tactic?"
+msgstr "Tất cả các quân cờ đã biến mất! Chỉ có một danh sách các quân cờ nên ở đâu bên cạnh bàn cờ. Bạn có thể hình dung vị trí đủ tốt trong đầu để giải chiến thuật không?"
+
+#, elixir-format
+#: tactics.html.eex:36
+msgid "Board showing the legal moves if you click on the square of a piece"
+msgstr "Bàn cờ hiển thị các Nước đi hợp pháp nếu bạn nhấp vào ô vuông của quân cờ"
+
+#, elixir-format
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:36
+msgid "Correct move, there are still more moves."
+msgstr "Nước đi chính xác, vẫn còn nhiều nước đi hơn."
+
+#, elixir-format
+#: tactics.html.eex:32
+msgid "Have you visualized the position and solved the tactics? Then you can play the solution now."
+msgstr "Bạn đã hình dung vị trí và giải các chiến thuật chưa? Sau đó, bạn có thể chơi các giải pháp ngay bây giờ."
+
+#, elixir-format
+#: tactics.html.eex:42
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:14
+msgid "History"
+msgstr "Lịch sử"
+
+#, elixir-format
+#: tactics.html.eex:13
+msgid "How it works"
+msgstr "Nó hoạt động như thế nào"
+
+#, elixir-format
+#: tactics.html.eex:33
+msgid "If you click on the position on the field on which a piece is standing, you will be shown where the piece can move to. Simply move the piece as you normally would."
+msgstr "Nếu bạn nhấp vào vị trí trên ô mà một quân đang đứng, các nơi mà quân có thể di chuyển đến sẽ được hiển thị cho bạn. Đơn giản chỉ cần di chuyển quân như bạn thường làm."
+
+#, elixir-format
+#: tactics.html.eex:43
+msgid "If you have made the right move, the history is displayed. There you can see what the AI played in response to your move."
+msgstr "Nếu bạn đã thực hiện đúng nước đi, lịch sử nước đi sẽ được hiển thị. Ở đó bạn có thể thấy TTNT (Trí tuệ nhân tạo) đã chơi gì để đáp trả nước đi của bạn."
+
+#, elixir-format
+#: tactics.html.eex:19
+msgid "If you load a pieceless tactic, you will be looking at an empty chessboard. Next to the chessboard, however, you will see exactly where the pieces should be placed on the chessboard."
+msgstr "Nếu bạn tải một chiến thuật không quân cờ, bạn sẽ nhìn vào một bàn cờ trống. Tuy nhiên, bên cạnh bàn cờ, bạn sẽ thấy nơi các quân cờ được đặt chính xác trên bàn cờ."
+
+#, elixir-format
+#: tactics.html.eex:3
+msgid "Improve your chess visualization skills"
+msgstr "Cải thiện kỹ năng trực quan hóa cờ vua của bạn"
+
+#, elixir-format
+#: tactics.html.eex:44
+msgid "Keep playing until the tactic is solved!"
+msgstr "Tiếp tục chơi cho đến khi chiến thuật được giải xong!"
+
+#, elixir-format
+#: tactics.html.eex:24
+msgid "Piece list"
+msgstr "Danh sách quân cờ"
+
+#, elixir-format
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:6
+msgid "Pieceless Tactic"
+msgstr "Chiến thuật không quân cờ"
+
+#, elixir-format
+#: tactics.html.eex:2
+msgid "Pieceless Tactics"
+msgstr "Chiến thuật không quân cờ"
+
+#, elixir-format
+#: tactics.html.eex:10 tactics.html.eex:53
+msgid "Play Now!"
+msgstr "Chơi ngay!"
+
+#, elixir-format
+#: tactics.html.eex:31
+msgid "Solve the tactic"
+msgstr "Giải chiến thuật"
+
+#, elixir-format
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:37
+msgid "Solved!"
+msgstr "Đã giải xong"
+
+#, elixir-format
+#: tactics.html.eex:14
+msgid "Using pieceless tactics takes getting used to. Here I try to explain how to use them as simple and as clear as possible."
+msgstr "Sử dụng chiến thuật không quân cờ cần phải làm quen. Ở đây tôi cố gắng giải thích làm thế nào để sử dụng chúng đơn giản và rõ ràng nhất có thể."
+
+#, elixir-format
+#: tactics.html.eex:18
+msgid "Where are the pieces?"
+msgstr "Các quân cờ ở đâu?"
+
+#, elixir-format
+#: tactics.html.eex:20
+msgid "Your task now is to visualize the pieces on the board and to try to solve the tactic."
+msgstr "Nhiệm vụ của bạn bây giờ là hình dung các quân cờ trên bàn cờ và cố gắng giải chiến thuật."
+
+#, elixir-format
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:22
+msgid "[Help] How pieceless tactics work."
+msgstr "[Trợ giúp] Chiến thuật không quân cờ hoạt động như thế nào."
+
+#, elixir-format
+#: tactics.html.eex:48
+msgid "move history showing the moves played"
+msgstr "lịch sử nước đi hiển thị các nước đã đi"

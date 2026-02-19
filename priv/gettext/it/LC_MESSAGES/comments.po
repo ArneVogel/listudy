@@ -1,0 +1,82 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: it\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/show_comments.html.eex:11
+msgid "Are you sure?"
+msgstr "Sei sicuro?"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/comment_form.html.eex:3
+msgid "Comment"
+msgstr "Commento"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/show_comments.html.eex:3
+msgid "Comments"
+msgstr "Commenti"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/show_comments.html.eex:11
+msgid "Delete"
+msgstr "Cancella"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/comment_form.html.eex:11
+msgid "Save"
+msgstr "Salva"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/show_comments.html.eex:8
+msgid "by"
+msgstr "di"
+
+#, elixir-format
+#: lib/listudy_web/controllers/comment_controller.ex:43
+msgid "Comment could not get created"
+msgstr "Non è stato possibile creare il commento"
+
+#, elixir-format
+#: lib/listudy_web/controllers/comment_controller.ex:40
+msgid "Comment created"
+msgstr "Commento creato"
+
+#, elixir-format
+#: lib/listudy_web/controllers/comment_controller.ex:26
+msgid "Comment deleted successfully."
+msgstr "Commento cancellato con successo."
+
+#, elixir-format
+#: lib/listudy_web/controllers/comment_controller.ex:48
+msgid "Error"
+msgstr "Errore"
+
+#, elixir-format
+#: lib/listudy_web/controllers/comment_controller.ex:20
+msgid "You're not allowed to do that."
+msgstr "Non ti è permesso farlo."
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/comment_form.html.eex:16
+msgid "%{register} to comment"
+msgstr "%{register} per commentare"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/show_comments.html.eex:17
+msgid "No comments yet, be the first to write one!"
+msgstr "Ancora nessun commento, sii il primo a scriverne uno!"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/comment_form.html.eex:15
+msgid "Register"
+msgstr "Registrati"

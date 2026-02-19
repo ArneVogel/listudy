@@ -1,5 +1,33 @@
 <h1>Edit Study</h1>
 
-<%= render "form.html", Map.put(assigns, :action, Routes.study_path(@conn, :update, @locale, @study)) %>
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
+  /*
+   * "Cleans" pgn files, 
+   * remove non standard characters
+   * replace some (but not all) of the html escapting
+  */
+  function clean_pgn(pgn) {
+    pgn = pgn.replace(/½/g, '1/2');
+    pgn = pgn.replace(/&gt;/g, '>');
+    pgn = pgn.replace(/&lt;/g, '<');
+    pgn = pgn.replace(/&quot;/g, '"');
+    pgn = pgn.replace(/\)/g, ' ) ');
+    pgn = pgn.replace(/\(/g, ' ( ');
+    pgn = pgn.replace(/\{/g, ' { ');
+    pgn = pgn.replace(/\}/g, ' } ');
+    pgn = pgn.replace(/0-0-0/g, 'O-O-O');
+    pgn = pgn.replace(/0-0/g, 'O-O');
+    while (pgn.indexOf("  ") != -1) {
+      pgn = pgn.replace(/  /g, ' ');
+    }
+    return pgn;
+  }
+  var pgn = clean_pgn(`<%= javascript_escape @study.pgn %>`);
+</script>
+<script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/remember_lichess_study.js") %>"></script>
 
-<span><%= link "Back", to: Routes.study_path(@conn, :index, @locale) %></span>
+<%= render "form.html", assigns: assigns, action: Routes.study_path(@conn, :update, @locale, @study) %>
+
+<h2><%= dgettext("study", "Delete Study") %></h2>
+<p><%= dgettext("study", "This can not be undone!") %></p>
+<%= link dgettext("study", "Delete"), to: Routes.study_path(@conn, :delete, @locale, @study), method: :delete, data: [confirm: dgettext("study", "Are you sure?")] %>

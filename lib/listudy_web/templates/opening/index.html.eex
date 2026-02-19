@@ -5,7 +5,6 @@
     <tr>
       <th>Name</th>
       <th>Slug</th>
-      <th>Description</th>
       <th>Eco</th>
       <th>Moves</th>
 
@@ -17,7 +16,6 @@
     <tr>
       <td><%= opening.name %></td>
       <td><%= opening.slug %></td>
-      <td><%= opening.description %></td>
       <td><%= opening.eco %></td>
       <td><%= opening.moves %></td>
 

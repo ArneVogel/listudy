@@ -18,6 +18,8 @@ defmodule ListudyWeb.OpeningController do
   def create(conn, %{"opening" => opening_params}) do
     case Openings.create_opening(opening_params) do
       {:ok, opening} ->
+        generate_svg(opening)
+
         conn
         |> put_flash(:info, "Opening created successfully.")
         |> redirect(to: Routes.opening_path(conn, :show, opening))
@@ -35,9 +37,23 @@ defmodule ListudyWeb.OpeningController do
   # For public usage
   def show(conn, %{"opening" => id}) do
     opening = Openings.get_by_slug!(id)
+    studies = Listudy.Studies.get_opening_studies(opening.id)
     tactics_amount = Tactics.opening_count(opening.id)
     tactic = Tactics.get_random_tactic("opening", opening.slug)
-    render(conn, "public.html", opening: opening, tactics_amount: tactics_amount, tactic: tactic)
+    noindex = !index_opening(opening)
+
+    render(conn, "public.html",
+      opening: opening,
+      tactics_amount: tactics_amount,
+      tactic: tactic,
+      studies: studies,
+      noindex: noindex
+    )
+  end
+
+  def index_opening(opening) do
+    length(String.split(opening.description, " ")) >=
+      Application.get_env(:listudy, :seo)[:opening_min_words]
   end
 
   def edit(conn, %{"id" => id}) do
@@ -51,6 +67,8 @@ defmodule ListudyWeb.OpeningController do
 
     case Openings.update_opening(opening, opening_params) do
       {:ok, opening} ->
+        generate_svg(opening)
+
         conn
         |> put_flash(:info, "Opening updated successfully.")
         |> redirect(to: Routes.opening_path(conn, :show, opening))
@@ -67,5 +85,19 @@ defmodule ListudyWeb.OpeningController do
     conn
     |> put_flash(:info, "Opening deleted successfully.")
     |> redirect(to: Routes.opening_path(conn, :index))
+  end
+
+  defp generate_svg(opening) do
+    generate_svg(name(opening.slug), opening.moves)
+  end
+
+  defp name(slug) do
+    path = "priv/static/images/opening/"
+    File.mkdir(path)
+    path <> slug <> ".svg"
+  end
+
+  defp generate_svg(output, moves) do
+    System.cmd("python3", ["scripts/action/svg_generator.py", "--output", output, "--pgn", moves])
   end
 end

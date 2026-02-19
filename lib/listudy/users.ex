@@ -24,4 +24,25 @@ defmodule Listudy.Users do
     |> Ecto.Changeset.change(%{last_visited: DateTime.truncate(DateTime.utc_now(), :second)})
     |> Repo.update()
   end
+
+  # Returns a changeset
+  def admin_change_user(%User{} = user, attrs \\ %{}) do
+    User.admin_changeset(user, attrs)
+  end
+
+  # Returns a changeset
+  # See https://github.com/danschultzer/pow/issues/614
+  def admin_change_password(%User{} = user, attrs \\ %{}) do
+    PowResetPassword.Ecto.Schema.reset_password_changeset(user, attrs)
+  end
+
+  def admin_update_user(%User{} = user, attrs) do
+    changeset = User.admin_changeset(user, attrs)
+    Repo.update(changeset)
+  end
+
+  def admin_update_password(%User{} = user, attrs) do
+    changeset = admin_change_password(user, attrs)
+    Repo.update(changeset)
+  end
 end

@@ -1,0 +1,239 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: fr\n"
+"Plural-Forms: nplurals=2\n"
+
+#: lib/listudy_web/templates/page/index.html.eex:46
+#, elixir-autogen, elixir-format
+msgid "All blog posts"
+msgstr "Tous les articles de blog"
+
+#: lib/listudy_web/templates/page/index.html.eex:31
+#, elixir-autogen, elixir-format
+msgid "Become unbeatable in endgames."
+msgstr "Devenez imbattable dans les finales."
+
+#: lib/listudy_web/templates/page/index.html.eex:4
+#, elixir-autogen, elixir-format
+msgid "Better train openings, endgames and tactics with the help of systematic repetition."
+msgstr "Entrainer vous aux ouvertures, finales et tactiques à l'aide d'une répétition systématique."
+
+#: lib/listudy_web/templates/page/index.html.eex:53
+#, elixir-autogen, elixir-format
+msgid "Blind Tactics"
+msgstr "Tactiques à l'aveugle"
+
+#: lib/listudy_web/templates/page/index.html.eex:24
+#, elixir-autogen, elixir-format
+msgid "Books"
+msgstr "Livres"
+
+#: lib/listudy_web/templates/page/index.html.eex:60
+#, elixir-autogen, elixir-format
+msgid "Contribute"
+msgstr "Contribuer"
+
+#: lib/listudy_web/templates/page/index.html.eex:91
+#, elixir-autogen, elixir-format
+msgid "Daily Puzzle"
+msgstr "Puzzle du jour"
+
+#: lib/listudy_web/templates/page/index.html.eex:26
+#, elixir-autogen, elixir-format
+msgid "Discover the greatest books with the help of Grandmaster recommendations."
+msgstr "Découvrez les plus grands livres à l'aide de recommandations de Grands Maîtres."
+
+#: lib/listudy_web/templates/page/index.html.eex:73
+#, elixir-autogen, elixir-format
+msgid "Distribute copies of your modified versions"
+msgstr "Distribuer votre version modifiée"
+
+#: lib/listudy_web/templates/page/index.html.eex:30
+#: lib/listudy_web/templates/page/index.html.eex:33
+#, elixir-autogen, elixir-format
+msgid "Endgames"
+msgstr "Finales"
+
+#: lib/listudy_web/templates/page/index.html.eex:86
+#, elixir-autogen, elixir-format
+msgid "Events"
+msgstr "Evenements"
+
+#: lib/listudy_web/templates/page/index.html.eex:81
+#, elixir-autogen, elixir-format
+msgid "Explore"
+msgstr "Explorer"
+
+#: lib/listudy_web/templates/page/index.html.eex:12
+#: lib/listudy_web/templates/page/index.html.eex:27
+#, elixir-autogen, elixir-format
+msgid "Explore the"
+msgstr "Explorer les"
+
+#: lib/listudy_web/templates/page/index.html.eex:25
+#, elixir-autogen, elixir-format
+msgid "Find the best chess books for you."
+msgstr "Trouvez les meilleurs livres d'échecs pour vous."
+
+#: lib/listudy_web/templates/page/index.html.eex:67
+#, elixir-autogen, elixir-format
+msgid "Free & Open Source"
+msgstr "Gratuit et Open Source"
+
+#: lib/listudy_web/templates/page/index.html.eex:17
+#, elixir-autogen, elixir-format
+msgid "Get better at identifying and exploiting tactics."
+msgstr "Devenez meilleur pour identifier et exploiter des tactiques."
+
+#: lib/listudy_web/templates/page/index.html.eex:51
+#, elixir-autogen, elixir-format
+msgid "Improve your visualization skills with blind tactics."
+msgstr "Améliorez vos compétences de visualisation avec des tactiques à l'aveugle."
+
+#: lib/listudy_web/templates/page/index.html.eex:40
+#, elixir-autogen, elixir-format
+msgid "Latest blog posts"
+msgstr "Les derniers posts du blog"
+
+#: lib/listudy_web/templates/page/index.html.eex:84
+#, elixir-autogen, elixir-format
+msgid "Motifs"
+msgstr "Thèmes"
+
+#: lib/listudy_web/templates/page/index.html.eex:83
+#, elixir-autogen, elixir-format
+msgid "Openings"
+msgstr "Ouvertures"
+
+#: lib/listudy_web/templates/page/index.html.eex:11
+#, elixir-autogen, elixir-format
+msgid "Play against your opening repertoire and learn them playfully and with scientifically effective methods."
+msgstr "Jouez contre votre répertoire d'ouverture et apprenez-les de manière ludique et avec des méthodes scientifiquement efficaces."
+
+#: lib/listudy_web/templates/page/index.html.eex:85
+#, elixir-autogen, elixir-format
+msgid "Players"
+msgstr "Joueurs"
+
+#: lib/listudy_web/templates/page/index.html.eex:72
+#, elixir-autogen, elixir-format
+msgid "Redistribute the software"
+msgstr "Redistribuer le logiciel"
+
+#: lib/listudy_web/templates/page/index.html.eex:70
+#, elixir-autogen, elixir-format
+msgid "Run the server yourself as you wish, for any purpose"
+msgstr "Faire tourner le serveur vous-même comme vous le souhaitez, pour n'importe quel but"
+
+#: lib/listudy_web/templates/page/index.html.eex:52
+#, elixir-autogen, elixir-format
+msgid "Solve tactics while only seeing the board from 2 moves ago."
+msgstr "Résolvez des tactiques en ne voyant que le plateau 2 coups en arrière."
+
+#: lib/listudy_web/templates/page/index.html.eex:9
+#, elixir-autogen, elixir-format
+msgid "Study Openings"
+msgstr "Etudiez les ouvertures"
+
+#: lib/listudy_web/templates/page/index.html.eex:71
+#, elixir-autogen, elixir-format
+msgid "Study how the software works, and change it so it does your computing as you wish"
+msgstr "Étudier le fonctionnement du logiciel et le modifier à votre convenance"
+
+#: lib/listudy_web/templates/page/index.html.eex:18
+#, elixir-autogen, elixir-format
+msgid "Tactics"
+msgstr "Tactiques"
+
+#: lib/listudy_web/templates/page/index.html.eex:62
+#, elixir-autogen, elixir-format
+msgid "The support can look different. Report bugs if you find any, fix bugs if you can, help translate Listudy into other languages."
+msgstr "Le support peut être différent. Signalez les bugs si vous en trouvez, corrigez les si vous le pouvez, aidez à traduire Listudy dans d'autres langues."
+
+#: lib/listudy_web/templates/page/index.html.eex:15
+#, elixir-autogen, elixir-format
+msgid "Train Tactics"
+msgstr "Entrainez vos tactiques"
+
+#: lib/listudy_web/templates/page/index.html.eex:32
+#, elixir-autogen, elixir-format
+msgid "Train endgames against Stockfish to become skilled and ready to take on any human opponent."
+msgstr "Entraînez vos finales contre Stockfish pour devenir compétent et prêt à affronter n'importe quel adversaire humain."
+
+#: lib/listudy_web/templates/page/index.html.eex:16
+#, elixir-autogen, elixir-format
+msgid "Train tactics with thousands of tactical sequences from real games."
+msgstr "Entraînez-vous à des tactiques avec des milliers de séquences de parties réels."
+
+#: lib/listudy_web/templates/page/index.html.eex:33
+#, elixir-autogen, elixir-format
+msgid "Train your endgame abilities: "
+msgstr "Entraînez vos capacités de finales: "
+
+#: lib/listudy_web/templates/page/index.html.eex:18
+#, elixir-autogen, elixir-format
+msgid "Train your tactical abilities: "
+msgstr "Entraînez vos capacités tactiques: "
+
+#: lib/listudy_web/templates/page/index.html.eex:53
+#, elixir-autogen, elixir-format
+msgid "Train your visualization skills: "
+msgstr "Entraînez vos compétences de visualisation: "
+
+#: lib/listudy_web/templates/page/index.html.eex:10
+#, elixir-autogen, elixir-format
+msgid "Use Listudy to better memorize openings. "
+msgstr "Utilisez Listudy pour mieux mémoriser les ouvertures. "
+
+#: lib/listudy_web/templates/page/index.html.eex:63
+#, elixir-autogen, elixir-format
+msgid "Visit github to find out more about how you can help:"
+msgstr "Visitez github pour en savoir plus sur la façon dont vous pouvez aider:"
+
+#: lib/listudy_web/templates/page/index.html.eex:50
+#, elixir-autogen, elixir-format
+msgid "Visualization"
+msgstr "Visualisation"
+
+#: lib/listudy_web/templates/page/index.html.eex:2
+#, elixir-autogen, elixir-format
+msgid "Welcome to %{name}!"
+msgstr "Bienvenue sur %{name}!"
+
+#: lib/listudy_web/templates/page/index.html.eex:3
+#, elixir-autogen, elixir-format
+msgid "With %{name} you can improve your chess skills with the help of spaced repetition."
+msgstr "Avec %{name}, vous pouvez améliorer vos compétences aux échecs à l'aide de la répétition espacée."
+
+#: lib/listudy_web/templates/page/index.html.eex:75
+#, elixir-autogen, elixir-format
+msgid "You can find the source code running Listudy on github:"
+msgstr "Vous pouvez trouver le code source de Listudy sur github:"
+
+#: lib/listudy_web/templates/page/index.html.eex:61
+#, elixir-autogen, elixir-format
+msgid "You can help make Listudy better."
+msgstr "Vous pouvez aider à améliorer Listudy."
+
+#: lib/listudy_web/templates/page/index.html.eex:68
+#, elixir-autogen, elixir-format
+msgid "Your freedoms are important. That's why you have the rights to:"
+msgstr "Votre liberté est importante. C'est pourquoi vous avez le droit de:"
+
+#: lib/listudy_web/templates/page/index.html.eex:27
+#, elixir-autogen, elixir-format
+msgid "best chess books"
+msgstr "les meilleurs livres d'échecs"
+
+#: lib/listudy_web/templates/page/index.html.eex:12
+#, elixir-autogen, elixir-format
+msgid "latest openings"
+msgstr "ouvertures récentes"

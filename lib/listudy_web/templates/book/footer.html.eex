@@ -1,0 +1,12 @@
+<h2><%= dgettext("book", "More book lists") %></h2>
+<p><%= dgettext "book", "Looking for something more specific? Take a look at these book lists:" %></p>
+<ul>
+  <li>
+    <%= link dgettext("book", "Most Grandmaster recommended books"), to: Routes.book_path(@conn, :recommended, @locale) %> (<%= dgettext("book", "%{amount} books", amount: 20) %>)
+  </li>
+<%= for tag <- @tags do %>
+  <li>
+    <%= link tag.title, to: Routes.tag_path(@conn, :show, @locale, tag.slug) %> (<%= dgettext("book", "%{amount} books", amount: length(tag.book_tags)) %>)
+  </li>
+<% end %>
+</ul>

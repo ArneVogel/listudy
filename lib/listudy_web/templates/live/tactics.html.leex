@@ -1,39 +1,28 @@
 <div class="with_sidebar">
   <div id="game_container" class="sidebar_main">
-    <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
+    <%= render ListudyWeb.ComponentView, "chessground.html" %>
   </div>
   <div class="sidebar">
-    <h1><%= gettext "Tactic"%> <%= @tactic.id %></h1>
-    <div class="success">
-      <p id="success" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="info" class="infoBox hidden"></p>
-    </div>
-    <div class="error">
-      <p id="error" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="suggestion" class="infoBox hidden"></p>
-    </div>
+    <h1><%= dgettext "tactics", "Tactic"%> <%= @tactic.id %></h1>
+    <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
 
-    <button id="next" class="hidden continue_button" phx-click="next"><%= gettext "Continue"%></button>
+    <button id="next" class="hidden continue_button" phx-click="next"><%= dgettext "tactics", "Continue"%></button>
     <details class="hidden" id="solution">
         <summary>Solution</summary>
         <%= @tactic.moves %>
     </details>
 
     <%= if assigns[:opening] do %>
-      <p><%= gettext("Currently training in the opening:") <> " " <> @opening.name %></p>
+      <p><%= dgettext("endgame", "Currently training in the opening:") <> " " <> @opening.name %></p>
     <% end %>
     <%= if assigns[:motif] do %>
-      <p><%= gettext("Currently training in the motif:") <> " " <> @motif.name %></p>
+      <p><%= dgettext("endgame", "Currently training in the motif:") <> " " <> @motif.name %></p>
     <% end %>
     <%= if assigns[:event] do %>
-      <p><%= gettext("Currently playing tactics from the event:") <> " " <> @event.name %></p>
+      <p><%= dgettext("endgame", "Currently playing tactics from the event:") <> " " <> @event.name %></p>
     <% end %>
     <%= if assigns[:player] do %>
-      <p><%= gettext("Currently playing tactics by:") <> " " <> @player.name %></p>
+      <p><%= dgettext("endgame", "Currently playing tactics by:") <> " " <> @player.name %></p>
     <% end %>
 
   </div>
@@ -47,11 +36,11 @@
   <input type="text" id="moves" value="<%= @tactic.moves %>">
   <input type="text" id="last_move" value="<%= @tactic.last_move %>">
 </form>
-<script>
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@socket) %>>
 let fen = "<%= @tactic.fen %>";
 let color = "<%= @tactic.color %>";
 let moves = "<%= @tactic.moves %>";
 let last_move = "<%= @tactic.last_move %>";
-let gettext_success = "<%= gettext "Tactic solved"%>";
-let gettext_wrong_move = "<%= gettext "Wrong Move"%>";
+
+<%= render ListudyWeb.TacticView, "translations.html" %>
 </script>

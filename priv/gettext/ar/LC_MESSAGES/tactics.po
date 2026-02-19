@@ -1,0 +1,449 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: ar\n"
+"Plural-Forms: nplurals=6\n"
+
+#: lib/listudy_web/templates/tactic/translations.html.eex:5
+#, elixir-format
+msgid "Best Move!"
+msgstr ""
+
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:12
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:39
+#, elixir-format
+msgid "Black"
+msgstr ""
+
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:6
+#, elixir-format
+msgid "Blind Tactic"
+msgstr ""
+
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:17
+#: lib/listudy_web/templates/live/tactics.html.leex:9
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:17
+#: lib/listudy_web/templates/tactic/tactic.html.eex:11
+#, elixir-format
+msgid "Continue"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/custom.html.eex:100
+#, elixir-format
+msgid "Create"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/custom.html.eex:6
+#, elixir-format
+msgid "Custom Tactic"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/custom.html.eex:106
+#: lib/listudy_web/templates/tactic/custom.html.eex:113
+#, elixir-format
+msgid "Embed"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/custom.html.eex:103
+#, elixir-format
+msgid "Embed this Tactic"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/custom.html.eex:90
+#, elixir-format
+msgid "FEN"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/translations.html.eex:9
+#, elixir-format
+msgid "Find the best move for black."
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/translations.html.eex:8
+#, elixir-format
+msgid "Find the best move for white."
+msgstr ""
+
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:23
+#, elixir-format
+msgid "How many plies should be hidden? (Updates next Tactic)"
+msgstr ""
+
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:11
+#, elixir-format
+msgid "In this position the following moves were played:"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/translations.html.eex:6
+#, elixir-format
+msgid "Keep going..."
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/translations.html.eex:4
+#, elixir-format
+msgid "Keep trying!"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/custom.html.eex:96
+#, elixir-format
+msgid "Last Move"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/custom.html.eex:105
+#, elixir-format
+msgid "Learn more"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/custom.html.eex:88
+#, elixir-format
+msgid "Make your own Tactic"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/custom.html.eex:11
+#, elixir-format
+msgid "More Tactics"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/custom.html.eex:93
+#, elixir-format
+msgid "Moves"
+msgstr ""
+
+#: lib/listudy_web/templates/live/tactics.html.leex:6
+#: lib/listudy_web/templates/tactic/tactic.html.eex:6
+#, elixir-format
+msgid "Tactic"
+msgstr ""
+
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:44
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:34
+#: lib/listudy_web/templates/tactic/translations.html.eex:2
+#, elixir-format
+msgid "Tactic solved!"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/custom.html.eex:104
+#, elixir-format
+msgid "Use this tactic on your website. Creates an iframe that you can use on you website to share this tactic."
+msgstr ""
+
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:12
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:38
+#, elixir-format
+msgid "White"
+msgstr ""
+
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:45
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:35
+#, elixir-format
+msgid "Wrong Move"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/translations.html.eex:3
+#, elixir-format
+msgid "Wrong Move."
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/translations.html.eex:7
+#, elixir-format
+msgid "Your turn."
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/custom.html.eex:114
+#, elixir-format
+msgid "iframe code"
+msgstr ""
+
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:13
+#, elixir-format
+msgid "to play and win."
+msgstr ""
+
+#: lib/listudy_web/templates/event/public.html.eex:13
+#: lib/listudy_web/templates/motif/public.html.eex:8
+#: lib/listudy_web/templates/motif/public.html.eex:14
+#: lib/listudy_web/templates/opening/public.html.eex:44
+#, elixir-format
+msgid "%{name} Tactics"
+msgstr ""
+
+#: lib/listudy_web/templates/opening/public.html.eex:34
+#, elixir-format
+msgid "%{name} Traps and Tactics"
+msgstr ""
+
+#: lib/listudy_web/templates/opening/public.html.eex:8
+#, elixir-format
+msgid "%{opening} after the moves %{moves}"
+msgstr ""
+
+#: lib/listudy_web/templates/opening/public.html.eex:9
+#, elixir-format
+msgid "Chessboard showing the %{opening} with the moves %{moves} played"
+msgstr ""
+
+#: lib/listudy_web/templates/opening/public.html.eex:12
+#, elixir-format
+msgid "Contents"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/tactic.html.eex:28
+#, elixir-format
+msgid "Currently playing tactics by:"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/tactic.html.eex:25
+#, elixir-format
+msgid "Currently playing tactics from the event:"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/tactic.html.eex:22
+#, elixir-format
+msgid "Currently training in the motif:"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/tactic.html.eex:19
+#, elixir-format
+msgid "Currently training in the opening:"
+msgstr ""
+
+#: lib/listudy_web/templates/opening/public.html.eex:59
+#, elixir-format
+msgid "Do you want to try out the %{name}? Train this opening against Stockfish."
+msgstr ""
+
+#: lib/listudy_web/templates/motif/public.html.eex:10
+#, elixir-format
+msgid "Get better at %{name} by solving tactics."
+msgstr ""
+
+#: lib/listudy_web/templates/opening/public.html.eex:38
+#, elixir-format
+msgid "Get better in the %{name} opening by practicing tactics taken from the early game."
+msgstr ""
+
+#: lib/listudy_web/templates/opening/public.html.eex:27
+#, elixir-format
+msgid "Learn the %{opening} using public studies."
+msgstr ""
+
+#: lib/listudy_web/templates/opening/public.html.eex:14
+#, elixir-format
+msgid "Learn the Opening"
+msgstr ""
+
+#: lib/listudy_web/templates/opening/public.html.eex:19
+#: lib/listudy_web/templates/opening/public.html.eex:47
+#, elixir-format
+msgid "Play against Stockfish"
+msgstr ""
+
+#: lib/listudy_web/templates/opening/public.html.eex:60
+#, elixir-format
+msgid "Play against Stockfish either as white or black and explore the opening."
+msgstr ""
+
+#: lib/listudy_web/templates/opening/public.html.eex:55
+#, elixir-format
+msgid "Play against the %{name}"
+msgstr ""
+
+#: lib/listudy_web/templates/opening/public.html.eex:51
+#, elixir-format
+msgid "Play the %{name}"
+msgstr ""
+
+#: lib/listudy_web/templates/opening/public.html.eex:40
+#, elixir-format
+msgid "Recognize traps and mistakes of your opponents and exploit them."
+msgstr ""
+
+#: lib/listudy_web/templates/opening/public.html.eex:17
+#, elixir-format
+msgid "Solve Traps and Tactics"
+msgstr ""
+
+#: lib/listudy_web/templates/opening/public.html.eex:26
+#, elixir-format
+msgid "Studies about the %{opening}"
+msgstr ""
+
+#: lib/listudy_web/templates/motif/public.html.eex:12
+#, elixir-format
+msgid "Train real tactics from %{amount} different games."
+msgstr ""
+
+#: lib/listudy_web/templates/event/public.html.eex:11
+#: lib/listudy_web/templates/opening/public.html.eex:42
+#, elixir-format
+msgid "Train tactics from %{amount} different games."
+msgstr ""
+
+#: lib/listudy_web/templates/event/public.html.eex:9
+#, elixir-format
+msgid "Solve tactics from games played at %{name}."
+msgstr ""
+
+#: lib/listudy_web/templates/event/public.html.eex:6
+#, elixir-format
+msgid "Traps and Tactics from %{name}"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/daily.html.eex:1
+#, elixir-format
+msgid "Daily Chess Puzzle"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/daily.html.eex:10
+#, elixir-format
+msgid "Random Tactic"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/daily.html.eex:8
+#, elixir-format
+msgid "Solve more tactics:"
+msgstr ""
+
+#: lib/listudy_web/templates/tactic/daily.html.eex:6
+#, elixir-format
+msgid "Solve the daily chess puzzle. Improve your chess skills every day one tactic at a time."
+msgstr ""
+
+#: lib/listudy_web/live/motif_search_live.ex:10
+#, elixir-format
+msgid "Motifs"
+msgstr ""
+
+#: lib/listudy_web/live/motif_search_live.ex:12
+#, elixir-format
+msgid "Search"
+msgstr ""
+
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:46
+#, elixir-format
+msgid "Correct move, there are still more moves. They replied with"
+msgstr ""
+
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:12
+#, elixir-format
+msgid "%{color} to play."
+msgstr ""
+
+#: tactics.html.eex:7
+#, elixir-format
+msgid "All the pieces have disappeared! There is only a list of where the pieces should be next to the board. Can you visualize the position well enough in your head to solve the tactic?"
+msgstr ""
+
+#: tactics.html.eex:36
+#, elixir-format
+msgid "Board showing the legal moves if you click on the square of a piece"
+msgstr ""
+
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:36
+#, elixir-format
+msgid "Correct move, there are still more moves."
+msgstr ""
+
+#: tactics.html.eex:32
+#, elixir-format
+msgid "Have you visualized the position and solved the tactics? Then you can play the solution now."
+msgstr ""
+
+#: tactics.html.eex:42
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:14
+#, elixir-format
+msgid "History"
+msgstr ""
+
+#: tactics.html.eex:13
+#, elixir-format
+msgid "How it works"
+msgstr ""
+
+#: tactics.html.eex:33
+#, elixir-format
+msgid "If you click on the position on the field on which a piece is standing, you will be shown where the piece can move to. Simply move the piece as you normally would."
+msgstr ""
+
+#: tactics.html.eex:43
+#, elixir-format
+msgid "If you have made the right move, the history is displayed. There you can see what the AI played in response to your move."
+msgstr ""
+
+#: tactics.html.eex:19
+#, elixir-format
+msgid "If you load a pieceless tactic, you will be looking at an empty chessboard. Next to the chessboard, however, you will see exactly where the pieces should be placed on the chessboard."
+msgstr ""
+
+#: tactics.html.eex:3
+#, elixir-format
+msgid "Improve your chess visualization skills"
+msgstr ""
+
+#: tactics.html.eex:44
+#, elixir-format
+msgid "Keep playing until the tactic is solved!"
+msgstr ""
+
+#: tactics.html.eex:24
+#, elixir-format
+msgid "Piece list"
+msgstr ""
+
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:6
+#, elixir-format
+msgid "Pieceless Tactic"
+msgstr ""
+
+#: tactics.html.eex:2
+#, elixir-format
+msgid "Pieceless Tactics"
+msgstr ""
+
+#: tactics.html.eex:10
+#: tactics.html.eex:53
+#, elixir-format
+msgid "Play Now!"
+msgstr ""
+
+#: tactics.html.eex:31
+#, elixir-format
+msgid "Solve the tactic"
+msgstr ""
+
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:37
+#, elixir-format
+msgid "Solved!"
+msgstr ""
+
+#: tactics.html.eex:14
+#, elixir-format
+msgid "Using pieceless tactics takes getting used to. Here I try to explain how to use them as simple and as clear as possible."
+msgstr ""
+
+#: tactics.html.eex:18
+#, elixir-format
+msgid "Where are the pieces?"
+msgstr ""
+
+#: tactics.html.eex:20
+#, elixir-format
+msgid "Your task now is to visualize the pieces on the board and to try to solve the tactic."
+msgstr ""
+
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:22
+#, elixir-format
+msgid "[Help] How pieceless tactics work."
+msgstr ""
+
+#: tactics.html.eex:48
+#, elixir-format
+msgid "move history showing the moves played"
+msgstr ""

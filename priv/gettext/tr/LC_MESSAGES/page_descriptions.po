@@ -1,0 +1,64 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: tr\n"
+"Plural-Forms: nplurals=2\n"
+
+#: lib/listudy_web/views/helpers/page_description.ex:47
+#, elixir-autogen, elixir-format
+msgid "Explore our collection of tactics taken from games by %{name}."
+msgstr "%{name} tarafından oynanmış oyunlardan oluşturulmuş taktik koleksiyonumuzu keşfedin."
+
+#: lib/listudy_web/views/helpers/page_description.ex:27
+#, elixir-autogen, elixir-format
+msgid "Get better at %{name} tactics with our huge library of puzzles taken from real games. Explore our free collection of %{name} tactics."
+msgstr "Gerçek oyunlardan derlenmiş devasa bulmaca kütüphanemizi kullanarak %{name} taktiklerinde gelişin. Bedava %{name} taktik koleksiyonumuzu keşfedin."
+
+#: lib/listudy_web/views/helpers/page_description.ex:74
+#, elixir-autogen, elixir-format
+msgid "Get better in the %{name} opening. Study the opening and learn from traps and tactics collected from real games."
+msgstr "%{name} açılışlarında gelişin. Açılışa çalışın ve gerçek oyunlardan toplanmış taktik ve tuzaklardan öğrenin."
+
+#: lib/listudy_web/views/helpers/page_description.ex:126
+#, elixir-autogen, elixir-format
+msgid "Improve your chess game on Listudy"
+msgstr "Listudy ile satranç oyununuzu geliştirin"
+
+#: lib/listudy_web/views/helpers/page_description.ex:93
+#, elixir-autogen, elixir-format
+msgid "Learn chess endgames interactively playing against Stockfish"
+msgstr "Stockfish'e karşı etkileşimli bir şekilde oynayarak oyunsonları öğrenin"
+
+#: lib/listudy_web/views/helpers/page_description.ex:15
+#, elixir-autogen, elixir-format
+msgid "Play against Stockfish Online - Unlimited and for Free"
+msgstr "Stockfish'e karşı çevrimiçi oynayın - Sınırsız ve Bedava"
+
+#: lib/listudy_web/views/helpers/page_description.ex:35
+#, elixir-autogen, elixir-format
+msgid "Play tactics from the event %{}. Are you better than the professionals?"
+msgstr "%{} etkinliğinden taktikler oynayın. Profesyonellerden daha mı iyisiniz?"
+
+#: lib/listudy_web/views/helpers/page_description.ex:24
+#, elixir-autogen, elixir-format
+msgid "Search for studies to train specific openings"
+msgstr "Belirli bir açılışa çalışmak için çalışmaları arayın"
+
+#: lib/listudy_web/views/helpers/page_description.ex:8
+#, elixir-autogen, elixir-format
+msgid "Solve the Daily Chess Puzzle! Updated every day from our list of best puzzles."
+msgstr "Günlük Satranç Bulmacasını çözün! Her gün en iyi bulmacalar listemizden güncelleniyor."
+
+#: lib/listudy_web/views/helpers/page_description.ex:60
+#, elixir-format
+msgid "A chess book recommendation by %{player}"
+msgid_plural "%{count} chess book recommendations by %{player}"
+msgstr[0] "%{player} tarafından önerilen bir satranç kitabı"
+msgstr[1] "%{player} tarafından önerilen %{count} satranç kitabı"

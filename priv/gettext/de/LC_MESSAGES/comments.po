@@ -1,0 +1,82 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: de\n"
+"Plural-Forms: nplurals=2\n"
+
+#: lib/listudy_web/templates/comment/show_comments.html.eex:11
+#, elixir-autogen, elixir-format
+msgid "Are you sure?"
+msgstr "Sind Sie sicher?"
+
+#: lib/listudy_web/templates/comment/comment_form.html.eex:3
+#, elixir-autogen, elixir-format
+msgid "Comment"
+msgstr "Kommentar"
+
+#: lib/listudy_web/templates/comment/show_comments.html.eex:3
+#, elixir-autogen, elixir-format
+msgid "Comments"
+msgstr "Kommentare"
+
+#: lib/listudy_web/templates/comment/show_comments.html.eex:11
+#, elixir-autogen, elixir-format
+msgid "Delete"
+msgstr "Löschen"
+
+#: lib/listudy_web/templates/comment/comment_form.html.eex:11
+#, elixir-autogen, elixir-format
+msgid "Save"
+msgstr "Speichern"
+
+#: lib/listudy_web/templates/comment/show_comments.html.eex:8
+#, elixir-autogen, elixir-format
+msgid "by"
+msgstr "von"
+
+#: lib/listudy_web/controllers/comment_controller.ex:43
+#, elixir-autogen, elixir-format
+msgid "Comment could not get created"
+msgstr "Kommentar konnte nicht erstellt werden"
+
+#: lib/listudy_web/controllers/comment_controller.ex:40
+#, elixir-autogen, elixir-format
+msgid "Comment created"
+msgstr "Kommentar erstellt"
+
+#: lib/listudy_web/controllers/comment_controller.ex:26
+#, elixir-autogen, elixir-format
+msgid "Comment deleted successfully."
+msgstr "Kommentar erfolgreich gelöscht"
+
+#: lib/listudy_web/controllers/comment_controller.ex:48
+#, elixir-autogen, elixir-format
+msgid "Error"
+msgstr "Fehler"
+
+#: lib/listudy_web/controllers/comment_controller.ex:20
+#, elixir-autogen, elixir-format
+msgid "You're not allowed to do that."
+msgstr "Sie verfügen nicht über die Berechtigung dafür."
+
+#: lib/listudy_web/templates/comment/comment_form.html.eex:16
+#, elixir-autogen, elixir-format
+msgid "%{register} to comment"
+msgstr "%{register} zum Kommentieren"
+
+#: lib/listudy_web/templates/comment/show_comments.html.eex:17
+#, elixir-autogen, elixir-format
+msgid "No comments yet, be the first to write one!"
+msgstr "Keine Kommentare bisher, hinterlassen Sie den ersten!"
+
+#: lib/listudy_web/templates/comment/comment_form.html.eex:15
+#, elixir-autogen, elixir-format
+msgid "Register"
+msgstr "Registrieren"

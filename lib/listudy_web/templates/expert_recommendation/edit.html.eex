@@ -1,0 +1,5 @@
+<h1>Edit Expert recommendation</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.expert_recommendation_path(@conn, :update, @expert_recommendation)) %>
+
+<span><%= link "Back", to: Routes.expert_recommendation_path(@conn, :index) %></span>

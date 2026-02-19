@@ -21,6 +21,15 @@ defmodule Listudy.Openings do
     Repo.all(Opening)
   end
 
+  def list_openings_study_form do
+    query =
+      from o in Opening,
+        order_by: [asc: o.name],
+        select: %{name: o.name, id: o.id}
+
+    Repo.all(query)
+  end
+
   @doc """
   Gets a single opening.
 
@@ -37,7 +46,7 @@ defmodule Listudy.Openings do
   """
   def get_opening!(id), do: Repo.get!(Opening, id)
 
-  def get_by_slug!(slug), do: Repo.get_by(Opening, slug: slug)
+  def get_by_slug!(slug), do: Repo.get_by(Opening, slug: slug) |> Repo.preload(:opening_faq)
 
   def search_by_title(word) do
     word = "%" <> word <> "%"

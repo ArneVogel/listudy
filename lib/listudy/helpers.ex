@@ -6,5 +6,6 @@ defmodule Listudy.Helpers do
     query
     |> group_by([r], fragment("date_trunc('month', ?)", field(r, ^date_field)))
     |> select([r], [fragment("date_trunc('month', ?)", field(r, ^date_field)), count("*")])
+    |> order_by([r], fragment("date_trunc('month', ?)", field(r, ^date_field)))
   end
 end

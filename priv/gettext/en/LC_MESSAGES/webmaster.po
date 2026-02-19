@@ -1,0 +1,127 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: en\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: tactics.html.eex:21
+msgid "After you have done this click on the button \"Embed\"."
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:30
+msgid "Automation"
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:5 lib/listudy_web/templates/webmaster/index.html.eex:9
+msgid "Bring more interactivity to your tactics. Embed your tactics and let users solve them."
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:22
+msgid "Copy the iframe code and paste it into your page."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/webmaster/index.html.eex:6
+msgid "Custom Tactics"
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:1
+msgid "Embed Custom Tactics"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/webmaster/index.html.eex:3
+msgid "Embed elements of Listudy on your website."
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:20
+msgid "First you have to create your tactics with the tactic creator."
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:41
+msgid "For mobile devices it is recommended to limit the width iframes to 100%. Below you will find the css to achieve that."
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:16
+msgid "How to embed your own Tactics"
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:38
+msgid "Implementation details"
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:18
+msgid "On the page where you can create your own tactics is an embed button. This button will automatically creates the iframe code that you have to insert on your website."
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:33
+msgid "The hash is the base64 encoded string which consists of the fen, the moves and the last move."
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:31
+msgid "This process can also be automated. All information needed for tactics are stored in the hash of the embed url."
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:32
+msgid "To generate tactics automatically you can create this hash yourself."
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:25
+msgid "Use this link to create and embed your tactic:"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/webmaster/index.html.eex:1
+msgid "Webmaster"
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:39
+msgid "You can change the standard width and height if you wish. Just make sure that the height is about 80px higher than the width so that the \"x to play\" message fits under the board."
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:7
+msgid "You can specify the position, what the right moves are and what the last move was."
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:6
+msgid "You have full control over the tactics."
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/webmaster/index.html.eex:12
+msgid "Learn More"
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:26
+msgid "Create your own Tactic"
+msgstr ""
+
+#, elixir-format
+#: tactics.html.eex:35
+msgid "The values are each separated by a \";\". The moves must be in san notation and the last move in uci notation."
+msgstr ""

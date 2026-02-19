@@ -1,0 +1,127 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: vi\n"
+"Plural-Forms: nplurals=1\n"
+
+#, elixir-format
+#: tactics.html.eex:21
+msgid "After you have done this click on the button \"Embed\"."
+msgstr "Sau khi bạn đã thực hiện cú nhấp chuột này vào nút \"Embed\"."
+
+#, elixir-format
+#: tactics.html.eex:30
+msgid "Automation"
+msgstr "Tự động hóa"
+
+#, elixir-format
+#: tactics.html.eex:5 lib/listudy_web/templates/webmaster/index.html.eex:9
+msgid "Bring more interactivity to your tactics. Embed your tactics and let users solve them."
+msgstr "Mang lại nhiều tương tác hơn cho chiến thuật của bạn. Nhúng chiến thuật của bạn và cho phép người dùng giải chúng."
+
+#, elixir-format
+#: tactics.html.eex:22
+msgid "Copy the iframe code and paste it into your page."
+msgstr "Sao chép mã iframe và dán nó vào trang của bạn."
+
+#, elixir-format
+#: lib/listudy_web/templates/webmaster/index.html.eex:6
+msgid "Custom Tactics"
+msgstr "Chiến thuật tùy chỉnh"
+
+#, elixir-format
+#: tactics.html.eex:1
+msgid "Embed Custom Tactics"
+msgstr "Nhúng chiến thuật tùy chỉnh"
+
+#, elixir-format
+#: lib/listudy_web/templates/webmaster/index.html.eex:3
+msgid "Embed elements of Listudy on your website."
+msgstr "Nhúng các yếu tố của Listudy trên trang web của bạn."
+
+#, elixir-format
+#: tactics.html.eex:20
+msgid "First you have to create your tactics with the tactic creator."
+msgstr "Trước tiên, bạn phải tạo ra chiến thuật của mình với Công cụ tạo chiến thuật."
+
+#, elixir-format
+#: tactics.html.eex:41
+msgid "For mobile devices it is recommended to limit the width iframes to 100%. Below you will find the css to achieve that."
+msgstr "Đối với thiết bị di động, nên giới hạn chiều rộng iframe ở mức 100%. Dưới đây bạn sẽ tìm thấy CSS để đạt được điều đó."
+
+#, elixir-format
+#: tactics.html.eex:16
+msgid "How to embed your own Tactics"
+msgstr "Làm thế nào để nhúng chiến thuật của riêng bạn"
+
+#, elixir-format
+#: tactics.html.eex:38
+msgid "Implementation details"
+msgstr "Chi tiết thực hiện"
+
+#, elixir-format
+#: tactics.html.eex:18
+msgid "On the page where you can create your own tactics is an embed button. This button will automatically creates the iframe code that you have to insert on your website."
+msgstr "Trên trang nơi bạn có thể tạo chiến thuật của riêng mình có một nút nhúng. Nút này sẽ tự động tạo mã iframe mà bạn phải chèn trên trang web của mình."
+
+#, elixir-format
+#: tactics.html.eex:33
+msgid "The hash is the base64 encoded string which consists of the fen, the moves and the last move."
+msgstr "Hash là chuỗi được mã hóa base64 bao gồm fen, di chuyển và di chuyển cuối cùng."
+
+#, elixir-format
+#: tactics.html.eex:31
+msgid "This process can also be automated. All information needed for tactics are stored in the hash of the embed url."
+msgstr "Quá trình này cũng có thể được tự động hóa. Tất cả thông tin cần thiết cho chiến thuật được lưu trữ trong hash của url nhúng."
+
+#, elixir-format
+#: tactics.html.eex:32
+msgid "To generate tactics automatically you can create this hash yourself."
+msgstr "Để tạo chiến thuật tự động, bạn có thể tự tạo hash này."
+
+#, elixir-format
+#: tactics.html.eex:25
+msgid "Use this link to create and embed your tactic:"
+msgstr "Sử dụng link này để tạo và nhúng chiến thuật của bạn:"
+
+#, elixir-format
+#: lib/listudy_web/templates/webmaster/index.html.eex:1
+msgid "Webmaster"
+msgstr "Quản trị web"
+
+#, elixir-format
+#: tactics.html.eex:39
+msgid "You can change the standard width and height if you wish. Just make sure that the height is about 80px higher than the width so that the \"x to play\" message fits under the board."
+msgstr "Bạn có thể thay đổi chiều rộng và chiều cao tiêu chuẩn nếu bạn muốn. Chỉ cần đảm bảo rằng chiều cao cao hơn khoảng 80px so với chiều rộng để \"x to play\" thông điệp phù hợp với bảng."
+
+#, elixir-format
+#: tactics.html.eex:7
+msgid "You can specify the position, what the right moves are and what the last move was."
+msgstr "Bạn có thể chỉ định vị trí, những động thái đúng là gì và động thái cuối cùng là gì."
+
+#, elixir-format
+#: tactics.html.eex:6
+msgid "You have full control over the tactics."
+msgstr "Bạn có toàn quyền kiểm soát các chiến thuật."
+
+#, elixir-format
+#: lib/listudy_web/templates/webmaster/index.html.eex:12
+msgid "Learn More"
+msgstr "Học thêm"
+
+#, elixir-format
+#: tactics.html.eex:26
+msgid "Create your own Tactic"
+msgstr "Tạo chiến thuật của riêng bạn"
+
+#, elixir-format
+#: tactics.html.eex:35
+msgid "The values are each separated by a \";\". The moves must be in san notation and the last move in uci notation."
+msgstr "Các giá trị được phân tách bởi một \";\". Các động thái phải có trong Bản ghi san và động thái cuối cùng trong Bản ghi uci."

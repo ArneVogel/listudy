@@ -1,8 +1,5 @@
 <%= if Pow.Plug.current_user(@conn) do %>
-  <%= form_for @conn, @action, fn f -> %>
-    <%= hidden_input f, :study_id, value: @study_id %>
-    <div>
-      <%= submit @text %>
-    </div>
+  <%= form_for @conn, @action, [class: "study_favorite_form"], fn _f -> %>
+    <%= submit @text %>
   <% end %>
 <% end %>

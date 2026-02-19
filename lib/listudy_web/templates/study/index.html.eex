@@ -1,61 +1,29 @@
-<h1><%= gettext "Your Studies" %></h1>
+<h1><%= dgettext("study", "Your Studies") %></h1>
 
+<% has_studies = length(@studies) != 0 %>
+
+<%= if has_studies do %>
 <a href="<%= Routes.study_path(@conn, :new, @locale) %>">
-  <button>
-    <%= gettext "New Study" %>
+  <button class="primary">
+    <%= dgettext("study", "New Study") %>
   </button>
 </a>
-
-<%= if length(@studies) != 0 do %>
-<table>
-  <thead>
-    <tr>
-      <th><%= gettext "Name" %></th>
-      <th><%= gettext "Description" %></th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for study <- @studies do %>
-    <tr>
-      <td><%= study.title%></td>
-      <td><%= study.description %></td>
-
-      <td>
-        <span><%= link (gettext "Show"), to: Routes.study_path(@conn, :show, @locale, study) %></span>
-        <span><%= link (gettext "Edit"), to: Routes.study_path(@conn, :edit, @locale, study) %></span>
-        <span><%= link (gettext "Delete"), to: Routes.study_path(@conn, :delete, @locale, study), method: :delete, data: [confirm: gettext "Are you sure?"] %></span>
-      </td>
-    </tr>
+<% else %>
+<div>
+  <p><%= dgettext("study", "Create a new study and start learning.") %></p>
+  <a href="<%= Routes.study_path(@conn, :new, @locale) %>"><button class="primary"><%= dgettext("study", "Create a Study") %></button></a>
+  <a href="<%= Routes.search_path(@conn, ListudyWeb.StudySearchLive, @locale) %>"><button class="secondary"><%= dgettext("study", "Search for Studies") %></button></a>
+</div>
 <% end %>
-  </tbody>
-</table>
+
+<%= if has_studies do %>
+  <%= render ListudyWeb.StudyView, "list.html", studies: @studies, conn: @conn, locale: @locale, edit: true %>
 <% end %>
 
 <%= if length(@favorites) != 0 do %>
-<h2><%= gettext "Favored Studies" %></h2>
-<table>
-  <thead>
-    <tr>
-      <th><%= gettext "Name" %></th>
-      <th><%= gettext "Description" %></th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for study <- @favorites do %>
-    <tr>
-      <td><%= study.title%></td>
-      <td><%= study.description %></td>
-      <td>
-        <span><%= link (gettext "Show"), to: Routes.study_path(@conn, :show, @locale, study) %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+  <hr>
+<h2><%= dgettext("study", "Favored Studies") %></h2>
+  <%= render ListudyWeb.StudyView, "list.html", studies: @favorites, conn: @conn, locale: @locale %>
 <% end %>
 
 

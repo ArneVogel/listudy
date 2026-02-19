@@ -1,0 +1,9 @@
+{
+  "packages": [
+    "elixir",
+    "nodejs"
+  ],
+  "shell": {
+    "init_hook": null
+  }
+}

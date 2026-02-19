@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 # Configure your database
 config :listudy, Listudy.Repo,
@@ -25,7 +25,8 @@ config :listudy, ListudyWeb.Endpoint,
       "node_modules/webpack/bin/webpack.js",
       "--mode",
       "development",
-      "--watch-stdin",
+      "--watch-options-stdin",
+      "--watch",
       cd: Path.expand("../assets", __DIR__)
     ]
   ]

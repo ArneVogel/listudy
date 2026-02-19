@@ -8,6 +8,9 @@ jobs:
   Test:
     name: Test
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [13.x]
     services:
       db:
         image: postgres:11
@@ -15,7 +18,7 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: listudy_test
+          POSTGRES_DB: listudy_dev
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -34,20 +37,32 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - name: Setup elixir
-        uses: actions/setup-elixir@v1.2.0
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          elixir-version: 1.9.4 # Define the elixir version [required]
-          otp-version: 22.2 # Define the OTP version [required]
+          node-version: ${{ matrix.node-version }}
+      - name: Setup elixir
+        uses: erlef/setup-elixir@v1
+        with:
+          elixir-version: 1.11.2 # Define the elixir version [required]
+          otp-version: 23.0 # Define the OTP version [required]
       - name: Install Dependencies
         run: |
           mix local.rebar --force
           mix local.hex --force
           mix deps.get
+      - name: "Install npm"
+        run: npm install --legacy-peer-deps --prefix assets 
       - name: Run Tests
-        env:
-          MIX_ENV: test
-        run: mix test
+        run: |
+          mix compile
+          mix ecto.create
+          mix ecto.migrate
+          mix ecto.reset
+          mix test
+          mkdir -p priv/static/study_pgn
+          npm run deploy --prefix ./assets
+          mix phx.digest
   Deploy:
     name: Deploy
     needs: Test
@@ -62,7 +77,4 @@ jobs:
         script: |
           cd /opt/listudy
           git pull
-          ./build.sh
-          ./shutdown.sh
-          ./migrate.sh
-          ./start.sh
+          ./scripts/prod/ci.sh

@@ -1,6 +1,6 @@
 defmodule ListudyWeb.Seo do
   @domain "https://listudy.org"
-  @languages ["en", "de"]
+  @languages Application.get_env(:listudy, :languages)[:translations]
 
   def canonical_link(conn) do
     url = clean(@domain <> conn.request_path)

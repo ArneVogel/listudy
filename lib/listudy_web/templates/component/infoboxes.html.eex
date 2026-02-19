@@ -1,0 +1,33 @@
+<div class="success">
+  <p id="success" class="infoBox hidden">
+    <span id="close_button" class="close_button" role="button">🞫</span>
+    <span id="success_symbol"><%= Map.get(assigns, :success_symbol, "") %></span>
+    <b id="success_bold"><%= Map.get(assigns, :success_bold, "") %></b>
+    <span id="success_text"><%= Map.get(assigns, :success_text, "") %></span>
+  </p>
+</div>
+<div class="info">
+  <p id="info" class="infoBox hidden">
+    <span id="close_button" class="close_button" role="button">🞫</span>
+    <span id="info_symbol"><%= Map.get(assigns, :info_symbol, "") %></span>
+    <b id="info_bold"><%= Map.get(assigns, :info_bold, "") %></b>
+    <span id="info_text"><%= Map.get(assigns, :info_text, "") %></span>
+  </p>
+</div>
+<div class="error">
+  <p id="error" class="infoBox hidden">
+    <span id="close_button" class="close_button" role="button">🞫</span>
+    <span id="error_symbol"><%= Map.get(assigns, :error_symbol, "") %></span>
+    <b id="error_bold"><%= Map.get(assigns, :error_bold, "") %></b>
+    <span id="error_text"><%= Map.get(assigns, :error_text, "") %></span>
+  </p>
+</div>
+<div class="info">
+  <p id="suggestion" class="infoBox hidden">
+    <span id="close_button" class="close_button" role="button">🞫</span>
+    <span id="suggestion_symbol"><%= Map.get(assigns, :suggestion_symbol, "") %></span>
+    <b id="suggestion_bold"><%= Map.get(assigns, :suggestion_bold, "") %></b>
+    <span id="suggestion_text"><%= Map.get(assigns, :suggestion_text, "") %></span>
+  </p>
+</div>
+

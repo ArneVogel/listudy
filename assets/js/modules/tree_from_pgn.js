@@ -2,11 +2,11 @@ import {Node, Tree} from './tree.js';
 
 function createNode(move) {
     // filter only valid san characters, remove !,?, etc.
-    move.move = move.move.replace(/[^a-zA-Z0-9-+=#]/g, ""); 
+    move.move = move.move.replace(/[^a-zA-Z0-9-+=#]/g, "");
     let node = new Node(move.move);
     node.comments = move.comments;
     node.updated = Date.now();
-    
+
     return node;
 }
 
@@ -16,6 +16,7 @@ function generateNodes(moveLine) {
     let nodes = []; // all the moves that are possible from the current move
 
     let root_node = createNode(moveLine[0]);
+    root_node.move_index = moveLine[0].move_index;
     let leaf = root_node;
     nodes.push(root_node);
 
@@ -30,9 +31,10 @@ function generateNodes(moveLine) {
 
     for (let i = 1; i < moveLine.length; ++i) {
         let first_child = createNode(moveLine[i]);
+        first_child.move_index = moveLine[i].move_index;
         let child_nodes = [first_child];
         // Same as above, but in this case the children are getting added
-        // directly to the leaf 
+        // directly to the leaf
         // This step handles the recursion of the ravs that represent
         // multiple lines that could be taken
         // As the ravs are also moveLines the same function can be used
@@ -67,6 +69,7 @@ function generate_move_trees(parsedPGN) {
         tree.root = generateNodes(game.moves);
         tree.headers = {};
         tree.comments = game.comments;
+        tree.first_variation = game.first_variation;
         for (let header of game.headers) {
             tree.headers[header.name] = header.value;
         }
@@ -75,4 +78,37 @@ function generate_move_trees(parsedPGN) {
     return trees;
 }
 
-export { generate_move_trees };
+
+function annotate_pgn(pgn) {
+    const go = function (moves, idx) {
+      var var_index = -1;
+
+      for (let i = 0; i < moves.length; ++i) {
+        var thismove = moves[i];
+        thismove.move_index = idx + i;
+        if (thismove.ravs !== undefined && thismove.ravs.length > 0) {
+          for (let ri = 0; ri < thismove.ravs.length; ++ri) {
+            var thisrav = thismove.ravs[ri];
+            if (thisrav.moves !== undefined && thisrav.moves.length > 0) {
+              if (var_index == -1) {
+                var_index = idx + i;
+              }
+              go(thisrav.moves, i + idx);
+            }
+          }
+        }
+      }
+      return var_index;
+    };
+    for (let game of pgn) {
+      const first_var = go(game.moves, 0);
+      if (first_var >= 0) {
+        game.first_variation = first_var;
+      } else {
+        game.first_variation = null;
+      }
+    }
+  }
+
+
+export { generate_move_trees, annotate_pgn };

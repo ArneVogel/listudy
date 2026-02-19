@@ -1,0 +1,45 @@
+.pieceless_piece_container {
+    display: flex;
+}
+
+.pieceless_piece_square {
+    line-height: 45px;
+    width: 2em;
+}
+
+cg-board > piece {
+	background-image: none !important;
+    display: none !important;
+}
+
+square.last-move {
+    display: none;
+}
+
+piece.ghost {
+    display: none !important;
+}
+
+#pieceless_pieces {
+    display: flex;
+    flex-wrap: wrap;
+}
+.pieceless_piece_container {
+	background: var(--bg-highlight-color);
+	padding: 2px 10px;
+    margin: 2px 2px;
+	border-radius: var(--small-border-radius);
+}
+#history_container {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+#history {
+	font-weight: bold;
+}
+
+.pieceless_info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

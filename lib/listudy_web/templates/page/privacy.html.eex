@@ -11,9 +11,9 @@
   <li><%= dgettext "privacy", "What information Listudy collects" %></li>
   <li><%= dgettext "privacy", "Why this information is collected and how it's used" %></li>
   <li><%= dgettext "privacy", "How cookies are used" %></li>
-  <li><%= dgettext "privacy", "Managing you information" %></li>
+  <li><%= dgettext "privacy", "Managing your information" %></li>
   <li><%= dgettext "privacy", "Storage of the collected information" %></li>
-  <li><%= dgettext "privacy", "Colsing your account" %></li>
+  <li><%= dgettext "privacy", "Closing your account" %></li>
   <li><%= dgettext "privacy", "Other" %></li>
 </ol>
 
@@ -37,7 +37,7 @@
 <p><%= dgettext "privacy", "This information is stored to detect attacks and malicious access to the site." %></p>
 
 <b><%= dgettext "privacy", "Disclosing your information" %></b>
-<p><%= dgettext "privacy", "Your information will only be disclosed if it is legally necessary to do so. For example, if Lichess is ordered to hand over a certain user’s information, or if someone hacks Lichess." %></p>
+<p><%= dgettext "privacy", "Your information will only be disclosed if it is legally necessary to do so. For example, if Listudy is ordered to hand over a certain user’s information, or if someone hacks Listudy." %></p>
 <p><%= dgettext "privacy", "If Listudy is sold, the data provided by the user (such as emails, pgns, comments) will be transferred to a new third party owner." %></p>
 
 <h2><%= dgettext "privacy", "Cookies" %></h2>

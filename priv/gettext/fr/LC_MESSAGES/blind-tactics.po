@@ -1,0 +1,102 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: fr\n"
+"Plural-Forms: nplurals=2\n"
+
+#: tactics.html.eex:45
+#, elixir-autogen, elixir-format
+msgid "As soon as you have solved the tactic, the final position is displayed. Did you have the same position in your head?"
+msgstr "Dès que vous avez résolu l'exercice tactique, la position finale est affichée. Aviez-vous la même position en tête ?"
+
+#: tactics.html.eex:19
+#, elixir-autogen, elixir-format
+msgid "Frozen Board"
+msgstr "Echiquier Gelé"
+
+#: tactics.html.eex:21
+#, elixir-autogen, elixir-format
+msgid "If you click on the position where a piece is positioned you will be shown the possible legal moves. If you then click again on the correct square, the move will be executed and the exercise will continue."
+msgstr "Si vous cliquez sur un endroit où une pièce est placée, les coups possibles seront affichés. Si vous cliquez une seconde fois sur la bonne case, ceci executera le moment et l'exercice continuera."
+
+#: tactics.html.eex:36
+#, elixir-autogen, elixir-format
+msgid "Next to the board you will see the list of moves that have been played since the board was frozen. This list shows the current state of the game and the moves the opponent played."
+msgstr "A côté de l'échiquier, vous verrez la liste des coups qui ont été joué depuis que l'échiquier a été gelé. Cette liste montre l'état actuel de la partie et les coups que l'adversaire a joué."
+
+#: tactics.html.eex:43
+#, elixir-autogen, elixir-format
+msgid "Tactics"
+msgstr "Tactiques"
+
+#: tactics.html.eex:20
+#, elixir-autogen, elixir-format
+msgid "The board is frozen and does not show the current state of the game. This means you do not see the latest state of the board. The pieces are not animated during the tactics. You have to keep the positions of the pieces in your head!"
+msgstr "L'échiquier est gelé et ne montre pas l'état actuel de la partie. Cela signifie que vous ne voyez pas la dernière position sur l'échiquier. Les pièces ne bougent pas l'exercice tactique. Vous devez garder les positions en tête !"
+
+#: tactics.html.eex:35
+#, elixir-autogen, elixir-format
+msgid "The move list"
+msgstr "Liste des coups"
+
+#: tactics.html.eex:37
+#, elixir-autogen, elixir-format
+msgid "The moves the opponent plays during tactics are added to this list!"
+msgstr "Les coups que l'adversaire a joué durant la tactique sont ajouté à cette liste !"
+
+#: tactics.html.eex:8
+#, elixir-autogen, elixir-format
+msgid "Use blind tactics to improve your chess visualisation skills. Solve tactics while seeing the board state of several moves from the past. You are given the representation of the board and the moves that have been made since then, and then you then have to solve the tactical problem by imagining the board and the moves played in your head."
+msgstr "Utilisez les echecs à l'aveugle pour améliorer vos aptitudes de visualisation sur l'échiquier. Résolvez des problèmes tactiques tout en voyant l'état de l'échiquier et les coups joués précédemment. On vous donne la représentation du plateau et les coups qui ont été joués depuis, et vous devez ensuite résoudre le problème tactique en imaginant le plateau et les coups joués dans votre tête."
+
+#: tactics.html.eex:15
+#, elixir-autogen, elixir-format
+msgid "Using the blind tactics takes getting used to. Here I try to explain it as simple and as clear as possible."
+msgstr "Il faut s'habituer à utiliser la tactique à l'aveugle. J'essaie ici de l'expliquer de la manière la plus simple et la plus claire possible."
+
+#: tactics.html.eex:44
+#, elixir-autogen, elixir-format
+msgid "Your task is to solve the exercise like with normal tactics. There is only one continuation that is correct."
+msgstr "Votre tâche consiste à résoudre l'exercice comme avec des tactiques normales. Il n'y a qu'une seule suite qui soit correcte."
+
+#: tactics.html.eex:25
+#, elixir-autogen, elixir-format
+msgid "different board state"
+msgstr "Etat différent de l'Echiquier"
+
+#: tactics.html.eex:32
+#, elixir-autogen, elixir-format
+msgid "move list"
+msgstr "liste de coups"
+
+#: tactics.html.eex:49
+#, elixir-autogen, elixir-format
+msgid "solved tactic"
+msgstr "tactique résolue"
+
+#: tactics.html.eex:3
+#, elixir-autogen, elixir-format
+msgid "Blind Tactics"
+msgstr "Tactiques à l'aveugle"
+
+#: tactics.html.eex:14
+#, elixir-autogen, elixir-format
+msgid "How it works"
+msgstr "Comment cela fonctionne"
+
+#: tactics.html.eex:4
+#, elixir-autogen, elixir-format
+msgid "Improve your chess visualization skills"
+msgstr "Améliorez vos capacités de visualisation des échecs"
+
+#: tactics.html.eex:11
+#, elixir-autogen, elixir-format
+msgid "Play Now!"
+msgstr "Jouer Maintenant !"

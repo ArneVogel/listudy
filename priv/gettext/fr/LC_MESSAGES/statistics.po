@@ -1,0 +1,32 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: fr\n"
+"Plural-Forms: nplurals=2\n"
+
+#: lib/listudy_web/templates/stats/index.html.eex:2
+#, elixir-autogen, elixir-format
+msgid "If you're like me, you can't get enough of stats. Here you can find statistics about Listudy:"
+msgstr "Si vous êtes comme moi, vous n'en n'avez jamais assez des statistiques. Vous trouverez ici des statistiques sur Listudiy:"
+
+#: lib/listudy_web/templates/stats/index.html.eex:1
+#, elixir-autogen, elixir-format
+msgid "Statistics"
+msgstr "Statistiques"
+
+#: lib/listudy_web/templates/stats/index.html.eex:5
+#, elixir-autogen, elixir-format
+msgid "Uploaded Studies"
+msgstr "Etudes uploadées"
+
+#: lib/listudy_web/templates/stats/index.html.eex:11
+#, elixir-autogen, elixir-format
+msgid "User Registrations"
+msgstr "Utilisateurs enregistrés"

@@ -1,0 +1,21 @@
+<div class="study_search_results">
+  <%= for study <- @studies do %>
+    <div class="study_search_result">
+      <a href="<%= Routes.study_path(@conn, :show, @locale, study.slug) %>">
+        <h5><%= study.title%></h5>
+      </a>
+      <%= if assigns[:favorites] do %>
+        <span><span title="# <%= dgettext("study", "favorites")%>"><%= length(study.study_favorites) %> <span class="icon" data-icon="#"></span></span> <%= dgettext("study", "by") %> <%= study.user.username %>
+        </span>
+
+      <% end %>
+      <p><%= study.description %></p>
+      <%= if assigns[:edit] do %>
+        <a href="<%= Routes.study_path(@conn, :edit, @locale, study.slug) %>">
+          <%= dgettext("study", "Edit") %>
+        </a>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+

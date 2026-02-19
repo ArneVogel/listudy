@@ -1,0 +1,12 @@
+<h1>Changing email of <%= @user.username %></h1>
+<p>Email: <%= @user.email %></p>
+<% @changeset %>
+
+<%= form_for @changeset, @user.username, [multipart: true], fn f -> %>
+  <%= label f, :email, "email" %>
+  <%= text_input f, :email, placeholder: "email@listudy.org", required: true %>
+  <%= error_tag f, :email %>
+
+  <%= submit "Save", class: "primary" %>
+<% end %>
+

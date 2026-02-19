@@ -1,0 +1,42 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: fr\n"
+"Plural-Forms: nplurals=2\n"
+
+#: lib/listudy_web/templates/player/public.html.eex:13
+#, elixir-autogen, elixir-format
+msgid "%{name} Tactics"
+msgstr "%{name} Tactiques"
+
+#: lib/listudy_web/templates/player/public.html.eex:9
+#, elixir-autogen, elixir-format
+msgid "Are you better than %{name}?"
+msgstr "Êtes vous meilleur que %{name}?"
+
+#: lib/listudy_web/templates/player/public.html.eex:11
+#, elixir-autogen, elixir-format
+msgid "Play real tactics from %{amount} different games played by %{name}."
+msgstr "Jouez de vraies tactiques à partir de %{amount} différentes parties jouées par %{name}."
+
+#: lib/listudy_web/templates/player/public.html.eex:6
+#, elixir-autogen, elixir-format
+msgid "Tactics by %{name}"
+msgstr "Tactiques par %{name}"
+
+#: lib/listudy_web/live/player_search_live.ex:10
+#, elixir-autogen, elixir-format
+msgid "Players"
+msgstr "Joueurs"
+
+#: lib/listudy_web/live/player_search_live.ex:12
+#, elixir-autogen, elixir-format
+msgid "Search"
+msgstr "Chercher"

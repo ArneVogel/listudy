@@ -1,0 +1,68 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: ar\n"
+"Plural-Forms: nplurals=6\n"
+
+#: lib/listudy_web/views/helpers/page_description.ex:47
+#, elixir-format
+msgid "Explore our collection of tactics taken from games by %{name}."
+msgstr ""
+
+#: lib/listudy_web/views/helpers/page_description.ex:27
+#, elixir-format
+msgid "Get better at %{name} tactics with our huge library of puzzles taken from real games. Explore our free collection of %{name} tactics."
+msgstr ""
+
+#: lib/listudy_web/views/helpers/page_description.ex:74
+#, elixir-format
+msgid "Get better in the %{name} opening. Study the opening and learn from traps and tactics collected from real games."
+msgstr ""
+
+#: lib/listudy_web/views/helpers/page_description.ex:126
+#, elixir-format
+msgid "Improve your chess game on Listudy"
+msgstr ""
+
+#: lib/listudy_web/views/helpers/page_description.ex:93
+#, elixir-format
+msgid "Learn chess endgames interactively playing against Stockfish"
+msgstr ""
+
+#: lib/listudy_web/views/helpers/page_description.ex:15
+#, elixir-format
+msgid "Play against Stockfish Online - Unlimited and for Free"
+msgstr ""
+
+#: lib/listudy_web/views/helpers/page_description.ex:35
+#, elixir-format
+msgid "Play tactics from the event %{}. Are you better than the professionals?"
+msgstr ""
+
+#: lib/listudy_web/views/helpers/page_description.ex:24
+#, elixir-format
+msgid "Search for studies to train specific openings"
+msgstr ""
+
+#: lib/listudy_web/views/helpers/page_description.ex:8
+#, elixir-format
+msgid "Solve the Daily Chess Puzzle! Updated every day from our list of best puzzles."
+msgstr ""
+
+#: lib/listudy_web/views/helpers/page_description.ex:60
+#, elixir-format
+msgid "A chess book recommendation by %{player}"
+msgid_plural "%{count} chess book recommendations by %{player}"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""

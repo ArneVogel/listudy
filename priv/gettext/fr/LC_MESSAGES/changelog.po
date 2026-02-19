@@ -1,0 +1,83 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: fr\n"
+"Plural-Forms: nplurals=2\n"
+
+#: lib/listudy_web/templates/page/changelog.html.eex:27
+#, elixir-autogen, elixir-format
+msgid "Added %{pieceless}"
+msgstr "Ajouté %{pieceless}"
+
+#: lib/listudy_web/templates/page/changelog.html.eex:23
+#, elixir-autogen, elixir-format
+msgid "Added pages %{changelog}, %{thanks}, and %{pieceless_info}"
+msgstr "Pages ajoutées %{changelog}, %{thanks}, et %{pieceless_info}"
+
+#: lib/listudy_web/templates/page/changelog.html.eex:1
+#: lib/listudy_web/templates/page/changelog.html.eex:20
+#, elixir-autogen, elixir-format
+msgid "Changelog"
+msgstr "Historique des changements"
+
+#: lib/listudy_web/templates/page/changelog.html.eex:26
+#, elixir-autogen, elixir-format
+msgid "Pieceless Tactics"
+msgstr "Tactiques sans pièces"
+
+#: lib/listudy_web/templates/page/changelog.html.eex:21
+#, elixir-autogen, elixir-format
+msgid "Pieceless info page"
+msgstr "Page d'information pour les Tactiques sans pièces"
+
+#: lib/listudy_web/templates/page/changelog.html.eex:19
+#, elixir-autogen, elixir-format
+msgid "Thank you"
+msgstr "Merci"
+
+#: lib/listudy_web/templates/page/changelog.html.eex:15
+#, elixir-autogen, elixir-format
+msgid "Study progress bar"
+msgstr ""
+
+#: lib/listudy_web/templates/page/changelog.html.eex:16
+#, elixir-autogen, elixir-format
+msgid "Study reset option"
+msgstr ""
+
+#: lib/listudy_web/templates/page/changelog.html.eex:13
+#, elixir-autogen, elixir-format
+msgid "Make fen copyable on endgame pages as well as link to lichess analysis page for tablebase analysis."
+msgstr ""
+
+#: lib/listudy_web/templates/page/changelog.html.eex:3
+#, elixir-autogen, elixir-format
+msgid "Added a new and improved \"ai\" move picker. thanks to Olle Eriksson!"
+msgstr ""
+
+#: lib/listudy_web/templates/page/changelog.html.eex:5
+#, elixir-autogen, elixir-format
+msgid "Added basic hebrew transation, thanks to Arihol"
+msgstr ""
+
+#: lib/listudy_web/templates/page/changelog.html.eex:9
+#, elixir-autogen, elixir-format
+msgid "Added portugese translation"
+msgstr ""
+
+#: lib/listudy_web/templates/page/changelog.html.eex:11
+#, elixir-autogen, elixir-format
+msgid "Added vietnamese translation"
+msgstr ""
+
+#: lib/listudy_web/templates/page/changelog.html.eex:7
+#, elixir-autogen, elixir-format
+msgid "Allow promotion in own tactics, thanks to sampma309"
+msgstr ""

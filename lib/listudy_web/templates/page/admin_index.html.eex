@@ -1,0 +1,24 @@
+<h1>Admin</h1>
+
+<%= link "Blind Tactics", to: Routes.blind_tactic_path(@conn, :index) %>
+<br>
+<%= link "Pieceless Tactics", to: Routes.pieceless_tactic_path(@conn, :index) %>
+<br>
+<%= link "Tactics", to: Routes.tactic_path(@conn, :index) %>
+<br>
+<%= link "Books", to: Routes.book_path(@conn, :index) %>
+<br>
+<%= link "Tag", to: Routes.tag_path(@conn, :index) %>
+<br>
+<%= link "Book Tags", to: Routes.book_tag_path(@conn, :index) %>
+<br>
+<%= link "Players", to: Routes.player_path(@conn, :index) %>
+<br>
+<%= link "Author", to: Routes.author_path(@conn, :index) %>
+<br>
+<%= link "Motif", to: Routes.motif_path(@conn, :index) %>
+<br>
+<%= link "Change/Check Email of user", to: Routes.user_administration_path(@conn, :email, "Arne") %>
+<br>
+<%= link "Change Password of user", to: Routes.user_administration_path(@conn, :password, "Arne") %>
+<br>

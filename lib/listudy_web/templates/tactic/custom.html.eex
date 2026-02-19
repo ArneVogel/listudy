@@ -1,25 +1,14 @@
 <div class="with_sidebar">
   <div id="game_container" class="sidebar_main">
-    <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
+    <%= render ListudyWeb.ComponentView, "chessground.html" %>
   </div>
   <div class="sidebar">
-    <h1><%= gettext "Custom Tactic"%></h1>
-    <p id="to_win"><span id="color_span"></span> <%= gettext "to move and win!" %></p>
-    <div class="success">
-      <p id="success" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="info" class="infoBox hidden"></p>
-    </div>
-    <div class="error">
-      <p id="error" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="suggestion" class="infoBox hidden"></p>
-    </div>
+    <h1><%= dgettext "tactics", "Custom Tactic"%></h1>
+
+    <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
 
     <a href="<%= Routes.tactic_path(@conn, :random, @locale) %>">
-      <button id="next" class="hidden continue_button"><%= gettext "More Tactics" %></button>
+      <button id="next" class="hidden continue_button"><%= dgettext "tactics", "More Tactics" %></button>
     </a>
     <details class="hidden" id="solution">
         <summary>Solution</summary>
@@ -36,7 +25,7 @@
   <input type="text" id="moves" value="">
   <input type="text" id="last_move" value="">
 </form>
-<script>
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
 <%# CAREFUL! the hash is user supplies and its values can only be used in %>
 <%# save javascript functions! %>
 function clean_input(i) {
@@ -46,11 +35,11 @@ function clean_input(i) {
   // this function is used to remove non wanted characters from the decoded hash
   // probably also remove xss vulnerabilities if input was used in unsafe functions, but
   // this does NOT replace the need to not use the input in unsafe function calls
-  return i.replace(/[^a-zA-Z0-9-_#+! /]/g, '');
+  return i.replace(/[^a-zA-Z0-9-_#+!= /]/g, '');
 }
 
 // atob => base64 decode the hash
-let t = atob(document.location.hash.slice(1)).split(";"); 
+let t = atob(document.location.hash.slice(1)).split(";");
 let fen = clean_input(t[0]);
 let color = clean_input(t[0]).split(" ")[1];
 if (color == "b") {
@@ -65,15 +54,14 @@ document.getElementById("fen").value = fen;
 document.getElementById("color").value = color;
 document.getElementById("moves").value = moves;
 document.getElementById("solution_moves").innerText = moves;
-document.getElementById("color_span").innerText = color.charAt(0).toUpperCase() + color.slice(1);
-document.getElementById("last_move").value = last_move;
-let gettext_success = "<%= gettext "Tactic solved"%>";
-let gettext_wrong_move = "<%= gettext "Wrong Move"%>";
+
+<%= render ListudyWeb.TacticView, "translations.html" %>
 // if no fen was provided there is no tactic to solve
 if (fen == "") {
   document.getElementById("to_win").classList.add("hidden");
 }
-
+</script>
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
 function create_tactic() {
   let f = document.getElementById("fen_input").value;
   let m = document.getElementById("moves_input").value;
@@ -84,20 +72,46 @@ function create_tactic() {
   window.location.hash = h;
   location.reload();
 }
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('create_button')
+          .addEventListener('click', create_tactic);
+  let iframe_path = "<%= Routes.iframe_path(@conn, :custom_tactic, @locale) %>";
+  let iframe_url = `${document.location.origin}${iframe_path}${document.location.hash}`;
+  let iframe_code = `<iframe width="400" height="480" frameborder="0" src="${iframe_url}"></iframe>`;
+  document.getElementById("iframe_code").value = iframe_code;
+});
+
 </script>
 <hr>
-<div id="share"></div>
-<hr>
-<h2><%= gettext "Make your own Tactic"%></h2>
+<div class="row">
+  <div class="one-half column">
+    <h2 id="own"><%= dgettext "tactics", "Make your own Tactic" %></h2>
 
-<label for="fen"><%= gettext "FEN" %>:</label>
-<input type="text" id="fen_input" name="fen" required placeholder="r3k3/pppb4/6N1/3Pp3/N3n2b/8/PP1P2PP/R1B2K1R b q - 0 17">
+    <label for="fen"><%= dgettext "tactics", "FEN" %>:</label>
+    <input type="text" id="fen_input" name="fen" required placeholder="r3k3/pppb4/6N1/3Pp3/N3n2b/8/PP1P2PP/R1B2K1R b q - 0 17">
 
-<label for="moves"><%= gettext "Moves" %>:</label>
-<input type="text" id="moves_input" name="moves" required placeholder="Bb5+ d3 Bxd3+ Kg1 Bf2#">
+    <label for="moves"><%= dgettext "tactics", "Moves" %>:</label>
+    <input type="text" id="moves_input" name="moves" required placeholder="Bb5+ d3 Bxd3+ Kg1 Bf2#">
 
-<label for="last_move"><%= gettext "Last Move" %>:</label>
-<input type="text" id="last_move_input" name="last_move" required placeholder="h8g6">
+    <label for="last_move"><%= dgettext "tactics", "Last Move" %>:</label>
+    <input type="text" id="last_move_input" name="last_move" required placeholder="h8g6">
 
-<br>
-<button onclick="create_tactic()"><%= gettext "Create" %></button>
+    <br>
+    <button id="create_button"><%= dgettext "tactics", "Create" %></button>
+  </div>
+  <div class="one-half column">
+    <h2><%= dgettext "tactics", "Embed this Tactic" %></h2>
+    <p><%= dgettext "tactics", "Use this tactic on your website. Creates an iframe that you can use on you website to share this tactic." %></p>
+    <p><%= link (dgettext "tactics", "Learn more"), to: Routes.webmaster_path(@conn, :show, @locale, "custom-tactics") %></p>
+    <button class="secondary modal_open" id="embed"><%= dgettext "tactics", "Embed" %></button>
+  </div>
+</div>
+
+<div id="embed_modal" class="modal">
+  <div class="modal-content">
+    <span class="modal_close">&times;</span>
+    <h3><%= dgettext("tactics", "Embed")%></h3>
+    <label for="iframe_code"><%= dgettext("tactics", "iframe code") %></label>
+    <input type="text" name="iframe_code" id="iframe_code" class="big_input">
+  </div>
+</div>

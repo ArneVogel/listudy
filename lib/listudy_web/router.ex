@@ -9,12 +9,22 @@ defmodule ListudyWeb.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug ListudyWeb.Plugs.Locale, "en"
+    plug ListudyWeb.Plugs.CSP
     plug ListudyWeb.Plugs.LastVisited
     plug NavigationHistory.Tracker
   end
 
+  pipeline :iframe do
+    plug :put_layout, {ListudyWeb.LayoutView, :iframe}
+    plug ListudyWeb.Plugs.AllowIframe
+  end
+
   pipeline :admin do
     plug ListudyWeb.EnsureRolePlug, :admin
+  end
+
+  pipeline :stockfish do
+    plug ListudyWeb.Plugs.Stockfish
   end
 
   pipeline :logged_in do
@@ -35,6 +45,8 @@ defmodule ListudyWeb.Router do
   scope "/admin", ListudyWeb do
     pipe_through [:browser, :admin]
 
+    get "/", PageController, :admin_index
+
     resources "/studies", StudyController, as: :admin_study
     get "/blog", PostController, :index_all
     get "/blog/:id/edit", PostController, :edit
@@ -44,19 +56,49 @@ defmodule ListudyWeb.Router do
     delete "/blog/:id", PostController, :delete
     get "/", PageController, :index
 
+    get "/update-email/:username", UserAdministrationController, :email
+    put "/update-email/:username", UserAdministrationController, :update_email
+    get "/update-password/:username", UserAdministrationController, :password
+    put "/update-password/:username", UserAdministrationController, :update_password
+
+    resources "/blog_faq", BlogFaqController
+    resources "/opening_faq", OpeningFaqController
+
+    resources "/images", ImageController
+
     resources "/motifs", MotifController
     resources "/openings", OpeningController
     resources "/players", PlayerController
     resources "/events", EventController
     resources "/tactics", TacticController
+    resources "/piecelesstactic", PiecelessTacticController
+
+    resources "/book_opening", BookOpeningController
+    resources "/book_tag", BookTagController
+    resources "/books", BookController
+    resources "/tags", TagController
+    resources "/authors", AuthorController
+    resources "/expert_recommendation", ExpertRecommendationController
 
     resources "/blind_tactics", BlindTacticController
+  end
+
+  scope "/:locale", ListudyWeb do
+    pipe_through [:browser, :stockfish]
+    get "/play-stockfish", PageController, :play_stockfish
+    get "/endgames/:chapter/:subchapter/:game", EndgameController, :game
+  end
+
+  scope "/:locale/iframe", ListudyWeb do
+    pipe_through [:browser, :iframe]
+    get "/custom-tactic", IframeController, :custom_tactic
   end
 
   scope "/:locale", ListudyWeb do
     pipe_through :browser
 
     get "/sitemap.xml", SitemapController, :index
+    get "/sitemap.books.xml", SitemapController, :books
     live "/studies/search", StudySearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :search
     live "/events", EventSearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :event_search
 
@@ -80,11 +122,18 @@ defmodule ListudyWeb.Router do
     get "/tactics/player/:player", TacticController, :random, as: :random_player_tactic
     get "/tactics/motif/:motif", TacticController, :random, as: :random_motif_tactic
 
+    get "/endgames", EndgameController, :index
+    get "/endgames/:chapter", EndgameController, :chapter
+
     get "/blind-tactics", BlindTacticController, :random
 
     live "/blind-tactics/:id", BlindTacticsLive,
       layout: {ListudyWeb.LayoutView, :live},
       as: :blind_tactics
+
+    get "/pieceless-tactics", PiecelessTacticController, :random
+    get "/pieceless-tactics-random/:id", PiecelessTacticController, :random
+    get "/pieceless-tactics/:id", PiecelessTacticController, :public
 
     live "/games/chessclicker", ChessClickerLive,
       layout: {ListudyWeb.LayoutView, :live},
@@ -108,12 +157,21 @@ defmodule ListudyWeb.Router do
       layout: {ListudyWeb.LayoutView, :live},
       as: :player_tactics
 
+    get "/books/best-chess-books", BookController, :recommended
+    get "/books/list/:slug", TagController, :show
+    get "/books/author/:slug", AuthorController, :show
+    get "/books/recommended-by/:slug", PlayerController, :book_recommendation
+    get "/books/:slug", BookController, :show
+    live "/books", BookSearchLive, layout: {ListudyWeb.LayoutView, :live}, as: :book_search
+
     resources "/studies", StudyController
     get "/blog", PostController, :index
     get "/blog/:id", PostController, :show
     get "/stats", StatsController, :index
     get "/profile/:username", UserProfileController, :show
     get "/features/:page", PageController, :features
+    get "/webmaster/:page", WebmasterController, :show
+    get "/webmaster", WebmasterController, :index
     get "/:page", PageController, :show
     get "/", PageController, :index
   end
@@ -123,34 +181,13 @@ defmodule ListudyWeb.Router do
 
     post "/comment", CommentController, :new_comment
     delete "/comment/:type/:id", CommentController, :delete_comment
-    post "/study_favorite", StudyController, :favorite_study
-    post "/study_unfavorite", StudyController, :unfavorite_study
+    post "/study_favorite/:slug", StudyController, :favorite_study
+    post "/study_unfavorite/:slug", StudyController, :unfavorite_study
   end
 
   scope "/", ListudyWeb do
     pipe_through :browser
 
     get "/", PageController, :domain
-  end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", ListudyWeb do
-  #   pipe_through :api
-  # end
-
-  # Enables LiveDashboard only for development
-  #
-  # If you want to use the LiveDashboard in production, you should put
-  # it behind authentication and allow only admins to access it.
-  # If your application does not have an admins-only section yet,
-  # you can use Plug.BasicAuth to set up some basic authentication
-  # as long as you are also using SSL (which you should anyway).
-  if Mix.env() in [:dev, :test] do
-    import Phoenix.LiveDashboard.Router
-
-    scope "/" do
-      pipe_through :browser
-      live_dashboard "/dashboard", metrics: ListudyWeb.Telemetry
-    end
   end
 end

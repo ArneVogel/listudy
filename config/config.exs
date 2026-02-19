@@ -5,7 +5,7 @@
 # is restricted to this project.
 
 # General application configuration
-use Mix.Config
+import Config
 
 config :listudy,
   ecto_repos: [Listudy.Repo]
@@ -21,8 +21,14 @@ config :listudy, ListudyWeb.Endpoint,
 config :listudy, :seo,
   # threshold a post needs to have to not get noindexed
   post_min_words: 300,
+  # threshold a opening needs to have to not get noindexed
+  opening_min_words: 10,
   # how many favorites a study needs to not get noindexed
   study_min_favorites: 3
+
+config :listudy, :languages,
+  default: "en",
+  translations: ["en", "de", "es", "fr", "he", "it", "nl", "pt", "tr", "vi"]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -38,12 +44,16 @@ config :listudy, :pow,
   extensions: [PowPersistentSession],
   web_module: ListudyWeb,
   controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
-  cache_store_backend: Pow.Store.Backend.MnesiaCache
+  cache_store_backend: Pow.Store.Backend.MnesiaCache,
+  messages_backend: ListudyWeb.Pow.Messages
 
 config :mnesia, dir: 'priv/mnesia'
 
 config :gettext, :default_locale, "en"
 
+config :arc,
+  storage: Arc.Storage.Local
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env()}.exs"
+import_config "#{config_env()}.exs"

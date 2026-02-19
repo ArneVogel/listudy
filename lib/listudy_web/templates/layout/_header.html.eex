@@ -2,9 +2,10 @@
       <section class="container">
         <nav role="navigation">
           <div>
-            <div class="logo">
+            <div class="logo show">
               <a href="/<%= @assigns.locale %>"><span class="logo_name">listudy</span><span class="logo_domain">.org</span></a>
             </div>
+            
             <div class="dropdowns_container">
               <div class="dropdown">
                 <button class="dropbtn"><%= gettext "Study" %></button>
@@ -17,20 +18,34 @@
                 </div>
               </div> 
             </div>
+
             <div class="dropdowns_container">
               <div class="dropdown">
                 <button class="dropbtn"><%= gettext "Tactics"%></button>
                 <div class="dropdown-content">
                   <%= link (gettext "Tactics"), to: Routes.tactic_path(@conn, :random, @assigns.locale) %>
                   <%= link (gettext "Blind Tactics"), to: Routes.blind_tactic_path(@conn, :random, @assigns.locale) %>
-                  <%= link (gettext "ChessClicker"), to: Routes.chesslicker_tactics_path(@conn, ListudyWeb.ChessClickerLive, @assigns.locale) %>
+                  <%= link (gettext "Pieceless Tactics"), to: Routes.pieceless_tactic_path(@conn, :random, @assigns.locale) %>
                 </div>
               </div> 
             </div>
 
+            <div class="dropdowns_container">
+              <div class="dropdown">
+                <a href="<%= Routes.endgame_path(@conn, :index, @assigns.locale) %>">
+                  <button class="dropbtn dropdowns_single"><%= gettext "Endgames"%></button>
+                </a>
+              </div> 
+            </div>
 
+            <div id="hamburger" class="hamburger_container">
+              <div class="burger1"></div>
+              <div class="burger2"></div>
+              <div class="burger3"></div>
+            </div> 
 
           </div>
+
           <div class="nav_right">
           <%= if !Pow.Plug.current_user(@conn) do %>
             <div class="nav_element">
@@ -40,34 +55,89 @@
               <%= link (gettext "Sign in"), to: Routes.pow_session_path(@conn, :new) %>
             </div>
           <% end %>
-
+            <div class="dropdowns_container">
+              <div class="dropdown">
+                <button class="dropbtn"><%= gettext "Language" %></button>
+                <div class="dropdown-content">
+                  <%= raw ListudyWeb.Seo.lang_alternatives(@conn) %>
+                </div>
+              </div> 
+            </div>
             <div class="dropdowns_container">
               <div class="dropdown">
                 <button class="dropbtn"><%= gettext "Settings" %></button>
                 <div class="dropdown-content">
                   <a href="#" id="toggle_dark_mode"><%= gettext "Toggle Darkmode" %></a>
+                  <a href="#" class="modal_open" id="sound_settings"><%= gettext "Sound Settings" %></a>
+                  <a href="#" class="modal_open" id="board_settings"><%= gettext "Board Settings" %></a>
                   <hr class="no_margin">
+                  <a href="<%= Routes.page_path(@conn, :show, @assigns.locale, "achievements") %>"><%= gettext "Achievements" %></a>
                 <%= if Pow.Plug.current_user(@conn) do %>
                   <%= link (gettext "User Settings"), to: Routes.pow_registration_path(@conn, :edit) %>
                   <%= link (gettext "Profile"), to: Routes.user_profile_path(@conn, :show, @assigns.locale, @assigns.current_user.username) %>
                   <%= link (gettext "Sign out"), to: Routes.pow_session_path(@conn, :delete), method: :delete, class: "hover_warn" %>
                 <% end %>
-
-                <div class="dropdowns_container">
-                  <div class="nested-dropdown">
-                    <button class="dropbtn nested-dropbtn"><%= gettext "Language" %></button>
-                    <div class="nested-dropdown-content">
-                      <%= raw ListudyWeb.Seo.lang_alternatives(@conn) %>
-                    </div>
-                  </div> 
-                </div>
-
                 </div>
               </div> 
             </div>
-
           </div>
         </nav>
       </section>
     </header>
 
+<div id="board_settings_modal" class="modal">
+  <div class="modal-content">
+    <span class="modal_close">&times;</span>
+    <h3><%= gettext("Board Settings")%></h3>
+    <div class="row">
+      <div class="one-half column">
+        <label for="chessboard_background"><%= gettext("Select a color:") %></label>
+        <select name="chessboard_background" id="chessboard_background">
+          <option value="blue">Blue</option>
+          <option value="brown">Brown</option>
+          <option value="green">Green</option>
+          <option value="ic">IC</option>
+        </select>
+        <label for="chessboard_pieces"><%= gettext("Select a piece set:") %></label>
+        <select name="chessboard_pieces" id="chessboard_pieces">
+          <option value="cburnett">cburnett</option>
+          <option value="merida">merida</option>
+          <option value="chessnut">chessnut</option>
+          <option value="pirouetti">pirouetti</option>
+          <option value="pixel">pixel</option>
+          <option value="shapes">shapes</option>
+          <option value="letter">letter</option>
+        </select>
+      </div>
+      <div class="one-half column">
+        <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable"></div>
+        <div class="settings_piece_container">
+          <piece class="white pawn chessground_piece"></piece>
+          <piece class="white knight chessground_piece"></piece>
+          <piece class="white bishop chessground_piece"></piece>
+          <piece class="white rook chessground_piece"></piece>
+          <piece class="white queen chessground_piece"></piece>
+          <piece class="white king chessground_piece"></piece>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="sound_settings_modal" class="modal">
+  <div class="modal-content">
+    <span class="modal_close">&times;</span>
+    <h3><%= gettext("Sound Settings")%></h3>
+    <label for="sound_enable"><%= gettext("Play Sound") %></label>
+    <input type="checkbox" checked name="sound_enable" id="sound_enable">
+
+    <label for="sound_volume"><%= gettext("Volume") %></label>
+    <input id="sound_volume" name="sound_volume" type="range" min="0" max="1" step="0.1" value="1">
+    <hr>
+    <h3><%= gettext("Test Sounds")%></h3>
+    <button id="sound_move" class="secondary"><%= gettext("Move") %></button>
+    <button id="sound_capture" class="secondary"><%= gettext("Capture") %></button>
+    <button id="sound_success" class="secondary"><%= gettext("Success") %></button>
+    <button id="sound_error" class="secondary"><%= gettext("Error") %></button>
+  </div>
+</div>

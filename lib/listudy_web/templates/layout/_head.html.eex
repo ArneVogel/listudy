@@ -15,15 +15,45 @@
     <%= raw ListudyWeb.Seo.noindex(@conn) %>
 
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+
+    <%= if is_halloween() do %>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/halloween.css") %>"/>
+    <% end %>
+    <%= if is_xmas() do %>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/xmas.css") %>"/>
+    <% end %>
+    <%= if is_new_year() do %>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/new_year.css") %>"/>
+    <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/confetti.browser.min.js") %>"></script>
+    <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/holidays/new-year.js") %>"></script>
+    <% end %>
+    <%= if is_april_fools() do %>
+    <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/holidays/april-fools.21.js") %>"></script>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/april-fools.21.css") %>"/>
+    <% end %>
+
+
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
-    <script>
-      <%# This is here to stop the default white theme to flash on load
+    <script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
+      <%# This is here to stop the default white theme to flash on load %>
       <%# In the defered app.js script it would only switch after the page is loaded %>
       let theme = localStorage.getItem("data-theme") || "light";
       localStorage.setItem("data-theme", theme);
       document.documentElement.setAttribute('data-theme', theme);
-      <%# Translations used by javascript %>
-      let translation_share_on = "<%= gettext "Share on" %>";
+      
+      let chessboard_background = localStorage.getItem("chessground_background") || "blue";
+      localStorage.setItem("chessground_background", chessboard_background);
+      if (chessboard_background != "blue") {
+        document.documentElement.classList.remove("blue");
+        document.documentElement.classList.add(chessboard_background);
+      }
+      let chessboard_piece = localStorage.getItem("chessground_piece") || "cburnett";
+      localStorage.setItem("chessground_piece", chessboard_piece);
+      if (chessboard_piece != "cburnett") {
+        document.documentElement.classList.remove("cburnett");
+        document.documentElement.classList.add(chessboard_piece);
+      }
+
     </script>
 
     <%# Favicon start, generated with https://realfavicongenerator.net/%>
@@ -36,3 +66,5 @@
     <meta name="theme-color" content="#ffffff">
     <%# Favicon end %>
 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6706752364351336" crossorigin="anonymous"></script>
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>(adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=1;</script>

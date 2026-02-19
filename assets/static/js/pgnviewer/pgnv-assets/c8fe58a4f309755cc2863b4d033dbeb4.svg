@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 800">
+    <defs> 
+        <pattern id="diagonal-stripe-1" patternUnits="userSpaceOnUse" width="10" height="10"> 
+            <image href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScvPgogIDxwYXRoIGQ9J00tMSwxIGwyLC0yCiAgICAgICAgICAgTTAsMTAgbDEwLC0xMAogICAgICAgICAgIE05LDExIGwyLC0yJyBzdHJva2U9J2JsYWNrJyBzdHJva2Utd2lkdGg9JzEnLz4KPC9zdmc+Cg==" x="0" y="0" width="10" height="10"> 
+            </image> 
+        </pattern> 
+    </defs> 
+<g id="zeit-board">
+<g id="Light" fill="#f4f4f4">
+<rect width="800" height="800"/>
+</g>
+<g id="Frame" fill="none">
+<rect width="800" height="800"/>
+</g>
+<g id="Dark" style="fill:url(#diagonal-stripe-1);">
+<g id="raz">
+<g id="dva">
+<g id="tri">
+<rect x="100" width="100" height="100"/>
+<rect x="300" width="100" height="100"/>
+<rect x="500" width="100" height="100"/>
+<rect x="700" width="100" height="100"/>
+</g>
+<use transform="translate(-100,100)" xlink:href="#tri"/>
+</g>
+<use transform="translate(0,200)" xlink:href="#dva"/>
+</g>
+<use transform="translate(0,400)" xlink:href="#raz"/>
+</g>
+</g>
+</svg>

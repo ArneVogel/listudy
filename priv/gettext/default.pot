@@ -10,563 +10,341 @@
 msgid ""
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:2
-msgid "Welcome to %{name}!"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:25
+#: lib/listudy_web/templates/layout/_header.html.eex:52
+#: lib/listudy_web/templates/pow/registration/new.html.eex:29
+#, elixir-autogen, elixir-format
 msgid "Register"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:28
+#: lib/listudy_web/templates/layout/_header.html.eex:55
+#, elixir-autogen, elixir-format
 msgid "Sign in"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:41
+#: lib/listudy_web/templates/layout/_header.html.eex:78
+#, elixir-autogen, elixir-format
 msgid "Sign out"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:34
+#: lib/listudy_web/templates/layout/_header.html.eex:68
+#, elixir-autogen, elixir-format
 msgid "Settings"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:36
+#: lib/listudy_web/templates/layout/_header.html.eex:70
+#, elixir-autogen, elixir-format
 msgid "Toggle Darkmode"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:39
+#: lib/listudy_web/templates/layout/_header.html.eex:76
+#, elixir-autogen, elixir-format
 msgid "User Settings"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy/users/user.ex:34
+#: lib/listudy/users/user.ex:50
+#, elixir-autogen, elixir-format
 msgid "Only alphanumeric characters allowed"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:15
+#: lib/listudy_web/templates/layout/_header.html.eex:16
+#, elixir-autogen, elixir-format
 msgid "Search for Studies"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:13
-#: lib/listudy_web/templates/study/index.html.eex:1
+#: lib/listudy_web/templates/layout/_header.html.eex:14
+#, elixir-autogen, elixir-format
 msgid "Your Studies"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/comment/show_comments.html.eex:10
-#: lib/listudy_web/templates/study/index.html.eex:28
-msgid "Are you sure?"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/comment/comment_form.html.eex:3
-msgid "Comment"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/controllers/comment_controller.ex:41
-#: lib/listudy_web/controllers/comment_controller.ex:59
-msgid "Comment could not get created"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/controllers/comment_controller.ex:40
-#: lib/listudy_web/controllers/comment_controller.ex:58
-msgid "Comment created"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/comment/show_comments.html.eex:10
-#: lib/listudy_web/templates/study/index.html.eex:28
-msgid "Delete"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/form.html.eex:12
-#: lib/listudy_web/templates/study/index.html.eex:14 lib/listudy_web/templates/study/index.html.eex:42
-#: lib/listudy_web/templates/study/show.html.eex:25 lib/listudy_web/templates/user_profile/show.html.eex:11
-msgid "Description"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/index.html.eex:27
-#: lib/listudy_web/templates/study/show.html.eex:28
-msgid "Edit"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/controllers/comment_controller.ex:47
-#: lib/listudy_web/controllers/comment_controller.ex:65
+#: lib/listudy_web/templates/layout/_header.html.eex:141
+#, elixir-autogen, elixir-format
 msgid "Error"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/study/form.html.eex:31
-msgid "For which side is this study"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/form.html.eex:13
-msgid "In this study I work on my 1.e4 openings..."
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/form.html.eex:34
-msgid "Keep this study private"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/comment/comment_form.html.eex:15
-msgid "Log in to comment"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:175
-msgid "No PGN file uploaded"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:162
-msgid "Please log in"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/comment/comment_form.html.eex:11
-msgid "Save"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/form.html.eex:19
-msgid "Select a PGN to upload"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:10
+#: lib/listudy_web/templates/layout/_header.html.eex:11
+#, elixir-autogen, elixir-format
 msgid "Study"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/study/form.html.eex:8
+#: lib/listudy_web/templates/post/index.html.eex:6
+#, elixir-autogen, elixir-format
 msgid "Title"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/comment/show_comments.html.eex:3
-msgid "Comments"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/views/helpers/page_description.ex:10
-msgid "Improve your chess game on Listudy"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/index.html.eex:13
-#: lib/listudy_web/templates/study/index.html.eex:41 lib/listudy_web/templates/user_profile/show.html.eex:10
-msgid "Name"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/index.html.eex:5
-msgid "New Study"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/live/study_search_live.ex:11
-msgid "Search"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/views/helpers/page_title.ex:15
-msgid "Search Studies"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/live/study_search_live.ex:9
-msgid "Search for studies"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/views/helpers/page_description.ex:9
-msgid "Search for studies to train specific openings"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/index.html.eex:26
-#: lib/listudy_web/templates/study/index.html.eex:53 lib/listudy_web/templates/user_profile/show.html.eex:23
-msgid "Show"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/live/study_search_live.ex:15
-#: lib/listudy_web/templates/comment/show_comments.html.eex:7
-msgid "by"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/user_profile/show.html.eex:30
-msgid "%{name} does not have any public studies."
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/user_profile/show.html.eex:3
-msgid "%{name} has been a member since %{signup}."
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/pow/registration/new.html.eex:38
-msgid "Before creating your account, please read the Privacy Policy and Terms of Service. By creating the account, you agree to those terms."
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:4
-msgid "Better train openings, endgames and tactics with the help of systematic repetition."
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/layout/_footer.html.eex:12
+#: lib/listudy_web/templates/layout/_footer.html.eex:11
 #: lib/listudy_web/templates/post/index.html.eex:1
+#, elixir-autogen, elixir-format
 msgid "Blog"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:95
-msgid "Chapter"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:35
-msgid "Chapter Selection"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/controllers/comment_controller.ex:26
-msgid "Comment deleted successfully."
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:28
-msgid "Contribute"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:216
-msgid "Could not favorite this study"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:229
-msgid "Could not unfavorite this study"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:16
-#: lib/listudy_web/templates/study/new.html.eex:1
+#: lib/listudy_web/templates/layout/_header.html.eex:17
+#, elixir-autogen, elixir-format
 msgid "Create a new Study"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:31
-msgid "Created by:"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:40
-msgid "Distribute copies of your modified versions"
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:36
+#, elixir-autogen, elixir-format
 msgid "Email"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:12
-msgid "Explore the"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/index.html.eex:37
-msgid "Favored Studies"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:40
-msgid "Favorite this study"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:34
-msgid "Free & Open Source"
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:8
 #: lib/listudy_web/templates/page/imprint.html.eex:1
+#, elixir-autogen, elixir-format
 msgid "Imprint"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:46
+#: lib/listudy_web/templates/layout/_header.html.eex:60
+#, elixir-autogen, elixir-format
 msgid "Language"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:15
-msgid "Latest blog posts"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:182
-msgid "PGN is too big, only 50kb allowed"
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:37
+#, elixir-autogen, elixir-format
 msgid "Password"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:11
-msgid "Play against your opening repertoire and learn them playfully and with scientifically effective methods."
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:37
+#, elixir-autogen, elixir-format
 msgid "Please choose a secure password. The password must be at least eight characters long."
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:5
 #: lib/listudy_web/templates/page/imprint.html.eex:8
+#, elixir-autogen, elixir-format
 msgid "Privacy"
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/templates/page/privacy.html.eex:1
-#: lib/listudy_web/templates/pow/registration/new.html.eex:39
+#: lib/listudy_web/templates/pow/registration/new.html.eex:38
+#, elixir-autogen, elixir-format
 msgid "Privacy Policy"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/layout/_header.html.eex:40
+#: lib/listudy_web/templates/layout/_header.html.eex:77
+#, elixir-autogen, elixir-format
 msgid "Profile"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/user_profile/show.html.eex:1
-msgid "Profile of %{name}"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/user_profile/show.html.eex:6
-msgid "Public studies by %{name}"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:39
-msgid "Redistribute the software"
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:34
+#, elixir-autogen, elixir-format
 msgid "Register to get access to all features."
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:92
-msgid "Right move!"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:37
-msgid "Run the server yourself as you wish, for any purpose"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:87
-msgid "Starting training."
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:9
-msgid "Study Openings"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:215
-msgid "Study favorited"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:38
-msgid "Study how the software works, and change it so it does your computing as you wish"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:228
-msgid "Study unfavorited"
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:6
-#: lib/listudy_web/templates/page/imprint.html.eex:9 lib/listudy_web/templates/page/terms-of-service.html.eex:1
-#: lib/listudy_web/templates/pow/registration/new.html.eex:40
+#: lib/listudy_web/templates/page/imprint.html.eex:9
+#: lib/listudy_web/templates/page/terms-of-service.html.eex:1
+#: lib/listudy_web/templates/pow/registration/new.html.eex:39
+#, elixir-autogen, elixir-format
 msgid "Terms of Service"
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:36
+#, elixir-autogen, elixir-format
 msgid "The email is used to log in. It doesn't have to be real, as long as you remember it."
 msgstr ""
 
-#, elixir-format
 #: lib/listudy_web/templates/page/imprint.html.eex:2
+#, elixir-autogen, elixir-format
 msgid "The provider of this website is Arne Vogel."
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:30
-msgid "The support can look different. Report bugs if you find any, fix bugs if you can, help translate Listudy into other languages."
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:89
-msgid "This move is not in the study, try again."
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/controllers/page_controller.ex:15
-#: lib/listudy_web/controllers/page_controller.ex:30
+#: lib/listudy_web/controllers/page_controller.ex:28
+#: lib/listudy_web/controllers/page_controller.ex:61
+#: lib/listudy_web/controllers/webmaster_controller.ex:21
+#, elixir-autogen, elixir-format
 msgid "This page does not exist"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/controllers/post_controller.ex:42
+#: lib/listudy_web/controllers/post_controller.ex:41
+#, elixir-autogen, elixir-format
 msgid "This post does not exist"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:90
-msgid "This study does not contain enough moves."
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:42
-msgid "Unfavorite this study"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:10
-msgid "Use Listudy to better memorize openings. "
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:35
+#, elixir-autogen, elixir-format
 msgid "Username"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:31
-msgid "Visit github to find out more about how you can help:"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:3
-msgid "With %{name} you can improve your chess skills with the help of spaced repetition."
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/templates/pow/registration/new.html.eex:35
+#, elixir-autogen, elixir-format
 msgid "You are welcome to use a pseudonym."
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:42
-msgid "You can find the source code running Listudy on github:"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:29
-msgid "You can help make Listudy better."
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/study/show.html.eex:93
-msgid "You reached the end of this line."
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/controllers/comment_controller.ex:21
-msgid "You're not allowed to do that."
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:35
-msgid "Your freedoms are important. That's why you have the rights to:"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:12
-msgid "latest openings"
-msgstr ""
-
-#, elixir-format
-#: lib/listudy_web/templates/layout/_head.html.eex:20
-msgid "Share on"
-msgstr ""
-
-#, elixir-format
 #: lib/listudy_web/templates/layout/_footer.html.eex:7
 #: lib/listudy_web/templates/page/copyright.html.eex:1
+#, elixir-autogen, elixir-format
 msgid "Copyright"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/study/new.html.eex:9
-msgid "For more information read the Copyright Policy"
+#: lib/listudy_web/templates/layout/_footer.html.eex:17
+#: lib/listudy_web/templates/layout/_header.html.eex:27
+#, elixir-autogen, elixir-format
+msgid "Blind Tactics"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/study/new.html.eex:8
-msgid "Please remember to only upload PGNs for which you have the rights to publish them. This is especially true, but not limited, for PGN files that you have acquired from paid platforms."
+#: lib/listudy_web/templates/pow/registration/edit.html.eex:37
+#, elixir-autogen, elixir-format
+msgid "Close Account"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/page/index.html.eex:22
-msgid "All blog posts"
+#: lib/listudy_web/templates/post/index.html.eex:7
+#: lib/listudy_web/templates/post/show.html.eex:3
+#, elixir-autogen, elixir-format
+msgid "Created at"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:199
-msgid "Could not download the study from lichess, please check the link"
+#: lib/listudy_web/templates/layout/_footer.html.eex:19
+#, elixir-autogen, elixir-format
+msgid "Daily Puzzle"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/study/form.html.eex:16
-msgid "Either upload a PGN file or provide a link to a public Lichess study:"
+#: lib/listudy_web/templates/pow/registration/edit.html.eex:36
+#, elixir-autogen, elixir-format
+msgid "Delete Account"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/views/helpers/page_title.ex:12
-msgid "Improve you chess game with spaced repetition"
+#: lib/listudy_web/templates/layout/_footer.html.eex:16
+#, elixir-autogen, elixir-format
+msgid "Features"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/templates/study/form.html.eex:24
-msgid "Lichess Study"
+#: lib/listudy_web/templates/post/index.html.eex:8
+#: lib/listudy_web/templates/post/show.html.eex:5
+#, elixir-autogen, elixir-format
+msgid "Last updated"
 msgstr ""
 
-#, elixir-format
-#: lib/listudy_web/controllers/study_controller.ex:202
-msgid "The provided link is not a Lichess study"
+#: lib/listudy_web/templates/layout/_footer.html.eex:20
+#, elixir-autogen, elixir-format
+msgid "Make your own Tactic"
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_header.html.eex:24
+#: lib/listudy_web/templates/layout/_header.html.eex:26
+#, elixir-autogen, elixir-format
+msgid "Tactics"
+msgstr ""
+
+#: lib/listudy_web/templates/pow/registration/edit.html.eex:37
+#, elixir-autogen, elixir-format
+msgid "This can not be reversed! Are you sure?"
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_header.html.eex:74
+#, elixir-autogen, elixir-format
+msgid "Achievements"
+msgstr ""
+
+#: lib/listudy_web/templates/pow/registration/edit.html.eex:32
+#, elixir-autogen, elixir-format
+msgid "Back"
+msgstr ""
+
+#: lib/listudy_web/templates/pow/registration/new.html.eex:40
+#, elixir-autogen, elixir-format
+msgid "Before creating your account, please read the %{privacy_policy} and %{tos}. By creating the account, you agree to those terms."
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_header.html.eex:72
+#: lib/listudy_web/templates/layout/_header.html.eex:91
+#, elixir-autogen, elixir-format
+msgid "Board Settings"
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_header.html.eex:139
+#, elixir-autogen, elixir-format
+msgid "Capture"
+msgstr ""
+
+#: lib/listudy_web/templates/endgame/chapter.html.eex:2
+#: lib/listudy_web/templates/layout/_header.html.eex:36
+#, elixir-autogen, elixir-format
+msgid "Endgames"
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_header.html.eex:138
+#, elixir-autogen, elixir-format
+msgid "Move"
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_header.html.eex:131
+#, elixir-autogen, elixir-format
+msgid "Play Sound"
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_header.html.eex:94
+#, elixir-autogen, elixir-format
+msgid "Select a color:"
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_header.html.eex:101
+#, elixir-autogen, elixir-format
+msgid "Select a piece set:"
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_header.html.eex:71
+#: lib/listudy_web/templates/layout/_header.html.eex:130
+#, elixir-autogen, elixir-format
+msgid "Sound Settings"
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_header.html.eex:140
+#, elixir-autogen, elixir-format
+msgid "Success"
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_header.html.eex:137
+#, elixir-autogen, elixir-format
+msgid "Test Sounds"
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_header.html.eex:134
+#, elixir-autogen, elixir-format
+msgid "Volume"
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:12
+#, elixir-autogen, elixir-format
+msgid "Webmaster"
+msgstr ""
+
+#: lib/listudy_web/pow/messages.ex:9
+#, elixir-autogen, elixir-format
+msgid "The provided login details did not work. Make sure to log in with your email and not your username!"
+msgstr ""
+
+#: lib/listudy_web/templates/pow/session/new.html.eex:11
+#, elixir-autogen, elixir-format
+msgid "Use your email to log in."
+msgstr ""
+
+#: lib/listudy_web/templates/pow/session/new.html.eex:18
+#, elixir-autogen, elixir-format
+msgid "Your session will be persistent. Only use on your own devices."
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:10
+#, elixir-autogen, elixir-format
+msgid "Changelog"
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:18
+#: lib/listudy_web/templates/layout/_header.html.eex:28
+#, elixir-autogen, elixir-format
+msgid "Pieceless Tactics"
+msgstr ""
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:9
+#, elixir-autogen, elixir-format
+msgid "Thank you!"
+msgstr ""
+
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:8
+#, elixir-autogen, elixir-format
+msgid "black"
+msgstr ""
+
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:9
+#, elixir-autogen, elixir-format
+msgid "white"
 msgstr ""

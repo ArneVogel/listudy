@@ -1,0 +1,207 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: it\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: service.html.eex:24
+msgid "Both registered and unregistered users have rights to protect their property, privacy, and identity unless they have consented or agree to making their identity public. Most information on this topic can be found in our Privacy Policy."
+msgstr "Sia gli utenti registrati che quelli non registrati hanno il diritto di proteggere la propria proprietà, privacy e identità, a meno che non abbiano acconsentito o accettino di rendere pubblica la propria identità. La maggior parte delle informazioni su questo aspetto sono contenute nella nostra Informativa sulla Privacy."
+
+#, elixir-format
+#: service.html.eex:28
+msgid "By agreeing to these Terms, registered Users can have access to all of Listudy’ features and are free to use them for their own personal, educational, charitable, or developmental purposes. Listudy itself is also free/libre open-source software licensed under the GNU AGPL. This doesn’t prevent Listudy from having the ultimate decision in what kind of use of the Services is appropriate."
+msgstr "Accettando questi Termini, gli Utenti registrati possono accedere a tutte le funzionalità di Listudy e sono liberi di utilizzarle per scopi personali, educativi, caritatevoli o di sviluppo. Listudy è esso stesso un software libero e open-source con licenza GNU AGPL. Ciò non impedisce a Listudy di decidere quale tipo di utilizzo dei propri Servizi sia considerato appropriato."
+
+#, elixir-format
+#: service.html.eex:8
+msgid "By using this website (the “Site”) and services (together with the Site, the “Services”) offered by Listudy.org (together with our subsidiaries, affiliates, representatives, and directors – collectively “Listudy”, “we”, or “us”) you’re agreeing to these legally binding rules (the “Terms”). You’re also agreeing to our Privacy Policy and Cookie Policy, and agreeing to follow any other rules on the Site."
+msgstr "Utilizzando questo sito Web (il “Sito“) e i servizi (insieme al Sito, i “Servizi“) offerti da Listudy.org (insieme alle nostre sussidiarie, affiliate, rappresentanti e dirigenti - collettivamente “Listudy“, “noi“ o “ci“), accetti queste regole legalmente vincolanti (i “Termini“). Accetti inoltre la nostra Informativa sulla Privacy e l'Informativa sui Cookie e accetti di rispettare tutte le altre regole del Sito."
+
+#, elixir-format
+#: service.html.eex:34
+msgid "Closing and Terminating your Account"
+msgstr "Chiudere e Terminare il tuo Account"
+
+#, elixir-format
+#: service.html.eex:55
+msgid "Copyright"
+msgstr "Copyright"
+
+#, elixir-format
+#: service.html.eex:12
+msgid "Creating an Account"
+msgstr "Creare un Account"
+
+#, elixir-format
+#: service.html.eex:18
+msgid "Don’t impersonate anyone else or choose names that are offensive or that violate anyone’s rights. If you don’t follow these rules, we reserve the right to close your account without warning."
+msgstr "Non impersonare nessuno e non scegliere nomi offensivi o che violino i diritti di qualcuno. Se non rispetti queste regole, ci riserviamo il diritto di chiudere il tuo account senza preavviso."
+
+#, elixir-format
+#: service.html.eex:2
+msgid "English version of the Terms of Service"
+msgstr "Versione inglese dei Termini di Servizio"
+
+#, elixir-format
+#: service.html.eex:61
+msgid "If you believe your content has been copied in a way that constitutes copyright infringement please alert us by contacting us at copyright@listudy.org."
+msgstr "Se ritieni che i tuoi contenuti siano stati copiati in modo da costituire una violazione del diritto d'autore, ti invitiamo ad avvisarci contattandoci all'indirizzo copyright@listudy.org."
+
+#, elixir-format
+#: service.html.eex:32
+msgid "In all circumstances, we may retain certain information as required by law or necessary for our legitimate operating purposes. All of the provisions within this agreement survive the termination of an account."
+msgstr "In qualsiasi caso, possiamo conservare alcune informazioni come richiesto dalla legge o necessario per i nostri legittimi scopi operativi. Tutte le disposizioni del presente contratto restano in vigore anche dopo la chiusura dell'account."
+
+#, elixir-format
+#: service.html.eex:4
+msgid "Last edited:"
+msgstr "Ultima modifica:"
+
+#, elixir-format
+#: service.html.eex:26
+msgid "Listudy believes that users should have their public information, identity, and data protected as strongly as possible. We use European Union data protection law as our baseline, and in many respects go further than what the law requires. We’ve also chosen to extend these rights to all users, not just those under a European Union jurisdiction."
+msgstr "Listudy ritiene che le informazioni pubbliche degli utenti, dalla loro identità e i loro dati debbano essere protetti il più possibile. Utilizziamo la legge sulla protezione dei dati dell'Unione Europea come base di partenza, e per molti aspetti andiamo oltre quanto richiesto da essa. Abbiamo anche scelto di estendere questi diritti a tutti gli utenti, non solo a quelli soggetti alla giurisdizione dell'Unione Europea."
+
+#, elixir-format
+#: service.html.eex:57
+msgid "Listudy is licensed under the GNU AGPL license."
+msgstr "Listudy è rilasciato sotto licenza GNU AGPL."
+
+#, elixir-format
+#: service.html.eex:69
+msgid "Listudy makes no warranty or representation and disclaims all responsibility and liability for the completeness, availability, timeliness, accuracy and security of the content and services."
+msgstr "Listudy non fornisce alcuna garanzia o assicurazione e declina ogni responsabilità per la completezza, la disponibilità, la tempestività, l'accuratezza e la sicurezza dei contenuti e dei servizi."
+
+#, elixir-format
+#: service.html.eex:59
+msgid "Listudy respects the intellectual property rights of others and expects Users of the Services to do the same. Listudy reserves the right to remove content alleged to be infringing without prior notice at our sole discretion and without liability to you. We will respond to notices of alleged copyright infringement, that comply with applicable law and are properly provided to us, as described in our copyright policy."
+msgstr "Listudy rispetta i diritti di proprietà intellettuale degli altri e si aspetta che gli Utenti dei Servizi facciano altrettanto. Listudy si riserva il diritto di rimuovere i contenuti ritenuti in violazione senza preavviso, a sua esclusiva discrezione e senza alcuna responsabilità nei tuoi confronti. Listudy risponderà alle segnalazioni di presunta violazione del copyright, conformi alle leggi vigenti e correttamente fornite, come descritto nella sua policy sul copyright."
+
+#, elixir-format
+#: service.html.eex:73
+msgid "No advice, information or written correspondence whether oral or written procured from Listudy entities or through Listudy services will create any warranty or representation not expressly made herein."
+msgstr "Nessun consiglio, informazione o comunicazione, scritta o orale, proveniente da organismi di Listudy o attraverso i servizi Listudy potrà costituire alcuna garanzia o dichiarazione che non sia stata espressamente fornita nel presente documento."
+
+#, elixir-format
+#: service.html.eex:53
+msgid "Our privacy policy describes how we handle the information you provide to us when you use our services. You understand that through your use of the services you consent to the collection and use, as set out in the privacy policy, of this information. Listudy currently follows European Data Protection, and applies these rights to users of all nationalities, not just European users."
+msgstr "La nostra informativa sulla privacy descrive il modo in cui gestiamo le informazioni che ci fornisci quando utilizzi i nostri servizi. Sei consapevole del fatto che, utilizzando i servizi, acconsenti alla raccolta e all'utilizzo di tali informazioni, come indicato nell'informativa sulla privacy. Listudy attualmente si attiene alla Protezione dei Dati Europea e applica questi diritti agli utenti di tutte le nazionalità, non solo a quelli europei."
+
+#, elixir-format
+#: service.html.eex:38
+msgid "Our rights"
+msgstr "I nostri diritti"
+
+#, elixir-format
+#: service.html.eex:51
+msgid "Privacy"
+msgstr "Privacy"
+
+#, elixir-format
+#: service.html.eex:67
+msgid "Services made available are on an as is and as available basis. We’re not responsible for whether this stuff actually works, though if it does that’s an added bonus to all of us."
+msgstr "I servizi messi a disposizione sono forniti così come sono e quando disponibili. Non siamo responsabili dell'effettivo funzionamento di queste cose, anche se, se così fosse, sarebbe un vantaggio aggiunto per tutti noi."
+
+#, elixir-format
+#: service.html.eex:65
+msgid "Stuff we’re not responsible for"
+msgstr "Cose di cui non siamo responsabili"
+
+#, elixir-format
+#: service.html.eex:49
+msgid "This list is non-exhaustive, and we reserve the right to add, edit, or remove entries from it at any time."
+msgstr "Questo elenco non è esaustivo e ci riserviamo il diritto di aggiungere, modificare o rimuovere voci da esso in qualsiasi momento."
+
+#, elixir-format
+#: service.html.eex:6
+msgid "This page explains our terms of use. When you use Listudy, you’re agreeing to all the rules on this page. Some of them need to be expressed in specific legal language but we’ve done our best to offer you clear and simple explanations of what everything means."
+msgstr "Questa pagina spiega i nostri termini di utilizzo. Quando utilizzi Listudy, accetti tutte le regole contenute in questa pagina. Alcune di esse devono essere espresse in un linguaggio legale specifico, ma abbiamo fatto del nostro meglio per offrirti spiegazioni chiare e semplici sul significato di ogni cosa."
+
+#, elixir-format
+#: service.html.eex:39
+msgid "To operate, we need to be able to maintain control over what happens on our website. To summarise, we reserve the right to make decisions to protect the health and integrity of our systems. We’ll only use these powers when we absolutely must."
+msgstr "Per poter operare, dobbiamo essere in grado di mantenere il controllo su ciò che accade sul nostro sito Web. In sintesi, ci riserviamo il diritto di prendere decisioni per proteggere la salute e l'integrità dei nostri sistemi. Utilizzeremo questi privilegi solo in caso di assoluta necessità."
+
+#, elixir-format
+#: service.html.eex:14
+msgid "To sign up for a Listudy account, you need to be 16 or over. You’re responsible for your account and all the activity on it."
+msgstr "Per registrare un account Listudy, è necessario avere almeno 16 anni. Sei responsabile del tuo account e di tutte le attività svolte con esso."
+
+#, elixir-format
+#: service.html.eex:2
+msgid "Translated terms of service shall only serve as an informal source of information. Please read the english version for the official version applicable to the site."
+msgstr "I termini di servizio tradotti servono solo come fonte informale di informazioni. Si prega di leggere la versione inglese per conoscere la versione ufficiale applicabile al sito."
+
+#, elixir-format
+#: service.html.eex:22
+msgid "User Rights"
+msgstr "Diritti dell'Utente"
+
+#, elixir-format
+#: service.html.eex:30
+msgid "Users are responsible for the content they post. Some examples of content would include information, data, text, and pgn files. We won’t be responsible for the content you post."
+msgstr "Gli utenti sono responsabili dei contenuti che pubblicano. Alcuni esempi di contenuti sono informazioni, dati, testi e file PGN. Noi non siamo responsabili dei contenuti da te pubblicati."
+
+#, elixir-format
+#: service.html.eex:45
+msgid "We are not responsible for any loss, damage, or harm that may arise from any occasional downtime."
+msgstr "Non siamo responsabili di eventuali perdite, danni o inconvenienti che possono derivare da eventuali tempi di interruzione occasionale dei servizi."
+
+#, elixir-format
+#: service.html.eex:41
+msgid "We can make changes to the Listudy Site and Services without letting you know in advance, or being liable for any loss, damage, or harm that arises as a result."
+msgstr "Possiamo apportare modifiche al Sito e ai Servizi di Listudy senza informarti in anticipo o essere responsabili di eventuali perdite, danni o inconvenienti che ne conseguano."
+
+#, elixir-format
+#: service.html.eex:71
+msgid "We disclaim all responsibility for any harm or loss of any data to your computer system, the deletion of or failure to store or transmit communications or content maintained by the services or whether the services will meet your requirements or be available on an uninterrupted, secure or error-free basis. Listudy cannot be held responsible for any loss, financial or otherwise, from third party sources, including misrepresentations, negligence or fraud."
+msgstr "Decliniamo ogni responsabilità per eventuali danni o perdite di dati nel tuo sistema informatico, la cancellazione o la mancata memorizzazione o trasmissione di comunicazioni o contenuti conservati nei servizi o se i servizi soddisferanno le tue esigenze o saranno disponibili su base ininterrotta, sicura o priva di errori. Listudy non può essere ritenuto responsabile di eventuali perdite, finanziarie o di altro tipo, derivanti da fonti terze, comprese dichiarazioni errate, negligenza o frode."
+
+#, elixir-format
+#: service.html.eex:43
+msgid "We have the ultimate say in who can use our Site and Services. We can cancel accounts, or decline to let Users use our Services."
+msgstr "Abbiamo l'ultima parola su chi può utilizzare il nostro Sito e i nostri Servizi. Possiamo cancellare gli account o rifiutare agli Utenti di utilizzare i nostri Servizi."
+
+#, elixir-format
+#: service.html.eex:10
+msgid "We may change these terms from time to time. If we do, we’ll let you know about any significant or material changes, by notifying you on the Site. New versions of the terms will never apply retroactively – we’ll tell you the exact date they go into effect. If you continue using Listudy after a change, that means you accept the new terms."
+msgstr "Le presenti condizioni possono essere modificate di tanto in tanto. In tal caso, ti informeremo di eventuali modifiche significative o materiali, dandotene comunicazione sul Sito. Le nuove versioni dei termini non si applicheranno mai retroattivamente - ti comunicheremo la data esatta della loro entrata in vigore. Se continui a utilizzare Listudy dopo una modifica, significa che accetti i nuovi termini."
+
+#, elixir-format
+#: service.html.eex:47
+msgid "We reserve the right to contact the relevant authorities if a User is breaking the law, and share relevant data with the authorities, if harm or damage occurs either against our Users or against the operation of our infrastructure."
+msgstr "Ci riserviamo il diritto di contattare le autorità competenti in caso di violazione della legge da parte di un Utente e di condividere i relativi dati con le autorità, qualora si verifichino danni ai nostri Utenti o al funzionamento della nostra infrastruttura."
+
+#, elixir-format
+#: service.html.eex:20
+msgid "When these terms discuss “Users” or a “User”, we’ll be referring to both registered and unregistered users, unless it relates to features, information or data an unregistered User does not or cannot have access to."
+msgstr "Quando in questi termini si parla di “Utenti“ o di “Utente“, ci riferiamo sia agli utenti registrati che a quelli non registrati, a meno che non si tratti di funzionalità, informazioni o dati a cui un Utente non registrato non ha o non può avere accesso."
+
+#, elixir-format
+#: service.html.eex:16
+msgid "You can browse Listudy and use some of our Services without registering an account. But to use all of Listudy’ functions, you’ll need to register. This is done by choosing a username, setting a password, and securing it with an email address. If you don’t submit accurate information, you might not be able to access your account. You can choose any email (even fictitious ones). Just make sure to remember the email, because it is used to log in."
+msgstr "Puoi navigare su Listudy e utilizzare alcuni dei nostri Servizi senza registrare un account. Tuttavia, per utilizzare tutte le funzionalità di Listudy, dovrai registrarti. A tal fine, è necessario scegliere un nome utente, impostare una password e proteggerla con un indirizzo e-mail. Se non fornisci informazioni corrette, potresti non essere in grado di accedere al tuo account. È possibile scegliere qualsiasi e-mail (anche fittizia). Assicurati solo di ricordare l'e-mail, perché viene usata per effettuare l'accesso."
+
+#, elixir-format
+#: service.html.eex:35
+msgid "You can close your account at any time."
+msgstr "Puoi chiudere il tuo account in qualsiasi momento."
+
+#, elixir-format
+#: service.html.eex:36
+msgid "You can terminate your account at any time by contacting the Listudy administrators. This will permanently erase your account and all content and data. Although we may retain certain information as required by law or as necessary for our legitimate operating purposes. "
+msgstr "Puoi chiudere il tuo account in qualsiasi momento contattando gli amministratori di Listudy. In tal modo l'account, tutti i contenuti e i dati verranno cancellati in modo permanente. Tuttavia, possiamo conservare alcune informazioni come richiesto dalla legge o come necessario per i suoi legittimi scopi operativi. "
+
+#, elixir-format
+#: service.html.eex:63
+msgid "You retain your rights to any content you submit, post or create through the services including chess games. By submitting, posting or displaying content on or through our services, you grant us a global, non-exclusive, royalty-free license, with the right to sublicense, to use, copy, reproduce, process, adapt, modify, publish, transmit, display and distribute such content in any and all media or distribution channels. Such additional uses may be made without compensation paid to you with respect to the content you make available through the services. This does not remove your rights from other 3rd party sites, such as Twitch or YouTube."
+msgstr "Conservi i tuoi diritti su qualsiasi contenuto che invii, pubblichi o crei attraverso i servizi, comprese le partite di scacchi. Inviando, pubblicando o visualizzando contenuti su o tramite i nostri servizi, concedi una licenza globale, non esclusiva, esente da royalty, con il diritto di sublicenza, per utilizzare, copiare, riprodurre, elaborare, adattare, modificare, pubblicare, trasmettere, visualizzare e distribuire tali contenuti su qualsiasi supporto o canale di distribuzione. Tali impieghi aggiuntivi possono essere esercitati senza che ti venga corrisposto alcun compenso in relazione ai contenuti che rendi disponibili attraverso i servizi. Questo non pregiudica i tuoi diritti nei confronti di altri siti di terze parti, come Twitch o YouTube."

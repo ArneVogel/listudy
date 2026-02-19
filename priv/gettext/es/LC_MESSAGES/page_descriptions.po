@@ -1,0 +1,64 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: es\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:47
+msgid "Explore our collection of tactics taken from games by %{name}."
+msgstr "Explora nuestra colección de tácticas tomadas de juegos por %{name}."
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:27
+msgid "Get better at %{name} tactics with our huge library of puzzles taken from real games. Explore our free collection of %{name} tactics."
+msgstr "Mejora en tácticas de %{name} con nuestra gran colección de problemas tomados de juegos reales. Explora nuestra colección gratuita de ${name}."
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:74
+msgid "Get better in the %{name} opening. Study the opening and learn from traps and tactics collected from real games."
+msgstr "Mejora en la apertura %{name}. Estudia la apertura y aprende trampas y tácticas de juegos reales."
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:126
+msgid "Improve your chess game on Listudy"
+msgstr "Mejora de Ajedrez con Listudy"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:93
+msgid "Learn chess endgames interactively playing against Stockfish"
+msgstr "Aprende finales interactivamente jugando contra Stockfish"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:15
+msgid "Play against Stockfish Online - Unlimited and for Free"
+msgstr "Juega contra Stockfish en línea - Gratis"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:35
+msgid "Play tactics from the event %{}. Are you better than the professionals?"
+msgstr "Juega tácticas del evento %{}. ¿Eres mejor que los profesionales?"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:24
+msgid "Search for studies to train specific openings"
+msgstr "Busca estudios para entrenar aperturas especificas"
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:8
+msgid "Solve the Daily Chess Puzzle! Updated every day from our list of best puzzles."
+msgstr "Resuelve el Problema Diario, actualizado cada día de nuestra lista."
+
+#, elixir-format
+#: lib/listudy_web/views/helpers/page_description.ex:60
+msgid "A chess book recommendation by %{player}"
+msgid_plural "%{count} chess book recommendations by %{player}"
+msgstr[0] ""
+msgstr[1] ""

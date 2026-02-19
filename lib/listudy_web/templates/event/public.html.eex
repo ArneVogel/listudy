@@ -3,12 +3,12 @@
 
 <%= if @tactics_amount >= 2 do %>
   <% next_url = Routes.random_event_tactic_path(@conn, :random, @locale, @event.slug) %>
-  <h2 id="tactics"><%= gettext "Traps and Tactics from %{name}", name: @event.name %></h2>
+  <h2 id="tactics"><%= dgettext("tactics", "Traps and Tactics from %{name}", name: @event.name) %></h2>
   <%= render ListudyWeb.TacticView, "tactic.html", conn: @conn, tactic: @tactic, next: next_url %>
   <p>
-  <%= gettext "Solve tactics from games played at %{name}.", name: @event.name %>
+  <%= dgettext("tactics", "Solve tactics from games played at %{name}.", name: @event.name) %>
 
-  <%= gettext "Train tactics from %{amount} different games.", amount: @tactics_amount %>
+  <%= dgettext("tactics", "Train tactics from %{amount} different games.", amount: @tactics_amount) %>
   </p>
-  <%= link (gettext "%{name} Tactics", name: @event.name) , to: next_url %>
+  <%= link dgettext("tactics", "%{name} Tactics", name: @event.name) , to: next_url %>
 <% end %>

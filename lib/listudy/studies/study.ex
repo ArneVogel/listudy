@@ -9,15 +9,17 @@ defmodule Listudy.Studies.Study do
     field :slug, :string
     field :color, :string
     field :private, :boolean
-    field :user_id, :id
+    field :opening_id, :id
 
+    belongs_to(:user, Listudy.Users.User)
+    has_many :study_favorites, Listudy.StudyFavorites.StudyFavorite
     timestamps()
   end
 
   @doc false
   def changeset(study, attrs) do
     study
-    |> cast(attrs, [:title, :description, :slug, :private, :user_id, :color])
+    |> cast(attrs, [:title, :description, :slug, :private, :user_id, :color, :opening_id])
     |> validate_required([:title, :description, :slug])
     |> validate_length(:title, min: 3, max: 100)
     |> validate_length(:description, min: 10, max: 1000)

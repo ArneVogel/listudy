@@ -47,7 +47,7 @@ function tree_possible_moves(access, {filter=function(){return true;},sort=funct
     let children = tree_children_filter_sort(access, {filter:filter, sort:sort});
     let moves = [];
     for (let c of children) {
-        moves.push(c.move);
+        moves.push(c);
     }
     return moves;
 }
@@ -114,12 +114,66 @@ function tree_get_node(access) {
 }
 
 /*
+ * Get the node depth of a move
+ */
+function tree_get_node_depth(access) {
+    return access.move_index == 0 ? 1 : 1 + Math.floor(access.move_index / 2);
+}
+
+/**
+ * Returns maximum tree depth in terms of turns (white + black = two turns)
+ */
+function tree_max_depth(tree) { 
+    if (tree.children == undefined || tree.children.length == 0) {
+        return 1;
+    } else {
+        let child_depths = tree.children.map(x => tree_max_depth(x));
+        return 1 + Math.max(...child_depths);
+    }
+}
+
+/**
+ * Returns maximum tree depth in terms of moves (two turns = one move) for an array of moves,
+ * such as the starting position of a game, from either white's or black's perspective.
+ */
+function tree_max_num_moves_deep(start_moves, for_white) { 
+    let node_depths = start_moves.map(m => tree_max_depth(m));
+    let max_node_depths = Math.max(...node_depths);
+    let moves_float = max_node_depths / 2;
+    return for_white == true ? Math.ceil(moves_float) : Math.floor(moves_float);
+}
+
+/*
+ * Get a string representation of a move in SAN notation with move number for debugging purposes, ie 1.e4, or 1...e5
+ */
+function tree_get_node_string(access) {
+    let dots = access.move_index % 2 == 0 ? "." : "...";
+    return tree_get_node_depth(access) + dots + access.move;
+}
+
+/*
  * Can be used for tree_possible_moves to specify 
  * only moves that have a reply
  */
 function has_children(node) {
     return node.children.length != 0;
 }
+
+/*
+ * Checks if there is a child with childs
+ */
+function has_grandchildren(node) {
+    if (node.children.length == 0) {
+        return false;
+    }
+    for (let c of node.children) {
+        if (c.children.length != 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
 /*
  * Moves that have a lower than the threshold for training
@@ -142,4 +196,114 @@ function date_sort(a,b) {
     return 0;
 }
 
-export { tree_children, tree_children_filter_sort, tree_possible_moves, tree_move_index, has_children, need_hint, update_value, date_sort, tree_get_node };
+/*
+ * Sorts nodes by tree value
+ */
+function value_sort(a,b) {
+    /*
+     * We have to filter by has_grandchildren because otherwise leafes
+     * with moves by the ai without children which are never updates
+     * will always result in a return of 0 for the subtree containing it.
+     */
+    let av = tree_value(a, Math.min, {filter:has_grandchildren});
+    let bv = tree_value(b, Math.min, {filter:has_grandchildren});
+    if (av < bv) {
+        return -1;
+    } else if (av > bv) {
+        return 1;
+    }
+    return date_sort(a,b);
+}
+
+/*
+ * Picks the candidate move that has the largest subtree. This ensures moves from part of the repertoire
+ * that holds the most moves are played most often by the AI.
+ * 
+ * Ex: We have three candidates, the subtree sizes of them are 10, 5 and 2 nodes each.
+ *     A random number is picked between 1 and 17.
+ *     If the number is between 1 and 10 the first move is chosen,
+ *     If the number is between 11 and 15 the second move is chosen,
+ *     And if the number is between 16 and 17 the third move is chosen.
+ */
+function tree_size_weighted_random_move(candidates) {
+    if (candidates == undefined || candidates.length == 0) {
+        return undefined;
+    } else if (candidates.length == 1) {
+        //console.log('  Only one candidate: ' + candidates[0].move);
+        return candidates[0].move;
+    }
+
+    let subtree_sizes = candidates.map(c => tree_size(c));
+    let max = sum(subtree_sizes) + 1;
+    let rand = Math.floor(Math.random() * max);
+
+    let total = 0;
+    let i = 0;
+    while (i < candidates.length && (total + subtree_sizes[i]) < rand) {
+        total += subtree_sizes[i];
+        i += 1;
+    }
+    let pick = candidates[i].move;
+    //console.log('  Candidates: ' + candidates.map(c => c.move + ' (' + tree_size(c) + ')').join(',  ') + '  - Rand(1-' + max + '): ' + rand + ', Pick: ' + pick);
+    return pick;
+}
+
+function sum(values) {
+    return values.reduce((a, b) => { return a + b; }, 0);
+}
+
+/*
+ * Returns the min or max value of a tree
+ * tree is a pgn sub tree
+ * minmax is either Math.max or Math.min
+ */
+function tree_value(tree, minmax, {filter=function(){return true;}}={
+    filter:function(){return true;}
+    }) {
+    let curr_value = tree.value;
+    let child_values = tree.children.filter(filter).map(x => tree_value(x, minmax, {filter:filter}));
+    let minmax_children = minmax(...child_values);
+    return minmax(curr_value, minmax_children);
+} 
+
+/**
+ * Returns the size of a subtree
+ */
+function tree_size(tree) { 
+    let num_child_nodes = sum(tree.children.map(x => tree_size(x)));
+    // Note that the logs below displays the tree upside down since the nodes are counted bottom-up
+    //console.log('  '.repeat(tree.move_index) + tree_get_node_string(tree) + '  (' + (num_child_nodes + 1) + ')');
+    return num_child_nodes + 1;
+}
+
+/*
+ * Returns the sum of the values of the tree as well as the maximum possible value
+ */
+function tree_progress(tree) {
+    let value = parseInt(tree.value);
+    if (tree.children.length == 0) {
+        return [value, 5];
+    }
+    let child_values = tree.children.map(x => tree_progress(x));
+    let sum = [value, 5];
+    for (let c of child_values) {
+        sum[0] += c[0];
+        sum[1] += c[1];
+
+    }
+    return sum;
+}
+
+/*
+ * Adds number to all the value of all nodes in the tree
+ */
+function tree_value_add(tree, number) {
+    tree.value += number;
+    tree.value = Math.min(5, Math.max(tree.value, 0));
+    for (let c of tree.children) {
+        tree_value_add(c, number);
+    }
+}
+
+
+export { tree_value_add, tree_progress, tree_children, tree_children_filter_sort, tree_possible_moves, tree_move_index, has_children, need_hint, update_value, date_sort, value_sort, tree_get_node, tree_value, tree_size, tree_size_weighted_random_move, tree_get_node_depth, tree_get_node_string, tree_max_num_moves_deep };

@@ -1,17 +1,62 @@
 <h1><%= @opening.name %></h1>
+<% show_studies = length(@studies) != 0 %>
+<% show_tactics = @tactics_amount >= 2 %>
 
-<%= raw Earmark.as_html!(@opening.description)%>
 
-<%= if @tactics_amount >= 2 do %>
-  <h2 id="tactics"><%= gettext "%{name} Traps and Tactics", name: @opening.name %></h2>
+<img src="<%= Routes.static_path(@conn, "/images/opening/" <> @opening.slug <> ".svg") %>" 
+     width="350px" height="350px" class="opening_svg"
+     title="<%= dgettext("tactics", "%{opening} after the moves %{moves}", opening: @opening.name, moves: @opening.moves) %>"
+     alt="<%= dgettext("tactics", "Chessboard showing the %{opening} with the moves %{moves} played", opening: @opening.name, moves: @opening.moves) %>"/>
+
+<div class="highlight">
+  <b><%= dgettext("tactics", "Contents") %></b><br>
+  <%= if show_studies do %>
+  <a href="#studies"><%= dgettext("tactics", "Learn the Opening") %></a><br>
+  <% end %>
+  <%= if show_tactics do %>
+  <a href="#tactics"><%= dgettext("tactics", "Solve Traps and Tactics") %></a><br>
+  <% end %>
+  <a href="#stockfish"><%= dgettext("tactics", "Play against Stockfish") %></a>
+</div>
+
+<%= raw ListudyWeb.EexMarkdown.as_html(@opening.description, @conn)%>
+
+<%= if show_studies do %>
+<div>
+  <h2 id="studies"><%= dgettext("tactics", "Studies about the %{opening}", opening: @opening.name) %></h2>
+  <p><%= dgettext("tactics", "Learn the %{opening} using public studies.", opening: @opening.name) %></p>
+
+  <%= render ListudyWeb.StudyView, "list.html", studies: @studies, conn: @conn, locale: @locale, favorites: true %>
+</div>
+<% end %>
+
+<%= if show_tactics do %>
+  <h2 id="tactics"><%= dgettext("tactics", "%{name} Traps and Tactics", name: @opening.name) %></h2>
   <% next_url = Routes.random_opening_tactic_path(@conn, :random, @locale, @opening.slug) %>
   <%= render ListudyWeb.TacticView, "tactic.html", conn: @conn, tactic: @tactic, next: next_url %>
   <p>
-  <%= gettext "Get better in the %{name} opening by practicing tactics taken from the early game.", name: @opening.name %>
+  <%= dgettext("tactics", "Get better in the %{name} opening by practicing tactics taken from the early game.", name: @opening.name) %>
 
-  <%= gettext "Recognize traps and mistakes of your opponents and exploit them." %>
+  <%= dgettext("tactics", "Recognize traps and mistakes of your opponents and exploit them.") %>
 
-  <%= gettext "Train tactics from %{amount} different games.", amount: @tactics_amount %>
+  <%= dgettext("tactics", "Train tactics from %{amount} different games.", amount: @tactics_amount) %>
   </p>
-  <%= link (gettext "%{name} Tactics", name: @opening.name) , to: next_url %>
+  <%= link dgettext("tactics", "%{name} Tactics", name: @opening.name) , to: next_url %>
 <% end %>
+
+<h2 id="stockfish"><%= dgettext("tactics", "Play against Stockfish") %></h2>
+
+<div class="highlight">
+  <a href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#<%= @opening.fen %>;sf">
+    <%= dgettext("tactics", "Play the %{name}", name: @opening.name) %>
+  </a>
+  <br>
+  <a href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#<%= @opening.fen %>">
+    <%= dgettext("tactics", "Play against the %{name}", name: @opening.name) %>
+  </a>
+</div>
+
+<p><%= dgettext("tactics", "Do you want to try out the %{name}? Train this opening against Stockfish.", name: @opening.name) %></p>
+<p><%= dgettext("tactics", "Play against Stockfish either as white or black and explore the opening.") %></p>
+
+<%= render ListudyWeb.FaqView, "show.html", faqs: @opening.opening_faq %>

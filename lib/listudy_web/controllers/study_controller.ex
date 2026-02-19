@@ -21,8 +21,9 @@ defmodule ListudyWeb.StudyController do
   def new(conn, _params) do
     case get_user(conn) do
       {:ok, _} ->
+        openings = Listudy.Openings.list_openings_study_form()
         changeset = Studies.change_study(%Study{})
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", changeset: changeset, openings: openings)
 
       {:error, error} ->
         conn
@@ -62,15 +63,36 @@ defmodule ListudyWeb.StudyController do
     else
       {:error, reason} ->
         changeset = Studies.change_study(%Study{})
+        openings = Listudy.Openings.list_openings_study_form()
 
         conn
         |> put_flash(:info, reason)
-        |> render("new.html", changeset: changeset)
+        |> render("new.html", changeset: changeset, openings: openings)
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    study = Studies.get_study_by_slug!(id)
+  # the main show did not find any study for the id
+  # either redirect or show error
+  defp show(conn, id, nil) do
+    redir_study = Studies.get_study_by_slug_start(id_from_slug(id))
+
+    if redir_study != nil and !redir_study.private do
+      conn
+      |> redirect(
+        to: Routes.study_path(conn, :show, conn.private.plug_session["locale"], redir_study)
+      )
+    else
+      conn
+      |> put_flash(:error, "This study does not exist or is private.")
+      |> put_view(ListudyWeb.ErrorView)
+      |> put_status(:not_found)
+      |> render(:"404")
+    end
+  end
+
+  # the study exists
+  defp show(conn, id, study) do
+    opening = Listudy.Openings.get_opening!(study.opening_id)
     # if the study has less than the min favorites => noindex it
     noindex =
       StudyFavorites.count_favorites(study.id) <
@@ -84,44 +106,37 @@ defmodule ListudyWeb.StudyController do
 
     if study != nil and (!study.private or study.user_id == user_id) do
       study = Map.put(study, :is_owner, study.user_id == user_id)
-      # todo maybe reduce the number of extra querys
+      # TODO maybe reduce the number of extra querys
       study = Map.put(study, :favorites, StudyFavorites.user_favorites_study(user_id, study.id))
       study = Map.put(study, :user, Users.get_user!(study.user_id))
       [unique_id | _] = id |> String.split("-")
       file = unique_id <> ".pgn"
       {_, pgn} = File.read(get_path(file))
       study = Map.put(study, :pgn, pgn)
-      render(conn, "show.html", study: study, noindex: noindex)
+      render(conn, "show.html", study: study, noindex: noindex, opening: opening)
     else
-      redir_study = Studies.get_study_by_slug_start(id_from_slug(id))
-
-      if redir_study != nil and !redir_study.private do
-        conn
-        |> redirect(
-          to: Routes.study_path(conn, :show, conn.private.plug_session["locale"], redir_study)
-        )
-      else
-        conn
-        |> put_flash(:error, "This study is private.")
-        |> redirect(
-          to:
-            Routes.search_path(
-              conn,
-              ListudyWeb.StudySearchLive,
-              conn.private.plug_session["locale"]
-            )
-        )
-      end
+      show(conn, id, nil)
     end
+  end
+
+  def show(conn, %{"id" => id}) do
+    study = Studies.get_study_by_slug!(id)
+    show(conn, id, study)
   end
 
   def edit(conn, %{"id" => id}) do
     study = Studies.get_study_by_slug!(id)
+
     {_, user} = get_user(conn)
+    [unique_id | _] = id |> String.split("-")
+    file = unique_id <> ".pgn"
+    {_, pgn} = File.read(get_path(file))
+    study = Map.put(study, :pgn, pgn)
 
     if allowed(study, user) do
+      openings = Listudy.Openings.list_openings_study_form()
       changeset = Studies.change_study(study)
-      render(conn, "edit.html", study: study, changeset: changeset)
+      render(conn, "edit.html", study: study, changeset: changeset, openings: openings)
     else
       conn
       |> put_flash(:error, "This study is private.")
@@ -153,14 +168,14 @@ defmodule ListudyWeb.StudyController do
               save_pgn(pgn, file)
 
               conn
-              |> put_flash(:info, gettext("Study info updated, PGN changed."))
+              |> put_flash(:info, dgettext("study", "Study info updated, PGN changed."))
               |> redirect(
                 to: Routes.study_path(conn, :show, conn.private.plug_session["locale"], study)
               )
 
             {:error, _} ->
               conn
-              |> put_flash(:info, gettext("Study info updated, no PGN change."))
+              |> put_flash(:info, dgettext("study", "Study info updated, no PGN change."))
               |> redirect(
                 to: Routes.study_path(conn, :show, conn.private.plug_session["locale"], study)
               )
@@ -209,7 +224,7 @@ defmodule ListudyWeb.StudyController do
   defp get_user(conn) do
     case Pow.Plug.current_user(conn) != nil do
       true -> {:ok, Pow.Plug.current_user(conn)}
-      _ -> {:error, gettext("Please log in")}
+      _ -> {:error, dgettext("study", "Please log in")}
     end
   end
 
@@ -227,7 +242,7 @@ defmodule ListudyWeb.StudyController do
         if size < 50000 do
           {:ok, file}
         else
-          {:error, gettext("PGN is too big, only 50kb allowed")}
+          {:error, dgettext("study", "PGN is too big, only 50kb allowed")}
         end
 
       {:error, _} ->
@@ -250,32 +265,34 @@ defmodule ListudyWeb.StudyController do
             {:ok, id}
 
           _ ->
-            {:error, gettext("Could not download the study from lichess, please check the link")}
+            {:error,
+             dgettext("study", "Could not download the study from lichess, please check the link")}
         end
 
       _ ->
-        {:error, gettext("The provided link is not a Lichess study")}
+        {:error, dgettext("study", "The provided link is not a Lichess study")}
     end
   end
 
   defp check_pgn(_study_params) do
-    {:error, gettext("No PGN provided")}
+    {:error, dgettext("study", "No PGN provided")}
   end
 
   defp get_path(file) do
     "priv/static/study_pgn/" <> file
   end
 
-  def favorite_study(conn, %{"study_id" => study_id}) do
+  def favorite_study(conn, %{"slug" => slug}) do
     user_id = Pow.Plug.current_user(conn).id
+    study = Studies.get_study_by_slug!(slug)
 
     {_, message} =
-      case StudyFavorites.favorite_study(%{study_id: study_id, user_id: user_id}) do
+      case StudyFavorites.favorite_study(%{study_id: study.id, user_id: user_id}) do
         {:ok, _} ->
-          {:ok, gettext("Study favorited")}
+          {:ok, dgettext("study", "Study favorited")}
 
         {:error, %Ecto.Changeset{} = _changeset} ->
-          {:error, gettext("Could not favorite this study")}
+          {:error, dgettext("study", "Could not favorite this study")}
       end
 
     conn
@@ -283,16 +300,17 @@ defmodule ListudyWeb.StudyController do
     |> redirect(to: NavigationHistory.last_path(conn))
   end
 
-  def unfavorite_study(conn, %{"study_id" => study_id}) do
+  def unfavorite_study(conn, %{"slug" => slug}) do
     user_id = Pow.Plug.current_user(conn).id
+    study = Studies.get_study_by_slug!(slug)
 
     {_, message} =
-      case StudyFavorites.unfavorite_study(user_id, study_id) do
+      case StudyFavorites.unfavorite_study(user_id, study.id) do
         {:ok, _} ->
-          {:ok, gettext("Study unfavorited")}
+          {:ok, dgettext("study", "Study unfavorited")}
 
         {:error, %Ecto.Changeset{} = _changeset} ->
-          {:error, gettext("Could not unfavorite this study")}
+          {:error, dgettext("study", "Could not unfavorite this study")}
       end
 
     conn

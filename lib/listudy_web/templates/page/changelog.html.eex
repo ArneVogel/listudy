@@ -1,0 +1,28 @@
+<h1><%= dgettext("changelog", "Changelog") %></h1>
+<b>2022-11-20</b>
+<p><%= dgettext("changelog", "Added a new and improved \"ai\" move picker. thanks to Olle Eriksson!") %></p>
+<b>2022-08-21</b>
+<p><%= dgettext("changelog", "Added basic hebrew transation, thanks to Arihol") %></p>
+<b>2022-06-26</b>
+<p><%= dgettext("changelog", "Allow promotion in own tactics, thanks to sampma309") %></p>
+<b>2022-02-28</b>
+<p><%= dgettext("changelog", "Added portugese translation") %></p>
+<b>2021-11-11</b>
+<p><%= dgettext("changelog", "Added vietnamese translation") %></p>
+<b>2021-10-01</b>
+<p><%= dgettext("changelog", "Make fen copyable on endgame pages as well as link to lichess analysis page for tablebase analysis.") %></p>
+<b>2021-08-15</b>
+<p><%= dgettext("changelog", "Study progress bar") %></p>
+<p><%= dgettext("changelog", "Study reset option") %></p>
+
+<b>2021-04-11</b>
+<% {:safe , changelog} = link dgettext("changelog", "Thank you"), to: Routes.page_path(@conn, :show, @locale, "thanks") %>
+<% {:safe, thanks} = link dgettext("changelog", "Changelog"), to: Routes.page_path(@conn, :show, @locale, "changelog") %>
+<% {:safe, pieceless_info} = link dgettext("changelog", "Pieceless info page"), to: Routes.page_path(@conn, :features, @locale, "pieceless-tactics") %>
+
+<p><%= raw dgettext("changelog", "Added pages %{changelog}, %{thanks}, and %{pieceless_info}", changelog: changelog, thanks: thanks, pieceless_info: pieceless_info) %></p>
+
+<b>2021-04-10</b>
+<% {:safe, pieceless} = link dgettext("changelog", "Pieceless Tactics"), to: Routes.pieceless_tactic_path(@conn, :random, @locale) %>
+<p><%= raw dgettext("changelog", "Added %{pieceless}", pieceless: pieceless) %></p>
+

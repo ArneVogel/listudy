@@ -1,0 +1,49 @@
+<h1>Show Book</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @book.title %>
+  </li>
+
+  <li>
+    <strong>Slug:</strong>
+    <%= @book.slug %>
+  </li>
+
+  <li>
+    <strong>Year:</strong>
+    <%= @book.year %>
+  </li>
+
+  <li>
+    <strong>Isbn:</strong>
+    <%= @book.isbn %>
+  </li>
+
+  <li>
+    <strong>Amazon:</strong>
+    <%= @book.amazon_id %>
+  </li>
+
+  <li>
+    <strong>Summary:</strong>
+    <%= @book.summary %>
+  </li>
+
+  <li>
+    <strong>Text:</strong>
+    <%= @book.text %>
+  </li>
+
+  <li>
+    <strong>Author:</strong>
+    <%= @book.author_id %>
+  </li>
+
+
+</ul>
+
+<span><%= link "Edit", to: Routes.book_path(@conn, :edit, @book) %></span>
+<span><%= link "Back", to: Routes.book_path(@conn, :index) %></span>

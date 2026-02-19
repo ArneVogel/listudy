@@ -1,0 +1,53 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: vi\n"
+"Plural-Forms: nplurals=1\n"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/chessclicker.html.leex:74
+msgid "Continue"
+msgstr "Tiếp tục"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/chessclicker.html.leex:63
+msgid "Cost"
+msgstr "Chi phí"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/chessclicker.html.leex:57
+msgid "Get help by"
+msgstr "Nhận trợ giúp bằng cách"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/chessclicker.html.leex:40
+msgid "Rating Points"
+msgstr "Điểm xếp hạng"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/chessclicker.html.leex:42
+#: lib/listudy_web/templates/live/chessclicker.html.leex:64
+msgid "Rating points per second"
+msgstr "Điểm xếp hạng mỗi giây"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/chessclicker.html.leex:43
+msgid "Rating points per solved tactic"
+msgstr "Điểm đánh giá cho mỗi chiến thuật đã giải"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/chessclicker.html.leex:65
+msgid "Rating points per tactic solved"
+msgstr "Điểm đánh giá cho mỗi chiến thuật đã được giải quyết"
+
+#, elixir-format
+#: lib/listudy_web/templates/live/chessclicker.html.leex:63
+msgid "rating points"
+msgstr "điểm đánh giá"

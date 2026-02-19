@@ -1,0 +1,133 @@
+## This file is a PO Template file.
+##
+## "msgid"s here are often extracted from source code.
+## Add new translations manually only if they're dynamic
+## translations that can't be statically extracted.
+##
+## Run "mix gettext.extract" to bring this file up to
+## date. Leave "msgstr"s empty as changing them here as no
+## effect: edit them in PO (.po) files instead.
+msgid ""
+msgstr ""
+
+#: lib/listudy_web/templates/book/public.html.eex:32
+#: lib/listudy_web/templates/book/thumb.html.eex:42
+#, elixir-autogen, elixir-format
+msgid "%{book_name} book cover"
+msgstr ""
+
+#: lib/listudy_web/templates/book/thumb.html.eex:33
+#, elixir-autogen, elixir-format
+msgid "More"
+msgstr ""
+
+#: lib/listudy_web/templates/book/public.html.eex:17
+#, elixir-autogen, elixir-format
+msgid "Opening"
+msgstr ""
+
+#: lib/listudy_web/templates/book/public.html.eex:41
+#, elixir-autogen, elixir-format
+msgid "Recommendations"
+msgstr ""
+
+#: lib/listudy_web/templates/book/thumb.html.eex:7
+#, elixir-autogen, elixir-format
+msgid "Recommended by"
+msgstr ""
+
+#: lib/listudy_web/templates/book/public.html.eex:9
+#, elixir-autogen, elixir-format
+msgid "Tags"
+msgstr ""
+
+#: lib/listudy_web/templates/book/recommended.html.eex:1
+#, elixir-autogen, elixir-format
+msgid "Chess Books"
+msgstr ""
+
+#: lib/listudy_web/templates/book/recommended.html.eex:1
+#, elixir-autogen, elixir-format
+msgid "Grandmaster recommended"
+msgstr ""
+
+#: lib/listudy_web/templates/book/recommended.html.eex:10
+#, elixir-autogen, elixir-format
+msgid "Have you found a recommendation from a grandmaster that is not yet in the list? Send me an email and I will add it."
+msgstr ""
+
+#: lib/listudy_web/templates/book/recommended.html.eex:9
+#, elixir-autogen, elixir-format
+msgid "I hope this list of recommendations will help you find the best chess textbooks for you. Because who else could judge whether a chess book is good or not if not grandmasters."
+msgstr ""
+
+#: lib/listudy_web/templates/book/recommended.html.eex:8
+#, elixir-autogen, elixir-format
+msgid "These books were all recommended by chess grandmasters! Click on the more information to find out in detail what they have to say about each book."
+msgstr ""
+
+#: lib/listudy_web/templates/book/recommended.html.eex:2
+#, elixir-autogen, elixir-format
+msgid "This list contains the 20 best chess books as ranked by grandmasters. I hope this list helps you to find the perfect book for you."
+msgstr ""
+
+#: lib/listudy_web/live/book_search_live.ex:10
+#, elixir-autogen, elixir-format
+msgid "Chess Book Search"
+msgstr ""
+
+#: lib/listudy_web/live/book_search_live.ex:12
+#, elixir-autogen, elixir-format
+msgid "Search"
+msgstr ""
+
+#: lib/listudy_web/live/book_search_live.ex:16
+#, elixir-autogen, elixir-format
+msgid "by"
+msgstr ""
+
+#: lib/listudy_web/templates/book/footer.html.eex:5
+#: lib/listudy_web/templates/book/footer.html.eex:9
+#, elixir-autogen, elixir-format
+msgid "%{amount} books"
+msgstr ""
+
+#: lib/listudy_web/templates/book/footer.html.eex:2
+#, elixir-autogen, elixir-format
+msgid "Looking for something more specific? Take a look at these book lists:"
+msgstr ""
+
+#: lib/listudy_web/templates/book/footer.html.eex:1
+#, elixir-autogen, elixir-format
+msgid "More book lists"
+msgstr ""
+
+#: lib/listudy_web/templates/book/footer.html.eex:5
+#, elixir-autogen, elixir-format
+msgid "Most Grandmaster recommended books"
+msgstr ""
+
+#: lib/listudy_web/templates/player/book_recommendations.html.eex:1
+#, elixir-autogen, elixir-format
+msgid "Books recommended by %{player}"
+msgstr ""
+
+#: lib/listudy_web/templates/book/affiliate.html.eex:7
+#, elixir-autogen, elixir-format
+msgid "%{shop_name} Affiliate Disclosure"
+msgstr ""
+
+#: lib/listudy_web/templates/book/affiliate.html.eex:10
+#, elixir-autogen, elixir-format
+msgid "As an Amazon Associate I earn from qualifying purchases."
+msgstr ""
+
+#: lib/listudy_web/templates/book/affiliate.html.eex:20
+#, elixir-autogen, elixir-format
+msgid "Continue"
+msgstr ""
+
+#: lib/listudy_web/templates/book/affiliate.html.eex:8
+#, elixir-autogen, elixir-format
+msgid "If you buy the book through this link we will receive a small provison for the referral. There will be no additional costs for you."
+msgstr ""

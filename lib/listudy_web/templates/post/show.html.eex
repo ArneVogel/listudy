@@ -6,13 +6,19 @@
 <% end %>
 </p>
 
+<%# required by PgnViewerJS, has to be set before the include of pgnv.js %>
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>__globalCustomDomain = '/js/pgnviewer/';</script>
 
-<%= raw Earmark.as_html!(@post.body)%>
+<%= raw ListudyWeb.EexMarkdown.as_html(@post.body, @conn)%>
+
+<%= render ListudyWeb.FaqView, "show.html", faqs: @post.blog_faq %>
+
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
+<%= raw @post.script %>
+</script>
 
 <span><%= link "Back", to: Routes.post_path(@conn, :index, @conn.assigns.locale) %></span>
 
-<hr>
-<div id="share"></div>
 <hr>
 <%= render ListudyWeb.CommentView, "show_comments.html", type: "post", id: Integer.to_string(@post.id), action: Routes.comment_path(@conn, :new_comment), conn: @conn %>
 <%= render ListudyWeb.CommentView, "comment_form.html", type: "post", id: Integer.to_string(@post.id), action: Routes.comment_path(@conn, :new_comment), conn: @conn %>

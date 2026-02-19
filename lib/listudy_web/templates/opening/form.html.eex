@@ -21,9 +21,17 @@
   <%= text_input f, :eco %>
   <%= error_tag f, :eco %>
 
+  <%= label f, :fen %>
+  <%= text_input f, :fen %>
+  <%= error_tag f, :fen %>
+
   <%= label f, :moves %>
   <%= text_input f, :moves %>
   <%= error_tag f, :moves %>
+
+  <%= label f, :uci_moves %>
+  <%= text_input f, :uci_moves %>
+  <%= error_tag f, :uci_moves %>
 
   <div>
     <%= submit "Save" %>

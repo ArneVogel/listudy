@@ -1,35 +1,42 @@
 require("regenerator-runtime/runtime"); // required for sleep (https://github.com/babel/babel/issues/9849#issuecomment-487040428)
 
-const Chessground = require('chessground').Chessground;
-const Chess = require('chess.js')
-import { ground_init_state, resize_ground, setup_ground, ground_set_moves, 
+import { onresize, resize_ground, setup_ground, ground_set_moves,
          ground_undo_last_move, setup_move_handler, ground_move } from './modules/ground.js';
-import { turn_color, setup_chess, from_to_to_san, san_to_from_to } from './modules/chess_utils.js';
+import { setup_chess, uci_to_san } from './modules/chess_utils.js';
 import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 import { sleep } from './modules/sleep.js';
 
 function show_div(id) {
-    document.getElementById(id).classList.remove("hidden");
+    let div = document.getElementById(id);
+    if (div == null) {
+        return;
+    }
+    div.classList.remove("hidden");
 }
 
 async function handle_move(orig, dest, extraInfo) {
-    let played = from_to_to_san(chess, orig, dest);
+    let played = uci_to_san(chess, orig, dest);
     let target = to_play.shift();
     clear_all_text();
+    set_text("to_win", " "); // remove the iframe text
+    set_text("bold_span", " ");
 
     if (played == target) {
         let m = chess.move(played);
-        ground_move(m);
+        ground_move(m, chess);
         if (to_play.length >= 2) {
             // theres another move the player has to get correct
             await sleep(100); // instant play by the ai feels weird
+            set_text(info_div, i18n.keep_going, {symbol:"★", bold: i18n.best_move} );
             let ai_move = to_play.shift();
             let m = chess.move(ai_move);
             ground_set_moves();
-            ground_move(m);
+            ground_move(m, chess);
         } else {
             // player got the puzzle correct
-            set_text(success_div, gettext_success);
+            let solves = localStorage.getItem("achievements_tactics_solved") || 0;
+            localStorage.setItem("achievements_tactics_solved", Number(solves) + 1);
+            set_text(success_div, " ", {bold: i18n.success});
             show_div("next");
         }
     } else {
@@ -38,7 +45,7 @@ async function handle_move(orig, dest, extraInfo) {
         to_play.unshift(target);
         ground_undo_last_move(); 
         ground_set_moves();
-        set_text(error_div, gettext_wrong_move);
+        set_text(error_div, i18n.keep_trying, {bold: i18n.wrong_move});
         show_div("next");
         show_div("solution");
     }
@@ -67,8 +74,14 @@ function load_data() {
     last_move = document.getElementById("last_move").value;
 }
 
+function show_which_side() {
+    let turn = color == "white" ? i18n.find_the_best_white : i18n.find_the_best_black;
+    set_text(info_div, turn, {bold: i18n.your_turn, symbol: "♔"});
+}
+
 function main() {
     load_data();
+    show_which_side();
     window.to_play = moves.split(" ");
     if (fen != old_fen) {
         // This is done to prevent flickering on the initial load of the
@@ -88,6 +101,6 @@ function main() {
 }
 
 document.addEventListener("phx:update", main);
-window.onresize = resize_ground;
+window.onresize = onresize;
 window.old_fen = "abc";
 main();

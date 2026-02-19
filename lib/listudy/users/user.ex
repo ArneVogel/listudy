@@ -4,8 +4,8 @@ defmodule Listudy.Users.User do
   import ListudyWeb.Gettext
 
   schema "users" do
-    field :username, :string, null: false
-    field :role, :string, null: false, default: "user"
+    field :username, :string
+    field :role, :string, default: "user"
     pow_user_fields()
     field :last_visited, :utc_datetime
 
@@ -24,6 +24,14 @@ defmodule Listudy.Users.User do
     |> unique_constraint(:unique_user, name: :unique_user)
     |> Ecto.Changeset.validate_inclusion(:role, ~w(user))
     |> validate_alphanumeric(:username)
+    |> validate_length(:username, min: 3, max: 20)
+  end
+
+  def admin_changeset(user_or_changeset, attrs) do
+    import Ecto.Changeset
+
+    user_or_changeset
+    |> Ecto.Changeset.cast(attrs, [:username, :email])
   end
 
   defp validate_alphanumeric(changeset, field, _options \\ []) do

@@ -1,0 +1,5 @@
+<h1><%= dgettext("book", "Books recommended by %{player}", player: @player.name) %></h1>
+
+<%= for book <- @books do %>
+  <%= render ListudyWeb.BookView, "thumb.html", Map.put(assigns, :book, book) %>
+<% end %>

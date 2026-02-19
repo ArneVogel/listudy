@@ -1,47 +1,31 @@
 <div class="with_sidebar">
   <div id="game_container" class="sidebar_main">
-    <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
+    <%= render ListudyWeb.ComponentView, "chessground.html" %>
   </div>
   <div class="sidebar">
-    <h2><%= gettext "Blind Tactic"%> <%= @tactic.id %></h2>
-    <div class="success">
-      <p id="success" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="info" class="infoBox hidden"></p>
-    </div>
-    <div class="error">
-      <p id="error" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="suggestion" class="infoBox hidden"></p>
-    </div>
+    <h2><%= dgettext "tactics", "Blind Tactic"%> <%= @tactic.id %></h2>
 
+    <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
+    
     <div>
-      <p><%= gettext "In this position the following moves were played:" %> <b id="moves"></b></p>
-      <p><%= if @tactic.color == "white" do %><%= gettext "White" %><% else %><%= gettext "Black" %><% end %>
-        <%= gettext "to play and win." %>
+      <p><%= dgettext "tactics", "In this position the following moves were played:" %> <b id="moves"></b></p>
+      <p><%= if @tactic.color == "white" do %><%= dgettext "tactics", "White" %><% else %><%= dgettext "tactics", "Black" %><% end %>
+        <%= dgettext "tactics", "to play and win." %>
       </p>
     </div>
 
-    <button id="next" class="hidden continue_button" phx-click="next"><%= gettext "Continue" %></button>
+    <button id="next" class="hidden continue_button" phx-click="next"><%= dgettext "tactics", "Continue" %></button>
 
+    <a class="icon" data-icon="," id="toggle-orientation"><%= dgettext("tactics", "Flip board") %></a><br>
+    <a class="icon" data-icon="-" id="give-up"><%= dgettext("tactics", "Give up") %></a>
     <div>
       <hr>
       <p><%= @tactic.description %></p>
     </div>
-    <label for="ply_select"><%= gettext "How many plies should be hidden? (Updates next Tactic)" %></label>
+    <label for="ply_select"><%= dgettext "tactics", "How many plies should be hidden? (Updates next Tactic)" %></label>
 
-    <select name="ply_select" id="ply_select">
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4" selected>4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-    </select>
+    <input type="number" value=4 min=0 id="ply_select">
+
     <p><a href="<%= Routes.page_path(@socket, :features, @locale, "blind-tactics") %>#help">[Help] How blind tactics work.</a></p>
   </div>
 </div>
@@ -53,12 +37,13 @@
   <input type="text" id="color" value="<%= @tactic.color %>">
   <input type="text" id="ply" value="<%= @tactic.ply %>">
 </form>
-<script>
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@socket) %>>
 let pgn = "<%= @tactic.pgn %>";
 let color = "<%= @tactic.color %>";
 let ply = "<%= @tactic.ply %>";
-let i18n_success = "<%= gettext "Tactic solved!"%>";
-let i18n_wrong_move = "<%= gettext "Wrong Move"%>";
 
-let i18n_right_move = "<%= gettext "Correct move, there are still more moves."%>";
+let i18n = {};
+i18n.success = "<%= dgettext "tactics", "Tactic solved!"%>";
+i18n.wrong_move = "<%= dgettext "tactics", "Wrong Move"%>";
+i18n.right_move = "<%= dgettext "tactics", "Correct move, there are still more moves. They replied with" %> ";
 </script>

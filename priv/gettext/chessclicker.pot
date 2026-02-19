@@ -1,0 +1,52 @@
+## This file is a PO Template file.
+##
+## "msgid"s here are often extracted from source code.
+## Add new translations manually only if they're dynamic
+## translations that can't be statically extracted.
+##
+## Run "mix gettext.extract" to bring this file up to
+## date. Leave "msgstr"s empty as changing them here as no
+## effect: edit them in PO (.po) files instead.
+msgid ""
+msgstr ""
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:74
+#, elixir-autogen, elixir-format
+msgid "Continue"
+msgstr ""
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:63
+#, elixir-autogen, elixir-format
+msgid "Cost"
+msgstr ""
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:57
+#, elixir-autogen, elixir-format
+msgid "Get help by"
+msgstr ""
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:40
+#, elixir-autogen, elixir-format
+msgid "Rating Points"
+msgstr ""
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:42
+#: lib/listudy_web/templates/live/chessclicker.html.leex:64
+#, elixir-autogen, elixir-format
+msgid "Rating points per second"
+msgstr ""
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:43
+#, elixir-autogen, elixir-format
+msgid "Rating points per solved tactic"
+msgstr ""
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:65
+#, elixir-autogen, elixir-format
+msgid "Rating points per tactic solved"
+msgstr ""
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:63
+#, elixir-autogen, elixir-format
+msgid "rating points"
+msgstr ""

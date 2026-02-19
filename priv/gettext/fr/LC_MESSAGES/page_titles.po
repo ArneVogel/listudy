@@ -1,0 +1,72 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: fr\n"
+"Plural-Forms: nplurals=2\n"
+
+#: lib/listudy_web/views/helpers/page_title.ex:31
+#, elixir-autogen, elixir-format
+msgid "Achievements"
+msgstr "Récompenses"
+
+#: lib/listudy_web/views/helpers/page_title.ex:16
+#, elixir-autogen, elixir-format
+msgid "Blind Tactics"
+msgstr "Tactiques à l'aveugle"
+
+#: lib/listudy_web/views/helpers/page_title.ex:13
+#, elixir-autogen, elixir-format
+msgid "Daily Chess Puzzle"
+msgstr "Puzzle quotidien"
+
+#: lib/listudy_web/views/helpers/page_title.ex:62
+#, elixir-autogen, elixir-format
+msgid "Endgames"
+msgstr "Finales"
+
+#: lib/listudy_web/views/helpers/page_title.ex:28
+#, elixir-autogen, elixir-format
+msgid "Play against Stockfish Online"
+msgstr "Jouez contre Stockfish en ligne"
+
+#: lib/listudy_web/views/helpers/page_title.ex:42
+#, elixir-autogen, elixir-format
+msgid "Search Studies"
+msgstr "Chercher des études"
+
+#: lib/listudy_web/views/helpers/page_title.ex:43
+#, elixir-autogen, elixir-format
+msgid "Tactics"
+msgstr "Tactiques"
+
+#: lib/listudy_web/views/helpers/page_title.ex:22
+#, elixir-autogen, elixir-format
+msgid "Changelog"
+msgstr "Changelog"
+
+#: lib/listudy_web/views/helpers/page_title.ex:19
+#, elixir-autogen, elixir-format
+msgid "Pieceless Tactics"
+msgstr "Tactiques à l'aveugle"
+
+#: lib/listudy_web/views/helpers/page_title.ex:25
+#, elixir-autogen, elixir-format
+msgid "Thank you!"
+msgstr "Merci"
+
+#: lib/listudy_web/views/helpers/page_title.ex:34
+#, elixir-autogen, elixir-format
+msgid "Improve your chess game with spaced repetition"
+msgstr "Améliorez votre jeu d'échecs avec la répétition espacée"
+
+#: lib/listudy_web/views/helpers/page_title.ex:89
+#, elixir-autogen, elixir-format
+msgid "Books Recommended by %{player}"
+msgstr ""

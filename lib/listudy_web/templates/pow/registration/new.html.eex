@@ -10,7 +10,7 @@
     <% end %>
 
     <%= label f, :username %>
-    <%= text_input f, :username %>
+    <%= text_input f, :username, [autofocus: true]%>
     <%= error_tag f, :username %>
 
     <%= label f, Pow.Ecto.Schema.user_id_field(@changeset) %>
@@ -26,18 +26,18 @@
     <%= error_tag f, :password_confirmation %>
 
     <div>
-      <%= submit "Register" %>
+      <%= submit (gettext "Register"), class: "primary" %>
     </div>
   <% end %>
   </div>
   <div class="two-thirds column">
-    <p><%= gettext "Register to get access to all features." %></p>
+    <p><b><%= gettext "Register to get access to all features." %></b></p>
     <p><b><%= gettext "Username" %></b>: <%= gettext "You are welcome to use a pseudonym." %></p>
     <p><b><%= gettext "Email" %></b>: <%= gettext "The email is used to log in. It doesn't have to be real, as long as you remember it." %></p>
     <p><b><%= gettext "Password" %></b>: <%= gettext "Please choose a secure password. The password must be at least eight characters long." %></p>
-    <p><%= gettext "Before creating your account, please read the Privacy Policy and Terms of Service. By creating the account, you agree to those terms." %></p>
-    <%= link (gettext "Privacy Policy"), to: Routes.page_path(@conn, :show, @conn.assigns.locale, "privacy") %> 
-    <%= link (gettext "Terms of Service"), to: Routes.page_path(@conn, :show, @conn.assigns.locale, "terms-of-service") %> <br>
+    <% {_, privacy} = safe_to_string(link (gettext "Privacy Policy"), to: Routes.page_path(@conn, :show, @conn.assigns.locale, "privacy")) |> raw %> 
+    <% {_, tos} = safe_to_string(link (gettext "Terms of Service"), to: Routes.page_path(@conn, :show, @conn.assigns.locale, "terms-of-service")) |> raw %> <br>
+    <p><%= raw gettext "Before creating your account, please read the %{privacy_policy} and %{tos}. By creating the account, you agree to those terms.", privacy_policy: privacy, tos: tos %></p>
 
   </div>
 </div>

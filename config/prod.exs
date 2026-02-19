@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 # For production, don't forget to configure the url host
 # to something meaningful, Phoenix uses this information
@@ -10,11 +10,21 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :listudy, ListudyWeb.Endpoint,
-  url: [host: "example.com", port: 80],
+  url: [host: "listudy.org", port: String.to_integer(System.get_env("PORT"))],
+  http: [port: String.to_integer(System.get_env("PORT"))],
+  check_origin: ["//listudy.org"],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
-config :logger, level: :info
+# config :logger, level: :info
+
+config :logger,
+  backends: [{LoggerFileBackend, :error_log}]
+
+# configuration for the {LoggerFileBackend, :error_log} backend
+config :logger, :error_log,
+  path: "/var/log/listudy.error.log",
+  level: :error
 
 # ## SSL Support
 #

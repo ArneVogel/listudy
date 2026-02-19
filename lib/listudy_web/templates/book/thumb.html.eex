@@ -1,0 +1,49 @@
+  <div class="row book-thumb">
+    <div class="two-thirds column">
+      <b><%= @book.author.name %></b>
+      <h2><%= @book.title %></h2>
+      <p><%= @book.summary %></p>
+      <%= if length(@book.expert_recommendations) != 0 do %>
+        <b><%= dgettext("book", "Recommended by")%>:</b>
+        <div class="book-thumb-recommendations">
+        <%= for {er, i} <- Enum.with_index(@book.expert_recommendations) do %>
+          <% modal_id = "#{er.player.slug}-#{i}-#{@book.slug}" %>
+          <span class="book-expert-name-tag">
+            <nobr>
+            <span class="modal_open" id="<%= modal_id %>"><%= er.player.name %></span>
+            </nobr>
+          </span>
+          <div id="<%= modal_id %>_modal" class="modal">
+            <div class="modal-content">
+              <span class="modal_close">&times;</span>
+              <figure>
+                <blockquote class="book-blockquote">
+                  <p><%= er.text %></p>
+                </blockquote>
+                <figcaption class="book-figcaption">—<%= link er.player.name, to: Routes.player_path(@conn, :book_recommendation, @locale, er.player.slug ) %>, <i><%= er.source %></i></figcaption>
+              </figure>
+
+            </div>
+          </div>
+        <% end %>
+        </div>
+      <% end %>
+
+      <a href="<%= Routes.book_path(@conn, :show, @locale, @book.slug) %>">
+        <button><%= dgettext("book", "More") %></button>
+      </a>
+      <%= render ListudyWeb.BookView, "affiliate.html", Map.put(assigns, :shop, %{name: "Amazon"}) %>
+
+    </div>
+    <div class="one-third column">
+      <a class="book-container">
+        <div class="book small-book">
+          <img
+            alt="<%= dgettext("book", "%{book_name} book cover", book_name: @book.title) %>"
+            src="/book_cover/<%= @book.slug %>.jpg" loading="lazy"
+            />
+        </div>
+      </a>
+    </div>
+  </div>
+

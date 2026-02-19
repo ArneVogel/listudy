@@ -3,20 +3,32 @@ defmodule ListudyWeb.StudySearchLive do
 
   alias Listudy.Studies
   import ListudyWeb.Gettext
+  alias ListudyWeb.Router.Helpers, as: Routes
 
   def render(assigns) do
     ~L"""
-    <h1><%= gettext "Search for studies" %></h1>
+    <h1><%= dgettext("study", "Search for studies") %></h1>
     <form phx-change="suggest" phx-submit="search">
-      <input class="big_search" type="text" name="q" value="<%= @query %>" list="matches" placeholder="<%= gettext "Search" %>..." autocomplete="off"/>
+      <input class="big_search" type="text" name="q" value="<%= @query %>" list="matches" placeholder="<%= dgettext("study", "Search") %>..." autocomplete="off"/>
+      <select name="ordering" id="ordering">
+        <option value="favorites" <%= if @ordering == "favorites" do %>selected<%end%>><%= dgettext("study", "Favorites")%></option>
+        <option value="newest" <%= if @ordering == "newest" do %>selected<%end%>><%= dgettext("study", "Newest")%></option>
+      </select>
       <br>
-      <%= for match <- @matches do %>
-        <a href="/<%=@locale%>/studies/<%=match.slug%>"><%= match.title %></a> 
-        <%= gettext "by" %> 
-        <a href="/<%=@locale%>/profile/<%=match.username%>"><%= match.username %></a> 
-        <p><%= shorten_description(match.description) %></p>
+      <div class="study_search_results">
+        <%= for match <- @matches do %>
+          <div class="study_search_result">
+            <a href="<%= Routes.study_path(@socket, :show, @locale, match) %>">
+              <h5><%= match.title %></h5>
+            </a>
+            <span><span title="# <%= dgettext("study", "favorites")%>"><%= length(match.study_favorites) %> <span class="icon" data-icon="#"></span></span> <%= dgettext("study", "by") %> <%= match.user.username %>
+            </span>
+            <p><%= shorten_description(match.description) %></p>
+          </div>
+          </a>
 
-      <% end %>
+        <% end %>
+      </div>
 
     </form>
     """
@@ -25,12 +37,13 @@ defmodule ListudyWeb.StudySearchLive do
   def mount(%{"locale" => locale}, _session, socket) do
     result = Studies.search_by_title("")
     Gettext.put_locale(ListudyWeb.Gettext, locale)
-    {:ok, assign(socket, query: nil, matches: result, locale: locale)}
+    {:ok, assign(socket, query: nil, ordering: "favorites", matches: result, locale: locale)}
   end
 
-  def handle_event("suggest", %{"q" => query}, socket) when byte_size(query) <= 100 do
-    result = Studies.search_by_title(query)
-    {:noreply, assign(socket, matches: result)}
+  def handle_event(_, %{"q" => query, "ordering" => order}, socket)
+      when byte_size(query) <= 100 do
+    result = Studies.search_by_title(query, order)
+    {:noreply, assign(socket, matches: result, ordering: order, query: query)}
   end
 
   defp shorten_description(description) do

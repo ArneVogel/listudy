@@ -1,40 +1,72 @@
-<%= form_for @changeset, @action, [multipart: true], fn f -> %>
-  <%= if @changeset.action do %>
+<%= form_for @assigns.changeset, @action, [multipart: true], fn f -> %>
+  <%= if @assigns.changeset.action do %>
     <div class="alert alert-danger">
       <p>Oops, something went wrong! Please check the errors below.</p>
     </div>
   <% end %>
 
-  <%= label f, :title, gettext "Title" %>
-  <%= text_input f, :title, class: "big_input" %>
+  <%= label f, :title, dgettext("study", "Title") %>
+  <%= text_input f, :title, class: "big_input", minlength: 3, maxlength: 60, placeholder: dgettext("study", "Caro-Kann Defense"), required: true, autofocus: true %>
   <%= error_tag f, :title %>
 
-  <%= label f, :description, gettext "Description" %>
-  <%= textarea f, :description, class: "big_input", minlength: 20, maxlength: 1000, placeholder: (gettext "In this study I work on my 1.e4 openings...")%>
+  <%= label f, :description, dgettext("study", "Description") %>
+  <%= textarea f, :description, class: "big_input", minlength: 20, maxlength: 1000, required: true, placeholder: dgettext("study", "In this study I work on my 1.e4 openings...") %>
   <%= error_tag f, :description %>
 
-  <p><%= gettext "Either upload a PGN file or provide a link to a public Lichess study:" %></p>
-  <div class="row">
-    <div class="one-half column">
-      <%= label f, :pgn, gettext "Select a PGN to upload" %>
-      <%= file_input f, :pgn %>
-    </div>
+  <%= label f, :opening_id, dgettext("study", "Opening") %>
+  <%= select(f, :opening_id, Enum.map(@assigns.openings, fn %{name: name, id: id} -> [key: name, value: id] end), selected: selected_opening(@assigns), class: "study_opening_id big_input") %>
 
-    <div class="one-half column">
-      <%= label f, :lichess_study, gettext "Lichess Study" %>
-      <%= text_input f, :lichess_study, placeholder: "https://lichess.org/study/ZWHbJIPd", class: "big_input" %>
-      <%= error_tag f, :lichess_study %>
+  <div class="pgn_choice">
+    <p><%= dgettext("study", "Either upload a PGN file or provide a link to a public Lichess study:") %></p>
+    <div class="row">
+      <div class="one-half column">
+        <%= label f, :pgn, dgettext("study", "Select a PGN to upload") %>
+        <%= file_input f, :pgn %>
+      </div>
+
+      <div class="one-half column">
+        <%= label f, :lichess_study, dgettext("study", "Lichess Study") %>
+        <%= text_input f, :lichess_study, placeholder: "https://lichess.org/study/ZWHbJIPd", class: "big_input" %>
+        <%= error_tag f, :lichess_study %>
+      </div>
     </div>
   </div>
 
 
-  <%= label f, :color, gettext "For which side is this study" %>
-  <%= select(f, :color, ["White": "white", "Black": "black"]) %>
+  <div class="row study_below_highlight">
+    <div class="one-half column">
+      <%= label f, :color, dgettext("study", "For which side is this study") %>
+      <%= select(f, :color, ["White": "white", "Black": "black"]) %>
+    </div>
 
-  <%= label f, :private, gettext "Keep this study private" %>
-  <%= checkbox f, :private %>
-
-  <div>
-    <%= submit "Save" %>
+    <div class="one-half column">
+      <%= label f, :private, dgettext("study", "Keep this study private") %>
+      <%= checkbox f, :private %>
+    </div>
   </div>
+
+  <script type="text/javascript" src="<%= Routes.static_path(@assigns.conn, "/js/jquery-3.5.1.min.js") %>"></script>
+  <script type="text/javascript" src="<%= Routes.static_path(@assigns.conn, "/js/select2.min.js") %>"></script>
+  <link rel="stylesheet" href="<%= Routes.static_path(@assigns.conn, "/css/select2.min.css") %>"/>
+
+  
+<style>
+.select2-container {
+  color: black;
+}
+button {
+  margin-top: 20px;
+}
+</style>
+
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@assigns.conn) %>>
+$(document).ready(function() {
+    $('#study_opening_id').select2();
+});
+</script>
+
+<div>
+  <%= submit "Save", class: "primary" %>
+  <button class="go-back tertiary"><%= dgettext("study", "Back") %></button>
+</div>
 <% end %>

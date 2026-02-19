@@ -1,0 +1,101 @@
+## This file is a PO Template file.
+##
+## "msgid"s here are often extracted from source code.
+## Add new translations manually only if they're dynamic
+## translations that can't be statically extracted.
+##
+## Run "mix gettext.extract" to bring this file up to
+## date. Leave "msgstr"s empty as changing them here as no
+## effect: edit them in PO (.po) files instead.
+msgid ""
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:45
+#, elixir-autogen, elixir-format
+msgid "As soon as you have solved the tactic, the final position is displayed. Did you have the same position in your head?"
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:19
+#, elixir-autogen, elixir-format
+msgid "Frozen Board"
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:21
+#, elixir-autogen, elixir-format
+msgid "If you click on the position where a piece is positioned you will be shown the possible legal moves. If you then click again on the correct square, the move will be executed and the exercise will continue."
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:36
+#, elixir-autogen, elixir-format
+msgid "Next to the board you will see the list of moves that have been played since the board was frozen. This list shows the current state of the game and the moves the opponent played."
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:43
+#, elixir-autogen, elixir-format
+msgid "Tactics"
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:20
+#, elixir-autogen, elixir-format
+msgid "The board is frozen and does not show the current state of the game. This means you do not see the latest state of the board. The pieces are not animated during the tactics. You have to keep the positions of the pieces in your head!"
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:35
+#, elixir-autogen, elixir-format
+msgid "The move list"
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:37
+#, elixir-autogen, elixir-format
+msgid "The moves the opponent plays during tactics are added to this list!"
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:8
+#, elixir-autogen, elixir-format
+msgid "Use blind tactics to improve your chess visualisation skills. Solve tactics while seeing the board state of several moves from the past. You are given the representation of the board and the moves that have been made since then, and then you then have to solve the tactical problem by imagining the board and the moves played in your head."
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:15
+#, elixir-autogen, elixir-format
+msgid "Using the blind tactics takes getting used to. Here I try to explain it as simple and as clear as possible."
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:44
+#, elixir-autogen, elixir-format
+msgid "Your task is to solve the exercise like with normal tactics. There is only one continuation that is correct."
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:25
+#, elixir-autogen, elixir-format
+msgid "different board state"
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:32
+#, elixir-autogen, elixir-format
+msgid "move list"
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:49
+#, elixir-autogen, elixir-format
+msgid "solved tactic"
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:3
+#, elixir-autogen, elixir-format
+msgid "Blind Tactics"
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:14
+#, elixir-autogen, elixir-format
+msgid "How it works"
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:4
+#, elixir-autogen, elixir-format
+msgid "Improve your chess visualization skills"
+msgstr ""
+
+#: lib/listudy_web/templates/page/blind-tactics.html.eex:11
+#, elixir-autogen, elixir-format
+msgid "Play Now!"
+msgstr ""

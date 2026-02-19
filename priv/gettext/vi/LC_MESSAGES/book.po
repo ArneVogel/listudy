@@ -1,0 +1,114 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: vi\n"
+"Plural-Forms: nplurals=1\n"
+
+#, elixir-format
+#: lib/listudy_web/templates/book/public.html.eex:32
+#: lib/listudy_web/templates/book/thumb.html.eex:40
+msgid "%{book_name} book cover"
+msgstr ""
+
+#, elixir-format
+#: lib/listudy_web/templates/book/thumb.html.eex:33
+msgid "More"
+msgstr "Nhiều hơn"
+
+#, elixir-format
+#: lib/listudy_web/templates/book/public.html.eex:17
+msgid "Opening"
+msgstr "Khai cuộc"
+
+#, elixir-format
+#: lib/listudy_web/templates/book/public.html.eex:41
+msgid "Recommendations"
+msgstr "Đề xuất"
+
+#, elixir-format
+#: lib/listudy_web/templates/book/thumb.html.eex:7
+msgid "Recommended by"
+msgstr "Được đề xuất bởi"
+
+#, elixir-format
+#: lib/listudy_web/templates/book/public.html.eex:9
+msgid "Tags"
+msgstr "Tags"
+
+#, elixir-format
+#: lib/listudy_web/templates/book/recommended.html.eex:1
+msgid "Chess Books"
+msgstr "Sách cờ"
+
+#, elixir-format
+#: lib/listudy_web/templates/book/recommended.html.eex:1
+msgid "Grandmaster recommended"
+msgstr "Đại kiện tướng đề xuất"
+
+#, elixir-format
+#: lib/listudy_web/templates/book/recommended.html.eex:10
+msgid "Have you found a recommendation from a grandmaster that is not yet in the list? Send me an email and I will add it."
+msgstr "Bạn đã tìm thấy một đề nghị từ một đại kiện tướng chưa có trong danh sách? Gửi cho tôi một email và tôi sẽ cho vào."
+
+#, elixir-format
+#: lib/listudy_web/templates/book/recommended.html.eex:9
+msgid "I hope this list of recommendations will help you find the best chess textbooks for you. Because who else could judge whether a chess book is good or not if not grandmasters."
+msgstr "Tôi hy vọng danh sách các đề xuất này sẽ giúp bạn tìm ra những cuốn sách giáo khoa cờ vua tốt nhất cho bạn. Bởi vì ai khác có thể đánh giá liệu một cuốn sách cờ vua có tốt hay không nếu không phải là đại kiện tướng."
+
+#, elixir-format
+#: lib/listudy_web/templates/book/recommended.html.eex:8
+msgid "These books were all recommended by chess grandmasters! Click on the more information to find out in detail what they have to say about each book."
+msgstr "Những cuốn sách này đều được giới thiệu bởi các đại kiện tướng cờ vua! Nhấp vào thông tin thêm để tìm hiểu chi tiết những gì họ nói về mỗi cuốn sách."
+
+#, elixir-format
+#: lib/listudy_web/templates/book/recommended.html.eex:2
+msgid "This list contains the 20 best chess books as ranked by grandmasters. I hope this list helps you to find the perfect book for you."
+msgstr "Danh sách này chứa 20 cuốn sách cờ vua hay nhất được xếp hạng bởi các đại kiện tướng. Tôi hy vọng danh sách này sẽ giúp bạn tìm thấy cuốn sách hoàn hảo cho bạn."
+
+#, elixir-format
+#: lib/listudy_web/live/book_search_live.ex:10
+msgid "Chess Book Search"
+msgstr "Tìm kiếm sách cờ"
+
+#, elixir-format
+#: lib/listudy_web/live/book_search_live.ex:12
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#, elixir-format
+#: lib/listudy_web/live/book_search_live.ex:16
+msgid "by"
+msgstr "bởi"
+
+#, elixir-format
+#: lib/listudy_web/templates/book/footer.html.eex:5
+#: lib/listudy_web/templates/book/footer.html.eex:9
+msgid "%{amount} books"
+msgstr "%{amount} sách"
+
+#, elixir-format
+#: lib/listudy_web/templates/book/footer.html.eex:2
+msgid "Looking for something more specific? Take a look at these book lists:"
+msgstr "Tìm kiếm một cái gì đó cụ thể hơn? Hãy xem các danh sách sách này:"
+
+#, elixir-format
+#: lib/listudy_web/templates/book/footer.html.eex:1
+msgid "More book lists"
+msgstr "Thêm danh sách sách"
+
+#, elixir-format
+#: lib/listudy_web/templates/book/footer.html.eex:5
+msgid "Most Grandmaster recommended books"
+msgstr "Hầu hết các đại kiện tướng đề xuất sách"
+
+#, elixir-format
+#: lib/listudy_web/templates/player/book_recommendations.html.eex:1
+msgid "Books recommended by %{player}"
+msgstr "Sách được đề xuất bởi %{player}"

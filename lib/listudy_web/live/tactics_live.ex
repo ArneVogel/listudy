@@ -1,4 +1,5 @@
 defmodule ListudyWeb.TacticsLive do
+  require Logger
   use Phoenix.LiveView
 
   alias Listudy.Tactics
@@ -26,6 +27,11 @@ defmodule ListudyWeb.TacticsLive do
     tactic = get_next_tactic(socket)
     url = get_next_url(socket, tactic)
     {:noreply, push_redirect(socket, to: url, replace: true)}
+  end
+
+  def handle_event(event, _, socket) do
+    Logger.error("Unhandled event in tactics live: #{event}")
+    {:noreply, socket}
   end
 
   defp add_extra(%{"motif" => slug}, socket) do

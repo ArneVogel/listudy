@@ -1,0 +1,39 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <label for="opening_faq[opening_id]">Opening</label>
+  <select name="opening_faq[opening_id]" id="opening_id">
+  <%= for opening <- @openings do %>
+    <%= if Map.has_key?(assigns, :opening_faq) do %>
+      <%= if @opening_faq.opening_id == opening.id do %>
+        <option selected value="<%= opening.id %>">
+      <% else %>
+        <option value="<%= opening.id %>">
+      <% end %>
+    <% else %>
+      <option value="<%= opening.id %>">
+    <% end %>
+
+      <%= opening.name %>
+    </option>
+  <% end %>
+  </select>
+
+
+
+  <%= label f, :question %>
+  <%= textarea f, :question %>
+  <%= error_tag f, :question %>
+
+  <%= label f, :answer %>
+  <%= textarea f, :answer %>
+  <%= error_tag f, :answer %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>

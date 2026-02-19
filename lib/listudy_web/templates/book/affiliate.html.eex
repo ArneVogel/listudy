@@ -1,0 +1,24 @@
+<button class="modal_open" id="<%= @book.slug %>_<%= @shop.name %>">
+  <span><%= @shop.name %></span>
+</button>
+<div id="<%= @book.slug %>_<%= @shop.name %>_modal" class="modal">
+  <div class="modal-content">
+    <span class="modal_close">&times;</span>
+    <b><%= dgettext("book", "%{shop_name} Affiliate Disclosure", shop_name: @shop.name) %></b>
+    <p><%= dgettext("book", "If you buy the book through this link we will receive a small provison for the referral. There will be no additional costs for you.") %>
+    <%= if @shop.name == "Amazon" do %>
+      <%= dgettext("book", "As an Amazon Associate I earn from qualifying purchases.") %>
+    <% end %>
+    </p>
+    <a rel="sponsored noopener nofollow"
+       target="_blank"
+      <%= if @shop.name == "Amazon" do %>
+         href="https://amazon.com/dp/<%= @book.amazon_id%>/?tag=listudy-20"
+      <% end %>
+       >
+      <button class="primary">
+        <%= dgettext("book", "Continue")%>
+      </button>
+    </a>
+  </div>
+</div>

@@ -20,7 +20,7 @@ defmodule Listudy.MixProject do
   def application do
     [
       mod: {Listudy.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :mnesia, :logger_file_backend]
     ]
   end
 
@@ -39,18 +39,20 @@ defmodule Listudy.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.11"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_dashboard, "~> 0.2.0"},
       {:telemetry_metrics, "~> 0.4"},
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:pow, "~> 1.0.20"},
-      {:phoenix_live_view, "~> 0.12"},
+      {:phoenix_live_view, "~> 0.15"},
       {:floki, ">= 0.0.0", only: :test},
       {:navigation_history, "~> 0.3"},
       {:earmark, ">= 1.4.5"},
-      {:httpoison, "~> 1.6"}
+      {:httpoison, "~> 1.6"},
+      {:arc, "~> 0.11.0"},
+      {:arc_ecto, "~> 0.11.1"},
+      {:logger_file_backend, "~> 0.0.10"}
     ]
   end
 

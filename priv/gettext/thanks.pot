@@ -1,0 +1,56 @@
+## This file is a PO Template file.
+##
+## "msgid"s here are often extracted from source code.
+## Add new translations manually only if they're dynamic
+## translations that can't be statically extracted.
+##
+## Run "mix gettext.extract" to bring this file up to
+## date. Leave "msgstr"s empty as changing them here as no
+## effect: edit them in PO (.po) files instead.
+msgid ""
+msgstr ""
+
+#: lib/listudy_web/templates/page/thanks.html.eex:1
+#, elixir-autogen, elixir-format
+msgid "Thank you!"
+msgstr ""
+
+#: lib/listudy_web/templates/page/thanks.html.eex:29
+#, elixir-autogen, elixir-format
+msgid "Thanks to %{cburnett}, Armando Hernandez Marroquin, %{chessnut}, %{letter}, %{pirouetti}, %{pixel}, %{shapes} for their piece sets."
+msgstr ""
+
+#: lib/listudy_web/templates/page/thanks.html.eex:21
+#, elixir-autogen, elixir-format
+msgid "Thanks to %{jeff} for %{chessjs}."
+msgstr ""
+
+#: lib/listudy_web/templates/page/thanks.html.eex:13
+#, elixir-autogen, elixir-format
+msgid "Thanks to %{lichess} for all their work. In particular for making studies, their puzzle database (%{database_link}), %{chessground}, and their freely avaliable icons."
+msgstr ""
+
+#: lib/listudy_web/templates/page/thanks.html.eex:17
+#, elixir-autogen, elixir-format
+msgid "Thanks to %{niklas} for %{stockfish}."
+msgstr ""
+
+#: lib/listudy_web/templates/page/thanks.html.eex:6
+#, elixir-autogen, elixir-format
+msgid "Thanks to all %{contributors}."
+msgstr ""
+
+#: lib/listudy_web/templates/page/thanks.html.eex:8
+#, elixir-autogen, elixir-format
+msgid "Thanks to all those who have provided translations."
+msgstr ""
+
+#: lib/listudy_web/templates/page/thanks.html.eex:2
+#, elixir-autogen, elixir-format
+msgid "Thanks to all who have helped directly on Listudy and to all projects that make code and other content openly available. Without this help Listudy could not exist in this form."
+msgstr ""
+
+#: lib/listudy_web/templates/page/thanks.html.eex:34
+#, elixir-autogen, elixir-format
+msgid "Thanks to the authors of %{elixir} and %{phoenix}."
+msgstr ""

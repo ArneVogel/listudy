@@ -1,0 +1,82 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: vi\n"
+"Plural-Forms: nplurals=1\n"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/show_comments.html.eex:11
+msgid "Are you sure?"
+msgstr "Bạn có chắc không?"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/comment_form.html.eex:3
+msgid "Comment"
+msgstr "Bình luận"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/show_comments.html.eex:3
+msgid "Comments"
+msgstr "Bình luận"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/show_comments.html.eex:11
+msgid "Delete"
+msgstr "Xóa"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/comment_form.html.eex:11
+msgid "Save"
+msgstr "Nhớ"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/show_comments.html.eex:8
+msgid "by"
+msgstr "by"
+
+#, elixir-format
+#: lib/listudy_web/controllers/comment_controller.ex:43
+msgid "Comment could not get created"
+msgstr "Bình luận không thể được tạo"
+
+#, elixir-format
+#: lib/listudy_web/controllers/comment_controller.ex:40
+msgid "Comment created"
+msgstr "Bình luận được tạo"
+
+#, elixir-format
+#: lib/listudy_web/controllers/comment_controller.ex:26
+msgid "Comment deleted successfully."
+msgstr "Bình luận đã được xóa thành công."
+
+#, elixir-format
+#: lib/listudy_web/controllers/comment_controller.ex:48
+msgid "Error"
+msgstr "Lỗi"
+
+#, elixir-format
+#: lib/listudy_web/controllers/comment_controller.ex:20
+msgid "You're not allowed to do that."
+msgstr "Bạn không được phép làm thế."
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/comment_form.html.eex:16
+msgid "%{register} to comment"
+msgstr "%{register} bình luận"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/show_comments.html.eex:17
+msgid "No comments yet, be the first to write one!"
+msgstr "Chưa có bình luận nào, hãy là người đầu tiên viết một bài!"
+
+#, elixir-format
+#: lib/listudy_web/templates/comment/comment_form.html.eex:15
+msgid "Register"
+msgstr "Đăng ký"

@@ -1,0 +1,334 @@
+## This file is a PO Template file.
+##
+## "msgid"s here are often extracted from source code.
+## Add new translations manually only if they're dynamic
+## translations that can't be statically extracted.
+##
+## Run "mix gettext.extract" to bring this file up to
+## date. Leave "msgstr"s empty as changing them here as no
+## effect: edit them in PO (.po) files instead.
+msgid ""
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:94
+#, elixir-autogen, elixir-format
+msgid "Bishop + Bishop"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:109
+#, elixir-autogen, elixir-format
+msgid "Bishop + Knight"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:198
+#, elixir-autogen, elixir-format
+msgid "Bishops and Pawns"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:328
+#, elixir-autogen, elixir-format
+msgid "Bishops and/or knights against rook, with and without pawns."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:60
+#, elixir-autogen, elixir-format
+msgid "Checkmating"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:441
+#, elixir-autogen, elixir-format
+msgid "Chess Fundamentals"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:231
+#, elixir-autogen, elixir-format
+msgid "Endgames with Knights, Bishops and Pawns."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:199
+#, elixir-autogen, elixir-format
+msgid "Endgames with only Bishops and Pawns on the board."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:136
+#: lib/listudy_web/controllers/endgame_controller.ex:203
+#: lib/listudy_web/controllers/endgame_controller.ex:235
+#: lib/listudy_web/controllers/endgame_controller.ex:260
+#: lib/listudy_web/controllers/endgame_controller.ex:285
+#: lib/listudy_web/controllers/endgame_controller.ex:309
+#: lib/listudy_web/controllers/endgame_controller.ex:331
+#: lib/listudy_web/controllers/endgame_controller.ex:353
+#: lib/listudy_web/controllers/endgame_controller.ex:378
+#: lib/listudy_web/controllers/endgame_controller.ex:406
+#: lib/listudy_web/controllers/endgame_controller.ex:460
+#, elixir-autogen, elixir-format
+msgid "Endings of Games"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:442
+#, elixir-autogen, elixir-format
+msgid "From the Capablancas \"Chess Fundamentals\"."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:423
+#, elixir-autogen, elixir-format
+msgid "From the book \"Analysis of the  Chess Ending King and Queen against King and Rook\"."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:138
+#: lib/listudy_web/controllers/endgame_controller.ex:205
+#: lib/listudy_web/controllers/endgame_controller.ex:237
+#: lib/listudy_web/controllers/endgame_controller.ex:262
+#: lib/listudy_web/controllers/endgame_controller.ex:287
+#: lib/listudy_web/controllers/endgame_controller.ex:311
+#: lib/listudy_web/controllers/endgame_controller.ex:333
+#: lib/listudy_web/controllers/endgame_controller.ex:355
+#: lib/listudy_web/controllers/endgame_controller.ex:380
+#: lib/listudy_web/controllers/endgame_controller.ex:408
+#: lib/listudy_web/controllers/endgame_controller.ex:462
+#, elixir-autogen, elixir-format
+msgid "From the book \"Chess Studies, Or, Endings of Games\"."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:127
+#, elixir-autogen, elixir-format
+msgid "King and Pawn Endgames"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:421
+#, elixir-autogen, elixir-format
+msgid "King and Queen against King and Rook"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:230
+#, elixir-autogen, elixir-format
+msgid "Knights, Bishops and Pawns"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:61
+#, elixir-autogen, elixir-format
+msgid "Learn the basic checkmating techniques."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:327
+#, elixir-autogen, elixir-format
+msgid "Minor pieces against Rook endgames."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:178
+#, elixir-autogen, elixir-format
+msgid "Obtaining a Passed Pawn"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:167
+#, elixir-autogen, elixir-format
+msgid "Pawn Endings"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:159
+#, elixir-autogen, elixir-format
+msgid "Pawn Promotion"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:69
+#, elixir-autogen, elixir-format
+msgid "Queen"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:455
+#, elixir-autogen, elixir-format
+msgid "Queen against Minor Pieces"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:348
+#, elixir-autogen, elixir-format
+msgid "Queen against Pawns"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:401
+#: lib/listudy_web/controllers/endgame_controller.ex:402
+#, elixir-autogen, elixir-format
+msgid "Queen against Rook"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:456
+#, elixir-autogen, elixir-format
+msgid "Queen against minor pieces."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:349
+#: lib/listudy_web/controllers/endgame_controller.ex:350
+#, elixir-autogen, elixir-format
+msgid "Queen against pawn endgames."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:373
+#, elixir-autogen, elixir-format
+msgid "Queens and Pawns"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:374
+#, elixir-autogen, elixir-format
+msgid "Queens and pawn endgames."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:81
+#, elixir-autogen, elixir-format
+msgid "Rook"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:281
+#, elixir-autogen, elixir-format
+msgid "Rook against Pawn endgames."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:280
+#, elixir-autogen, elixir-format
+msgid "Rook against Pawns"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:303
+#, elixir-autogen, elixir-format
+msgid "Rook against minor Pieces"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:304
+#, elixir-autogen, elixir-format
+msgid "Rook against minor pieces endgames."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:306
+#, elixir-autogen, elixir-format
+msgid "Rook and pawn against bishop or knight, with and without pawns."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:185
+#, elixir-autogen, elixir-format
+msgid "The Opposition"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:232
+#, elixir-autogen, elixir-format
+msgid "This chapter has endgames about Knight and Bishop endings."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:200
+#, elixir-autogen, elixir-format
+msgid "This chapter has endgames about Pawn and Bishop endings."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:130
+#, elixir-autogen, elixir-format
+msgid "This chapter has endgames about the King and Pawn endgame. Many of the examples are taken from Capablancas \"Chess Fundamentals\"."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:63
+#, elixir-autogen, elixir-format
+msgid "This chapter has endgames for checkmating with queen, rook, bishop + knight and bishop + bishop."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:375
+#, elixir-autogen, elixir-format
+msgid "Train endgames with queens and pawns on the board."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:457
+#, elixir-autogen, elixir-format
+msgid "Train queen and minor piece endgames."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:403
+#, elixir-autogen, elixir-format
+msgid "Train queen and rook endgames."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:282
+#, elixir-autogen, elixir-format
+msgid "Train rook against pawn endgames."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:254
+#, elixir-autogen, elixir-format
+msgid "Two Minor Pieces against one Minor Piece"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:257
+#, elixir-autogen, elixir-format
+msgid "Two against one."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:128
+#, elixir-autogen, elixir-format
+msgid "Win games with only Pawns on the board"
+msgstr ""
+
+#: lib/listudy_web/templates/live/tactics.html.leex:25
+#, elixir-autogen, elixir-format
+msgid "Currently playing tactics by:"
+msgstr ""
+
+#: lib/listudy_web/templates/live/tactics.html.leex:22
+#, elixir-autogen, elixir-format
+msgid "Currently playing tactics from the event:"
+msgstr ""
+
+#: lib/listudy_web/templates/live/tactics.html.leex:19
+#, elixir-autogen, elixir-format
+msgid "Currently training in the motif:"
+msgstr ""
+
+#: lib/listudy_web/templates/live/tactics.html.leex:16
+#, elixir-autogen, elixir-format
+msgid "Currently training in the opening:"
+msgstr ""
+
+#: lib/listudy_web/templates/endgame/game.html.eex:2
+#: lib/listudy_web/templates/endgame/index.html.eex:1
+#, elixir-autogen, elixir-format
+msgid "Endgames"
+msgstr ""
+
+#: lib/listudy_web/views/endgame_view.ex:7
+#, elixir-autogen, elixir-format
+msgid "Next"
+msgstr ""
+
+#: lib/listudy_web/templates/endgame/game.html.eex:25
+#, elixir-autogen, elixir-format
+msgid "Reset"
+msgstr ""
+
+#: lib/listudy_web/templates/endgame/game.html.eex:47
+#, elixir-autogen, elixir-format
+msgid "Success!"
+msgstr ""
+
+#: lib/listudy_web/templates/endgame/game.html.eex:48
+#, elixir-autogen, elixir-format
+msgid "Try again!"
+msgstr ""
+
+#: lib/listudy_web/templates/endgame/game.html.eex:15
+#, elixir-autogen, elixir-format
+msgid "White to play and"
+msgstr ""
+
+#: lib/listudy_web/templates/endgame/index.html.eex:8
+#, elixir-autogen, elixir-format
+msgid "Learn"
+msgstr ""
+
+#: lib/listudy_web/templates/endgame/index.html.eex:2
+#, elixir-autogen, elixir-format
+msgid "No idea what to do in the endgame? Learn endgames by playing against stockfish."
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:326
+#, elixir-autogen, elixir-format
+msgid "Minor pieces against Rook"
+msgstr ""
+
+#: lib/listudy_web/controllers/endgame_controller.ex:256
+#, elixir-autogen, elixir-format
+msgid "Two minor pieces against one minor piece, with and without pawns."
+msgstr ""

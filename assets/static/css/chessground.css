@@ -6,6 +6,7 @@
  */
 .chessboard {
     margin-bottom: 2em;
+    max-width: 100%;
 }
 
 .cg-wrap {
@@ -115,7 +116,7 @@ cg-board piece.fading {
 }
 .cg-wrap svg {
   overflow: hidden;
-  position: relative;
+  position: absolute;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -166,13 +167,30 @@ cg-board piece.fading {
 
 /*
  * Board
+ * Taken from https://github.com/ornicar/lila/tree/master/public/images/board/svg
+ * See https://github.com/ornicar/lila/blob/master/COPYING.md
+ * License: AGPLv3+
  */
-.blue {
+.blue .chessboard {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgODAwIDgwMCI+CjxnIGlkPSJicm93bi1ib2FyZCI+CjxnIGlkPSJMaWdodCIgZmlsbD0iI2RlZTNlNiI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIi8+CjwvZz4KPGcgaWQ9IkZyYW1lIiBmaWxsPSJub25lIj4KPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI4MDAiLz4KPC9nPgo8ZyBpZD0iRGFyayIgZmlsbD0iIzhjYTJhZCI+CjxnIGlkPSJyYXoiPgo8ZyBpZD0iZHZhIj4KPGcgaWQ9InRyaSI+CjxyZWN0IHg9IjEwMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiLz4KPHJlY3QgeD0iMzAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIvPgo8cmVjdCB4PSI1MDAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIi8+CjxyZWN0IHg9IjcwMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiLz4KPC9nPgo8dXNlIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMDAsMTAwKSIgeGxpbms6aHJlZj0iI3RyaSIvPgo8L2c+Cjx1c2UgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwyMDApIiB4bGluazpocmVmPSIjZHZhIi8+CjwvZz4KPHVzZSB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLDQwMCkiIHhsaW5rOmhyZWY9IiNyYXoiLz4KPC9nPgo8L2c+Cjwvc3ZnPg==');
+}
+.brown .chessboard {
+  background-image: url('/images/boards/brown.svg');
+}
+.green .chessboard {
+  background-image: url('/images/boards/green.svg');
+}
+.ic .chessboard {
+  background-image: url('/images/boards/ic.svg');
 }
 
 /*
  * Pieces
+ */
+/*
+ * cburnett
+ * Author: https://en.wikipedia.org/wiki/User:Cburnett
+ * License: GPLv2+
  */
 .cburnett piece.pawn.white { background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NSIgaGVpZ2h0PSI0NSI+PHBhdGggZD0iTTIyLjUgOWMtMi4yMSAwLTQgMS43OS00IDQgMCAuODkuMjkgMS43MS43OCAyLjM4QzE3LjMzIDE2LjUgMTYgMTguNTkgMTYgMjFjMCAyLjAzLjk0IDMuODQgMi40MSA1LjAzLTMgMS4wNi03LjQxIDUuNTUtNy40MSAxMy40N2gyM2MwLTcuOTItNC40MS0xMi40MS03LjQxLTEzLjQ3IDEuNDctMS4xOSAyLjQxLTMgMi40MS01LjAzIDAtMi40MS0xLjMzLTQuNS0zLjI4LTUuNjIuNDktLjY3Ljc4LTEuNDkuNzgtMi4zOCAwLTIuMjEtMS43OS00LTQtNHoiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg=='); }
 .cburnett piece.knight.white { background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NSIgaGVpZ2h0PSI0NSI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yMiAxMGMxMC41IDEgMTYuNSA4IDE2IDI5SDE1YzAtOSAxMC02LjUgOC0yMSIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0yNCAxOGMuMzggMi45MS01LjU1IDcuMzctOCA5LTMgMi0yLjgyIDQuMzQtNSA0LTEuMDQyLS45NCAxLjQxLTMuMDQgMC0zLTEgMCAuMTkgMS4yMy0xIDItMSAwLTQuMDAzIDEtNC00IDAtMiA2LTEyIDYtMTJzMS44OS0xLjkgMi0zLjVjLS43My0uOTk0LS41LTItLjUtMyAxLTEgMyAyLjUgMyAyLjVoMnMuNzgtMS45OTIgMi41LTNjMSAwIDEgMyAxIDMiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJNOS41IDI1LjVhLjUuNSAwIDEgMS0xIDAgLjUuNSAwIDEgMSAxIDB6bTUuNDMzLTkuNzVhLjUgMS41IDMwIDEgMS0uODY2LS41LjUgMS41IDMwIDEgMSAuODY2LjV6IiBmaWxsPSIjMDAwIi8+PC9nPjwvc3ZnPg=='); }
@@ -186,3 +204,111 @@ cg-board piece.fading {
 .cburnett piece.rook.black { background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NSIgaGVpZ2h0PSI0NSI+PGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik05IDM5aDI3di0zSDl2M3ptMy41LTdsMS41LTIuNWgxN2wxLjUgMi41aC0yMHptLS41IDR2LTRoMjF2NEgxMnoiIHN0cm9rZS1saW5lY2FwPSJidXR0Ii8+PHBhdGggZD0iTTE0IDI5LjV2LTEzaDE3djEzSDE0eiIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiLz48cGF0aCBkPSJNMTQgMTYuNUwxMSAxNGgyM2wtMyAyLjVIMTR6TTExIDE0VjloNHYyaDVWOWg1djJoNVY5aDR2NUgxMXoiIHN0cm9rZS1saW5lY2FwPSJidXR0Ii8+PHBhdGggZD0iTTEyIDM1LjVoMjFtLTIwLTRoMTltLTE4LTJoMTdtLTE3LTEzaDE3TTExIDE0aDIzIiBmaWxsPSJub25lIiBzdHJva2U9IiNlY2VjZWMiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIvPjwvZz48L3N2Zz4='); }
 .cburnett piece.queen.black { background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NSIgaGVpZ2h0PSI0NSI+PGcgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxnIHN0cm9rZT0ibm9uZSI+PGNpcmNsZSBjeD0iNiIgY3k9IjEyIiByPSIyLjc1Ii8+PGNpcmNsZSBjeD0iMTQiIGN5PSI5IiByPSIyLjc1Ii8+PGNpcmNsZSBjeD0iMjIuNSIgY3k9IjgiIHI9IjIuNzUiLz48Y2lyY2xlIGN4PSIzMSIgY3k9IjkiIHI9IjIuNzUiLz48Y2lyY2xlIGN4PSIzOSIgY3k9IjEyIiByPSIyLjc1Ii8+PC9nPjxwYXRoIGQ9Ik05IDI2YzguNS0xLjUgMjEtMS41IDI3IDBsMi41LTEyLjVMMzEgMjVsLS4zLTE0LjEtNS4yIDEzLjYtMy0xNC41LTMgMTQuNS01LjItMTMuNkwxNCAyNSA2LjUgMTMuNSA5IDI2eiIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiLz48cGF0aCBkPSJNOSAyNmMwIDIgMS41IDIgMi41IDQgMSAxLjUgMSAxIC41IDMuNS0xLjUgMS0xLjUgMi41LTEuNSAyLjUtMS41IDEuNS41IDIuNS41IDIuNSA2LjUgMSAxNi41IDEgMjMgMCAwIDAgMS41LTEgMC0yLjUgMCAwIC41LTEuNS0xLTIuNS0uNS0yLjUtLjUtMiAuNS0zLjUgMS0yIDIuNS0yIDIuNS00LTguNS0xLjUtMTguNS0xLjUtMjcgMHoiIHN0cm9rZS1saW5lY2FwPSJidXR0Ii8+PHBhdGggZD0iTTExIDM4LjVhMzUgMzUgMSAwIDAgMjMgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiLz48cGF0aCBkPSJNMTEgMjlhMzUgMzUgMSAwIDEgMjMgMG0tMjEuNSAyLjVoMjBtLTIxIDNhMzUgMzUgMSAwIDAgMjIgMG0tMjMgM2EzNSAzNSAxIDAgMCAyNCAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNlY2VjZWMiLz48L2c+PC9zdmc+'); }
 .cburnett piece.king.black { background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NSIgaGVpZ2h0PSI0NSI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yMi41IDExLjYzVjYiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiLz48cGF0aCBkPSJNMjIuNSAyNXM0LjUtNy41IDMtMTAuNWMwIDAtMS0yLjUtMy0yLjVzLTMgMi41LTMgMi41Yy0xLjUgMyAzIDEwLjUgMyAxMC41IiBmaWxsPSIjMDAwIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIvPjxwYXRoIGQ9Ik0xMS41IDM3YzUuNSAzLjUgMTUuNSAzLjUgMjEgMHYtN3M5LTQuNSA2LTEwLjVjLTQtNi41LTEzLjUtMy41LTE2IDRWMjd2LTMuNWMtMy41LTcuNS0xMy0xMC41LTE2LTQtMyA2IDUgMTAgNSAxMFYzN3oiIGZpbGw9IiMwMDAiLz48cGF0aCBkPSJNMjAgOGg1IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIi8+PHBhdGggZD0iTTMyIDI5LjVzOC41LTQgNi4wMy05LjY1QzM0LjE1IDE0IDI1IDE4IDIyLjUgMjQuNWwuMDEgMi4xLS4wMS0yLjFDMjAgMTggOS45MDYgMTQgNi45OTcgMTkuODVjLTIuNDk3IDUuNjUgNC44NTMgOSA0Ljg1MyA5IiBzdHJva2U9IiNlY2VjZWMiLz48cGF0aCBkPSJNMTEuNSAzMGM1LjUtMyAxNS41LTMgMjEgMG0tMjEgMy41YzUuNS0zIDE1LjUtMyAyMSAwbS0yMSAzLjVjNS41LTMgMTUuNS0zIDIxIDAiIHN0cm9rZT0iI2VjZWNlYyIvPjwvZz48L3N2Zz4='); }
+
+/*
+ * merida
+ * Author: Armando Hernandez Marroquin
+ * License: GPLv2+
+ */
+.merida piece.pawn.white { background-image: url('/images/pieces/merida/wP.svg'); }
+.merida piece.knight.white { background-image: url('/images/pieces/merida/wN.svg'); }
+.merida piece.bishop.white { background-image: url('/images/pieces/merida/wB.svg'); }
+.merida piece.rook.white { background-image: url('/images/pieces/merida/wR.svg'); }
+.merida piece.queen.white { background-image: url('/images/pieces/merida/wQ.svg'); }
+.merida piece.king.white { background-image: url('/images/pieces/merida/wK.svg'); }
+.merida piece.pawn.black { background-image: url('/images/pieces/merida/bP.svg'); }
+.merida piece.knight.black { background-image: url('/images/pieces/merida/bN.svg'); }
+.merida piece.bishop.black { background-image: url('/images/pieces/merida/bB.svg'); }
+.merida piece.rook.black { background-image: url('/images/pieces/merida/bR.svg'); }
+.merida piece.queen.black { background-image: url('/images/pieces/merida/bQ.svg'); }
+.merida piece.king.black { background-image: url('/images/pieces/merida/bK.svg'); }
+
+/*
+ * chessnut
+ * Author: Alexis Luengas https://github.com/LexLuengas
+ * License: Apache 2.0
+ */
+.chessnut piece.pawn.white { background-image: url('/images/pieces/chessnut/wP.svg'); }
+.chessnut piece.knight.white { background-image: url('/images/pieces/chessnut/wN.svg'); }
+.chessnut piece.bishop.white { background-image: url('/images/pieces/chessnut/wB.svg'); }
+.chessnut piece.rook.white { background-image: url('/images/pieces/chessnut/wR.svg'); }
+.chessnut piece.queen.white { background-image: url('/images/pieces/chessnut/wQ.svg'); }
+.chessnut piece.king.white { background-image: url('/images/pieces/chessnut/wK.svg'); }
+.chessnut piece.pawn.black { background-image: url('/images/pieces/chessnut/bP.svg'); }
+.chessnut piece.knight.black { background-image: url('/images/pieces/chessnut/bN.svg'); }
+.chessnut piece.bishop.black { background-image: url('/images/pieces/chessnut/bB.svg'); }
+.chessnut piece.rook.black { background-image: url('/images/pieces/chessnut/bR.svg'); }
+.chessnut piece.queen.black { background-image: url('/images/pieces/chessnut/bQ.svg'); }
+.chessnut piece.king.black { background-image: url('/images/pieces/chessnut/bK.svg'); }
+
+/*
+ * letter
+ * Author: https://lichess.org/@/usolando
+ * License: AGPLv3+
+ */
+.letter piece.pawn.white { background-image: url('/images/pieces/letter/wP.svg'); }
+.letter piece.knight.white { background-image: url('/images/pieces/letter/wN.svg'); }
+.letter piece.bishop.white { background-image: url('/images/pieces/letter/wB.svg'); }
+.letter piece.rook.white { background-image: url('/images/pieces/letter/wR.svg'); }
+.letter piece.queen.white { background-image: url('/images/pieces/letter/wQ.svg'); }
+.letter piece.king.white { background-image: url('/images/pieces/letter/wK.svg'); }
+.letter piece.pawn.black { background-image: url('/images/pieces/letter/bP.svg'); }
+.letter piece.knight.black { background-image: url('/images/pieces/letter/bN.svg'); }
+.letter piece.bishop.black { background-image: url('/images/pieces/letter/bB.svg'); }
+.letter piece.rook.black { background-image: url('/images/pieces/letter/bR.svg'); }
+.letter piece.queen.black { background-image: url('/images/pieces/letter/bQ.svg'); }
+.letter piece.king.black { background-image: url('/images/pieces/letter/bK.svg'); }
+
+/*
+ * pirouetti
+ * Author: https://lichess.org/@/pirouetti
+ * License: AGPLv3+
+ */
+.pirouetti piece.pawn.white { background-image: url('/images/pieces/pirouetti/wP.svg'); }
+.pirouetti piece.knight.white { background-image: url('/images/pieces/pirouetti/wN.svg'); }
+.pirouetti piece.bishop.white { background-image: url('/images/pieces/pirouetti/wB.svg'); }
+.pirouetti piece.rook.white { background-image: url('/images/pieces/pirouetti/wR.svg'); }
+.pirouetti piece.queen.white { background-image: url('/images/pieces/pirouetti/wQ.svg'); }
+.pirouetti piece.king.white { background-image: url('/images/pieces/pirouetti/wK.svg'); }
+.pirouetti piece.pawn.black { background-image: url('/images/pieces/pirouetti/bP.svg'); }
+.pirouetti piece.knight.black { background-image: url('/images/pieces/pirouetti/bN.svg'); }
+.pirouetti piece.bishop.black { background-image: url('/images/pieces/pirouetti/bB.svg'); }
+.pirouetti piece.rook.black { background-image: url('/images/pieces/pirouetti/bR.svg'); }
+.pirouetti piece.queen.black { background-image: url('/images/pieces/pirouetti/bQ.svg'); }
+.pirouetti piece.king.black { background-image: url('/images/pieces/pirouetti/bK.svg'); }
+
+/*
+ * pixel
+ * Author: https://twitter.com/therealqtpi
+ * License: AGPLv3+
+ */
+.pixel piece.pawn.white { background-image: url('/images/pieces/pixel/wP.svg'); }
+.pixel piece.knight.white { background-image: url('/images/pieces/pixel/wN.svg'); }
+.pixel piece.bishop.white { background-image: url('/images/pieces/pixel/wB.svg'); }
+.pixel piece.rook.white { background-image: url('/images/pieces/pixel/wR.svg'); }
+.pixel piece.queen.white { background-image: url('/images/pieces/pixel/wQ.svg'); }
+.pixel piece.king.white { background-image: url('/images/pieces/pixel/wK.svg'); }
+.pixel piece.pawn.black { background-image: url('/images/pieces/pixel/bP.svg'); }
+.pixel piece.knight.black { background-image: url('/images/pieces/pixel/bN.svg'); }
+.pixel piece.bishop.black { background-image: url('/images/pieces/pixel/bB.svg'); }
+.pixel piece.rook.black { background-image: url('/images/pieces/pixel/bR.svg'); }
+.pixel piece.queen.black { background-image: url('/images/pieces/pixel/bQ.svg'); }
+.pixel piece.king.black { background-image: url('/images/pieces/pixel/bK.svg'); }
+
+/*
+ * shapes
+ * Author: https://github.com/flugsio/chess_shapes
+ * License: CC BY-SA 4.0
+ */
+.shapes piece.pawn.white { background-image: url('/images/pieces/shapes/wP.svg'); }
+.shapes piece.knight.white { background-image: url('/images/pieces/shapes/wN.svg'); }
+.shapes piece.bishop.white { background-image: url('/images/pieces/shapes/wB.svg'); }
+.shapes piece.rook.white { background-image: url('/images/pieces/shapes/wR.svg'); }
+.shapes piece.queen.white { background-image: url('/images/pieces/shapes/wQ.svg'); }
+.shapes piece.king.white { background-image: url('/images/pieces/shapes/wK.svg'); }
+.shapes piece.pawn.black { background-image: url('/images/pieces/shapes/bP.svg'); }
+.shapes piece.knight.black { background-image: url('/images/pieces/shapes/bN.svg'); }
+.shapes piece.bishop.black { background-image: url('/images/pieces/shapes/bB.svg'); }
+.shapes piece.rook.black { background-image: url('/images/pieces/shapes/bR.svg'); }
+.shapes piece.queen.black { background-image: url('/images/pieces/shapes/bQ.svg'); }
+.shapes piece.king.black { background-image: url('/images/pieces/shapes/bK.svg'); }

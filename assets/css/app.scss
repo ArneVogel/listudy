@@ -1,8 +1,25 @@
 /* This file is for your main application css. */
 
 @import "./colors.css";
+@import "./const.css";
 @import "./navigation.css";
 @import "./skeleton.css";
+@import "./progress_bar.css";
+@import "./inputs.css";
+@import "./icons.css";
+@import "./features/study.css";
+@import "./features/endgames.css";
+@import "./features/achievements.css";
+@import "./features/book.css";
+@import "./components/breadcrumbs.css";
+@import "./components/modal.css";
+@import "./components/popup.css";
+@import "./components/ground.css";
+@import "./components/support.css";
+
+body {
+    margin: 0;
+}
 
 /* Alerts and form errors */
 .alert {
@@ -49,8 +66,21 @@
 }
 
 .infoBox {
+    position: relative;
     margin: 10px 0px;
     padding:12px;
+}
+
+.close_button {
+    display: inline-block;
+    position: absolute;
+    top: -5px;
+    right: 1px;
+    cursor: pointer;
+    /* Make it non-selectable */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .hidden {
@@ -65,16 +95,10 @@
     white-space: pre-line;
 }
 
-#share {
-    text-align: center;
-    margin-top: 1em;
-}
-
 .big_search {
     margin-right: auto;
     margin-left: auto;
     width: 80%;
-    display: table;
 }
 
 .big_input {
@@ -86,8 +110,32 @@
 
 
 textarea:invalid {
-  border: 2px dashed red;
+  border: 2px solid red;
 }
+input:invalid {
+  border: 2px solid red;
+}
+
+blockquote:before {
+    font-family: "listudy";
+    font-size: 32px;
+    color: var(--font-color);
+    content: "&";
+    display: block;
+    position: absolute;
+    top: -15px;
+    left: 0;
+    transform: scaleX(-1);
+}
+blockquote {
+    font-size: 1.1em;
+    margin: 0 0 27px;
+    padding-left: 48px;
+    position: relative;
+}
+
+
+
 
 /* Basic CSS */
 body {
@@ -104,22 +152,25 @@ body {
 .with_sidebar {
     display: flex;
 }
+
 @media only screen and (max-width: 600px) {
     .with_sidebar {
         display: block;
     }
     .sidebar {
         margin-left: 0px !important;
+        
     }
 }
 
-
 .sidebar_main {
+    z-index: 0;
     flex: 2;
 }
 .sidebar {
     flex: 1;
     margin-left: 2em;
+    position: relative;
 }
 
 .continue_button {
@@ -144,4 +195,36 @@ body {
 
 img {
     max-width: 100%;
+}
+
+.opening_svg {
+    float: right;
+    max-width: 100%;
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+.highlight {
+    background: var(--bg-highlight-color);
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: var(--small-border-radius);
+}
+
+iframe {
+    max-width: 100%;
+}
+
+.float_right {
+    float: right;
+}
+
+.chessground_piece {
+    width: 45px;
+    height: 45px;
+    background-size: 45px;
+    display: block;
+}
+.settings_piece_container {
+    display: flex;
 }

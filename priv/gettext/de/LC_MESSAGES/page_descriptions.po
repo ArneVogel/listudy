@@ -1,0 +1,64 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: de\n"
+"Plural-Forms: nplurals=2\n"
+
+#: lib/listudy_web/views/helpers/page_description.ex:47
+#, elixir-autogen, elixir-format
+msgid "Explore our collection of tactics taken from games by %{name}."
+msgstr "Entdecken Sie unsere Sammlung von Taktiken aus Spielen von %{name}."
+
+#: lib/listudy_web/views/helpers/page_description.ex:27
+#, elixir-autogen, elixir-format
+msgid "Get better at %{name} tactics with our huge library of puzzles taken from real games. Explore our free collection of %{name} tactics."
+msgstr "Werden Sie besser in %{name}-Taktiken mit unserer riesigen Bibliothek an Rätseln, die aus echten Spielen stammen. Erkunden Sie unsere kostenlose Sammlung von %{Name}-Taktiken."
+
+#: lib/listudy_web/views/helpers/page_description.ex:74
+#, elixir-autogen, elixir-format
+msgid "Get better in the %{name} opening. Study the opening and learn from traps and tactics collected from real games."
+msgstr "Werden Sie besser in der %{Name}-Eröffnung. Studieren Sie die Eröffnung und lernen Sie von Fallen und Taktiken, die aus echten Partien gesammelt wurden."
+
+#: lib/listudy_web/views/helpers/page_description.ex:126
+#, elixir-autogen, elixir-format
+msgid "Improve your chess game on Listudy"
+msgstr "Verbessern Sie Ihr Schachspiel auf Listudy"
+
+#: lib/listudy_web/views/helpers/page_description.ex:93
+#, elixir-autogen, elixir-format
+msgid "Learn chess endgames interactively playing against Stockfish"
+msgstr "Lernen Sie Schachendspiele interaktiv im Spiel gegen Stockfish"
+
+#: lib/listudy_web/views/helpers/page_description.ex:15
+#, elixir-autogen, elixir-format
+msgid "Play against Stockfish Online - Unlimited and for Free"
+msgstr "Spielen Sie online gegen Stockfish - unbegrenzt und kostenlos"
+
+#: lib/listudy_web/views/helpers/page_description.ex:35
+#, elixir-autogen, elixir-format
+msgid "Play tactics from the event %{}. Are you better than the professionals?"
+msgstr "Spielen Sie Taktiken aus der Veranstaltung %{}. Sind Sie besser als die Profis?"
+
+#: lib/listudy_web/views/helpers/page_description.ex:24
+#, elixir-autogen, elixir-format
+msgid "Search for studies to train specific openings"
+msgstr "Suche nach Studien, um spezifische Eröffnungen zu trainieren"
+
+#: lib/listudy_web/views/helpers/page_description.ex:8
+#, elixir-autogen, elixir-format
+msgid "Solve the Daily Chess Puzzle! Updated every day from our list of best puzzles."
+msgstr "Lösen Sie das tägliche Schachrätsel! Täglich aktualisiert aus unserer Liste der besten Rätsel."
+
+#: lib/listudy_web/views/helpers/page_description.ex:60
+#, elixir-format
+msgid "A chess book recommendation by %{player}"
+msgid_plural "%{count} chess book recommendations by %{player}"
+msgstr[0] ""
+msgstr[1] ""

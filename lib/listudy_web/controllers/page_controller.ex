@@ -1,10 +1,20 @@
 defmodule ListudyWeb.PageController do
   use ListudyWeb, :controller
+  alias Listudy.Books
   alias Listudy.Content
 
-  @languages ["en", "de"]
-  @pages ["privacy", "terms-of-service", "imprint", "copyright"]
-  @features ["blind-tactics"]
+  @languages Application.get_env(:listudy, :languages)[:translations]
+  @pages [
+    "privacy",
+    "terms-of-service",
+    "imprint",
+    "copyright",
+    "achievements",
+    "icons",
+    "thanks",
+    "changelog"
+  ]
+  @features ["blind-tactics", "dogestudy", "pieceless-tactics"]
 
   def index(conn, %{"locale" => locale}) do
     case locale in @languages do
@@ -28,8 +38,17 @@ defmodule ListudyWeb.PageController do
     renderer(conn, @pages, page)
   end
 
+  def admin_index(conn, _) do
+    render(conn, "admin_index.html")
+  end
+
   def features(conn, %{"page" => page}) do
     renderer(conn, @features, page)
+  end
+
+  def play_stockfish(conn, _params) do
+    book = Books.random_book()
+    render(conn, "play_stockfish.html", book: book)
   end
 
   defp renderer(conn, pages, page) do

@@ -1,0 +1,62 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: tr\n"
+"Plural-Forms: nplurals=2\n"
+
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:34
+#, elixir-autogen, elixir-format
+msgid "Official Stockfish Website"
+msgstr "Resmi Stockfish İnternet Sitesi"
+
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:28
+#, elixir-autogen, elixir-format
+msgid "Play against Stockfish:"
+msgstr "Stockfish'e karşı oynayın:"
+
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:31
+#, elixir-autogen, elixir-format
+msgid "Stockfish is one of the best chess engines avaliable. And with the help of WebAssembly the engine can now also be executed online in the browser. This means that the engine is running in your own browser."
+msgstr "Stockfish mevcut en iyi satranç makinelerinden biridir. Ve WebAssembly sayesinde makine artık çevrimiçi olarak tarayıcıda da çalıştırılabiliyor. Yani makine sizin kendi tarayıcınızda çalışıyor."
+
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:37
+#, elixir-autogen, elixir-format
+msgid "Thanks to Niklas Fiekas for the WebAssembly port of Stockfish!"
+msgstr "Stockfish'in WebAssembly portu için Niklas Fiekas'a teşşekürler!"
+
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:33
+#, elixir-autogen, elixir-format
+msgid "Thanks to the developers of stockfish!"
+msgstr "Stockfish'in geliştiricilerine teşekkürler!"
+
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:29
+#, elixir-autogen, elixir-format
+msgid "learn with the best chess engine."
+msgstr "en iyi satranç makinesiyle öğrenin."
+
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:38
+#, elixir-autogen, elixir-format
+msgid "stockfish.wasm"
+msgstr "stockfish.wasm"
+
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:1
+#, elixir-autogen, elixir-format
+msgid "Play against Stockfish"
+msgstr "Stockfish'e karşı oyna"
+
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:10
+#, elixir-autogen, elixir-format
+msgid "Reset as %{white}, %{black}."
+msgstr "%{white}, %{black} olarak sıfırla."
+
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:11
+#, elixir-autogen, elixir-format
+msgid "Takeback"
+msgstr "Geri al"

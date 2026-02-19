@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+     <loc><%= base_url() <> Routes.book_path(@conn, :recommended, @locale) %></loc>
+   </url>
+  <%= for tag <- @tags do %>
+   <url>
+     <loc><%= base_url() <> Routes.tag_path(@conn, :show, @locale, tag.slug) %></loc>
+     <lastmod><%= format_date(tag.updated_at) %></lastmod>
+   </url>
+  <% end %>
+  <%= for player <- @players do %>
+     <%= if length(player.expert_recommendation) >= 1 do %>
+     <url>
+       <loc><%= base_url() <> Routes.player_path(@conn, :book_recommendation, @locale, player.slug) %></loc>
+       <lastmod><%= format_date(player.updated_at) %></lastmod>
+     </url>
+    <% end %>
+  <% end %>
+</urlset>

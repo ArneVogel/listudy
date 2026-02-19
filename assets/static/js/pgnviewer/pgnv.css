@@ -1,0 +1,62 @@
+@media (max-width: 600px) {                  
+    .moves .move a {
+        cursor: pointer;
+        display: inline-block;
+        width: 48px;
+        text-align: center;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+}
+
+
+.moves .move .comment {
+	color: var(--font-color);
+	font-weight: 500;
+}
+
+.moves .move, select.games {
+	color: var(--font-color);
+}
+
+div.buttons > i.button, div.edit > i.button {
+    height: max-content;
+}
+
+.moves .move a {
+    cursor: pointer;
+}
+
+.moves .move a:hover {
+	cursor: pointer;
+}
+
+.whole.layout-top {
+    display: inherit;
+    margin-bottom: 2em;
+    margin-top: 1em;
+}
+
+i.button {
+    width: 48px !important;
+    height: 48px !important;
+    padding-top: 10px !important;
+    font-size: 24px;
+    margin-right: 12px !important;
+}
+
+div.buttons {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: max-content;
+    max-width: 100%;
+}
+
+i.button:first-child {
+    display: none;
+}
+
+span.move {
+    padding-right: 0.2em;
+    padding-left: 0.2em;
+}

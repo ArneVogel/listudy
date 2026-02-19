@@ -2,9 +2,9 @@ require("regenerator-runtime/runtime"); // required for sleep (https://github.co
 
 const Chessground = require('chessground').Chessground;
 const Chess = require('chess.js')
-import { resize_ground, setup_ground, ground_set_moves_from_instance, 
+import { resize_ground, onresize, setup_ground, ground_set_moves_from_instance,
          ground_undo_last_move, setup_click_handler, ground_move } from './modules/ground.js';
-import { ground_legal_moves, turn_color, setup_chess, from_to_to_san, san_to_from_to } from './modules/chess_utils.js';
+import { ground_legal_moves, turn_color, setup_chess, uci_to_san, san_to_uci } from './modules/chess_utils.js';
 import { set_text, clear_all_text, success_div, info_div, error_div, suggestion_div } from './modules/info_boxes.js';
 import { sleep } from './modules/sleep.js';
 
@@ -13,16 +13,19 @@ function show_div(id) {
 }
 
 function get_current_chess() {
-    let tc = new Chess();
-    for (let i = 0; i < current_move; ++i) {
-        let m = chess.history()[i];
+    let tc = (typeof current_chess == 'undefined') ? new Chess() : current_chess;
+    let moves_played = tc.history().length
+    let history = chess.history();
+    for (let i = moves_played; i < current_move; ++i) {
+        let m = history[i];
         tc.move(m);
     }
     return tc;
 }
 
 function highlight_moves(square) {
-    highlighted_squares = legal_moves[square];
+    highlighted_squares = legal_moves.get(square);
+    window.clicked_piece = square;
 
     if (highlighted_squares == undefined) {
         highlighted_squares = [];
@@ -41,37 +44,50 @@ function target() {
     return chess.history({verbose: true})[current_move].to;
 }
 
-function hide_all_div() {
-    for (let d of ["success", "info", "error"]) {
-        document.getElementById(d).classList.add("hidden");
-    }
+function piece_pos() {
+    return chess.history({verbose: true})[current_move].from;
 }
 
 function set_div_text(id, text) {
-    document.getElementById(id).classList.remove("hidden");
-    document.getElementById(id).innerText = text;
+    clear_all_text();
+    set_text(id, text);
+}
+
+function reveal_solution() {
+    document.getElementById("next").classList.remove("hidden");
+    setup_ground(chess.fen());    
+    let t = chess.turn() == "w" ? "white" : "black";
+    // "check: true" would sometimes result in the wrong king being shown in check
+    ground.set({check: t});
+
+    // this is needed if the solution is revealed after giving up to show the move text
+    current_move = chess.history().length
+    current_chess = get_current_chess();
+    setup_move_text();
 }
 
 
 function handle_click(square) {
-    hide_all_div();
     ground.selectSquare(null);
-    if (square == target()) {
+    if (square == target() && clicked_piece == piece_pos()) {
         // has to be manually reset because highlight_moves is not called in this branch
         highlighted_squares = []; 
         current_move += 2;
-        if (current_move >= chess.history().length) {
-            set_div_text("success", i18n_success)
-            document.getElementById("next").classList.remove("hidden");
-            setup_ground(chess.fen());    
-        } else {
-            set_div_text("info", i18n_right_move)
-        }
         current_chess = get_current_chess();
+        if (current_move >= chess.history().length) {
+            let total = localStorage.getItem("achievements_blind_tactics_solved");
+            localStorage.setItem("achievements_blind_tactics_solved", Number(total) + 1);
+
+            set_div_text(success_div, i18n.success)
+            reveal_solution();
+        } else {
+            let last_move = current_chess.history().pop();
+            set_div_text(info_div, i18n.right_move + last_move)
+        }
         legal_moves = ground_legal_moves(current_chess);
     } else {
         if (highlighted_squares.indexOf(square) != -1) {
-            set_div_text("error", i18n_wrong_move)
+            set_div_text(error_div, i18n.wrong_move)
         }
         highlight_moves(square);
     }
@@ -88,7 +104,14 @@ function handle_click(square) {
 function load_data() {
     pgn = document.getElementById("pgn").value;
     color = document.getElementById("color").value;
-    ply = document.getElementById("ply").value;
+
+    const chess = new Chess();
+    window.chess = chess;
+    chess.load_pgn(pgn);
+
+    // we cant hide more moves than there were. If chess.history().length is smaller
+    // then the position starts with the starting position
+    ply = Math.min(document.getElementById("ply").value, chess.history().length);
 }
 
 function ply_change() {
@@ -104,41 +127,63 @@ function setup_ply() {
     document.getElementById("ply_select").addEventListener("change", ply_change);
 }
 
-/*
- * The position that should get displayed by the board
- * returns the fen of that position
- */
-function get_base_position() {
-    let tc = new Chess();
-    for (let i = 0; i < ply - hidden_moves; ++i) {
-        let m = chess.history()[i];
-        tc.move(m);
-    }
-    return tc.fen();
-}
-
+// the moves that were played from the base position to the current ply
 function played_from_base() {
     return chess.history().slice(ply - hidden_moves,current_move);
 }
 
-function setup_move_text() {
-    let m = played_from_base();
-    document.getElementById("moves").innerText = m.join(" ");
+// generates the fen of the position that is initially shown on the board
+function generate_base_fen() {
+    let tc = new Chess();
+    for (let m of chess.history().slice(0, ply - hidden_moves)) {
+        tc.move(m);
+    }
+    base_fen = tc.fen();
 }
 
+// generates the pgn of the moves that were played from the base position
+function setup_move_text() {
+    let moves = played_from_base();
+    let tc = new Chess(base_fen);
+
+    for (let m of moves) {
+        tc.move(m);
+    }
+
+    let pgn = tc.pgn();
+    pgn = pgn.split("\n");
+    pgn = pgn[pgn.length-1];
+
+    document.getElementById("moves").innerText = pgn;
+}
+
+function setup_give_up() {
+    let e = document.getElementById("give-up");
+    e.onclick = reveal_solution;
+}
+
+function setup_flip_board() {
+    let e = document.getElementById("toggle-orientation");
+    e.onclick = ground.toggleOrientation;
+}
+
+
 function main() {
-    load_data();
     setup_ply();
-    const chess = new Chess();
-    window.chess = chess;
-    chess.load_pgn(pgn);
+    // generates the window.chess object
+    load_data();
 
-
+    window.base_fen = undefined; 
+    generate_base_fen();
     if (pgn != old_pgn) {
-        setup_ground(get_base_position());    
+        setup_ground(base_fen);
         old_pgn = pgn;
     }
     window.current_move = Number(ply);
+    // get_current_chess() assumes that current_chess is undefined on first load
+    // since the page can get reloaded by live_view the current_chess could still be
+    // defined from the previous puzzles, causing errors
+    window.current_chess = undefined; 
     window.current_chess = get_current_chess();
     window.legal_moves = ground_legal_moves(current_chess);
 
@@ -154,9 +199,11 @@ function main() {
     resize_ground();
     window.setTimeout(ground.redrawAll, 10);
     window.setTimeout(ground.redrawAll, 100);
+    setup_give_up();
+    setup_flip_board();
 }
 
 document.addEventListener("phx:update", main);
-window.onresize = resize_ground;
+window.onresize = onresize;
 window.old_pgn = "abc";
 main();

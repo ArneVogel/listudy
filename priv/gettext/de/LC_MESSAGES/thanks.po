@@ -1,0 +1,57 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: de\n"
+"Plural-Forms: nplurals=2\n"
+
+#: lib/listudy_web/templates/page/thanks.html.eex:1
+#, elixir-autogen, elixir-format
+msgid "Thank you!"
+msgstr "Vielen Dank!"
+
+#: lib/listudy_web/templates/page/thanks.html.eex:29
+#, elixir-autogen, elixir-format
+msgid "Thanks to %{cburnett}, Armando Hernandez Marroquin, %{chessnut}, %{letter}, %{pirouetti}, %{pixel}, %{shapes} for their piece sets."
+msgstr "Danke an %{cburnett}, Armando Hernandez Marroquin, %{chessnut}, %{letter}, %{pirouetti}, %{pixel}, %{shapes} für ihre Figurensätze."
+
+#: lib/listudy_web/templates/page/thanks.html.eex:21
+#, elixir-autogen, elixir-format
+msgid "Thanks to %{jeff} for %{chessjs}."
+msgstr "Danke an %{jeff} für %{chessjs}."
+
+#: lib/listudy_web/templates/page/thanks.html.eex:13
+#, elixir-autogen, elixir-format
+msgid "Thanks to %{lichess} for all their work. In particular for making studies, their puzzle database (%{database_link}), %{chessground}, and their freely avaliable icons."
+msgstr "Danke an %{lichess} für all ihre Arbeit. Insbesondere für die Erstellung von Studien, ihre Rätseldatenbank (%{database_link}), %{chessground} und ihre frei verfügbaren Icons."
+
+#: lib/listudy_web/templates/page/thanks.html.eex:17
+#, elixir-autogen, elixir-format
+msgid "Thanks to %{niklas} for %{stockfish}."
+msgstr "Danke an %{niklas} für %{stockfish}."
+
+#: lib/listudy_web/templates/page/thanks.html.eex:6
+#, elixir-autogen, elixir-format
+msgid "Thanks to all %{contributors}."
+msgstr "Danke an alle %{contributors}."
+
+#: lib/listudy_web/templates/page/thanks.html.eex:8
+#, elixir-autogen, elixir-format
+msgid "Thanks to all those who have provided translations."
+msgstr "Danke an alle, die Übersetzungen zur Verfügung gestellt haben."
+
+#: lib/listudy_web/templates/page/thanks.html.eex:2
+#, elixir-autogen, elixir-format
+msgid "Thanks to all who have helped directly on Listudy and to all projects that make code and other content openly available. Without this help Listudy could not exist in this form."
+msgstr "Danke an alle, die direkt an Listudy mitgearbeitet haben und an alle Projekte, die Code und andere Inhalte offen zugänglich machen. Ohne diese Hilfe könnte Listudy in dieser Form nicht existieren."
+
+#: lib/listudy_web/templates/page/thanks.html.eex:34
+#, elixir-autogen, elixir-format
+msgid "Thanks to the authors of %{elixir} and %{phoenix}."
+msgstr "Dank an die Autoren von %{elixir} und %{phoenix}."

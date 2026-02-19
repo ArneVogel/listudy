@@ -1,55 +1,97 @@
-<h1><%= @study.title %></h1>
+<h1 class="clicking_turns_on_hints"><%= @study.title %></h1>
 
 <div class="with_sidebar">
   <div id="game_container" class="sidebar_main">
-    <div class="chessboard cg-wrap cg-board-wrap orientation-white manipulable blue cburnett" id="chessground"></div>
+    <%= render ListudyWeb.ComponentView, "chessground.html" %>
   </div>
-  <div class="sidebar">
-    <div class="success">
-      <p id="success" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="info" class="infoBox hidden"></p>
-    </div>
-    <div class="error">
-      <p id="error" class="infoBox hidden"></p>
-    </div>
-    <div class="info">
-      <p id="suggestion" class="infoBox hidden"></p>
-    </div>
+  <div class="sidebar clicking_turns_on_hints">
+    <div class="sidebar_innercontainer">
+      <%= render ListudyWeb.ComponentView, "infoboxes.html" %>
 
-    <p id="comments"></p>
-    
+      <div class="sidebar_padded">
+        <div style="margin-bottom: 1em">
+          <a class="icon large_clickarea" data-icon="-" id="hints" role="button"><%= dgettext("study", "Show hints for this move!") %></a><br>
+        </div>
+        
+        <div id="comments" class="study_comments"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="options_area">
+  <div class="option_item">
+    <a class="icon" data-icon="!" id="play_stockfish" href="<%= Routes.page_path(@conn, :play_stockfish, @locale) %>#rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1" title="<%= dgettext "study", "Play against Stockfish" %>"><%= dgettext "study", "Play against Stockfish" %></a>
+  </div>
+  <div class="option_item">
+    <a class="icon" data-icon="/" id="analysis_board" href="https://lichess.org/analysis"
+    title="<%= dgettext "study", "Analyze this position with the Lichess Analysis Board" %>"><%= dgettext "study", "Analyze position" %></a>
+  </div>
+  <div class="option_item">
+    <a class="icon" data-icon="." id="reset_line"><%= dgettext("study", "Reset line") %></a>
+  </div>
+  <div class="option_item">
+    <%= if !@study.favorites do %>
+      <%= link dgettext("study", "Favorite study"), to: Routes.study_path(@conn, :favorite_study, @study.slug), method: :post, class: "icon", "data-icon": "#" %>
+    <% else %>
+      <%= link dgettext("study" ,"Unfavorite study"), to: Routes.study_path(@conn, :unfavorite_study, @study.slug), method: :post, class: "icon", "data-icon": '"' %>
+    <% end %>
+  </div>
+  <div class="option_item">
+    <a class="icon" data-icon="-" id="arrows_toggle">placeholder</a>
+  </div>
+  <div class="option_item">
+    <a class="icon" data-icon="3" id="comments_toggle" title="<%= dgettext("study", "Option to control when comments are displayed") %>">placeholder</a>
+  </div>
+  <div class="option_item">
+    <a class="icon" data-icon="(" id="line_review" title="<%= dgettext("study", "At the end of lines the board is only reset after 3 seconds giving you time to review the final position.") %>">placeholder</a>
+  </div>
+  <div class="option_item">
+    <a class="icon" data-icon="-" id="arrow_type" title="<%= dgettext("study", "Option to control the type of hints shown. 'Moves' means arrows are displayed for all playable moves in the study. 'Annotations' are arrows and circles from the study or PGN file. These can be created at Lichess.org and other sites.") %>">placeholder</a>
+  </div>
+  <div class="option_item">
+    <a class="icon" data-icon="(" id="move_delay"><%= dgettext("study", "Move delay:") %> <span id="move_delay_time">placeholder</span></a>
+  </div>
+  <div class="option_item">
+    <div id="max_depth_container" title="<%= dgettext("study", "Lets you choose how many moves deep in the repertoire to train. The highest value you can choose is the length of the longest line. Set to a lower value to train against a more shallow subset of the repertoire, and to the highest value to train against the full repertoire.") %>">
+      <a class="icon" data-icon="+"><%= dgettext("study", "Max depth: ") %></a>
+      <a id="max_depth_label" class="max_depth_label">placeholder</a>
+      <a id="max_depth_sub" class="max_depth_ctrl" role="button">-</a><input type="range" id="max_depth_range" class="max_depth_range" min="1" max="1"><a id="max_depth_add" class="max_depth_ctrl" role="button">+</a>
+    </div>
+  </div>
+  <div class="option_item">
+    <a class="icon" data-icon="$" id="key_move" title="<%= dgettext("study", "Don't repeat the early moves that are already known. Skips to the first branching move in the study.") %>">placeholder</a>
   </div>
 </div>
 
-
-<div class="row">
-  <div class="one-half column">
-    <b><%= gettext "Description" %></b>
-    <p><%= @study.description %></p>
-    <%= if @study.is_owner do %>
-      <p><%= link (gettext "Edit"), to: Routes.study_path(@conn, :edit, @locale, @study) %></p>
-    <% end %>
-
-    <p><%= gettext "Created by:" %> <%= link @study.user.username, to: Routes.user_profile_path(@conn, :show, @locale, @study.user.username) %></p>
+<div class="options_area">
+  <div class="option_item_progressbar">
+    <a style="display: block; padding-bottom: 5px;" href="#" data-icon="+" class="icon modal_open" id="progress"><%= dgettext("study","Progress") %></a>
+    <div id="chapter_progress"></div>
   </div>
-  <div class="one-half column">
-    <div>
-      <label for="chapter_select"><%= gettext "Chapter Selection" %></label>
+  <div class="option_item">
+    <div class="chapter_selection">
+      <label for="chapter_select"><%= dgettext "study", "Chapter Selection" %></label>
       <select id="chapter_select"></select>
     </div>
-
-    <%= if !@study.favorites do %>
-      <%= render ListudyWeb.StudyView, "study_favorite.html", text: (gettext "Favorite this study"), study_id: Integer.to_string(@study.id), action: Routes.study_path(@conn, :favorite_study), conn: @conn%>
-    <% else %>
-      <%= render ListudyWeb.StudyView, "study_favorite.html", text: (gettext "Unfavorite this study"), study_id: Integer.to_string(@study.id), action: Routes.study_path(@conn, :unfavorite_study), conn: @conn%>
-    <% end %>
   </div>
 </div>
 
-<hr>
-<div id="share"></div>
+
+<div class="highlight clicking_turns_on_hints">
+  <b><%= dgettext "study", "Description" %></b>
+  <p><%= @study.description %></p>
+
+  <%= if @study.is_owner do %>
+    <p><%= link (dgettext "study", "Edit"), to: Routes.study_path(@conn, :edit, @locale, @study) %></p>
+  <% end %>
+
+  <b><%= dgettext "study", "Creator" %></b>
+  <p><%= link @study.user.username, to: Routes.user_profile_path(@conn, :show, @locale, @study.user.username) %></p>
+
+  <b><%= dgettext "study", "Opening"%></b>
+  <p><%= link @opening.name, to: Routes.opening_path(@conn, :show, @locale, @opening.slug) %></p>
+</div>
+
 <hr>
 <%= render ListudyWeb.CommentView, "show_comments.html", type: "study", id: Integer.to_string(@study.id), action: Routes.comment_path(@conn, :new_comment), conn: @conn %>
 <%= render ListudyWeb.CommentView, "comment_form.html", type: "study", id: Integer.to_string(@study.id), action: Routes.comment_path(@conn, :new_comment), conn: @conn %>
@@ -58,7 +100,7 @@
 
 <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
 <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/study.js") %>"></script>
-<script>
+<script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
   /*
    * "Cleans" pgn files, 
    * remove non standard characters
@@ -67,15 +109,19 @@
   function clean_pgn(pgn) {
     pgn = pgn.replace(/½/g, '1/2');
     pgn = pgn.replace(/&gt;/g, '>');
+    pgn = pgn.replace(/&lt;/g, '<');
     pgn = pgn.replace(/&quot;/g, '"');
     pgn = pgn.replace(/&#39;/g, "'");
+    // U+FEFF ZERO WIDTH NO-BREAK SPACE
+    // No idea why they are in some pgns but they break the parser 
+    // https://github.com/ArneVogel/listudy/issues/35
+    pgn = pgn.replace(/\ufeff/g, ''); 
     pgn = pgn.replace(/\)/g, ' ) ');
     pgn = pgn.replace(/\(/g, ' ( ');
     pgn = pgn.replace(/\{/g, ' { ');
     pgn = pgn.replace(/\}/g, ' } ');
     pgn = pgn.replace(/0-0-0/g, 'O-O-O');
     pgn = pgn.replace(/0-0/g, 'O-O');
-    pgn = pgn.replace(/[^\x00-\x7F]/g, "");
     while (pgn.indexOf("  ") != -1) {
       pgn = pgn.replace(/  /g, ' ');
     }
@@ -83,26 +129,63 @@
   }
   var pgn = clean_pgn(`<%= javascript_escape @study.pgn %>`);
   var color = "<%= @study.color %>";
-  var study_id = "<%= @study.id %>";
+  var study_id = "<%= @study.slug %>".split("-")[0];
   <%= if Pow.Plug.current_user(@conn) do %>
   var logged_in = true;
   <% else %>
   var logged_in = false;
   <% end %>
-  var info_intro = "<%= gettext "Starting training." %>";
 
-  var error_wrong_move = "<%= gettext "This move is not in the study, try again." %>";
-  var error_no_play = "<%= gettext "This study does not contain enough moves." %>";
-
-  var success_right_move = "<%= gettext "Right move!" %>";
-  var success_end_of_line = "<%= gettext "You reached the end of this line." %>";
-
-  var translation_chapter = "<%= gettext "Chapter" %>";
-
-  var suggestion_favorite = "<%= gettext "If you like this study make sure to favorite it to have it listed under Your Studies" %>";
-  var suggestion_share = "<%= gettext "Do you like this study? Share it with your friends." %>";
-  var suggestion_account = "<%= gettext "Create an account to get all the features of Listudy and upload your own studies." %>";
-  var suggestion_comment = "<%= gettext "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below." %>";
-  var suggestion_100moves = "<%= gettext "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect." %>";
-  var suggestion_250moves = "<%= gettext "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop." %>";
+  let i18n = {};
+  i18n.info_intro = "<%= dgettext "study", "Starting training." %>";
+  i18n.info_arrows = "<%= dgettext "study", "By default arrows will provide hints to show which moves are in this study. Using the options below you can control for how many moves the arrows/hints should stay visible. By default they stay visible until all moves in a position has been played twice. Any non-playable arrow annotations from the study or PGN file will appear as transparent arrows." %>";
+  i18n.error_wrong_move = "<%= dgettext "study", "This move is not in the study, try again." %>";
+  i18n.success_right_move = "<%= dgettext "study", "Right move!" %>";
+  i18n.success_end_of_line = "<%= dgettext "study", "You reached the end of this line." %>";
+  i18n.translation_chapter = "<%= dgettext "study", "Chapter" %>";
+  i18n.suggestion_first_pgn_arrow = "<%= raw dgettext "study", "The transparent arrows are arrows stored in the study. These don't indicate playable moves but are commonly used to indicate threats, alternative lines, and future ideas." %>";
+  i18n.suggestion_first_neglected_move = "<%= dgettext "study", "One of the moves in the position has been played more than others and is marked with a thinner outline. To give all lines equal attention, play one of the other moves!" %>";
+  i18n.suggestion_favorite = "<%= dgettext "study", "If you like this study make sure to favorite it to have it listed under Your Studies" %>";
+  i18n.suggestion_share = "<%= dgettext "study", "Do you like this study? Share it with your friends." %>";
+  i18n.suggestion_account = "<%= dgettext "study", "Create an account to get all the features of Listudy and upload your own studies." %>";
+  i18n.suggestion_comment = "<%= dgettext "study", "Do you have feedback, suggestions or do you want to say something nice? Comment on the study below." %>";
+  i18n.suggestion_100moves = "<%= dgettext "study", "You learned 100 moves today. Maybe take a break or come back tomorrow to get the full training effect." %>";
+  i18n.suggestion_250moves = "<%= raw dgettext "study", "You learned 250 moves today. For the best training effect come back tomorrow. Or don't, I'm just text not a cop." %>";
+  i18n.arrows_new2x = "<%= dgettext "study", "Hints: until played 2x" %>";
+  i18n.arrows_new5x = "<%= dgettext "study", "Hints: until played 5x" %>";
+  i18n.arrows_always = "<%= dgettext "study", "Hints: always on" %>";
+  i18n.arrows_hidden = "<%= dgettext "study", "Hints: hidden" %>";
+  i18n.arrow_type_both = "<%= raw dgettext "study", "Hints: moves & annotations" %>";
+  i18n.arrow_type_playable = "<%= dgettext "study", "Hints: playable moves only" %>";
+  i18n.arrow_type_pgn = "<%= dgettext "study", "Hints: annotations only" %>";
+  i18n.review_slow = "<%= dgettext "study", "Board reset delay: slow" %>";
+  i18n.review_fast = "<%= dgettext "study", "Board reset delay: fast" %>";
+  i18n.key_move_enabled = "<%= dgettext "study", "Jump to key move: on" %>";
+  i18n.key_move_disabled = "<%= dgettext "study", "Jump to key move: off" %>";
+  i18n.slow = "<%= dgettext "study", "slow" %>";
+  i18n.fast = "<%= dgettext "study", "fast" %>";
+  i18n.medium = "<%= dgettext "study", "medium" %>";
+  i18n.instant = "<%= dgettext "study", "instant" %>";
+  i18n.comments_when_arrows = "<%= dgettext "study", "Comments: when hints show" %>";
+  i18n.comments_always_on = "<%= dgettext "study", "Comments: always on" %>";
+  i18n.comments_hidden = "<%= dgettext "study", "Comments: hidden" %>";
+  i18n.confirm_reset_progress = "<%= dgettext "study", "Are you sure you want to delete your study progress?" %>";
+  i18n.response = "<%= dgettext "study", "response" %>";
+  i18n.max_depth = "<%= dgettext "study", "Max depth: " %>";
+  i18n.overlay_playable_move = "<%= dgettext "study", "Opaque arrows with a black outline are playable moves" %>";
+  i18n.overlay_playable_short = "<%= dgettext "study", "Playable" %>";
+  i18n.overlay_pgn_arrow = "<%= dgettext "study", "Transparent arrows come from the study and are not playable" %>";
+  i18n.overlay_pgn_arrow_only = "<%= dgettext "study", "Transparent arrows come from the study and are hints only" %>";
+  i18n.overlay_frequently_played = "<%= dgettext "study", "Moves that have been played before are shown with a thinner outline" %>";
 </script>
+
+<div id="progress_modal" class="modal">
+  <div class="modal-content">
+    <span class="modal_close">&times;</span>
+    <h3><%= dgettext("study","Study Progress")%></h3>
+    <div class="study_progress" id="study_progress"></div>
+    <button id="study_progress_reset" class="primary"><%= dgettext("study", "Reset progress") %></button>
+  </div>
+</div>
+
+

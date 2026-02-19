@@ -1,0 +1,15 @@
+<h1>Show Book opening</h1>
+
+<ul>
+  <li>
+    <strong>Book:</strong>
+    <%= @book_opening.book_id %>
+  </li>
+  <li>
+    <strong>Opening:</strong>
+    <%= @book_opening.opening_id %>
+  </li>
+</ul>
+
+<span><%= link "Edit", to: Routes.book_opening_path(@conn, :edit, @book_opening) %></span>
+<span><%= link "Back", to: Routes.book_opening_path(@conn, :index) %></span>

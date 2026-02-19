@@ -1,4 +1,5 @@
 defmodule ListudyWeb.BlindTacticsLive do
+  require Logger
   use Phoenix.LiveView
 
   alias Listudy.BlindTactics
@@ -20,6 +21,11 @@ defmodule ListudyWeb.BlindTacticsLive do
     tactic = get_next_tactic(socket)
     url = get_next_url(socket, tactic)
     {:noreply, push_redirect(socket, to: url, replace: true, tactic: tactic)}
+  end
+
+  def handle_event(event, _, socket) do
+    Logger.error("Unhandled event in blind tactics live: #{event}")
+    {:noreply, socket}
   end
 
   defp get_next_tactic(socket) do

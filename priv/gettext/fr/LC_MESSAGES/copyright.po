@@ -1,0 +1,67 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: fr\n"
+"Plural-Forms: nplurals=2\n"
+
+#: lib/listudy_web/templates/page/copyright.html.eex:12
+#, elixir-autogen, elixir-format
+msgid "Copyright holders"
+msgstr "Détenteurs des droits d'auteur"
+
+#: lib/listudy_web/templates/page/copyright.html.eex:2
+#, elixir-autogen, elixir-format
+msgid "English version of the Copyright Policy"
+msgstr "Version anglaise de la politique en matière de droits d'auteur"
+
+#: lib/listudy_web/templates/page/copyright.html.eex:13
+#, elixir-autogen, elixir-format
+msgid "If you believe that someone has uploaded or posted content of yours on Listudy.org without your permission, please contact us at: copyright@listudy.org"
+msgstr "Si vous pensez que quelqu'un a téléchargé ou publié un de vos contenus sur Listudy.org sans votre autorisation, veuillez nous contacter à l'adresse suivante : copyright@listudy.org"
+
+#: lib/listudy_web/templates/page/copyright.html.eex:6
+#, elixir-autogen, elixir-format
+msgid "Introduction"
+msgstr "Introduction"
+
+#: lib/listudy_web/templates/page/copyright.html.eex:4
+#, elixir-autogen, elixir-format
+msgid "Last edited:"
+msgstr "Dernière Edition"
+
+#: lib/listudy_web/templates/page/copyright.html.eex:16
+#, elixir-autogen, elixir-format
+msgid "Listudy can change this policy at its discretion."
+msgstr "Listudy peut modifier cette politique à sa discrétion."
+
+#: lib/listudy_web/templates/page/copyright.html.eex:7
+#, elixir-autogen, elixir-format
+msgid "Listudy respects and recognizes the copyright of third parties. You are only allowed to publish public content on Listudy, for which you have all necessary rights."
+msgstr "Listudy respecte et reconnaît les droits d'auteur des tiers. Vous n'êtes autorisé à publier sur Listudy que des contenus publics pour lesquels vous disposez de tous les droits nécessaires."
+
+#: lib/listudy_web/templates/page/copyright.html.eex:15
+#, elixir-autogen, elixir-format
+msgid "Other"
+msgstr "Autre"
+
+#: lib/listudy_web/templates/page/copyright.html.eex:9
+#, elixir-autogen, elixir-format
+msgid "PGN files"
+msgstr "Fichiers PGN"
+
+#: lib/listudy_web/templates/page/copyright.html.eex:2
+#, elixir-autogen, elixir-format
+msgid "Translated copyright policies shall only serve as an informal source of information. Please read the english version for the official version applicable to the site."
+msgstr "Les politiques de droits d'auteur traduites ne doivent servir que de source informelle d'information. Veuillez lire la version anglaise pour connaître la version officielle applicable au site."
+
+#: lib/listudy_web/templates/page/copyright.html.eex:10
+#, elixir-autogen, elixir-format
+msgid "You are only allowed to make public studies using PGN files, for which you have all necessary rights to. Do not copy PGN files from other websites for which you do not have the rights. This applies especially, but is not limited to, paid PGN files."
+msgstr "Vous n'êtes autorisé à rendre publiques que des études utilisant des fichiers PGN, pour lesquels vous avez tous les droits nécessaires. Ne copiez pas les fichiers PGN d'autres sites web pour lesquels vous n'avez pas les droits. Ceci s'applique particulièrement, mais pas exclusivement, aux fichiers PGN payants."

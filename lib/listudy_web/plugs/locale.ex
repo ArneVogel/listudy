@@ -1,7 +1,8 @@
 defmodule ListudyWeb.Plugs.Locale do
   import Plug.Conn
 
-  @locales ["en", "de"]
+  @locales Application.get_env(:listudy, :languages)[:translations]
+  @default Application.get_env(:listudy, :languages)[:default]
 
   def init(default), do: default
 
@@ -19,11 +20,9 @@ defmodule ListudyWeb.Plugs.Locale do
     assign(conn, :locale, loc)
   end
 
-  defp default_locale(), do: "en"
+  defp default_locale(), do: @default
 
   defp get_locale(conn) do
-    IO.inspect(conn.private.plug_session["locale"])
-
     if conn.private.plug_session["locale"] do
       {:ok, conn.private.plug_session["locale"]}
     else

@@ -18,7 +18,11 @@ defmodule Listudy.Players do
 
   """
   def list_players do
-    Repo.all(Player)
+    Repo.all(Player) |> preload_everything()
+  end
+
+  defp preload_everything(query) do
+    query |> Repo.preload([:expert_recommendation])
   end
 
   @doc """
@@ -35,9 +39,9 @@ defmodule Listudy.Players do
       ** (Ecto.NoResultsError)
 
   """
-  def get_player!(id), do: Repo.get!(Player, id)
+  def get_player!(id), do: Repo.get!(Player, id) |> preload_everything()
 
-  def get_by_slug!(slug), do: Repo.get_by(Player, slug: slug)
+  def get_by_slug!(slug), do: Repo.get_by(Player, slug: slug) |> preload_everything()
 
   def search_by_title(word) do
     word = "%" <> word <> "%"

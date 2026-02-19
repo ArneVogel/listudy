@@ -35,3 +35,15 @@ npm-debug.log
 
 # Files that allow persistent sessions thoughout restarts
 priv/mnesia/
+
+# Files created by codeceptjs
+assets/test/output/
+
+# Image files uploaded with arc
+priv/images
+
+# Don't commit real env variables!
+scripts/prod/env.sh
+
+# npm lock files
+assets/package-lock.json

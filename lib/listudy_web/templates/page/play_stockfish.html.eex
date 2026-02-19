@@ -1,0 +1,46 @@
+<h1><%= dgettext("play_stockfish", "Play against Stockfish") %></h1>
+
+<div class="with_sidebar">
+  <div id="game_container" class="sidebar_main">
+    <%= render ListudyWeb.ComponentView, "chessground.html" %>
+  </div>
+  <div class="sidebar">
+    <% black = "<a id=\"reset_black\">#{gettext("black")}</a>"%>
+    <% white = "<a id=\"reset_white\">#{gettext("white")}</a>"%>
+    <div><p><%= raw dgettext("play_stockfish", "Reset as %{white}, %{black}.", black: black, white: white) %></p></div>
+    <button id="takeback"><%= dgettext("play_stockfish", "Takeback") %></button>
+    <div id="progress_container">
+      <div class="progress-bar">
+          <span id="progress" class="progress-bar-fill"></span>
+      </div>
+      <span class="progress_reason" id="progress_reason"></span>
+    </div>
+
+  </div>
+</div>
+<script src="/stockfish/stockfish.js"></script>
+
+<link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
+<script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/play_stockfish.js") %>"></script>
+
+<!-- listudy-test -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6706752364351336"
+     data-ad-slot="7962822632"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+
+<p>
+  <b><%= dgettext "play_stockfish", "Play against Stockfish:" %></b>
+  <%= dgettext "play_stockfish", "learn with the best chess engine." %>
+</p>
+<p><%= dgettext "play_stockfish", "Stockfish is one of the best chess engines avaliable. And with the help of WebAssembly the engine can now also be executed online in the browser. This means that the engine is running in your own browser." %></p>
+<p>
+  <%= dgettext "play_stockfish", "Thanks to the developers of stockfish!" %>
+  <a href="https://stockfishchess.org/"><%= dgettext "play_stockfish", "Official Stockfish Website" %></a>
+</p>
+<p>
+  <%= dgettext "play_stockfish", "Thanks to Niklas Fiekas for the WebAssembly port of Stockfish!" %>
+  <a href="https://github.com/niklasf/stockfish.wasm"><%= dgettext "play_stockfish", "stockfish.wasm" %></a>
+</p>

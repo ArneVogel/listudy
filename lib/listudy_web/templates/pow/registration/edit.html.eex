@@ -28,7 +28,11 @@
   <%= error_tag f, :password_confirmation %>
 
   <div>
-    <%= submit "Update" %>
+    <%= submit "Update", class: "primary" %>
+    <button class="go-back tertiary"><%= gettext "Back" %></button>
   </div>
 <% end %>
+
+<h2><%= gettext "Delete Account" %></h2>
+<%= link (gettext "Close Account"), to: Routes.pow_registration_path(@conn, :delete), method: :delete, data: [confirm: gettext "This can not be reversed! Are you sure?"] %>
 

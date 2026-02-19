@@ -1,0 +1,54 @@
+<div class="row book-page-intro">
+  <div class="two-thirds column">
+    <b><%= link @book.author.name, to: Routes.author_path(@conn, :show, @locale, @book.author.slug), class: "book-author" %></b>
+    <h1><%= @book.title %></h1>
+    <p><%= @book.summary %></p>
+    <div class="book-page-intro-bottom">
+    <%= if length(@tags) > 0 do %>
+    <div>
+      <b><%= dgettext("book", "Tags") %>:</b>
+      <%= for tag <- @tags do %>
+        <%= link tag.name, to: Routes.tag_path(@conn, :show, @locale, tag.slug) %>
+      <% end %>
+    </div>
+    <% end %>
+    <%= if length(@openings) > 0 do %>
+    <div>
+      <b><%= dgettext("book", "Opening") %>:</b>
+      <%= for opening <- @openings do %>
+        <%= link opening.name, to: Routes.opening_path(@conn, :show, @locale, opening.slug) %>
+      <% end %>
+    </div>
+    <% end %>
+    </div>
+
+
+
+  </div>
+  <div class="one-third column">
+    <a class="book-container" href="#" rel="noreferrer noopener">
+      <div class="book">
+        <img
+          alt="<%= dgettext("book", "%{book_name} book cover", book_name: @book.title) %>"
+          src="/book_cover/<%= @book.slug %>.jpg"
+          />
+      </div>
+    </a>
+  </div>
+</div>
+<%= if length(@recommendations) > 0 do %>
+  <div>
+  <h2><%= dgettext("book", "Recommendations") %></h2>
+  <%= for {recommendation, player}<- @recommendations do %>
+    <figure class="book-figure">
+        <blockquote class="book-blockquote">
+          <p><%= recommendation.text %></p>
+        </blockquote>
+        <figcaption class="book-figcaption">—<%= link player.name, to: Routes.player_path(@conn, :book_recommendation, @locale, player.slug ) %>, <i><%= recommendation.source %></i></figcaption>
+    </figure>
+
+  <% end %>
+  </div>
+<% end %>
+
+<%= raw Earmark.as_html!(@book.text)%>
