@@ -23,13 +23,14 @@
 <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
 <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/play_stockfish.js") %>"></script>
 
-<!-- listudy-test -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6706752364351336"
-     data-ad-slot="7962822632"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
+<div style="
+    border: 1px solid black;
+    padding: 1em;
+    margin: 3em;
+">
+<p>Looking for a fun challenge? I have created the Lichess of Ultimate Tic Tac Toe. Checkout my new site <a href="https://ultimattt.com">UltimaTTT.com</a>.</p>
+<img src="https://listudy.org/images/ultimattt.svg" alt="ultimattt.com logo"></img>
+</div>
 
 <p>
   <b><%= dgettext "play_stockfish", "Play against Stockfish:" %></b>

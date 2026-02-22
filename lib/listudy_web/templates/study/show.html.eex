@@ -76,7 +76,6 @@
   </div>
 </div>
 
-
 <div class="highlight clicking_turns_on_hints">
   <b><%= dgettext "study", "Description" %></b>
   <p><%= @study.description %></p>

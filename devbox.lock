@@ -2,8 +2,13 @@
   "lockfile_version": "1",
   "packages": {
     "elixir": {
+      "plugin_version": "0.0.1",
       "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#elixir",
       "source": "nixpkg"
+    },
+    "github:NixOS/nixpkgs/af9e00071d0971eb292fd5abef334e66eda3cb69": {
+      "last_modified": "1970-01-01T00:00:00Z",
+      "resolved": "github:NixOS/nixpkgs/af9e00071d0971eb292fd5abef334e66eda3cb69"
     },
     "nodejs": {
       "plugin_version": "0.0.2",
