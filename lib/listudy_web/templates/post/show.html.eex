@@ -6,7 +6,7 @@
 <% end %>
 </p>
 
-<%# required by PgnViewerJS, has to be set before the include of pgnv.js %>
+<%!-- required by PgnViewerJS, has to be set before the include of pgnv.js --%>
 <script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>__globalCustomDomain = '/js/pgnviewer/';</script>
 
 <%= raw ListudyWeb.EexMarkdown.as_html(@post.body, @conn)%>

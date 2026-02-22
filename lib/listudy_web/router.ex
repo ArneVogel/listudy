@@ -55,7 +55,6 @@ defmodule ListudyWeb.Router do
     post "/blog", PostController, :create
     put "/blog/:id", PostController, :update
     delete "/blog/:id", PostController, :delete
-    get "/", PageController, :index
 
     get "/update-email/:username", UserAdministrationController, :email
     put "/update-email/:username", UserAdministrationController, :update_email

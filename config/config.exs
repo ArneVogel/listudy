@@ -47,7 +47,7 @@ config :listudy, :pow,
   cache_store_backend: Pow.Store.Backend.MnesiaCache,
   messages_backend: ListudyWeb.Pow.Messages
 
-config :mnesia, dir: 'priv/mnesia'
+config :mnesia, dir: ~c"priv/mnesia"
 
 config :gettext, :default_locale, "en"
 

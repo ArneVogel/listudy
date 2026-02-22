@@ -26,8 +26,8 @@
   <input type="text" id="last_move" value="">
 </form>
 <script <%= raw ListudyWeb.Plugs.CSP.put_nonce(@conn) %>>
-<%# CAREFUL! the hash is user supplies and its values can only be used in %>
-<%# save javascript functions! %>
+<%!-- CAREFUL! the hash is user supplies and its values can only be used in --%>
+<%!-- save javascript functions! --%>
 function clean_input(i) {
   if (i == undefined) {
     return "";

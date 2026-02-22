@@ -1,22 +1,22 @@
 defmodule ListudyWeb.Seo do
   @domain "https://listudy.org"
-  @languages Application.get_env(:listudy, :languages)[:translations]
+  @languages Application.compile_env(:listudy, [:languages, :translations])
 
   def canonical_link(conn) do
     url = clean(@domain <> conn.request_path)
-    '<link rel="canonical" href="#{url}" />'
+    "<link rel=\"canonical\" href=\"#{url}\" />"
   end
 
   def canonical_link(_conn, canonical) do
-    '<link rel="canonical" href="https://listudy.org#{canonical}" />'
+    "<link rel=\"canonical\" href=\"https://listudy.org#{canonical}\" />"
   end
 
   def noindex(%{:assigns => %{:noindex => true}}) do
-    '<meta name="robots" content="noindex">'
+    "<meta name=\"robots\" content=\"noindex\">"
   end
 
   def noindex(_conn) do
-    ''
+    ""
   end
 
   def hreflang(conn) do

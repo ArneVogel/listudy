@@ -28,8 +28,6 @@ defmodule Listudy.Users.User do
   end
 
   def admin_changeset(user_or_changeset, attrs) do
-    import Ecto.Changeset
-
     user_or_changeset
     |> Ecto.Changeset.cast(attrs, [:username, :email])
   end

@@ -1,8 +1,8 @@
 defmodule ListudyWeb.Plugs.Locale do
   import Plug.Conn
 
-  @locales Application.get_env(:listudy, :languages)[:translations]
-  @default Application.get_env(:listudy, :languages)[:default]
+  @locales Application.compile_env(:listudy, [:languages, :translations])
+  @default Application.compile_env(:listudy, [:languages, :default])
 
   def init(default), do: default
 

@@ -3,7 +3,7 @@ defmodule ListudyWeb.PageController do
   alias Listudy.Books
   alias Listudy.Content
 
-  @languages Application.get_env(:listudy, :languages)[:translations]
+  @languages Application.compile_env(:listudy, [:languages, :translations])
   @pages [
     "privacy",
     "terms-of-service",

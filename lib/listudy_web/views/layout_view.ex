@@ -14,7 +14,6 @@ defmodule ListudyWeb.LayoutView do
   def is_april_fools(date) do
     {{_, month, day}, {_, _, _}} = date
     month == 4 and day == 1
-    false
   end
 
   def is_new_year(date) do
