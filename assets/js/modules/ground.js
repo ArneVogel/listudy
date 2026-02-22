@@ -74,8 +74,9 @@ function onresize() {
 function calculate_width() {
     let gc = document.getElementById("game_container");
     let gc_width = gc.offsetWidth;
-    let width = gc_width - 7; // for the numbers on the side of the ground
-    width -= width % 8; // fix chrome alignment errors; https://github.com/ornicar/lila/pull/3881
+    let width = gc_width ;//- 7; // for the numbers on the side of the ground
+    //width -= width % 8; // fix chrome alignment errors; https://github.com/ornicar/lila/pull/3881
+    // shouldn't be neccessary any longer https://github.com/lichess-org/chessground/pull/191
     return width;
 }
 
