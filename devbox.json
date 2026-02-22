@@ -1,12 +1,26 @@
 {
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
   "packages": [
-    "elixir",
-    "nodejs"
+    "elixir@latest",
+    "postgresql@latest",
+    "nodejs@latest"
   ],
   "shell": {
-    "init_hook": null
-  },
-  "nixpkgs": {
-    "commit": "af9e00071d0971eb292fd5abef334e66eda3cb69"
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null"
+    ],
+    "scripts": {
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ],
+      "db:start": [
+        "pg_ctl -D .devbox/virtenv/postgresql/data -l .devbox/virtenv/postgresql/data/postgresql.log -o \"-k $PWD/.devbox/virtenv/postgresql/data\" start",
+        "ln -sf data/.s.PGSQL.5432 .devbox/virtenv/postgresql/.s.PGSQL.5432",
+        "ln -sf data/.s.PGSQL.5432.lock .devbox/virtenv/postgresql/.s.PGSQL.5432.lock"
+      ],
+      "db:stop": [
+        "pg_ctl -D .devbox/virtenv/postgresql/data stop"
+      ]
+    }
   }
 }
