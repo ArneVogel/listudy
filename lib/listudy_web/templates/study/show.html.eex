@@ -110,6 +110,7 @@
     pgn = pgn.replace(/&gt;/g, '>');
     pgn = pgn.replace(/&lt;/g, '<');
     pgn = pgn.replace(/&quot;/g, '"');
+    pgn = pgn.replace(/&#39;/g, "'");
     // U+FEFF ZERO WIDTH NO-BREAK SPACE
     // No idea why they are in some pgns but they break the parser 
     // https://github.com/ArneVogel/listudy/issues/35
