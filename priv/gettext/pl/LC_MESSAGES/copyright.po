@@ -1,0 +1,67 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: pl\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:12
+msgid "Copyright holders"
+msgstr "Właściciele praw autorskich"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:2
+msgid "English version of the Copyright Policy"
+msgstr "Angielska wersja Polityki praw autorskich"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:13
+msgid "If you believe that someone has uploaded or posted content of yours on Listudy.org without your permission, please contact us at: copyright@listudy.org"
+msgstr "Jeśli uważasz, że ktoś przesłał lub opublikował Twoje treści na Listudy.org bez Twojej zgody, skontaktuj się z nami pod adresem: Copyright@listudy.org"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:6
+msgid "Introduction"
+msgstr "Przedstawienie"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:4
+msgid "Last edited:"
+msgstr "Ostatnia edycja:"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:16
+msgid "Listudy can change this policy at its discretion."
+msgstr "Listudy może zmienić tę politykę według własnego uznania."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:7
+msgid "Listudy respects and recognizes the copyright of third parties. You are only allowed to publish public content on Listudy, for which you have all necessary rights."
+msgstr "Listudy szanuje i uznaje prawa autorskie osób trzecich. Na Listudy możesz publikować wyłącznie treści publiczne, do których posiadasz wszelkie niezbędne uprawnienia."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:15
+msgid "Other"
+msgstr "Inny"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:9
+msgid "PGN files"
+msgstr "Pliki PGN"
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:2
+msgid "Translated copyright policies shall only serve as an informal source of information. Please read the english version for the official version applicable to the site."
+msgstr "Przetłumaczone zasady dotyczące praw autorskich mogą służyć wyłącznie jako nieformalne źródło informacji. Aby zapoznać się z oficjalną wersją obowiązującą na stronie, przeczytaj wersję angielską."
+
+#, elixir-format
+#: lib/listudy_web/templates/page/copyright.html.eex:10
+msgid "You are only allowed to make public studies using PGN files, for which you have all necessary rights to. Do not copy PGN files from other websites for which you do not have the rights. This applies especially, but is not limited to, paid PGN files."
+msgstr "Możesz prowadzić badania publiczne wyłącznie przy użyciu plików PGN, do których posiadasz wszelkie niezbędne uprawnienia. Nie kopiuj plików PGN z innych stron internetowych, do których nie masz praw. Dotyczy to w szczególności, ale nie wyłącznie, płatnych plików PGN."
