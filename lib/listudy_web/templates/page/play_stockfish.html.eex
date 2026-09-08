@@ -23,15 +23,6 @@
 <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/chessground.css") %>"/>
 <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/play_stockfish.js") %>"></script>
 
-<div style="
-    border: 1px solid black;
-    padding: 1em;
-    margin: 3em;
-">
-<p>Looking for a fun challenge? I have created the Lichess of Ultimate Tic Tac Toe. Checkout my new site <a href="https://ultimattt.com">UltimaTTT.com</a>.</p>
-<img src="https://listudy.org/images/ultimattt.svg" alt="ultimattt.com logo"></img>
-</div>
-
 <p>
   <b><%= dgettext "play_stockfish", "Play against Stockfish:" %></b>
   <%= dgettext "play_stockfish", "learn with the best chess engine." %>
