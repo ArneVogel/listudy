@@ -9,7 +9,6 @@
 msgid ""
 msgstr ""
 "Language: es\n"
-"Plural-Forms: nplurals=2\n"
 
 #, elixir-format
 #: lib/listudy_web/live/opening_search_live.ex:10

@@ -9,7 +9,6 @@
 msgid ""
 msgstr ""
 "Language: vi\n"
-"Plural-Forms: nplurals=1\n"
 
 #, elixir-format
 #: tactics.html.eex:45

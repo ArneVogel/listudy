@@ -1,6 +1,6 @@
 defmodule ListudyWeb.PageDescription do
   alias ListudyWeb.StudySearchLive
-  import ListudyWeb.Gettext
+  use Gettext, backend: ListudyWeb.Gettext
 
   def page_description(assigns), do: assigns |> get
 

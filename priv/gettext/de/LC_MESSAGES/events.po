@@ -9,7 +9,6 @@
 msgid ""
 msgstr ""
 "Language: de\n"
-"Plural-Forms: nplurals=2\n"
 
 #: lib/listudy_web/live/event_search_live.ex:10
 #, elixir-autogen, elixir-format

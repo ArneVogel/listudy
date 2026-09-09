@@ -9,7 +9,6 @@
 msgid ""
 msgstr ""
 "Language: fr\n"
-"Plural-Forms: nplurals=2\n"
 
 #: lib/listudy_web/templates/page/achievements.html.eex:1
 #, elixir-autogen, elixir-format

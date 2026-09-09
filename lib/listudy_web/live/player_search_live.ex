@@ -2,7 +2,7 @@ defmodule ListudyWeb.PlayerSearchLive do
   use Phoenix.LiveView
 
   alias Listudy.Players
-  import ListudyWeb.Gettext
+  use Gettext, backend: ListudyWeb.Gettext
   alias ListudyWeb.Router.Helpers, as: Routes
 
   def render(assigns) do

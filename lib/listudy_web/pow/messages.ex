@@ -2,7 +2,7 @@ defmodule ListudyWeb.Pow.Messages do
   use Pow.Phoenix.Messages
   use Pow.Extension.Phoenix.Messages
 
-  import ListudyWeb.Gettext
+  use Gettext, backend: ListudyWeb.Gettext
 
   def invalid_credentials(_conn),
     do:

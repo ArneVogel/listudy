@@ -9,7 +9,6 @@
 msgid ""
 msgstr ""
 "Language: tr\n"
-"Plural-Forms: nplurals=2\n"
 
 #: lib/listudy_web/views/helpers/page_title.ex:31
 #, elixir-autogen, elixir-format

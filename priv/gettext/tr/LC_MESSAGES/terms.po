@@ -9,7 +9,6 @@
 msgid ""
 msgstr ""
 "Language: tr\n"
-"Plural-Forms: nplurals=2\n"
 
 #: service.html.eex:24
 #, elixir-autogen, elixir-format

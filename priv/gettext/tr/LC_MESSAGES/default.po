@@ -9,7 +9,6 @@
 msgid ""
 msgstr ""
 "Language: tr\n"
-"Plural-Forms: nplurals=2\n"
 
 #: lib/listudy_web/templates/layout/_header.html.eex:52
 #: lib/listudy_web/templates/pow/registration/new.html.eex:29

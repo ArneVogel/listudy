@@ -2,7 +2,7 @@ defmodule ListudyWeb.OpeningSearchLive do
   use Phoenix.LiveView
 
   alias Listudy.Openings
-  import ListudyWeb.Gettext
+  use Gettext, backend: ListudyWeb.Gettext
   alias ListudyWeb.Router.Helpers, as: Routes
 
   def render(assigns) do

@@ -9,7 +9,6 @@
 msgid ""
 msgstr ""
 "Language: nl\n"
-"Plural-Forms: nplurals=2\n"
 
 #, elixir-format
 #: lib/listudy_web/views/helpers/page_title.ex:31

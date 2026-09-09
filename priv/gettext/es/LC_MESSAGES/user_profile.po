@@ -9,7 +9,6 @@
 msgid ""
 msgstr ""
 "Language: es\n"
-"Plural-Forms: nplurals=2\n"
 
 #, elixir-format
 #: lib/listudy_web/templates/user_profile/show.html.eex:9

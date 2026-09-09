@@ -1,6 +1,6 @@
 defmodule ListudyWeb.PageTitle do
   alias ListudyWeb.{PageView, StudySearchLive, TacticsLive}
-  import ListudyWeb.Gettext
+  use Gettext, backend: ListudyWeb.Gettext
 
   @suffix "Listudy"
 

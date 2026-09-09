@@ -22,7 +22,7 @@ defmodule ListudyWeb do
       use Phoenix.Controller, namespace: ListudyWeb
 
       import Plug.Conn
-      import ListudyWeb.Gettext
+      use Gettext, backend: ListudyWeb.Gettext
       alias ListudyWeb.Router.Helpers, as: Routes
       import Phoenix.LiveView.Controller
     end
@@ -56,7 +56,7 @@ defmodule ListudyWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import ListudyWeb.Gettext
+      use Gettext, backend: ListudyWeb.Gettext
     end
   end
 
@@ -69,7 +69,7 @@ defmodule ListudyWeb do
       import Phoenix.View
 
       import ListudyWeb.ErrorHelpers
-      import ListudyWeb.Gettext
+      use Gettext, backend: ListudyWeb.Gettext
       alias ListudyWeb.Router.Helpers, as: Routes
     end
   end

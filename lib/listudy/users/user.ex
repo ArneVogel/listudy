@@ -1,7 +1,7 @@
 defmodule Listudy.Users.User do
   use Ecto.Schema
   use Pow.Ecto.Schema
-  import ListudyWeb.Gettext
+  use Gettext, backend: ListudyWeb.Gettext
 
   schema "users" do
     field :username, :string

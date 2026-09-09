@@ -9,4 +9,3 @@
 msgid ""
 msgstr ""
 "Language: ar\n"
-"Plural-Forms: nplurals=6\n"

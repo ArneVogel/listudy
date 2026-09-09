@@ -9,7 +9,6 @@
 msgid ""
 msgstr ""
 "Language: fa\n"
-"Plural-Forms: nplurals=1\n"
 
 msgid "can't be blank"
 msgstr ""

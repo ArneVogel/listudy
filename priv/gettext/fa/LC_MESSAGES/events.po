@@ -9,7 +9,6 @@
 msgid ""
 msgstr ""
 "Language: fa\n"
-"Plural-Forms: nplurals=1\n"
 
 #, elixir-format
 #: lib/listudy_web/live/event_search_live.ex:10

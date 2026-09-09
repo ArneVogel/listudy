@@ -11,6 +11,11 @@ defmodule Listudy.Studies.Study do
     field :private, :boolean
     field :opening_id, :id
 
+    # populated by the controller, not persisted
+    field :pgn, :string, virtual: true
+    field :is_owner, :boolean, virtual: true
+    field :favorites, :boolean, virtual: true
+
     belongs_to(:user, Listudy.Users.User)
     has_many :study_favorites, Listudy.StudyFavorites.StudyFavorite
     timestamps()

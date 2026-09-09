@@ -9,7 +9,6 @@
 msgid ""
 msgstr ""
 "Language: ar\n"
-"Plural-Forms: nplurals=6\n"
 
 #: lib/listudy_web/templates/page/privacy.html.eex:44
 #, elixir-format

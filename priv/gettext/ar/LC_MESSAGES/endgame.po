@@ -9,7 +9,6 @@
 msgid ""
 msgstr ""
 "Language: ar\n"
-"Plural-Forms: nplurals=6\n"
 
 #: lib/listudy_web/controllers/endgame_controller.ex:94
 #, elixir-format

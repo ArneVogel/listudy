@@ -27,27 +27,24 @@ defmodule ListudyWeb.EexMarkdown.Helper do
   end
 
   def fen_img(ref, file_name, alt, options) do
-    image = Listudy.Images.get_by_ref(ref)
+    image =
+      case Listudy.Images.get_by_ref(ref) do
+        nil ->
+          # this is the first load, generate the image first
+          tmp_file_name = "/tmp/#{file_name}"
+          generate_svg(tmp_file_name, options)
+          {:ok, image} = Listudy.Images.create_image(%{images: tmp_file_name, alt: alt, ref: ref})
+          File.rm(tmp_file_name)
+          image
 
-    case image do
-      nil ->
-        # this is the first load, generate the image first
-        tmp_file_name = "/tmp/#{file_name}"
-        generate_svg(tmp_file_name, options)
-        Listudy.Images.create_image(%{images: tmp_file_name, alt: alt, ref: ref})
-        File.rm(tmp_file_name)
-        # also display it
-        case options[:caption] do
-          nil -> image_html(image)
-          _ -> image_html(image, options[:caption])
-        end
+        image ->
+          # the image was already generated, just display it
+          image
+      end
 
-      _ ->
-        # the image was already generated, just display it
-        case options[:caption] do
-          nil -> image_html(image)
-          _ -> image_html(image, options[:caption])
-        end
+    case options[:caption] do
+      nil -> image_html(image)
+      caption -> image_html(image, caption)
     end
   end
 

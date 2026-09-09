@@ -1,8 +1,9 @@
 {
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
   "packages": [
-    "elixir@latest",
-    "postgresql@latest",
+    "github:NixOS/nixpkgs/dc5d91f840324650bac8c379428c7037a416959a#beamPackages.elixir_1_20",
+    "github:NixOS/nixpkgs/dc5d91f840324650bac8c379428c7037a416959a#beamPackages.erlang",
+    "postgresql@17",
     "nodejs@latest"
   ],
   "shell": {

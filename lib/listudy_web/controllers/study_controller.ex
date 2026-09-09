@@ -104,7 +104,7 @@ defmodule ListudyWeb.StudyController do
         {:error, _} -> -1
       end
 
-    if study != nil and (!study.private or study.user_id == user_id) do
+    if !study.private or study.user_id == user_id do
       study = Map.put(study, :is_owner, study.user_id == user_id)
       # TODO maybe reduce the number of extra querys
       study = Map.put(study, :favorites, StudyFavorites.user_favorites_study(user_id, study.id))

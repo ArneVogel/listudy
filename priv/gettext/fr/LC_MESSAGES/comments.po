@@ -9,7 +9,6 @@
 msgid ""
 msgstr ""
 "Language: fr\n"
-"Plural-Forms: nplurals=2\n"
 
 #: lib/listudy_web/templates/comment/show_comments.html.eex:11
 #, elixir-autogen, elixir-format

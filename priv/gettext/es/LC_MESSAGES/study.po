@@ -9,7 +9,6 @@
 msgid ""
 msgstr ""
 "Language: es\n"
-"Plural-Forms: nplurals=2\n"
 
 #: lib/listudy_web/templates/study/show.html.eex:46
 #, elixir-autogen, elixir-format

@@ -37,7 +37,7 @@ defmodule ListudyWeb.Plugs.CSP do
 
   defp ws_url(conn, protocol \\ "ws") do
     endpoint = Phoenix.Controller.endpoint_module(conn)
-    %{endpoint.struct_url | scheme: protocol} |> URI.to_string()
+    %{endpoint.struct_url() | scheme: protocol} |> URI.to_string()
   end
 
   defp nonce() do
