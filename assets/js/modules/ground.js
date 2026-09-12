@@ -11,7 +11,7 @@ import { array_contains } from './utils.js';
 function ground_init_state(fen) {
     const config = {};
     config["orientation"] = color;
-    config["movable"] = { free: false, showDests: true };
+    config["movable"] = { free: false, showDests: true, color: color };
     // fen for the initial position
     config["fen"] = fen;
     config["highlight"] = { check: true };
