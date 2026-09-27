@@ -23,7 +23,20 @@ header {
     border-bottom-left-radius: var(--small-border-radius);
 }
 
-@media (max-width: 600px) {                  
+.nav_badge_new {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    padding: 0 0.3em;
+    font-size: 0.6em;
+    line-height: 1.4;
+    color: var(--primary-font-offset);
+    background-color: var(--warn-color);
+    border-radius: var(--small-border-radius);
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
    .dropdowns_container, .nav_element, .logo {
         display: none;
    }
@@ -104,7 +117,7 @@ nav {
   background-color: var(--bg-color);
   color: var(--font-color);
   border: none;
-  padding: 0 1em;
+  padding: 0 0.6em;
   margin: 0;
   border-radius: 0;
   border-left: 2px var(--bg-color) solid;

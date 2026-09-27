@@ -35,7 +35,16 @@
                 <a href="<%= Routes.endgame_path(@conn, :index, @assigns.locale) %>">
                   <button class="dropbtn dropdowns_single"><%= gettext "Endgames"%></button>
                 </a>
-              </div> 
+              </div>
+            </div>
+
+            <div class="dropdowns_container">
+              <div class="dropdown">
+                <a href="https://www.unicornfork.com/invite/listudy" rel="sponsored">
+                  <button class="dropbtn dropdowns_single"><%= gettext "AI Tutor"%></button>
+                </a>
+                <span class="nav_badge_new"><%= gettext "new"%></span>
+              </div>
             </div>
 
             <div id="hamburger" class="hamburger_container">
