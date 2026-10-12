@@ -230,7 +230,7 @@ defmodule ListudyWeb.StudyController do
 
   # Checks if the study_params have a valid pgn
   # Either a pgn was uploaded ->
-  #   check the size 
+  #   check the size
   # Or a lichess study was provided ->
   #   download the pgn from lichess and create a file
   # Returns the file path on success
@@ -253,10 +253,47 @@ defmodule ListudyWeb.StudyController do
   defp check_pgn(%{"lichess_study" => lichess_study}) when lichess_study != "" do
     case String.starts_with?(lichess_study, "https://lichess.org/study/") do
       true ->
-        url = lichess_study <> ".pgn"
+        # Get chapter names from the lichess study page, since PGN does not always contain correct chapter names
+        chapter_names = try do
+          case HTTPoison.get(lichess_study) do
+            {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+              [_, raw_json_chapters] = Regex.run(~r/chapters":(.*?\])/, body)
+              case Jason.decode(raw_json_chapters) do
+                {:ok, data} ->
+                  for x <- data, do: x["name"]
+                _ ->
+                  IO.puts("Failed to parse JSON")
+                  nil
+              end
+            _ ->
+              IO.puts("Failed to fetch lichess study")
+              nil
+          end
+        catch
+          _ -> nil
+        end
 
+        url = lichess_study <> ".pgn"
         case HTTPoison.get(url) do
           {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+            body = if chapter_names != nil do
+              {new_body_lines, _} = Enum.reduce(
+                String.split(body, "\n"),
+                {[], chapter_names},
+                fn line, {lines, chapter_names} ->
+                  if String.match?(line, ~r/\[Event/) do
+                    [head | tail] = chapter_names
+                    {lines ++ ["[Event \"" <> head <> "\"]"], tail}
+                  else
+                    {lines ++ [line], chapter_names}
+                  end
+                end
+              )
+              Enum.join(new_body_lines, "\n")
+            else
+              body
+            end
+
             dir = "/tmp/listudy/"
             File.mkdir(dir)
             id = dir <> Listudy.Slug.random_alnum() <> ".pgn"
