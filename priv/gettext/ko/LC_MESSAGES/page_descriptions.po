@@ -1,0 +1,78 @@
+# # "msgid"s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove "msgid"s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use "mix gettext.extract --merge" or "mix gettext.merge"
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: lib/listudy_web/views/helpers/page_description.ex:47
+#, elixir-format, python-brace-format
+msgid "Explore our collection of tactics taken from games by %{name}."
+msgstr "%{name}의 게임에서 가져온 전술 컬렉션을 살펴보세요."
+
+#: lib/listudy_web/views/helpers/page_description.ex:27
+#, elixir-format, python-brace-format
+msgid ""
+"Get better at %{name} tactics with our huge library of puzzles taken from "
+"real games. Explore our free collection of %{name} tactics."
+msgstr "실제 게임에서 가져온 방대한 퍼즐 라이브러리를 통해 %{name} 전술을 더 잘 익히세요. %{name} 전술 무료 컬렉션을 살펴보세요."
+
+#: lib/listudy_web/views/helpers/page_description.ex:74
+#, elixir-format, python-brace-format
+msgid ""
+"Get better in the %{name} opening. Study the opening and learn from traps "
+"and tactics collected from real games."
+msgstr "%{name} 오프닝에서 더 나아지세요. 오프닝을 스터디하고 실제 게임에서 수집한 함정과 전술을 배워보세요."
+
+#: lib/listudy_web/views/helpers/page_description.ex:126
+#, elixir-format
+msgid "Improve your chess game on Listudy"
+msgstr "Listudy에서 체스 실력을 키우세요"
+
+#: lib/listudy_web/views/helpers/page_description.ex:93
+#, elixir-format
+msgid "Learn chess endgames interactively playing against Stockfish"
+msgstr "스톡피시와 직접 두며 엔드게임을 배우세요"
+
+#: lib/listudy_web/views/helpers/page_description.ex:15
+#, elixir-format
+msgid "Play against Stockfish Online - Unlimited and for Free"
+msgstr "온라인 스톡피시 대국 - 무료로 제한 없이 즐기세요"
+
+#: lib/listudy_web/views/helpers/page_description.ex:35
+#, elixir-format, python-brace-format
+msgid "Play tactics from the event %{}. Are you better than the professionals?"
+msgstr "%{} 이벤트의 전술을 플레이하세요. 전문가보다 나은가요?"
+
+#: lib/listudy_web/views/helpers/page_description.ex:24
+#, elixir-format
+msgid "Search for studies to train specific openings"
+msgstr "연습할 오프닝의 스터디 검색"
+
+#: lib/listudy_web/views/helpers/page_description.ex:8
+#, elixir-format
+msgid ""
+"Solve the Daily Chess Puzzle! Updated every day from our list of best "
+"puzzles."
+msgstr "일일 체스 퍼즐을 풀어보세요! 최고의 퍼즐 목록에서 매일 업데이트됩니다."
+
+#: lib/listudy_web/views/helpers/page_description.ex:60
+#, elixir-format, python-brace-format
+msgid "A chess book recommendation by %{player}"
+msgid_plural "%{count} chess book recommendations by %{player}"
+msgstr[0] "%{player}의 체스 책 추천 %{count}권"

@@ -1,0 +1,112 @@
+# # `msgid`s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove `msgid`s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use `mix gettext.extract --merge` or `mix gettext.merge`
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+# # From Ecto.Changeset.cast/4
+msgid "can't be blank"
+msgstr "비워 둘 수 없습니다"
+
+# # From Ecto.Changeset.unique_constraint/3
+msgid "has already been taken"
+msgstr "이미 사용 중입니다"
+
+# # From Ecto.Changeset.put_change/3
+msgid "is invalid"
+msgstr "유효하지 않습니다"
+
+# # From Ecto.Changeset.validate_acceptance/3
+msgid "must be accepted"
+msgstr "동의해야 합니다"
+
+# # From Ecto.Changeset.validate_format/3
+msgid "has invalid format"
+msgstr "형식이 잘못되었습니다"
+
+# # From Ecto.Changeset.validate_subset/3
+msgid "has an invalid entry"
+msgstr "잘못된 항목이 있습니다"
+
+# # From Ecto.Changeset.validate_exclusion/3
+msgid "is reserved"
+msgstr "사용할 수 없습니다"
+
+# # From Ecto.Changeset.validate_confirmation/3
+msgid "does not match confirmation"
+msgstr "확인과 일치하지 않습니다"
+
+# # From Ecto.Changeset.no_assoc_constraint/3
+msgid "is still associated with this entry"
+msgstr "이 항목과 아직 연결되어 있습니다"
+
+msgid "are still associated with this entry"
+msgstr "이 항목과 아직 연결되어 있습니다"
+
+# # From Ecto.Changeset.validate_length/3
+#, python-brace-format
+msgid "should be %{count} character(s)"
+msgid_plural "should be %{count} character(s)"
+msgstr[0] "%{count}자여야 합니다."
+
+#, python-brace-format
+msgid "should have %{count} item(s)"
+msgid_plural "should have %{count} item(s)"
+msgstr[0] "%{count}개 항목이 있어야 합니다."
+
+#, python-brace-format
+msgid "should be at least %{count} character(s)"
+msgid_plural "should be at least %{count} character(s)"
+msgstr[0] "최소한 %{count}자 이상이어야 합니다."
+
+#, python-brace-format
+msgid "should have at least %{count} item(s)"
+msgid_plural "should have at least %{count} item(s)"
+msgstr[0] "최소한 %{count}개의 항목이 있어야 합니다."
+
+#, python-brace-format
+msgid "should be at most %{count} character(s)"
+msgid_plural "should be at most %{count} character(s)"
+msgstr[0] "최대 %{count}자여야 합니다."
+
+#, python-brace-format
+msgid "should have at most %{count} item(s)"
+msgid_plural "should have at most %{count} item(s)"
+msgstr[0] "최대 %{count}개 항목을 포함해야 합니다."
+
+# # From Ecto.Changeset.validate_number/3
+#, python-brace-format
+msgid "must be less than %{number}"
+msgstr "%{number}보다 작아야 합니다"
+
+#, python-brace-format
+msgid "must be greater than %{number}"
+msgstr "%{number}보다 커야 합니다."
+
+#, python-brace-format
+msgid "must be less than or equal to %{number}"
+msgstr "%{number}보다 작거나 같아야 합니다."
+
+#, python-brace-format
+msgid "must be greater than or equal to %{number}"
+msgstr "%{number}보다 크거나 같아야 합니다."
+
+#, python-brace-format
+msgid "must be equal to %{number}"
+msgstr "%{number}과(와) 같아야 합니다"

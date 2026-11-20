@@ -1,0 +1,91 @@
+# # "msgid"s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove "msgid"s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use "mix gettext.extract --merge" or "mix gettext.merge"
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: lib/listudy_web/templates/comment/show_comments.html.eex:11
+#, elixir-format
+msgid "Are you sure?"
+msgstr "계속하시겠습니까?"
+
+#: lib/listudy_web/templates/comment/comment_form.html.eex:3
+#, elixir-format
+msgid "Comment"
+msgstr "댓글"
+
+#: lib/listudy_web/templates/comment/show_comments.html.eex:3
+#, elixir-format
+msgid "Comments"
+msgstr "댓글"
+
+#: lib/listudy_web/templates/comment/show_comments.html.eex:11
+#, elixir-format
+msgid "Delete"
+msgstr "삭제"
+
+#: lib/listudy_web/templates/comment/comment_form.html.eex:11
+#, elixir-format
+msgid "Save"
+msgstr "저장"
+
+#: lib/listudy_web/templates/comment/show_comments.html.eex:8
+#, elixir-format
+msgid "by"
+msgstr "작성자"
+
+#: lib/listudy_web/controllers/comment_controller.ex:43
+#, elixir-format
+msgid "Comment could not get created"
+msgstr "댓글을 작성할 수 없습니다."
+
+#: lib/listudy_web/controllers/comment_controller.ex:40
+#, elixir-format
+msgid "Comment created"
+msgstr "댓글을 작성했습니다."
+
+#: lib/listudy_web/controllers/comment_controller.ex:26
+#, elixir-format
+msgid "Comment deleted successfully."
+msgstr "댓글이 삭제되었습니다."
+
+#: lib/listudy_web/controllers/comment_controller.ex:48
+#, elixir-format
+msgid "Error"
+msgstr "오류"
+
+#: lib/listudy_web/controllers/comment_controller.ex:20
+#, elixir-format
+msgid "You're not allowed to do that."
+msgstr "이 작업을 수행할 권한이 없습니다."
+
+#: lib/listudy_web/templates/comment/comment_form.html.eex:16
+#, elixir-format, python-brace-format
+msgid "%{register} to comment"
+msgstr "댓글을 작성하려면 %{register}하세요"
+
+#: lib/listudy_web/templates/comment/show_comments.html.eex:17
+#, elixir-format
+msgid "No comments yet, be the first to write one!"
+msgstr "아직 댓글이 없습니다. 가장 먼저 댓글을 작성해 보세요!"
+
+#: lib/listudy_web/templates/comment/comment_form.html.eex:15
+#, elixir-format
+msgid "Register"
+msgstr "회원가입"

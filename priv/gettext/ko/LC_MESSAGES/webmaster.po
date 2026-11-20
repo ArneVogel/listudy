@@ -1,0 +1,158 @@
+# # "msgid"s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove "msgid"s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use "mix gettext.extract --merge" or "mix gettext.merge"
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: tactics.html.eex:21
+#, elixir-format
+msgid "After you have done this click on the button \"Embed\"."
+msgstr "이 작업을 완료한 후 \"Embed(삽입)\" 버튼을 클릭하세요."
+
+#: tactics.html.eex:30
+#, elixir-format
+msgid "Automation"
+msgstr "자동화"
+
+#: lib/listudy_web/templates/webmaster/index.html.eex:9 tactics.html.eex:5
+#, elixir-format
+msgid ""
+"Bring more interactivity to your tactics. Embed your tactics and let users "
+"solve them."
+msgstr "전술에 더 많은 상호 작용을 가져옵니다. 전술을 삽입하고 사용자가 이를 해결하도록 하세요."
+
+#: tactics.html.eex:22
+#, elixir-format
+msgid "Copy the iframe code and paste it into your page."
+msgstr "iframe 코드를 복사하여 페이지에 붙여넣습니다."
+
+#: lib/listudy_web/templates/webmaster/index.html.eex:6
+#, elixir-format
+msgid "Custom Tactics"
+msgstr "맞춤 전술 문제"
+
+#: tactics.html.eex:1
+#, elixir-format
+msgid "Embed Custom Tactics"
+msgstr "맞춤 전술 삽입"
+
+#: lib/listudy_web/templates/webmaster/index.html.eex:3
+#, elixir-format
+msgid "Embed elements of Listudy on your website."
+msgstr "귀하의 웹사이트에 Listudy 요소를 삽입하세요."
+
+#: tactics.html.eex:20
+#, elixir-format
+msgid "First you have to create your tactics with the tactic creator."
+msgstr "먼저 전술 생성자와 함께 전술을 만들어야 합니다."
+
+#: tactics.html.eex:41
+#, elixir-format
+msgid ""
+"For mobile devices it is recommended to limit the width iframes to 100%. "
+"Below you will find the css to achieve that."
+msgstr "모바일 장치의 경우 iframe 너비를 100%로 제한하는 것이 좋습니다. 아래에서 이를 달성하기 위한 CSS를 찾을 수 있습니다."
+
+#: tactics.html.eex:16
+#, elixir-format
+msgid "How to embed your own Tactics"
+msgstr "나만의 전술을 삽입하는 방법"
+
+#: tactics.html.eex:38
+#, elixir-format
+msgid "Implementation details"
+msgstr "구현 세부정보"
+
+#: tactics.html.eex:18
+#, elixir-format
+msgid ""
+"On the page where you can create your own tactics is an embed button. This "
+"button will automatically creates the iframe code that you have to insert on"
+" your website."
+msgstr ""
+"자신만의 전술을 만들 수 있는 페이지에는 삽입 버튼이 있습니다. 이 버튼을 누르면 웹사이트에 삽입해야 하는 iframe 코드가 자동으로 "
+"생성됩니다."
+
+#: tactics.html.eex:33
+#, elixir-format
+msgid ""
+"The hash is the base64 encoded string which consists of the fen, the moves "
+"and the last move."
+msgstr "URL의 해시 부분은 FEN, 수순, 마지막 수를 Base64로 인코딩한 문자열입니다."
+
+#: tactics.html.eex:31
+#, elixir-format
+msgid ""
+"This process can also be automated. All information needed for tactics are "
+"stored in the hash of the embed url."
+msgstr "이 프로세스는 자동화될 수도 있습니다. 전술에 필요한 모든 정보는 삽입 URL의 해시에 저장됩니다."
+
+#: tactics.html.eex:32
+#, elixir-format
+msgid "To generate tactics automatically you can create this hash yourself."
+msgstr "전술을 자동으로 생성하려면 이 해시를 직접 생성하면 됩니다."
+
+#: tactics.html.eex:25
+#, elixir-format
+msgid "Use this link to create and embed your tactic:"
+msgstr "이 링크를 사용하여 전술을 만들고 삽입하세요."
+
+#: lib/listudy_web/templates/webmaster/index.html.eex:1
+#, elixir-format
+msgid "Webmaster"
+msgstr "웹마스터"
+
+#: tactics.html.eex:39
+#, elixir-format
+msgid ""
+"You can change the standard width and height if you wish. Just make sure "
+"that the height is about 80px higher than the width so that the \"x to "
+"play\" message fits under the board."
+msgstr ""
+"원하는 경우 표준 너비와 높이를 변경할 수 있습니다. \"x to play\" 메시지가 보드 아래에 맞도록 높이가 너비보다 약 80px "
+"더 높아야 합니다."
+
+#: tactics.html.eex:7
+#, elixir-format
+msgid ""
+"You can specify the position, what the right moves are and what the last "
+"move was."
+msgstr "포지션, 정답 수순, 마지막 수를 지정할 수 있습니다."
+
+#: tactics.html.eex:6
+#, elixir-format
+msgid "You have full control over the tactics."
+msgstr "당신은 전술을 완전히 통제할 수 있습니다."
+
+#: lib/listudy_web/templates/webmaster/index.html.eex:12
+#, elixir-format
+msgid "Learn More"
+msgstr "자세히 알아보기"
+
+#: tactics.html.eex:26
+#, elixir-format
+msgid "Create your own Tactic"
+msgstr "나만의 전술 만들기"
+
+#: tactics.html.eex:35
+#, elixir-format
+msgid ""
+"The values are each separated by a \";\". The moves must be in san notation "
+"and the last move in uci notation."
+msgstr "각 값은 \";\"으로 구분합니다. 수순은 SAN 표기법, 마지막 수는 UCI 표기법을 사용해야 합니다."

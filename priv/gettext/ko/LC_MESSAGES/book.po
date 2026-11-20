@@ -1,0 +1,158 @@
+# # "msgid"s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove "msgid"s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use "mix gettext.extract --merge" or "mix gettext.merge"
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: lib/listudy_web/templates/book/public.html.eex:32
+#: lib/listudy_web/templates/book/thumb.html.eex:40
+#, elixir-format, python-brace-format
+msgid "%{book_name} book cover"
+msgstr "%{book_name} 책 표지"
+
+#: lib/listudy_web/templates/book/thumb.html.eex:33
+#, elixir-format
+msgid "More"
+msgstr "더 보기"
+
+#: lib/listudy_web/templates/book/public.html.eex:17
+#, elixir-format
+msgid "Opening"
+msgstr "오프닝"
+
+#: lib/listudy_web/templates/book/public.html.eex:41
+#, elixir-format
+msgid "Recommendations"
+msgstr "추천"
+
+#: lib/listudy_web/templates/book/thumb.html.eex:7
+#, elixir-format
+msgid "Recommended by"
+msgstr "추천인"
+
+#: lib/listudy_web/templates/book/public.html.eex:9
+#, elixir-format
+msgid "Tags"
+msgstr "태그"
+
+#: lib/listudy_web/templates/book/recommended.html.eex:1
+#, elixir-format
+msgid "Chess Books"
+msgstr "체스 책"
+
+#: lib/listudy_web/templates/book/recommended.html.eex:1
+#, elixir-format
+msgid "Grandmaster recommended"
+msgstr "그랜드마스터 추천"
+
+#: lib/listudy_web/templates/book/recommended.html.eex:10
+#, elixir-format
+msgid ""
+"Have you found a recommendation from a grandmaster that is not yet in the "
+"list? Send me an email and I will add it."
+msgstr "아직 목록에 없는 그랜드마스터의 추천을 찾으셨나요? 나에게 이메일을 보내 주시면 추가하겠습니다."
+
+#: lib/listudy_web/templates/book/recommended.html.eex:9
+#, elixir-format
+msgid ""
+"I hope this list of recommendations will help you find the best chess "
+"textbooks for you. Because who else could judge whether a chess book is good"
+" or not if not grandmasters."
+msgstr ""
+"이 추천 목록이 귀하에게 가장 적합한 체스 교과서를 찾는 데 도움이 되기를 바랍니다. 그랜드마스터가 아니라면 누가 체스 책이 좋은지 "
+"아닌지 판단할 수 있기 때문입니다."
+
+#: lib/listudy_web/templates/book/recommended.html.eex:8
+#, elixir-format
+msgid ""
+"These books were all recommended by chess grandmasters! Click on the more "
+"information to find out in detail what they have to say about each book."
+msgstr "이 책들은 모두 체스 그랜드마스터들이 추천한 책들입니다! 각 책에 대한 자세한 내용을 보려면 추가 정보를 클릭하세요."
+
+#: lib/listudy_web/templates/book/recommended.html.eex:2
+#, elixir-format
+msgid ""
+"This list contains the 20 best chess books as ranked by grandmasters. I hope"
+" this list helps you to find the perfect book for you."
+msgstr ""
+"이 목록에는 그랜드마스터가 선정한 최고의 체스 책 20권이 포함되어 있습니다. 이 목록이 귀하에게 딱 맞는 책을 찾는 데 도움이 되기를 "
+"바랍니다."
+
+#: lib/listudy_web/live/book_search_live.ex:10
+#, elixir-format
+msgid "Chess Book Search"
+msgstr "체스 도서 검색"
+
+#: lib/listudy_web/live/book_search_live.ex:12
+#, elixir-format
+msgid "Search"
+msgstr "검색"
+
+#: lib/listudy_web/live/book_search_live.ex:16
+#, elixir-format
+msgid "by"
+msgstr "저자"
+
+#: lib/listudy_web/templates/book/footer.html.eex:5
+#: lib/listudy_web/templates/book/footer.html.eex:9
+#, elixir-format, python-brace-format
+msgid "%{amount} books"
+msgstr "%{amount}권"
+
+#: lib/listudy_web/templates/book/footer.html.eex:2
+#, elixir-format
+msgid "Looking for something more specific? Take a look at these book lists:"
+msgstr "더 구체적인 내용을 찾고 계십니까? 다음 도서 목록을 살펴보세요."
+
+#: lib/listudy_web/templates/book/footer.html.eex:1
+#, elixir-format
+msgid "More book lists"
+msgstr "더 많은 도서 목록"
+
+#: lib/listudy_web/templates/book/footer.html.eex:5
+#, elixir-format
+msgid "Most Grandmaster recommended books"
+msgstr "그랜드마스터가 가장 추천하는 책"
+
+#: lib/listudy_web/templates/player/book_recommendations.html.eex:1
+#, elixir-format, python-brace-format
+msgid "Books recommended by %{player}"
+msgstr "%{player}님이 추천한 책"
+
+#: lib/listudy_web/templates/book/affiliate.html.eex:7
+#, elixir-autogen, elixir-format, python-brace-format
+msgid "%{shop_name} Affiliate Disclosure"
+msgstr "%{shop_name} 제휴 안내"
+
+#: lib/listudy_web/templates/book/affiliate.html.eex:10
+#, elixir-autogen, elixir-format
+msgid "As an Amazon Associate I earn from qualifying purchases."
+msgstr "Amazon 제휴 프로그램 참여자로서, 조건에 맞는 구매가 이루어지면 수수료를 받습니다."
+
+#: lib/listudy_web/templates/book/affiliate.html.eex:20
+#, elixir-autogen, elixir-format
+msgid "Continue"
+msgstr "계속"
+
+#: lib/listudy_web/templates/book/affiliate.html.eex:8
+#, elixir-autogen, elixir-format
+msgid ""
+"If you buy the book through this link we will receive a small provison for "
+"the referral. There will be no additional costs for you."
+msgstr "이 링크를 통해 책을 구매하면 저희가 소정의 소개 수수료를 받습니다. 구매자에게 추가 비용은 발생하지 않습니다."
