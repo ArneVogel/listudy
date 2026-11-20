@@ -1,0 +1,233 @@
+# # "msgid"s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove "msgid"s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use "mix gettext.extract --merge" or "mix gettext.merge"
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:44
+#, elixir-format
+msgid ""
+"A cookie is a text string that Listudy stores in your browser in order to "
+"keep you logged in throughout sessions and save your site preferences."
+msgstr "쿠키는 로그인 상태와 사이트 설정을 유지하기 위해 Listudy가 브라우저에 저장하는 텍스트 정보입니다."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:16
+#: lib/listudy_web/templates/page/privacy.html.eex:55
+#, elixir-format
+msgid "Closing your account"
+msgstr "계정 폐쇄"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:53
+#, elixir-format
+msgid ""
+"Collected information is stored on Listudy’ servers, which are hosted by "
+"DigitalOcean."
+msgstr "수집된 정보는 DigitalOcean이 호스팅하는 Listudy 서버에 저장됩니다."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:43
+#, elixir-format
+msgid "Cookies"
+msgstr "쿠키"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:39
+#, elixir-format
+msgid "Disclosing your information"
+msgstr "귀하의 정보 공개"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:2
+#, elixir-format
+msgid "English version of the Privacy Policy"
+msgstr "개인 정보 보호 정책의 영어 버전"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:13
+#, elixir-format
+msgid "How cookies are used"
+msgstr "쿠키가 사용되는 방법"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:41
+#, elixir-format
+msgid ""
+"If Listudy is sold, the data provided by the user (such as emails, pgns, "
+"comments) will be transferred to a new third party owner."
+msgstr "Listudy가 판매되면 사용자가 제공한 데이터(예: 이메일, 페이지, 댓글)가 새로운 제3자 소유자에게 이전됩니다."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:24
+#, elixir-format
+msgid ""
+"If you create an account, you will be asked to provide a email address. This"
+" email address does not have to be a real email address."
+msgstr "계정을 만들면 이메일 주소를 입력하라는 메시지가 표시됩니다. 이 이메일 주소는 실제 이메일 주소일 필요는 없습니다."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:21
+#, elixir-format
+msgid "Information that Listudy collects:"
+msgstr "Listudy가 수집하는 정보:"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:48
+#, elixir-format
+msgid ""
+"Information you delete is deleted from the live site but remains in Listudy’"
+" backups for up to one year."
+msgstr "삭제한 정보는 라이브 사이트에서 삭제되지만 최대 1년 동안 Listudy의 백업에 남아 있습니다."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:6
+#, elixir-format
+msgid "Introduction"
+msgstr "소개"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:4
+#, elixir-format
+msgid "Last edited:"
+msgstr "마지막 수정:"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:60
+#, elixir-format
+msgid "Listudy can change this policy at its discretion."
+msgstr "Listudy는 재량에 따라 이 정책을 변경할 수 있습니다."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:7
+#, elixir-format
+msgid ""
+"Listudy.org (“Listudy”) is an online chess site. Users can optionally "
+"register for an account; however, certain features are available for "
+"registered users only. This is because Listudy needs basic information from "
+"its users in order to function."
+msgstr ""
+"Listudy.org(“Listudy”)는 온라인 체스 사이트입니다. 사용자는 선택적으로 계정을 등록할 수 있습니다. 그러나 특정 기능은"
+" 등록된 사용자에게만 제공됩니다. 이는 Listudy가 작동하려면 사용자의 기본 정보가 필요하기 때문입니다."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:14
+#: lib/listudy_web/templates/page/privacy.html.eex:46
+#, elixir-format
+msgid "Managing your information"
+msgstr "귀하의 정보 관리"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:17
+#: lib/listudy_web/templates/page/privacy.html.eex:59
+#, elixir-format
+msgid "Other"
+msgstr "다른"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:57
+#, elixir-format
+msgid "Send me an email if you want to close your account."
+msgstr "계정을 폐쇄하려면 이메일을 보내주세요."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:15
+#: lib/listudy_web/templates/page/privacy.html.eex:52
+#, elixir-format
+msgid "Storage of the collected information"
+msgstr "수집된 정보의 저장"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:27
+#: lib/listudy_web/templates/page/privacy.html.eex:36
+#, elixir-format
+msgid "Technical information"
+msgstr "기술정보"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:37
+#, elixir-format
+msgid ""
+"This information is stored to detect attacks and malicious access to the "
+"site."
+msgstr "이 정보는 사이트에 대한 공격 및 악의적인 액세스를 탐지하기 위해 저장됩니다."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:9
+#, elixir-format
+msgid "This privacy policy will detail:"
+msgstr "본 개인정보 보호정책은 다음 사항을 자세히 설명합니다."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:2
+#, elixir-format
+msgid ""
+"Translated privacy policies shall only serve as an informal source of "
+"information. Please read the english version for the official version "
+"applicable to the site."
+msgstr "번역된 개인 정보 보호 정책은 비공식 정보 소스로만 사용됩니다. 해당 사이트에 적용되는 공식 버전은 영어 버전을 읽어보시기 바랍니다."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:23
+#: lib/listudy_web/templates/page/privacy.html.eex:33
+#, elixir-format
+msgid "User submitted information"
+msgstr "사용자가 제출한 정보"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:11
+#: lib/listudy_web/templates/page/privacy.html.eex:20
+#, elixir-format
+msgid "What information Listudy collects"
+msgstr "Listudy가 수집하는 정보"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:28
+#, elixir-format
+msgid ""
+"When you visit Listudy, some information about the request is logged on the "
+"server. This information includes the time of the request, the HTTP method, "
+"the URI of the request, the status code generated by the server and the "
+"referrer of the request."
+msgstr ""
+"Listudy를 방문하면 요청에 대한 일부 정보가 서버에 기록됩니다. 이 정보에는 요청 시간, HTTP 메소드, 요청 URI, 서버에서 "
+"생성된 상태 코드 및 요청 리퍼러가 포함됩니다."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:12
+#, elixir-format
+msgid "Why this information is collected and how it's used"
+msgstr "이 정보가 수집되는 이유와 사용 방법"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:31
+#, elixir-format
+msgid "Why this information is collected and how it’s used"
+msgstr "이 정보가 수집되는 이유와 사용 방법"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:47
+#, elixir-format
+msgid "You can edit or delete your user provided informations at any time."
+msgstr "직접 제공한 정보는 언제든지 수정하거나 삭제할 수 있습니다."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:56
+#, elixir-format
+msgid "You may choose to close your account at any time, for any reason."
+msgstr "이유와 관계없이 언제든지 회원 탈퇴를 할 수 있습니다."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:34
+#, elixir-format
+msgid ""
+"Your email address will remain confidential and is used to log in or in case"
+" you forget your password. Moderators are able to set email addresses for "
+"accounts to assist in troubleshooting."
+msgstr ""
+"귀하의 이메일 주소는 기밀로 유지되며 로그인 또는 비밀번호를 잊어버린 경우에 사용됩니다. 중재자는 문제 해결을 돕기 위해 계정의 이메일 "
+"주소를 설정할 수 있습니다."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:50
+#, elixir-format
+msgid ""
+"Your technical informations are needed for administrative purposes and "
+"cannot be deleted."
+msgstr "귀하의 기술 정보는 관리 목적으로 필요하며 삭제할 수 없습니다."
+
+#: lib/listudy_web/templates/page/privacy.html.eex:40
+#, elixir-format
+msgid ""
+"Your information will only be disclosed if it is legally necessary to do so."
+" For example, if Listudy is ordered to hand over a certain user’s "
+"information, or if someone hacks Listudy."
+msgstr ""
+"귀하의 정보는 법적으로 필요한 경우에만 공개됩니다. 예를 들어, 리스터디에게 특정 사용자의 정보를 넘겨달라는 명령을 내리거나, 누군가가 "
+"리스터디를 해킹한 경우 등이 있습니다."
+

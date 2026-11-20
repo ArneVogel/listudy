@@ -1,0 +1,355 @@
+# # "msgid"s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove "msgid"s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use "mix gettext.extract --merge" or "mix gettext.merge"
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:94
+#, elixir-format
+msgid "Bishop + Bishop"
+msgstr "비숍 + 비숍"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:109
+#, elixir-format
+msgid "Bishop + Knight"
+msgstr "비숍 + 나이트"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:198
+#, elixir-format
+msgid "Bishops and Pawns"
+msgstr "비숍과 폰"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:328
+#, elixir-format
+msgid "Bishops and/or knights against rook, with and without pawns."
+msgstr "폰 유무에 관계없이 비숍 및/또는 나이트가 룩을 상대합니다."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:60
+#, elixir-format
+msgid "Checkmating"
+msgstr "체크메이트"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:441
+#, elixir-format
+msgid "Chess Fundamentals"
+msgstr "체스 기초"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:231
+#, elixir-format
+msgid "Endgames with Knights, Bishops and Pawns."
+msgstr "나이트, 비숍, 폰 엔드게임입니다."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:199
+#, elixir-format
+msgid "Endgames with only Bishops and Pawns on the board."
+msgstr "보드에는 비숍과 폰만 있는 엔드게임입니다."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:136
+#: lib/listudy_web/controllers/endgame_controller.ex:203
+#: lib/listudy_web/controllers/endgame_controller.ex:235
+#: lib/listudy_web/controllers/endgame_controller.ex:260
+#: lib/listudy_web/controllers/endgame_controller.ex:285
+#: lib/listudy_web/controllers/endgame_controller.ex:309
+#: lib/listudy_web/controllers/endgame_controller.ex:331
+#: lib/listudy_web/controllers/endgame_controller.ex:353
+#: lib/listudy_web/controllers/endgame_controller.ex:378
+#: lib/listudy_web/controllers/endgame_controller.ex:406
+#: lib/listudy_web/controllers/endgame_controller.ex:460
+#, elixir-format
+msgid "Endings of Games"
+msgstr "게임의 엔딩"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:442
+#, elixir-format
+msgid "From the Capablancas \"Chess Fundamentals\"."
+msgstr "Capablancas \"체스 기초\"에서."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:423
+#, elixir-format
+msgid ""
+"From the book \"Analysis of the  Chess Ending King and Queen against King "
+"and Rook\"."
+msgstr "\"왕과 루크에 대한 체스 결말 왕과 여왕의 분석\"이라는 책에서."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:138
+#: lib/listudy_web/controllers/endgame_controller.ex:205
+#: lib/listudy_web/controllers/endgame_controller.ex:237
+#: lib/listudy_web/controllers/endgame_controller.ex:262
+#: lib/listudy_web/controllers/endgame_controller.ex:287
+#: lib/listudy_web/controllers/endgame_controller.ex:311
+#: lib/listudy_web/controllers/endgame_controller.ex:333
+#: lib/listudy_web/controllers/endgame_controller.ex:355
+#: lib/listudy_web/controllers/endgame_controller.ex:380
+#: lib/listudy_web/controllers/endgame_controller.ex:408
+#: lib/listudy_web/controllers/endgame_controller.ex:462
+#, elixir-format
+msgid "From the book \"Chess Studies, Or, Endings of Games\"."
+msgstr "\"체스 스터디, 또는 게임의 결말\"이라는 책에서."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:127
+#, elixir-format
+msgid "King and Pawn Endgames"
+msgstr "킹 앤 폰 엔드게임"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:421
+#, elixir-format
+msgid "King and Queen against King and Rook"
+msgstr "킹과 퀸 대 킹과 룩"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:230
+#, elixir-format
+msgid "Knights, Bishops and Pawns"
+msgstr "나이트, 비숍, 폰"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:61
+#, elixir-format
+msgid "Learn the basic checkmating techniques."
+msgstr "기본적인 체크메이트 기술을 배워보세요."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:327
+#, elixir-format
+msgid "Minor pieces against Rook endgames."
+msgstr "비숍·나이트 대 룩 엔드게임입니다."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:178
+#, elixir-format
+msgid "Obtaining a Passed Pawn"
+msgstr "패스드 폰 만들기"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:167
+#, elixir-format
+msgid "Pawn Endings"
+msgstr "폰 엔드게임"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:159
+#, elixir-format
+msgid "Pawn Promotion"
+msgstr "폰 승격"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:69
+#, elixir-format
+msgid "Queen"
+msgstr "퀸"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:455
+#, elixir-format
+msgid "Queen against Minor Pieces"
+msgstr "퀸 대 비숍·나이트"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:348
+#, elixir-format
+msgid "Queen against Pawns"
+msgstr "퀸 대 폰"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:401
+#: lib/listudy_web/controllers/endgame_controller.ex:402
+#, elixir-format
+msgid "Queen against Rook"
+msgstr "퀸 대 룩"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:456
+#, elixir-format
+msgid "Queen against minor pieces."
+msgstr "퀸 대 비숍·나이트 엔드게임입니다."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:349
+#: lib/listudy_web/controllers/endgame_controller.ex:350
+#, elixir-format
+msgid "Queen against pawn endgames."
+msgstr "퀸 대 폰 엔드게임입니다."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:373
+#, elixir-format
+msgid "Queens and Pawns"
+msgstr "퀸과 폰"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:374
+#, elixir-format
+msgid "Queens and pawn endgames."
+msgstr "퀸과 폰 엔드게임입니다."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:81
+#, elixir-format
+msgid "Rook"
+msgstr "룩"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:281
+#, elixir-format
+msgid "Rook against Pawn endgames."
+msgstr "룩 대 폰 엔드게임입니다."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:280
+#, elixir-format
+msgid "Rook against Pawns"
+msgstr "룩 대 폰"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:303
+#, elixir-format
+msgid "Rook against minor Pieces"
+msgstr "룩 대 비숍·나이트"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:304
+#, elixir-format
+msgid "Rook against minor pieces endgames."
+msgstr "룩 대 비숍·나이트 엔드게임입니다."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:306
+#, elixir-format
+msgid "Rook and pawn against bishop or knight, with and without pawns."
+msgstr "폰이 있든 없든 비숍이나 나이트를 상대로 루크와 폰을 사용합니다."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:185
+#, elixir-format
+msgid "The Opposition"
+msgstr "오포지션"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:232
+#, elixir-format
+msgid "This chapter has endgames about Knight and Bishop endings."
+msgstr "이 장에는 Knight와 Bishop 엔딩에 대한 엔드게임이 있습니다."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:200
+#, elixir-format
+msgid "This chapter has endgames about Pawn and Bishop endings."
+msgstr "이 장에는 폰과 비숍 엔딩에 대한 엔드게임이 있습니다."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:130
+#, elixir-format
+msgid ""
+"This chapter has endgames about the King and Pawn endgame. Many of the "
+"examples are taken from Capablancas \"Chess Fundamentals\"."
+msgstr ""
+"이 장에는 King and Pawn 엔드게임에 대한 엔드게임이 있습니다. 많은 예제는 Capablancas의 \"Chess "
+"Fundamentals\"에서 따왔습니다."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:63
+#, elixir-format
+msgid ""
+"This chapter has endgames for checkmating with queen, rook, bishop + knight "
+"and bishop + bishop."
+msgstr "이 챕터에는 퀸, 루크, 비숍 + 나이트, 비숍 + 비숍과의 체크메이트를 위한 엔드게임이 있습니다."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:375
+#, elixir-format
+msgid "Train endgames with queens and pawns on the board."
+msgstr "보드에 퀸과 폰이 있는 엔드게임을 훈련하세요."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:457
+#, elixir-format
+msgid "Train queen and minor piece endgames."
+msgstr "퀸과 마이너 피스 엔드게임을 훈련하세요."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:403
+#, elixir-format
+msgid "Train queen and rook endgames."
+msgstr "퀸과 루크 엔드게임을 훈련하세요."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:282
+#, elixir-format
+msgid "Train rook against pawn endgames."
+msgstr "룩 대 폰 엔드게임을 연습하세요."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:254
+#, elixir-format
+msgid "Two Minor Pieces against one Minor Piece"
+msgstr "비숍·나이트 두 개 대 한 개"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:257
+#, elixir-format
+msgid "Two against one."
+msgstr "2 대 1."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:128
+#, elixir-format
+msgid "Win games with only Pawns on the board"
+msgstr "보드에 폰만 있는 상태로 게임 승리"
+
+#: lib/listudy_web/templates/live/tactics.html.leex:25
+#, elixir-format
+msgid "Currently playing tactics by:"
+msgstr "현재 플레이 중인 전술:"
+
+#: lib/listudy_web/templates/live/tactics.html.leex:22
+#, elixir-format
+msgid "Currently playing tactics from the event:"
+msgstr "현재 이벤트에서 플레이 중인 전술은 다음과 같습니다."
+
+#: lib/listudy_web/templates/live/tactics.html.leex:19
+#, elixir-format
+msgid "Currently training in the motif:"
+msgstr "현재 모티브로 훈련 중:"
+
+#: lib/listudy_web/templates/live/tactics.html.leex:16
+#, elixir-format
+msgid "Currently training in the opening:"
+msgstr "현재 오프닝 훈련 중:"
+
+#: lib/listudy_web/templates/endgame/game.html.eex:2
+#: lib/listudy_web/templates/endgame/index.html.eex:1
+#, elixir-format
+msgid "Endgames"
+msgstr "엔드게임"
+
+#: lib/listudy_web/views/endgame_view.ex:7
+#, elixir-format
+msgid "Next"
+msgstr "다음"
+
+#: lib/listudy_web/templates/endgame/game.html.eex:25
+#, elixir-format
+msgid "Reset"
+msgstr "초기화"
+
+#: lib/listudy_web/templates/endgame/game.html.eex:48
+#, elixir-format
+msgid "Success!"
+msgstr "성공!"
+
+#: lib/listudy_web/templates/endgame/game.html.eex:49
+#, elixir-format
+msgid "Try again!"
+msgstr "다시 시도해 보세요!"
+
+#: lib/listudy_web/templates/endgame/game.html.eex:15
+#, elixir-format
+msgid "White to play and"
+msgstr "백 차례입니다. 목표:"
+
+#: lib/listudy_web/templates/endgame/index.html.eex:8
+#, elixir-format
+msgid "Learn"
+msgstr "학습하기"
+
+#: lib/listudy_web/templates/endgame/index.html.eex:2
+#, elixir-format
+msgid ""
+"No idea what to do in the endgame? Learn endgames by playing against "
+"stockfish."
+msgstr "엔드게임에서 어떻게 두어야 할지 모르겠나요? 스톡피시와 대국하며 배워 보세요."
+
+#: lib/listudy_web/controllers/endgame_controller.ex:326
+#, elixir-format
+msgid "Minor pieces against Rook"
+msgstr "비숍·나이트 대 룩"
+
+#: lib/listudy_web/controllers/endgame_controller.ex:256
+#, elixir-format
+msgid "Two minor pieces against one minor piece, with and without pawns."
+msgstr "비숍·나이트 두 개 대 한 개의 엔드게임입니다. 폰이 있는 경우와 없는 경우를 모두 다룹니다."
+

@@ -1,0 +1,368 @@
+# # "msgid"s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove "msgid"s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use "mix gettext.extract --merge" or "mix gettext.merge"
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:52
+#: lib/listudy_web/templates/pow/registration/new.html.eex:29
+#, elixir-format
+msgid "Register"
+msgstr "회원가입"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:55
+#, elixir-format
+msgid "Sign in"
+msgstr "로그인"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:78
+#, elixir-format
+msgid "Sign out"
+msgstr "로그아웃"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:68
+#, elixir-format
+msgid "Settings"
+msgstr "설정"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:70
+#, elixir-format
+msgid "Toggle Darkmode"
+msgstr "다크 모드 전환"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:76
+#, elixir-format
+msgid "User Settings"
+msgstr "사용자 설정"
+
+#: lib/listudy/users/user.ex:50
+#, elixir-format
+msgid "Only alphanumeric characters allowed"
+msgstr "영문자와 숫자만 사용할 수 있습니다"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:16
+#, elixir-format
+msgid "Search for Studies"
+msgstr "스터디 검색"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:14
+#, elixir-format
+msgid "Your Studies"
+msgstr "내 스터디"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:141
+#, elixir-format
+msgid "Error"
+msgstr "오류"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:11
+#, elixir-format
+msgid "Study"
+msgstr "스터디"
+
+#: lib/listudy_web/templates/post/index.html.eex:6
+#, elixir-format
+msgid "Title"
+msgstr "제목"
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:11
+#: lib/listudy_web/templates/post/index.html.eex:1
+#, elixir-format
+msgid "Blog"
+msgstr "블로그"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:17
+#, elixir-format
+msgid "Create a new Study"
+msgstr "새 스터디 만들기"
+
+#: lib/listudy_web/templates/pow/registration/new.html.eex:36
+#, elixir-format
+msgid "Email"
+msgstr "이메일"
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:8
+#: lib/listudy_web/templates/page/imprint.html.eex:1
+#, elixir-format
+msgid "Imprint"
+msgstr "운영자 정보"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:60
+#, elixir-format
+msgid "Language"
+msgstr "언어"
+
+#: lib/listudy_web/templates/pow/registration/new.html.eex:37
+#, elixir-format
+msgid "Password"
+msgstr "비밀번호"
+
+#: lib/listudy_web/templates/pow/registration/new.html.eex:37
+#, elixir-format
+msgid ""
+"Please choose a secure password. The password must be at least eight "
+"characters long."
+msgstr "안전한 비밀번호를 선택해주세요. 비밀번호는 8자 이상이어야 합니다."
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:5
+#: lib/listudy_web/templates/page/imprint.html.eex:8
+#, elixir-format
+msgid "Privacy"
+msgstr "개인정보 처리방침"
+
+#: lib/listudy_web/templates/page/privacy.html.eex:1
+#: lib/listudy_web/templates/pow/registration/new.html.eex:38
+#, elixir-format
+msgid "Privacy Policy"
+msgstr "개인정보 처리방침"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:77
+#, elixir-format
+msgid "Profile"
+msgstr "프로필"
+
+#: lib/listudy_web/templates/pow/registration/new.html.eex:34
+#, elixir-format
+msgid "Register to get access to all features."
+msgstr "회원가입하고 모든 기능을 이용하세요."
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:6
+#: lib/listudy_web/templates/page/imprint.html.eex:9
+#: lib/listudy_web/templates/pow/registration/new.html.eex:39 service.html.eex:1
+#, elixir-format
+msgid "Terms of Service"
+msgstr "서비스 이용약관"
+
+#: lib/listudy_web/templates/pow/registration/new.html.eex:36
+#, elixir-format
+msgid ""
+"The email is used to log in. It doesn't have to be real, as long as you "
+"remember it."
+msgstr "이메일은 로그인할 때 사용합니다. 입력한 주소를 기억할 수 있다면 실제 이메일 주소가 아니어도 됩니다."
+
+#: lib/listudy_web/templates/page/imprint.html.eex:2
+#, elixir-format
+msgid "The provider of this website is Arne Vogel."
+msgstr "이 웹사이트의 운영자는 Arne Vogel입니다."
+
+#: lib/listudy_web/controllers/page_controller.ex:27
+#: lib/listudy_web/controllers/page_controller.ex:59
+#: lib/listudy_web/controllers/webmaster_controller.ex:21
+#, elixir-format
+msgid "This page does not exist"
+msgstr "이 페이지는 존재하지 않습니다"
+
+#: lib/listudy_web/controllers/post_controller.ex:41
+#, elixir-format
+msgid "This post does not exist"
+msgstr "이 게시물은 존재하지 않습니다."
+
+#: lib/listudy_web/templates/pow/registration/new.html.eex:35
+#, elixir-format
+msgid "Username"
+msgstr "사용자 이름"
+
+#: lib/listudy_web/templates/pow/registration/new.html.eex:35
+#, elixir-format
+msgid "You are welcome to use a pseudonym."
+msgstr "가명을 사용해도 좋습니다."
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:7
+#: lib/listudy_web/templates/page/copyright.html.eex:1
+#, elixir-format
+msgid "Copyright"
+msgstr "저작권"
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:17
+#: lib/listudy_web/templates/layout/_header.html.eex:27
+#, elixir-format
+msgid "Blind Tactics"
+msgstr "블라인드 전술"
+
+#: lib/listudy_web/templates/pow/registration/edit.html.eex:37
+#, elixir-format
+msgid "Close Account"
+msgstr "회원 탈퇴"
+
+#: lib/listudy_web/templates/post/index.html.eex:7
+#: lib/listudy_web/templates/post/show.html.eex:3
+#, elixir-format
+msgid "Created at"
+msgstr "생성 날짜"
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:19
+#, elixir-format
+msgid "Daily Puzzle"
+msgstr "오늘의 퍼즐"
+
+#: lib/listudy_web/templates/pow/registration/edit.html.eex:36
+#, elixir-format
+msgid "Delete Account"
+msgstr "계정 삭제"
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:16
+#, elixir-format
+msgid "Features"
+msgstr "기능"
+
+#: lib/listudy_web/templates/post/index.html.eex:8
+#: lib/listudy_web/templates/post/show.html.eex:5
+#, elixir-format
+msgid "Last updated"
+msgstr "마지막 업데이트"
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:20
+#, elixir-format
+msgid "Make your own Tactic"
+msgstr "나만의 전술 문제 만들기"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:24
+#: lib/listudy_web/templates/layout/_header.html.eex:26
+#, elixir-format
+msgid "Tactics"
+msgstr "전술"
+
+#: lib/listudy_web/templates/pow/registration/edit.html.eex:37
+#, elixir-format
+msgid "This can not be reversed! Are you sure?"
+msgstr "이 작업은 되돌릴 수 없습니다. 계속하시겠습니까?"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:74
+#, elixir-format
+msgid "Achievements"
+msgstr "업적"
+
+#: lib/listudy_web/templates/pow/registration/edit.html.eex:32
+#, elixir-format
+msgid "Back"
+msgstr "뒤로"
+
+#: lib/listudy_web/templates/pow/registration/new.html.eex:40
+#, elixir-format, python-brace-format
+msgid ""
+"Before creating your account, please read the %{privacy_policy} and %{tos}. "
+"By creating the account, you agree to those terms."
+msgstr "계정을 만들기 전에 %{privacy_policy} 및 %{tos}를 읽어보세요. 계정을 생성하면 해당 약관에 동의하는 것으로 간주됩니다."
+
+#: lib/listudy_web/templates/layout/_header.html.eex:72
+#: lib/listudy_web/templates/layout/_header.html.eex:91
+#, elixir-format
+msgid "Board Settings"
+msgstr "보드 설정"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:139
+#, elixir-format
+msgid "Capture"
+msgstr "잡기"
+
+#: lib/listudy_web/templates/endgame/chapter.html.eex:2
+#: lib/listudy_web/templates/layout/_header.html.eex:36
+#, elixir-format
+msgid "Endgames"
+msgstr "엔드게임"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:138
+#, elixir-format
+msgid "Move"
+msgstr "수"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:131
+#, elixir-format
+msgid "Play Sound"
+msgstr "소리 재생"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:94
+#, elixir-format
+msgid "Select a color:"
+msgstr "색상을 선택하세요:"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:101
+#, elixir-format
+msgid "Select a piece set:"
+msgstr "기물 디자인 선택:"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:71
+#: lib/listudy_web/templates/layout/_header.html.eex:130
+#, elixir-format
+msgid "Sound Settings"
+msgstr "사운드 설정"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:140
+#, elixir-format
+msgid "Success"
+msgstr "성공"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:137
+#, elixir-format
+msgid "Test Sounds"
+msgstr "소리 테스트"
+
+#: lib/listudy_web/templates/layout/_header.html.eex:134
+#, elixir-format
+msgid "Volume"
+msgstr "음량"
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:12
+#, elixir-format
+msgid "Webmaster"
+msgstr "웹마스터"
+
+#: lib/listudy_web/pow/messages.ex:9
+#, elixir-format
+msgid ""
+"The provided login details did not work. Make sure to log in with your email"
+" and not your username!"
+msgstr "로그인 정보가 올바르지 않습니다. 사용자 이름 대신 이메일을 입력했는지 확인해 주세요."
+
+#: lib/listudy_web/templates/pow/session/new.html.eex:11
+#, elixir-format
+msgid "Use your email to log in."
+msgstr "이메일을 사용하여 로그인하세요."
+
+#: lib/listudy_web/templates/pow/session/new.html.eex:18
+#, elixir-format
+msgid "Your session will be persistent. Only use on your own devices."
+msgstr "로그인 상태가 유지됩니다. 본인 소유의 기기에서만 사용하세요."
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:10
+#, elixir-format
+msgid "Changelog"
+msgstr "변경 내역"
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:18
+#: lib/listudy_web/templates/layout/_header.html.eex:28
+#, elixir-format
+msgid "Pieceless Tactics"
+msgstr "기물 없는 전술"
+
+#: lib/listudy_web/templates/layout/_footer.html.eex:9
+#, elixir-format
+msgid "Thank you!"
+msgstr "감사합니다!"
+
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:8
+#, elixir-format
+msgid "black"
+msgstr "흑"
+
+#: lib/listudy_web/templates/page/play_stockfish.html.eex:9
+#, elixir-format
+msgid "white"
+msgstr "백"
+

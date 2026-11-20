@@ -1,0 +1,81 @@
+# # "msgid"s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove "msgid"s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use "mix gettext.extract --merge" or "mix gettext.merge"
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: lib/listudy_web/templates/page/thanks.html.eex:1
+#, elixir-format
+msgid "Thank you!"
+msgstr "감사합니다!"
+
+#: lib/listudy_web/templates/page/thanks.html.eex:29
+#, elixir-format, python-brace-format
+msgid ""
+"Thanks to %{cburnett}, Armando Hernandez Marroquin, %{chessnut}, %{letter}, "
+"%{pirouetti}, %{pixel}, %{shapes} for their piece sets."
+msgstr ""
+"기물 세트를 제공해 주신 %{cburnett}, Armando Hernandez Marroquin, %{chessnut}, "
+"%{letter}, %{pirouetti}, %{pixel}, %{shapes}에게 감사드립니다."
+
+#: lib/listudy_web/templates/page/thanks.html.eex:21
+#, elixir-format, python-brace-format
+msgid "Thanks to %{jeff} for %{chessjs}."
+msgstr "%{chessjs}의 %{jeff}에게 감사드립니다."
+
+#: lib/listudy_web/templates/page/thanks.html.eex:13
+#, elixir-format, python-brace-format
+msgid ""
+"Thanks to %{lichess} for all their work. In particular for making studies, "
+"their puzzle database (%{database_link}), %{chessground}, and their freely "
+"avaliable icons."
+msgstr ""
+"모든 작업을 수행한 %{lichess}에게 감사드립니다. 특히 연구를 위해 퍼즐 데이터베이스(%{database_link}), "
+"%{chessground} 및 무료로 사용할 수 있는 아이콘을 제공합니다."
+
+#: lib/listudy_web/templates/page/thanks.html.eex:17
+#, elixir-format, python-brace-format
+msgid "Thanks to %{niklas} for %{stockfish}."
+msgstr "%{stockfish}를 도와주신 %{niklas}에게 감사드립니다."
+
+#: lib/listudy_web/templates/page/thanks.html.eex:6
+#, elixir-format, python-brace-format
+msgid "Thanks to all %{contributors}."
+msgstr "모든 %{contributors} 여러분께 감사드립니다."
+
+#: lib/listudy_web/templates/page/thanks.html.eex:8
+#, elixir-format
+msgid "Thanks to all those who have provided translations."
+msgstr "번역을 제공해 주신 모든 분들께 감사드립니다."
+
+#: lib/listudy_web/templates/page/thanks.html.eex:2
+#, elixir-format
+msgid ""
+"Thanks to all who have helped directly on Listudy and to all projects that "
+"make code and other content openly available. Without this help Listudy "
+"could not exist in this form."
+msgstr ""
+"Listudy에서 직접 도움을 주신 모든 분들과 코드 및 기타 콘텐츠를 공개적으로 사용할 수 있도록 해주신 모든 프로젝트에 감사드립니다."
+" 이러한 도움이 없었다면 Listudy는 이런 형태로 존재할 수 없었을 것입니다."
+
+#: lib/listudy_web/templates/page/thanks.html.eex:34
+#, elixir-format, python-brace-format
+msgid "Thanks to the authors of %{elixir} and %{phoenix}."
+msgstr "%{elixir} 및 %{phoenix}의 저자에게 감사드립니다."
+

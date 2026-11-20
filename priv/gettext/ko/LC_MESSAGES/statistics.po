@@ -1,0 +1,44 @@
+# # "msgid"s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove "msgid"s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use "mix gettext.extract --merge" or "mix gettext.merge"
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: lib/listudy_web/templates/stats/index.html.eex:2
+#, elixir-format
+msgid ""
+"If you're like me, you can't get enough of stats. Here you can find "
+"statistics about Listudy:"
+msgstr "저처럼 통계를 좋아하시나요? Listudy의 통계를 살펴보세요."
+
+#: lib/listudy_web/templates/stats/index.html.eex:1
+#, elixir-format
+msgid "Statistics"
+msgstr "통계"
+
+#: lib/listudy_web/templates/stats/index.html.eex:5
+#, elixir-format
+msgid "Uploaded Studies"
+msgstr "업로드된 스터디"
+
+#: lib/listudy_web/templates/stats/index.html.eex:11
+#, elixir-format
+msgid "User Registrations"
+msgstr "가입자 수"
+

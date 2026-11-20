@@ -1,0 +1,82 @@
+# # "msgid"s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove "msgid"s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use "mix gettext.extract --merge" or "mix gettext.merge"
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: lib/listudy_web/views/helpers/page_title.ex:31
+#, elixir-format
+msgid "Achievements"
+msgstr "업적"
+
+#: lib/listudy_web/views/helpers/page_title.ex:16
+#, elixir-format
+msgid "Blind Tactics"
+msgstr "블라인드 전술"
+
+#: lib/listudy_web/views/helpers/page_title.ex:13
+#, elixir-format
+msgid "Daily Chess Puzzle"
+msgstr "오늘의 체스 퍼즐"
+
+#: lib/listudy_web/views/helpers/page_title.ex:62
+#, elixir-format
+msgid "Endgames"
+msgstr "엔드게임"
+
+#: lib/listudy_web/views/helpers/page_title.ex:28
+#, elixir-format
+msgid "Play against Stockfish Online"
+msgstr "온라인으로 스톡피시와 대국하기"
+
+#: lib/listudy_web/views/helpers/page_title.ex:42
+#, elixir-format
+msgid "Search Studies"
+msgstr "스터디 검색"
+
+#: lib/listudy_web/views/helpers/page_title.ex:43
+#, elixir-format
+msgid "Tactics"
+msgstr "전술"
+
+#: lib/listudy_web/views/helpers/page_title.ex:22
+#, elixir-format
+msgid "Changelog"
+msgstr "변경 내역"
+
+#: lib/listudy_web/views/helpers/page_title.ex:19
+#, elixir-format
+msgid "Pieceless Tactics"
+msgstr "기물 없는 전술"
+
+#: lib/listudy_web/views/helpers/page_title.ex:25
+#, elixir-format
+msgid "Thank you!"
+msgstr "감사합니다!"
+
+#: lib/listudy_web/views/helpers/page_title.ex:34
+#, elixir-format
+msgid "Improve your chess game with spaced repetition"
+msgstr "간격 반복 학습으로 체스 실력 키우기"
+
+#: lib/listudy_web/views/helpers/page_title.ex:89
+#, elixir-format, python-brace-format
+msgid "Books Recommended by %{player}"
+msgstr "%{player}님이 추천하는 책"
+

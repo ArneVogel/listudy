@@ -1,0 +1,96 @@
+# # "msgid"s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove "msgid"s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use "mix gettext.extract --merge" or "mix gettext.merge"
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: lib/listudy_web/templates/page/copyright.html.eex:12
+#, elixir-format
+msgid "Copyright holders"
+msgstr "저작권 보유자"
+
+#: lib/listudy_web/templates/page/copyright.html.eex:2
+#, elixir-format
+msgid "English version of the Copyright Policy"
+msgstr "저작권 정책의 영어 버전"
+
+#: lib/listudy_web/templates/page/copyright.html.eex:13
+#, elixir-format
+msgid ""
+"If you believe that someone has uploaded or posted content of yours on "
+"Listudy.org without your permission, please contact us at: "
+"copyright@listudy.org"
+msgstr ""
+"누군가가 귀하의 허락 없이 Listudy.org에 귀하의 콘텐츠를 업로드하거나 게시했다고 생각되면 "
+"copyright@listudy.org로 문의해 주세요."
+
+#: lib/listudy_web/templates/page/copyright.html.eex:6
+#, elixir-format
+msgid "Introduction"
+msgstr "소개"
+
+#: lib/listudy_web/templates/page/copyright.html.eex:4
+#, elixir-format
+msgid "Last edited:"
+msgstr "마지막 수정:"
+
+#: lib/listudy_web/templates/page/copyright.html.eex:16
+#, elixir-format
+msgid "Listudy can change this policy at its discretion."
+msgstr "Listudy는 재량에 따라 이 정책을 변경할 수 있습니다."
+
+#: lib/listudy_web/templates/page/copyright.html.eex:7
+#, elixir-format
+msgid ""
+"Listudy respects and recognizes the copyright of third parties. You are only"
+" allowed to publish public content on Listudy, for which you have all "
+"necessary rights."
+msgstr ""
+"Listudy는 제3자의 저작권을 존중하고 인정합니다. 귀하는 필요한 모든 권리를 갖고 있는 Listudy에만 공개 콘텐츠를 게시할 수 "
+"있습니다."
+
+#: lib/listudy_web/templates/page/copyright.html.eex:15
+#, elixir-format
+msgid "Other"
+msgstr "다른"
+
+#: lib/listudy_web/templates/page/copyright.html.eex:9
+#, elixir-format
+msgid "PGN files"
+msgstr "PGN 파일"
+
+#: lib/listudy_web/templates/page/copyright.html.eex:2
+#, elixir-format
+msgid ""
+"Translated copyright policies shall only serve as an informal source of "
+"information. Please read the english version for the official version "
+"applicable to the site."
+msgstr "번역된 저작권 정책은 정보의 비공식 소스로만 사용됩니다. 해당 사이트에 적용되는 공식 버전은 영어 버전을 읽어보시기 바랍니다."
+
+#: lib/listudy_web/templates/page/copyright.html.eex:10
+#, elixir-format
+msgid ""
+"You are only allowed to make public studies using PGN files, for which you "
+"have all necessary rights to. Do not copy PGN files from other websites for "
+"which you do not have the rights. This applies especially, but is not "
+"limited to, paid PGN files."
+msgstr ""
+"귀하는 필요한 모든 권리를 갖고 있는 PGN 파일을 사용하여 공개 연구만 할 수 있습니다. 귀하에게 권한이 없는 다른 웹사이트에서 PGN"
+" 파일을 복사하지 마십시오. 이는 특히 유료 PGN 파일에 적용되지만 이에 국한되지는 않습니다."
+

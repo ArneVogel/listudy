@@ -1,0 +1,390 @@
+# # "msgid"s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove "msgid"s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use "mix gettext.extract --merge" or "mix gettext.merge"
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: service.html.eex:24
+#, elixir-format
+msgid ""
+"Both registered and unregistered users have rights to protect their "
+"property, privacy, and identity unless they have consented or agree to "
+"making their identity public. Most information on this topic can be found in"
+" our Privacy Policy."
+msgstr ""
+"등록된 사용자와 등록되지 않은 사용자 모두 자신의 신원 공개에 동의하지 않는 한 자신의 재산, 개인 정보 및 신원을 보호할 권리가 "
+"있습니다. 이 주제에 관한 대부분의 정보는 당사의 개인정보 보호정책에서 확인할 수 있습니다."
+
+#: service.html.eex:28
+#, elixir-format
+msgid ""
+"By agreeing to these Terms, registered Users can have access to all of "
+"Listudy’ features and are free to use them for their own personal, "
+"educational, charitable, or developmental purposes. Listudy itself is also "
+"free/libre open-source software licensed under the GNU AGPL. This doesn’t "
+"prevent Listudy from having the ultimate decision in what kind of use of the"
+" Services is appropriate."
+msgstr ""
+"본 약관에 동의함으로써 등록된 사용자는 Listudy의 모든 기능에 액세스할 수 있으며 개인, 교육, 자선 또는 개발 목적으로 자유롭게 "
+"사용할 수 있습니다. Listudy 자체도 GNU AGPL에 따라 라이센스가 부여된 무료/자유 오픈 소스 소프트웨어입니다. 이는 "
+"Listudy가 어떤 종류의 서비스 사용이 적절한지에 대한 최종 결정을 내리는 것을 방해하지 않습니다."
+
+#: service.html.eex:8
+#, elixir-format
+msgid ""
+"By using this website (the “Site”) and services (together with the Site, the"
+" “Services”) offered by Listudy.org (together with our subsidiaries, "
+"affiliates, representatives, and directors – collectively “Listudy”, “we”, "
+"or “us”) you’re agreeing to these legally binding rules (the “Terms”). "
+"You’re also agreeing to our Privacy Policy and Cookie Policy, and agreeing "
+"to follow any other rules on the Site."
+msgstr ""
+"이 웹사이트(\"사이트\")와 Listudy.org(자회사, 계열사, 대표자 및 이사와 함께 \"Listudy\", \"당사\" 또는 "
+"\"당사\"로 통칭)에서 제공하는 서비스(사이트와 함께 \"서비스\")를 사용함으로써 귀하는 법적 구속력이 있는 이러한 "
+"규칙(\"약관\")에 동의하게 됩니다. 귀하는 또한 당사의 개인정보 보호정책 및 쿠키 정책에 동의하고 사이트의 다른 규칙을 따르는 데 "
+"동의합니다."
+
+#: service.html.eex:34
+#, elixir-format
+msgid "Closing and Terminating your Account"
+msgstr "계정 폐쇄 및 종료"
+
+#: service.html.eex:55
+#, elixir-format
+msgid "Copyright"
+msgstr "저작권"
+
+#: service.html.eex:12
+#, elixir-format
+msgid "Creating an Account"
+msgstr "계정 만들기"
+
+#: service.html.eex:18
+#, elixir-format
+msgid ""
+"Don’t impersonate anyone else or choose names that are offensive or that "
+"violate anyone’s rights. If you don’t follow these rules, we reserve the "
+"right to close your account without warning."
+msgstr ""
+"다른 사람을 사칭하거나 공격적이거나 다른 사람의 권리를 침해하는 이름을 선택하지 마십시오. 귀하가 이러한 규칙을 따르지 않는 경우 당사는"
+" 경고 없이 귀하의 계정을 폐쇄할 권리를 보유합니다."
+
+#: service.html.eex:2
+#, elixir-format
+msgid "English version of the Terms of Service"
+msgstr "서비스 약관의 영어 버전"
+
+#: service.html.eex:61
+#, elixir-format
+msgid ""
+"If you believe your content has been copied in a way that constitutes "
+"copyright infringement please alert us by contacting us at "
+"copyright@listudy.org."
+msgstr "귀하의 콘텐츠가 저작권 침해를 구성하는 방식으로 복사되었다고 생각되는 경우 copyright@listudy.org로 연락하여 알려주십시오."
+
+#: service.html.eex:32
+#, elixir-format
+msgid ""
+"In all circumstances, we may retain certain information as required by law "
+"or necessary for our legitimate operating purposes. All of the provisions "
+"within this agreement survive the termination of an account."
+msgstr ""
+"모든 상황에서 당사는 법률에서 요구하거나 합법적인 운영 목적에 필요한 특정 정보를 보유할 수 있습니다. 본 계약의 모든 조항은 계정이 "
+"종료된 후에도 유효합니다."
+
+#: service.html.eex:4
+#, elixir-format
+msgid "Last edited:"
+msgstr "마지막 수정:"
+
+#: service.html.eex:26
+#, elixir-format
+msgid ""
+"Listudy believes that users should have their public information, identity, "
+"and data protected as strongly as possible. We use European Union data "
+"protection law as our baseline, and in many respects go further than what "
+"the law requires. We’ve also chosen to extend these rights to all users, not"
+" just those under a European Union jurisdiction."
+msgstr ""
+"Listudy는 사용자가 공개 정보, 신원 및 데이터를 최대한 강력하게 보호해야 한다고 믿습니다. 우리는 유럽 연합 데이터 보호법을 "
+"기준으로 삼고 있으며, 많은 측면에서 법이 요구하는 것보다 더 많은 것을 적용하고 있습니다. 또한 우리는 이러한 권리를 유럽 연합 "
+"관할권에 속한 사용자뿐만 아니라 모든 사용자에게 확대하기로 결정했습니다."
+
+#: service.html.eex:57
+#, elixir-format
+msgid "Listudy is licensed under the GNU AGPL license."
+msgstr "Listudy는 GNU AGPL 라이선스에 따라 라이선스가 부여됩니다."
+
+#: service.html.eex:69
+#, elixir-format
+msgid ""
+"Listudy makes no warranty or representation and disclaims all responsibility"
+" and liability for the completeness, availability, timeliness, accuracy and "
+"security of the content and services."
+msgstr ""
+"Listudy는 콘텐츠와 서비스의 완전성, 가용성, 적시성, 정확성 및 보안에 대한 어떠한 보증이나 진술도 하지 않으며 모든 책임과 "
+"책임을 부인합니다."
+
+#: service.html.eex:59
+#, elixir-format
+msgid ""
+"Listudy respects the intellectual property rights of others and expects "
+"Users of the Services to do the same. Listudy reserves the right to remove "
+"content alleged to be infringing without prior notice at our sole discretion"
+" and without liability to you. We will respond to notices of alleged "
+"copyright infringement, that comply with applicable law and are properly "
+"provided to us, as described in our copyright policy."
+msgstr ""
+"Listudy는 타인의 지적 재산권을 존중하며 서비스 사용자도 이를 존중할 것을 기대합니다. Listudy는 단독 재량에 따라 사전 통지"
+" 없이 귀하에 대한 책임 없이 침해 혐의가 있는 콘텐츠를 삭제할 권리를 보유합니다. 당사는 저작권 정책에 설명된 대로 해당 법률을 "
+"준수하고 적절하게 제공되는 저작권 침해 주장 통지에 응답할 것입니다."
+
+#: service.html.eex:73
+#, elixir-format
+msgid ""
+"No advice, information or written correspondence whether oral or written "
+"procured from Listudy entities or through Listudy services will create any "
+"warranty or representation not expressly made herein."
+msgstr ""
+"Listudy 기관으로부터 또는 Listudy 서비스를 통해 구두 또는 서면으로 조달된 어떠한 조언, 정보 또는 서면 서신도 여기에 "
+"명시적으로 명시되지 않은 보증이나 진술을 생성하지 않습니다."
+
+#: service.html.eex:53
+#, elixir-format
+msgid ""
+"Our privacy policy describes how we handle the information you provide to us"
+" when you use our services. You understand that through your use of the "
+"services you consent to the collection and use, as set out in the privacy "
+"policy, of this information. Listudy currently follows European Data "
+"Protection, and applies these rights to users of all nationalities, not just"
+" European users."
+msgstr ""
+"당사의 개인정보 보호정책은 귀하가 당사 서비스를 이용할 때 귀하가 당사에 제공하는 정보를 처리하는 방법을 설명합니다. 귀하는 서비스 "
+"이용을 통해 개인정보 보호정책에 명시된 대로 이 정보의 수집 및 사용에 동의한다는 점을 이해합니다. Listudy는 현재 유럽 데이터 "
+"보호를 준수하며 이러한 권리를 유럽 사용자뿐만 아니라 모든 국적의 사용자에게 적용합니다."
+
+#: service.html.eex:38
+#, elixir-format
+msgid "Our rights"
+msgstr "우리의 권리"
+
+#: service.html.eex:51
+#, elixir-format
+msgid "Privacy"
+msgstr "개인정보 처리방침"
+
+#: service.html.eex:67
+#, elixir-format
+msgid ""
+"Services made available are on an as is and as available basis. We’re not "
+"responsible for whether this stuff actually works, though if it does that’s "
+"an added bonus to all of us."
+msgstr ""
+"제공되는 서비스는 있는 그대로 제공됩니다. 우리는 이 기능이 실제로 작동하는지 여부에 대해 책임을 지지 않습니다. 하지만 작동한다면 이는"
+" 우리 모두에게 추가 보너스가 됩니다."
+
+#: service.html.eex:65
+#, elixir-format
+msgid "Stuff we’re not responsible for"
+msgstr "당사가 책임지지 않는 사항"
+
+#: service.html.eex:49
+#, elixir-format
+msgid ""
+"This list is non-exhaustive, and we reserve the right to add, edit, or "
+"remove entries from it at any time."
+msgstr "이 목록은 완전하지 않으며 당사는 언제든지 항목을 추가, 편집 또는 제거할 권리를 보유합니다."
+
+#: service.html.eex:6
+#, elixir-format
+msgid ""
+"This page explains our terms of use. When you use Listudy, you’re agreeing "
+"to all the rules on this page. Some of them need to be expressed in specific"
+" legal language but we’ve done our best to offer you clear and simple "
+"explanations of what everything means."
+msgstr ""
+"이 페이지에서는 이용약관을 설명합니다. Listudy를 사용하면 이 페이지의 모든 규칙에 동의하는 것입니다. 그 중 일부는 특정 법적 "
+"언어로 표현되어야 하지만 우리는 모든 것이 무엇을 의미하는지 명확하고 간단한 설명을 제공하기 위해 최선을 다했습니다."
+
+#: service.html.eex:39
+#, elixir-format
+msgid ""
+"To operate, we need to be able to maintain control over what happens on our "
+"website. To summarise, we reserve the right to make decisions to protect the"
+" health and integrity of our systems. We’ll only use these powers when we "
+"absolutely must."
+msgstr ""
+"운영하려면 웹사이트에서 일어나는 일을 지속적으로 통제할 수 있어야 합니다. 요약하자면, 우리는 시스템의 상태와 무결성을 보호하기 위해 "
+"결정을 내릴 권리가 있습니다. 우리는 꼭 필요한 경우에만 이러한 권한을 사용할 것입니다."
+
+#: service.html.eex:14
+#, elixir-format
+msgid ""
+"To sign up for a Listudy account, you need to be 16 or over. You’re "
+"responsible for your account and all the activity on it."
+msgstr "Listudy 계정에 가입하려면 16세 이상이어야 합니다. 귀하는 귀하의 계정과 그에 따른 모든 활동에 대한 책임이 있습니다."
+
+#: service.html.eex:2
+#, elixir-format
+msgid ""
+"Translated terms of service shall only serve as an informal source of "
+"information. Please read the english version for the official version "
+"applicable to the site."
+msgstr "번역된 서비스 약관은 정보의 비공식 소스로만 사용됩니다. 해당 사이트에 적용되는 공식 버전은 영어 버전을 읽어보시기 바랍니다."
+
+#: service.html.eex:22
+#, elixir-format
+msgid "User Rights"
+msgstr "사용자 권리"
+
+#: service.html.eex:30
+#, elixir-format
+msgid ""
+"Users are responsible for the content they post. Some examples of content "
+"would include information, data, text, and pgn files. We won’t be "
+"responsible for the content you post."
+msgstr ""
+"사용자는 자신이 게시한 콘텐츠에 대한 책임을 집니다. 콘텐츠의 예로는 정보, 데이터, 텍스트 및 pgn 파일이 있습니다. 우리는 귀하가 "
+"게시한 콘텐츠에 대해 책임을 지지 않습니다."
+
+#: service.html.eex:45
+#, elixir-format
+msgid ""
+"We are not responsible for any loss, damage, or harm that may arise from any"
+" occasional downtime."
+msgstr "당사는 우발적인 가동 중지 시간으로 인해 발생할 수 있는 손실, 피해 또는 손해에 대해 책임을 지지 않습니다."
+
+#: service.html.eex:41
+#, elixir-format
+msgid ""
+"We can make changes to the Listudy Site and Services without letting you "
+"know in advance, or being liable for any loss, damage, or harm that arises "
+"as a result."
+msgstr ""
+"우리는 귀하에게 미리 알리거나 그 결과로 발생하는 손실, 피해 또는 피해에 대한 책임을 지지 않고 Listudy 사이트 및 서비스를 "
+"변경할 수 있습니다."
+
+#: service.html.eex:71
+#, elixir-format
+msgid ""
+"We disclaim all responsibility for any harm or loss of any data to your "
+"computer system, the deletion of or failure to store or transmit "
+"communications or content maintained by the services or whether the services"
+" will meet your requirements or be available on an uninterrupted, secure or "
+"error-free basis. Listudy cannot be held responsible for any loss, financial"
+" or otherwise, from third party sources, including misrepresentations, "
+"negligence or fraud."
+msgstr ""
+"당사는 귀하의 컴퓨터 시스템에 대한 데이터의 피해나 손실, 서비스에서 유지 관리하는 통신이나 콘텐츠의 삭제 또는 저장 또는 전송 실패, "
+"서비스가 귀하의 요구 사항을 충족하는지, 중단 없이 안전하고 오류 없이 사용할 수 있는지 여부에 대해 모든 책임을 부인합니다. "
+"Listudy는 허위 진술, 과실 또는 사기를 포함하여 제3자 소스로 인한 재정적 또는 기타 손실에 대해 책임을 지지 않습니다."
+
+#: service.html.eex:43
+#, elixir-format
+msgid ""
+"We have the ultimate say in who can use our Site and Services. We can cancel"
+" accounts, or decline to let Users use our Services."
+msgstr ""
+"우리는 누가 우리 사이트와 서비스를 사용할 수 있는지에 대한 최종 결정권을 가지고 있습니다. 당사는 계정을 취소하거나 사용자의 서비스 "
+"이용을 거부할 수 있습니다."
+
+#: service.html.eex:10
+#, elixir-format
+msgid ""
+"We may change these terms from time to time. If we do, we’ll let you know "
+"about any significant or material changes, by notifying you on the Site. New"
+" versions of the terms will never apply retroactively – we’ll tell you the "
+"exact date they go into effect. If you continue using Listudy after a "
+"change, that means you accept the new terms."
+msgstr ""
+"당사는 수시로 본 약관을 변경할 수 있습니다. 그렇게 하는 경우 당사는 사이트를 통해 귀하에게 중요하거나 중요한 변경 사항을 알려드릴 "
+"것입니다. 새로운 버전의 약관은 결코 소급 적용되지 않습니다. 발효되는 정확한 날짜를 알려드리겠습니다. 변경 후에도 Listudy를 계속"
+" 사용한다면 이는 새로운 약관에 동의한다는 의미입니다."
+
+#: service.html.eex:47
+#, elixir-format
+msgid ""
+"We reserve the right to contact the relevant authorities if a User is "
+"breaking the law, and share relevant data with the authorities, if harm or "
+"damage occurs either against our Users or against the operation of our "
+"infrastructure."
+msgstr ""
+"당사는 사용자가 법을 위반하는 경우 관련 당국에 연락할 권리가 있으며, 사용자 또는 인프라 운영에 피해나 피해가 발생한 경우 관련 "
+"데이터를 당국과 공유할 권리를 보유합니다."
+
+#: service.html.eex:20
+#, elixir-format
+msgid ""
+"When these terms discuss “Users” or a “User”, we’ll be referring to both "
+"registered and unregistered users, unless it relates to features, "
+"information or data an unregistered User does not or cannot have access to."
+msgstr ""
+"본 용어에서 \"사용자\" 또는 \"사용자\"에 대해 논의할 때 등록되지 않은 사용자가 액세스할 수 없거나 액세스할 수 없는 기능, 정보"
+" 또는 데이터와 관련된 경우를 제외하고 등록된 사용자와 등록되지 않은 사용자를 모두 지칭합니다."
+
+#: service.html.eex:16
+#, elixir-format
+msgid ""
+"You can browse Listudy and use some of our Services without registering an "
+"account. But to use all of Listudy’ functions, you’ll need to register. This"
+" is done by choosing a username, setting a password, and securing it with an"
+" email address. If you don’t submit accurate information, you might not be "
+"able to access your account. You can choose any email (even fictitious "
+"ones). Just make sure to remember the email, because it is used to log in."
+msgstr ""
+"계정을 등록하지 않고도 Listudy를 탐색하고 일부 서비스를 사용할 수 있습니다. 하지만 Listudy의 모든 기능을 사용하려면 "
+"회원가입이 필요합니다. 사용자 이름을 선택하고, 비밀번호를 설정하고, 이메일 주소로 보안을 설정하면 됩니다. 정확한 정보를 제출하지 "
+"않으시면 계정에 접속하지 못할 수도 있습니다. 어떤 이메일이라도 선택할 수 있습니다(가상 이메일도 포함). 이메일은 로그인에 사용되므로 "
+"꼭 기억해두세요."
+
+#: service.html.eex:35
+#, elixir-format
+msgid "You can close your account at any time."
+msgstr "언제든지 계정을 폐쇄할 수 있습니다."
+
+#: service.html.eex:36
+#, elixir-format
+msgid ""
+"You can terminate your account at any time by contacting the Listudy "
+"administrators. This will permanently erase your account and all content and"
+" data. Although we may retain certain information as required by law or as "
+"necessary for our legitimate operating purposes. "
+msgstr ""
+"Listudy 관리자에게 연락하여 언제든지 계정을 종료할 수 있습니다. 이렇게 하면 귀하의 계정과 모든 콘텐츠 및 데이터가 영구적으로 "
+"삭제됩니다. 그러나 당사는 법률에 따라 요구되거나 합법적인 운영 목적에 따라 특정 정보를 보유할 수 있습니다."
+
+#: service.html.eex:63
+#, elixir-format
+msgid ""
+"You retain your rights to any content you submit, post or create through the"
+" services including chess games. By submitting, posting or displaying "
+"content on or through our services, you grant us a global, non-exclusive, "
+"royalty-free license, with the right to sublicense, to use, copy, reproduce,"
+" process, adapt, modify, publish, transmit, display and distribute such "
+"content in any and all media or distribution channels. Such additional uses "
+"may be made without compensation paid to you with respect to the content you"
+" make available through the services. This does not remove your rights from "
+"other 3rd party sites, such as Twitch or YouTube."
+msgstr ""
+"귀하는 체스 게임을 포함한 서비스를 통해 제출, 게시 또는 생성한 모든 콘텐츠에 대한 권리를 보유합니다. 당사 서비스에 또는 당사 "
+"서비스를 통해 콘텐츠를 제출, 게시 또는 표시함으로써 귀하는 모든 미디어 또는 배포 채널에서 해당 콘텐츠를 사용, 복사, 재생산, 처리,"
+" 개조, 수정, 게시, 전송, 표시 및 배포할 수 있는 재라이선스 권한과 함께 글로벌 비독점 로열티 없는 라이선스를 당사에 부여하게 "
+"됩니다. 이러한 추가 사용은 귀하가 서비스를 통해 제공한 콘텐츠와 관련하여 귀하에게 지불된 보상 없이 이루어질 수 있습니다. 이는 "
+"Twitch 또는 YouTube와 같은 다른 제3자 사이트에서 귀하의 권리를 제거하지 않습니다."
+

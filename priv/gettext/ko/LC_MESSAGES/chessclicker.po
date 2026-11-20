@@ -1,0 +1,63 @@
+# # "msgid"s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove "msgid"s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use "mix gettext.extract --merge" or "mix gettext.merge"
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:74
+#, elixir-format
+msgid "Continue"
+msgstr "계속"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:63
+#, elixir-format
+msgid "Cost"
+msgstr "비용"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:57
+#, elixir-format
+msgid "Get help by"
+msgstr "다음으로 도움을 받으세요"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:40
+#, elixir-format
+msgid "Rating Points"
+msgstr "레이팅 포인트"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:42
+#: lib/listudy_web/templates/live/chessclicker.html.leex:64
+#, elixir-format
+msgid "Rating points per second"
+msgstr "초당 레이팅 포인트"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:43
+#, elixir-format
+msgid "Rating points per solved tactic"
+msgstr "전술 문제당 레이팅 포인트"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:65
+#, elixir-format
+msgid "Rating points per tactic solved"
+msgstr "전술 문제당 레이팅 포인트"
+
+#: lib/listudy_web/templates/live/chessclicker.html.leex:63
+#, elixir-format
+msgid "rating points"
+msgstr "레이팅 포인트"
+

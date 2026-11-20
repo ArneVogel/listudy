@@ -1,0 +1,261 @@
+# # "msgid"s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove "msgid"s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use "mix gettext.extract --merge" or "mix gettext.merge"
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: lib/listudy_web/templates/page/index.html.eex:46
+#, elixir-format
+msgid "All blog posts"
+msgstr "모든 블로그 게시물"
+
+#: lib/listudy_web/templates/page/index.html.eex:31
+#, elixir-format
+msgid "Become unbeatable in endgames."
+msgstr "엔드게임 실력을 키워 어떤 상대도 자신 있게 맞서세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:4
+#, elixir-format
+msgid ""
+"Better train openings, endgames and tactics with the help of systematic "
+"repetition."
+msgstr "체계적인 반복 학습으로 오프닝, 엔드게임, 전술을 더 효과적으로 훈련하세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:53
+#, elixir-format
+msgid "Blind Tactics"
+msgstr "블라인드 전술"
+
+#: lib/listudy_web/templates/page/index.html.eex:24
+#, elixir-format
+msgid "Books"
+msgstr "서적"
+
+#: lib/listudy_web/templates/page/index.html.eex:60
+#, elixir-format
+msgid "Contribute"
+msgstr "기여하기"
+
+#: lib/listudy_web/templates/page/index.html.eex:91
+#, elixir-format
+msgid "Daily Puzzle"
+msgstr "오늘의 퍼즐"
+
+#: lib/listudy_web/templates/page/index.html.eex:26
+#, elixir-format
+msgid "Discover the greatest books with the help of Grandmaster recommendations."
+msgstr "그랜드마스터의 추천을 참고해 최고의 체스 책을 찾아보세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:73
+#, elixir-format
+msgid "Distribute copies of your modified versions"
+msgstr "수정된 버전의 사본을 배포하세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:30
+#: lib/listudy_web/templates/page/index.html.eex:33
+#, elixir-format
+msgid "Endgames"
+msgstr "엔드게임"
+
+#: lib/listudy_web/templates/page/index.html.eex:86
+#, elixir-format
+msgid "Events"
+msgstr "대회"
+
+#: lib/listudy_web/templates/page/index.html.eex:81
+#, elixir-format
+msgid "Explore"
+msgstr "둘러보기"
+
+#: lib/listudy_web/templates/page/index.html.eex:12
+#: lib/listudy_web/templates/page/index.html.eex:27
+#, elixir-format
+msgid "Explore the"
+msgstr "탐색"
+
+#: lib/listudy_web/templates/page/index.html.eex:25
+#, elixir-format
+msgid "Find the best chess books for you."
+msgstr "당신에게 가장 적합한 체스 책을 찾아보세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:67
+#, elixir-format
+msgid "Free & Open Source"
+msgstr "무료 및 오픈 소스"
+
+#: lib/listudy_web/templates/page/index.html.eex:17
+#, elixir-format
+msgid "Get better at identifying and exploiting tactics."
+msgstr "전술을 알아보고 활용하는 능력을 키우세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:51
+#, elixir-format
+msgid "Improve your visualization skills with blind tactics."
+msgstr "블라인드 전술로 보드를 머릿속에 그리는 능력을 키우세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:40
+#, elixir-format
+msgid "Latest blog posts"
+msgstr "최신 블로그 게시물"
+
+#: lib/listudy_web/templates/page/index.html.eex:84
+#, elixir-format
+msgid "Motifs"
+msgstr "전술 주제"
+
+#: lib/listudy_web/templates/page/index.html.eex:83
+#, elixir-format
+msgid "Openings"
+msgstr "오프닝"
+
+#: lib/listudy_web/templates/page/index.html.eex:11
+#, elixir-format
+msgid ""
+"Play against your opening repertoire and learn them playfully and with "
+"scientifically effective methods."
+msgstr "내 오프닝 레퍼토리를 상대로 두며 재미있고 효과적으로 익히세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:85
+#, elixir-format
+msgid "Players"
+msgstr "선수"
+
+#: lib/listudy_web/templates/page/index.html.eex:72
+#, elixir-format
+msgid "Redistribute the software"
+msgstr "소프트웨어 재배포"
+
+#: lib/listudy_web/templates/page/index.html.eex:70
+#, elixir-format
+msgid "Run the server yourself as you wish, for any purpose"
+msgstr "어떤 목적으로든 원하는 대로 서버를 직접 실행하세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:52
+#, elixir-format
+msgid "Solve tactics while only seeing the board from 2 moves ago."
+msgstr "2수 전의 보드만 보면서 전술을 풀어보세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:9
+#, elixir-format
+msgid "Study Openings"
+msgstr "오프닝 학습"
+
+#: lib/listudy_web/templates/page/index.html.eex:71
+#, elixir-format
+msgid ""
+"Study how the software works, and change it so it does your computing as you"
+" wish"
+msgstr "소프트웨어 작동 방식을 연구하고 원하는 대로 컴퓨팅이 수행되도록 변경하세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:18
+#, elixir-format
+msgid "Tactics"
+msgstr "전술"
+
+#: lib/listudy_web/templates/page/index.html.eex:62
+#, elixir-format
+msgid ""
+"The support can look different. Report bugs if you find any, fix bugs if you"
+" can, help translate Listudy into other languages."
+msgstr "다양한 방법으로 기여할 수 있습니다. 버그를 발견하면 알려 주거나 직접 수정하고, Listudy를 다른 언어로 번역하는 데 참여해 주세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:15
+#, elixir-format
+msgid "Train Tactics"
+msgstr "전술 훈련"
+
+#: lib/listudy_web/templates/page/index.html.eex:32
+#, elixir-format
+msgid ""
+"Train endgames against Stockfish to become skilled and ready to take on any "
+"human opponent."
+msgstr "스톡피시를 상대로 엔드게임을 훈련하고 실전 대국을 준비하세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:16
+#, elixir-format
+msgid "Train tactics with thousands of tactical sequences from real games."
+msgstr "실제 대국에서 나온 수천 개의 전술 수순을 훈련하세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:33
+#, elixir-format
+msgid "Train your endgame abilities: "
+msgstr "엔드게임 실력 훈련: "
+
+#: lib/listudy_web/templates/page/index.html.eex:18
+#, elixir-format
+msgid "Train your tactical abilities: "
+msgstr "전술 실력 훈련: "
+
+#: lib/listudy_web/templates/page/index.html.eex:53
+#, elixir-format
+msgid "Train your visualization skills: "
+msgstr "시각화 능력 훈련: "
+
+#: lib/listudy_web/templates/page/index.html.eex:10
+#, elixir-format
+msgid "Use Listudy to better memorize openings. "
+msgstr "오프닝을 더 잘 기억하려면 Listudy를 사용하세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:63
+#, elixir-format
+msgid "Visit github to find out more about how you can help:"
+msgstr "어떻게 도울 수 있는지 자세히 알아보려면 github을 방문하세요."
+
+#: lib/listudy_web/templates/page/index.html.eex:50
+#, elixir-format
+msgid "Visualization"
+msgstr "시각화"
+
+#: lib/listudy_web/templates/page/index.html.eex:2
+#, elixir-format, python-brace-format
+msgid "Welcome to %{name}!"
+msgstr "%{name}에 오신 것을 환영합니다!"
+
+#: lib/listudy_web/templates/page/index.html.eex:3
+#, elixir-format, python-brace-format
+msgid ""
+"With %{name} you can improve your chess skills with the help of spaced "
+"repetition."
+msgstr "%{name}의 간격 반복을 통해 체스 실력을 향상시킬 수 있습니다."
+
+#: lib/listudy_web/templates/page/index.html.eex:75
+#, elixir-format
+msgid "You can find the source code running Listudy on github:"
+msgstr "github에서 Listudy를 실행하는 소스 코드를 찾을 수 있습니다."
+
+#: lib/listudy_web/templates/page/index.html.eex:61
+#, elixir-format
+msgid "You can help make Listudy better."
+msgstr "여러분은 Listudy를 개선하는 데 도움을 줄 수 있습니다."
+
+#: lib/listudy_web/templates/page/index.html.eex:68
+#, elixir-format
+msgid "Your freedoms are important. That's why you have the rights to:"
+msgstr "당신의 자유는 중요합니다. 이것이 귀하에게 다음과 같은 권리가 있는 이유입니다:"
+
+#: lib/listudy_web/templates/page/index.html.eex:27
+#, elixir-format
+msgid "best chess books"
+msgstr "최고의 체스 책"
+
+#: lib/listudy_web/templates/page/index.html.eex:12
+#, elixir-format
+msgid "latest openings"
+msgstr "최신 오프닝"
+

@@ -1,0 +1,579 @@
+# # "msgid"s in this file come from POT (.pot) files.
+# #
+# # Do not add, change, or remove "msgid"s manually here as
+# # they're tied to the ones in the corresponding POT file
+# # (with the same domain).
+# # Use "mix gettext.extract --merge" or "mix gettext.merge"
+# # to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Project-Id-Version: Listudy VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-20 20:09+0900\n"
+"PO-Revision-Date: 2026-11-20 00:00+0900\n"
+"Last-Translator: Listudy contributors\n"
+"Language: ko\n"
+"Language-Team: Korean\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: lib/listudy_web/templates/study/show.html.eex:46
+#, elixir-autogen, elixir-format
+msgid ""
+"At the end of lines the board is only reset after 3 seconds giving you time "
+"to review the final position."
+msgstr "수순이 끝나면 마지막 포지션을 살펴볼 수 있도록 3초 후에 보드가 초기화됩니다."
+
+#: lib/listudy_web/templates/study/show.html.eex:144
+#, elixir-autogen, elixir-format
+msgid "Chapter"
+msgstr "챕터"
+
+#: lib/listudy_web/templates/study/show.html.eex:73
+#, elixir-autogen, elixir-format
+msgid "Chapter Selection"
+msgstr "챕터 선택"
+
+#: lib/listudy_web/templates/study/show.html.eex:149
+#, elixir-autogen, elixir-format
+msgid ""
+"Create an account to get all the features of Listudy and upload your own "
+"studies."
+msgstr "계정을 만들면 Listudy의 모든 기능을 이용하고 직접 스터디를 올릴 수 있습니다."
+
+#: lib/listudy_web/templates/study/show.html.eex:88
+#, elixir-autogen, elixir-format
+msgid "Creator"
+msgstr "작성자"
+
+#: lib/listudy_web/templates/study/form.html.eex:12
+#: lib/listudy_web/templates/study/show.html.eex:81
+#, elixir-autogen, elixir-format
+msgid "Description"
+msgstr "설명"
+
+#: lib/listudy_web/templates/study/show.html.eex:150
+#, elixir-autogen, elixir-format
+msgid ""
+"Do you have feedback, suggestions or do you want to say something nice? "
+"Comment on the study below."
+msgstr "의견이나 제안이 있나요? 아래에 댓글을 남겨 주세요."
+
+#: lib/listudy_web/templates/study/show.html.eex:148
+#, elixir-autogen, elixir-format
+msgid "Do you like this study? Share it with your friends."
+msgstr "이 스터디가 마음에 드나요? 친구에게 공유해 보세요."
+
+#: lib/listudy_web/templates/study/list.html.eex:15
+#: lib/listudy_web/templates/study/show.html.eex:85
+#, elixir-autogen, elixir-format
+msgid "Edit"
+msgstr "편집"
+
+#: lib/listudy_web/templates/study/show.html.eex:34
+#, elixir-autogen, elixir-format
+msgid "Favorite study"
+msgstr "스터디 즐겨찾기"
+
+#: lib/listudy_web/templates/study/show.html.eex:147
+#, elixir-autogen, elixir-format
+msgid ""
+"If you like this study make sure to favorite it to have it listed under Your"
+" Studies"
+msgstr "이 스터디를 즐겨찾기에 추가하면 내 스터디에서 쉽게 찾을 수 있습니다."
+
+#: lib/listudy_web/templates/study/show.html.eex:52
+#, elixir-autogen, elixir-format
+msgid "Move delay:"
+msgstr "수 사이의 지연 시간:"
+
+#: lib/listudy_web/templates/study/form.html.eex:16
+#: lib/listudy_web/templates/study/show.html.eex:91
+#, elixir-autogen, elixir-format
+msgid "Opening"
+msgstr "오프닝"
+
+#: lib/listudy_web/templates/study/show.html.eex:23
+#, elixir-autogen, elixir-format
+msgid "Play against Stockfish"
+msgstr "스톡피시와 대국하기"
+
+#: lib/listudy_web/templates/study/show.html.eex:142
+#, elixir-autogen, elixir-format
+msgid "Right move!"
+msgstr "정답입니다!"
+
+#: lib/listudy_web/templates/study/show.html.eex:139
+#, elixir-autogen, elixir-format
+msgid "Starting training."
+msgstr "훈련을 시작합니다."
+
+#: lib/listudy_web/templates/study/show.html.eex:141
+#, elixir-autogen, elixir-format
+msgid "This move is not in the study, try again."
+msgstr "이 수는 스터디에 없습니다. 다시 시도하세요."
+
+#: lib/listudy_web/templates/study/show.html.eex:151
+#, elixir-autogen, elixir-format
+msgid ""
+"You learned 100 moves today. Maybe take a break or come back tomorrow to get"
+" the full training effect."
+msgstr "오늘 100수를 익혔습니다. 잠시 쉬거나 내일 다시 연습하면 학습 효과를 높일 수 있습니다."
+
+#: lib/listudy_web/templates/study/show.html.eex:152
+#, elixir-autogen, elixir-format
+msgid ""
+"You learned 250 moves today. For the best training effect come back "
+"tomorrow. Or don't, I'm just text not a cop."
+msgstr ""
+"오늘 250수를 익혔습니다. 학습 효과를 높이려면 내일 다시 연습해 보세요. 물론 계속하셔도 됩니다. 저는 경찰이 아니라 안내 문구일 "
+"뿐이니까요."
+
+#: lib/listudy_web/templates/study/show.html.eex:143
+#, elixir-autogen, elixir-format
+msgid "You reached the end of this line."
+msgstr "이 수순을 마쳤습니다."
+
+#: lib/listudy_web/templates/study/show.html.eex:165
+#, elixir-autogen, elixir-format
+msgid "fast"
+msgstr "빠름"
+
+#: lib/listudy_web/templates/study/show.html.eex:167
+#, elixir-autogen, elixir-format
+msgid "instant"
+msgstr "즉시"
+
+#: lib/listudy_web/templates/study/show.html.eex:166
+#, elixir-autogen, elixir-format
+msgid "medium"
+msgstr "보통"
+
+#: lib/listudy_web/templates/study/show.html.eex:164
+#, elixir-autogen, elixir-format
+msgid "slow"
+msgstr "느림"
+
+#: lib/listudy_web/templates/study/form.html.eex:70
+#, elixir-autogen, elixir-format
+msgid "Back"
+msgstr "뒤로"
+
+#: lib/listudy_web/templates/study/form.html.eex:9
+#, elixir-autogen, elixir-format
+msgid "Caro-Kann Defense"
+msgstr "카로칸 디펜스"
+
+#: lib/listudy_web/controllers/study_controller.ex:269
+#, elixir-autogen, elixir-format
+msgid "Could not download the study from lichess, please check the link"
+msgstr "Lichess에서 스터디를 다운로드할 수 없습니다. 링크를 확인하십시오."
+
+#: lib/listudy_web/controllers/study_controller.ex:295
+#, elixir-autogen, elixir-format
+msgid "Could not favorite this study"
+msgstr "이 스터디를 즐겨찾기에 추가할 수 없습니다."
+
+#: lib/listudy_web/controllers/study_controller.ex:313
+#, elixir-autogen, elixir-format
+msgid "Could not unfavorite this study"
+msgstr "이 스터디를 즐겨찾기 취소할 수 없습니다."
+
+#: lib/listudy_web/templates/study/form.html.eex:20
+#, elixir-autogen, elixir-format
+msgid "Either upload a PGN file or provide a link to a public Lichess study:"
+msgstr "PGN 파일을 업로드하거나 공개 Lichess 스터디에 대한 링크를 제공하세요."
+
+#: lib/listudy_web/templates/study/form.html.eex:38
+#, elixir-autogen, elixir-format
+msgid "For which side is this study"
+msgstr "어느 쪽으로 연습할 스터디인가요?"
+
+#: lib/listudy_web/templates/study/form.html.eex:13
+#, elixir-autogen, elixir-format
+msgid "In this study I work on my 1.e4 openings..."
+msgstr "이 스터디에서는 1.e4 오프닝을 연습합니다..."
+
+#: lib/listudy_web/templates/study/form.html.eex:43
+#, elixir-autogen, elixir-format
+msgid "Keep this study private"
+msgstr "비공개 스터디로 설정"
+
+#: lib/listudy_web/templates/study/form.html.eex:28
+#, elixir-autogen, elixir-format
+msgid "Lichess Study"
+msgstr "리체스 스터디"
+
+#: lib/listudy_web/controllers/study_controller.ex:278
+#, elixir-autogen, elixir-format
+msgid "No PGN provided"
+msgstr "PGN 파일이 없습니다"
+
+#: lib/listudy_web/controllers/study_controller.ex:245
+#, elixir-autogen, elixir-format
+msgid "PGN is too big, only 50kb allowed"
+msgstr "PGN 파일이 너무 큽니다. 최대 50KB까지 업로드할 수 있습니다."
+
+#: lib/listudy_web/controllers/study_controller.ex:227
+#, elixir-autogen, elixir-format
+msgid "Please log in"
+msgstr "로그인해 주세요"
+
+#: lib/listudy_web/templates/study/form.html.eex:23
+#, elixir-autogen, elixir-format
+msgid "Select a PGN to upload"
+msgstr "업로드할 PGN을 선택하세요"
+
+#: lib/listudy_web/controllers/study_controller.ex:292
+#, elixir-autogen, elixir-format
+msgid "Study favorited"
+msgstr "스터디를 즐겨찾기에 추가했습니다"
+
+#: lib/listudy_web/controllers/study_controller.ex:171
+#, elixir-autogen, elixir-format
+msgid "Study info updated, PGN changed."
+msgstr "스터디 정보가 업데이트되고 PGN이 변경되었습니다."
+
+#: lib/listudy_web/controllers/study_controller.ex:178
+#, elixir-autogen, elixir-format
+msgid "Study info updated, no PGN change."
+msgstr "스터디 정보가 업데이트되었으며 PGN 변경이 없습니다."
+
+#: lib/listudy_web/controllers/study_controller.ex:310
+#, elixir-autogen, elixir-format
+msgid "Study unfavorited"
+msgstr "스터디를 즐겨찾기에서 제거했습니다"
+
+#: lib/listudy_web/controllers/study_controller.ex:273
+#, elixir-autogen, elixir-format
+msgid "The provided link is not a Lichess study"
+msgstr "제공된 링크는 Lichess 스터디가 아닙니다"
+
+#: lib/listudy_web/templates/study/form.html.eex:8
+#, elixir-autogen, elixir-format
+msgid "Title"
+msgstr "제목"
+
+#: lib/listudy_web/templates/study/index.html.eex:14
+#, elixir-autogen, elixir-format
+msgid "Create a Study"
+msgstr "스터디 만들기"
+
+#: lib/listudy_web/templates/study/index.html.eex:13
+#, elixir-autogen, elixir-format
+msgid "Create a new study and start learning."
+msgstr "새로운 스터디를 생성하고 학습을 시작하세요."
+
+#: lib/listudy_web/templates/study/index.html.eex:25
+#, elixir-autogen, elixir-format
+msgid "Favored Studies"
+msgstr "즐겨찾는 스터디"
+
+#: lib/listudy_web/templates/study/index.html.eex:8
+#, elixir-autogen, elixir-format
+msgid "New Study"
+msgstr "새 스터디"
+
+#: lib/listudy_web/templates/study/index.html.eex:15
+#, elixir-autogen, elixir-format
+msgid "Search for Studies"
+msgstr "스터디 검색"
+
+#: lib/listudy_web/templates/study/index.html.eex:1
+#, elixir-autogen, elixir-format
+msgid "Your Studies"
+msgstr "내 스터디"
+
+#: lib/listudy_web/templates/study/new.html.eex:1
+#, elixir-autogen, elixir-format
+msgid "Create a new Study"
+msgstr "새 스터디 만들기"
+
+#: lib/listudy_web/templates/study/new.html.eex:9
+#, elixir-autogen, elixir-format
+msgid "For more information read the Copyright Policy"
+msgstr "자세한 내용은 저작권 정책을 읽어보세요."
+
+#: lib/listudy_web/templates/study/new.html.eex:8
+#, elixir-autogen, elixir-format
+msgid ""
+"Please remember to only upload PGNs for which you have the rights to publish"
+" them. This is especially true, but not limited, for PGN files that you have"
+" acquired from paid platforms."
+msgstr ""
+"게시 권한이 있는 PGN만 업로드하는 것을 잊지 마세요. 이는 특히 유료 플랫폼에서 획득한 PGN 파일의 경우에 해당되지만 이에 "
+"국한되지는 않습니다."
+
+#: lib/listudy_web/templates/study/edit.html.eex:33
+#, elixir-autogen, elixir-format
+msgid "Are you sure?"
+msgstr "계속하시겠습니까?"
+
+#: lib/listudy_web/templates/study/edit.html.eex:33
+#, elixir-autogen, elixir-format
+msgid "Delete"
+msgstr "삭제"
+
+#: lib/listudy_web/templates/study/edit.html.eex:31
+#, elixir-autogen, elixir-format
+msgid "Delete Study"
+msgstr "스터디 삭제"
+
+#: lib/listudy_web/templates/study/edit.html.eex:32
+#, elixir-autogen, elixir-format
+msgid "This can not be undone!"
+msgstr "이 작업은 취소할 수 없습니다!"
+
+#: lib/listudy_web/live/study_search_live.ex:12
+#, elixir-autogen, elixir-format
+msgid "Search"
+msgstr "검색"
+
+#: lib/listudy_web/live/study_search_live.ex:10
+#, elixir-autogen, elixir-format
+msgid "Search for studies"
+msgstr "스터디 검색"
+
+#: lib/listudy_web/live/study_search_live.ex:24
+#: lib/listudy_web/templates/study/list.html.eex:8
+#, elixir-autogen, elixir-format
+msgid "by"
+msgstr "작성자:"
+
+#: lib/listudy_web/templates/study/show.html.eex:62
+#, elixir-autogen, elixir-format
+msgid ""
+"Don't repeat the early moves that are already known. Skips to the first "
+"branching move in the study."
+msgstr "이미 아는 초반 수순은 반복하지 않고, 스터디에서 처음으로 수순이 갈라지는 지점으로 건너뜁니다."
+
+#: lib/listudy_web/live/study_search_live.ex:14
+#, elixir-autogen, elixir-format
+msgid "Favorites"
+msgstr "즐겨찾기"
+
+#: lib/listudy_web/live/study_search_live.ex:15
+#, elixir-autogen, elixir-format
+msgid "Newest"
+msgstr "최신"
+
+#: lib/listudy_web/live/study_search_live.ex:24
+#: lib/listudy_web/templates/study/list.html.eex:8
+#, elixir-autogen, elixir-format
+msgid "favorites"
+msgstr "즐겨찾기"
+
+#: lib/listudy_web/templates/study/show.html.eex:171
+#, elixir-autogen, elixir-format
+msgid "Are you sure you want to delete your study progress?"
+msgstr "정말로 스터디 진행 상황을 삭제하시겠습니까?"
+
+#: lib/listudy_web/templates/study/show.html.eex:68
+#, elixir-autogen, elixir-format
+msgid "Progress"
+msgstr "진행 상황"
+
+#: lib/listudy_web/templates/study/show.html.eex:186
+#, elixir-autogen, elixir-format
+msgid "Reset progress"
+msgstr "진행 상황 재설정"
+
+#: lib/listudy_web/templates/study/show.html.eex:184
+#, elixir-autogen, elixir-format
+msgid "Study Progress"
+msgstr "스터디 진행 상황"
+
+#: lib/listudy_web/templates/study/show.html.eex:27
+#, elixir-autogen, elixir-format
+msgid "Analyze this position with the Lichess Analysis Board"
+msgstr "리체스 분석 보드에서 이 포지션 분석하기"
+
+#: lib/listudy_web/templates/study/show.html.eex:161
+#, elixir-autogen, elixir-format
+msgid "Board reset delay: fast"
+msgstr "보드 재설정 지연: 빠름"
+
+#: lib/listudy_web/templates/study/show.html.eex:160
+#, elixir-autogen, elixir-format
+msgid "Board reset delay: slow"
+msgstr "보드 재설정 지연: 느림"
+
+#: lib/listudy_web/templates/study/show.html.eex:163
+#, elixir-autogen, elixir-format
+msgid "Jump to key move: off"
+msgstr "핵심 수로 건너뛰기: 꺼짐"
+
+#: lib/listudy_web/templates/study/show.html.eex:162
+#, elixir-autogen, elixir-format
+msgid "Jump to key move: on"
+msgstr "핵심 수로 건너뛰기: 켜짐"
+
+#: lib/listudy_web/templates/study/show.html.eex:30
+#, elixir-autogen, elixir-format
+msgid "Reset line"
+msgstr "수순 초기화"
+
+#: lib/listudy_web/templates/study/show.html.eex:13
+#, elixir-autogen, elixir-format
+msgid "Show hints for this move!"
+msgstr "이번 수의 힌트 보기"
+
+#: lib/listudy_web/templates/study/show.html.eex:36
+#, elixir-autogen, elixir-format
+msgid "Unfavorite study"
+msgstr "스터디 즐겨찾기 해제"
+
+#: lib/listudy_web/templates/study/show.html.eex:27
+#, elixir-autogen, elixir-format
+msgid "Analyze position"
+msgstr "포지션 분석"
+
+#: lib/listudy_web/templates/study/show.html.eex:172
+#, elixir-autogen, elixir-format
+msgid "response"
+msgstr "응답"
+
+#: lib/listudy_web/templates/study/show.html.eex:169
+#, elixir-autogen, elixir-format
+msgid "Comments: always on"
+msgstr "해설: 항상 표시"
+
+#: lib/listudy_web/templates/study/show.html.eex:43
+#, elixir-autogen, elixir-format
+msgid "Option to control when comments are displayed"
+msgstr "해설을 표시할 시점을 설정합니다"
+
+#: lib/listudy_web/templates/study/show.html.eex:170
+#, elixir-autogen, elixir-format
+msgid "Comments: hidden"
+msgstr "해설: 숨김"
+
+#: lib/listudy_web/templates/study/show.html.eex:56
+#: lib/listudy_web/templates/study/show.html.eex:173
+#, elixir-autogen, elixir-format
+msgid "Max depth: "
+msgstr "최대 깊이:"
+
+#: lib/listudy_web/templates/study/show.html.eex:55
+#, elixir-autogen, elixir-format
+msgid ""
+"Lets you choose how many moves deep in the repertoire to train. The highest "
+"value you can choose is the length of the longest line. Set to a lower value"
+" to train against a more shallow subset of the repertoire, and to the "
+"highest value to train against the full repertoire."
+msgstr ""
+"레퍼토리를 몇 수까지 연습할지 설정합니다. 최댓값은 가장 긴 수순의 길이입니다. 초반만 연습하려면 낮은 값을, 전체 레퍼토리를 연습하려면"
+" 최댓값을 선택하세요."
+
+#: lib/listudy_web/templates/study/show.html.eex:155
+#, elixir-autogen, elixir-format
+msgid "Hints: always on"
+msgstr "힌트: 항상 표시"
+
+#: lib/listudy_web/templates/study/show.html.eex:156
+#, elixir-autogen, elixir-format
+msgid "Hints: hidden"
+msgstr "힌트: 숨김"
+
+#: lib/listudy_web/templates/study/show.html.eex:153
+#, elixir-autogen, elixir-format
+msgid "Hints: until played 2x"
+msgstr "힌트: 두 번 둘 때까지 표시"
+
+#: lib/listudy_web/templates/study/show.html.eex:154
+#, elixir-autogen, elixir-format
+msgid "Hints: until played 5x"
+msgstr "힌트: 다섯 번 둘 때까지 표시"
+
+#: lib/listudy_web/templates/study/show.html.eex:178
+#, elixir-autogen, elixir-format
+msgid "Moves that have been played before are shown with a thinner outline"
+msgstr "이미 두었던 수는 윤곽선을 더 얇게 표시합니다"
+
+#: lib/listudy_web/templates/study/show.html.eex:146
+#, elixir-autogen, elixir-format
+msgid ""
+"One of the moves in the position has been played more than others and is "
+"marked with a thinner outline. To give all lines equal attention, play one "
+"of the other moves!"
+msgstr ""
+"해당 위치의 수 중 하나가 다른 수보다 더 많이 수행되었으며 더 얇은 윤곽선으로 표시됩니다. 모든 라인에 동일한 주의를 기울이려면 다른 "
+"수 중 하나를 수행하세요!"
+
+#: lib/listudy_web/templates/study/show.html.eex:174
+#, elixir-autogen, elixir-format
+msgid "Opaque arrows with a black outline are playable moves"
+msgstr "검은 윤곽선이 있는 불투명한 화살표는 둘 수 있는 수를 나타냅니다"
+
+#: lib/listudy_web/templates/study/show.html.eex:175
+#, elixir-autogen, elixir-format
+msgid "Playable"
+msgstr "둘 수 있는 수"
+
+#: lib/listudy_web/templates/study/show.html.eex:145
+#, elixir-autogen, elixir-format
+msgid ""
+"The transparent arrows are arrows stored in the study. These don't indicate "
+"playable moves but are commonly used to indicate threats, alternative lines,"
+" and future ideas."
+msgstr ""
+"투명한 화살표는 스터디에 저장된 주석입니다. 직접 둘 수 있는 수를 나타내는 것이 아니라, 위협이나 다른 수순, 앞으로의 계획 등을 "
+"설명하는 데 사용됩니다."
+
+#: lib/listudy_web/templates/study/show.html.eex:177
+#, elixir-autogen, elixir-format
+msgid "Transparent arrows come from the study and are hints only"
+msgstr "투명한 화살표는 스터디에 포함된 참고용 힌트입니다"
+
+#: lib/listudy_web/templates/study/show.html.eex:176
+#, elixir-autogen, elixir-format
+msgid "Transparent arrows come from the study and are not playable"
+msgstr "투명한 화살표는 스터디의 주석이며, 직접 둘 수 있는 수를 나타내지는 않습니다"
+
+#: lib/listudy_web/templates/study/show.html.eex:140
+#, elixir-autogen, elixir-format
+msgid ""
+"By default arrows will provide hints to show which moves are in this study. "
+"Using the options below you can control for how many moves the arrows/hints "
+"should stay visible. By default they stay visible until all moves in a "
+"position has been played twice. Any non-playable arrow annotations from the "
+"study or PGN file will appear as transparent arrows."
+msgstr ""
+"기본적으로 화살표는 이 스터디에 어떤 수이 있는지 보여주는 힌트를 제공합니다. 아래 옵션을 사용하면 화살표/힌트가 계속 표시되어야 하는 "
+"이동 횟수를 제어할 수 있습니다. 기본적으로 해당 위치의 모든 수이 두 번 실행될 때까지 표시됩니다. 스터디 또는 PGN 파일의 재생 "
+"불가능한 화살표 주석은 투명한 화살표로 나타납니다."
+
+#: lib/listudy_web/templates/study/show.html.eex:168
+#, elixir-autogen, elixir-format
+msgid "Comments: when hints show"
+msgstr "해설: 힌트와 함께 표시"
+
+#: lib/listudy_web/templates/study/show.html.eex:49
+#, elixir-autogen, elixir-format
+msgid ""
+"Option to control the type of hints shown. 'Moves' means arrows are "
+"displayed for all playable moves in the study. 'Annotations' are arrows and "
+"circles from the study or PGN file. These can be created at Lichess.org and "
+"other sites."
+msgstr ""
+"표시되는 힌트 유형을 제어하는 ​​옵션입니다. '이동'은 스터디에서 재생 가능한 모든 수에 대해 화살표가 표시됨을 의미합니다. '주석'은"
+" 스터디 또는 PGN 파일의 화살표와 원입니다. Lichess.org 및 기타 사이트에서 만들 수 있습니다."
+
+#: lib/listudy_web/templates/study/show.html.eex:159
+#, elixir-autogen, elixir-format
+msgid "Hints: annotations only"
+msgstr "힌트: 주석만 표시"
+
+#: lib/listudy_web/templates/study/show.html.eex:157
+#, elixir-autogen, elixir-format
+msgid "Hints: moves & annotations"
+msgstr "힌트: 가능한 수와 주석 표시"
+
+#: lib/listudy_web/templates/study/show.html.eex:158
+#, elixir-autogen, elixir-format
+msgid "Hints: playable moves only"
+msgstr "힌트: 가능한 수만 표시"
+
