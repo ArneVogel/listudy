@@ -156,4 +156,3 @@ msgid ""
 "The values are each separated by a \";\". The moves must be in san notation "
 "and the last move in uci notation."
 msgstr "각 값은 \";\"으로 구분합니다. 수순은 SAN 표기법, 마지막 수는 UCI 표기법을 사용해야 합니다."
-

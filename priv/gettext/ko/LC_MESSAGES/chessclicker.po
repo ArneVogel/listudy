@@ -60,4 +60,3 @@ msgstr "전술 문제당 레이팅 포인트"
 #, elixir-format
 msgid "rating points"
 msgstr "레이팅 포인트"
-

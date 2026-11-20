@@ -87,7 +87,7 @@ msgstr "둘러보기"
 #: lib/listudy_web/templates/page/index.html.eex:27
 #, elixir-format
 msgid "Explore the"
-msgstr "탐색"
+msgstr "둘러보기:"
 
 #: lib/listudy_web/templates/page/index.html.eex:25
 #, elixir-format
@@ -258,4 +258,3 @@ msgstr "최고의 체스 책"
 #, elixir-format
 msgid "latest openings"
 msgstr "최신 오프닝"
-

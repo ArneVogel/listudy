@@ -365,4 +365,3 @@ msgstr "흑"
 #, elixir-format
 msgid "white"
 msgstr "백"
-

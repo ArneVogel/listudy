@@ -79,4 +79,3 @@ msgstr "간격 반복 학습으로 체스 실력 키우기"
 #, elixir-format, python-brace-format
 msgid "Books Recommended by %{player}"
 msgstr "%{player}님이 추천하는 책"
-

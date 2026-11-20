@@ -68,3 +68,27 @@ msgid ""
 "for tablebase analysis."
 msgstr "엔드게임 페이지에 FEN 복사 기능과 테이블베이스 분석을 위한 리체스 분석 페이지 링크를 추가했습니다."
 
+#: lib/listudy_web/templates/page/changelog.html.eex:3
+#, elixir-autogen, elixir-format
+msgid "Added a new and improved \"ai\" move picker. thanks to Olle Eriksson!"
+msgstr "AI의 수 선택 방식을 개선했습니다. Olle Eriksson님께 감사드립니다!"
+
+#: lib/listudy_web/templates/page/changelog.html.eex:5
+#, elixir-autogen, elixir-format
+msgid "Added basic hebrew transation, thanks to Arihol"
+msgstr "기본적인 히브리어 번역을 추가했습니다. Arihol님께 감사드립니다."
+
+#: lib/listudy_web/templates/page/changelog.html.eex:9
+#, elixir-autogen, elixir-format
+msgid "Added portugese translation"
+msgstr "포르투갈어 번역을 추가했습니다."
+
+#: lib/listudy_web/templates/page/changelog.html.eex:11
+#, elixir-autogen, elixir-format
+msgid "Added vietnamese translation"
+msgstr "베트남어 번역을 추가했습니다."
+
+#: lib/listudy_web/templates/page/changelog.html.eex:7
+#, elixir-autogen, elixir-format
+msgid "Allow promotion in own tactics, thanks to sampma309"
+msgstr "직접 만든 전술 문제에서도 폰을 승격할 수 있습니다. sampma309님께 감사드립니다."

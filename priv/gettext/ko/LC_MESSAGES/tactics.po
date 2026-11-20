@@ -88,7 +88,7 @@ msgstr "몇 반수를 숨길까요? (다음 전술 문제부터 적용)"
 #: lib/listudy_web/templates/live/blind_tactics.html.leex:11
 #, elixir-format
 msgid "In this position the following moves were played:"
-msgstr "이 위치에서는 다음 수이 수행되었습니다."
+msgstr "이 포지션에서 다음 수순이 진행되었습니다:"
 
 #: lib/listudy_web/templates/tactic/translations.html.eex:6
 #, elixir-format
@@ -175,7 +175,7 @@ msgstr "iframe 코드"
 #: lib/listudy_web/templates/live/blind_tactics.html.leex:13
 #, elixir-format
 msgid "to play and win."
-msgstr "플레이하고 승리하기 위해."
+msgstr "차례입니다. 승리하는 수를 찾으세요."
 
 #: lib/listudy_web/templates/event/public.html.eex:13
 #: lib/listudy_web/templates/motif/public.html.eex:8
@@ -198,7 +198,7 @@ msgstr "%{moves} 이동 후 %{opening}"
 #: lib/listudy_web/templates/opening/public.html.eex:9
 #, elixir-format, python-brace-format
 msgid "Chessboard showing the %{opening} with the moves %{moves} played"
-msgstr "%{moves} 수이 진행된 %{opening}을 보여주는 체스판"
+msgstr "%{moves} 수순이 진행된 %{opening} 포지션"
 
 #: lib/listudy_web/templates/opening/public.html.eex:12
 #, elixir-format
@@ -483,3 +483,13 @@ msgstr "[도움말] 기물 없는 전술 이용 방법"
 msgid "move history showing the moves played"
 msgstr "지금까지 진행된 수순"
 
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:19
+#, elixir-autogen, elixir-format
+msgid "Flip board"
+msgstr "보드 뒤집기"
+
+#: lib/listudy_web/templates/live/blind_tactics.html.leex:20
+#: lib/listudy_web/templates/pieceless_tactic/public.html.eex:20
+#, elixir-autogen, elixir-format
+msgid "Give up"
+msgstr "포기하기"

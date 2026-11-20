@@ -78,4 +78,3 @@ msgstr ""
 #, elixir-format, python-brace-format
 msgid "Thanks to the authors of %{elixir} and %{phoenix}."
 msgstr "%{elixir} 및 %{phoenix}의 저자에게 감사드립니다."
-

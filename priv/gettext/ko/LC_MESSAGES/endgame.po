@@ -38,7 +38,7 @@ msgstr "비숍과 폰"
 #: lib/listudy_web/controllers/endgame_controller.ex:328
 #, elixir-format
 msgid "Bishops and/or knights against rook, with and without pawns."
-msgstr "폰 유무에 관계없이 비숍 및/또는 나이트가 룩을 상대합니다."
+msgstr "비숍·나이트 대 룩 엔드게임입니다. 폰이 있는 경우와 없는 경우를 모두 다룹니다."
 
 #: lib/listudy_web/controllers/endgame_controller.ex:60
 #, elixir-format
@@ -58,7 +58,7 @@ msgstr "나이트, 비숍, 폰 엔드게임입니다."
 #: lib/listudy_web/controllers/endgame_controller.ex:199
 #, elixir-format
 msgid "Endgames with only Bishops and Pawns on the board."
-msgstr "보드에는 비숍과 폰만 있는 엔드게임입니다."
+msgstr "비숍과 폰 엔드게임입니다."
 
 #: lib/listudy_web/controllers/endgame_controller.ex:136
 #: lib/listudy_web/controllers/endgame_controller.ex:203
@@ -73,19 +73,21 @@ msgstr "보드에는 비숍과 폰만 있는 엔드게임입니다."
 #: lib/listudy_web/controllers/endgame_controller.ex:460
 #, elixir-format
 msgid "Endings of Games"
-msgstr "게임의 엔딩"
+msgstr "엔드게임"
 
 #: lib/listudy_web/controllers/endgame_controller.ex:442
 #, elixir-format
 msgid "From the Capablancas \"Chess Fundamentals\"."
-msgstr "Capablancas \"체스 기초\"에서."
+msgstr "카파블랑카의 《Chess Fundamentals》에서 가져온 예제입니다."
 
 #: lib/listudy_web/controllers/endgame_controller.ex:423
 #, elixir-format
 msgid ""
 "From the book \"Analysis of the  Chess Ending King and Queen against King "
 "and Rook\"."
-msgstr "\"왕과 루크에 대한 체스 결말 왕과 여왕의 분석\"이라는 책에서."
+msgstr ""
+"《Analysis of the Chess Ending King and Queen against King and Rook》에서 가져온 "
+"예제입니다."
 
 #: lib/listudy_web/controllers/endgame_controller.ex:138
 #: lib/listudy_web/controllers/endgame_controller.ex:205
@@ -100,12 +102,12 @@ msgstr "\"왕과 루크에 대한 체스 결말 왕과 여왕의 분석\"이라�
 #: lib/listudy_web/controllers/endgame_controller.ex:462
 #, elixir-format
 msgid "From the book \"Chess Studies, Or, Endings of Games\"."
-msgstr "\"체스 스터디, 또는 게임의 결말\"이라는 책에서."
+msgstr "《Chess Studies, Or, Endings of Games》에서 가져온 예제입니다."
 
 #: lib/listudy_web/controllers/endgame_controller.ex:127
 #, elixir-format
 msgid "King and Pawn Endgames"
-msgstr "킹 앤 폰 엔드게임"
+msgstr "킹과 폰 엔드게임"
 
 #: lib/listudy_web/controllers/endgame_controller.ex:421
 #, elixir-format
@@ -212,7 +214,7 @@ msgstr "룩 대 비숍·나이트 엔드게임입니다."
 #: lib/listudy_web/controllers/endgame_controller.ex:306
 #, elixir-format
 msgid "Rook and pawn against bishop or knight, with and without pawns."
-msgstr "폰이 있든 없든 비숍이나 나이트를 상대로 루크와 폰을 사용합니다."
+msgstr "룩과 폰으로 비숍 또는 나이트를 상대하는 엔드게임입니다. 상대에게 폰이 있는 경우와 없는 경우를 모두 다룹니다."
 
 #: lib/listudy_web/controllers/endgame_controller.ex:185
 #, elixir-format
@@ -222,43 +224,41 @@ msgstr "오포지션"
 #: lib/listudy_web/controllers/endgame_controller.ex:232
 #, elixir-format
 msgid "This chapter has endgames about Knight and Bishop endings."
-msgstr "이 장에는 Knight와 Bishop 엔딩에 대한 엔드게임이 있습니다."
+msgstr "이 챕터에서는 나이트와 비숍 엔드게임을 다룹니다."
 
 #: lib/listudy_web/controllers/endgame_controller.ex:200
 #, elixir-format
 msgid "This chapter has endgames about Pawn and Bishop endings."
-msgstr "이 장에는 폰과 비숍 엔딩에 대한 엔드게임이 있습니다."
+msgstr "이 챕터에서는 폰과 비숍 엔드게임을 다룹니다."
 
 #: lib/listudy_web/controllers/endgame_controller.ex:130
 #, elixir-format
 msgid ""
 "This chapter has endgames about the King and Pawn endgame. Many of the "
 "examples are taken from Capablancas \"Chess Fundamentals\"."
-msgstr ""
-"이 장에는 King and Pawn 엔드게임에 대한 엔드게임이 있습니다. 많은 예제는 Capablancas의 \"Chess "
-"Fundamentals\"에서 따왔습니다."
+msgstr "이 챕터에서는 킹과 폰 엔드게임을 다룹니다. 많은 예제가 카파블랑카의 《Chess Fundamentals》에서 가져온 것입니다."
 
 #: lib/listudy_web/controllers/endgame_controller.ex:63
 #, elixir-format
 msgid ""
 "This chapter has endgames for checkmating with queen, rook, bishop + knight "
 "and bishop + bishop."
-msgstr "이 챕터에는 퀸, 루크, 비숍 + 나이트, 비숍 + 비숍과의 체크메이트를 위한 엔드게임이 있습니다."
+msgstr "이 챕터에서는 퀸, 룩, 비숍과 나이트, 비숍 두 개로 체크메이트하는 방법을 연습합니다."
 
 #: lib/listudy_web/controllers/endgame_controller.ex:375
 #, elixir-format
 msgid "Train endgames with queens and pawns on the board."
-msgstr "보드에 퀸과 폰이 있는 엔드게임을 훈련하세요."
+msgstr "퀸과 폰 엔드게임을 연습하세요."
 
 #: lib/listudy_web/controllers/endgame_controller.ex:457
 #, elixir-format
 msgid "Train queen and minor piece endgames."
-msgstr "퀸과 마이너 피스 엔드게임을 훈련하세요."
+msgstr "퀸 대 비숍·나이트 엔드게임을 연습하세요."
 
 #: lib/listudy_web/controllers/endgame_controller.ex:403
 #, elixir-format
 msgid "Train queen and rook endgames."
-msgstr "퀸과 루크 엔드게임을 훈련하세요."
+msgstr "퀸 대 룩 엔드게임을 연습하세요."
 
 #: lib/listudy_web/controllers/endgame_controller.ex:282
 #, elixir-format
@@ -278,7 +278,7 @@ msgstr "2 대 1."
 #: lib/listudy_web/controllers/endgame_controller.ex:128
 #, elixir-format
 msgid "Win games with only Pawns on the board"
-msgstr "보드에 폰만 있는 상태로 게임 승리"
+msgstr "폰 엔드게임에서 승리하는 방법을 익히세요"
 
 #: lib/listudy_web/templates/live/tactics.html.leex:25
 #, elixir-format
@@ -352,4 +352,3 @@ msgstr "비숍·나이트 대 룩"
 #, elixir-format
 msgid "Two minor pieces against one minor piece, with and without pawns."
 msgstr "비숍·나이트 두 개 대 한 개의 엔드게임입니다. 폰이 있는 경우와 없는 경우를 모두 다룹니다."
-

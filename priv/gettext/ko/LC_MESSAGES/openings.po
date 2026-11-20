@@ -29,4 +29,3 @@ msgstr "오프닝"
 #, elixir-format
 msgid "Search"
 msgstr "검색"
-

@@ -542,9 +542,8 @@ msgid ""
 "position has been played twice. Any non-playable arrow annotations from the "
 "study or PGN file will appear as transparent arrows."
 msgstr ""
-"기본적으로 화살표는 이 스터디에 어떤 수이 있는지 보여주는 힌트를 제공합니다. 아래 옵션을 사용하면 화살표/힌트가 계속 표시되어야 하는 "
-"이동 횟수를 제어할 수 있습니다. 기본적으로 해당 위치의 모든 수이 두 번 실행될 때까지 표시됩니다. 스터디 또는 PGN 파일의 재생 "
-"불가능한 화살표 주석은 투명한 화살표로 나타납니다."
+"화살표는 스터디에 포함된 수를 알려 주는 힌트입니다. 아래 옵션에서 몇 번 둘 때까지 힌트를 표시할지 설정할 수 있습니다. 기본적으로는 "
+"해당 포지션의 모든 수를 두 번씩 둘 때까지 표시합니다. 스터디나 PGN 파일에 포함된 참고용 화살표 주석은 투명하게 표시됩니다."
 
 #: lib/listudy_web/templates/study/show.html.eex:168
 #, elixir-autogen, elixir-format
@@ -559,8 +558,8 @@ msgid ""
 "circles from the study or PGN file. These can be created at Lichess.org and "
 "other sites."
 msgstr ""
-"표시되는 힌트 유형을 제어하는 ​​옵션입니다. '이동'은 스터디에서 재생 가능한 모든 수에 대해 화살표가 표시됨을 의미합니다. '주석'은"
-" 스터디 또는 PGN 파일의 화살표와 원입니다. Lichess.org 및 기타 사이트에서 만들 수 있습니다."
+"표시할 힌트의 종류를 설정합니다. '가능한 수'는 스터디에서 둘 수 있는 모든 수를 화살표로 표시합니다. '주석'은 스터디나 PGN "
+"파일에 포함된 화살표와 원을 뜻하며, Lichess.org 등의 사이트에서 만들 수 있습니다."
 
 #: lib/listudy_web/templates/study/show.html.eex:159
 #, elixir-autogen, elixir-format
@@ -576,4 +575,3 @@ msgstr "힌트: 가능한 수와 주석 표시"
 #, elixir-autogen, elixir-format
 msgid "Hints: playable moves only"
 msgstr "힌트: 가능한 수만 표시"
-

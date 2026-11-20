@@ -39,4 +39,3 @@ msgstr "%{name}의 프로필"
 #, elixir-format, python-brace-format
 msgid "Public studies by %{name}"
 msgstr "%{name}의 공개 스터디"
-

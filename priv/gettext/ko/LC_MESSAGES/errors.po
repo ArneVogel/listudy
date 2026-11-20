@@ -110,4 +110,3 @@ msgstr "%{number}보다 크거나 같아야 합니다."
 #, python-brace-format
 msgid "must be equal to %{number}"
 msgstr "%{number}과(와) 같아야 합니다"
-

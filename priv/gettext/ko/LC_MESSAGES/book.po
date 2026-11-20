@@ -107,7 +107,7 @@ msgstr "검색"
 #: lib/listudy_web/live/book_search_live.ex:16
 #, elixir-format
 msgid "by"
-msgstr "작성자:"
+msgstr "저자"
 
 #: lib/listudy_web/templates/book/footer.html.eex:5
 #: lib/listudy_web/templates/book/footer.html.eex:9
@@ -135,3 +135,24 @@ msgstr "그랜드마스터가 가장 추천하는 책"
 msgid "Books recommended by %{player}"
 msgstr "%{player}님이 추천한 책"
 
+#: lib/listudy_web/templates/book/affiliate.html.eex:7
+#, elixir-autogen, elixir-format, python-brace-format
+msgid "%{shop_name} Affiliate Disclosure"
+msgstr "%{shop_name} 제휴 안내"
+
+#: lib/listudy_web/templates/book/affiliate.html.eex:10
+#, elixir-autogen, elixir-format
+msgid "As an Amazon Associate I earn from qualifying purchases."
+msgstr "Amazon 제휴 프로그램 참여자로서, 조건에 맞는 구매가 이루어지면 수수료를 받습니다."
+
+#: lib/listudy_web/templates/book/affiliate.html.eex:20
+#, elixir-autogen, elixir-format
+msgid "Continue"
+msgstr "계속"
+
+#: lib/listudy_web/templates/book/affiliate.html.eex:8
+#, elixir-autogen, elixir-format
+msgid ""
+"If you buy the book through this link we will receive a small provison for "
+"the referral. There will be no additional costs for you."
+msgstr "이 링크를 통해 책을 구매하면 저희가 소정의 소개 수수료를 받습니다. 구매자에게 추가 비용은 발생하지 않습니다."

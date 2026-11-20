@@ -48,7 +48,7 @@ msgstr "저장"
 #: lib/listudy_web/templates/comment/show_comments.html.eex:8
 #, elixir-format
 msgid "by"
-msgstr "작성자:"
+msgstr "작성자"
 
 #: lib/listudy_web/controllers/comment_controller.ex:43
 #, elixir-format
@@ -89,4 +89,3 @@ msgstr "아직 댓글이 없습니다. 가장 먼저 댓글을 작성해 보세�
 #, elixir-format
 msgid "Register"
 msgstr "회원가입"
-

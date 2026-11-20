@@ -76,4 +76,3 @@ msgstr "일일 체스 퍼즐을 풀어보세요! 최고의 퍼즐 목록에서 �
 msgid "A chess book recommendation by %{player}"
 msgid_plural "%{count} chess book recommendations by %{player}"
 msgstr[0] "%{player}의 체스 책 추천 %{count}권"
-

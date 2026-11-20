@@ -49,4 +49,3 @@ msgstr "선수"
 #, elixir-format
 msgid "Search"
 msgstr "검색"
-

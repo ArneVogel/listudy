@@ -74,4 +74,3 @@ msgstr "%{white}, %{black}으로 다시 시작"
 #, elixir-format
 msgid "Takeback"
 msgstr "무르기"
-

@@ -24,4 +24,3 @@ msgstr ""
 #, elixir-format
 msgid "Frequently Asked Questions"
 msgstr "자주 묻는 질문"
-

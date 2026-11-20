@@ -41,4 +41,3 @@ msgstr "업로드된 스터디"
 #, elixir-format
 msgid "User Registrations"
 msgstr "가입자 수"
-

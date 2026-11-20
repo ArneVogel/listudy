@@ -29,4 +29,3 @@ msgstr "대회"
 #, elixir-format
 msgid "Search"
 msgstr "검색"
-

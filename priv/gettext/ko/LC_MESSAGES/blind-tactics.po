@@ -134,4 +134,3 @@ msgstr "체스 시각화 기술을 향상시키세요"
 #, elixir-format
 msgid "Play Now!"
 msgstr "지금 시작하기"
-
